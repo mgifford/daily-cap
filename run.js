@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import fs from "node:fs/promises";
+import path from "node:path";
 import { parseArgs } from "node:util";
 import { getDefaultConfig } from "./src/config/defaults.js";
 import { loadSeedInventory } from "./src/ingest/canada-seed.js";
@@ -9,6 +11,34 @@ import { runScans } from "./src/scanners/execution-manager.js";
 import { buildDailyReport } from "./src/aggregation/build-report.js";
 import { publishReport } from "./src/publish/publish-report.js";
 import { resolveDateString } from "./src/utils/date.js";
+
+async function loadPreviousReport(outputRoot, runDate) {
+  const dailyRoot = path.join(outputRoot, "docs", "reports", "daily");
+
+  try {
+    const entries = await fs.readdir(dailyRoot, { withFileTypes: true });
+    const dates = entries
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => entry.name)
+      .filter((name) => /^\d{4}-\d{2}-\d{2}$/.test(name))
+      .filter((name) => name < runDate)
+      .sort((a, b) => b.localeCompare(a));
+
+    for (const date of dates) {
+      const reportPath = path.join(dailyRoot, date, "report.json");
+      try {
+        const json = await fs.readFile(reportPath, "utf8");
+        return JSON.parse(json);
+      } catch {
+        // Try the next previous date if this report is missing or malformed.
+      }
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
 
 const { values } = parseArgs({
   options: {
@@ -50,15 +80,18 @@ const scanned = await runScans(scanTargets, {
   concurrency: config.scanner.concurrency
 });
 
+const outputRoot = values.outputRoot || process.cwd();
+const previousReport = await loadPreviousReport(outputRoot, runDate);
+
 const report = buildDailyReport({
   runDate,
   runId: `cap-${runDate}`,
   mode,
   inventory: inventoryResult,
-  scanned
+  scanned,
+  previousReport
 });
 
-const outputRoot = values.outputRoot || process.cwd();
 await publishReport({ report, outputRoot });
 
 console.log(

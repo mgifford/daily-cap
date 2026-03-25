@@ -3,6 +3,7 @@ import { computeBilingualParity } from "./bilingual-parity.js";
 import { summarizeAccessibilityStatements } from "./accessibility-statements.js";
 import { summarizePlatformSignals } from "./platform-signals.js";
 import { computeDirectionalImpact } from "./impact-model.js";
+import { computeTrendAnalysis } from "./trend-analysis.js";
 
 function summarizeScan(scanned) {
   const succeeded = scanned.filter((row) => row.scan_status === "success").length;
@@ -16,7 +17,7 @@ function summarizeScan(scanned) {
   };
 }
 
-export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
+export function buildDailyReport({ runDate, runId, mode, inventory, scanned, previousReport = null }) {
   const scoreAggregates = aggregateScores(scanned);
   const bilingualParity = computeBilingualParity(scanned);
   const accessibilityStatements = summarizeAccessibilityStatements(scanned);
@@ -27,7 +28,7 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
   const inventoryCount = inventory.scan_target_count || inventory.scan_targets?.length || 0;
   const tierValidation = inventory.tier_validation || {};
 
-  return {
+  const baseReport = {
     run_id: runId,
     run_date: runDate,
     scan_mode: mode,
@@ -73,6 +74,17 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
       report_json: `docs/reports/daily/${runDate}/report.json`,
       report_html: `docs/reports/daily/${runDate}/index.html`,
       dashboard_html: "docs/reports/index.html"
+    }
+  };
+
+  const trendAnalysis = computeTrendAnalysis(baseReport, previousReport);
+
+  return {
+    ...baseReport,
+    trend_analysis: trendAnalysis,
+    methodology: {
+      status: "phase-9",
+      note: "Phase 9: Adds day-over-day trend comparison and regression alerts across core benchmark signals. Trend flags are automated diagnostics, not legal or compliance determinations."
     }
   };
 }

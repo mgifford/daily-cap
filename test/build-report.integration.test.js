@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 
 import { buildDailyReport } from "../src/aggregation/build-report.js";
 
-test("buildDailyReport includes phase 7 sections in payload", () => {
+test("buildDailyReport includes phase 9 sections in payload", () => {
   const inventory = {
     scan_target_count: 2,
     scan_targets: [],
@@ -93,14 +93,28 @@ test("buildDailyReport includes phase 7 sections in payload", () => {
     runId: "cap-2026-03-25",
     mode: "mock",
     inventory,
-    scanned
+    scanned,
+    previousReport: {
+      run_date: "2026-03-24",
+      scan_summary: { total: 2, failed: 0 },
+      benchmark_summary: { means: { accessibility_score: 85 } },
+      accessibility_statements: { summary: { statement_coverage_percent: 95 } },
+      bilingual_parity: {
+        summary: { average_absolute_accessibility_gap: 2 }
+      },
+      impact_model: {
+        summary: { directional_affected_share_percent: 22 }
+      }
+    }
   });
 
-  assert.equal(report.methodology.status, "phase-7");
+  assert.equal(report.methodology.status, "phase-9");
   assert.ok(report.bilingual_parity);
   assert.ok(report.accessibility_statements);
   assert.ok(report.platform_signals);
   assert.ok(report.impact_model);
+  assert.ok(report.trend_analysis);
+  assert.equal(report.trend_analysis.available, true);
   assert.equal(report.top_urls.length, 2);
   assert.equal(report.scan_summary.total, 2);
 });

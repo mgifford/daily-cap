@@ -16,6 +16,9 @@ export function renderDailyReportPage(report) {
   const cmsDist = report.platform_signals?.distributions?.cms || [];
   const impactSummary = report.impact_model?.summary || {};
   const impactTop = report.impact_model?.top_directional_impact_urls || [];
+  const trend = report.trend_analysis || {};
+  const trendMetrics = trend.metrics || [];
+  const trendRegressions = trend.regressions || [];
 
   const rows = report.top_urls
     .map((row) => {
@@ -85,6 +88,30 @@ export function renderDailyReportPage(report) {
     })
     .join("\n");
 
+  const trendRows = trendMetrics
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.label)}</td>
+        <td>${escapeHtml(row.previous ?? "-")}</td>
+        <td>${escapeHtml(row.current ?? "-")}</td>
+        <td>${escapeHtml(row.delta ?? "-")}</td>
+        <td>${escapeHtml(row.is_regression ? "yes" : "no")}</td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const regressionRows = trendRegressions
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.label)}</td>
+        <td>${escapeHtml(row.delta ?? "-")}</td>
+        <td>${escapeHtml(row.severity || "-")}</td>
+      </tr>`;
+    })
+    .join("\n");
+
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -123,6 +150,41 @@ export function renderDailyReportPage(report) {
         <div class="card"><strong>Failed</strong><br/>${escapeHtml(report.scan_summary.failed)}</div>
         <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>${escapeHtml(paritySummary.average_absolute_accessibility_gap ?? "-")}</div>
       </div>
+    </section>
+
+    <section>
+      <h2>Trend Comparison</h2>
+      <p><em>${escapeHtml(trend.note || "No trend comparison available.")}</em></p>
+      <div class="cards">
+        <div class="card"><strong>Previous Run</strong><br/>${escapeHtml(trend.previous_run_date ?? "none")}</div>
+        <div class="card"><strong>Regressions</strong><br/>${escapeHtml(trendRegressions.length)}</div>
+      </div>
+
+      <h3>Metric Deltas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Metric</th>
+            <th scope="col">Previous</th>
+            <th scope="col">Current</th>
+            <th scope="col">Delta</th>
+            <th scope="col">Regression</th>
+          </tr>
+        </thead>
+        <tbody>${trendRows || '<tr><td colspan="5">No prior run to compare yet.</td></tr>'}</tbody>
+      </table>
+
+      <h3>Regression Alerts</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Metric</th>
+            <th scope="col">Delta</th>
+            <th scope="col">Severity</th>
+          </tr>
+        </thead>
+        <tbody>${regressionRows || '<tr><td colspan="3">No regressions detected in configured thresholds.</td></tr>'}</tbody>
+      </table>
     </section>
 
     <section>
