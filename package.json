@@ -1,0 +1,14 @@
+{
+  "name": "daily-cap",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Daily CAP baseline pipeline for Canadian analytics benchmarking",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "run": "node run.js",
+    "test": "node --test"
+  }
+}

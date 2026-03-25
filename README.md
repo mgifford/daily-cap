@@ -1,1 +1,52 @@
-# daily-cap
+# Daily CAP
+
+Daily CAP (Canadian Analytics Project) is an independent daily quality
+benchmarking pipeline for Canadian federal digital service entry points.
+
+Daily CAP is not a Government of Canada program, service, or official product.
+It is a community-run benchmarking project.
+
+This repository is intentionally separate from Daily DAP. It borrows proven
+pipeline patterns while using Canadian inputs and CAP-specific reporting.
+
+## Current status
+
+Phase 1 baseline is implemented:
+
+- ingest -> scan -> aggregate -> publish pipeline
+- static Canadian seed inventory with bilingual pairs where available
+- mock and live scan modes
+- output parity path: `docs/reports/daily/YYYY-MM-DD/`
+
+## Run
+
+Runtime requirement: Node.js 24 or newer.
+
+```bash
+npm install
+node run.js --date 2026-03-25 --limit 25 --mode mock
+```
+
+Key options:
+
+- `--date YYYY-MM-DD`
+- `--limit N`
+- `--mode live|mock`
+- `--output-root PATH`
+
+## Output
+
+- `docs/reports/daily/YYYY-MM-DD/report.json`
+- `docs/reports/daily/YYYY-MM-DD/index.html`
+- `docs/reports/index.html`
+
+## Structure
+
+- `src/config/`
+- `src/ingest/`
+- `src/inventory/`
+- `src/scanners/`
+- `src/aggregation/`
+- `src/enrichment/`
+- `src/publish/`
+- `src/utils/`
