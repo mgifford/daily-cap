@@ -108,7 +108,7 @@ export function renderDailyReportPage(report) {
 </head>
 <body>
   <header>
-    <div class="nav"><a href="../index.html">← Back to Reports</a> | <a href="../../">Home</a></div>
+    <div class="nav"><a href="../../index.html">← Back to Reports</a> | <a href="../../../">Home</a></div>
   </header>
   <main>
     <h1>Daily CAP Report</h1>
@@ -268,7 +268,7 @@ export function renderDashboardPage(report) {
   </style>
 </head>
 <body>
-  <div class="nav"><a href="../../">← Back to Home</a></div>
+  <div class="nav"><a href="../">← Back to Home</a></div>
   <h1>Daily CAP Reports</h1>
   <p>Latest run: ${escapeHtml(report.run_date)}</p>
   <p><em>Daily CAP is an independent analytics project and is not a Government of Canada program.</em></p>
