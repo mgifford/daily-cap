@@ -1,82 +1,33 @@
 {
   "run_id": "cap-2026-03-25",
   "run_date": "2026-03-25",
-  "scan_mode": "mock",
-  "url_limit": 27,
+  "scan_mode": "live",
+  "url_limit": 40,
   "scan_summary": {
-    "total": 27,
-    "succeeded": 27,
-    "failed": 0,
+    "total": 40,
+    "succeeded": 0,
+    "failed": 40,
     "excluded": 0
   },
   "benchmark_summary": {
     "means": {
-      "performance_score": 66.33,
-      "accessibility_score": 78.96,
-      "best_practices_score": 74.33,
-      "seo_score": 77.15
+      "performance_score": null,
+      "accessibility_score": null,
+      "best_practices_score": null,
+      "seo_score": null
     },
     "url_counts": {
-      "total": 27,
-      "succeeded": 27,
-      "failed": 0
+      "total": 40,
+      "succeeded": 0,
+      "failed": 40
     }
   },
   "bilingual_parity": {
-    "pairs": [
-      {
-        "id": "curated-001",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "curated-002",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "curated-004",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "curated-006",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "curated-008",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "curated-010",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "top-task-1",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "top-task-2",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "top-task-3",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "top-task-4",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "top-task-5",
-        "accessibility_gap": -14
-      },
-      {
-        "id": "top-task-6",
-        "accessibility_gap": -14
-      }
-    ],
+    "pairs": [],
     "summary": {
-      "paired_services": 12,
-      "missing_counterpart": 3,
-      "average_absolute_accessibility_gap": 14
+      "paired_services": 0,
+      "missing_counterpart": 0,
+      "average_absolute_accessibility_gap": null
     }
   },
   "top_urls": [
@@ -90,21 +41,10 @@
       "service_category": "identity",
       "institution": "ESDC",
       "page_load_count": 45000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-001-fr",
@@ -116,21 +56,10 @@
       "service_category": "identity",
       "institution": "ESDC",
       "page_load_count": 45000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-002-en",
@@ -142,21 +71,10 @@
       "service_category": "account",
       "institution": "ESDC",
       "page_load_count": 170000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-002-fr",
@@ -168,21 +86,40 @@
       "service_category": "account",
       "institution": "ESDC",
       "page_load_count": 170000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "curated-003-en",
+      "id": "curated-003",
+      "service_name": "Find your local Service Canada office",
+      "language": "en",
+      "source": "unknown",
+      "service_pattern": "help",
+      "service_category": "help",
+      "institution": "ESDC",
+      "page_load_count": 35000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "curated-003-fr",
+      "id": "curated-003",
+      "service_name": "Find your local Service Canada office",
+      "language": "fr",
+      "source": "unknown",
+      "service_pattern": "help",
+      "service_category": "help",
+      "institution": "ESDC",
+      "page_load_count": 35000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-004-en",
@@ -194,21 +131,10 @@
       "service_category": "travel",
       "institution": "CBSA",
       "page_load_count": 94000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-004-fr",
@@ -220,21 +146,40 @@
       "service_category": "travel",
       "institution": "CBSA",
       "page_load_count": 94000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "curated-005-en",
+      "id": "curated-005",
+      "service_name": "Environment and Climate Change Canada",
+      "language": "en",
+      "source": "unknown",
+      "service_pattern": "help",
+      "service_category": "information",
+      "institution": "ECCC",
+      "page_load_count": 52000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "curated-005-fr",
+      "id": "curated-005",
+      "service_name": "Environment and Climate Change Canada",
+      "language": "fr",
+      "source": "unknown",
+      "service_pattern": "help",
+      "service_category": "information",
+      "institution": "ECCC",
+      "page_load_count": 52000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-006-en",
@@ -246,21 +191,10 @@
       "service_category": "information",
       "institution": "Justice",
       "page_load_count": 88000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-006-fr",
@@ -272,21 +206,40 @@
       "service_category": "information",
       "institution": "Justice",
       "page_load_count": 88000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "curated-007-en",
+      "id": "curated-007",
+      "service_name": "Government of Canada Social Media",
+      "language": "en",
+      "source": "unknown",
+      "service_pattern": "help",
+      "service_category": "information",
+      "institution": "CSPS",
+      "page_load_count": 25000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "curated-007-fr",
+      "id": "curated-007",
+      "service_name": "Government of Canada Social Media",
+      "language": "fr",
+      "source": "unknown",
+      "service_pattern": "help",
+      "service_category": "information",
+      "institution": "CSPS",
+      "page_load_count": 25000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-008-en",
@@ -298,21 +251,10 @@
       "service_category": "immigration",
       "institution": "IRCC",
       "page_load_count": 78000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-008-fr",
@@ -324,21 +266,40 @@
       "service_category": "immigration",
       "institution": "IRCC",
       "page_load_count": 78000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "curated-009-en",
+      "id": "curated-009",
+      "service_name": "Consumer Price Index",
+      "language": "en",
+      "source": "unknown",
+      "service_pattern": "dashboard",
+      "service_category": "information",
+      "institution": "StatsCan",
+      "page_load_count": 42000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "curated-009-fr",
+      "id": "curated-009",
+      "service_name": "Consumer Price Index",
+      "language": "fr",
+      "source": "unknown",
+      "service_pattern": "dashboard",
+      "service_category": "information",
+      "institution": "StatsCan",
+      "page_load_count": 42000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-010-en",
@@ -350,21 +311,10 @@
       "service_category": "health",
       "institution": "PHAC",
       "page_load_count": 65000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "curated-010-fr",
@@ -376,102 +326,10 @@
       "service_category": "health",
       "institution": "PHAC",
       "page_load_count": 65000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
-    },
-    {
-      "inventory_id": "recent-0-en",
-      "id": "recent-0",
-      "service_name": "Sign in to your CRA account",
-      "language": "en",
-      "canonical_url": "https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html",
-      "source": "recent",
-      "service_pattern": "unknown",
-      "service_category": "tax",
-      "institution": null,
-      "page_load_count": 39167494,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 74,
-        "accessibility_score": 66,
-        "best_practices_score": 69,
-        "seo_score": 83,
-        "lcp_value_ms": 2593
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 2,
-        "moderate": 0,
-        "minor": 5
-      }
-    },
-    {
-      "inventory_id": "recent-1-en",
-      "id": "recent-1",
-      "service_name": "Canada Revenue Agency - CRA Sign-in",
-      "language": "en",
-      "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login",
-      "source": "recent,recent",
-      "service_pattern": "unknown",
-      "service_category": "tax",
-      "institution": null,
-      "page_load_count": 22675340,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 72,
-        "accessibility_score": 85,
-        "best_practices_score": 71,
-        "seo_score": 72,
-        "lcp_value_ms": 1370
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 0,
-        "moderate": 7,
-        "minor": 5
-      }
-    },
-    {
-      "inventory_id": "recent-2-en",
-      "id": "recent-2",
-      "service_name": "Canada Revenue Agency - CRA sign-in information",
-      "language": "en",
-      "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/postlogin/welcome",
-      "source": "recent,recent",
-      "service_pattern": "unknown",
-      "service_category": "tax",
-      "institution": null,
-      "page_load_count": 17708535,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 73,
-        "accessibility_score": 85,
-        "best_practices_score": 91,
-        "seo_score": 68,
-        "lcp_value_ms": 1311
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 3,
-        "moderate": 0,
-        "minor": 12
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-1-en",
@@ -483,21 +341,10 @@
       "service_category": "tax",
       "institution": "CRA",
       "page_load_count": 460000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-1-fr",
@@ -509,21 +356,40 @@
       "service_category": "tax",
       "institution": "CRA",
       "page_load_count": 460000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "top-task-10-en",
+      "id": "top-task-10",
+      "service_name": "Old Age Security and Supplement",
+      "language": "en",
+      "source": "top-task",
+      "service_pattern": "help",
+      "service_category": "benefits",
+      "institution": "ESDC",
+      "page_load_count": 100000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "top-task-10-fr",
+      "id": "top-task-10",
+      "service_name": "Old Age Security and Supplement",
+      "language": "fr",
+      "source": "top-task",
+      "service_pattern": "help",
+      "service_category": "benefits",
+      "institution": "ESDC",
+      "page_load_count": 100000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-2-en",
@@ -535,21 +401,10 @@
       "service_category": "employment",
       "institution": "ESDC",
       "page_load_count": 420000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-2-fr",
@@ -561,21 +416,10 @@
       "service_category": "employment",
       "institution": "ESDC",
       "page_load_count": 420000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-3-en",
@@ -587,21 +431,10 @@
       "service_category": "travel",
       "institution": "IRCC",
       "page_load_count": 380000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-3-fr",
@@ -613,21 +446,10 @@
       "service_category": "travel",
       "institution": "IRCC",
       "page_load_count": 380000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-4-en",
@@ -639,21 +461,10 @@
       "service_category": "education",
       "institution": "ESDC",
       "page_load_count": 340000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-4-fr",
@@ -665,21 +476,10 @@
       "service_category": "education",
       "institution": "ESDC",
       "page_load_count": 340000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-5-en",
@@ -691,21 +491,10 @@
       "service_category": "health",
       "institution": "PHAC",
       "page_load_count": 300000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-5-fr",
@@ -717,21 +506,10 @@
       "service_category": "health",
       "institution": "PHAC",
       "page_load_count": 300000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-6-en",
@@ -743,21 +521,10 @@
       "service_category": "immigration",
       "institution": "IRCC",
       "page_load_count": 260000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 72,
-        "best_practices_score": 70,
-        "seo_score": 60,
-        "lcp_value_ms": 4445
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 3,
-        "moderate": 1,
-        "minor": 6
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     },
     {
       "inventory_id": "top-task-6-fr",
@@ -769,21 +536,100 @@
       "service_category": "immigration",
       "institution": "IRCC",
       "page_load_count": 260000,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 45,
-        "accessibility_score": 86,
-        "best_practices_score": 78,
-        "seo_score": 95,
-        "lcp_value_ms": 1313
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 2,
-        "minor": 5
-      }
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "top-task-7-en",
+      "id": "top-task-7",
+      "service_name": "Benefits and credits",
+      "language": "en",
+      "source": "top-task",
+      "service_pattern": "dashboard",
+      "service_category": "benefits",
+      "institution": "ESDC",
+      "page_load_count": 220000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "top-task-7-fr",
+      "id": "top-task-7",
+      "service_name": "Benefits and credits",
+      "language": "fr",
+      "source": "top-task",
+      "service_pattern": "dashboard",
+      "service_category": "benefits",
+      "institution": "ESDC",
+      "page_load_count": 220000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "top-task-8-en",
+      "id": "top-task-8",
+      "service_name": "Employment Insurance",
+      "language": "en",
+      "source": "top-task",
+      "service_pattern": "application",
+      "service_category": "benefits",
+      "institution": "ESDC",
+      "page_load_count": 180000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "top-task-8-fr",
+      "id": "top-task-8",
+      "service_name": "Employment Insurance",
+      "language": "fr",
+      "source": "top-task",
+      "service_pattern": "application",
+      "service_category": "benefits",
+      "institution": "ESDC",
+      "page_load_count": 180000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "top-task-9-en",
+      "id": "top-task-9",
+      "service_name": "CPP and retirement",
+      "language": "en",
+      "source": "top-task",
+      "service_pattern": "help",
+      "service_category": "benefits",
+      "institution": "ESDC",
+      "page_load_count": 140000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
+    },
+    {
+      "inventory_id": "top-task-9-fr",
+      "id": "top-task-9",
+      "service_name": "CPP and retirement",
+      "language": "fr",
+      "source": "top-task",
+      "service_pattern": "help",
+      "service_category": "benefits",
+      "institution": "ESDC",
+      "page_load_count": 140000,
+      "scan_status": "failed",
+      "failure_reason": "Failed to parse URL from undefined",
+      "lighthouse": null,
+      "scangov": null
     }
   ],
   "methodology": {
