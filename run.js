@@ -77,7 +77,8 @@ const scanTargets = inventoryResult.scan_targets;
 
 const scanned = await runScans(scanTargets, {
   mode,
-  concurrency: config.scanner.concurrency
+  concurrency: config.scanner.concurrency,
+  lighthouseContexts: config.scanner.lighthouseContexts
 });
 
 const outputRoot = values.outputRoot || process.cwd();

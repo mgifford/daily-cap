@@ -1,12 +1,12 @@
-import { runLighthouseScan } from "./lighthouse-runner.js";
+import { runLighthouseScanVariants } from "./lighthouse-runner.js";
 import { runScanGov } from "./scangov-runner.js";
 import { runAccessibilityStatementCheck } from "./accessibility-statement-runner.js";
 import { runPlatformFingerprint } from "./platform-fingerprint-runner.js";
 
-async function scanOne(target, mode) {
+async function scanOne(target, mode, lighthouseContexts) {
   try {
     const [lighthouse, scangov, accessibilityStatement, platformFingerprint] = await Promise.all([
-      runLighthouseScan(target, mode),
+      runLighthouseScanVariants(target, mode, lighthouseContexts),
       runScanGov(target, mode),
       runAccessibilityStatementCheck(target, mode),
       runPlatformFingerprint(target, mode)
@@ -37,6 +37,7 @@ async function scanOne(target, mode) {
 export async function runScans(targets, options) {
   const mode = options.mode || "mock";
   const concurrency = Math.max(1, options.concurrency || 2);
+  const lighthouseContexts = options.lighthouseContexts || [];
   const queue = [...targets];
   const results = [];
 
@@ -46,7 +47,7 @@ export async function runScans(targets, options) {
       if (!target) {
         continue;
       }
-      const scanned = await scanOne(target, mode);
+      const scanned = await scanOne(target, mode, lighthouseContexts);
       results.push(scanned);
     }
   });

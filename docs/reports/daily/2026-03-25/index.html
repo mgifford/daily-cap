@@ -22,7 +22,7 @@
         <div class="card"><strong>Total</strong><br/>150</div>
         <div class="card"><strong>Succeeded</strong><br/>150</div>
         <div class="card"><strong>Failed</strong><br/>0</div>
-        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>13.6</div>
+        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>16.5</div>
       </div>
     </section>
 
@@ -62,13 +62,114 @@
     </section>
 
     <section>
+      <h2>Theme and Device Contexts</h2>
+      <p><em>Context baseline is desktop light. Deltas are current context minus baseline.</em></p>
+      <div class="cards">
+        <div class="card"><strong>Rows With Context Data</strong><br/>150</div>
+        <div class="card"><strong>Baseline</strong><br/>desktop_light</div>
+        <div class="card"><strong>Mobile Dark Perf Delta</strong><br/>-9.59</div>
+        <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>-3.88</div>
+      </div>
+
+      <h3>Context Averages</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Performance</th>
+            <th scope="col">Accessibility</th>
+            <th scope="col">Best Practices</th>
+            <th scope="col">SEO</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td>desktop_light</td>
+        <td>70.55</td>
+        <td>78.47</td>
+        <td>71.78</td>
+        <td>80.63</td>
+      </tr>
+
+      <tr>
+        <td>desktop_dark</td>
+        <td>67.81</td>
+        <td>73.86</td>
+        <td>74.38</td>
+        <td>80.66</td>
+      </tr>
+
+      <tr>
+        <td>mobile_light</td>
+        <td>64.14</td>
+        <td>75.98</td>
+        <td>71.85</td>
+        <td>82.01</td>
+      </tr>
+
+      <tr>
+        <td>mobile_dark</td>
+        <td>60.96</td>
+        <td>74.59</td>
+        <td>69.91</td>
+        <td>77.22</td>
+      </tr></tbody>
+      </table>
+
+      <h3>Deltas vs Desktop Light</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Performance Delta</th>
+            <th scope="col">Accessibility Delta</th>
+            <th scope="col">Best Practices Delta</th>
+            <th scope="col">SEO Delta</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td>desktop_light</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td>desktop_dark</td>
+        <td>-2.74</td>
+        <td>-4.61</td>
+        <td>2.6</td>
+        <td>0.03</td>
+      </tr>
+
+      <tr>
+        <td>mobile_light</td>
+        <td>-6.41</td>
+        <td>-2.49</td>
+        <td>0.07</td>
+        <td>1.38</td>
+      </tr>
+
+      <tr>
+        <td>mobile_dark</td>
+        <td>-9.59</td>
+        <td>-3.88</td>
+        <td>-1.87</td>
+        <td>-3.41</td>
+      </tr></tbody>
+      </table>
+    </section>
+
+    <section>
       <h2>Bilingual Parity</h2>
       <div class="cards">
         <div class="card"><strong>Candidate Pairs</strong><br/>130</div>
         <div class="card"><strong>Complete Pairs</strong><br/>20</div>
         <div class="card"><strong>Missing FR</strong><br/>110</div>
         <div class="card"><strong>Missing EN</strong><br/>0</div>
-        <div class="card"><strong>Avg Perf Gap (EN/FR)</strong><br/>15.7</div>
+        <div class="card"><strong>Avg Perf Gap (EN/FR)</strong><br/>18.65</div>
       </div>
 
       <h3>Largest Accessibility Gaps</h3>
@@ -83,73 +184,73 @@
         </thead>
         <tbody>
       <tr>
-        <td>Health Infobase Canada</td>
-        <td>28</td>
-        <td>-13</td>
-        <td><a href="https://www.canada.ca/en/public-health/services/diseases.html">EN</a> | <a href="https://www.canada.ca/fr/sante-publique/services/maladies.html">FR</a></td>
-      </tr>
-
-      <tr>
-        <td>Job search and benefits</td>
-        <td>-27</td>
-        <td>3</td>
-        <td><a href="https://www.canada.ca/en/services/work.html">EN</a> | <a href="https://www.canada.ca/fr/services/travail.html">FR</a></td>
-      </tr>
-
-      <tr>
-        <td>Personal income tax</td>
-        <td>-25</td>
-        <td>21</td>
-        <td><a href="https://www.canada.ca/en/services/taxes/income.html">EN</a> | <a href="https://www.canada.ca/fr/services/impots/revenu.html">FR</a></td>
-      </tr>
-
-      <tr>
-        <td>COVID-19 information</td>
-        <td>-23</td>
-        <td>-26</td>
-        <td><a href="https://www.canada.ca/en/services/health/coronavirus-2019.html">EN</a> | <a href="https://www.canada.ca/fr/services/sante/coronavirus-2019.html">FR</a></td>
-      </tr>
-
-      <tr>
-        <td>Canada Border Wait Times</td>
-        <td>-22</td>
-        <td>-23</td>
-        <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR</a></td>
-      </tr>
-
-      <tr>
-        <td>Find your local Service Canada office</td>
-        <td>20</td>
-        <td>-19</td>
-        <td><a href="https://www.canada.ca/en/employment-social-development/services/office.html">EN</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">FR</a></td>
-      </tr>
-
-      <tr>
-        <td>Student loans and grants</td>
-        <td>-19</td>
-        <td>-5</td>
-        <td><a href="https://www.canada.ca/en/services/education-training/loans-grants.html">EN</a> | <a href="https://www.canada.ca/fr/services/education-formation/prets-bourses.html">FR</a></td>
-      </tr>
-
-      <tr>
         <td>IRCC: Apply for permanent residency</td>
-        <td>-17</td>
-        <td>-4</td>
+        <td>-38</td>
+        <td>-29</td>
         <td><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html">EN</a> | <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html">FR</a></td>
       </tr>
 
       <tr>
-        <td>Environment and Climate Change Canada</td>
-        <td>16</td>
-        <td>2</td>
-        <td><a href="https://www.canada.ca/en/environment-climate-change.html">EN</a> | <a href="https://www.canada.ca/fr/environnement-changement-climatique.html">FR</a></td>
+        <td>Immigration and citizenship</td>
+        <td>-38</td>
+        <td>-14</td>
+        <td><a href="https://www.canada.ca/en/services/immigration-citizenship.html">EN</a> | <a href="https://www.canada.ca/fr/services/immigration-citoyennete.html">FR</a></td>
       </tr>
 
       <tr>
-        <td>Employment Insurance</td>
-        <td>-16</td>
-        <td>17</td>
-        <td><a href="https://www.canada.ca/en/services/benefits/ei.html">EN</a> | <a href="https://www.canada.ca/fr/services/prestations/ae.html">FR</a></td>
+        <td>Check my Service Canada Account</td>
+        <td>37</td>
+        <td>16</td>
+        <td><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Find your local Service Canada office</td>
+        <td>28</td>
+        <td>11</td>
+        <td><a href="https://www.canada.ca/en/employment-social-development/services/office.html">EN</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Personal income tax</td>
+        <td>-27</td>
+        <td>27</td>
+        <td><a href="https://www.canada.ca/en/services/taxes/income.html">EN</a> | <a href="https://www.canada.ca/fr/services/impots/revenu.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Consumer Price Index</td>
+        <td>24</td>
+        <td>9</td>
+        <td><a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html">EN</a> | <a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>COVID-19 information</td>
+        <td>-19</td>
+        <td>-12</td>
+        <td><a href="https://www.canada.ca/en/services/health/coronavirus-2019.html">EN</a> | <a href="https://www.canada.ca/fr/services/sante/coronavirus-2019.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Benefits and credits</td>
+        <td>16</td>
+        <td>30</td>
+        <td><a href="https://www.canada.ca/en/services/benefits.html">EN</a> | <a href="https://www.canada.ca/fr/services/prestations.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Old Age Security and Supplement</td>
+        <td>-15</td>
+        <td>-18</td>
+        <td><a href="https://www.canada.ca/en/services/benefits/publicpensions/oas.html">EN</a> | <a href="https://www.canada.ca/fr/services/prestations/pensionspubliques/srg.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Student loans and grants</td>
+        <td>13</td>
+        <td>-25</td>
+        <td><a href="https://www.canada.ca/en/services/education-training/loans-grants.html">EN</a> | <a href="https://www.canada.ca/fr/services/education-formation/prets-bourses.html">FR</a></td>
       </tr></tbody>
       </table>
     </section>
@@ -451,8 +552,8 @@
       <p><em>Directional estimate only. This combines automated quality signals with traffic volume and does not represent measured user harm or legal compliance status.</em></p>
       <div class="cards">
         <div class="card"><strong>Total Load</strong><br/>135399143</div>
-        <div class="card"><strong>Directional Affected Load</strong><br/>46884945.66999999</div>
-        <div class="card"><strong>Affected Share</strong><br/>34.63%</div>
+        <div class="card"><strong>Directional Affected Load</strong><br/>49027117.25999998</div>
+        <div class="card"><strong>Affected Share</strong><br/>36.21%</div>
       </div>
 
       <h3>Top Directional Impact URLs</h3>
@@ -471,80 +572,80 @@
         <td>Sign in to your CRA account</td>
         <td>EN</td>
         <td>39167494</td>
-        <td>40.5</td>
-        <td>15862835.07</td>
-      </tr>
-
-      <tr>
-        <td>Canada Revenue Agency (CRA)</td>
-        <td>EN</td>
-        <td>16632812</td>
-        <td>44</td>
-        <td>7318437.28</td>
+        <td>33.5</td>
+        <td>13121110.49</td>
       </tr>
 
       <tr>
         <td>Canada Revenue Agency - CRA Sign-in</td>
         <td>EN</td>
         <td>22675340</td>
-        <td>28.5</td>
-        <td>6462471.9</td>
+        <td>57.5</td>
+        <td>13038320.5</td>
       </tr>
 
       <tr>
         <td>Canada Revenue Agency - CRA sign-in information</td>
         <td>EN</td>
         <td>17708535</td>
+        <td>26</td>
+        <td>4604219.1</td>
+      </tr>
+
+      <tr>
+        <td>Canada Revenue Agency (CRA)</td>
+        <td>EN</td>
+        <td>16632812</td>
         <td>27</td>
-        <td>4781304.45</td>
-      </tr>
-
-      <tr>
-        <td>Welcome</td>
-        <td>EN</td>
-        <td>3745785</td>
-        <td>47.5</td>
-        <td>1779247.88</td>
-      </tr>
-
-      <tr>
-        <td>Overview</td>
-        <td>EN</td>
-        <td>4088218</td>
-        <td>31</td>
-        <td>1267347.58</td>
+        <td>4490859.24</td>
       </tr>
 
       <tr>
         <td>Se connecter à son compte de l&amp;#39;ARC</td>
         <td>EN</td>
         <td>5419486</td>
-        <td>19</td>
-        <td>1029702.34</td>
+        <td>54</td>
+        <td>2926522.44</td>
+      </tr>
+
+      <tr>
+        <td>Welcome</td>
+        <td>EN</td>
+        <td>3745785</td>
+        <td>55.5</td>
+        <td>2078910.68</td>
+      </tr>
+
+      <tr>
+        <td>Open Mail Page</td>
+        <td>EN</td>
+        <td>2586315</td>
+        <td>43</td>
+        <td>1112115.45</td>
       </tr>
 
       <tr>
         <td>Sujets</td>
         <td>EN</td>
         <td>6121117</td>
-        <td>16.5</td>
-        <td>1009984.31</td>
+        <td>15.5</td>
+        <td>948773.14</td>
       </tr>
 
       <tr>
-        <td>Tax information slips (T4 and more)</td>
+        <td>Overview</td>
         <td>EN</td>
-        <td>1902788</td>
-        <td>51.5</td>
-        <td>979935.82</td>
+        <td>4088218</td>
+        <td>23</td>
+        <td>940290.14</td>
       </tr>
 
       <tr>
         <td>My Account: Mail - Language:en</td>
         <td>EN</td>
         <td>1909790</td>
-        <td>48</td>
-        <td>916699.2</td>
+        <td>39</td>
+        <td>744818.1</td>
       </tr></tbody>
       </table>
     </section>
@@ -552,10 +653,10 @@
     <section>
       <h2>Benchmark Summary</h2>
       <div class="cards">
-        <div class="card"><strong>Performance</strong><br/>71.02</div>
-        <div class="card"><strong>Accessibility</strong><br/>76.78</div>
-        <div class="card"><strong>Best Practices</strong><br/>74.21</div>
-        <div class="card"><strong>SEO</strong><br/>81.48</div>
+        <div class="card"><strong>Performance</strong><br/>70.55</div>
+        <div class="card"><strong>Accessibility</strong><br/>78.47</div>
+        <div class="card"><strong>Best Practices</strong><br/>71.78</div>
+        <div class="card"><strong>SEO</strong><br/>80.63</div>
       </div>
     </section>
 
@@ -587,8 +688,8 @@
         <td>wordpress</td>
         <td>gcweb-wet</td>
         <td>45000</td>
-        <td>95</td>
-        <td>93</td>
+        <td>51</td>
+        <td>65</td>
       </tr>
 
       <tr>
@@ -600,8 +701,8 @@
         <td>php-custom</td>
         <td>gcds</td>
         <td>45000</td>
-        <td>80</td>
-        <td>99</td>
+        <td>68</td>
+        <td>59</td>
       </tr>
 
       <tr>
@@ -613,8 +714,8 @@
         <td>php-custom</td>
         <td>bootstrap-like</td>
         <td>170000</td>
-        <td>74</td>
-        <td>65</td>
+        <td>95</td>
+        <td>98</td>
       </tr>
 
       <tr>
@@ -626,8 +727,8 @@
         <td>unknown</td>
         <td>gcds</td>
         <td>170000</td>
-        <td>92</td>
-        <td>56</td>
+        <td>79</td>
+        <td>61</td>
       </tr>
 
       <tr>
@@ -639,8 +740,8 @@
         <td>unknown</td>
         <td>bootstrap-like</td>
         <td>35000</td>
-        <td>69</td>
-        <td>92</td>
+        <td>65</td>
+        <td>90</td>
       </tr>
 
       <tr>
@@ -652,8 +753,8 @@
         <td>drupal</td>
         <td>bootstrap-like</td>
         <td>35000</td>
-        <td>88</td>
-        <td>72</td>
+        <td>54</td>
+        <td>62</td>
       </tr>
 
       <tr>
@@ -665,8 +766,8 @@
         <td>drupal</td>
         <td>gcweb-wet</td>
         <td>94000</td>
-        <td>48</td>
-        <td>58</td>
+        <td>90</td>
+        <td>67</td>
       </tr>
 
       <tr>
@@ -678,8 +779,8 @@
         <td>unknown</td>
         <td>gcds</td>
         <td>94000</td>
-        <td>71</td>
-        <td>80</td>
+        <td>76</td>
+        <td>60</td>
       </tr>
 
       <tr>
@@ -691,8 +792,8 @@
         <td>aem</td>
         <td>gcweb-wet</td>
         <td>52000</td>
-        <td>56</td>
-        <td>80</td>
+        <td>70</td>
+        <td>57</td>
       </tr>
 
       <tr>
@@ -704,8 +805,8 @@
         <td>unknown</td>
         <td>gcweb-wet</td>
         <td>52000</td>
-        <td>54</td>
-        <td>64</td>
+        <td>52</td>
+        <td>55</td>
       </tr>
 
       <tr>
@@ -717,8 +818,8 @@
         <td>drupal</td>
         <td>bootstrap-like</td>
         <td>88000</td>
-        <td>51</td>
-        <td>82</td>
+        <td>80</td>
+        <td>72</td>
       </tr>
 
       <tr>
@@ -730,8 +831,8 @@
         <td>unknown</td>
         <td>unknown</td>
         <td>88000</td>
+        <td>87</td>
         <td>83</td>
-        <td>69</td>
       </tr></tbody>
       </table>
       <p>138 additional rows available in <a href="./report.json">report.json</a>.</p>

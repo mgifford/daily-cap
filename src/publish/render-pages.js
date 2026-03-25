@@ -44,6 +44,10 @@ export function renderDailyReportPage(report) {
   const trend = report.trend_analysis || {};
   const trendMetrics = trend.metrics || [];
   const trendRegressions = trend.regressions || [];
+  const contextSummary = report.lighthouse_contexts?.summary || {};
+  const contextByContext = report.lighthouse_contexts?.by_context || {};
+  const contextDeltas = report.lighthouse_contexts?.deltas || [];
+  const contextHighlight = report.lighthouse_contexts?.highlights?.mobile_dark_vs_desktop_light || {};
 
   const topUrlsPreview = report.top_urls.slice(0, 12);
   const topUrlsOverflowCount = Math.max(0, report.top_urls.length - 12);
@@ -151,6 +155,33 @@ export function renderDailyReportPage(report) {
     })
     .join("\n");
 
+  const contextAverageRows = Object.entries(contextByContext)
+    .map(([key, metrics]) => {
+      return `
+      <tr>
+        <td>${escapeHtml(key)}</td>
+        <td>${escapeHtml(metrics.performance_score ?? "-")}</td>
+        <td>${escapeHtml(metrics.accessibility_score ?? "-")}</td>
+        <td>${escapeHtml(metrics.best_practices_score ?? "-")}</td>
+        <td>${escapeHtml(metrics.seo_score ?? "-")}</td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const contextDeltaRows = contextDeltas
+    .map((row) => {
+      const metrics = row.delta_vs_desktop_light || {};
+      return `
+      <tr>
+        <td>${escapeHtml(row.context)}</td>
+        <td>${escapeHtml(metrics.performance_score ?? "-")}</td>
+        <td>${escapeHtml(metrics.accessibility_score ?? "-")}</td>
+        <td>${escapeHtml(metrics.best_practices_score ?? "-")}</td>
+        <td>${escapeHtml(metrics.seo_score ?? "-")}</td>
+      </tr>`;
+    })
+    .join("\n");
+
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -211,6 +242,45 @@ export function renderDailyReportPage(report) {
           </tr>
         </thead>
         <tbody>${regressionRows || '<tr><td colspan="3">No regressions detected in configured thresholds.</td></tr>'}</tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Theme and Device Contexts</h2>
+      <p><em>Context baseline is desktop light. Deltas are current context minus baseline.</em></p>
+      <div class="cards">
+        <div class="card"><strong>Rows With Context Data</strong><br/>${escapeHtml(contextSummary.scanned_urls_with_context_data ?? "-")}</div>
+        <div class="card"><strong>Baseline</strong><br/>${escapeHtml(contextSummary.baseline_context ?? "desktop_light")}</div>
+        <div class="card"><strong>Mobile Dark Perf Delta</strong><br/>${escapeHtml(contextHighlight.performance_score ?? "-")}</div>
+        <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>${escapeHtml(contextHighlight.accessibility_score ?? "-")}</div>
+      </div>
+
+      <h3>Context Averages</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Performance</th>
+            <th scope="col">Accessibility</th>
+            <th scope="col">Best Practices</th>
+            <th scope="col">SEO</th>
+          </tr>
+        </thead>
+        <tbody>${contextAverageRows || '<tr><td colspan="5">No context averages available in this run.</td></tr>'}</tbody>
+      </table>
+
+      <h3>Deltas vs Desktop Light</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Performance Delta</th>
+            <th scope="col">Accessibility Delta</th>
+            <th scope="col">Best Practices Delta</th>
+            <th scope="col">SEO Delta</th>
+          </tr>
+        </thead>
+        <tbody>${contextDeltaRows || '<tr><td colspan="5">No context deltas available in this run.</td></tr>'}</tbody>
       </table>
     </section>
 

@@ -22,6 +22,7 @@ Phase 9 baseline is implemented:
 - CMS/design-system/platform fingerprint signals
 - directional impact modeling from traffic and automated quality signals
 - day-over-day trend comparison with regression alerts
+- multi-context quality snapshots (desktop/mobile x light/dark)
 - output parity path: `docs/reports/daily/YYYY-MM-DD/`
 
 ## Run

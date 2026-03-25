@@ -33,7 +33,13 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
         performance_score: 70,
         accessibility_score: 80,
         best_practices_score: 75,
-        seo_score: 82
+        seo_score: 82,
+        by_context: {
+          desktop_light: { performance_score: 70, accessibility_score: 80, best_practices_score: 75, seo_score: 82 },
+          desktop_dark: { performance_score: 68, accessibility_score: 77, best_practices_score: 75, seo_score: 82 },
+          mobile_light: { performance_score: 64, accessibility_score: 80, best_practices_score: 73, seo_score: 81 },
+          mobile_dark: { performance_score: 61, accessibility_score: 76, best_practices_score: 72, seo_score: 80 }
+        }
       },
       scangov: { critical: 1, serious: 0, moderate: 1, minor: 0 },
       accessibility_statement: {
@@ -69,7 +75,13 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
         performance_score: 68,
         accessibility_score: 79,
         best_practices_score: 74,
-        seo_score: 80
+        seo_score: 80,
+        by_context: {
+          desktop_light: { performance_score: 68, accessibility_score: 79, best_practices_score: 74, seo_score: 80 },
+          desktop_dark: { performance_score: 66, accessibility_score: 76, best_practices_score: 74, seo_score: 80 },
+          mobile_light: { performance_score: 62, accessibility_score: 79, best_practices_score: 72, seo_score: 79 },
+          mobile_dark: { performance_score: 59, accessibility_score: 75, best_practices_score: 71, seo_score: 78 }
+        }
       },
       scangov: { critical: 0, serious: 1, moderate: 0, minor: 1 },
       accessibility_statement: {
@@ -114,6 +126,9 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
   assert.ok(report.platform_signals);
   assert.ok(report.impact_model);
   assert.ok(report.cohort_quality);
+  assert.ok(report.lighthouse_contexts);
+  assert.equal(report.lighthouse_contexts.summary.scanned_urls_with_context_data, 2);
+  assert.equal(report.lighthouse_contexts.highlights.mobile_dark_vs_desktop_light.performance_score, -9);
   assert.equal(report.cohort_quality.summary.scanned_urls, 2);
   assert.equal(report.cohort_quality.summary.with_traffic_data_percent, 100);
   assert.ok(report.trend_analysis);
