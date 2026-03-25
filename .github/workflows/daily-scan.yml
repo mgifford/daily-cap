@@ -1,6 +1,11 @@
 name: Daily CAP Scan
 
 on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - docs/reports/**
   schedule:
     # Run daily at 09:30 UTC
     - cron: '30 9 * * *'
