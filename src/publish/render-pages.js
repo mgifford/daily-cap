@@ -8,6 +8,9 @@ function escapeHtml(value) {
 }
 
 export function renderDailyReportPage(report) {
+  const paritySummary = report.bilingual_parity?.summary || {};
+  const largestGaps = report.bilingual_parity?.highlights?.largest_accessibility_gaps || [];
+
   const rows = report.top_urls
     .map((row) => {
       const lighthouse = row.lighthouse || {};
@@ -19,6 +22,18 @@ export function renderDailyReportPage(report) {
         <td>${escapeHtml(row.scan_status)}</td>
         <td>${escapeHtml(lighthouse.performance_score ?? "-")}</td>
         <td>${escapeHtml(lighthouse.accessibility_score ?? "-")}</td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const parityRows = largestGaps
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.service_name)}</td>
+        <td>${escapeHtml(row.accessibility_gap ?? "-")}</td>
+        <td>${escapeHtml(row.performance_gap ?? "-")}</td>
+        <td><a href="${escapeHtml(row.url_en)}">EN</a> | <a href="${escapeHtml(row.url_fr)}">FR</a></td>
       </tr>`;
     })
     .join("\n");
@@ -59,8 +74,32 @@ export function renderDailyReportPage(report) {
         <div class="card"><strong>Total</strong><br/>${escapeHtml(report.scan_summary.total)}</div>
         <div class="card"><strong>Succeeded</strong><br/>${escapeHtml(report.scan_summary.succeeded)}</div>
         <div class="card"><strong>Failed</strong><br/>${escapeHtml(report.scan_summary.failed)}</div>
-        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>${escapeHtml(report.bilingual_parity.summary.average_absolute_accessibility_gap ?? "-")}</div>
+        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>${escapeHtml(paritySummary.average_absolute_accessibility_gap ?? "-")}</div>
       </div>
+    </section>
+
+    <section>
+      <h2>Bilingual Parity</h2>
+      <div class="cards">
+        <div class="card"><strong>Candidate Pairs</strong><br/>${escapeHtml(paritySummary.candidate_pairs ?? "-")}</div>
+        <div class="card"><strong>Complete Pairs</strong><br/>${escapeHtml(paritySummary.complete_success_pairs ?? "-")}</div>
+        <div class="card"><strong>Missing FR</strong><br/>${escapeHtml(paritySummary.missing_french ?? "-")}</div>
+        <div class="card"><strong>Missing EN</strong><br/>${escapeHtml(paritySummary.missing_english ?? "-")}</div>
+        <div class="card"><strong>Avg Perf Gap (EN/FR)</strong><br/>${escapeHtml(paritySummary.average_absolute_performance_gap ?? "-")}</div>
+      </div>
+
+      <h3>Largest Accessibility Gaps</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">A11y Gap (EN-FR)</th>
+            <th scope="col">Perf Gap (EN-FR)</th>
+            <th scope="col">Pair Links</th>
+          </tr>
+        </thead>
+        <tbody>${parityRows || '<tr><td colspan="4">No complete EN/FR pairs with parity data in this run.</td></tr>'}</tbody>
+      </table>
     </section>
 
     <section>
@@ -99,16 +138,16 @@ export function renderDashboardPage(report) {
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily CAP Reports</title>
+  <style>
+    body { font-family: Georgia, "Times New Roman", serif; margin: 2rem auto; max-width: 900px; padding: 0 1rem; }
+    a { color: #1d6b42; }
     .nav { font-size: 0.9rem; margin-bottom: 1rem; }
   </style>
 </head>
 <body>
-  <div class="nav"><a href="../../">← Back to Home</a></divyle>
-    body { font-family: Georgia, "Times New Roman", serif; margin: 2rem auto; max-width: 900px; padding: 0 1rem; }
-    a { color: #1d6b42; }
-  </style>
-</head>
-<body>
+  <div class="nav"><a href="../../">← Back to Home</a></div>
   <h1>Daily CAP Reports</h1>
   <p>Latest run: ${escapeHtml(report.run_date)}</p>
   <p><em>Daily CAP is an independent analytics project and is not a Government of Canada program.</em></p>

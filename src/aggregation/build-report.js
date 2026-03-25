@@ -52,8 +52,8 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
       scangov: row.scangov
     })),
     methodology: {
-      status: "phase-3",
-      note: "Phase 3: Deterministic ranking and tier-based URL selection. Tier 1 core infrastructure (150), Tier 2 pattern cohorts (100), Tier 3 discovery (50). Impact and accessibility statement detection are planned for later phases."
+      status: "phase-4",
+      note: "Phase 4: Deterministic ranking and tier-based URL selection plus enhanced bilingual parity analysis. English and French are scanned as separate targets, paired explicitly, and reported with parity gaps and missing counterpart coverage."
     },
     output_paths: {
       daily_dir: `docs/reports/daily/${runDate}/`,
