@@ -399,6 +399,373 @@
       ]
     }
   },
+  "accessibility_statements": {
+    "summary": {
+      "scanned_urls": 20,
+      "statements_detected": 16,
+      "statement_coverage_percent": 80,
+      "with_contact_info": 14,
+      "with_contact_info_percent": 87.5,
+      "with_compliance_status": 9,
+      "with_compliance_status_percent": 56.25,
+      "with_alternative_support": 14,
+      "with_alternative_support_percent": 87.5,
+      "with_freshness_marker": 14,
+      "with_freshness_marker_percent": 87.5,
+      "bilingual_pairs_total": 10,
+      "bilingual_pairs_both_detected": 7,
+      "bilingual_pairs_both_detected_percent": 70,
+      "bilingual_parity_mismatch_pairs": 2
+    },
+    "by_language": {
+      "en": {
+        "total": 10,
+        "detected": 8,
+        "coverage_percent": 80
+      },
+      "fr": {
+        "total": 10,
+        "detected": 8,
+        "coverage_percent": 80
+      }
+    },
+    "missing_statement_examples": [
+      {
+        "inventory_id": "cap-002-en",
+        "service_name": "Employment Insurance",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html",
+        "tier": "tier-1",
+        "source": "top-task"
+      },
+      {
+        "inventory_id": "cap-003-fr",
+        "service_name": "My Service Canada Account",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
+        "tier": "tier-1",
+        "source": "curated"
+      },
+      {
+        "inventory_id": "cap-004-en",
+        "service_name": "Immigration and citizenship",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
+        "tier": "tier-1",
+        "source": "recent"
+      },
+      {
+        "inventory_id": "cap-004-fr",
+        "service_name": "Immigration and citizenship",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
+        "tier": "tier-1",
+        "source": "recent"
+      }
+    ],
+    "checks": [
+      {
+        "inventory_id": "cap-001-en",
+        "service_name": "Taxes",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency.html",
+        "source": "curated",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/revenue-agency.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-001-fr",
+        "service_name": "Taxes",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu.html",
+        "source": "curated",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/agence-revenu.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-002-en",
+        "service_name": "Employment Insurance",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "cap-002-fr",
+        "service_name": "Employment Insurance",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/ae.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/services/prestations/ae.html/accessibility",
+        "has_contact_info": false,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "cap-003-en",
+        "service_name": "My Service Canada Account",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
+        "source": "curated",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-003-fr",
+        "service_name": "My Service Canada Account",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
+        "source": "curated",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "cap-004-en",
+        "service_name": "Immigration and citizenship",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
+        "source": "recent",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "cap-004-fr",
+        "service_name": "Immigration and citizenship",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
+        "source": "recent",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "cap-005-en",
+        "service_name": "Passport services",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-005-fr",
+        "service_name": "Passport services",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-006-en",
+        "service_name": "Weather office",
+        "language": "en",
+        "canonical_url": "https://weather.gc.ca/",
+        "source": "recent",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://weather.gc.ca/accessibility",
+        "has_contact_info": false,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "cap-006-fr",
+        "service_name": "Weather office",
+        "language": "fr",
+        "canonical_url": "https://meteo.gc.ca/",
+        "source": "recent",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://meteo.gc.ca/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-007-en",
+        "service_name": "Health services",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html",
+        "source": "recent",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-007-fr",
+        "service_name": "Health services",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html",
+        "source": "recent",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-008-en",
+        "service_name": "Student aid",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-008-fr",
+        "service_name": "Student aid",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-009-en",
+        "service_name": "Business and industry",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/business.html",
+        "source": "recent",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/services/business.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-009-fr",
+        "service_name": "Business and industry",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/entreprises.html",
+        "source": "recent",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/services/entreprises.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-010-en",
+        "service_name": "Border wait times",
+        "language": "en",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
+        "source": "curated",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      },
+      {
+        "inventory_id": "cap-010-fr",
+        "service_name": "Border wait times",
+        "language": "fr",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
+        "source": "curated",
+        "tier": "tier-1",
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true
+      }
+    ]
+  },
   "top_urls": [
     {
       "inventory_id": "cap-001-en",
@@ -424,6 +791,17 @@
         "serious": 4,
         "moderate": 6,
         "minor": 8
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/revenue-agency.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "en",
+        "confidence": 0.72
       }
     },
     {
@@ -450,6 +828,17 @@
         "serious": 4,
         "moderate": 7,
         "minor": 2
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/agence-revenu.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "fr",
+        "confidence": 0.72
       }
     },
     {
@@ -476,6 +865,17 @@
         "serious": 1,
         "moderate": 4,
         "minor": 9
+      },
+      "accessibility_statement": {
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "en",
+        "confidence": 0.3
       }
     },
     {
@@ -502,6 +902,17 @@
         "serious": 0,
         "moderate": 2,
         "minor": 9
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/services/prestations/ae.html/accessibility",
+        "has_contact_info": false,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "fr",
+        "confidence": 0.72
       }
     },
     {
@@ -528,6 +939,17 @@
         "serious": 4,
         "moderate": 4,
         "minor": 8
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "en",
+        "confidence": 0.72
       }
     },
     {
@@ -554,6 +976,17 @@
         "serious": 0,
         "moderate": 6,
         "minor": 12
+      },
+      "accessibility_statement": {
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "fr",
+        "confidence": 0.3
       }
     },
     {
@@ -580,6 +1013,17 @@
         "serious": 4,
         "moderate": 0,
         "minor": 7
+      },
+      "accessibility_statement": {
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "en",
+        "confidence": 0.3
       }
     },
     {
@@ -606,6 +1050,17 @@
         "serious": 1,
         "moderate": 0,
         "minor": 5
+      },
+      "accessibility_statement": {
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "fr",
+        "confidence": 0.3
       }
     },
     {
@@ -632,6 +1087,17 @@
         "serious": 0,
         "moderate": 4,
         "minor": 4
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "en",
+        "confidence": 0.72
       }
     },
     {
@@ -658,6 +1124,17 @@
         "serious": 1,
         "moderate": 2,
         "minor": 10
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "fr",
+        "confidence": 0.72
       }
     },
     {
@@ -684,6 +1161,17 @@
         "serious": 1,
         "moderate": 4,
         "minor": 5
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://weather.gc.ca/accessibility",
+        "has_contact_info": false,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "en",
+        "confidence": 0.72
       }
     },
     {
@@ -710,6 +1198,17 @@
         "serious": 2,
         "moderate": 3,
         "minor": 6
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://meteo.gc.ca/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "fr",
+        "confidence": 0.72
       }
     },
     {
@@ -736,6 +1235,17 @@
         "serious": 1,
         "moderate": 3,
         "minor": 4
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "en",
+        "confidence": 0.72
       }
     },
     {
@@ -762,6 +1272,17 @@
         "serious": 2,
         "moderate": 5,
         "minor": 2
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "fr",
+        "confidence": 0.72
       }
     },
     {
@@ -788,6 +1309,17 @@
         "serious": 0,
         "moderate": 1,
         "minor": 12
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "en",
+        "confidence": 0.72
       }
     },
     {
@@ -814,6 +1346,17 @@
         "serious": 1,
         "moderate": 6,
         "minor": 10
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "fr",
+        "confidence": 0.72
       }
     },
     {
@@ -840,6 +1383,17 @@
         "serious": 1,
         "moderate": 5,
         "minor": 0
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.canada.ca/en/services/business.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "en",
+        "confidence": 0.72
       }
     },
     {
@@ -866,6 +1420,17 @@
         "serious": 0,
         "moderate": 6,
         "minor": 10
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.canada.ca/fr/services/entreprises.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "fr",
+        "confidence": 0.72
       }
     },
     {
@@ -892,6 +1457,17 @@
         "serious": 0,
         "moderate": 0,
         "minor": 12
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Accessibility statement",
+        "statement_link_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": true,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "en",
+        "confidence": 0.72
       }
     },
     {
@@ -918,12 +1494,23 @@
         "serious": 4,
         "moderate": 5,
         "minor": 2
+      },
+      "accessibility_statement": {
+        "statement_detected": true,
+        "statement_link_text": "Declaration d'accessibilite",
+        "statement_link_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html/accessibility",
+        "has_contact_info": true,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": true,
+        "has_freshness_marker": true,
+        "detected_language": "fr",
+        "confidence": 0.72
       }
     }
   ],
   "methodology": {
-    "status": "phase-4",
-    "note": "Phase 4: Deterministic ranking and tier-based URL selection plus enhanced bilingual parity analysis. English and French are scanned as separate targets, paired explicitly, and reported with parity gaps and missing counterpart coverage."
+    "status": "phase-5",
+    "note": "Phase 5: Adds accessibility statement detection and basic quality signals (contact info, compliance mention, support path, freshness) while preserving deterministic ranking, tiering, and bilingual parity analysis."
   },
   "output_paths": {
     "daily_dir": "docs/reports/daily/2026-03-25/",
