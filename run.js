@@ -42,9 +42,10 @@ if (sourceMode === "seed") {
   }
 }
 
-const inventory = buildInventory(sources, { limit });
+const inventoryResult = buildInventory(sources, { limit });
+const scanTargets = inventoryResult.scan_targets;
 
-const scanned = await runScans(inventory, {
+const scanned = await runScans(scanTargets, {
   mode,
   concurrency: config.scanner.concurrency
 });
@@ -53,7 +54,7 @@ const report = buildDailyReport({
   runDate,
   runId: `cap-${runDate}`,
   mode,
-  inventory,
+  inventory: inventoryResult,
   scanned
 });
 
