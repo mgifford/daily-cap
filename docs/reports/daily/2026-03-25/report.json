@@ -766,6 +766,368 @@
       }
     ]
   },
+  "platform_signals": {
+    "summary": {
+      "scanned_urls": 20,
+      "known_cms_count": 13,
+      "known_cms_percent": 65,
+      "known_design_system_count": 16,
+      "known_design_system_percent": 80,
+      "distinct_cms": 5,
+      "distinct_design_systems": 4,
+      "distinct_hosting_hints": 4
+    },
+    "distributions": {
+      "cms": [
+        {
+          "key": "unknown",
+          "count": 7
+        },
+        {
+          "key": "php-custom",
+          "count": 5
+        },
+        {
+          "key": "drupal",
+          "count": 3
+        },
+        {
+          "key": "wordpress",
+          "count": 3
+        },
+        {
+          "key": "aem",
+          "count": 2
+        }
+      ],
+      "design_systems": [
+        {
+          "key": "bootstrap-like",
+          "count": 7
+        },
+        {
+          "key": "gcds",
+          "count": 6
+        },
+        {
+          "key": "unknown",
+          "count": 4
+        },
+        {
+          "key": "gcweb-wet",
+          "count": 3
+        }
+      ],
+      "hosting_hints": [
+        {
+          "key": "aws-cloudfront",
+          "count": 6
+        },
+        {
+          "key": "akamai",
+          "count": 5
+        },
+        {
+          "key": "unknown",
+          "count": 5
+        },
+        {
+          "key": "azure",
+          "count": 4
+        }
+      ]
+    },
+    "by_language": {
+      "en": {
+        "total": 10,
+        "cms": [
+          {
+            "key": "unknown",
+            "count": 4
+          },
+          {
+            "key": "php-custom",
+            "count": 2
+          },
+          {
+            "key": "wordpress",
+            "count": 2
+          },
+          {
+            "key": "aem",
+            "count": 1
+          },
+          {
+            "key": "drupal",
+            "count": 1
+          }
+        ],
+        "design_systems": [
+          {
+            "key": "bootstrap-like",
+            "count": 4
+          },
+          {
+            "key": "unknown",
+            "count": 3
+          },
+          {
+            "key": "gcds",
+            "count": 2
+          },
+          {
+            "key": "gcweb-wet",
+            "count": 1
+          }
+        ]
+      },
+      "fr": {
+        "total": 10,
+        "cms": [
+          {
+            "key": "php-custom",
+            "count": 3
+          },
+          {
+            "key": "unknown",
+            "count": 3
+          },
+          {
+            "key": "drupal",
+            "count": 2
+          },
+          {
+            "key": "aem",
+            "count": 1
+          },
+          {
+            "key": "wordpress",
+            "count": 1
+          }
+        ],
+        "design_systems": [
+          {
+            "key": "gcds",
+            "count": 4
+          },
+          {
+            "key": "bootstrap-like",
+            "count": 3
+          },
+          {
+            "key": "gcweb-wet",
+            "count": 2
+          },
+          {
+            "key": "unknown",
+            "count": 1
+          }
+        ]
+      }
+    },
+    "samples": [
+      {
+        "inventory_id": "cap-001-en",
+        "service_name": "Taxes",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency.html",
+        "cms": "php-custom",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-001-fr",
+        "service_name": "Taxes",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu.html",
+        "cms": "drupal",
+        "design_system": "gcds",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-002-en",
+        "service_name": "Employment Insurance",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html",
+        "cms": "wordpress",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-002-fr",
+        "service_name": "Employment Insurance",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/ae.html",
+        "cms": "php-custom",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "unknown",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-003-en",
+        "service_name": "My Service Canada Account",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
+        "cms": "php-custom",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "unknown",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-003-fr",
+        "service_name": "My Service Canada Account",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
+        "cms": "unknown",
+        "design_system": "gcds",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-004-en",
+        "service_name": "Immigration and citizenship",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.35
+      },
+      {
+        "inventory_id": "cap-004-fr",
+        "service_name": "Immigration and citizenship",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
+        "cms": "wordpress",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-005-en",
+        "service_name": "Passport services",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html",
+        "cms": "unknown",
+        "design_system": "gcds",
+        "hosting_hint": "unknown",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-005-fr",
+        "service_name": "Passport services",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html",
+        "cms": "drupal",
+        "design_system": "gcds",
+        "hosting_hint": "azure",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-006-en",
+        "service_name": "Weather office",
+        "language": "en",
+        "canonical_url": "https://weather.gc.ca/",
+        "cms": "aem",
+        "design_system": "unknown",
+        "hosting_hint": "azure",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-006-fr",
+        "service_name": "Weather office",
+        "language": "fr",
+        "canonical_url": "https://meteo.gc.ca/",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "azure",
+        "confidence": 0.35
+      },
+      {
+        "inventory_id": "cap-007-en",
+        "service_name": "Health services",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html",
+        "cms": "unknown",
+        "design_system": "gcds",
+        "hosting_hint": "unknown",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-007-fr",
+        "service_name": "Health services",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html",
+        "cms": "php-custom",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-008-en",
+        "service_name": "Student aid",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": 0.35
+      },
+      {
+        "inventory_id": "cap-008-fr",
+        "service_name": "Student aid",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html",
+        "cms": "aem",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-009-en",
+        "service_name": "Business and industry",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/business.html",
+        "cms": "wordpress",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-009-fr",
+        "service_name": "Business and industry",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/entreprises.html",
+        "cms": "php-custom",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-010-en",
+        "service_name": "Border wait times",
+        "language": "en",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
+        "cms": "drupal",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "azure",
+        "confidence": 0.68
+      },
+      {
+        "inventory_id": "cap-010-fr",
+        "service_name": "Border wait times",
+        "language": "fr",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
+        "cms": "unknown",
+        "design_system": "gcds",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
+      }
+    ]
+  },
   "top_urls": [
     {
       "inventory_id": "cap-001-en",
@@ -802,6 +1164,12 @@
         "has_freshness_marker": true,
         "detected_language": "en",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "php-custom",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
       }
     },
     {
@@ -839,6 +1207,12 @@
         "has_freshness_marker": true,
         "detected_language": "fr",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "drupal",
+        "design_system": "gcds",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
       }
     },
     {
@@ -876,6 +1250,12 @@
         "has_freshness_marker": false,
         "detected_language": "en",
         "confidence": 0.3
+      },
+      "platform_fingerprint": {
+        "cms": "wordpress",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
       }
     },
     {
@@ -913,6 +1293,12 @@
         "has_freshness_marker": false,
         "detected_language": "fr",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "php-custom",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "unknown",
+        "confidence": 0.68
       }
     },
     {
@@ -950,6 +1336,12 @@
         "has_freshness_marker": true,
         "detected_language": "en",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "php-custom",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "unknown",
+        "confidence": 0.68
       }
     },
     {
@@ -987,6 +1379,12 @@
         "has_freshness_marker": false,
         "detected_language": "fr",
         "confidence": 0.3
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "gcds",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
       }
     },
     {
@@ -1024,6 +1422,12 @@
         "has_freshness_marker": false,
         "detected_language": "en",
         "confidence": 0.3
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.35
       }
     },
     {
@@ -1061,6 +1465,12 @@
         "has_freshness_marker": false,
         "detected_language": "fr",
         "confidence": 0.3
+      },
+      "platform_fingerprint": {
+        "cms": "wordpress",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
       }
     },
     {
@@ -1098,6 +1508,12 @@
         "has_freshness_marker": true,
         "detected_language": "en",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "gcds",
+        "hosting_hint": "unknown",
+        "confidence": 0.68
       }
     },
     {
@@ -1135,6 +1551,12 @@
         "has_freshness_marker": true,
         "detected_language": "fr",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "drupal",
+        "design_system": "gcds",
+        "hosting_hint": "azure",
+        "confidence": 0.68
       }
     },
     {
@@ -1172,6 +1594,12 @@
         "has_freshness_marker": false,
         "detected_language": "en",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "aem",
+        "design_system": "unknown",
+        "hosting_hint": "azure",
+        "confidence": 0.68
       }
     },
     {
@@ -1209,6 +1637,12 @@
         "has_freshness_marker": true,
         "detected_language": "fr",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "azure",
+        "confidence": 0.35
       }
     },
     {
@@ -1246,6 +1680,12 @@
         "has_freshness_marker": true,
         "detected_language": "en",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "gcds",
+        "hosting_hint": "unknown",
+        "confidence": 0.68
       }
     },
     {
@@ -1283,6 +1723,12 @@
         "has_freshness_marker": true,
         "detected_language": "fr",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "php-custom",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
       }
     },
     {
@@ -1320,6 +1766,12 @@
         "has_freshness_marker": true,
         "detected_language": "en",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": 0.35
       }
     },
     {
@@ -1357,6 +1809,12 @@
         "has_freshness_marker": true,
         "detected_language": "fr",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "aem",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
       }
     },
     {
@@ -1394,6 +1852,12 @@
         "has_freshness_marker": true,
         "detected_language": "en",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "wordpress",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "akamai",
+        "confidence": 0.68
       }
     },
     {
@@ -1431,6 +1895,12 @@
         "has_freshness_marker": true,
         "detected_language": "fr",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "php-custom",
+        "design_system": "bootstrap-like",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
       }
     },
     {
@@ -1468,6 +1938,12 @@
         "has_freshness_marker": true,
         "detected_language": "en",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "drupal",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "azure",
+        "confidence": 0.68
       }
     },
     {
@@ -1505,12 +1981,18 @@
         "has_freshness_marker": true,
         "detected_language": "fr",
         "confidence": 0.72
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "gcds",
+        "hosting_hint": "aws-cloudfront",
+        "confidence": 0.68
       }
     }
   ],
   "methodology": {
-    "status": "phase-5",
-    "note": "Phase 5: Adds accessibility statement detection and basic quality signals (contact info, compliance mention, support path, freshness) while preserving deterministic ranking, tiering, and bilingual parity analysis."
+    "status": "phase-6",
+    "note": "Phase 6: Adds CMS/design-system/platform fingerprint detection to support ecosystem-level trend analysis while preserving ranking/tiering, bilingual parity, and accessibility statement signal reporting."
   },
   "output_paths": {
     "daily_dir": "docs/reports/daily/2026-03-25/",
