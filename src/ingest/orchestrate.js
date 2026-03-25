@@ -12,16 +12,18 @@
 import { fetchRecentActivity } from "./canada-recent-activity.js";
 import { fetchTopTasks } from "./top-tasks.js";
 import { getCuratedEndpoints } from "./curated-endpoints.js";
+import { getDiscoveryCohort } from "./discovery-cohort.js";
 
 export async function ingestAllSources(options = {}) {
-  const [recent, tasks, curated] = await Promise.all([
+  const [recent, tasks, curated, discovery] = await Promise.all([
     tryFetch(fetchRecentActivity(options), "recent activity"),
     tryFetch(fetchTopTasks(options), "top tasks"),
-    tryFetch(Promise.resolve(getCuratedEndpoints()), "curated endpoints")
+    tryFetch(Promise.resolve(getCuratedEndpoints()), "curated endpoints"),
+    tryFetch(Promise.resolve(getDiscoveryCohort()), "discovery cohort")
   ]);
 
   // Normalize and merge
-  const normalized = normalizeEntries([...recent, ...tasks, ...curated]);
+  const normalized = normalizeEntries([...recent, ...tasks, ...curated, ...discovery]);
   const deduplicated = deduplicateByUrl(normalized);
 
   return deduplicated;

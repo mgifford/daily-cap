@@ -17,7 +17,7 @@ on:
       url_limit:
         description: 'URL limit'
         required: false
-        default: '50'
+        default: '130'
       source_mode:
         description: 'Source mode (live or seed)'
         required: false
@@ -60,7 +60,7 @@ jobs:
         run: |
           node run.js \
             --date "${{ github.event.inputs.run_date || '' }}" \
-            --limit "${{ github.event.inputs.url_limit || '50' }}" \
+            --limit "${{ github.event.inputs.url_limit || '130' }}" \
             --source-mode "${{ github.event.inputs.source_mode || 'live' }}" \
             --mode "${{ github.event.inputs.scan_mode || 'live' }}"
 

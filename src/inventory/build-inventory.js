@@ -32,12 +32,15 @@ export function buildInventory(seedEntries, options = {}) {
   // Expand bilingual pairs for scanning
   const scanTargets = [];
   for (const entry of selected) {
+    const fallbackCanonical = entry.canonical_url || null;
+    const effectiveUrlEn = entry.url_en || fallbackCanonical;
+
     // English variant
-    if (entry.url_en) {
+    if (effectiveUrlEn) {
       scanTargets.push({
         inventory_id: `${entry.id}-en`,
         language: "en",
-        canonical_url: entry.url_en,
+        canonical_url: effectiveUrlEn,
         paired_inventory_id: entry.url_fr ? `${entry.id}-fr` : null,
         service_name: entry.service_name,
         institution: entry.institution,

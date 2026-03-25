@@ -1,6 +1,6 @@
 export function getDefaultConfig() {
   return {
-    urlLimit: 50,
+    urlLimit: 130,
     scanner: {
       concurrency: 2
     }
