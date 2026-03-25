@@ -7,6 +7,7 @@
   <style>
     :root { --bg: #f8faf8; --fg: #0d1b12; --card: #ffffff; --line: #d7e2d8; --accent: #1d6b42; }
     body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: radial-gradient(circle at top, #e8f4ea, var(--bg) 40%); color: var(--fg); }
+    header { background: white; border-bottom: 1px solid var(--line); padding: 1rem; }
     main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 3rem; }
     h1, h2 { letter-spacing: 0.01em; }
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.75rem; }
@@ -15,9 +16,13 @@
     th, td { padding: 0.55rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
     th { background: #edf4ee; }
     a { color: var(--accent); }
+    .nav { font-size: 0.9rem; }
   </style>
 </head>
 <body>
+  <header>
+    <div class="nav"><a href="../index.html">← Back to Reports</a> | <a href="../../">Home</a></div>
+  </header>
   <main>
     <h1>Daily CAP Report</h1>
     <p>Date: 2026-03-25 | Mode: mock</p>
@@ -26,20 +31,20 @@
     <section>
       <h2>Overview</h2>
       <div class="cards">
-        <div class="card"><strong>Total</strong><br/>20</div>
-        <div class="card"><strong>Succeeded</strong><br/>20</div>
+        <div class="card"><strong>Total</strong><br/>27</div>
+        <div class="card"><strong>Succeeded</strong><br/>27</div>
         <div class="card"><strong>Failed</strong><br/>0</div>
-        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>15.1</div>
+        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>14</div>
       </div>
     </section>
 
     <section>
       <h2>Benchmark Summary</h2>
       <div class="cards">
-        <div class="card"><strong>Performance</strong><br/>72.05</div>
-        <div class="card"><strong>Accessibility</strong><br/>73.75</div>
-        <div class="card"><strong>Best Practices</strong><br/>78.35</div>
-        <div class="card"><strong>SEO</strong><br/>77.25</div>
+        <div class="card"><strong>Performance</strong><br/>66.33</div>
+        <div class="card"><strong>Accessibility</strong><br/>78.96</div>
+        <div class="card"><strong>Best Practices</strong><br/>74.33</div>
+        <div class="card"><strong>SEO</strong><br/>77.15</div>
       </div>
     </section>
 
@@ -58,183 +63,246 @@
         </thead>
         <tbody>
       <tr>
-        <td>Taxes</td>
-        <td><a href="https://www.canada.ca/en/revenue-agency.html">https://www.canada.ca/en/revenue-agency.html</a></td>
-        <td>EN</td>
-        <td>success</td>
-        <td>60</td>
-        <td>74</td>
-      </tr>
-
-      <tr>
-        <td>Taxes</td>
-        <td><a href="https://www.canada.ca/fr/agence-revenu.html">https://www.canada.ca/fr/agence-revenu.html</a></td>
-        <td>FR</td>
-        <td>success</td>
-        <td>93</td>
-        <td>89</td>
-      </tr>
-
-      <tr>
-        <td>Employment Insurance</td>
-        <td><a href="https://www.canada.ca/en/services/benefits/ei.html">https://www.canada.ca/en/services/benefits/ei.html</a></td>
-        <td>EN</td>
-        <td>success</td>
-        <td>67</td>
-        <td>61</td>
-      </tr>
-
-      <tr>
-        <td>Employment Insurance</td>
-        <td><a href="https://www.canada.ca/fr/services/prestations/ae.html">https://www.canada.ca/fr/services/prestations/ae.html</a></td>
-        <td>FR</td>
-        <td>success</td>
-        <td>50</td>
-        <td>77</td>
-      </tr>
-
-      <tr>
-        <td>My Service Canada Account</td>
-        <td><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">https://www.canada.ca/en/employment-social-development/services/my-account.html</a></td>
-        <td>EN</td>
-        <td>success</td>
-        <td>74</td>
-        <td>65</td>
-      </tr>
-
-      <tr>
-        <td>My Service Canada Account</td>
-        <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html</a></td>
-        <td>FR</td>
-        <td>success</td>
-        <td>92</td>
-        <td>56</td>
-      </tr>
-
-      <tr>
-        <td>Immigration and citizenship</td>
-        <td><a href="https://www.canada.ca/en/services/immigration-citizenship.html">https://www.canada.ca/en/services/immigration-citizenship.html</a></td>
+        <td>Apply for a Social Insurance Number</td>
+        <td><a href="undefined">undefined</a></td>
         <td>EN</td>
         <td>success</td>
         <td>86</td>
-        <td>60</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>Apply for a Social Insurance Number</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>Check my Service Canada Account</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>Check my Service Canada Account</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>Canada Border Wait Times</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>Canada Border Wait Times</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>Justice Laws Website</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>Justice Laws Website</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>IRCC: Apply for permanent residency</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>IRCC: Apply for permanent residency</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>Health Infobase Canada</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>Health Infobase Canada</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>Sign in to your CRA account</td>
+        <td><a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html">https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>74</td>
+        <td>66</td>
+      </tr>
+
+      <tr>
+        <td>Canada Revenue Agency - CRA Sign-in</td>
+        <td><a href="https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login">https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>72</td>
+        <td>85</td>
+      </tr>
+
+      <tr>
+        <td>Canada Revenue Agency - CRA sign-in information</td>
+        <td><a href="https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/postlogin/welcome">https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/postlogin/welcome</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>73</td>
+        <td>85</td>
+      </tr>
+
+      <tr>
+        <td>Personal income tax</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>Personal income tax</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>Job search and benefits</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>Job search and benefits</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>Passport and travel</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>Passport and travel</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>Student loans and grants</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>Student loans and grants</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
+      </tr>
+
+      <tr>
+        <td>COVID-19 information</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>86</td>
+        <td>72</td>
+      </tr>
+
+      <tr>
+        <td>COVID-19 information</td>
+        <td><a href="undefined">undefined</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>45</td>
+        <td>86</td>
       </tr>
 
       <tr>
         <td>Immigration and citizenship</td>
-        <td><a href="https://www.canada.ca/fr/services/immigration-citoyennete.html">https://www.canada.ca/fr/services/immigration-citoyennete.html</a></td>
-        <td>FR</td>
-        <td>success</td>
-        <td>73</td>
-        <td>63</td>
-      </tr>
-
-      <tr>
-        <td>Passport services</td>
-        <td><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html">https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html</a></td>
+        <td><a href="undefined">undefined</a></td>
         <td>EN</td>
         <td>success</td>
-        <td>60</td>
-        <td>94</td>
-      </tr>
-
-      <tr>
-        <td>Passport services</td>
-        <td><a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html">https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html</a></td>
-        <td>FR</td>
-        <td>success</td>
-        <td>95</td>
-        <td>77</td>
-      </tr>
-
-      <tr>
-        <td>Weather office</td>
-        <td><a href="https://weather.gc.ca/">https://weather.gc.ca/</a></td>
-        <td>EN</td>
-        <td>success</td>
-        <td>92</td>
-        <td>87</td>
-      </tr>
-
-      <tr>
-        <td>Weather office</td>
-        <td><a href="https://meteo.gc.ca/">https://meteo.gc.ca/</a></td>
-        <td>FR</td>
-        <td>success</td>
-        <td>66</td>
-        <td>77</td>
-      </tr>
-
-      <tr>
-        <td>Health services</td>
-        <td><a href="https://www.canada.ca/en/public-health/services/health-services-benefits.html">https://www.canada.ca/en/public-health/services/health-services-benefits.html</a></td>
-        <td>EN</td>
-        <td>success</td>
+        <td>86</td>
         <td>72</td>
-        <td>62</td>
       </tr>
 
       <tr>
-        <td>Health services</td>
-        <td><a href="https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html">https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html</a></td>
+        <td>Immigration and citizenship</td>
+        <td><a href="undefined">undefined</a></td>
         <td>FR</td>
         <td>success</td>
-        <td>57</td>
-        <td>91</td>
-      </tr>
-
-      <tr>
-        <td>Student aid</td>
-        <td><a href="https://www.canada.ca/en/services/benefits/education/student-aid.html">https://www.canada.ca/en/services/benefits/education/student-aid.html</a></td>
-        <td>EN</td>
-        <td>success</td>
-        <td>54</td>
-        <td>77</td>
-      </tr>
-
-      <tr>
-        <td>Student aid</td>
-        <td><a href="https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html">https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html</a></td>
-        <td>FR</td>
-        <td>success</td>
-        <td>94</td>
-        <td>61</td>
-      </tr>
-
-      <tr>
-        <td>Business and industry</td>
-        <td><a href="https://www.canada.ca/en/services/business.html">https://www.canada.ca/en/services/business.html</a></td>
-        <td>EN</td>
-        <td>success</td>
-        <td>60</td>
-        <td>76</td>
-      </tr>
-
-      <tr>
-        <td>Business and industry</td>
-        <td><a href="https://www.canada.ca/fr/services/entreprises.html">https://www.canada.ca/fr/services/entreprises.html</a></td>
-        <td>FR</td>
-        <td>success</td>
-        <td>77</td>
-        <td>90</td>
-      </tr>
-
-      <tr>
-        <td>Border wait times</td>
-        <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html</a></td>
-        <td>EN</td>
-        <td>success</td>
-        <td>48</td>
-        <td>58</td>
-      </tr>
-
-      <tr>
-        <td>Border wait times</td>
-        <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html</a></td>
-        <td>FR</td>
-        <td>success</td>
-        <td>71</td>
-        <td>80</td>
+        <td>45</td>
+        <td>86</td>
       </tr></tbody>
       </table>
     </section>

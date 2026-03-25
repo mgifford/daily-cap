@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily CAP</title>
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      margin: 2rem auto;
+      max-width: 900px;
+      padding: 0 1rem;
+      background: #f8faf8;
+      color: #0d1b12;
+    }
+    h1 { letter-spacing: 0.01em; }
+    .card {
+      background: white;
+      border: 1px solid #d7e2d8;
+      border-radius: 0.6rem;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    a { color: #1d6b42; }
+    code { background: #edf4ee; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Daily CAP</h1>
+    <p><strong>Canadian Analytics Project</strong></p>
+    <p><em>An independent daily quality benchmarking pipeline for Canadian federal digital service entry points. This is not a Government of Canada program.</em></p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Latest Report</h2>
+      <p>Daily reports are published at <code>docs/reports/daily/YYYY-MM-DD/</code></p>
+      <p><a href="./docs/reports/index.html">View Reports Dashboard →</a></p>
+    </section>
+
+    <section class="card">
+      <h2>About</h2>
+      <p>Daily CAP benchmarks the quality and accessibility of Canadian government websites using automated scanning:</p>
+      <ul>
+        <li>Daily automated scans with Lighthouse and ScanGov</li>
+        <li>Bilingual (English/French) analysis and parity detection</li>
+        <li>Performance, accessibility, and SEO metrics</li>
+        <li>Service-pattern and impact analysis</li>
+        <li>Canadian-focused data sources (recent activity, top tasks, curated endpoints)</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Development</h2>
+      <p><a href="https://github.com/mgifford/daily-cap">View on GitHub</a></p>
+      <p>Built with Node.js (24+), Lighthouse, and axe-core.</p>
+      <p><a href="./docs/PLAN.md">Implementation Plan</a></p>
+    </section>
+  </main>
+
+  <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #d7e2d8; font-size: 0.9rem; color: #666;">
+    <p>Daily CAP is not an official Government of Canada program. Reports are generated from automated scans and should not be used as compliance proof.</p>
+  </footer>
+</body>
+</html>

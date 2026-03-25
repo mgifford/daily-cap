@@ -32,6 +32,7 @@ export function renderDailyReportPage(report) {
   <style>
     :root { --bg: #f8faf8; --fg: #0d1b12; --card: #ffffff; --line: #d7e2d8; --accent: #1d6b42; }
     body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: radial-gradient(circle at top, #e8f4ea, var(--bg) 40%); color: var(--fg); }
+    header { background: white; border-bottom: 1px solid var(--line); padding: 1rem; }
     main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 3rem; }
     h1, h2 { letter-spacing: 0.01em; }
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.75rem; }
@@ -40,9 +41,13 @@ export function renderDailyReportPage(report) {
     th, td { padding: 0.55rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
     th { background: #edf4ee; }
     a { color: var(--accent); }
+    .nav { font-size: 0.9rem; }
   </style>
 </head>
 <body>
+  <header>
+    <div class="nav"><a href="../index.html">← Back to Reports</a> | <a href="../../">Home</a></div>
+  </header>
   <main>
     <h1>Daily CAP Report</h1>
     <p>Date: ${escapeHtml(report.run_date)} | Mode: ${escapeHtml(report.scan_mode)}</p>
@@ -94,9 +99,11 @@ export function renderDashboardPage(report) {
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daily CAP Reports</title>
-  <style>
+    .nav { font-size: 0.9rem; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="nav"><a href="../../">← Back to Home</a></divyle>
     body { font-family: Georgia, "Times New Roman", serif; margin: 2rem auto; max-width: 900px; padding: 0 1rem; }
     a { color: #1d6b42; }
   </style>

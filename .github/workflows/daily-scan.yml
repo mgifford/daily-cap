@@ -1,0 +1,93 @@
+name: Daily CAP Scan
+
+on:
+  schedule:
+    # Run daily at 09:30 UTC
+    - cron: '30 9 * * *'
+  workflow_dispatch:
+    inputs:
+      run_date:
+        description: 'Run date (YYYY-MM-DD)'
+        required: false
+      url_limit:
+        description: 'URL limit'
+        required: false
+        default: '50'
+      source_mode:
+        description: 'Source mode (live or seed)'
+        required: false
+        default: 'live'
+      scan_mode:
+        description: 'Scan mode (live or mock)'
+        required: false
+        default: 'live'
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: daily-cap-scan
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+        continue-on-error: true
+
+      - name: Run CAP scan pipeline
+        run: |
+          node run.js \
+            --date "${{ github.event.inputs.run_date || '' }}" \
+            --limit "${{ github.event.inputs.url_limit || '50' }}" \
+            --source-mode "${{ github.event.inputs.source_mode || 'live' }}" \
+            --mode "${{ github.event.inputs.scan_mode || 'live' }}"
+
+      - name: Check for report changes
+        id: check_changes
+        run: |
+          if git diff --quiet docs/reports/; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push reports
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "copilot@github.com"
+          git config --local user.name "GitHub Copilot (Bot)"
+          git add docs/reports/
+          git commit -m "chore: publish daily CAP report $(date -u +%Y-%m-%d)"
+          git push origin main || git pull --rebase origin main && git push origin main
+
+      - name: Generate step summary
+        if: always()
+        run: |
+          REPORT_DATE=$(date -u +%Y-%m-%d)
+          REPORT_FILE="docs/reports/daily/$REPORT_DATE/report.json"
+          if [ -f "$REPORT_FILE" ]; then
+            echo "## Daily CAP Report" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Run Date:** $REPORT_DATE" >> $GITHUB_STEP_SUMMARY
+            echo "**Report:** [View Report](./daily/$REPORT_DATE/index.html)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            jq -r '.scan_summary | "- Scanned: \(.total)\n- Succeeded: \(.succeeded)\n- Failed: \(.failed)"' "$REPORT_FILE" >> $GITHUB_STEP_SUMMARY || true
+          fi
