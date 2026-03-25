@@ -1,506 +1,1172 @@
 {
   "run_id": "cap-2026-03-25",
   "run_date": "2026-03-25",
-  "scan_mode": "mock",
-  "url_limit": 20,
+  "scan_mode": "live",
+  "url_limit": 40,
   "inventory_summary": {
-    "selected_count": 10,
-    "scan_target_count": 20,
+    "selected_count": 20,
+    "scan_target_count": 40,
     "source_distribution": {
-      "top-task": 3,
-      "curated": 3,
-      "recent": 4
+      "top-task": 10,
+      "unknown": 10
     },
     "tier_validation": {
       "tier1": {
-        "assigned": 10,
+        "assigned": 3,
         "target": 150
       },
       "tier2": {
-        "assigned": 0,
+        "assigned": 15,
         "target": 100
       },
       "tier3": {
-        "assigned": 0,
+        "assigned": 2,
         "target": 50
       },
-      "total": 10,
-      "coverage": 3.3333333333333335
+      "total": 20,
+      "coverage": 6.666666666666667
     },
     "ranking_top_10": [
       {
-        "id": "cap-002",
-        "service_name": "Employment Insurance",
-        "score": 115,
-        "tier": "tier-1"
-      },
-      {
-        "id": "cap-001",
-        "service_name": "Taxes",
+        "id": "top-task-1",
+        "service_name": "Personal income tax",
         "score": 110,
         "tier": "tier-1"
       },
       {
-        "id": "cap-003",
-        "service_name": "My Service Canada Account",
-        "score": 110,
-        "tier": "tier-1"
-      },
-      {
-        "id": "cap-005",
-        "service_name": "Passport services",
-        "score": 110,
-        "tier": "tier-1"
-      },
-      {
-        "id": "cap-004",
-        "service_name": "Immigration and citizenship",
+        "id": "top-task-2",
+        "service_name": "Job search and benefits",
         "score": 105,
         "tier": "tier-1"
       },
       {
-        "id": "cap-008",
-        "service_name": "Student aid",
-        "score": 105,
+        "id": "top-task-3",
+        "service_name": "Passport and travel",
+        "score": 100,
         "tier": "tier-1"
       },
       {
-        "id": "cap-010",
-        "service_name": "Border wait times",
-        "score": 95.54,
-        "tier": "tier-1"
-      },
-      {
-        "id": "cap-006",
-        "service_name": "Weather office",
+        "id": "curated-002",
+        "service_name": "Check my Service Canada Account",
         "score": 95,
-        "tier": "tier-1"
+        "tier": "tier-2"
       },
       {
-        "id": "cap-007",
-        "service_name": "Health services",
-        "score": 93,
-        "tier": "tier-1"
+        "id": "top-task-4",
+        "service_name": "Student loans and grants",
+        "score": 95,
+        "tier": "tier-2"
       },
       {
-        "id": "cap-009",
-        "service_name": "Business and industry",
-        "score": 84.86,
-        "tier": "tier-1"
+        "id": "top-task-5",
+        "service_name": "COVID-19 information",
+        "score": 90,
+        "tier": "tier-3"
+      },
+      {
+        "id": "curated-008",
+        "service_name": "IRCC: Apply for permanent residency",
+        "score": 88.06,
+        "tier": "tier-2"
+      },
+      {
+        "id": "curated-004",
+        "service_name": "Canada Border Wait Times",
+        "score": 85.54,
+        "tier": "tier-2"
+      },
+      {
+        "id": "top-task-6",
+        "service_name": "Immigration and citizenship",
+        "score": 85,
+        "tier": "tier-2"
+      },
+      {
+        "id": "curated-010",
+        "service_name": "Health Infobase Canada",
+        "score": 81.82,
+        "tier": "tier-3"
       }
     ]
   },
   "scan_summary": {
-    "total": 20,
-    "succeeded": 20,
-    "failed": 0,
+    "total": 40,
+    "succeeded": 6,
+    "failed": 34,
     "excluded": 0
   },
   "benchmark_summary": {
     "means": {
-      "performance_score": 72.05,
-      "accessibility_score": 73.75,
-      "best_practices_score": 78.35,
-      "seo_score": 77.25
+      "performance_score": 79.83,
+      "accessibility_score": 78,
+      "best_practices_score": 73,
+      "seo_score": 85
     },
     "url_counts": {
-      "total": 20,
-      "succeeded": 20,
-      "failed": 0
+      "total": 40,
+      "succeeded": 6,
+      "failed": 34
     }
   },
   "bilingual_parity": {
     "pairs": [
       {
-        "pair_id": "cap-001-en|cap-001-fr",
-        "service_name": "Taxes",
-        "inventory_id_en": "cap-001-en",
-        "inventory_id_fr": "cap-001-fr",
-        "url_en": "https://www.canada.ca/en/revenue-agency.html",
-        "url_fr": "https://www.canada.ca/fr/agence-revenu.html",
-        "scan_status_en": "success",
-        "scan_status_fr": "success",
-        "accessibility_gap": -15,
-        "performance_gap": -33,
-        "findings_gap": 4,
-        "abs_accessibility_gap": 15,
-        "abs_performance_gap": 33
+        "pair_id": "curated-001-en|curated-001-fr",
+        "service_name": "Apply for a Social Insurance Number",
+        "inventory_id_en": "curated-001-en",
+        "inventory_id_fr": "curated-001-fr",
+        "url_en": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+        "url_fr": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
       },
       {
-        "pair_id": "cap-002-en|cap-002-fr",
-        "service_name": "Employment Insurance",
-        "inventory_id_en": "cap-002-en",
-        "inventory_id_fr": "cap-002-fr",
-        "url_en": "https://www.canada.ca/en/services/benefits/ei.html",
-        "url_fr": "https://www.canada.ca/fr/services/prestations/ae.html",
-        "scan_status_en": "success",
-        "scan_status_fr": "success",
-        "accessibility_gap": -16,
-        "performance_gap": 17,
-        "findings_gap": 3,
-        "abs_accessibility_gap": 16,
-        "abs_performance_gap": 17
-      },
-      {
-        "pair_id": "cap-003-en|cap-003-fr",
-        "service_name": "My Service Canada Account",
-        "inventory_id_en": "cap-003-en",
-        "inventory_id_fr": "cap-003-fr",
+        "pair_id": "curated-002-en|curated-002-fr",
+        "service_name": "Check my Service Canada Account",
+        "inventory_id_en": "curated-002-en",
+        "inventory_id_fr": "curated-002-fr",
         "url_en": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
         "url_fr": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
-        "scan_status_en": "success",
-        "scan_status_fr": "success",
-        "accessibility_gap": 9,
-        "performance_gap": -18,
-        "findings_gap": -2,
-        "abs_accessibility_gap": 9,
-        "abs_performance_gap": 18
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
       },
       {
-        "pair_id": "cap-004-en|cap-004-fr",
-        "service_name": "Immigration and citizenship",
-        "inventory_id_en": "cap-004-en",
-        "inventory_id_fr": "cap-004-fr",
-        "url_en": "https://www.canada.ca/en/services/immigration-citizenship.html",
-        "url_fr": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
-        "scan_status_en": "success",
-        "scan_status_fr": "success",
-        "accessibility_gap": -3,
-        "performance_gap": 13,
-        "findings_gap": 5,
-        "abs_accessibility_gap": 3,
-        "abs_performance_gap": 13
+        "pair_id": "curated-003-en|curated-003-fr",
+        "service_name": "Find your local Service Canada office",
+        "inventory_id_en": "curated-003-en",
+        "inventory_id_fr": "curated-003-fr",
+        "url_en": "https://www.canada.ca/en/employment-social-development/services/office.html",
+        "url_fr": "https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
       },
       {
-        "pair_id": "cap-005-en|cap-005-fr",
-        "service_name": "Passport services",
-        "inventory_id_en": "cap-005-en",
-        "inventory_id_fr": "cap-005-fr",
-        "url_en": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html",
-        "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html",
-        "scan_status_en": "success",
-        "scan_status_fr": "success",
-        "accessibility_gap": 17,
-        "performance_gap": -35,
-        "findings_gap": -5,
-        "abs_accessibility_gap": 17,
-        "abs_performance_gap": 35
-      },
-      {
-        "pair_id": "cap-006-en|cap-006-fr",
-        "service_name": "Weather office",
-        "inventory_id_en": "cap-006-en",
-        "inventory_id_fr": "cap-006-fr",
-        "url_en": "https://weather.gc.ca/",
-        "url_fr": "https://meteo.gc.ca/",
-        "scan_status_en": "success",
-        "scan_status_fr": "success",
-        "accessibility_gap": 10,
-        "performance_gap": 26,
-        "findings_gap": -2,
-        "abs_accessibility_gap": 10,
-        "abs_performance_gap": 26
-      },
-      {
-        "pair_id": "cap-007-en|cap-007-fr",
-        "service_name": "Health services",
-        "inventory_id_en": "cap-007-en",
-        "inventory_id_fr": "cap-007-fr",
-        "url_en": "https://www.canada.ca/en/public-health/services/health-services-benefits.html",
-        "url_fr": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html",
-        "scan_status_en": "success",
-        "scan_status_fr": "success",
-        "accessibility_gap": -29,
-        "performance_gap": 15,
-        "findings_gap": -1,
-        "abs_accessibility_gap": 29,
-        "abs_performance_gap": 15
-      },
-      {
-        "pair_id": "cap-008-en|cap-008-fr",
-        "service_name": "Student aid",
-        "inventory_id_en": "cap-008-en",
-        "inventory_id_fr": "cap-008-fr",
-        "url_en": "https://www.canada.ca/en/services/benefits/education/student-aid.html",
-        "url_fr": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html",
-        "scan_status_en": "success",
-        "scan_status_fr": "success",
-        "accessibility_gap": 16,
-        "performance_gap": -40,
-        "findings_gap": -3,
-        "abs_accessibility_gap": 16,
-        "abs_performance_gap": 40
-      },
-      {
-        "pair_id": "cap-009-en|cap-009-fr",
-        "service_name": "Business and industry",
-        "inventory_id_en": "cap-009-en",
-        "inventory_id_fr": "cap-009-fr",
-        "url_en": "https://www.canada.ca/en/services/business.html",
-        "url_fr": "https://www.canada.ca/fr/services/entreprises.html",
-        "scan_status_en": "success",
-        "scan_status_fr": "success",
-        "accessibility_gap": -14,
-        "performance_gap": -17,
-        "findings_gap": -9,
-        "abs_accessibility_gap": 14,
-        "abs_performance_gap": 17
-      },
-      {
-        "pair_id": "cap-010-en|cap-010-fr",
-        "service_name": "Border wait times",
-        "inventory_id_en": "cap-010-en",
-        "inventory_id_fr": "cap-010-fr",
+        "pair_id": "curated-004-en|curated-004-fr",
+        "service_name": "Canada Border Wait Times",
+        "inventory_id_en": "curated-004-en",
+        "inventory_id_fr": "curated-004-fr",
         "url_en": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
         "url_fr": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
         "scan_status_en": "success",
         "scan_status_fr": "success",
-        "accessibility_gap": -22,
-        "performance_gap": -23,
+        "accessibility_gap": 0,
+        "performance_gap": 1,
         "findings_gap": 0,
-        "abs_accessibility_gap": 22,
-        "abs_performance_gap": 23
+        "abs_accessibility_gap": 0,
+        "abs_performance_gap": 1
+      },
+      {
+        "pair_id": "curated-005-en|curated-005-fr",
+        "service_name": "Environment and Climate Change Canada",
+        "inventory_id_en": "curated-005-en",
+        "inventory_id_fr": "curated-005-fr",
+        "url_en": "https://www.canada.ca/en/environment-climate-change.html",
+        "url_fr": "https://www.canada.ca/fr/environnement-changement-climatique.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "curated-006-en|curated-006-fr",
+        "service_name": "Justice Laws Website",
+        "inventory_id_en": "curated-006-en",
+        "inventory_id_fr": "curated-006-fr",
+        "url_en": "https://laws-lois.justice.gc.ca/",
+        "url_fr": "https://laws-lois.justice.gc.ca/",
+        "scan_status_en": "success",
+        "scan_status_fr": "success",
+        "accessibility_gap": 0,
+        "performance_gap": -1,
+        "findings_gap": 0,
+        "abs_accessibility_gap": 0,
+        "abs_performance_gap": 1
+      },
+      {
+        "pair_id": "curated-007-en|curated-007-fr",
+        "service_name": "Government of Canada Social Media",
+        "inventory_id_en": "curated-007-en",
+        "inventory_id_fr": "curated-007-fr",
+        "url_en": "https://www.canada.ca/en/social-media.html",
+        "url_fr": "https://www.canada.ca/fr/medias-sociaux.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "curated-008-en|curated-008-fr",
+        "service_name": "IRCC: Apply for permanent residency",
+        "inventory_id_en": "curated-008-en",
+        "inventory_id_fr": "curated-008-fr",
+        "url_en": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html",
+        "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "curated-009-en|curated-009-fr",
+        "service_name": "Consumer Price Index",
+        "inventory_id_en": "curated-009-en",
+        "inventory_id_fr": "curated-009-fr",
+        "url_en": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+        "url_fr": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+        "scan_status_en": "success",
+        "scan_status_fr": "success",
+        "accessibility_gap": 0,
+        "performance_gap": -45,
+        "findings_gap": 0,
+        "abs_accessibility_gap": 0,
+        "abs_performance_gap": 45
+      },
+      {
+        "pair_id": "curated-010-en|curated-010-fr",
+        "service_name": "Health Infobase Canada",
+        "inventory_id_en": "curated-010-en",
+        "inventory_id_fr": "curated-010-fr",
+        "url_en": "https://www.canada.ca/en/public-health/services/diseases.html",
+        "url_fr": "https://www.canada.ca/fr/sante-publique/services/maladies.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-1-en|top-task-1-fr",
+        "service_name": "Personal income tax",
+        "inventory_id_en": "top-task-1-en",
+        "inventory_id_fr": "top-task-1-fr",
+        "url_en": "https://www.canada.ca/en/services/taxes/income.html",
+        "url_fr": "https://www.canada.ca/fr/services/impots/revenu.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-10-en|top-task-10-fr",
+        "service_name": "Old Age Security and Supplement",
+        "inventory_id_en": "top-task-10-en",
+        "inventory_id_fr": "top-task-10-fr",
+        "url_en": "https://www.canada.ca/en/services/benefits/publicpensions/oas.html",
+        "url_fr": "https://www.canada.ca/fr/services/prestations/pensionspubliques/srg.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-2-en|top-task-2-fr",
+        "service_name": "Job search and benefits",
+        "inventory_id_en": "top-task-2-en",
+        "inventory_id_fr": "top-task-2-fr",
+        "url_en": "https://www.canada.ca/en/services/work.html",
+        "url_fr": "https://www.canada.ca/fr/services/travail.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-3-en|top-task-3-fr",
+        "service_name": "Passport and travel",
+        "inventory_id_en": "top-task-3-en",
+        "inventory_id_fr": "top-task-3-fr",
+        "url_en": "https://www.canada.ca/en/services/travel.html",
+        "url_fr": "https://www.canada.ca/fr/services/voyages.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-4-en|top-task-4-fr",
+        "service_name": "Student loans and grants",
+        "inventory_id_en": "top-task-4-en",
+        "inventory_id_fr": "top-task-4-fr",
+        "url_en": "https://www.canada.ca/en/services/education-training/loans-grants.html",
+        "url_fr": "https://www.canada.ca/fr/services/education-formation/prets-bourses.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-5-en|top-task-5-fr",
+        "service_name": "COVID-19 information",
+        "inventory_id_en": "top-task-5-en",
+        "inventory_id_fr": "top-task-5-fr",
+        "url_en": "https://www.canada.ca/en/services/health/coronavirus-2019.html",
+        "url_fr": "https://www.canada.ca/fr/services/sante/coronavirus-2019.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-6-en|top-task-6-fr",
+        "service_name": "Immigration and citizenship",
+        "inventory_id_en": "top-task-6-en",
+        "inventory_id_fr": "top-task-6-fr",
+        "url_en": "https://www.canada.ca/en/services/immigration-citizenship.html",
+        "url_fr": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-7-en|top-task-7-fr",
+        "service_name": "Benefits and credits",
+        "inventory_id_en": "top-task-7-en",
+        "inventory_id_fr": "top-task-7-fr",
+        "url_en": "https://www.canada.ca/en/services/benefits.html",
+        "url_fr": "https://www.canada.ca/fr/services/prestations.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-8-en|top-task-8-fr",
+        "service_name": "Employment Insurance",
+        "inventory_id_en": "top-task-8-en",
+        "inventory_id_fr": "top-task-8-fr",
+        "url_en": "https://www.canada.ca/en/services/benefits/ei.html",
+        "url_fr": "https://www.canada.ca/fr/services/prestations/ae.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
+      },
+      {
+        "pair_id": "top-task-9-en|top-task-9-fr",
+        "service_name": "CPP and retirement",
+        "inventory_id_en": "top-task-9-en",
+        "inventory_id_fr": "top-task-9-fr",
+        "url_en": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html",
+        "url_fr": "https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc.html",
+        "scan_status_en": "failed",
+        "scan_status_fr": "failed",
+        "accessibility_gap": null,
+        "performance_gap": null,
+        "findings_gap": null,
+        "abs_accessibility_gap": null,
+        "abs_performance_gap": null
       }
     ],
     "missing_counterparts": [],
     "summary": {
-      "candidate_pairs": 10,
-      "paired_services": 10,
-      "complete_success_pairs": 10,
+      "candidate_pairs": 20,
+      "paired_services": 20,
+      "complete_success_pairs": 3,
       "missing_counterpart": 0,
       "missing_english": 0,
       "missing_french": 0,
-      "average_absolute_accessibility_gap": 15.1,
-      "average_absolute_performance_gap": 23.7,
-      "high_accessibility_gap_pairs": 8
+      "average_absolute_accessibility_gap": 0,
+      "average_absolute_performance_gap": 15.67,
+      "high_accessibility_gap_pairs": 0
     },
     "highlights": {
-      "largest_accessibility_gaps": [
-        {
-          "pair_id": "cap-007-en|cap-007-fr",
-          "service_name": "Health services",
-          "inventory_id_en": "cap-007-en",
-          "inventory_id_fr": "cap-007-fr",
-          "url_en": "https://www.canada.ca/en/public-health/services/health-services-benefits.html",
-          "url_fr": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html",
-          "scan_status_en": "success",
-          "scan_status_fr": "success",
-          "accessibility_gap": -29,
-          "performance_gap": 15,
-          "findings_gap": -1,
-          "abs_accessibility_gap": 29,
-          "abs_performance_gap": 15
-        },
-        {
-          "pair_id": "cap-010-en|cap-010-fr",
-          "service_name": "Border wait times",
-          "inventory_id_en": "cap-010-en",
-          "inventory_id_fr": "cap-010-fr",
-          "url_en": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
-          "url_fr": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
-          "scan_status_en": "success",
-          "scan_status_fr": "success",
-          "accessibility_gap": -22,
-          "performance_gap": -23,
-          "findings_gap": 0,
-          "abs_accessibility_gap": 22,
-          "abs_performance_gap": 23
-        },
-        {
-          "pair_id": "cap-005-en|cap-005-fr",
-          "service_name": "Passport services",
-          "inventory_id_en": "cap-005-en",
-          "inventory_id_fr": "cap-005-fr",
-          "url_en": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html",
-          "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html",
-          "scan_status_en": "success",
-          "scan_status_fr": "success",
-          "accessibility_gap": 17,
-          "performance_gap": -35,
-          "findings_gap": -5,
-          "abs_accessibility_gap": 17,
-          "abs_performance_gap": 35
-        },
-        {
-          "pair_id": "cap-002-en|cap-002-fr",
-          "service_name": "Employment Insurance",
-          "inventory_id_en": "cap-002-en",
-          "inventory_id_fr": "cap-002-fr",
-          "url_en": "https://www.canada.ca/en/services/benefits/ei.html",
-          "url_fr": "https://www.canada.ca/fr/services/prestations/ae.html",
-          "scan_status_en": "success",
-          "scan_status_fr": "success",
-          "accessibility_gap": -16,
-          "performance_gap": 17,
-          "findings_gap": 3,
-          "abs_accessibility_gap": 16,
-          "abs_performance_gap": 17
-        },
-        {
-          "pair_id": "cap-008-en|cap-008-fr",
-          "service_name": "Student aid",
-          "inventory_id_en": "cap-008-en",
-          "inventory_id_fr": "cap-008-fr",
-          "url_en": "https://www.canada.ca/en/services/benefits/education/student-aid.html",
-          "url_fr": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html",
-          "scan_status_en": "success",
-          "scan_status_fr": "success",
-          "accessibility_gap": 16,
-          "performance_gap": -40,
-          "findings_gap": -3,
-          "abs_accessibility_gap": 16,
-          "abs_performance_gap": 40
-        },
-        {
-          "pair_id": "cap-001-en|cap-001-fr",
-          "service_name": "Taxes",
-          "inventory_id_en": "cap-001-en",
-          "inventory_id_fr": "cap-001-fr",
-          "url_en": "https://www.canada.ca/en/revenue-agency.html",
-          "url_fr": "https://www.canada.ca/fr/agence-revenu.html",
-          "scan_status_en": "success",
-          "scan_status_fr": "success",
-          "accessibility_gap": -15,
-          "performance_gap": -33,
-          "findings_gap": 4,
-          "abs_accessibility_gap": 15,
-          "abs_performance_gap": 33
-        },
-        {
-          "pair_id": "cap-009-en|cap-009-fr",
-          "service_name": "Business and industry",
-          "inventory_id_en": "cap-009-en",
-          "inventory_id_fr": "cap-009-fr",
-          "url_en": "https://www.canada.ca/en/services/business.html",
-          "url_fr": "https://www.canada.ca/fr/services/entreprises.html",
-          "scan_status_en": "success",
-          "scan_status_fr": "success",
-          "accessibility_gap": -14,
-          "performance_gap": -17,
-          "findings_gap": -9,
-          "abs_accessibility_gap": 14,
-          "abs_performance_gap": 17
-        },
-        {
-          "pair_id": "cap-006-en|cap-006-fr",
-          "service_name": "Weather office",
-          "inventory_id_en": "cap-006-en",
-          "inventory_id_fr": "cap-006-fr",
-          "url_en": "https://weather.gc.ca/",
-          "url_fr": "https://meteo.gc.ca/",
-          "scan_status_en": "success",
-          "scan_status_fr": "success",
-          "accessibility_gap": 10,
-          "performance_gap": 26,
-          "findings_gap": -2,
-          "abs_accessibility_gap": 10,
-          "abs_performance_gap": 26
-        }
-      ]
+      "largest_accessibility_gaps": []
     }
   },
   "accessibility_statements": {
     "summary": {
-      "scanned_urls": 20,
-      "statements_detected": 16,
-      "statement_coverage_percent": 80,
-      "with_contact_info": 14,
-      "with_contact_info_percent": 87.5,
-      "with_compliance_status": 9,
-      "with_compliance_status_percent": 56.25,
-      "with_alternative_support": 14,
-      "with_alternative_support_percent": 87.5,
-      "with_freshness_marker": 14,
-      "with_freshness_marker_percent": 87.5,
-      "bilingual_pairs_total": 10,
-      "bilingual_pairs_both_detected": 7,
-      "bilingual_pairs_both_detected_percent": 70,
-      "bilingual_parity_mismatch_pairs": 2
+      "scanned_urls": 40,
+      "statements_detected": 0,
+      "statement_coverage_percent": 0,
+      "with_contact_info": 0,
+      "with_contact_info_percent": null,
+      "with_compliance_status": 0,
+      "with_compliance_status_percent": null,
+      "with_alternative_support": 0,
+      "with_alternative_support_percent": null,
+      "with_freshness_marker": 0,
+      "with_freshness_marker_percent": null,
+      "bilingual_pairs_total": 20,
+      "bilingual_pairs_both_detected": 0,
+      "bilingual_pairs_both_detected_percent": 0,
+      "bilingual_parity_mismatch_pairs": 0
     },
     "by_language": {
       "en": {
-        "total": 10,
-        "detected": 8,
-        "coverage_percent": 80
+        "total": 20,
+        "detected": 0,
+        "coverage_percent": 0
       },
       "fr": {
-        "total": 10,
-        "detected": 8,
-        "coverage_percent": 80
+        "total": 20,
+        "detected": 0,
+        "coverage_percent": 0
       }
     },
     "missing_statement_examples": [
       {
-        "inventory_id": "cap-002-en",
-        "service_name": "Employment Insurance",
+        "inventory_id": "curated-001-en",
+        "service_name": "Apply for a Social Insurance Number",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html",
-        "tier": "tier-1",
-        "source": "top-task"
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+        "tier": "tier-2",
+        "source": "unknown"
       },
       {
-        "inventory_id": "cap-003-fr",
-        "service_name": "My Service Canada Account",
+        "inventory_id": "curated-001-fr",
+        "service_name": "Apply for a Social Insurance Number",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-002-en",
+        "service_name": "Check my Service Canada Account",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-002-fr",
+        "service_name": "Check my Service Canada Account",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
-        "tier": "tier-1",
-        "source": "curated"
+        "tier": "tier-2",
+        "source": "unknown"
       },
       {
-        "inventory_id": "cap-004-en",
-        "service_name": "Immigration and citizenship",
+        "inventory_id": "curated-003-en",
+        "service_name": "Find your local Service Canada office",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
-        "tier": "tier-1",
-        "source": "recent"
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html",
+        "tier": "tier-2",
+        "source": "unknown"
       },
       {
-        "inventory_id": "cap-004-fr",
-        "service_name": "Immigration and citizenship",
+        "inventory_id": "curated-003-fr",
+        "service_name": "Find your local Service Canada office",
         "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
-        "tier": "tier-1",
-        "source": "recent"
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-004-en",
+        "service_name": "Canada Border Wait Times",
+        "language": "en",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-004-fr",
+        "service_name": "Canada Border Wait Times",
+        "language": "fr",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-005-en",
+        "service_name": "Environment and Climate Change Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/environment-climate-change.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-005-fr",
+        "service_name": "Environment and Climate Change Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/environnement-changement-climatique.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-006-en",
+        "service_name": "Justice Laws Website",
+        "language": "en",
+        "canonical_url": "https://laws-lois.justice.gc.ca/",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-006-fr",
+        "service_name": "Justice Laws Website",
+        "language": "fr",
+        "canonical_url": "https://laws-lois.justice.gc.ca/",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-007-en",
+        "service_name": "Government of Canada Social Media",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/social-media.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-007-fr",
+        "service_name": "Government of Canada Social Media",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/medias-sociaux.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-008-en",
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-008-fr",
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-009-en",
+        "service_name": "Consumer Price Index",
+        "language": "en",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-009-fr",
+        "service_name": "Consumer Price Index",
+        "language": "fr",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+        "tier": "tier-2",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-010-en",
+        "service_name": "Health Infobase Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html",
+        "tier": "tier-3",
+        "source": "unknown"
+      },
+      {
+        "inventory_id": "curated-010-fr",
+        "service_name": "Health Infobase Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html",
+        "tier": "tier-3",
+        "source": "unknown"
       }
     ],
     "checks": [
       {
-        "inventory_id": "cap-001-en",
-        "service_name": "Taxes",
+        "inventory_id": "curated-001-en",
+        "service_name": "Apply for a Social Insurance Number",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/revenue-agency.html",
-        "source": "curated",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/revenue-agency.html/accessibility",
-        "has_contact_info": true,
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
         "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
       },
       {
-        "inventory_id": "cap-001-fr",
-        "service_name": "Taxes",
+        "inventory_id": "curated-001-fr",
+        "service_name": "Apply for a Social Insurance Number",
         "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/agence-revenu.html",
-        "source": "curated",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/agence-revenu.html/accessibility",
-        "has_contact_info": true,
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
         "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
       },
       {
-        "inventory_id": "cap-002-en",
+        "inventory_id": "curated-002-en",
+        "service_name": "Check my Service Canada Account",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-002-fr",
+        "service_name": "Check my Service Canada Account",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-003-en",
+        "service_name": "Find your local Service Canada office",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-003-fr",
+        "service_name": "Find your local Service Canada office",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-004-en",
+        "service_name": "Canada Border Wait Times",
+        "language": "en",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-004-fr",
+        "service_name": "Canada Border Wait Times",
+        "language": "fr",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-005-en",
+        "service_name": "Environment and Climate Change Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/environment-climate-change.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-005-fr",
+        "service_name": "Environment and Climate Change Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/environnement-changement-climatique.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-006-en",
+        "service_name": "Justice Laws Website",
+        "language": "en",
+        "canonical_url": "https://laws-lois.justice.gc.ca/",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-006-fr",
+        "service_name": "Justice Laws Website",
+        "language": "fr",
+        "canonical_url": "https://laws-lois.justice.gc.ca/",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-007-en",
+        "service_name": "Government of Canada Social Media",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/social-media.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-007-fr",
+        "service_name": "Government of Canada Social Media",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/medias-sociaux.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-008-en",
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-008-fr",
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-009-en",
+        "service_name": "Consumer Price Index",
+        "language": "en",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-009-fr",
+        "service_name": "Consumer Price Index",
+        "language": "fr",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+        "source": "unknown",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-010-en",
+        "service_name": "Health Infobase Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html",
+        "source": "unknown",
+        "tier": "tier-3",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "curated-010-fr",
+        "service_name": "Health Infobase Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html",
+        "source": "unknown",
+        "tier": "tier-3",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-1-en",
+        "service_name": "Personal income tax",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/income.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-1-fr",
+        "service_name": "Personal income tax",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/impots/revenu.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-10-en",
+        "service_name": "Old Age Security and Supplement",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/oas.html",
+        "source": "top-task",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-10-fr",
+        "service_name": "Old Age Security and Supplement",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/srg.html",
+        "source": "top-task",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-2-en",
+        "service_name": "Job search and benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/work.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-2-fr",
+        "service_name": "Job search and benefits",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/travail.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-3-en",
+        "service_name": "Passport and travel",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-3-fr",
+        "service_name": "Passport and travel",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/voyages.html",
+        "source": "top-task",
+        "tier": "tier-1",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-4-en",
+        "service_name": "Student loans and grants",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/education-training/loans-grants.html",
+        "source": "top-task",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-4-fr",
+        "service_name": "Student loans and grants",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/education-formation/prets-bourses.html",
+        "source": "top-task",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-5-en",
+        "service_name": "COVID-19 information",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/coronavirus-2019.html",
+        "source": "top-task",
+        "tier": "tier-3",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-5-fr",
+        "service_name": "COVID-19 information",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/sante/coronavirus-2019.html",
+        "source": "top-task",
+        "tier": "tier-3",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-6-en",
+        "service_name": "Immigration and citizenship",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
+        "source": "top-task",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-6-fr",
+        "service_name": "Immigration and citizenship",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
+        "source": "top-task",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-7-en",
+        "service_name": "Benefits and credits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits.html",
+        "source": "top-task",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-7-fr",
+        "service_name": "Benefits and credits",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations.html",
+        "source": "top-task",
+        "tier": "tier-2",
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false
+      },
+      {
+        "inventory_id": "top-task-8-en",
         "service_name": "Employment Insurance",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html",
         "source": "top-task",
-        "tier": "tier-1",
+        "tier": "tier-2",
         "statement_detected": false,
         "statement_link_text": null,
         "statement_link_url": null,
@@ -510,42 +1176,12 @@
         "has_freshness_marker": false
       },
       {
-        "inventory_id": "cap-002-fr",
+        "inventory_id": "top-task-8-fr",
         "service_name": "Employment Insurance",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/services/prestations/ae.html",
         "source": "top-task",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/services/prestations/ae.html/accessibility",
-        "has_contact_info": false,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": false,
-        "has_freshness_marker": false
-      },
-      {
-        "inventory_id": "cap-003-en",
-        "service_name": "My Service Canada Account",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
-        "source": "curated",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-003-fr",
-        "service_name": "My Service Canada Account",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
-        "source": "curated",
-        "tier": "tier-1",
+        "tier": "tier-2",
         "statement_detected": false,
         "statement_link_text": null,
         "statement_link_url": null,
@@ -555,12 +1191,12 @@
         "has_freshness_marker": false
       },
       {
-        "inventory_id": "cap-004-en",
-        "service_name": "Immigration and citizenship",
+        "inventory_id": "top-task-9-en",
+        "service_name": "CPP and retirement",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
-        "source": "recent",
-        "tier": "tier-1",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html",
+        "source": "top-task",
+        "tier": "tier-2",
         "statement_detected": false,
         "statement_link_text": null,
         "statement_link_url": null,
@@ -570,12 +1206,12 @@
         "has_freshness_marker": false
       },
       {
-        "inventory_id": "cap-004-fr",
-        "service_name": "Immigration and citizenship",
+        "inventory_id": "top-task-9-fr",
+        "service_name": "CPP and retirement",
         "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
-        "source": "recent",
-        "tier": "tier-1",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc.html",
+        "source": "top-task",
+        "tier": "tier-2",
         "statement_detected": false,
         "statement_link_text": null,
         "statement_link_url": null,
@@ -583,217 +1219,25 @@
         "mentions_compliance_status": false,
         "mentions_alternative_support": false,
         "has_freshness_marker": false
-      },
-      {
-        "inventory_id": "cap-005-en",
-        "service_name": "Passport services",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html",
-        "source": "top-task",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-005-fr",
-        "service_name": "Passport services",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html",
-        "source": "top-task",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-006-en",
-        "service_name": "Weather office",
-        "language": "en",
-        "canonical_url": "https://weather.gc.ca/",
-        "source": "recent",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://weather.gc.ca/accessibility",
-        "has_contact_info": false,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": false,
-        "has_freshness_marker": false
-      },
-      {
-        "inventory_id": "cap-006-fr",
-        "service_name": "Weather office",
-        "language": "fr",
-        "canonical_url": "https://meteo.gc.ca/",
-        "source": "recent",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://meteo.gc.ca/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-007-en",
-        "service_name": "Health services",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html",
-        "source": "recent",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-007-fr",
-        "service_name": "Health services",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html",
-        "source": "recent",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-008-en",
-        "service_name": "Student aid",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html",
-        "source": "top-task",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-008-fr",
-        "service_name": "Student aid",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html",
-        "source": "top-task",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-009-en",
-        "service_name": "Business and industry",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/business.html",
-        "source": "recent",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/services/business.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-009-fr",
-        "service_name": "Business and industry",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/entreprises.html",
-        "source": "recent",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/services/entreprises.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-010-en",
-        "service_name": "Border wait times",
-        "language": "en",
-        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
-        "source": "curated",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
-      },
-      {
-        "inventory_id": "cap-010-fr",
-        "service_name": "Border wait times",
-        "language": "fr",
-        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
-        "source": "curated",
-        "tier": "tier-1",
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true
       }
     ]
   },
   "platform_signals": {
     "summary": {
-      "scanned_urls": 20,
-      "known_cms_count": 13,
-      "known_cms_percent": 65,
-      "known_design_system_count": 16,
-      "known_design_system_percent": 80,
-      "distinct_cms": 5,
-      "distinct_design_systems": 4,
-      "distinct_hosting_hints": 4
+      "scanned_urls": 40,
+      "known_cms_count": 2,
+      "known_cms_percent": 5,
+      "known_design_system_count": 6,
+      "known_design_system_percent": 15,
+      "distinct_cms": 2,
+      "distinct_design_systems": 2,
+      "distinct_hosting_hints": 1
     },
     "distributions": {
       "cms": [
         {
           "key": "unknown",
-          "count": 7
-        },
-        {
-          "key": "php-custom",
-          "count": 5
-        },
-        {
-          "key": "drupal",
-          "count": 3
-        },
-        {
-          "key": "wordpress",
-          "count": 3
+          "count": 38
         },
         {
           "key": "aem",
@@ -802,1192 +1246,1164 @@
       ],
       "design_systems": [
         {
-          "key": "bootstrap-like",
-          "count": 7
-        },
-        {
-          "key": "gcds",
-          "count": 6
-        },
-        {
           "key": "unknown",
-          "count": 4
+          "count": 34
         },
         {
           "key": "gcweb-wet",
-          "count": 3
+          "count": 6
         }
       ],
       "hosting_hints": [
         {
-          "key": "aws-cloudfront",
-          "count": 6
-        },
-        {
-          "key": "akamai",
-          "count": 5
-        },
-        {
           "key": "unknown",
-          "count": 5
-        },
-        {
-          "key": "azure",
-          "count": 4
+          "count": 40
         }
       ]
     },
     "by_language": {
       "en": {
-        "total": 10,
+        "total": 20,
         "cms": [
           {
             "key": "unknown",
-            "count": 4
-          },
-          {
-            "key": "php-custom",
-            "count": 2
-          },
-          {
-            "key": "wordpress",
-            "count": 2
+            "count": 19
           },
           {
             "key": "aem",
-            "count": 1
-          },
-          {
-            "key": "drupal",
             "count": 1
           }
         ],
         "design_systems": [
           {
-            "key": "bootstrap-like",
-            "count": 4
-          },
-          {
             "key": "unknown",
-            "count": 3
-          },
-          {
-            "key": "gcds",
-            "count": 2
+            "count": 17
           },
           {
             "key": "gcweb-wet",
-            "count": 1
+            "count": 3
           }
         ]
       },
       "fr": {
-        "total": 10,
+        "total": 20,
         "cms": [
           {
-            "key": "php-custom",
-            "count": 3
-          },
-          {
             "key": "unknown",
-            "count": 3
-          },
-          {
-            "key": "drupal",
-            "count": 2
+            "count": 19
           },
           {
             "key": "aem",
-            "count": 1
-          },
-          {
-            "key": "wordpress",
             "count": 1
           }
         ],
         "design_systems": [
           {
-            "key": "gcds",
-            "count": 4
-          },
-          {
-            "key": "bootstrap-like",
-            "count": 3
+            "key": "unknown",
+            "count": 17
           },
           {
             "key": "gcweb-wet",
-            "count": 2
-          },
-          {
-            "key": "unknown",
-            "count": 1
+            "count": 3
           }
         ]
       }
     },
     "samples": [
       {
-        "inventory_id": "cap-001-en",
-        "service_name": "Taxes",
+        "inventory_id": "curated-001-en",
+        "service_name": "Apply for a Social Insurance Number",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/revenue-agency.html",
-        "cms": "php-custom",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-001-fr",
-        "service_name": "Taxes",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/agence-revenu.html",
-        "cms": "drupal",
-        "design_system": "gcds",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-002-en",
-        "service_name": "Employment Insurance",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html",
-        "cms": "wordpress",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-002-fr",
-        "service_name": "Employment Insurance",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/prestations/ae.html",
-        "cms": "php-custom",
-        "design_system": "bootstrap-like",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+        "cms": "unknown",
+        "design_system": "unknown",
         "hosting_hint": "unknown",
-        "confidence": 0.68
+        "confidence": null
       },
       {
-        "inventory_id": "cap-003-en",
-        "service_name": "My Service Canada Account",
+        "inventory_id": "curated-001-fr",
+        "service_name": "Apply for a Social Insurance Number",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "curated-002-en",
+        "service_name": "Check my Service Canada Account",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
-        "cms": "php-custom",
-        "design_system": "bootstrap-like",
+        "cms": "unknown",
+        "design_system": "unknown",
         "hosting_hint": "unknown",
-        "confidence": 0.68
+        "confidence": null
       },
       {
-        "inventory_id": "cap-003-fr",
-        "service_name": "My Service Canada Account",
+        "inventory_id": "curated-002-fr",
+        "service_name": "Check my Service Canada Account",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
         "cms": "unknown",
-        "design_system": "gcds",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-004-en",
-        "service_name": "Immigration and citizenship",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
-        "cms": "unknown",
         "design_system": "unknown",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.35
-      },
-      {
-        "inventory_id": "cap-004-fr",
-        "service_name": "Immigration and citizenship",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
-        "cms": "wordpress",
-        "design_system": "gcweb-wet",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-005-en",
-        "service_name": "Passport services",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html",
-        "cms": "unknown",
-        "design_system": "gcds",
         "hosting_hint": "unknown",
-        "confidence": 0.68
+        "confidence": null
       },
       {
-        "inventory_id": "cap-005-fr",
-        "service_name": "Passport services",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html",
-        "cms": "drupal",
-        "design_system": "gcds",
-        "hosting_hint": "azure",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-006-en",
-        "service_name": "Weather office",
+        "inventory_id": "curated-003-en",
+        "service_name": "Find your local Service Canada office",
         "language": "en",
-        "canonical_url": "https://weather.gc.ca/",
-        "cms": "aem",
-        "design_system": "unknown",
-        "hosting_hint": "azure",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-006-fr",
-        "service_name": "Weather office",
-        "language": "fr",
-        "canonical_url": "https://meteo.gc.ca/",
-        "cms": "unknown",
-        "design_system": "unknown",
-        "hosting_hint": "azure",
-        "confidence": 0.35
-      },
-      {
-        "inventory_id": "cap-007-en",
-        "service_name": "Health services",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html",
-        "cms": "unknown",
-        "design_system": "gcds",
-        "hosting_hint": "unknown",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-007-fr",
-        "service_name": "Health services",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html",
-        "cms": "php-custom",
-        "design_system": "gcweb-wet",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-008-en",
-        "service_name": "Student aid",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html",
         "cms": "unknown",
         "design_system": "unknown",
         "hosting_hint": "unknown",
-        "confidence": 0.35
+        "confidence": null
       },
       {
-        "inventory_id": "cap-008-fr",
-        "service_name": "Student aid",
+        "inventory_id": "curated-003-fr",
+        "service_name": "Find your local Service Canada office",
         "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html",
-        "cms": "aem",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
       },
       {
-        "inventory_id": "cap-009-en",
-        "service_name": "Business and industry",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/business.html",
-        "cms": "wordpress",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-009-fr",
-        "service_name": "Business and industry",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/entreprises.html",
-        "cms": "php-custom",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
-      },
-      {
-        "inventory_id": "cap-010-en",
-        "service_name": "Border wait times",
+        "inventory_id": "curated-004-en",
+        "service_name": "Canada Border Wait Times",
         "language": "en",
         "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
-        "cms": "drupal",
+        "cms": "unknown",
         "design_system": "gcweb-wet",
-        "hosting_hint": "azure",
-        "confidence": 0.68
+        "hosting_hint": "unknown",
+        "confidence": 0.8
       },
       {
-        "inventory_id": "cap-010-fr",
-        "service_name": "Border wait times",
+        "inventory_id": "curated-004-fr",
+        "service_name": "Canada Border Wait Times",
         "language": "fr",
         "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
         "cms": "unknown",
-        "design_system": "gcds",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      },
+      {
+        "inventory_id": "curated-005-en",
+        "service_name": "Environment and Climate Change Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/environment-climate-change.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "curated-005-fr",
+        "service_name": "Environment and Climate Change Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/environnement-changement-climatique.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "curated-006-en",
+        "service_name": "Justice Laws Website",
+        "language": "en",
+        "canonical_url": "https://laws-lois.justice.gc.ca/",
+        "cms": "unknown",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      },
+      {
+        "inventory_id": "curated-006-fr",
+        "service_name": "Justice Laws Website",
+        "language": "fr",
+        "canonical_url": "https://laws-lois.justice.gc.ca/",
+        "cms": "unknown",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      },
+      {
+        "inventory_id": "curated-007-en",
+        "service_name": "Government of Canada Social Media",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/social-media.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "curated-007-fr",
+        "service_name": "Government of Canada Social Media",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/medias-sociaux.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "curated-008-en",
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "curated-008-fr",
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "curated-009-en",
+        "service_name": "Consumer Price Index",
+        "language": "en",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+        "cms": "aem",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      },
+      {
+        "inventory_id": "curated-009-fr",
+        "service_name": "Consumer Price Index",
+        "language": "fr",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+        "cms": "aem",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      },
+      {
+        "inventory_id": "curated-010-en",
+        "service_name": "Health Infobase Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "curated-010-fr",
+        "service_name": "Health Infobase Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "top-task-1-en",
+        "service_name": "Personal income tax",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/income.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "top-task-1-fr",
+        "service_name": "Personal income tax",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/impots/revenu.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "top-task-10-en",
+        "service_name": "Old Age Security and Supplement",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/oas.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "top-task-10-fr",
+        "service_name": "Old Age Security and Supplement",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/srg.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
+      },
+      {
+        "inventory_id": "top-task-2-en",
+        "service_name": "Job search and benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/work.html",
+        "cms": "unknown",
+        "design_system": "unknown",
+        "hosting_hint": "unknown",
+        "confidence": null
       }
     ]
   },
   "top_urls": [
     {
-      "inventory_id": "cap-001-en",
+      "inventory_id": "curated-001-en",
       "language": "en",
-      "canonical_url": "https://www.canada.ca/en/revenue-agency.html",
-      "service_name": "Taxes",
-      "institution": "CRA",
-      "source": "curated",
-      "tier": "tier-1",
-      "service_pattern": "dashboard",
-      "rank_score": 110,
+      "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+      "service_name": "Apply for a Social Insurance Number",
+      "institution": "ESDC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "application",
+      "rank_score": 79.1,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-001-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+      "service_name": "Apply for a Social Insurance Number",
+      "institution": "ESDC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "application",
+      "rank_score": 79.1,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-002-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
+      "service_name": "Check my Service Canada Account",
+      "institution": "ESDC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "sign-in",
+      "rank_score": 95,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-002-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
+      "service_name": "Check my Service Canada Account",
+      "institution": "ESDC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "sign-in",
+      "rank_score": 95,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-003-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html",
+      "service_name": "Find your local Service Canada office",
+      "institution": "ESDC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "help",
+      "rank_score": 63.62,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-003-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html",
+      "service_name": "Find your local Service Canada office",
+      "institution": "ESDC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "help",
+      "rank_score": 63.62,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-004-en",
+      "language": "en",
+      "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
+      "service_name": "Canada Border Wait Times",
+      "institution": "CBSA",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "status",
+      "rank_score": 85.54,
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 60,
-        "accessibility_score": 74,
-        "best_practices_score": 70,
-        "seo_score": 79,
-        "lcp_value_ms": 4139
+        "performance_score": 94,
+        "accessibility_score": 78,
+        "best_practices_score": 82,
+        "seo_score": 85,
+        "lcp_value_ms": 1000,
+        "total_byte_weight": 22056
       },
       "scangov": {
         "critical": 0,
-        "serious": 4,
-        "moderate": 6,
-        "minor": 8
+        "serious": 1,
+        "moderate": 2,
+        "minor": 4
       },
       "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/revenue-agency.html/accessibility",
-        "has_contact_info": true,
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
         "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
         "detected_language": "en",
-        "confidence": 0.72
+        "confidence": 0.35
       },
       "platform_fingerprint": {
-        "cms": "php-custom",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
+        "cms": "unknown",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
       }
     },
     {
-      "inventory_id": "cap-001-fr",
+      "inventory_id": "curated-004-fr",
       "language": "fr",
-      "canonical_url": "https://www.canada.ca/fr/agence-revenu.html",
-      "service_name": "Taxes",
-      "institution": "CRA",
-      "source": "curated",
-      "tier": "tier-1",
-      "service_pattern": "dashboard",
-      "rank_score": 110,
+      "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
+      "service_name": "Canada Border Wait Times",
+      "institution": "CBSA",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "status",
+      "rank_score": 85.54,
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
         "performance_score": 93,
-        "accessibility_score": 89,
-        "best_practices_score": 74,
-        "seo_score": 65,
-        "lcp_value_ms": 3259
+        "accessibility_score": 78,
+        "best_practices_score": 82,
+        "seo_score": 85,
+        "lcp_value_ms": 1000,
+        "total_byte_weight": 23703
       },
       "scangov": {
-        "critical": 1,
-        "serious": 4,
-        "moderate": 7,
-        "minor": 2
+        "critical": 0,
+        "serious": 1,
+        "moderate": 2,
+        "minor": 4
       },
       "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/agence-revenu.html/accessibility",
-        "has_contact_info": true,
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
         "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
         "detected_language": "fr",
-        "confidence": 0.72
+        "confidence": 0.35
       },
       "platform_fingerprint": {
-        "cms": "drupal",
-        "design_system": "gcds",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
+        "cms": "unknown",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
       }
     },
     {
-      "inventory_id": "cap-002-en",
+      "inventory_id": "curated-005-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/environment-climate-change.html",
+      "service_name": "Environment and Climate Change Canada",
+      "institution": "ECCC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "help",
+      "rank_score": 70.74,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-005-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/environnement-changement-climatique.html",
+      "service_name": "Environment and Climate Change Canada",
+      "institution": "ECCC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "help",
+      "rank_score": 70.74,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-006-en",
+      "language": "en",
+      "canonical_url": "https://laws-lois.justice.gc.ca/",
+      "service_name": "Justice Laws Website",
+      "institution": "Justice",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "dashboard",
+      "rank_score": 79.11,
+      "scan_status": "success",
+      "failure_reason": null,
+      "lighthouse": {
+        "performance_score": 93,
+        "accessibility_score": 78,
+        "best_practices_score": 82,
+        "seo_score": 85,
+        "lcp_value_ms": 1000,
+        "total_byte_weight": 4528
+      },
+      "scangov": {
+        "critical": 1,
+        "serious": 3,
+        "moderate": 5,
+        "minor": 4
+      },
+      "accessibility_statement": {
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "en",
+        "confidence": 0.35
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      }
+    },
+    {
+      "inventory_id": "curated-006-fr",
+      "language": "fr",
+      "canonical_url": "https://laws-lois.justice.gc.ca/",
+      "service_name": "Justice Laws Website",
+      "institution": "Justice",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "dashboard",
+      "rank_score": 79.11,
+      "scan_status": "success",
+      "failure_reason": null,
+      "lighthouse": {
+        "performance_score": 94,
+        "accessibility_score": 78,
+        "best_practices_score": 82,
+        "seo_score": 85,
+        "lcp_value_ms": 1000,
+        "total_byte_weight": 4528
+      },
+      "scangov": {
+        "critical": 1,
+        "serious": 3,
+        "moderate": 5,
+        "minor": 4
+      },
+      "accessibility_statement": {
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "en",
+        "confidence": 0.35
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      }
+    },
+    {
+      "inventory_id": "curated-007-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/social-media.html",
+      "service_name": "Government of Canada Social Media",
+      "institution": "CSPS",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "help",
+      "rank_score": 57.17,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-007-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/medias-sociaux.html",
+      "service_name": "Government of Canada Social Media",
+      "institution": "CSPS",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "help",
+      "rank_score": 57.17,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-008-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html",
+      "service_name": "IRCC: Apply for permanent residency",
+      "institution": "IRCC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "application",
+      "rank_score": 88.06,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-008-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html",
+      "service_name": "IRCC: Apply for permanent residency",
+      "institution": "IRCC",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "application",
+      "rank_score": 88.06,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-009-en",
+      "language": "en",
+      "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+      "service_name": "Consumer Price Index",
+      "institution": "StatsCan",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "dashboard",
+      "rank_score": 66.57,
+      "scan_status": "success",
+      "failure_reason": null,
+      "lighthouse": {
+        "performance_score": 30,
+        "accessibility_score": 78,
+        "best_practices_score": 55,
+        "seo_score": 85,
+        "lcp_value_ms": 3166,
+        "total_byte_weight": 874956
+      },
+      "scangov": {
+        "critical": 1,
+        "serious": 1,
+        "moderate": 5,
+        "minor": 4
+      },
+      "accessibility_statement": {
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "en",
+        "confidence": 0.35
+      },
+      "platform_fingerprint": {
+        "cms": "aem",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      }
+    },
+    {
+      "inventory_id": "curated-009-fr",
+      "language": "fr",
+      "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+      "service_name": "Consumer Price Index",
+      "institution": "StatsCan",
+      "source": "unknown",
+      "tier": "tier-2",
+      "service_pattern": "dashboard",
+      "rank_score": 66.57,
+      "scan_status": "success",
+      "failure_reason": null,
+      "lighthouse": {
+        "performance_score": 75,
+        "accessibility_score": 78,
+        "best_practices_score": 55,
+        "seo_score": 85,
+        "lcp_value_ms": 1104,
+        "total_byte_weight": 874956
+      },
+      "scangov": {
+        "critical": 1,
+        "serious": 1,
+        "moderate": 5,
+        "minor": 4
+      },
+      "accessibility_statement": {
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "fr",
+        "confidence": 0.35
+      },
+      "platform_fingerprint": {
+        "cms": "aem",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      }
+    },
+    {
+      "inventory_id": "curated-010-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html",
+      "service_name": "Health Infobase Canada",
+      "institution": "PHAC",
+      "source": "unknown",
+      "tier": "tier-3",
+      "service_pattern": "information",
+      "rank_score": 81.82,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "curated-010-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html",
+      "service_name": "Health Infobase Canada",
+      "institution": "PHAC",
+      "source": "unknown",
+      "tier": "tier-3",
+      "service_pattern": "information",
+      "rank_score": 81.82,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-1-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/services/taxes/income.html",
+      "service_name": "Personal income tax",
+      "institution": "CRA",
+      "source": "top-task",
+      "tier": "tier-1",
+      "service_pattern": "application",
+      "rank_score": 110,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-1-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/services/impots/revenu.html",
+      "service_name": "Personal income tax",
+      "institution": "CRA",
+      "source": "top-task",
+      "tier": "tier-1",
+      "service_pattern": "application",
+      "rank_score": 110,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-10-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/oas.html",
+      "service_name": "Old Age Security and Supplement",
+      "institution": "ESDC",
+      "source": "top-task",
+      "tier": "tier-2",
+      "service_pattern": "help",
+      "rank_score": 65,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-10-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/srg.html",
+      "service_name": "Old Age Security and Supplement",
+      "institution": "ESDC",
+      "source": "top-task",
+      "tier": "tier-2",
+      "service_pattern": "help",
+      "rank_score": 65,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-2-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/services/work.html",
+      "service_name": "Job search and benefits",
+      "institution": "ESDC",
+      "source": "top-task",
+      "tier": "tier-1",
+      "service_pattern": "dashboard",
+      "rank_score": 105,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-2-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/services/travail.html",
+      "service_name": "Job search and benefits",
+      "institution": "ESDC",
+      "source": "top-task",
+      "tier": "tier-1",
+      "service_pattern": "dashboard",
+      "rank_score": 105,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-3-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/services/travel.html",
+      "service_name": "Passport and travel",
+      "institution": "IRCC",
+      "source": "top-task",
+      "tier": "tier-1",
+      "service_pattern": "help",
+      "rank_score": 100,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-3-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/services/voyages.html",
+      "service_name": "Passport and travel",
+      "institution": "IRCC",
+      "source": "top-task",
+      "tier": "tier-1",
+      "service_pattern": "help",
+      "rank_score": 100,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-4-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/services/education-training/loans-grants.html",
+      "service_name": "Student loans and grants",
+      "institution": "ESDC",
+      "source": "top-task",
+      "tier": "tier-2",
+      "service_pattern": "application",
+      "rank_score": 95,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-4-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/services/education-formation/prets-bourses.html",
+      "service_name": "Student loans and grants",
+      "institution": "ESDC",
+      "source": "top-task",
+      "tier": "tier-2",
+      "service_pattern": "application",
+      "rank_score": 95,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-5-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/services/health/coronavirus-2019.html",
+      "service_name": "COVID-19 information",
+      "institution": "PHAC",
+      "source": "top-task",
+      "tier": "tier-3",
+      "service_pattern": "information",
+      "rank_score": 90,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-5-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/services/sante/coronavirus-2019.html",
+      "service_name": "COVID-19 information",
+      "institution": "PHAC",
+      "source": "top-task",
+      "tier": "tier-3",
+      "service_pattern": "information",
+      "rank_score": 90,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-6-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
+      "service_name": "Immigration and citizenship",
+      "institution": "IRCC",
+      "source": "top-task",
+      "tier": "tier-2",
+      "service_pattern": "application",
+      "rank_score": 85,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-6-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
+      "service_name": "Immigration and citizenship",
+      "institution": "IRCC",
+      "source": "top-task",
+      "tier": "tier-2",
+      "service_pattern": "application",
+      "rank_score": 85,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-7-en",
+      "language": "en",
+      "canonical_url": "https://www.canada.ca/en/services/benefits.html",
+      "service_name": "Benefits and credits",
+      "institution": "ESDC",
+      "source": "top-task",
+      "tier": "tier-2",
+      "service_pattern": "dashboard",
+      "rank_score": 80,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-7-fr",
+      "language": "fr",
+      "canonical_url": "https://www.canada.ca/fr/services/prestations.html",
+      "service_name": "Benefits and credits",
+      "institution": "ESDC",
+      "source": "top-task",
+      "tier": "tier-2",
+      "service_pattern": "dashboard",
+      "rank_score": 80,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
+    },
+    {
+      "inventory_id": "top-task-8-en",
       "language": "en",
       "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html",
       "service_name": "Employment Insurance",
       "institution": "ESDC",
       "source": "top-task",
-      "tier": "tier-1",
+      "tier": "tier-2",
       "service_pattern": "application",
-      "rank_score": 115,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 67,
-        "accessibility_score": 61,
-        "best_practices_score": 53,
-        "seo_score": 77,
-        "lcp_value_ms": 2643
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 1,
-        "moderate": 4,
-        "minor": 9
-      },
-      "accessibility_statement": {
-        "statement_detected": false,
-        "statement_link_text": null,
-        "statement_link_url": null,
-        "has_contact_info": false,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": false,
-        "has_freshness_marker": false,
-        "detected_language": "en",
-        "confidence": 0.3
-      },
-      "platform_fingerprint": {
-        "cms": "wordpress",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
-      }
+      "rank_score": 75,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
     },
     {
-      "inventory_id": "cap-002-fr",
+      "inventory_id": "top-task-8-fr",
       "language": "fr",
       "canonical_url": "https://www.canada.ca/fr/services/prestations/ae.html",
       "service_name": "Employment Insurance",
       "institution": "ESDC",
       "source": "top-task",
-      "tier": "tier-1",
+      "tier": "tier-2",
       "service_pattern": "application",
-      "rank_score": 115,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 50,
-        "accessibility_score": 77,
-        "best_practices_score": 88,
-        "seo_score": 61,
-        "lcp_value_ms": 2024
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 2,
-        "minor": 9
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/services/prestations/ae.html/accessibility",
-        "has_contact_info": false,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": false,
-        "has_freshness_marker": false,
-        "detected_language": "fr",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "php-custom",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "unknown",
-        "confidence": 0.68
-      }
+      "rank_score": 75,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
     },
     {
-      "inventory_id": "cap-003-en",
+      "inventory_id": "top-task-9-en",
       "language": "en",
-      "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
-      "service_name": "My Service Canada Account",
-      "institution": "ESDC",
-      "source": "curated",
-      "tier": "tier-1",
-      "service_pattern": "sign-in",
-      "rank_score": 110,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 74,
-        "accessibility_score": 65,
-        "best_practices_score": 71,
-        "seo_score": 62,
-        "lcp_value_ms": 2880
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 4,
-        "minor": 8
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "en",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "php-custom",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "unknown",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-003-fr",
-      "language": "fr",
-      "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
-      "service_name": "My Service Canada Account",
-      "institution": "ESDC",
-      "source": "curated",
-      "tier": "tier-1",
-      "service_pattern": "sign-in",
-      "rank_score": 110,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 92,
-        "accessibility_score": 56,
-        "best_practices_score": 96,
-        "seo_score": 83,
-        "lcp_value_ms": 3932
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 6,
-        "minor": 12
-      },
-      "accessibility_statement": {
-        "statement_detected": false,
-        "statement_link_text": null,
-        "statement_link_url": null,
-        "has_contact_info": false,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": false,
-        "has_freshness_marker": false,
-        "detected_language": "fr",
-        "confidence": 0.3
-      },
-      "platform_fingerprint": {
-        "cms": "unknown",
-        "design_system": "gcds",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-004-en",
-      "language": "en",
-      "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
-      "service_name": "Immigration and citizenship",
-      "institution": "IRCC",
-      "source": "recent",
-      "tier": "tier-1",
-      "service_pattern": "application",
-      "rank_score": 105,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 86,
-        "accessibility_score": 60,
-        "best_practices_score": 58,
-        "seo_score": 77,
-        "lcp_value_ms": 3361
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 4,
-        "moderate": 0,
-        "minor": 7
-      },
-      "accessibility_statement": {
-        "statement_detected": false,
-        "statement_link_text": null,
-        "statement_link_url": null,
-        "has_contact_info": false,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": false,
-        "has_freshness_marker": false,
-        "detected_language": "en",
-        "confidence": 0.3
-      },
-      "platform_fingerprint": {
-        "cms": "unknown",
-        "design_system": "unknown",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.35
-      }
-    },
-    {
-      "inventory_id": "cap-004-fr",
-      "language": "fr",
-      "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
-      "service_name": "Immigration and citizenship",
-      "institution": "IRCC",
-      "source": "recent",
-      "tier": "tier-1",
-      "service_pattern": "application",
-      "rank_score": 105,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 73,
-        "accessibility_score": 63,
-        "best_practices_score": 95,
-        "seo_score": 89,
-        "lcp_value_ms": 3536
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 1,
-        "moderate": 0,
-        "minor": 5
-      },
-      "accessibility_statement": {
-        "statement_detected": false,
-        "statement_link_text": null,
-        "statement_link_url": null,
-        "has_contact_info": false,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": false,
-        "has_freshness_marker": false,
-        "detected_language": "fr",
-        "confidence": 0.3
-      },
-      "platform_fingerprint": {
-        "cms": "wordpress",
-        "design_system": "gcweb-wet",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-005-en",
-      "language": "en",
-      "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html",
-      "service_name": "Passport services",
-      "institution": "IRCC",
-      "source": "top-task",
-      "tier": "tier-1",
-      "service_pattern": "status",
-      "rank_score": 110,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 60,
-        "accessibility_score": 94,
-        "best_practices_score": 95,
-        "seo_score": 94,
-        "lcp_value_ms": 4628
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 4,
-        "minor": 4
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "en",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "unknown",
-        "design_system": "gcds",
-        "hosting_hint": "unknown",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-005-fr",
-      "language": "fr",
-      "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html",
-      "service_name": "Passport services",
-      "institution": "IRCC",
-      "source": "top-task",
-      "tier": "tier-1",
-      "service_pattern": "status",
-      "rank_score": 110,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 95,
-        "accessibility_score": 77,
-        "best_practices_score": 89,
-        "seo_score": 60,
-        "lcp_value_ms": 3484
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 1,
-        "moderate": 2,
-        "minor": 10
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "fr",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "drupal",
-        "design_system": "gcds",
-        "hosting_hint": "azure",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-006-en",
-      "language": "en",
-      "canonical_url": "https://weather.gc.ca/",
-      "service_name": "Weather office",
-      "institution": "ECCC",
-      "source": "recent",
-      "tier": "tier-1",
-      "service_pattern": "dashboard",
-      "rank_score": 95,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 92,
-        "accessibility_score": 87,
-        "best_practices_score": 73,
-        "seo_score": 78,
-        "lcp_value_ms": 1715
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 1,
-        "moderate": 4,
-        "minor": 5
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://weather.gc.ca/accessibility",
-        "has_contact_info": false,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": false,
-        "has_freshness_marker": false,
-        "detected_language": "en",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "aem",
-        "design_system": "unknown",
-        "hosting_hint": "azure",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-006-fr",
-      "language": "fr",
-      "canonical_url": "https://meteo.gc.ca/",
-      "service_name": "Weather office",
-      "institution": "ECCC",
-      "source": "recent",
-      "tier": "tier-1",
-      "service_pattern": "dashboard",
-      "rank_score": 95,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 66,
-        "accessibility_score": 77,
-        "best_practices_score": 97,
-        "seo_score": 91,
-        "lcp_value_ms": 1305
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 2,
-        "moderate": 3,
-        "minor": 6
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://meteo.gc.ca/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "fr",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "unknown",
-        "design_system": "unknown",
-        "hosting_hint": "azure",
-        "confidence": 0.35
-      }
-    },
-    {
-      "inventory_id": "cap-007-en",
-      "language": "en",
-      "canonical_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html",
-      "service_name": "Health services",
-      "institution": "PHAC",
-      "source": "recent",
-      "tier": "tier-1",
-      "service_pattern": "help",
-      "rank_score": 93,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 72,
-        "accessibility_score": 62,
-        "best_practices_score": 52,
-        "seo_score": 82,
-        "lcp_value_ms": 1435
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 1,
-        "moderate": 3,
-        "minor": 4
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "en",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "unknown",
-        "design_system": "gcds",
-        "hosting_hint": "unknown",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-007-fr",
-      "language": "fr",
-      "canonical_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html",
-      "service_name": "Health services",
-      "institution": "PHAC",
-      "source": "recent",
-      "tier": "tier-1",
-      "service_pattern": "help",
-      "rank_score": 93,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 57,
-        "accessibility_score": 91,
-        "best_practices_score": 51,
-        "seo_score": 90,
-        "lcp_value_ms": 4592
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 2,
-        "moderate": 5,
-        "minor": 2
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "fr",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "php-custom",
-        "design_system": "gcweb-wet",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-008-en",
-      "language": "en",
-      "canonical_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html",
-      "service_name": "Student aid",
+      "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html",
+      "service_name": "CPP and retirement",
       "institution": "ESDC",
       "source": "top-task",
-      "tier": "tier-1",
-      "service_pattern": "application",
-      "rank_score": 105,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 54,
-        "accessibility_score": 77,
-        "best_practices_score": 59,
-        "seo_score": 79,
-        "lcp_value_ms": 4375
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 0,
-        "moderate": 1,
-        "minor": 12
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "en",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "unknown",
-        "design_system": "unknown",
-        "hosting_hint": "unknown",
-        "confidence": 0.35
-      }
+      "tier": "tier-2",
+      "service_pattern": "help",
+      "rank_score": 70,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
     },
     {
-      "inventory_id": "cap-008-fr",
+      "inventory_id": "top-task-9-fr",
       "language": "fr",
-      "canonical_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html",
-      "service_name": "Student aid",
+      "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc.html",
+      "service_name": "CPP and retirement",
       "institution": "ESDC",
       "source": "top-task",
-      "tier": "tier-1",
-      "service_pattern": "application",
-      "rank_score": 105,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 94,
-        "accessibility_score": 61,
-        "best_practices_score": 90,
-        "seo_score": 99,
-        "lcp_value_ms": 2483
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 1,
-        "moderate": 6,
-        "minor": 10
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "fr",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "aem",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-009-en",
-      "language": "en",
-      "canonical_url": "https://www.canada.ca/en/services/business.html",
-      "service_name": "Business and industry",
-      "institution": "ISED",
-      "source": "recent",
-      "tier": "tier-1",
+      "tier": "tier-2",
       "service_pattern": "help",
-      "rank_score": 84.86,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 60,
-        "accessibility_score": 76,
-        "best_practices_score": 80,
-        "seo_score": 76,
-        "lcp_value_ms": 2722
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 1,
-        "moderate": 5,
-        "minor": 0
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.canada.ca/en/services/business.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "en",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "wordpress",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "akamai",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-009-fr",
-      "language": "fr",
-      "canonical_url": "https://www.canada.ca/fr/services/entreprises.html",
-      "service_name": "Business and industry",
-      "institution": "ISED",
-      "source": "recent",
-      "tier": "tier-1",
-      "service_pattern": "help",
-      "rank_score": 84.86,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 77,
-        "accessibility_score": 90,
-        "best_practices_score": 97,
-        "seo_score": 65,
-        "lcp_value_ms": 4161
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 6,
-        "minor": 10
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.canada.ca/fr/services/entreprises.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "fr",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "php-custom",
-        "design_system": "bootstrap-like",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-010-en",
-      "language": "en",
-      "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
-      "service_name": "Border wait times",
-      "institution": "CBSA",
-      "source": "curated",
-      "tier": "tier-1",
-      "service_pattern": "status",
-      "rank_score": 95.54,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 48,
-        "accessibility_score": 58,
-        "best_practices_score": 92,
-        "seo_score": 75,
-        "lcp_value_ms": 4086
-      },
-      "scangov": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 0,
-        "minor": 12
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Accessibility statement",
-        "statement_link_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": true,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "en",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "drupal",
-        "design_system": "gcweb-wet",
-        "hosting_hint": "azure",
-        "confidence": 0.68
-      }
-    },
-    {
-      "inventory_id": "cap-010-fr",
-      "language": "fr",
-      "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
-      "service_name": "Border wait times",
-      "institution": "CBSA",
-      "source": "curated",
-      "tier": "tier-1",
-      "service_pattern": "status",
-      "rank_score": 95.54,
-      "scan_status": "success",
-      "failure_reason": null,
-      "lighthouse": {
-        "performance_score": 71,
-        "accessibility_score": 80,
-        "best_practices_score": 87,
-        "seo_score": 63,
-        "lcp_value_ms": 4400
-      },
-      "scangov": {
-        "critical": 1,
-        "serious": 4,
-        "moderate": 5,
-        "minor": 2
-      },
-      "accessibility_statement": {
-        "statement_detected": true,
-        "statement_link_text": "Declaration d'accessibilite",
-        "statement_link_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html/accessibility",
-        "has_contact_info": true,
-        "mentions_compliance_status": false,
-        "mentions_alternative_support": true,
-        "has_freshness_marker": true,
-        "detected_language": "fr",
-        "confidence": 0.72
-      },
-      "platform_fingerprint": {
-        "cms": "unknown",
-        "design_system": "gcds",
-        "hosting_hint": "aws-cloudfront",
-        "confidence": 0.68
-      }
+      "rank_score": 70,
+      "scan_status": "failed",
+      "failure_reason": "fetch failed",
+      "lighthouse": null,
+      "scangov": null,
+      "accessibility_statement": null,
+      "platform_fingerprint": null
     }
   ],
   "methodology": {
