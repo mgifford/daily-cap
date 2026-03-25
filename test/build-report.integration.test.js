@@ -113,6 +113,9 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
   assert.ok(report.accessibility_statements);
   assert.ok(report.platform_signals);
   assert.ok(report.impact_model);
+  assert.ok(report.cohort_quality);
+  assert.equal(report.cohort_quality.summary.scanned_urls, 2);
+  assert.equal(report.cohort_quality.summary.with_traffic_data_percent, 100);
   assert.ok(report.trend_analysis);
   assert.equal(report.trend_analysis.available, true);
   assert.equal(report.top_urls.length, 2);

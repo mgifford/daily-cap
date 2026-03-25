@@ -37,6 +37,10 @@ export function renderDailyReportPage(report) {
   const cmsDist = report.platform_signals?.distributions?.cms || [];
   const impactSummary = report.impact_model?.summary || {};
   const impactTop = report.impact_model?.top_directional_impact_urls || [];
+  const cohortSummary = report.cohort_quality?.summary || {};
+  const cohortLineage = report.cohort_quality?.distributions?.source_lineage || [];
+  const cohortWarnings = report.cohort_quality?.warnings || [];
+  const provenanceRows = report.cohort_quality?.provenance_examples || [];
   const trend = report.trend_analysis || {};
   const trendMetrics = trend.metrics || [];
   const trendRegressions = trend.regressions || [];
@@ -106,6 +110,32 @@ export function renderDailyReportPage(report) {
         <td>${escapeHtml(row.current ?? "-")}</td>
         <td>${escapeHtml(row.delta ?? "-")}</td>
         <td>${escapeHtml(row.is_regression ? "yes" : "no")}</td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const lineageRows = cohortLineage
+    .slice(0, 8)
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.key)}</td>
+        <td>${escapeHtml(row.count)}</td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const provenanceTableRows = provenanceRows
+    .slice(0, 10)
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.service_name)}</td>
+        <td>${escapeHtml(row.language ? row.language.toUpperCase() : "-")}</td>
+        <td>${escapeHtml(row.source_lineage.join(", "))}</td>
+        <td>${escapeHtml(row.source_confidence_score)}</td>
+        <td>${escapeHtml(row.source_confidence_label)}</td>
+        <td>${escapeHtml(row.freshness_signal)}</td>
       </tr>`;
     })
     .join("\n");
@@ -252,6 +282,49 @@ export function renderDailyReportPage(report) {
           </tr>
         </thead>
         <tbody>${cmsRows || '<tr><td colspan="2">No CMS signals available in this run.</td></tr>'}</tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Cohort Quality and Provenance</h2>
+      <div class="cards">
+        <div class="card"><strong>Avg Source Confidence</strong><br/>${escapeHtml(cohortSummary.source_confidence_average ?? "-")}</div>
+        <div class="card"><strong>Multi-Source URLs</strong><br/>${escapeHtml(cohortSummary.multi_source_urls ?? "-")}</div>
+        <div class="card"><strong>Multi-Source Share</strong><br/>${escapeHtml(cohortSummary.multi_source_percent ?? "-")}%</div>
+        <div class="card"><strong>Discovered-Only Share</strong><br/>${escapeHtml(cohortSummary.discovered_only_percent ?? "-")}%</div>
+        <div class="card"><strong>With Recent Signal</strong><br/>${escapeHtml(cohortSummary.with_recent_signal_percent ?? "-")}%</div>
+        <div class="card"><strong>With Traffic Data</strong><br/>${escapeHtml(cohortSummary.with_traffic_data_percent ?? "-")}%</div>
+      </div>
+      ${
+        cohortWarnings.length > 0
+          ? `<p><strong>Warnings:</strong> ${escapeHtml(cohortWarnings.join(" | "))}</p>`
+          : "<p><em>No cohort quality warnings triggered by current thresholds.</em></p>"
+      }
+
+      <h3>Source Lineage Distribution</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Lineage</th>
+            <th scope="col">Count</th>
+          </tr>
+        </thead>
+        <tbody>${lineageRows || '<tr><td colspan="2">No lineage data available in this run.</td></tr>'}</tbody>
+      </table>
+
+      <h3>Provenance Examples</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Lang</th>
+            <th scope="col">Source Lineage</th>
+            <th scope="col">Confidence</th>
+            <th scope="col">Confidence Label</th>
+            <th scope="col">Freshness Signal</th>
+          </tr>
+        </thead>
+        <tbody>${provenanceTableRows || '<tr><td colspan="6">No provenance examples available in this run.</td></tr>'}</tbody>
       </table>
     </section>
 

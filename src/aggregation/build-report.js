@@ -4,6 +4,7 @@ import { summarizeAccessibilityStatements } from "./accessibility-statements.js"
 import { summarizePlatformSignals } from "./platform-signals.js";
 import { computeDirectionalImpact } from "./impact-model.js";
 import { computeTrendAnalysis } from "./trend-analysis.js";
+import { summarizeCohortQuality } from "./cohort-quality.js";
 
 function summarizeScan(scanned) {
   const succeeded = scanned.filter((row) => row.scan_status === "success").length;
@@ -23,6 +24,7 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned, pre
   const accessibilityStatements = summarizeAccessibilityStatements(scanned);
   const platformSignals = summarizePlatformSignals(scanned);
   const impactModel = computeDirectionalImpact(scanned);
+  const cohortQuality = summarizeCohortQuality(scanned);
 
   // inventory is now an object with scan_targets, ranking_summary, tier_validation, etc.
   const inventoryCount = inventory.scan_target_count || inventory.scan_targets?.length || 0;
@@ -46,6 +48,7 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned, pre
     accessibility_statements: accessibilityStatements,
     platform_signals: platformSignals,
     impact_model: impactModel,
+    cohort_quality: cohortQuality,
     top_urls: scanned.map((row) => ({
       inventory_id: row.inventory_id,
       language: row.language,
