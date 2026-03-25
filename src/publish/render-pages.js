@@ -7,20 +7,8 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
-export function renderDailyReportPage(report) {
-  const paritySummary = report.bilingual_parity?.summary || {};
-  const largestGaps = report.bilingual_parity?.highlights?.largest_accessibility_gaps || [];
-  const statementSummary = report.accessibility_statements?.summary || {};
-  const statementGaps = report.accessibility_statements?.missing_statement_examples || [];
-  const platformSummary = report.platform_signals?.summary || {};
-  const cmsDist = report.platform_signals?.distributions?.cms || [];
-  const impactSummary = report.impact_model?.summary || {};
-  const impactTop = report.impact_model?.top_directional_impact_urls || [];
-  const trend = report.trend_analysis || {};
-  const trendMetrics = trend.metrics || [];
-  const trendRegressions = trend.regressions || [];
-
-  const rows = report.top_urls
+function renderTopUrlRows(rows) {
+  return rows
     .map((row) => {
       const lighthouse = row.lighthouse || {};
       return `
@@ -38,6 +26,24 @@ export function renderDailyReportPage(report) {
       </tr>`;
     })
     .join("\n");
+}
+
+export function renderDailyReportPage(report) {
+  const paritySummary = report.bilingual_parity?.summary || {};
+  const largestGaps = report.bilingual_parity?.highlights?.largest_accessibility_gaps || [];
+  const statementSummary = report.accessibility_statements?.summary || {};
+  const statementGaps = report.accessibility_statements?.missing_statement_examples || [];
+  const platformSummary = report.platform_signals?.summary || {};
+  const cmsDist = report.platform_signals?.distributions?.cms || [];
+  const impactSummary = report.impact_model?.summary || {};
+  const impactTop = report.impact_model?.top_directional_impact_urls || [];
+  const trend = report.trend_analysis || {};
+  const trendMetrics = trend.metrics || [];
+  const trendRegressions = trend.regressions || [];
+
+  const topUrlsPreview = report.top_urls.slice(0, 12);
+  const topUrlsOverflowCount = Math.max(0, report.top_urls.length - 12);
+  const rows = renderTopUrlRows(topUrlsPreview);
 
   const parityRows = largestGaps
     .map((row) => {
@@ -52,6 +58,7 @@ export function renderDailyReportPage(report) {
     .join("\n");
 
   const missingStatementRows = statementGaps
+    .slice(0, 10)
     .map((row) => {
       return `
       <tr>
@@ -62,6 +69,8 @@ export function renderDailyReportPage(report) {
       </tr>`;
     })
     .join("\n");
+
+  const missingStatementOverflowCount = Math.max(0, statementGaps.length - 10);
 
   const cmsRows = cmsDist
     .slice(0, 8)
@@ -118,20 +127,7 @@ export function renderDailyReportPage(report) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daily CAP Report - ${escapeHtml(report.run_date)}</title>
-  <style>
-    :root { --bg: #f8faf8; --fg: #0d1b12; --card: #ffffff; --line: #d7e2d8; --accent: #1d6b42; }
-    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: radial-gradient(circle at top, #e8f4ea, var(--bg) 40%); color: var(--fg); }
-    header { background: white; border-bottom: 1px solid var(--line); padding: 1rem; }
-    main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 3rem; }
-    h1, h2 { letter-spacing: 0.01em; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.75rem; }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 0.6rem; padding: 0.8rem; }
-    table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); }
-    th, td { padding: 0.55rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-    th { background: #edf4ee; }
-    a { color: var(--accent); }
-    .nav { font-size: 0.9rem; }
-  </style>
+  <link rel="stylesheet" href="../../assets/report.css" />
 </head>
 <body>
   <header>
@@ -141,6 +137,7 @@ export function renderDailyReportPage(report) {
     <h1>Daily CAP Report</h1>
     <p>Date: ${escapeHtml(report.run_date)} | Mode: ${escapeHtml(report.scan_mode)}</p>
     <p><em>Daily CAP is an independent analytics project and is not a Government of Canada program.</em></p>
+    <p><a href="./report.json">Download full report JSON</a></p>
 
     <section>
       <h2>Overview</h2>
@@ -234,6 +231,7 @@ export function renderDailyReportPage(report) {
         </thead>
         <tbody>${missingStatementRows || '<tr><td colspan="4">No missing accessibility statements detected in this run.</td></tr>'}</tbody>
       </table>
+      ${missingStatementOverflowCount > 0 ? `<p>${escapeHtml(missingStatementOverflowCount)} additional rows available in <a href="./report.json">report.json</a>.</p>` : ""}
     </section>
 
     <section>
@@ -293,6 +291,7 @@ export function renderDailyReportPage(report) {
 
     <section>
       <h2>Top URLs</h2>
+      <p>Showing first 12 rows by default for faster initial rendering.</p>
       <table>
         <thead>
           <tr>
@@ -310,6 +309,7 @@ export function renderDailyReportPage(report) {
         </thead>
         <tbody>${rows}</tbody>
       </table>
+      ${topUrlsOverflowCount > 0 ? `<p>${escapeHtml(topUrlsOverflowCount)} additional rows available in <a href="./report.json">report.json</a>.</p>` : ""}
     </section>
   </main>
 </body>
@@ -323,11 +323,7 @@ export function renderDashboardPage(report) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daily CAP Reports</title>
-  <style>
-    body { font-family: Georgia, "Times New Roman", serif; margin: 2rem auto; max-width: 900px; padding: 0 1rem; }
-    a { color: #1d6b42; }
-    .nav { font-size: 0.9rem; margin-bottom: 1rem; }
-  </style>
+  <link rel="stylesheet" href="./assets/report.css" />
 </head>
 <body>
   <div class="nav"><a href="../">← Back to Home</a></div>

@@ -1,0 +1,82 @@
+:root {
+  --bg: #f8faf8;
+  --fg: #0d1b12;
+  --card: #ffffff;
+  --line: #d7e2d8;
+  --accent: #1d6b42;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: radial-gradient(circle at top, #e8f4ea, var(--bg) 40%);
+  color: var(--fg);
+}
+
+header {
+  background: white;
+  border-bottom: 1px solid var(--line);
+  padding: 1rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+h1,
+h2 {
+  letter-spacing: 0.01em;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.75rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 0.8rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border: 1px solid var(--line);
+  margin-bottom: 0.6rem;
+}
+
+th,
+td {
+  padding: 0.55rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #edf4ee;
+}
+
+a {
+  color: var(--accent);
+}
+
+.nav {
+  font-size: 0.9rem;
+}
+
+details {
+  margin: 0.65rem 0 1rem;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
