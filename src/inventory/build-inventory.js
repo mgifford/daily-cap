@@ -47,7 +47,9 @@ export function buildInventory(seedEntries, options = {}) {
         tier: entry.tier,
         source: entry.source,
         service_pattern: entry.service_pattern || "unclassified",
-        service_category: entry.service_category || "other"
+        service_category: entry.service_category || "other",
+        page_load_count: entry.page_load_count || 0,
+        priority_weight: entry.priority_weight || 0.5
       });
     }
 
@@ -66,7 +68,9 @@ export function buildInventory(seedEntries, options = {}) {
         tier: entry.tier,
         source: entry.source,
         service_pattern: entry.service_pattern || "unclassified",
-        service_category: entry.service_category || "other"
+        service_category: entry.service_category || "other",
+        page_load_count: entry.page_load_count || 0,
+        priority_weight: entry.priority_weight || 0.5
       });
     }
   }

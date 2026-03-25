@@ -14,6 +14,8 @@ export function renderDailyReportPage(report) {
   const statementGaps = report.accessibility_statements?.missing_statement_examples || [];
   const platformSummary = report.platform_signals?.summary || {};
   const cmsDist = report.platform_signals?.distributions?.cms || [];
+  const impactSummary = report.impact_model?.summary || {};
+  const impactTop = report.impact_model?.top_directional_impact_urls || [];
 
   const rows = report.top_urls
     .map((row) => {
@@ -27,6 +29,7 @@ export function renderDailyReportPage(report) {
         <td>${escapeHtml(row.accessibility_statement?.statement_detected ? "yes" : "no")}</td>
         <td>${escapeHtml(row.platform_fingerprint?.cms ?? "unknown")}</td>
         <td>${escapeHtml(row.platform_fingerprint?.design_system ?? "unknown")}</td>
+        <td>${escapeHtml(row.page_load_count ?? "-")}</td>
         <td>${escapeHtml(lighthouse.performance_score ?? "-")}</td>
         <td>${escapeHtml(lighthouse.accessibility_score ?? "-")}</td>
       </tr>`;
@@ -64,6 +67,20 @@ export function renderDailyReportPage(report) {
       <tr>
         <td>${escapeHtml(row.key)}</td>
         <td>${escapeHtml(row.count)}</td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const impactRows = impactTop
+    .slice(0, 10)
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.service_name)}</td>
+        <td>${escapeHtml(row.language ? row.language.toUpperCase() : "-")}</td>
+        <td>${escapeHtml(row.page_load_count ?? "-")}</td>
+        <td>${escapeHtml(row.blended_severity_weight ?? "-")}</td>
+        <td>${escapeHtml(row.directional_affected_load_estimate ?? "-")}</td>
       </tr>`;
     })
     .join("\n");
@@ -179,6 +196,30 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
+      <h2>Directional Impact Model</h2>
+      <p><em>${escapeHtml(report.impact_model?.note || "Directional estimate only.")}</em></p>
+      <div class="cards">
+        <div class="card"><strong>Total Load</strong><br/>${escapeHtml(impactSummary.total_page_load_count ?? "-")}</div>
+        <div class="card"><strong>Directional Affected Load</strong><br/>${escapeHtml(impactSummary.directional_affected_load_estimate ?? "-")}</div>
+        <div class="card"><strong>Affected Share</strong><br/>${escapeHtml(impactSummary.directional_affected_share_percent ?? "-")}%</div>
+      </div>
+
+      <h3>Top Directional Impact URLs</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Lang</th>
+            <th scope="col">Load</th>
+            <th scope="col">Severity Weight</th>
+            <th scope="col">Directional Affected Load</th>
+          </tr>
+        </thead>
+        <tbody>${impactRows || '<tr><td colspan="5">No directional impact rows available in this run.</td></tr>'}</tbody>
+      </table>
+    </section>
+
+    <section>
       <h2>Benchmark Summary</h2>
       <div class="cards">
         <div class="card"><strong>Performance</strong><br/>${escapeHtml(report.benchmark_summary.means.performance_score ?? "-")}</div>
@@ -200,6 +241,7 @@ export function renderDailyReportPage(report) {
             <th scope="col">Statement</th>
             <th scope="col">CMS</th>
             <th scope="col">Design System</th>
+            <th scope="col">Load</th>
             <th scope="col">Perf</th>
             <th scope="col">A11y</th>
           </tr>

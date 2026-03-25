@@ -2,6 +2,7 @@ import { aggregateScores } from "./score-aggregation.js";
 import { computeBilingualParity } from "./bilingual-parity.js";
 import { summarizeAccessibilityStatements } from "./accessibility-statements.js";
 import { summarizePlatformSignals } from "./platform-signals.js";
+import { computeDirectionalImpact } from "./impact-model.js";
 
 function summarizeScan(scanned) {
   const succeeded = scanned.filter((row) => row.scan_status === "success").length;
@@ -20,6 +21,7 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
   const bilingualParity = computeBilingualParity(scanned);
   const accessibilityStatements = summarizeAccessibilityStatements(scanned);
   const platformSignals = summarizePlatformSignals(scanned);
+  const impactModel = computeDirectionalImpact(scanned);
 
   // inventory is now an object with scan_targets, ranking_summary, tier_validation, etc.
   const inventoryCount = inventory.scan_target_count || inventory.scan_targets?.length || 0;
@@ -42,6 +44,7 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
     bilingual_parity: bilingualParity,
     accessibility_statements: accessibilityStatements,
     platform_signals: platformSignals,
+    impact_model: impactModel,
     top_urls: scanned.map((row) => ({
       inventory_id: row.inventory_id,
       language: row.language,
@@ -51,6 +54,8 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
       source: row.source,
       tier: row.tier,
       service_pattern: row.service_pattern,
+      service_category: row.service_category,
+      page_load_count: row.page_load_count,
       rank_score: row.rank_score,
       scan_status: row.scan_status,
       failure_reason: row.failure_reason,
@@ -60,8 +65,8 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
       platform_fingerprint: row.platform_fingerprint
     })),
     methodology: {
-      status: "phase-6",
-      note: "Phase 6: Adds CMS/design-system/platform fingerprint detection to support ecosystem-level trend analysis while preserving ranking/tiering, bilingual parity, and accessibility statement signal reporting."
+      status: "phase-7",
+      note: "Phase 7: Adds directional impact modeling from automated signals and traffic volume. These are benchmark estimates, not measured user harm, legal compliance, or manual audit findings."
     },
     output_paths: {
       daily_dir: `docs/reports/daily/${runDate}/`,
