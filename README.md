@@ -11,7 +11,7 @@ pipeline patterns while using Canadian inputs and CAP-specific reporting.
 
 ## Current status
 
-Phase 5 baseline is implemented:
+Phase 6 baseline is implemented:
 
 - ingest -> scan -> aggregate -> publish pipeline
 - static Canadian seed inventory with bilingual pairs where available
@@ -19,6 +19,7 @@ Phase 5 baseline is implemented:
 - deterministic ranking and tiered inventory selection
 - bilingual parity analysis (EN/FR pairing and gap metrics)
 - accessibility statement detection and statement quality signals
+- CMS/design-system/platform fingerprint signals
 - output parity path: `docs/reports/daily/YYYY-MM-DD/`
 
 ## Run

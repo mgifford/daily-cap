@@ -1,6 +1,7 @@
 import { aggregateScores } from "./score-aggregation.js";
 import { computeBilingualParity } from "./bilingual-parity.js";
 import { summarizeAccessibilityStatements } from "./accessibility-statements.js";
+import { summarizePlatformSignals } from "./platform-signals.js";
 
 function summarizeScan(scanned) {
   const succeeded = scanned.filter((row) => row.scan_status === "success").length;
@@ -18,6 +19,7 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
   const scoreAggregates = aggregateScores(scanned);
   const bilingualParity = computeBilingualParity(scanned);
   const accessibilityStatements = summarizeAccessibilityStatements(scanned);
+  const platformSignals = summarizePlatformSignals(scanned);
 
   // inventory is now an object with scan_targets, ranking_summary, tier_validation, etc.
   const inventoryCount = inventory.scan_target_count || inventory.scan_targets?.length || 0;
@@ -39,6 +41,7 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
     benchmark_summary: scoreAggregates,
     bilingual_parity: bilingualParity,
     accessibility_statements: accessibilityStatements,
+    platform_signals: platformSignals,
     top_urls: scanned.map((row) => ({
       inventory_id: row.inventory_id,
       language: row.language,
@@ -53,11 +56,12 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned }) {
       failure_reason: row.failure_reason,
       lighthouse: row.lighthouse,
       scangov: row.scangov,
-      accessibility_statement: row.accessibility_statement
+      accessibility_statement: row.accessibility_statement,
+      platform_fingerprint: row.platform_fingerprint
     })),
     methodology: {
-      status: "phase-5",
-      note: "Phase 5: Adds accessibility statement detection and basic quality signals (contact info, compliance mention, support path, freshness) while preserving deterministic ranking, tiering, and bilingual parity analysis."
+      status: "phase-6",
+      note: "Phase 6: Adds CMS/design-system/platform fingerprint detection to support ecosystem-level trend analysis while preserving ranking/tiering, bilingual parity, and accessibility statement signal reporting."
     },
     output_paths: {
       daily_dir: `docs/reports/daily/${runDate}/`,

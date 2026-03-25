@@ -1,13 +1,15 @@
 import { runLighthouseScan } from "./lighthouse-runner.js";
 import { runScanGov } from "./scangov-runner.js";
 import { runAccessibilityStatementCheck } from "./accessibility-statement-runner.js";
+import { runPlatformFingerprint } from "./platform-fingerprint-runner.js";
 
 async function scanOne(target, mode) {
   try {
-    const [lighthouse, scangov, accessibilityStatement] = await Promise.all([
+    const [lighthouse, scangov, accessibilityStatement, platformFingerprint] = await Promise.all([
       runLighthouseScan(target, mode),
       runScanGov(target, mode),
-      runAccessibilityStatementCheck(target, mode)
+      runAccessibilityStatementCheck(target, mode),
+      runPlatformFingerprint(target, mode)
     ]);
 
     return {
@@ -16,7 +18,8 @@ async function scanOne(target, mode) {
       failure_reason: null,
       lighthouse,
       scangov,
-      accessibility_statement: accessibilityStatement
+      accessibility_statement: accessibilityStatement,
+      platform_fingerprint: platformFingerprint
     };
   } catch (error) {
     return {
@@ -25,7 +28,8 @@ async function scanOne(target, mode) {
       failure_reason: error instanceof Error ? error.message : String(error),
       lighthouse: null,
       scangov: null,
-      accessibility_statement: null
+      accessibility_statement: null,
+      platform_fingerprint: null
     };
   }
 }

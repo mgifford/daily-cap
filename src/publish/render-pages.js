@@ -12,6 +12,8 @@ export function renderDailyReportPage(report) {
   const largestGaps = report.bilingual_parity?.highlights?.largest_accessibility_gaps || [];
   const statementSummary = report.accessibility_statements?.summary || {};
   const statementGaps = report.accessibility_statements?.missing_statement_examples || [];
+  const platformSummary = report.platform_signals?.summary || {};
+  const cmsDist = report.platform_signals?.distributions?.cms || [];
 
   const rows = report.top_urls
     .map((row) => {
@@ -23,6 +25,8 @@ export function renderDailyReportPage(report) {
         <td>${escapeHtml(row.language.toUpperCase())}</td>
         <td>${escapeHtml(row.scan_status)}</td>
         <td>${escapeHtml(row.accessibility_statement?.statement_detected ? "yes" : "no")}</td>
+        <td>${escapeHtml(row.platform_fingerprint?.cms ?? "unknown")}</td>
+        <td>${escapeHtml(row.platform_fingerprint?.design_system ?? "unknown")}</td>
         <td>${escapeHtml(lighthouse.performance_score ?? "-")}</td>
         <td>${escapeHtml(lighthouse.accessibility_score ?? "-")}</td>
       </tr>`;
@@ -49,6 +53,17 @@ export function renderDailyReportPage(report) {
         <td>${escapeHtml(row.language ? row.language.toUpperCase() : "-")}</td>
         <td>${escapeHtml(row.tier || "-")}</td>
         <td><a href="${escapeHtml(row.canonical_url)}">${escapeHtml(row.canonical_url)}</a></td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const cmsRows = cmsDist
+    .slice(0, 8)
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.key)}</td>
+        <td>${escapeHtml(row.count)}</td>
       </tr>`;
     })
     .join("\n");
@@ -143,6 +158,27 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
+      <h2>Platform Signals</h2>
+      <div class="cards">
+        <div class="card"><strong>Known CMS</strong><br/>${escapeHtml(platformSummary.known_cms_count ?? "-")}/${escapeHtml(platformSummary.scanned_urls ?? "-")}</div>
+        <div class="card"><strong>Known CMS %</strong><br/>${escapeHtml(platformSummary.known_cms_percent ?? "-")}%</div>
+        <div class="card"><strong>Known Design System</strong><br/>${escapeHtml(platformSummary.known_design_system_count ?? "-")}</div>
+        <div class="card"><strong>Known Design System %</strong><br/>${escapeHtml(platformSummary.known_design_system_percent ?? "-")}%</div>
+      </div>
+
+      <h3>Top CMS Distribution</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">CMS</th>
+            <th scope="col">Count</th>
+          </tr>
+        </thead>
+        <tbody>${cmsRows || '<tr><td colspan="2">No CMS signals available in this run.</td></tr>'}</tbody>
+      </table>
+    </section>
+
+    <section>
       <h2>Benchmark Summary</h2>
       <div class="cards">
         <div class="card"><strong>Performance</strong><br/>${escapeHtml(report.benchmark_summary.means.performance_score ?? "-")}</div>
@@ -162,6 +198,8 @@ export function renderDailyReportPage(report) {
             <th scope="col">Lang</th>
             <th scope="col">Status</th>
             <th scope="col">Statement</th>
+            <th scope="col">CMS</th>
+            <th scope="col">Design System</th>
             <th scope="col">Perf</th>
             <th scope="col">A11y</th>
           </tr>
