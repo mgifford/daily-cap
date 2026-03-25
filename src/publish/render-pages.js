@@ -10,6 +10,8 @@ function escapeHtml(value) {
 export function renderDailyReportPage(report) {
   const paritySummary = report.bilingual_parity?.summary || {};
   const largestGaps = report.bilingual_parity?.highlights?.largest_accessibility_gaps || [];
+  const statementSummary = report.accessibility_statements?.summary || {};
+  const statementGaps = report.accessibility_statements?.missing_statement_examples || [];
 
   const rows = report.top_urls
     .map((row) => {
@@ -20,6 +22,7 @@ export function renderDailyReportPage(report) {
         <td><a href="${escapeHtml(row.canonical_url)}">${escapeHtml(row.canonical_url)}</a></td>
         <td>${escapeHtml(row.language.toUpperCase())}</td>
         <td>${escapeHtml(row.scan_status)}</td>
+        <td>${escapeHtml(row.accessibility_statement?.statement_detected ? "yes" : "no")}</td>
         <td>${escapeHtml(lighthouse.performance_score ?? "-")}</td>
         <td>${escapeHtml(lighthouse.accessibility_score ?? "-")}</td>
       </tr>`;
@@ -34,6 +37,18 @@ export function renderDailyReportPage(report) {
         <td>${escapeHtml(row.accessibility_gap ?? "-")}</td>
         <td>${escapeHtml(row.performance_gap ?? "-")}</td>
         <td><a href="${escapeHtml(row.url_en)}">EN</a> | <a href="${escapeHtml(row.url_fr)}">FR</a></td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const missingStatementRows = statementGaps
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.service_name)}</td>
+        <td>${escapeHtml(row.language ? row.language.toUpperCase() : "-")}</td>
+        <td>${escapeHtml(row.tier || "-")}</td>
+        <td><a href="${escapeHtml(row.canonical_url)}">${escapeHtml(row.canonical_url)}</a></td>
       </tr>`;
     })
     .join("\n");
@@ -103,6 +118,31 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
+      <h2>Accessibility Statements</h2>
+      <div class="cards">
+        <div class="card"><strong>Detected</strong><br/>${escapeHtml(statementSummary.statements_detected ?? "-")}/${escapeHtml(statementSummary.scanned_urls ?? "-")}</div>
+        <div class="card"><strong>Coverage</strong><br/>${escapeHtml(statementSummary.statement_coverage_percent ?? "-")}%</div>
+        <div class="card"><strong>With Contact</strong><br/>${escapeHtml(statementSummary.with_contact_info_percent ?? "-")}%</div>
+        <div class="card"><strong>With Compliance Status</strong><br/>${escapeHtml(statementSummary.with_compliance_status_percent ?? "-")}%</div>
+        <div class="card"><strong>With Support Path</strong><br/>${escapeHtml(statementSummary.with_alternative_support_percent ?? "-")}%</div>
+        <div class="card"><strong>With Freshness Marker</strong><br/>${escapeHtml(statementSummary.with_freshness_marker_percent ?? "-")}%</div>
+      </div>
+
+      <h3>Missing Statement Examples</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Lang</th>
+            <th scope="col">Tier</th>
+            <th scope="col">URL</th>
+          </tr>
+        </thead>
+        <tbody>${missingStatementRows || '<tr><td colspan="4">No missing accessibility statements detected in this run.</td></tr>'}</tbody>
+      </table>
+    </section>
+
+    <section>
       <h2>Benchmark Summary</h2>
       <div class="cards">
         <div class="card"><strong>Performance</strong><br/>${escapeHtml(report.benchmark_summary.means.performance_score ?? "-")}</div>
@@ -121,6 +161,7 @@ export function renderDailyReportPage(report) {
             <th scope="col">URL</th>
             <th scope="col">Lang</th>
             <th scope="col">Status</th>
+            <th scope="col">Statement</th>
             <th scope="col">Perf</th>
             <th scope="col">A11y</th>
           </tr>

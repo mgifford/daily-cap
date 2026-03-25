@@ -1,11 +1,13 @@
 import { runLighthouseScan } from "./lighthouse-runner.js";
 import { runScanGov } from "./scangov-runner.js";
+import { runAccessibilityStatementCheck } from "./accessibility-statement-runner.js";
 
 async function scanOne(target, mode) {
   try {
-    const [lighthouse, scangov] = await Promise.all([
+    const [lighthouse, scangov, accessibilityStatement] = await Promise.all([
       runLighthouseScan(target, mode),
-      runScanGov(target, mode)
+      runScanGov(target, mode),
+      runAccessibilityStatementCheck(target, mode)
     ]);
 
     return {
@@ -13,7 +15,8 @@ async function scanOne(target, mode) {
       scan_status: "success",
       failure_reason: null,
       lighthouse,
-      scangov
+      scangov,
+      accessibility_statement: accessibilityStatement
     };
   } catch (error) {
     return {
@@ -21,7 +24,8 @@ async function scanOne(target, mode) {
       scan_status: "failed",
       failure_reason: error instanceof Error ? error.message : String(error),
       lighthouse: null,
-      scangov: null
+      scangov: null,
+      accessibility_statement: null
     };
   }
 }
