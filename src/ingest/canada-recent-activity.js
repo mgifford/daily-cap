@@ -64,7 +64,7 @@ export function parseRecentActivityHtml(html) {
         page_load_count: pageLoadCount,
         source: "recent",
         service_category: inferCategory(url, title),
-        service_pattern: "unknown"
+        service_pattern: inferPattern(url, title)
       });
     }
   }
@@ -117,4 +117,30 @@ function inferCategory(url, title) {
     return "information";
   }
   return "service";
+}
+
+function inferPattern(url, title) {
+  const lowerUrl = url.toLowerCase();
+  const lowerTitle = title.toLowerCase();
+  const text = `${lowerUrl} ${lowerTitle}`;
+
+  if (/sign[\s-]?in|log[\s-]?in|account|my account|secure/.test(text)) {
+    return "sign-in";
+  }
+  if (/apply|application|register|enrol|enroll|submit/.test(text)) {
+    return "application";
+  }
+  if (/status|processing|wait times|tracker|check/.test(text)) {
+    return "status";
+  }
+  if (/payment|pay|fees|billing|invoice/.test(text)) {
+    return "payment";
+  }
+  if (/calculator|estimate|tool/.test(text)) {
+    return "estimator";
+  }
+  if (/help|contact|support|office|find/.test(text)) {
+    return "help";
+  }
+  return "dashboard";
 }

@@ -157,12 +157,18 @@ function inferCategory(url) {
   if (lower.includes("travel") || lower.includes("transport")) return "travel";
   if (lower.includes("justice") || lower.includes("policing")) return "justice";
   if (lower.includes("environment") || lower.includes("climate") || lower.includes("weather")) return "environment";
+  if (lower.includes("science")) return "science";
+  if (lower.includes("finance")) return "finance";
+  if (lower.includes("jobs") || lower.includes("workplace") || lower.includes("labour")) return "employment";
   return "service";
 }
 
 function inferPattern(url) {
   const lower = url.toLowerCase();
 
+  if (lower.includes("pay") || lower.includes("payment") || lower.includes("fees")) {
+    return "payment";
+  }
   if (lower.includes("apply") || lower.includes("application") || lower.includes("grants")) {
     return "application";
   }
@@ -178,20 +184,71 @@ function inferPattern(url) {
   if (lower.includes("calculator") || lower.includes("estimate")) {
     return "estimator";
   }
+  if (lower.includes("help") || lower.includes("contact") || lower.includes("office") || lower.includes("finder")) {
+    return "help";
+  }
   return "dashboard";
 }
 
+function inferInstitution(url) {
+  const lower = url.toLowerCase();
+
+  if (lower.includes("immigration") || lower.includes("passport") || lower.includes("ircc")) return "IRCC";
+  if (lower.includes("tax") || lower.includes("revenue") || lower.includes("cra")) return "CRA";
+  if (lower.includes("benefit") || lower.includes("pension") || lower.includes("jobs") || lower.includes("workplace")) return "ESDC";
+  if (lower.includes("health") || lower.includes("public-health")) return "Health Canada/PHAC";
+  if (lower.includes("environment") || lower.includes("weather") || lower.includes("climate")) return "ECCC";
+  if (lower.includes("statcan")) return "StatsCan";
+  if (lower.includes("cbsa")) return "CBSA";
+  if (lower.includes("justice")) return "Justice";
+
+  return null;
+}
+
+function inferQuality(url, pattern) {
+  const lower = url.toLowerCase();
+
+  const weakLanding = /\/en\/services\/(jobs|travel|business|benefits|health|taxes|environment|culture|science|justice|transport)\.html$/.test(lower);
+  if (weakLanding) {
+    return { pageLoadCount: 2000, priorityWeight: 0.2 };
+  }
+
+  if (pattern === "application" || pattern === "status" || pattern === "payment" || pattern === "sign-in") {
+    return { pageLoadCount: 9000, priorityWeight: 0.5 };
+  }
+
+  if (pattern === "help" || pattern === "estimator") {
+    return { pageLoadCount: 7000, priorityWeight: 0.42 };
+  }
+
+  return { pageLoadCount: 5000, priorityWeight: 0.35 };
+}
+
+function buildServiceName(url) {
+  const pathLabel = new URL(url).pathname
+    .replace("/en/services/", "")
+    .replace(/\.html$/, "")
+    .replaceAll("/", " - ");
+
+  return `Discovery: ${pathLabel}`;
+}
+
 export function getDiscoveryCohort() {
-  return DISCOVERY_URLS_EN.map((url, index) => ({
-    id: `discovery-${String(index + 1).padStart(3, "0")}`,
-    service_name: `Discovery: ${new URL(url).pathname.replace("/en/services/", "").replace(/\.html$/, "").replaceAll("/", " - ")}`,
-    url_en: url,
-    url_fr: null,
-    institution: null,
-    service_category: inferCategory(url),
-    service_pattern: inferPattern(url),
-    page_load_count: 5000,
-    priority_weight: 0.35,
-    source: "discovered"
-  }));
+  return DISCOVERY_URLS_EN.map((url, index) => {
+    const pattern = inferPattern(url);
+    const quality = inferQuality(url, pattern);
+
+    return {
+      id: `discovery-${String(index + 1).padStart(3, "0")}`,
+      service_name: buildServiceName(url),
+      url_en: url,
+      url_fr: null,
+      institution: inferInstitution(url),
+      service_category: inferCategory(url),
+      service_pattern: pattern,
+      page_load_count: quality.pageLoadCount,
+      priority_weight: quality.priorityWeight,
+      source: "discovered"
+    };
+  });
 }

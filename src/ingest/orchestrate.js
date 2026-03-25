@@ -47,7 +47,7 @@ function normalizeEntries(entries) {
     url_fr:
       entry.url_fr || (entry.canonical_url && entry.language === "fr" ? entry.canonical_url : null),
     canonical_url: entry.canonical_url,
-    source: entry.source || "unknown",
+    source: normalizeSource(entry),
     service_category: entry.service_category || "service",
     service_pattern: entry.service_pattern || "unknown",
     institution: entry.institution || null,
@@ -55,6 +55,19 @@ function normalizeEntries(entries) {
     priority_weight: entry.priority_weight || 0.5,
     protected_flag: entry.protected_flag || false
   }));
+}
+
+function normalizeSource(entry) {
+  if (entry.source) {
+    return entry.source;
+  }
+
+  const id = String(entry.id || "");
+  if (id.startsWith("recent-")) return "recent";
+  if (id.startsWith("top-task-")) return "top-task";
+  if (id.startsWith("curated-")) return "curated";
+  if (id.startsWith("discovery-")) return "discovered";
+  return "unknown";
 }
 
 function deduplicateByUrl(entries) {
@@ -77,8 +90,15 @@ function deduplicateByUrl(entries) {
       if (entry.service_pattern !== "unknown" && existing.service_pattern === "unknown") {
         existing.service_pattern = entry.service_pattern;
       }
-      // Collect sources
-      existing.source = `${existing.source},${entry.source}`;
+      // Collect unique sources in stable order
+      const sourceSet = new Set(
+        String(existing.source || "")
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean)
+      );
+      sourceSet.add(entry.source);
+      existing.source = Array.from(sourceSet).sort().join(",");
     }
   }
 
