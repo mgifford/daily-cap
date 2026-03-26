@@ -80,7 +80,7 @@ jobs:
           git config --local user.name "GitHub Copilot (Bot)"
           git add docs/reports/
           git commit -m "chore: publish daily CAP report $(date -u +%Y-%m-%d)"
-          git push origin main || git pull --rebase origin main && git push origin main
+          git push origin main || (git pull --rebase --autostash origin main && git push origin main)
 
       - name: Generate step summary
         if: always()
