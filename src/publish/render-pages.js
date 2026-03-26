@@ -120,6 +120,166 @@ function renderTopUrlRows(rows) {
     .join("\n");
 }
 
+function renderDetailLayout({ title, heading, intro, backHref, stylesheetHref, body }) {
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(title)}</title>
+  <link rel="stylesheet" href="${escapeHtml(stylesheetHref)}" />
+</head>
+<body>
+  <header>
+    <div class="nav"><a href="${escapeHtml(backHref)}">← Back to Daily Report</a></div>
+  </header>
+  <main>
+    <h1>${escapeHtml(heading)}</h1>
+    <p><em>${escapeHtml(intro)}</em></p>
+    ${body}
+  </main>
+</body>
+</html>`;
+}
+
+export function renderPriorityIssuesPage(report) {
+  const issues = report.priority_issues?.all_issues || [];
+  const rows = issues
+    .map(
+      (issue) => `
+      <tr>
+        <td>${escapeHtml(issue.issue_type)}</td>
+        <td>${escapeHtml(issue.service_name)}</td>
+        <td>${escapeHtml(issue.institution)}</td>
+        <td>${escapeHtml(issue.language || "-")}</td>
+        <td>${escapeHtml(issue.page_load_count || "-")}</td>
+        <td>${escapeHtml(issue.recurrence_days || "-")}</td>
+        <td>${escapeHtml(issue.priority_score || "-")}</td>
+        <td>${escapeHtml(issue.issue_detail || "-")}</td>
+        <td>${escapeHtml(issue.recommended_action || "-")}</td>
+        <td>${issue.canonical_url ? `<a href="${escapeHtml(issue.canonical_url)}">Open</a>` : "-"}</td>
+      </tr>`
+    )
+    .join("\n");
+
+  return renderDetailLayout({
+    title: `Priority Issues - ${report.run_date}`,
+    heading: `Priority Issues - ${report.run_date}`,
+    intro: "Ranked issues combining severity, reach, service criticality, and persistence.",
+    backHref: "../index.html",
+    stylesheetHref: "../../../assets/report.css",
+    body: `<p><a href="./priority-issues.json">Download JSON</a></p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Issue Type</th>
+          <th scope="col">Service</th>
+          <th scope="col">Institution</th>
+          <th scope="col">Lang</th>
+          <th scope="col">Load</th>
+          <th scope="col">Days</th>
+          <th scope="col">Priority</th>
+          <th scope="col">Issue Detail</th>
+          <th scope="col">Recommended Action</th>
+          <th scope="col">Link</th>
+        </tr>
+      </thead>
+      <tbody>${rows || '<tr><td colspan="10">No priority issues available.</td></tr>'}</tbody>
+    </table>`
+  });
+}
+
+export function renderRecurringIssuesPage(report) {
+  const issues = report.priority_issues?.recurring_issues || [];
+  const rows = issues
+    .map(
+      (issue) => `
+      <tr>
+        <td>${escapeHtml(issue.issue_type)}</td>
+        <td>${escapeHtml(issue.service_name)}</td>
+        <td>${escapeHtml(issue.institution)}</td>
+        <td>${escapeHtml(issue.first_seen || "-")}</td>
+        <td>${escapeHtml(issue.last_seen || "-")}</td>
+        <td>${escapeHtml(issue.recurrence_days || "-")}</td>
+        <td>${escapeHtml(issue.issue_detail || "-")}</td>
+        <td>${escapeHtml(issue.recommended_action || "-")}</td>
+      </tr>`
+    )
+    .join("\n");
+
+  return renderDetailLayout({
+    title: `Recurring Issues - ${report.run_date}`,
+    heading: `Recurring Issues - ${report.run_date}`,
+    intro: "Issues present in this run and at least one prior daily run.",
+    backHref: "../index.html",
+    stylesheetHref: "../../../assets/report.css",
+    body: `<p><a href="./recurring-issues.json">Download JSON</a></p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Issue Type</th>
+          <th scope="col">Service</th>
+          <th scope="col">Institution</th>
+          <th scope="col">First Seen</th>
+          <th scope="col">Last Seen</th>
+          <th scope="col">Days</th>
+          <th scope="col">Issue Detail</th>
+          <th scope="col">Recommended Action</th>
+        </tr>
+      </thead>
+      <tbody>${rows || '<tr><td colspan="8">No recurring issues available.</td></tr>'}</tbody>
+    </table>`
+  });
+}
+
+export function renderInstitutionScorecardsPage(report) {
+  const rows = (report.institution_scorecards?.all_scorecards || [])
+    .map(
+      (row) => `
+      <tr>
+        <td>${escapeHtml(row.institution)}</td>
+        <td>${escapeHtml(row.scanned_urls)}</td>
+        <td>${escapeHtml(row.total_page_load_count)}</td>
+        <td>${escapeHtml(row.mean_accessibility_score ?? "-")}</td>
+        <td>${escapeHtml(row.mean_performance_score ?? "-")}</td>
+        <td>${escapeHtml(row.missing_french_count)}</td>
+        <td>${escapeHtml(row.missing_statement_count)}</td>
+        <td>${escapeHtml(row.high_gap_pair_count)}</td>
+        <td>${escapeHtml(row.recurring_issue_count)}</td>
+        <td>${escapeHtml(row.top_priority_issue_score ?? "-")}</td>
+        <td>${escapeHtml(row.top_priority_issue ?? "-")}</td>
+      </tr>`
+    )
+    .join("\n");
+
+  return renderDetailLayout({
+    title: `Institution Scorecards - ${report.run_date}`,
+    heading: `Institution Scorecards - ${report.run_date}`,
+    intro: "Institution-level ownership view for current scan outcomes and priority issue counts.",
+    backHref: "../index.html",
+    stylesheetHref: "../../../assets/report.css",
+    body: `<p><a href="./institution-scorecards.json">Download JSON</a></p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Institution</th>
+          <th scope="col">URLs</th>
+          <th scope="col">Load</th>
+          <th scope="col">Mean A11y</th>
+          <th scope="col">Mean Perf</th>
+          <th scope="col">Missing FR</th>
+          <th scope="col">Missing Statements</th>
+          <th scope="col">High Gap Pairs</th>
+          <th scope="col">Recurring Issues</th>
+          <th scope="col">Top Priority Score</th>
+          <th scope="col">Top Issue Type</th>
+        </tr>
+      </thead>
+      <tbody>${rows || '<tr><td colspan="11">No institution scorecards available.</td></tr>'}</tbody>
+    </table>`
+  });
+}
+
 export function renderDailyReportPage(report) {
   const paritySummary = report.bilingual_parity?.summary || {};
   const largestGaps = report.bilingual_parity?.highlights?.largest_accessibility_gaps || [];
@@ -466,7 +626,7 @@ export function renderDailyReportPage(report) {
         <div class="card"><strong>Recurring Issues</strong><br/>${escapeHtml(prioritySummary.recurring_issues ?? "-")}</div>
         <div class="card"><strong>Highest Priority Score</strong><br/>${escapeHtml(prioritySummary.highest_priority_score ?? "-")}</div>
       </div>
-      <p><a href="./details/priority-issues.json">Download priority issues JSON</a></p>
+      <p><a href="./details/priority-issues.html">Open full priority issues page</a> | <a href="./details/priority-issues.json">Download priority issues JSON</a></p>
       <table>
         <thead>
           <tr>
@@ -487,7 +647,7 @@ export function renderDailyReportPage(report) {
     <section>
       <h2>Recurring Issues</h2>
       <p><em>Recurring issues are present in this run and at least one prior daily run. These are stronger candidates for institutional follow-up because they have persisted over time.</em></p>
-      <p><a href="./details/recurring-issues.json">Download recurring issues JSON</a></p>
+      <p><a href="./details/recurring-issues.html">Open full recurring issues page</a> | <a href="./details/recurring-issues.json">Download recurring issues JSON</a></p>
       <table>
         <thead>
           <tr>
@@ -511,7 +671,7 @@ export function renderDailyReportPage(report) {
         <div class="card"><strong>Institutions</strong><br/>${escapeHtml(institutionSummary.institutions ?? "-")}</div>
         <div class="card"><strong>With Priority Issues</strong><br/>${escapeHtml(institutionSummary.institutions_with_priority_issues ?? "-")}</div>
       </div>
-      <p><a href="./details/institution-scorecards.json">Download institution scorecards JSON</a></p>
+      <p><a href="./details/institution-scorecards.html">Open full institution scorecards page</a> | <a href="./details/institution-scorecards.json">Download institution scorecards JSON</a></p>
       <table>
         <thead>
           <tr>

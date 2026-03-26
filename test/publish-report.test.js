@@ -39,4 +39,7 @@ test("publishReport writes detail export files", async () => {
   assert.ok(files.includes("priority-issues.json"));
   assert.ok(files.includes("recurring-issues.json"));
   assert.ok(files.includes("institution-scorecards.json"));
+  assert.ok(files.includes("priority-issues.html"));
+  assert.ok(files.includes("recurring-issues.html"));
+  assert.ok(files.includes("institution-scorecards.html"));
 });

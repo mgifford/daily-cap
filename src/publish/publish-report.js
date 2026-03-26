@@ -1,6 +1,12 @@
 import path from "node:path";
 import { writeJsonFile, writeTextFile } from "../utils/fs.js";
-import { renderDailyReportPage, renderDashboardPage } from "./render-pages.js";
+import {
+  renderDailyReportPage,
+  renderDashboardPage,
+  renderPriorityIssuesPage,
+  renderRecurringIssuesPage,
+  renderInstitutionScorecardsPage
+} from "./render-pages.js";
 
 export async function publishReport({ report, outputRoot }) {
   const dailyDir = path.join(outputRoot, "docs", "reports", "daily", report.run_date);
@@ -39,6 +45,12 @@ export async function publishReport({ report, outputRoot }) {
   await writeJsonFile(
     path.join(detailsDir, "institution-scorecards.json"),
     report.institution_scorecards?.all_scorecards || []
+  );
+  await writeTextFile(path.join(detailsDir, "priority-issues.html"), renderPriorityIssuesPage(report));
+  await writeTextFile(path.join(detailsDir, "recurring-issues.html"), renderRecurringIssuesPage(report));
+  await writeTextFile(
+    path.join(detailsDir, "institution-scorecards.html"),
+    renderInstitutionScorecardsPage(report)
   );
   await writeTextFile(path.join(dailyDir, "index.html"), renderDailyReportPage(report));
   await writeTextFile(path.join(reportsDir, "index.html"), renderDashboardPage(report));
