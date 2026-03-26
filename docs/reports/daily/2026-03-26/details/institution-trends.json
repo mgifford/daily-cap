@@ -6,59 +6,19 @@
   },
   "institutions": [
     {
-      "institution": "Unknown institution",
-      "slug": "unknown-institution",
-      "days_tracked": 2,
-      "latest": {
-        "institution": "Unknown institution",
-        "run_date": "2026-03-26",
-        "scanned_urls": 84,
-        "total_page_load_count": 128255143,
-        "mean_accessibility_score": 78.68,
-        "mean_performance_score": 70.46,
-        "missing_french_count": 84,
-        "missing_statement_count": 16,
-        "high_gap_pair_count": 0
-      },
-      "points": [
-        {
-          "institution": "Unknown institution",
-          "run_date": "2026-03-25",
-          "scanned_urls": 21,
-          "total_page_load_count": 109000,
-          "mean_accessibility_score": null,
-          "mean_performance_score": null,
-          "missing_french_count": 70,
-          "missing_statement_count": 20,
-          "high_gap_pair_count": 0
-        },
-        {
-          "institution": "Unknown institution",
-          "run_date": "2026-03-26",
-          "scanned_urls": 84,
-          "total_page_load_count": 128255143,
-          "mean_accessibility_score": 78.68,
-          "mean_performance_score": 70.46,
-          "missing_french_count": 84,
-          "missing_statement_count": 16,
-          "high_gap_pair_count": 0
-        }
-      ]
-    },
-    {
       "institution": "ESDC",
       "slug": "esdc",
       "days_tracked": 2,
       "latest": {
         "institution": "ESDC",
         "run_date": "2026-03-26",
-        "scanned_urls": 24,
-        "total_page_load_count": 3336000,
-        "mean_accessibility_score": 75.46,
-        "mean_performance_score": 69.5,
-        "missing_french_count": 6,
-        "missing_statement_count": 5,
-        "high_gap_pair_count": 7
+        "scanned_urls": 34,
+        "total_page_load_count": 3386000,
+        "mean_accessibility_score": null,
+        "mean_performance_score": null,
+        "missing_french_count": 16,
+        "missing_statement_count": 34,
+        "high_gap_pair_count": 0
       },
       "points": [
         {
@@ -75,13 +35,13 @@
         {
           "institution": "ESDC",
           "run_date": "2026-03-26",
-          "scanned_urls": 24,
-          "total_page_load_count": 3336000,
-          "mean_accessibility_score": 75.46,
-          "mean_performance_score": 69.5,
-          "missing_french_count": 6,
-          "missing_statement_count": 5,
-          "high_gap_pair_count": 7
+          "scanned_urls": 34,
+          "total_page_load_count": 3386000,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
+          "missing_french_count": 16,
+          "missing_statement_count": 34,
+          "high_gap_pair_count": 0
         }
       ]
     },
@@ -92,13 +52,13 @@
       "latest": {
         "institution": "IRCC",
         "run_date": "2026-03-26",
-        "scanned_urls": 17,
-        "total_page_load_count": 1507000,
-        "mean_accessibility_score": 81.71,
-        "mean_performance_score": 71.06,
-        "missing_french_count": 11,
-        "missing_statement_count": 2,
-        "high_gap_pair_count": 3
+        "scanned_urls": 18,
+        "total_page_load_count": 1512000,
+        "mean_accessibility_score": null,
+        "mean_performance_score": null,
+        "missing_french_count": 12,
+        "missing_statement_count": 18,
+        "high_gap_pair_count": 0
       },
       "points": [
         {
@@ -115,13 +75,13 @@
         {
           "institution": "IRCC",
           "run_date": "2026-03-26",
-          "scanned_urls": 17,
-          "total_page_load_count": 1507000,
-          "mean_accessibility_score": 81.71,
-          "mean_performance_score": 71.06,
-          "missing_french_count": 11,
-          "missing_statement_count": 2,
-          "high_gap_pair_count": 3
+          "scanned_urls": 18,
+          "total_page_load_count": 1512000,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
+          "missing_french_count": 12,
+          "missing_statement_count": 18,
+          "high_gap_pair_count": 0
         }
       ]
     },
@@ -132,13 +92,13 @@
       "latest": {
         "institution": "CRA",
         "run_date": "2026-03-26",
-        "scanned_urls": 10,
-        "total_page_load_count": 964000,
-        "mean_accessibility_score": 82.3,
-        "mean_performance_score": 68.3,
-        "missing_french_count": 8,
-        "missing_statement_count": 2,
-        "high_gap_pair_count": 1
+        "scanned_urls": 11,
+        "total_page_load_count": 969000,
+        "mean_accessibility_score": null,
+        "mean_performance_score": null,
+        "missing_french_count": 9,
+        "missing_statement_count": 11,
+        "high_gap_pair_count": 0
       },
       "points": [
         {
@@ -155,13 +115,13 @@
         {
           "institution": "CRA",
           "run_date": "2026-03-26",
-          "scanned_urls": 10,
-          "total_page_load_count": 964000,
-          "mean_accessibility_score": 82.3,
-          "mean_performance_score": 68.3,
-          "missing_french_count": 8,
-          "missing_statement_count": 2,
-          "high_gap_pair_count": 1
+          "scanned_urls": 11,
+          "total_page_load_count": 969000,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
+          "missing_french_count": 9,
+          "missing_statement_count": 11,
+          "high_gap_pair_count": 0
         }
       ]
     },
@@ -174,11 +134,11 @@
         "run_date": "2026-03-26",
         "scanned_urls": 4,
         "total_page_load_count": 730000,
-        "mean_accessibility_score": 78,
-        "mean_performance_score": 67.25,
+        "mean_accessibility_score": null,
+        "mean_performance_score": null,
         "missing_french_count": 0,
-        "missing_statement_count": 0,
-        "high_gap_pair_count": 1
+        "missing_statement_count": 4,
+        "high_gap_pair_count": 0
       },
       "points": [
         {
@@ -197,11 +157,11 @@
           "run_date": "2026-03-26",
           "scanned_urls": 4,
           "total_page_load_count": 730000,
-          "mean_accessibility_score": 78,
-          "mean_performance_score": 67.25,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
           "missing_french_count": 0,
-          "missing_statement_count": 0,
-          "high_gap_pair_count": 1
+          "missing_statement_count": 4,
+          "high_gap_pair_count": 0
         }
       ]
     },
@@ -214,10 +174,10 @@
         "run_date": "2026-03-26",
         "scanned_urls": 2,
         "total_page_load_count": 188000,
-        "mean_accessibility_score": 63.5,
-        "mean_performance_score": 83,
+        "mean_accessibility_score": 78,
+        "mean_performance_score": 89,
         "missing_french_count": 0,
-        "missing_statement_count": 0,
+        "missing_statement_count": 2,
         "high_gap_pair_count": 0
       },
       "points": [
@@ -237,10 +197,10 @@
           "run_date": "2026-03-26",
           "scanned_urls": 2,
           "total_page_load_count": 188000,
-          "mean_accessibility_score": 63.5,
-          "mean_performance_score": 83,
+          "mean_accessibility_score": 78,
+          "mean_performance_score": 89,
           "missing_french_count": 0,
-          "missing_statement_count": 0,
+          "missing_statement_count": 2,
           "high_gap_pair_count": 0
         }
       ]
@@ -254,11 +214,11 @@
         "run_date": "2026-03-26",
         "scanned_urls": 2,
         "total_page_load_count": 176000,
-        "mean_accessibility_score": 77.5,
-        "mean_performance_score": 83.5,
+        "mean_accessibility_score": 78,
+        "mean_performance_score": 90,
         "missing_french_count": 0,
-        "missing_statement_count": 0,
-        "high_gap_pair_count": 1
+        "missing_statement_count": 2,
+        "high_gap_pair_count": 0
       },
       "points": [
         {
@@ -277,11 +237,51 @@
           "run_date": "2026-03-26",
           "scanned_urls": 2,
           "total_page_load_count": 176000,
-          "mean_accessibility_score": 77.5,
-          "mean_performance_score": 83.5,
+          "mean_accessibility_score": 78,
+          "mean_performance_score": 90,
           "missing_french_count": 0,
-          "missing_statement_count": 0,
-          "high_gap_pair_count": 1
+          "missing_statement_count": 2,
+          "high_gap_pair_count": 0
+        }
+      ]
+    },
+    {
+      "institution": "Unknown institution",
+      "slug": "unknown-institution",
+      "days_tracked": 2,
+      "latest": {
+        "institution": "Unknown institution",
+        "run_date": "2026-03-26",
+        "scanned_urls": 21,
+        "total_page_load_count": 109000,
+        "mean_accessibility_score": null,
+        "mean_performance_score": null,
+        "missing_french_count": 21,
+        "missing_statement_count": 21,
+        "high_gap_pair_count": 0
+      },
+      "points": [
+        {
+          "institution": "Unknown institution",
+          "run_date": "2026-03-25",
+          "scanned_urls": 21,
+          "total_page_load_count": 109000,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
+          "missing_french_count": 70,
+          "missing_statement_count": 20,
+          "high_gap_pair_count": 0
+        },
+        {
+          "institution": "Unknown institution",
+          "run_date": "2026-03-26",
+          "scanned_urls": 21,
+          "total_page_load_count": 109000,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
+          "missing_french_count": 21,
+          "missing_statement_count": 21,
+          "high_gap_pair_count": 0
         }
       ]
     },
@@ -294,10 +294,10 @@
         "run_date": "2026-03-26",
         "scanned_urls": 2,
         "total_page_load_count": 104000,
-        "mean_accessibility_score": 56,
-        "mean_performance_score": 61,
+        "mean_accessibility_score": null,
+        "mean_performance_score": null,
         "missing_french_count": 0,
-        "missing_statement_count": 0,
+        "missing_statement_count": 2,
         "high_gap_pair_count": 0
       },
       "points": [
@@ -317,10 +317,10 @@
           "run_date": "2026-03-26",
           "scanned_urls": 2,
           "total_page_load_count": 104000,
-          "mean_accessibility_score": 56,
-          "mean_performance_score": 61,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
           "missing_french_count": 0,
-          "missing_statement_count": 0,
+          "missing_statement_count": 2,
           "high_gap_pair_count": 0
         }
       ]
@@ -335,10 +335,10 @@
         "scanned_urls": 2,
         "total_page_load_count": 84000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 86.5,
+        "mean_performance_score": 79,
         "missing_french_count": 0,
-        "missing_statement_count": 1,
-        "high_gap_pair_count": 1
+        "missing_statement_count": 2,
+        "high_gap_pair_count": 0
       },
       "points": [
         {
@@ -358,49 +358,9 @@
           "scanned_urls": 2,
           "total_page_load_count": 84000,
           "mean_accessibility_score": 78,
-          "mean_performance_score": 86.5,
+          "mean_performance_score": 79,
           "missing_french_count": 0,
-          "missing_statement_count": 1,
-          "high_gap_pair_count": 1
-        }
-      ]
-    },
-    {
-      "institution": "CSPS",
-      "slug": "csps",
-      "days_tracked": 2,
-      "latest": {
-        "institution": "CSPS",
-        "run_date": "2026-03-26",
-        "scanned_urls": 2,
-        "total_page_load_count": 50000,
-        "mean_accessibility_score": 90.5,
-        "mean_performance_score": 61.5,
-        "missing_french_count": 0,
-        "missing_statement_count": 1,
-        "high_gap_pair_count": 0
-      },
-      "points": [
-        {
-          "institution": "CSPS",
-          "run_date": "2026-03-25",
-          "scanned_urls": 2,
-          "total_page_load_count": 50000,
-          "mean_accessibility_score": null,
-          "mean_performance_score": null,
-          "missing_french_count": 0,
-          "missing_statement_count": 0,
-          "high_gap_pair_count": 0
-        },
-        {
-          "institution": "CSPS",
-          "run_date": "2026-03-26",
-          "scanned_urls": 2,
-          "total_page_load_count": 50000,
-          "mean_accessibility_score": 90.5,
-          "mean_performance_score": 61.5,
-          "missing_french_count": 0,
-          "missing_statement_count": 1,
+          "missing_statement_count": 2,
           "high_gap_pair_count": 0
         }
       ]
@@ -412,12 +372,12 @@
       "latest": {
         "institution": "Health Canada/PHAC",
         "run_date": "2026-03-26",
-        "scanned_urls": 1,
-        "total_page_load_count": 5000,
-        "mean_accessibility_score": 95,
-        "mean_performance_score": 84,
-        "missing_french_count": 1,
-        "missing_statement_count": 0,
+        "scanned_urls": 12,
+        "total_page_load_count": 60000,
+        "mean_accessibility_score": null,
+        "mean_performance_score": null,
+        "missing_french_count": 12,
+        "missing_statement_count": 12,
         "high_gap_pair_count": 0
       },
       "points": [
@@ -435,12 +395,52 @@
         {
           "institution": "Health Canada/PHAC",
           "run_date": "2026-03-26",
-          "scanned_urls": 1,
-          "total_page_load_count": 5000,
-          "mean_accessibility_score": 95,
-          "mean_performance_score": 84,
-          "missing_french_count": 1,
+          "scanned_urls": 12,
+          "total_page_load_count": 60000,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
+          "missing_french_count": 12,
+          "missing_statement_count": 12,
+          "high_gap_pair_count": 0
+        }
+      ]
+    },
+    {
+      "institution": "CSPS",
+      "slug": "csps",
+      "days_tracked": 2,
+      "latest": {
+        "institution": "CSPS",
+        "run_date": "2026-03-26",
+        "scanned_urls": 2,
+        "total_page_load_count": 50000,
+        "mean_accessibility_score": null,
+        "mean_performance_score": null,
+        "missing_french_count": 0,
+        "missing_statement_count": 2,
+        "high_gap_pair_count": 0
+      },
+      "points": [
+        {
+          "institution": "CSPS",
+          "run_date": "2026-03-25",
+          "scanned_urls": 2,
+          "total_page_load_count": 50000,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
+          "missing_french_count": 0,
           "missing_statement_count": 0,
+          "high_gap_pair_count": 0
+        },
+        {
+          "institution": "CSPS",
+          "run_date": "2026-03-26",
+          "scanned_urls": 2,
+          "total_page_load_count": 50000,
+          "mean_accessibility_score": null,
+          "mean_performance_score": null,
+          "missing_french_count": 0,
+          "missing_statement_count": 2,
           "high_gap_pair_count": 0
         }
       ]
