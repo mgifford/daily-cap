@@ -28,6 +28,18 @@ export async function publishReport({ report, outputRoot }) {
     path.join(detailsDir, "barrier-history.json"),
     report.barrier_history || { summary: { points: 0 }, points: [] }
   );
+  await writeJsonFile(
+    path.join(detailsDir, "priority-issues.json"),
+    report.priority_issues?.all_issues || []
+  );
+  await writeJsonFile(
+    path.join(detailsDir, "recurring-issues.json"),
+    report.priority_issues?.recurring_issues || []
+  );
+  await writeJsonFile(
+    path.join(detailsDir, "institution-scorecards.json"),
+    report.institution_scorecards?.all_scorecards || []
+  );
   await writeTextFile(path.join(dailyDir, "index.html"), renderDailyReportPage(report));
   await writeTextFile(path.join(reportsDir, "index.html"), renderDashboardPage(report));
 }

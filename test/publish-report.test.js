@@ -18,6 +18,8 @@ test("publishReport writes detail export files", async () => {
     },
     platform_signals: { cms_url_examples: [{ cms: "drupal", pages: [] }] },
     barrier_history: { summary: { points: 1 }, points: [{ run_date: "2026-03-26" }] },
+    priority_issues: { all_issues: [{ issue_key: "a" }], recurring_issues: [{ issue_key: "a" }] },
+    institution_scorecards: { all_scorecards: [{ institution: "CRA" }] },
     output_paths: {},
     top_urls: [],
     scan_summary: { total: 0, succeeded: 0, failed: 0 },
@@ -34,4 +36,7 @@ test("publishReport writes detail export files", async () => {
   assert.ok(files.includes("detected-statements.json"));
   assert.ok(files.includes("cms-buckets.json"));
   assert.ok(files.includes("barrier-history.json"));
+  assert.ok(files.includes("priority-issues.json"));
+  assert.ok(files.includes("recurring-issues.json"));
+  assert.ok(files.includes("institution-scorecards.json"));
 });

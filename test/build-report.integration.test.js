@@ -31,14 +31,14 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
       failure_reason: null,
       lighthouse: {
         performance_score: 70,
-        accessibility_score: 80,
+        accessibility_score: 70,
         best_practices_score: 75,
         seo_score: 82,
         by_context: {
-          desktop_light: { performance_score: 70, accessibility_score: 80, best_practices_score: 75, seo_score: 82 },
-          desktop_dark: { performance_score: 68, accessibility_score: 77, best_practices_score: 75, seo_score: 82 },
-          mobile_light: { performance_score: 64, accessibility_score: 80, best_practices_score: 73, seo_score: 81 },
-          mobile_dark: { performance_score: 61, accessibility_score: 76, best_practices_score: 72, seo_score: 80 }
+          desktop_light: { performance_score: 70, accessibility_score: 70, best_practices_score: 75, seo_score: 82 },
+          desktop_dark: { performance_score: 68, accessibility_score: 67, best_practices_score: 75, seo_score: 82 },
+          mobile_light: { performance_score: 64, accessibility_score: 70, best_practices_score: 73, seo_score: 81 },
+          mobile_dark: { performance_score: 61, accessibility_score: 66, best_practices_score: 72, seo_score: 80 }
         }
       },
       scangov: { critical: 1, serious: 0, moderate: 1, minor: 0 },
@@ -129,7 +129,7 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
     }
   });
 
-  assert.equal(report.methodology.status, "phase-10");
+  assert.equal(report.methodology.status, "phase-11");
   assert.ok(report.bilingual_parity);
   assert.ok(report.accessibility_statements);
   assert.ok(report.platform_signals);
@@ -137,7 +137,11 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
   assert.ok(report.cohort_quality);
   assert.ok(report.lighthouse_contexts);
   assert.ok(report.barrier_history);
+  assert.ok(report.priority_issues);
+  assert.ok(report.institution_scorecards);
   assert.equal(report.barrier_history.summary.points, 2);
+  assert.ok(report.priority_issues.top_priority_issues.length >= 1);
+  assert.ok(report.institution_scorecards.scorecards.length >= 1);
   assert.equal(report.lighthouse_contexts.summary.scanned_urls_with_context_data, 2);
   assert.equal(report.lighthouse_contexts.highlights.mobile_dark_vs_desktop_light.performance_score, -9);
   assert.equal(report.cohort_quality.summary.scanned_urls, 2);

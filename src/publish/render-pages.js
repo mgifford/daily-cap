@@ -145,6 +145,11 @@ export function renderDailyReportPage(report) {
   const contextHighlight = report.lighthouse_contexts?.highlights?.mobile_dark_vs_desktop_light || {};
   const barrierHistory = report.barrier_history?.points || [];
   const detailPaths = report.output_paths?.details || {};
+  const priorityIssues = report.priority_issues?.top_priority_issues || [];
+  const recurringIssues = report.priority_issues?.recurring_issues || [];
+  const prioritySummary = report.priority_issues?.summary || {};
+  const institutionSummary = report.institution_scorecards?.summary || {};
+  const institutionScorecards = report.institution_scorecards?.scorecards || [];
 
   const topUrlsPreview = report.top_urls.slice(0, 12);
   const topUrlsOverflowCount = Math.max(0, report.top_urls.length - 12);
@@ -310,6 +315,53 @@ export function renderDailyReportPage(report) {
     })
     .join("\n");
 
+  const priorityIssueRows = priorityIssues
+    .map((issue) => {
+      return `
+      <tr>
+        <td>${escapeHtml(issue.issue_type)}</td>
+        <td>${escapeHtml(issue.service_name)}</td>
+        <td>${escapeHtml(issue.institution)}</td>
+        <td>${escapeHtml(issue.page_load_count || "-")}</td>
+        <td>${escapeHtml(issue.recurrence_days)}</td>
+        <td>${escapeHtml(issue.priority_score)}</td>
+        <td>${escapeHtml(issue.issue_detail)}</td>
+        <td>${issue.canonical_url ? `<a href="${escapeHtml(issue.canonical_url)}">Open</a>` : "-"}</td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const recurringIssueRows = recurringIssues
+    .map((issue) => {
+      return `
+      <tr>
+        <td>${escapeHtml(issue.issue_type)}</td>
+        <td>${escapeHtml(issue.service_name)}</td>
+        <td>${escapeHtml(issue.institution)}</td>
+        <td>${escapeHtml(issue.first_seen || "-")}</td>
+        <td>${escapeHtml(issue.last_seen || "-")}</td>
+        <td>${escapeHtml(issue.recurrence_days)}</td>
+        <td>${escapeHtml(issue.recommended_action)}</td>
+      </tr>`;
+    })
+    .join("\n");
+
+  const institutionRows = institutionScorecards
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.institution)}</td>
+        <td>${escapeHtml(row.scanned_urls)}</td>
+        <td>${escapeHtml(row.mean_accessibility_score ?? "-")}</td>
+        <td>${escapeHtml(row.missing_french_count)}</td>
+        <td>${escapeHtml(row.missing_statement_count)}</td>
+        <td>${escapeHtml(row.recurring_issue_count)}</td>
+        <td>${escapeHtml(row.top_priority_issue_score ?? "-")}</td>
+        <td>${escapeHtml(row.top_priority_issue ?? "-")}</td>
+      </tr>`;
+    })
+    .join("\n");
+
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -403,6 +455,77 @@ export function renderDailyReportPage(report) {
           </tr>`
           )
           .join("\n")}</tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Top Priority Issues</h2>
+      <p><em>These issues are ranked using severity, traffic, service criticality, and persistence across days to highlight the most actionable government improvement priorities.</em></p>
+      <div class="cards">
+        <div class="card"><strong>Total Issues</strong><br/>${escapeHtml(prioritySummary.total_issues ?? "-")}</div>
+        <div class="card"><strong>Recurring Issues</strong><br/>${escapeHtml(prioritySummary.recurring_issues ?? "-")}</div>
+        <div class="card"><strong>Highest Priority Score</strong><br/>${escapeHtml(prioritySummary.highest_priority_score ?? "-")}</div>
+      </div>
+      <p><a href="./details/priority-issues.json">Download priority issues JSON</a></p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Issue Type</th>
+            <th scope="col">Service</th>
+            <th scope="col">Institution</th>
+            <th scope="col">Load</th>
+            <th scope="col">Days</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Issue Detail</th>
+            <th scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody>${priorityIssueRows || '<tr><td colspan="8">No prioritized issues available in this run.</td></tr>'}</tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Recurring Issues</h2>
+      <p><em>Recurring issues are present in this run and at least one prior daily run. These are stronger candidates for institutional follow-up because they have persisted over time.</em></p>
+      <p><a href="./details/recurring-issues.json">Download recurring issues JSON</a></p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Issue Type</th>
+            <th scope="col">Service</th>
+            <th scope="col">Institution</th>
+            <th scope="col">First Seen</th>
+            <th scope="col">Last Seen</th>
+            <th scope="col">Days</th>
+            <th scope="col">Recommended Action</th>
+          </tr>
+        </thead>
+        <tbody>${recurringIssueRows || '<tr><td colspan="7">No recurring issues detected yet.</td></tr>'}</tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Institution Scorecards</h2>
+      <p><em>Institution scorecards roll up current scan outcomes and priority issues so ownership and recurring problem clusters are easier to see.</em></p>
+      <div class="cards">
+        <div class="card"><strong>Institutions</strong><br/>${escapeHtml(institutionSummary.institutions ?? "-")}</div>
+        <div class="card"><strong>With Priority Issues</strong><br/>${escapeHtml(institutionSummary.institutions_with_priority_issues ?? "-")}</div>
+      </div>
+      <p><a href="./details/institution-scorecards.json">Download institution scorecards JSON</a></p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Institution</th>
+            <th scope="col">URLs</th>
+            <th scope="col">Mean A11y</th>
+            <th scope="col">Missing FR</th>
+            <th scope="col">Missing Statements</th>
+            <th scope="col">Recurring Issues</th>
+            <th scope="col">Top Priority Score</th>
+            <th scope="col">Top Issue Type</th>
+          </tr>
+        </thead>
+        <tbody>${institutionRows || '<tr><td colspan="8">No institution scorecards available in this run.</td></tr>'}</tbody>
       </table>
     </section>
 

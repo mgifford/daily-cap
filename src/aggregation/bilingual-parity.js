@@ -91,10 +91,14 @@ export function computeBilingualParity(scanned) {
       missing.push({
         pair_id: pair.pair_id,
         service_name: pair.service_name,
+        institution: pair.en?.institution || pair.fr?.institution || null,
         has_en: Boolean(pair.en),
         has_fr: Boolean(pair.fr),
         url_en: pair.en?.canonical_url || null,
-        url_fr: pair.fr?.canonical_url || null
+        url_fr: pair.fr?.canonical_url || null,
+        tier: pair.en?.tier || pair.fr?.tier || null,
+        service_pattern: pair.en?.service_pattern || pair.fr?.service_pattern || null,
+        page_load_count: Math.max(pair.en?.page_load_count || 0, pair.fr?.page_load_count || 0)
       });
       continue;
     }
@@ -124,6 +128,10 @@ export function computeBilingualParity(scanned) {
       url_fr: pair.fr.canonical_url,
       scan_status_en: pair.en.scan_status,
       scan_status_fr: pair.fr.scan_status,
+      institution: pair.en.institution || pair.fr.institution || null,
+      tier: pair.en.tier || pair.fr.tier || null,
+      service_pattern: pair.en.service_pattern || pair.fr.service_pattern || null,
+      page_load_count: Math.max(pair.en.page_load_count || 0, pair.fr.page_load_count || 0),
       accessibility_score_en: enA11y,
       accessibility_score_fr: frA11y,
       performance_score_en: enPerf,

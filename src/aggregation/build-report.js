@@ -7,6 +7,8 @@ import { computeTrendAnalysis } from "./trend-analysis.js";
 import { summarizeCohortQuality } from "./cohort-quality.js";
 import { summarizeLighthouseContexts } from "./lighthouse-context-analysis.js";
 import { summarizeBarrierHistory } from "./barrier-history.js";
+import { summarizePriorityIssues } from "./priority-issues.js";
+import { summarizeInstitutionScorecards } from "./institution-scorecards.js";
 
 function summarizeScan(scanned) {
   const succeeded = scanned.filter((row) => row.scan_status === "success").length;
@@ -94,21 +96,28 @@ export function buildDailyReport({
         missing_statements_json: `docs/reports/daily/${runDate}/details/missing-statements.json`,
         detected_statements_json: `docs/reports/daily/${runDate}/details/detected-statements.json`,
         cms_buckets_json: `docs/reports/daily/${runDate}/details/cms-buckets.json`,
-        barrier_history_json: `docs/reports/daily/${runDate}/details/barrier-history.json`
+        barrier_history_json: `docs/reports/daily/${runDate}/details/barrier-history.json`,
+        priority_issues_json: `docs/reports/daily/${runDate}/details/priority-issues.json`,
+        recurring_issues_json: `docs/reports/daily/${runDate}/details/recurring-issues.json`,
+        institution_scorecards_json: `docs/reports/daily/${runDate}/details/institution-scorecards.json`
       }
     }
   };
 
   const trendAnalysis = computeTrendAnalysis(baseReport, previousReport);
   const barrierHistory = summarizeBarrierHistory(baseReport, historicalReports);
+  const priorityIssues = summarizePriorityIssues(baseReport, historicalReports);
+  const institutionScorecards = summarizeInstitutionScorecards(baseReport.top_urls, priorityIssues);
 
   return {
     ...baseReport,
     trend_analysis: trendAnalysis,
     barrier_history: barrierHistory,
+    priority_issues: priorityIssues,
+    institution_scorecards: institutionScorecards,
     methodology: {
-      status: "phase-10",
-      note: "Phase 10: Adds daily barrier history, context-aware reporting, and drill-down detail exports alongside trend comparison and regression alerts. These remain automated benchmark diagnostics, not legal or compliance determinations."
+      status: "phase-11",
+      note: "Phase 11: Adds issue prioritization, institution scorecards, and recurring issue tracking on top of daily barrier history, context-aware reporting, and drill-down exports. These remain automated benchmark diagnostics, not legal or compliance determinations."
     }
   };
 }

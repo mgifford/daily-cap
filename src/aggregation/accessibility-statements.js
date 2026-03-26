@@ -41,10 +41,13 @@ export function summarizeAccessibilityStatements(scanned) {
   const checks = scanned.map((row) => ({
     inventory_id: row.inventory_id,
     service_name: row.service_name,
+    institution: row.institution || null,
     language: row.language,
     canonical_url: row.canonical_url,
     source: row.source,
     tier: row.tier,
+    page_load_count: row.page_load_count || 0,
+    service_pattern: row.service_pattern || null,
     statement_detected: toBool(row.accessibility_statement?.statement_detected),
     statement_link_text: row.accessibility_statement?.statement_link_text || null,
     statement_link_url: row.accessibility_statement?.statement_link_url || null,
@@ -114,10 +117,13 @@ export function summarizeAccessibilityStatements(scanned) {
     .map((row) => ({
       inventory_id: row.inventory_id,
       service_name: row.service_name,
+      institution: row.institution,
       language: row.language,
       canonical_url: row.canonical_url,
       tier: row.tier,
-      source: row.source
+      source: row.source,
+      page_load_count: row.page_load_count,
+      service_pattern: row.service_pattern
     }));
 
   return {
