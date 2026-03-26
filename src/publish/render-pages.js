@@ -7,6 +7,21 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
+function toArrow(gap) {
+  if (typeof gap !== "number" || gap === 0) {
+    return "=";
+  }
+  return gap > 0 ? "EN ↑" : "FR ↑";
+}
+
+function safeId(value) {
+  return String(value || "unknown")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 48);
+}
+
 function renderTopUrlRows(rows) {
   return rows
     .map((row) => {
@@ -31,10 +46,13 @@ function renderTopUrlRows(rows) {
 export function renderDailyReportPage(report) {
   const paritySummary = report.bilingual_parity?.summary || {};
   const largestGaps = report.bilingual_parity?.highlights?.largest_accessibility_gaps || [];
+  const missingCounterparts = report.bilingual_parity?.missing_counterparts || [];
   const statementSummary = report.accessibility_statements?.summary || {};
   const statementGaps = report.accessibility_statements?.missing_statement_examples || [];
+  const statementChecks = report.accessibility_statements?.checks || [];
   const platformSummary = report.platform_signals?.summary || {};
   const cmsDist = report.platform_signals?.distributions?.cms || [];
+  const cmsUrlExamples = report.platform_signals?.cms_url_examples || [];
   const impactSummary = report.impact_model?.summary || {};
   const impactTop = report.impact_model?.top_directional_impact_urls || [];
   const cohortSummary = report.cohort_quality?.summary || {};
@@ -53,12 +71,27 @@ export function renderDailyReportPage(report) {
   const topUrlsOverflowCount = Math.max(0, report.top_urls.length - 12);
   const rows = renderTopUrlRows(topUrlsPreview);
 
+  const missingCounterpartRows = missingCounterparts
+    .slice(0, 12)
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.service_name)}</td>
+        <td>${escapeHtml(row.has_en ? "yes" : "no")}</td>
+        <td>${escapeHtml(row.has_fr ? "yes" : "no")}</td>
+        <td>${row.url_en ? `<a href="${escapeHtml(row.url_en)}">EN</a>` : "-"} | ${row.url_fr ? `<a href="${escapeHtml(row.url_fr)}">FR</a>` : "-"}</td>
+      </tr>`;
+    })
+    .join("\n");
+
   const parityRows = largestGaps
     .map((row) => {
       return `
       <tr>
         <td>${escapeHtml(row.service_name)}</td>
-        <td>${escapeHtml(row.accessibility_gap ?? "-")}</td>
+        <td>${escapeHtml(row.accessibility_score_en ?? "-")} / ${escapeHtml(row.accessibility_score_fr ?? "-")}</td>
+        <td>${escapeHtml(row.accessibility_gap ?? "-")} (${escapeHtml(toArrow(row.accessibility_gap))})</td>
+        <td>${escapeHtml(row.performance_score_en ?? "-")} / ${escapeHtml(row.performance_score_fr ?? "-")}</td>
         <td>${escapeHtml(row.performance_gap ?? "-")}</td>
         <td><a href="${escapeHtml(row.url_en)}">EN</a> | <a href="${escapeHtml(row.url_fr)}">FR</a></td>
       </tr>`;
@@ -80,13 +113,37 @@ export function renderDailyReportPage(report) {
 
   const missingStatementOverflowCount = Math.max(0, statementGaps.length - 10);
 
+  const detectedStatementRows = statementChecks
+    .filter((row) => row.statement_detected)
+    .slice(0, 10)
+    .map((row) => {
+      return `
+      <tr>
+        <td>${escapeHtml(row.service_name)}</td>
+        <td>${escapeHtml(row.language ? row.language.toUpperCase() : "-")}</td>
+        <td><a href="${escapeHtml(row.canonical_url)}">${escapeHtml(row.canonical_url)}</a></td>
+        <td>${escapeHtml(row.statement_link_text || "detected")}</td>
+      </tr>`;
+    })
+    .join("\n");
+
   const cmsRows = cmsDist
     .slice(0, 8)
     .map((row) => {
+      const cmsExamples = cmsUrlExamples.find((item) => item.cms === row.key);
+      const tooltipId = `cms-tooltip-${safeId(row.key)}`;
+      const tooltipText = (cmsExamples?.pages || [])
+        .slice(0, 6)
+        .map((item) => `${item.language?.toUpperCase() || "NA"}: ${item.canonical_url}`)
+        .join(" | ");
       return `
       <tr>
         <td>${escapeHtml(row.key)}</td>
         <td>${escapeHtml(row.count)}</td>
+        <td>
+          <button type="button" class="tooltip-trigger" aria-describedby="${escapeHtml(tooltipId)}" data-tooltip-target="${escapeHtml(tooltipId)}">Preview URLs</button>
+          <div id="${escapeHtml(tooltipId)}" role="tooltip" class="tooltip" hidden>${escapeHtml(tooltipText || "No sample URLs")}</div>
+        </td>
       </tr>`;
     })
     .join("\n");
@@ -286,6 +343,7 @@ export function renderDailyReportPage(report) {
 
     <section>
       <h2>Bilingual Parity</h2>
+      <p><em>Average EN/FR accessibility gap is the mean absolute difference between paired EN and FR scores. A value of ${escapeHtml(paritySummary.average_absolute_accessibility_gap ?? "-")} means paired pages differ by that many points on average; it does not imply one language is always better.</em></p>
       <div class="cards">
         <div class="card"><strong>Candidate Pairs</strong><br/>${escapeHtml(paritySummary.candidate_pairs ?? "-")}</div>
         <div class="card"><strong>Complete Pairs</strong><br/>${escapeHtml(paritySummary.complete_success_pairs ?? "-")}</div>
@@ -299,12 +357,27 @@ export function renderDailyReportPage(report) {
         <thead>
           <tr>
             <th scope="col">Service</th>
+            <th scope="col">A11y Scores (EN/FR)</th>
             <th scope="col">A11y Gap (EN-FR)</th>
+            <th scope="col">Perf Scores (EN/FR)</th>
             <th scope="col">Perf Gap (EN-FR)</th>
             <th scope="col">Pair Links</th>
           </tr>
         </thead>
-        <tbody>${parityRows || '<tr><td colspan="4">No complete EN/FR pairs with parity data in this run.</td></tr>'}</tbody>
+        <tbody>${parityRows || '<tr><td colspan="6">No complete EN/FR pairs with parity data in this run.</td></tr>'}</tbody>
+      </table>
+
+      <h3>Missing Counterparts</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Has EN</th>
+            <th scope="col">Has FR</th>
+            <th scope="col">Links</th>
+          </tr>
+        </thead>
+        <tbody>${missingCounterpartRows || '<tr><td colspan="4">No missing language counterparts in this run.</td></tr>'}</tbody>
       </table>
     </section>
 
@@ -332,6 +405,19 @@ export function renderDailyReportPage(report) {
         <tbody>${missingStatementRows || '<tr><td colspan="4">No missing accessibility statements detected in this run.</td></tr>'}</tbody>
       </table>
       ${missingStatementOverflowCount > 0 ? `<p>${escapeHtml(missingStatementOverflowCount)} additional rows available in <a href="./report.json">report.json</a>.</p>` : ""}
+
+      <h3>Detected Statement Examples</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Lang</th>
+            <th scope="col">URL</th>
+            <th scope="col">Detected Link</th>
+          </tr>
+        </thead>
+        <tbody>${detectedStatementRows || '<tr><td colspan="4">No detected accessibility statements in this run.</td></tr>'}</tbody>
+      </table>
     </section>
 
     <section>
@@ -349,10 +435,25 @@ export function renderDailyReportPage(report) {
           <tr>
             <th scope="col">CMS</th>
             <th scope="col">Count</th>
+            <th scope="col">URL Samples</th>
           </tr>
         </thead>
-        <tbody>${cmsRows || '<tr><td colspan="2">No CMS signals available in this run.</td></tr>'}</tbody>
+        <tbody>${cmsRows || '<tr><td colspan="3">No CMS signals available in this run.</td></tr>'}</tbody>
       </table>
+
+      <details>
+        <summary>Show CMS URL References</summary>
+        ${cmsUrlExamples
+          .slice(0, 8)
+          .map(
+            (entry) =>
+              `<p><strong>${escapeHtml(entry.cms)}</strong>: ${entry.pages
+                .slice(0, 10)
+                .map((page) => `<a href="${escapeHtml(page.canonical_url)}">${escapeHtml(page.language.toUpperCase())}</a>`)
+                .join(" | ")}</p>`
+          )
+          .join("\n")}
+      </details>
     </section>
 
     <section>
@@ -401,6 +502,7 @@ export function renderDailyReportPage(report) {
     <section>
       <h2>Directional Impact Model</h2>
       <p><em>${escapeHtml(report.impact_model?.note || "Directional estimate only.")}</em></p>
+      <p>Formula: directional affected load = page load count x blended severity weight / 100 x statement multiplier. Statement multiplier is higher when no accessibility statement is detected.</p>
       <div class="cards">
         <div class="card"><strong>Total Load</strong><br/>${escapeHtml(impactSummary.total_page_load_count ?? "-")}</div>
         <div class="card"><strong>Directional Affected Load</strong><br/>${escapeHtml(impactSummary.directional_affected_load_estimate ?? "-")}</div>
@@ -420,6 +522,32 @@ export function renderDailyReportPage(report) {
         </thead>
         <tbody>${impactRows || '<tr><td colspan="5">No directional impact rows available in this run.</td></tr>'}</tbody>
       </table>
+
+      <h3>By Tier</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Tier</th>
+            <th scope="col">URLs</th>
+            <th scope="col">Page Load</th>
+            <th scope="col">Directional Affected</th>
+            <th scope="col">Share %</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${(report.impact_model?.by_tier || [])
+            .map(
+              (row) => `<tr>
+            <td>${escapeHtml(row.tier)}</td>
+            <td>${escapeHtml(row.scanned_urls)}</td>
+            <td>${escapeHtml(row.page_load_count)}</td>
+            <td>${escapeHtml(row.directional_affected_load_estimate)}</td>
+            <td>${escapeHtml(row.affected_share_percent ?? "-")}</td>
+          </tr>`
+            )
+            .join("\n") || '<tr><td colspan="5">No tier impact data available.</td></tr>'}
+        </tbody>
+      </table>
     </section>
 
     <section>
@@ -435,19 +563,19 @@ export function renderDailyReportPage(report) {
     <section>
       <h2>Top URLs</h2>
       <p>Showing first 12 rows by default for faster initial rendering.</p>
-      <table>
+      <table id="top-urls-table" class="sortable-table">
         <thead>
           <tr>
-            <th scope="col">Service</th>
-            <th scope="col">URL</th>
-            <th scope="col">Lang</th>
-            <th scope="col">Status</th>
-            <th scope="col">Statement</th>
-            <th scope="col">CMS</th>
-            <th scope="col">Design System</th>
-            <th scope="col">Load</th>
-            <th scope="col">Perf</th>
-            <th scope="col">A11y</th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="0" data-sort-type="text">Service</button></th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="1" data-sort-type="text">URL</button></th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="2" data-sort-type="text">Lang</button></th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="3" data-sort-type="text">Status</button></th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="4" data-sort-type="text">Statement</button></th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="5" data-sort-type="text">CMS</button></th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="6" data-sort-type="text">Design System</button></th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="7" data-sort-type="number">Load</button></th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="8" data-sort-type="number">Perf</button></th>
+            <th scope="col"><button type="button" class="sort-button" data-sort-table="top-urls-table" data-sort-index="9" data-sort-type="number">A11y</button></th>
           </tr>
         </thead>
         <tbody>${rows}</tbody>
@@ -455,11 +583,66 @@ export function renderDailyReportPage(report) {
       ${topUrlsOverflowCount > 0 ? `<p>${escapeHtml(topUrlsOverflowCount)} additional rows available in <a href="./report.json">report.json</a>.</p>` : ""}
     </section>
   </main>
+  <script>
+    (() => {
+      const buttons = document.querySelectorAll('.sort-button');
+      for (const button of buttons) {
+        button.addEventListener('click', () => {
+          const table = document.getElementById(button.dataset.sortTable);
+          if (!table) return;
+          const tbody = table.querySelector('tbody');
+          if (!tbody) return;
+          const index = Number(button.dataset.sortIndex || 0);
+          const type = button.dataset.sortType || 'text';
+          const currentDir = button.getAttribute('data-sort-dir') === 'asc' ? 'asc' : 'desc';
+          const nextDir = currentDir === 'asc' ? 'desc' : 'asc';
+
+          const rows = [...tbody.querySelectorAll('tr')];
+          rows.sort((a, b) => {
+            const aText = (a.children[index]?.innerText || '').trim();
+            const bText = (b.children[index]?.innerText || '').trim();
+            if (type === 'number') {
+              const aNum = Number.parseFloat(aText.replace(/[^\d.-]/g, '')) || 0;
+              const bNum = Number.parseFloat(bText.replace(/[^\d.-]/g, '')) || 0;
+              return nextDir === 'asc' ? aNum - bNum : bNum - aNum;
+            }
+            return nextDir === 'asc'
+              ? aText.localeCompare(bText)
+              : bText.localeCompare(aText);
+          });
+
+          button.setAttribute('data-sort-dir', nextDir);
+          rows.forEach((row) => tbody.appendChild(row));
+        });
+      }
+
+      const tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
+      for (const trigger of tooltipTriggers) {
+        const tooltipId = trigger.getAttribute('data-tooltip-target');
+        const tooltip = tooltipId ? document.getElementById(tooltipId) : null;
+        if (!tooltip) continue;
+
+        const show = () => tooltip.removeAttribute('hidden');
+        const hide = () => tooltip.setAttribute('hidden', '');
+
+        trigger.addEventListener('mouseenter', show);
+        trigger.addEventListener('mouseleave', hide);
+        trigger.addEventListener('focusin', show);
+        trigger.addEventListener('focusout', hide);
+        trigger.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            hide();
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>`;
 }
 
 export function renderDashboardPage(report) {
+  const means = report.benchmark_summary?.means || {};
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -471,8 +654,23 @@ export function renderDashboardPage(report) {
 <body>
   <div class="nav"><a href="../">← Back to Home</a></div>
   <h1>Daily CAP Reports</h1>
+  <p>Canadian service entry-point quality dashboard with daily automated signals for accessibility, performance, best practices, and SEO.</p>
   <p>Latest run: ${escapeHtml(report.run_date)}</p>
   <p><em>Daily CAP is an independent analytics project and is not a Government of Canada program.</em></p>
+  <section>
+    <h2>Latest Scores</h2>
+    <div class="cards">
+      <div class="card"><strong>Performance</strong><br/>${escapeHtml(means.performance_score ?? "-")}</div>
+      <div class="card"><strong>Accessibility</strong><br/>${escapeHtml(means.accessibility_score ?? "-")}</div>
+      <div class="card"><strong>Best Practices</strong><br/>${escapeHtml(means.best_practices_score ?? "-")}</div>
+      <div class="card"><strong>SEO</strong><br/>${escapeHtml(means.seo_score ?? "-")}</div>
+    </div>
+  </section>
+  <section>
+    <h2>About These Reports</h2>
+    <p>Daily CAP benchmarks Canadian federal digital service entry points with automated diagnostics. Results are directional benchmark signals and trend indicators, not legal compliance determinations or manual accessibility audits.</p>
+    <p>The report includes bilingual parity tracking, accessibility statement coverage, platform signals, and directional impact estimates to help prioritize remediation and governance work.</p>
+  </section>
   <p><a href="./daily/${escapeHtml(report.run_date)}/index.html">Open latest report</a></p>
 </body>
 </html>`;

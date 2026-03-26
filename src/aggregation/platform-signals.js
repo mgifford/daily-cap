@@ -16,6 +16,29 @@ function percent(part, total) {
   return Number(((part / total) * 100).toFixed(2));
 }
 
+function groupCmsUrls(rows) {
+  const groups = new Map();
+
+  for (const row of rows) {
+    const cms = row.cms || "unknown";
+    const bucket = groups.get(cms) || [];
+    bucket.push({
+      service_name: row.service_name,
+      language: row.language,
+      canonical_url: row.canonical_url
+    });
+    groups.set(cms, bucket);
+  }
+
+  return [...groups.entries()]
+    .map(([cms, pages]) => ({
+      cms,
+      count: pages.length,
+      pages: pages.slice(0, 20)
+    }))
+    .sort((a, b) => b.count - a.count || a.cms.localeCompare(b.cms));
+}
+
 export function summarizePlatformSignals(scanned) {
   const rows = scanned.map((row) => ({
     inventory_id: row.inventory_id,
@@ -57,6 +80,7 @@ export function summarizePlatformSignals(scanned) {
       design_systems: dsCounts,
       hosting_hints: hostCounts
     },
+    cms_url_examples: groupCmsUrls(rows),
     by_language: {
       en: {
         total: byLanguage.en.length,
