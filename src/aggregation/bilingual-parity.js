@@ -53,6 +53,7 @@ function avgAbsoluteGap(rows, field) {
 
 export function computeBilingualParity(scanned) {
   const grouped = new Map();
+  const urlByCanonical = new Map(scanned.map((row) => [row.canonical_url, row]));
 
   for (const row of scanned) {
     const key = getPairKey(row);
@@ -121,6 +122,7 @@ export function computeBilingualParity(scanned) {
 
     pairs.push({
       pair_id: pair.pair_id,
+      pair_source: "inventory",
       service_name: pair.service_name,
       inventory_id_en: pair.en.inventory_id,
       inventory_id_fr: pair.fr.inventory_id,
@@ -148,6 +150,105 @@ export function computeBilingualParity(scanned) {
     });
   }
 
+  // Second pass: try to pair "missing" entries using in-page language switcher links.
+  // This reduces false-positive "missing French" counts for pages with header language toggles.
+  const switcherUsedUrls = new Set();
+  const switcherResolvedPairIds = new Set();
+  let pairedFromSwitcher = 0;
+
+  for (const entry of missing) {
+    const existingUrl = entry.url_en || entry.url_fr;
+    if (!existingUrl || switcherUsedUrls.has(existingUrl)) {
+      continue;
+    }
+
+    const existingSide = urlByCanonical.get(existingUrl);
+    if (!existingSide) {
+      continue;
+    }
+
+    const switcherHref = existingSide.accessibility_statement?.language_switcher_url;
+    if (!switcherHref) {
+      continue;
+    }
+
+    let switcherUrl;
+    try {
+      switcherUrl = new URL(switcherHref, existingSide.canonical_url).href;
+    } catch {
+      continue;
+    }
+
+    if (switcherUsedUrls.has(switcherUrl)) {
+      continue;
+    }
+
+    const otherSide = urlByCanonical.get(switcherUrl);
+    if (!otherSide || otherSide.language === existingSide.language) {
+      continue;
+    }
+
+    const enSide = existingSide.language === "en" ? existingSide : otherSide;
+    const frSide = existingSide.language === "fr" ? existingSide : otherSide;
+
+    switcherUsedUrls.add(existingUrl);
+    switcherUsedUrls.add(switcherUrl);
+    switcherResolvedPairIds.add(entry.pair_id);
+    pairedFromSwitcher++;
+
+    const enA11y = toNumberOrNull(enSide.lighthouse?.accessibility_score);
+    const frA11y = toNumberOrNull(frSide.lighthouse?.accessibility_score);
+    const enPerf = toNumberOrNull(enSide.lighthouse?.performance_score);
+    const frPerf = toNumberOrNull(frSide.lighthouse?.performance_score);
+    const enFindings = toFindingTotal(enSide.scangov);
+    const frFindings = toFindingTotal(frSide.scangov);
+    const accessibilityGap =
+      enA11y === null || frA11y === null ? null : roundOrNull(enA11y - frA11y);
+    const performanceGap =
+      enPerf === null || frPerf === null ? null : roundOrNull(enPerf - frPerf);
+    const findingGap =
+      enFindings === null || frFindings === null
+        ? null
+        : roundOrNull(enFindings - frFindings);
+
+    pairs.push({
+      pair_id: entry.pair_id,
+      pair_source: "switcher",
+      service_name: entry.service_name,
+      inventory_id_en: enSide.inventory_id,
+      inventory_id_fr: frSide.inventory_id,
+      url_en: enSide.canonical_url,
+      url_fr: frSide.canonical_url,
+      scan_status_en: enSide.scan_status,
+      scan_status_fr: frSide.scan_status,
+      institution: enSide.institution || frSide.institution || null,
+      tier: enSide.tier || frSide.tier || null,
+      service_pattern: enSide.service_pattern || frSide.service_pattern || null,
+      page_load_count: Math.max(enSide.page_load_count || 0, frSide.page_load_count || 0),
+      accessibility_score_en: enA11y,
+      accessibility_score_fr: frA11y,
+      performance_score_en: enPerf,
+      performance_score_fr: frPerf,
+      findings_total_en: enFindings,
+      findings_total_fr: frFindings,
+      accessibility_gap: accessibilityGap,
+      performance_gap: performanceGap,
+      findings_gap: findingGap,
+      abs_accessibility_gap:
+        accessibilityGap === null ? null : roundOrNull(Math.abs(accessibilityGap)),
+      abs_performance_gap:
+        performanceGap === null ? null : roundOrNull(Math.abs(performanceGap))
+    });
+  }
+
+  // Remove entries resolved via switcher OR whose URL was absorbed into a switcher pair.
+  const resolvedMissing = missing.filter(
+    (entry) =>
+      !switcherResolvedPairIds.has(entry.pair_id) &&
+      !(entry.url_en && switcherUsedUrls.has(entry.url_en)) &&
+      !(entry.url_fr && switcherUsedUrls.has(entry.url_fr))
+  );
+
   const completePairs = pairs.filter(
     (row) => row.scan_status_en === "success" && row.scan_status_fr === "success"
   );
@@ -164,14 +265,15 @@ export function computeBilingualParity(scanned) {
 
   return {
     pairs,
-    missing_counterparts: missing,
+    missing_counterparts: resolvedMissing,
     summary: {
       candidate_pairs: grouped.size,
       paired_services: pairs.length,
       complete_success_pairs: completePairs.length,
-      missing_counterpart: missing.length,
-      missing_english: missingEnglish,
-      missing_french: missingFrench,
+      missing_counterpart: resolvedMissing.length,
+      missing_english: resolvedMissing.filter((m) => !m.has_en).length,
+      missing_french: resolvedMissing.filter((m) => !m.has_fr).length,
+      paired_from_switcher: pairedFromSwitcher,
       average_absolute_accessibility_gap: avgAbsoluteGap(a11yGapRows, "accessibility_gap"),
       average_absolute_performance_gap: avgAbsoluteGap(perfGapRows, "performance_gap"),
       high_accessibility_gap_pairs: highGapPairs.length

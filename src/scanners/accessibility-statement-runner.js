@@ -77,6 +77,48 @@ function extractSignals(html) {
   };
 }
 
+function findLanguageSwitcherUrl(html, currentLanguage) {
+  const anchorPattern = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+  const lookingForFr = currentLanguage === "en";
+  const lookingForEn = currentLanguage === "fr";
+
+  const frTextTerms = /\bfran[çc]ais\b/i;
+  const enTextTerms = /\benglish\b/i;
+  const frHrefTerms = /[?&]lang=fr(?:a|anc)?(?:&|$|#)/i;
+  const enHrefTerms = /[?&]lang=en(?:g)?(?:&|$|#)/i;
+
+  let match;
+  while ((match = anchorPattern.exec(html)) !== null) {
+    const href = match[1] || "";
+    if (!href || href.startsWith("#") || href.toLowerCase().startsWith("javascript:")) {
+      continue;
+    }
+    const text = String(match[2] || "")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (lookingForFr && (frTextTerms.test(text) || frHrefTerms.test(href))) {
+      return href;
+    }
+    if (lookingForEn && (enTextTerms.test(text) || enHrefTerms.test(href))) {
+      return href;
+    }
+  }
+  return null;
+}
+
+function mockSwitcherUrl(target) {
+  const url = target.canonical_url;
+  if (/\/en\//.test(url)) return url.replace(/\/en\//, "/fr/");
+  if (/\/fr\//.test(url)) return url.replace(/\/fr\//, "/en/");
+  if (/[?&]lang=eng/.test(url)) return url.replace("lang=eng", "lang=fra");
+  if (/[?&]lang=fra/.test(url)) return url.replace("lang=fra", "lang=eng");
+  if (/\/en$/.test(url)) return url.replace(/\/en$/, "/fr");
+  if (/\/fr$/.test(url)) return url.replace(/\/fr$/, "/en");
+  return null;
+}
+
 function buildMockResult(target) {
   const seed = hashNumber(`${target.canonical_url}:${target.language}:statement`);
   const statementDetected = seed % 5 !== 0;
@@ -100,7 +142,8 @@ function buildMockResult(target) {
     mentions_alternative_support: statementDetected ? mentionsAlternativeSupport : false,
     has_freshness_marker: statementDetected ? hasFreshnessMarker : false,
     detected_language: target.language || null,
-    confidence: statementDetected ? 0.72 : 0.3
+    confidence: statementDetected ? 0.72 : 0.3,
+    language_switcher_url: mockSwitcherUrl(target)
   };
 }
 
@@ -115,6 +158,7 @@ export async function runAccessibilityStatementCheck(target, mode) {
   });
   const html = await response.text();
   const statementLink = findStatementLink(html);
+  const languageSwitcherUrl = findLanguageSwitcherUrl(html, target.language);
 
   const signals = extractSignals(html);
   const statementDetected = Boolean(statementLink);
@@ -132,6 +176,7 @@ export async function runAccessibilityStatementCheck(target, mode) {
       : false,
     has_freshness_marker: statementDetected ? signals.has_freshness_marker : false,
     detected_language: detectLanguage(html, target.language),
-    confidence: statementDetected ? 0.8 : 0.35
+    confidence: statementDetected ? 0.8 : 0.35,
+    language_switcher_url: languageSwitcherUrl
   };
 }

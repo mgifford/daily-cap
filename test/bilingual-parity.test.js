@@ -43,6 +43,46 @@ test("computeBilingualParity returns pair gaps and missing counterparts", () => 
   assert.equal(result.summary.paired_services, 1);
   assert.equal(result.summary.missing_counterpart, 1);
   assert.equal(result.summary.missing_french, 1);
+  assert.equal(result.summary.paired_from_switcher, 0);
   assert.equal(result.summary.average_absolute_accessibility_gap, 5);
+  assert.equal(result.pairs[0].accessibility_gap, 5);
+  assert.equal(result.pairs[0].pair_source, "inventory");
+});
+
+test("computeBilingualParity resolves missing counterparts via language_switcher_url", () => {
+  const scanned = [
+    {
+      inventory_id: "svc-en-only",
+      service_name: "Switcher Service",
+      language: "en",
+      canonical_url: "https://example.com/en/service",
+      scan_status: "success",
+      lighthouse: { accessibility_score: 85, performance_score: 75 },
+      scangov: null,
+      accessibility_statement: {
+        language_switcher_url: "https://example.com/fr/service"
+      }
+    },
+    {
+      inventory_id: "svc-fr-only",
+      service_name: "Switcher Service FR",
+      language: "fr",
+      canonical_url: "https://example.com/fr/service",
+      scan_status: "success",
+      lighthouse: { accessibility_score: 80, performance_score: 70 },
+      scangov: null,
+      accessibility_statement: null
+    }
+  ];
+
+  const result = computeBilingualParity(scanned);
+
+  assert.equal(result.summary.candidate_pairs, 2);
+  assert.equal(result.summary.paired_from_switcher, 1);
+  assert.equal(result.summary.paired_services, 1);
+  assert.equal(result.summary.missing_counterpart, 0);
+  assert.equal(result.summary.missing_french, 0);
+  assert.equal(result.pairs.length, 1);
+  assert.equal(result.pairs[0].pair_source, "switcher");
   assert.equal(result.pairs[0].accessibility_gap, 5);
 });

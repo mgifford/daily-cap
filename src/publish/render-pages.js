@@ -22,6 +22,12 @@ function safeId(value) {
     .slice(0, 48);
 }
 
+function sectionH2(id, text) {
+  const safeText = escapeHtml(text);
+  const safeAnchor = escapeHtml(id);
+  return `<h2 id="${safeAnchor}">${safeText} <a href="#${safeAnchor}" class="anchor-link" aria-label="Link to section: ${safeText}">#</a></h2>`;
+}
+
 function renderCmsDisclosure(entry) {
   if (!entry || !entry.pages?.length) {
     return "No sample URLs";
@@ -165,6 +171,95 @@ function renderMetricTrendChart(points, field, title, description, color, maxOve
   </figure>`;
 }
 
+function renderLighthouseContextBarChart(byContext) {
+  const contexts = ["desktop_light", "desktop_dark", "mobile_light", "mobile_dark"];
+  const contextDisplayNames = {
+    desktop_light: "Desktop Light",
+    desktop_dark: "Desktop Dark",
+    mobile_light: "Mobile Light",
+    mobile_dark: "Mobile Dark"
+  };
+  const metrics = [
+    { key: "performance_score", label: "Performance", color: "#235d8b" },
+    { key: "accessibility_score", label: "Accessibility", color: "#1d6b42" },
+    { key: "best_practices_score", label: "Best Practices", color: "#7b4f9e" },
+    { key: "seo_score", label: "SEO", color: "#b5402d" }
+  ];
+
+  const hasData = contexts.some((ctx) => byContext[ctx]);
+  if (!hasData) {
+    return "<p>No Lighthouse context data available yet.</p>";
+  }
+
+  const W = 860;
+  const H = 300;
+  const padL = 48;
+  const padR = 148;
+  const padT = 30;
+  const padB = 58;
+  const plotW = W - padL - padR;
+  const plotH = H - padT - padB;
+  const numGroups = contexts.length;
+  const groupW = plotW / numGroups;
+  const groupPad = 8;
+  const barGap = 2;
+  const barW = (groupW - groupPad * 2 - barGap * (metrics.length - 1)) / metrics.length;
+  const maxVal = 100;
+
+  const yTicks = [0, 25, 50, 75, 100]
+    .map((val) => {
+      const y = padT + plotH - (plotH * val) / maxVal;
+      return `<line x1="${padL}" y1="${y}" x2="${padL + plotW}" y2="${y}" stroke="#d7e2d8" stroke-width="1" /><text x="${padL - 6}" y="${y + 4}" text-anchor="end" font-size="11">${val}</text>`;
+    })
+    .join("\n");
+
+  const bars = contexts
+    .flatMap((ctx, gi) => {
+      const ctxData = byContext[ctx] || {};
+      return metrics.map((metric, bi) => {
+        const val = typeof ctxData[metric.key] === "number" ? ctxData[metric.key] : null;
+        if (val === null) {
+          return "";
+        }
+        const x = padL + gi * groupW + groupPad + bi * (barW + barGap);
+        const bh = Math.max(1, (plotH * val) / maxVal);
+        const y = padT + plotH - bh;
+        return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${bh.toFixed(1)}" fill="${escapeHtml(metric.color)}" /><text x="${(x + barW / 2).toFixed(1)}" y="${(y - 3).toFixed(1)}" text-anchor="middle" font-size="9">${val}</text>`;
+      });
+    })
+    .join("\n");
+
+  const xlabels = contexts
+    .map((ctx, gi) => {
+      const cx = (padL + gi * groupW + groupW / 2).toFixed(1);
+      const cy = padT + plotH + 18;
+      return `<text x="${cx}" y="${cy}" text-anchor="middle" font-size="11">${escapeHtml(contextDisplayNames[ctx])}</text>`;
+    })
+    .join("\n");
+
+  const legend = metrics
+    .map((metric, i) => {
+      const lx = padL + plotW + 14;
+      const ly = padT + 20 + i * 22;
+      return `<rect x="${lx}" y="${ly}" width="12" height="12" fill="${escapeHtml(metric.color)}" /><text x="${lx + 16}" y="${ly + 11}" font-size="11">${escapeHtml(metric.label)}</text>`;
+    })
+    .join("\n");
+
+  return `<figure>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="lh-ctx-chart-title lh-ctx-chart-desc" class="history-chart">
+      <title id="lh-ctx-chart-title">Lighthouse scores by scan context</title>
+      <desc id="lh-ctx-chart-desc">Grouped bar chart showing Lighthouse performance, accessibility, best practices, and SEO scores across four scan contexts: desktop light, desktop dark, mobile light, mobile dark. Values range from 0 to 100.</desc>
+      <line x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" stroke="#7f9685" stroke-width="1.5" />
+      <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + plotH}" stroke="#7f9685" stroke-width="1.5" />
+      ${yTicks}
+      ${bars}
+      ${xlabels}
+      ${legend}
+    </svg>
+    <figcaption>Lighthouse scores by context (0&#8211;100). Blue&#160;=&#160;Performance, Green&#160;=&#160;Accessibility, Purple&#160;=&#160;Best Practices, Red&#160;=&#160;SEO.</figcaption>
+  </figure>`;
+}
+
 function renderTopUrlRows(rows) {
   return rows
     .map((row) => {
@@ -194,16 +289,49 @@ function renderDetailLayout({ title, heading, intro, backHref, backLabel = "Back
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${escapeHtml(title)}</title>
   <link rel="stylesheet" href="${escapeHtml(stylesheetHref)}" />
+  <script>(function(){var s=localStorage.getItem('cap-preferred-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
 </head>
 <body>
   <header>
-    <div class="nav"><a href="${escapeHtml(backHref)}">← ${escapeHtml(backLabel)}</a></div>
+    <div class="nav"><a href="${escapeHtml(backHref)}">&#8592; ${escapeHtml(backLabel)}</a></div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
   </header>
   <main>
     <h1>${escapeHtml(heading)}</h1>
     <p><em>${escapeHtml(intro)}</em></p>
     ${body}
   </main>
+  <script>
+    (function () {
+      var THEME_KEY = 'cap-preferred-theme';
+      var html = document.documentElement;
+      var toggle = document.getElementById('theme-toggle');
+      function applyTheme(t) {
+        html.setAttribute('data-theme', t);
+        if (toggle) {
+          toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+        }
+      }
+      var stored = localStorage.getItem(THEME_KEY);
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var c = html.getAttribute('data-theme');
+          var n = c === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(THEME_KEY, n);
+          applyTheme(n);
+        });
+      }
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) {
+        mq.addEventListener('change', function (e) {
+          if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? 'dark' : 'light');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>`;
 }
@@ -691,10 +819,12 @@ export function renderDailyReportPage(report) {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daily CAP Report - ${escapeHtml(report.run_date)}</title>
   <link rel="stylesheet" href="../../assets/report.css" />
+  <script>(function(){var s=localStorage.getItem('cap-preferred-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
 </head>
 <body>
   <header>
-    <div class="nav"><a href="../../index.html">← Back to Reports</a> | <a href="../../../">Home</a></div>
+    <div class="nav"><a href="../../index.html">&#8592; Back to Reports</a> | <a href="../../../">Home</a></div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
   </header>
   <main>
     <h1>Daily CAP Report</h1>
@@ -703,7 +833,7 @@ export function renderDailyReportPage(report) {
     <p><a href="./report.json">Download full report JSON</a></p>
 
     <section>
-      <h2>Overview</h2>
+      ${sectionH2("overview", "Overview")}
       <div class="cards">
         <div class="card"><strong>Total</strong><br/>${escapeHtml(report.scan_summary.total)}</div>
         <div class="card"><strong>Succeeded</strong><br/>${escapeHtml(report.scan_summary.succeeded)}</div>
@@ -713,7 +843,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Trend Comparison</h2>
+      ${sectionH2("trend-comparison", "Trend Comparison")}
       <p><em>${escapeHtml(trend.note || "No trend comparison available.")}</em></p>
       <div class="cards">
         <div class="card"><strong>Previous Run</strong><br/>${escapeHtml(trend.previous_run_date ?? "none")}</div>
@@ -748,7 +878,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Barrier History</h2>
+      ${sectionH2("barrier-history", "Barrier History")}
       <p><em>These daily signals track barrier-related counts over time so regressions are visible beyond a single-day snapshot.</em></p>
       <div class="cards">
         <div class="card"><strong>History Window</strong><br/>${escapeHtml(report.barrier_history?.summary?.start_date ?? "-")} to ${escapeHtml(report.barrier_history?.summary?.end_date ?? "-")}</div>
@@ -781,7 +911,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Top Priority Issues</h2>
+      ${sectionH2("top-priority-issues", "Top Priority Issues")}
       <p><em>These issues are ranked using severity, traffic, service criticality, and persistence across days to highlight the most actionable government improvement priorities.</em></p>
       <div class="cards">
         <div class="card"><strong>Total Issues</strong><br/>${escapeHtml(prioritySummary.total_issues ?? "-")}</div>
@@ -807,7 +937,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Recurring Issues</h2>
+      ${sectionH2("recurring-issues", "Recurring Issues")}
       <p><em>Recurring issues are present in this run and at least one prior daily run. These are stronger candidates for institutional follow-up because they have persisted over time.</em></p>
       <p><a href="./details/recurring-issues.html">Open full recurring issues page</a> | <a href="./details/recurring-issues.json">Download recurring issues JSON</a></p>
       <table>
@@ -827,7 +957,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Institution Scorecards</h2>
+      ${sectionH2("institution-scorecards", "Institution Scorecards")}
       <p><em>Institution scorecards roll up current scan outcomes and priority issues so ownership and recurring problem clusters are easier to see.</em></p>
       <div class="cards">
         <div class="card"><strong>Institutions</strong><br/>${escapeHtml(institutionSummary.institutions ?? "-")}</div>
@@ -852,7 +982,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Theme and Device Contexts</h2>
+      ${sectionH2("theme-contexts", "Theme and Device Contexts")}
       <p><em>Context baseline is desktop light. Deltas are current context minus baseline.</em></p>
       <div class="cards">
         <div class="card"><strong>Rows With Context Data</strong><br/>${escapeHtml(contextSummary.scanned_urls_with_context_data ?? "-")}</div>
@@ -860,6 +990,8 @@ export function renderDailyReportPage(report) {
         <div class="card"><strong>Mobile Dark Perf Delta</strong><br/>${escapeHtml(contextHighlight.performance_score ?? "-")}</div>
         <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>${escapeHtml(contextHighlight.accessibility_score ?? "-")}</div>
       </div>
+
+      ${renderLighthouseContextBarChart(contextByContext)}
 
       <h3>Context Averages</h3>
       <table>
@@ -891,13 +1023,14 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Bilingual Parity</h2>
+      ${sectionH2("bilingual-parity", "Bilingual Parity")}
       <p><em>Average EN/FR accessibility gap is the mean absolute difference between paired EN and FR scores. A value of ${escapeHtml(paritySummary.average_absolute_accessibility_gap ?? "-")} means paired pages differ by that many points on average; it does not imply one language is always better.</em></p>
       <div class="cards">
         <div class="card"><strong>Candidate Pairs</strong><br/>${escapeHtml(paritySummary.candidate_pairs ?? "-")}</div>
         <div class="card"><strong>Complete Pairs</strong><br/>${escapeHtml(paritySummary.complete_success_pairs ?? "-")}</div>
         <div class="card"><strong>Missing FR</strong><br/>${escapeHtml(paritySummary.missing_french ?? "-")}</div>
         <div class="card"><strong>Missing EN</strong><br/>${escapeHtml(paritySummary.missing_english ?? "-")}</div>
+        <div class="card"><strong>Paired via Switcher</strong><br/>${escapeHtml(paritySummary.paired_from_switcher ?? 0)}</div>
         <div class="card"><strong>Avg Perf Gap (EN/FR)</strong><br/>${escapeHtml(paritySummary.average_absolute_performance_gap ?? "-")}</div>
       </div>
 
@@ -932,7 +1065,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Accessibility Statements</h2>
+      ${sectionH2("accessibility-statements", "Accessibility Statements")}
       <div class="cards">
         <div class="card"><strong>Detected</strong><br/>${escapeHtml(statementSummary.statements_detected ?? "-")}/${escapeHtml(statementSummary.scanned_urls ?? "-")}</div>
         <div class="card"><strong>Coverage</strong><br/>${escapeHtml(statementSummary.statement_coverage_percent ?? "-")}%</div>
@@ -972,7 +1105,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Platform Signals</h2>
+      ${sectionH2("platform-signals", "Platform Signals")}
       <div class="cards">
         <div class="card"><strong>Known CMS</strong><br/>${escapeHtml(platformSummary.known_cms_count ?? "-")}/${escapeHtml(platformSummary.scanned_urls ?? "-")}</div>
         <div class="card"><strong>Known CMS %</strong><br/>${escapeHtml(platformSummary.known_cms_percent ?? "-")}%</div>
@@ -1009,7 +1142,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Cohort Quality and Provenance</h2>
+      ${sectionH2("cohort-quality", "Cohort Quality and Provenance")}
       <div class="cards">
         <div class="card"><strong>Avg Source Confidence</strong><br/>${escapeHtml(cohortSummary.source_confidence_average ?? "-")}</div>
         <div class="card"><strong>Multi-Source URLs</strong><br/>${escapeHtml(cohortSummary.multi_source_urls ?? "-")}</div>
@@ -1052,7 +1185,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Directional Impact Model</h2>
+      ${sectionH2("directional-impact", "Directional Impact Model")}
       <p><em>${escapeHtml(report.impact_model?.note || "Directional estimate only.")}</em></p>
       <p>Formula: directional affected load = page load count x blended severity weight / 100 x statement multiplier. Statement multiplier is higher when no accessibility statement is detected.</p>
       <div class="cards">
@@ -1103,7 +1236,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Benchmark Summary</h2>
+      ${sectionH2("benchmark-summary", "Benchmark Summary")}
       <div class="cards">
         <div class="card"><strong>Performance</strong><br/>${escapeHtml(report.benchmark_summary.means.performance_score ?? "-")}</div>
         <div class="card"><strong>Accessibility</strong><br/>${escapeHtml(report.benchmark_summary.means.accessibility_score ?? "-")}</div>
@@ -1113,7 +1246,7 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
-      <h2>Top URLs</h2>
+      ${sectionH2("top-urls", "Top URLs")}
       <p>Showing first 12 rows by default for faster initial rendering.</p>
       <table id="top-urls-table" class="sortable-table">
         <thead>
@@ -1167,7 +1300,37 @@ export function renderDailyReportPage(report) {
           rows.forEach((row) => tbody.appendChild(row));
         });
       }
-
+    })();
+  </script>
+  <script>
+    (function () {
+      var THEME_KEY = 'cap-preferred-theme';
+      var html = document.documentElement;
+      var toggle = document.getElementById('theme-toggle');
+      function applyTheme(t) {
+        html.setAttribute('data-theme', t);
+        if (toggle) {
+          toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+        }
+      }
+      var stored = localStorage.getItem(THEME_KEY);
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var c = html.getAttribute('data-theme');
+          var n = c === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(THEME_KEY, n);
+          applyTheme(n);
+        });
+      }
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) {
+        mq.addEventListener('change', function (e) {
+          if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? 'dark' : 'light');
+        });
+      }
     })();
   </script>
 </body>
@@ -1183,28 +1346,122 @@ export function renderDashboardPage(report) {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daily CAP Reports</title>
   <link rel="stylesheet" href="./assets/report.css" />
+  <script>(function(){var s=localStorage.getItem('cap-preferred-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
 </head>
 <body>
-  <div class="nav"><a href="../">← Back to Home</a></div>
-  <h1>Daily CAP Reports</h1>
-  <p>Canadian service entry-point quality dashboard with daily automated signals for accessibility, performance, best practices, and SEO.</p>
-  <p>Latest run: ${escapeHtml(report.run_date)}</p>
-  <p><em>Daily CAP is an independent analytics project and is not a Government of Canada program.</em></p>
-  <section>
-    <h2>Latest Scores</h2>
-    <div class="cards">
-      <div class="card"><strong>Performance</strong><br/>${escapeHtml(means.performance_score ?? "-")}</div>
-      <div class="card"><strong>Accessibility</strong><br/>${escapeHtml(means.accessibility_score ?? "-")}</div>
-      <div class="card"><strong>Best Practices</strong><br/>${escapeHtml(means.best_practices_score ?? "-")}</div>
-      <div class="card"><strong>SEO</strong><br/>${escapeHtml(means.seo_score ?? "-")}</div>
-    </div>
-  </section>
-  <section>
-    <h2>About These Reports</h2>
-    <p>Daily CAP benchmarks Canadian federal digital service entry points with automated diagnostics. Results are directional benchmark signals and trend indicators, not legal compliance determinations or manual accessibility audits.</p>
-    <p>The report includes bilingual parity tracking, accessibility statement coverage, platform signals, and directional impact estimates to help prioritize remediation and governance work.</p>
-  </section>
-  <p><a href="./daily/${escapeHtml(report.run_date)}/index.html">Open latest report</a></p>
+  <header>
+    <div class="nav"><a href="../">&#8592; Back to Home</a></div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+  </header>
+  <main>
+    <h1>Daily CAP Reports</h1>
+    <p>Canadian service entry-point quality dashboard with daily automated signals for accessibility, performance, best practices, and SEO.</p>
+    <p>Latest run: ${escapeHtml(report.run_date)}</p>
+    <p><em>Daily CAP is an independent analytics project and is not a Government of Canada program.</em></p>
+
+    <section>
+      ${sectionH2("latest-scores", "Latest Scores")}
+      <div class="cards">
+        <div class="card"><strong>Performance</strong><br/>${escapeHtml(means.performance_score ?? "-")}</div>
+        <div class="card"><strong>Accessibility</strong><br/>${escapeHtml(means.accessibility_score ?? "-")}</div>
+        <div class="card"><strong>Best Practices</strong><br/>${escapeHtml(means.best_practices_score ?? "-")}</div>
+        <div class="card"><strong>SEO</strong><br/>${escapeHtml(means.seo_score ?? "-")}</div>
+      </div>
+    </section>
+
+    <section>
+      ${sectionH2("about-reports", "About These Reports")}
+      <p>Daily CAP benchmarks Canadian federal digital service entry points with automated diagnostics. Results are directional benchmark signals and trend indicators, not legal compliance determinations or manual accessibility audits.</p>
+      <p>The report includes bilingual parity tracking, accessibility statement coverage, platform signals, and directional impact estimates to help prioritize remediation and governance work.</p>
+    </section>
+
+    <section>
+      ${sectionH2("cap-dap", "Daily CAP and Daily DAP")}
+      <p>Daily CAP and <a href="https://mgifford.github.io/daily-dap/">Daily DAP</a> are sibling projects with different geographic scope. Daily CAP focuses on Canadian federal digital services; Daily DAP focuses on U.S. federal digital services. They share a similar reporting approach but are independent codebases.</p>
+      <p>A key distinction is Canadian bilingual requirements: the <cite>Official Languages Act</cite> requires that federal digital services be provided in both English and French. Daily CAP therefore measures EN/FR parity, accessibility statement coverage in both languages, and language switcher availability as first-class signals. Daily DAP does not have an equivalent bilingual requirement.</p>
+      <table>
+        <caption>Comparison of Daily CAP and Daily DAP</caption>
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col">Daily CAP (Canada)</th>
+            <th scope="col">Daily DAP (U.S.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Geographic scope</th>
+            <td>Canadian federal digital services</td>
+            <td>U.S. federal digital services</td>
+          </tr>
+          <tr>
+            <th scope="row">Bilingual requirement</th>
+            <td>English and French (Official Languages Act)</td>
+            <td>English only</td>
+          </tr>
+          <tr>
+            <th scope="row">Language parity analysis</th>
+            <td>Yes &#8212; EN/FR gap scoring and missing counterpart detection</td>
+            <td>Not applicable</td>
+          </tr>
+          <tr>
+            <th scope="row">Accessibility statement detection</th>
+            <td>Yes &#8212; both EN and FR variants checked</td>
+            <td>Varies by implementation</td>
+          </tr>
+          <tr>
+            <th scope="row">Data sources</th>
+            <td>Canada.ca recent activity, Top Tasks, curated endpoints</td>
+            <td>DAP analytics, curated endpoints</td>
+          </tr>
+          <tr>
+            <th scope="row">Scan contexts</th>
+            <td>Desktop and mobile &#215; light and dark themes</td>
+            <td>Similar</td>
+          </tr>
+          <tr>
+            <th scope="row">Output format</th>
+            <td>Static HTML with daily JSON exports</td>
+            <td>Static HTML with daily JSON exports</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>Both projects produce automated benchmark signals, not legal compliance determinations or manual accessibility audits.</em></p>
+    </section>
+
+    <p><a href="./daily/${escapeHtml(report.run_date)}/index.html">Open latest report &#8594;</a></p>
+  </main>
+  <script>
+    (function () {
+      var THEME_KEY = 'cap-preferred-theme';
+      var html = document.documentElement;
+      var toggle = document.getElementById('theme-toggle');
+      function applyTheme(t) {
+        html.setAttribute('data-theme', t);
+        if (toggle) {
+          toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+        }
+      }
+      var stored = localStorage.getItem(THEME_KEY);
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var c = html.getAttribute('data-theme');
+          var n = c === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(THEME_KEY, n);
+          applyTheme(n);
+        });
+      }
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) {
+        mq.addEventListener('change', function (e) {
+          if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? 'dark' : 'light');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>`;
 }
