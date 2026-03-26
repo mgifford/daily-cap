@@ -16,12 +16,12 @@
     },
     {
       "run_date": "2026-03-26",
-      "missing_french": 70,
+      "missing_french": 110,
       "missing_english": 0,
-      "missing_statements": 110,
-      "high_accessibility_gap_pairs": 0,
-      "average_absolute_accessibility_gap": 0,
-      "directional_affected_share_percent": 110.36
+      "missing_statements": 26,
+      "high_accessibility_gap_pairs": 14,
+      "average_absolute_accessibility_gap": 16.5,
+      "directional_affected_share_percent": 36.23
     }
   ]
 }
