@@ -23,6 +23,7 @@ Phase 9 baseline is implemented:
 - directional impact modeling from traffic and automated quality signals
 - day-over-day trend comparison with regression alerts
 - multi-context quality snapshots (desktop/mobile x light/dark)
+- barrier-history trend tracking across daily runs
 - output parity path: `docs/reports/daily/YYYY-MM-DD/`
 
 ## Run
@@ -45,6 +46,7 @@ Key options:
 
 - `docs/reports/daily/YYYY-MM-DD/report.json`
 - `docs/reports/daily/YYYY-MM-DD/index.html`
+- `docs/reports/daily/YYYY-MM-DD/details/*.json`
 - `docs/reports/index.html`
 
 ## Structure

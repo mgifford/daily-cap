@@ -93,52 +93,42 @@ summary {
 }
 
 .sort-button:focus-visible,
-.tooltip-trigger:focus-visible {
+.inline-details summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-.tooltip-trigger {
-  appearance: none;
-  border: 1px solid var(--line);
-  border-radius: 0.4rem;
-  background: #f3f8f4;
-  color: var(--fg);
-  padding: 0.25rem 0.45rem;
-  font-size: 0.8rem;
+
+.inline-details {
+  margin: 0;
+}
+
+.inline-details summary {
   cursor: pointer;
+  color: var(--accent);
 }
 
-td {
-  position: relative;
+.link-list {
+  margin: 0.4rem 0 0;
+  padding-left: 1rem;
 }
 
-.tooltip {
-  position: absolute;
-  z-index: 5;
-  top: calc(100% + 0.2rem);
-  left: 0;
-  width: min(38rem, 80vw);
-  padding: 0.45rem 0.55rem;
-  border-radius: 0.4rem;
-  border: 1px solid #0f3922;
-  background: #173a2b;
-  color: #ffffff;
-  font-size: 0.8rem;
-  line-height: 1.35;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+.link-list li {
+  margin: 0.2rem 0;
+}
+
+.history-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
 }
 
 @media (max-width: 700px) {
-  .tooltip {
-    position: static;
-    width: auto;
-    margin-top: 0.35rem;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .tooltip {
-    transition: opacity 0.15s ease;
+  table {
+    display: block;
+    overflow-x: auto;
   }
 }

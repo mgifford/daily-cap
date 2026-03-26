@@ -1832,6 +1832,62 @@
         "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/programmes/reconnaissance-titres.html",
         "tier": "tier-3",
         "source": "recent"
+      },
+      {
+        "inventory_id": "recent-75-en",
+        "service_name": "Montage vidéo où l&#39;astronaute de l&#39;ASC Jeremy Hansen regarde le lancement d&#39;Artemis I. On voit ensuite la surface de la Lune et une vue de la Lune et la Terre depuis le vaisseau spatial Orion.",
+        "language": "en",
+        "canonical_url": "https://www.asc-csa.gc.ca/fra/missions/artemis-ii/",
+        "tier": "tier-3",
+        "source": "recent"
+      },
+      {
+        "inventory_id": "top-task-1-en",
+        "service_name": "Personal income tax",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/income.html",
+        "tier": "tier-2",
+        "source": "discovered,top-task"
+      },
+      {
+        "inventory_id": "top-task-1-fr",
+        "service_name": "Personal income tax",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/impots/revenu.html",
+        "tier": "tier-2",
+        "source": "discovered,top-task"
+      },
+      {
+        "inventory_id": "top-task-4-fr",
+        "service_name": "Student loans and grants",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/education-formation/prets-bourses.html",
+        "tier": "tier-2",
+        "source": "top-task"
+      },
+      {
+        "inventory_id": "top-task-6-en",
+        "service_name": "Immigration and citizenship",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
+        "tier": "tier-2",
+        "source": "discovered,top-task"
+      },
+      {
+        "inventory_id": "top-task-6-fr",
+        "service_name": "Immigration and citizenship",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
+        "tier": "tier-2",
+        "source": "discovered,top-task"
+      },
+      {
+        "inventory_id": "top-task-8-en",
+        "service_name": "Employment Insurance",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html",
+        "tier": "tier-2",
+        "source": "discovered,top-task"
       }
     ],
     "checks": [
@@ -4262,6 +4318,96 @@
             "service_name": "Get the form and renew a passport in person in Canada",
             "language": "en",
             "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/apply-in-person.html"
+          },
+          {
+            "service_name": "5005-R Déclaration de revenus et de prestations (pour QC seulement)",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/quebec/5005-r.html"
+          },
+          {
+            "service_name": "Welcome",
+            "language": "en",
+            "canonical_url": "https://apps4.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/spoe"
+          },
+          {
+            "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html"
+          },
+          {
+            "service_name": "5000-D1 Feuille de travail fédérale (pour tous sauf non-résidents)",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-d1.html"
+          },
+          {
+            "service_name": "Open Mail Page",
+            "language": "en",
+            "canonical_url": "https://apps4.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane"
+          },
+          {
+            "service_name": "blank video/audio title",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/employment-social-development/programs/foreign-credential-recognition.html"
+          },
+          {
+            "service_name": "The CPP retirement pension: How much will you get",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/amount/video-how-much.html"
+          },
+          {
+            "service_name": "Video 1: Create a GCKey",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/submit-documents.html"
+          },
+          {
+            "service_name": "Video montage of CSA astronaut Jeremy Hansen watching the launch of Artemis I, the surface of the Moon and the Moon and Earth from Orion.",
+            "language": "en",
+            "canonical_url": "https://www.asc-csa.gc.ca/eng/missions/artemis-ii/"
+          },
+          {
+            "service_name": "Oath of Citizenship",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada/read-online/oath-citizenship.html"
+          },
+          {
+            "service_name": "Ne gaspillez pas de temps. Envoyez une demande complète.",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/video/ne-gaspillez-temps-envoyez-demande-complete.html"
+          },
+          {
+            "service_name": "blank video/audio title",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/programmes/reconnaissance-titres.html"
+          },
+          {
+            "service_name": "Assembler une trousse d&#39;urgence",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/services/police/urgences/protection/preparez-vous/kits-urgence.html"
+          },
+          {
+            "service_name": "Montage vidéo où l&#39;astronaute de l&#39;ASC Jeremy Hansen regarde le lancement d&#39;Artemis I. On voit ensuite la surface de la Lune et une vue de la Lune et la Terre depuis le vaisseau spatial Orion.",
+            "language": "en",
+            "canonical_url": "https://www.asc-csa.gc.ca/fra/missions/artemis-ii/"
+          },
+          {
+            "service_name": "Le serment de citoyenneté",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada/lisez-ligne/serment-citoyennete.html"
+          },
+          {
+            "service_name": "Immigration and citizenship",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html"
+          },
+          {
+            "service_name": "Benefits and credits",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/benefits.html"
+          },
+          {
+            "service_name": "Employment Insurance",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html"
           }
         ]
       },
@@ -4368,6 +4514,71 @@
             "service_name": "Le gouvernement du Canada prolonge les mesures temporaires d’assouplissement du programme de Travail partagé pour aider les employeurs et les travailleurs à éviter les licenciements collectifs",
             "language": "en",
             "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-temporaires-dassouplissement-du-programme-de-travail-partage-pour-aider-les-employeurs-et-les-travai.html"
+          },
+          {
+            "service_name": "La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
+          },
+          {
+            "service_name": "Déclaration du ministre de la Défense nationale",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/ministere-defense-nationale/nouvelles/2026/03/declaration-de-la-ministre-de-la-defense-nationale.html"
+          },
+          {
+            "service_name": "Le gouvernement du Canada annoncera de nouveaux investissements qui renforceront les capacités industrielles de défense dans le cadre de la Stratégie industrielle de défense",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/conseil-national-recherches/nouvelles/2026/03/le-gouvernement-du-canada-annoncera-de-nouveaux-investissements-qui-renforceront-les-capacites-industrielles-de-defense-dans-le-cadre-de-la-strateg.html"
+          },
+          {
+            "service_name": "TD1 2026 Personal Tax Credits Return",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1.html"
+          },
+          {
+            "service_name": "Schedule 1: Application for Temporary Residence (IMM 5257 SCH1)",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257-sch1.html"
+          },
+          {
+            "service_name": "Demande de visa de visiteur (visa de résident temporaire) (IMM 5257)",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257.html"
+          },
+          {
+            "service_name": "Lettre de consentement recommandée pour les enfants voyageant à l’étranger",
+            "language": "en",
+            "canonical_url": "https://voyage.gc.ca/voyager/enfant/lettre-de-consentement"
+          },
+          {
+            "service_name": "Save Time: Send a Complete Application",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/video/save-time-send-complete-application.html"
+          },
+          {
+            "service_name": "Images et vidéos à caractère sexuel",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
+          },
+          {
+            "service_name": "Personal income tax",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/impots/revenu.html"
+          },
+          {
+            "service_name": "Old Age Security and Supplement",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/srg.html"
+          },
+          {
+            "service_name": "Job search and benefits",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/travail.html"
+          },
+          {
+            "service_name": "Immigration and citizenship",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html"
           }
         ]
       },
@@ -4474,6 +4685,51 @@
             "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
             "language": "en",
             "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html"
+          },
+          {
+            "service_name": "Comment trouver et demander des formulaires de l’ARC en formats accessibles",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trouver-formulaires-accessibles.html"
+          },
+          {
+            "service_name": "Tax information slips (T4 and more)",
+            "language": "en",
+            "canonical_url": "https://apps4.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind"
+          },
+          {
+            "service_name": "Personal income tax",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/taxes/income.html"
+          },
+          {
+            "service_name": "Old Age Security and Supplement",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/oas.html"
+          },
+          {
+            "service_name": "Passport and travel",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/travel.html"
+          },
+          {
+            "service_name": "Student loans and grants",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/education-formation/prets-bourses.html"
+          },
+          {
+            "service_name": "COVID-19 information",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/health/coronavirus-2019.html"
+          },
+          {
+            "service_name": "Benefits and credits",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/prestations.html"
+          },
+          {
+            "service_name": "CPP and retirement",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc.html"
           }
         ]
       },
@@ -4580,6 +4836,31 @@
             "service_name": "Use of a Representative Form (IMM 5476)",
             "language": "en",
             "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5476.html"
+          },
+          {
+            "service_name": "T2200 Déclaration des conditions de travail",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2200.html"
+          },
+          {
+            "service_name": "Create your account and submit your declaration",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/public-safety-canada/campaigns/firearms-buyback/submit-firearm-declaration-individual/start-declaration.html"
+          },
+          {
+            "service_name": "Job search and benefits",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/work.html"
+          },
+          {
+            "service_name": "COVID-19 information",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/sante/coronavirus-2019.html"
+          },
+          {
+            "service_name": "CPP and retirement",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html"
           }
         ]
       },
@@ -4686,6 +4967,31 @@
             "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
             "language": "en",
             "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html"
+          },
+          {
+            "service_name": "Electronic Travel Authorization (eTA): What you need to know",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/video/electronic-travel-authorization-what-you-need-know.html"
+          },
+          {
+            "service_name": "Témoignage d’un ferblantier",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/campagne/metiers-specialises.html"
+          },
+          {
+            "service_name": "Passport and travel",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/voyages.html"
+          },
+          {
+            "service_name": "Student loans and grants",
+            "language": "en",
+            "canonical_url": "https://www.canada.ca/en/services/education-training/loans-grants.html"
+          },
+          {
+            "service_name": "Employment Insurance",
+            "language": "fr",
+            "canonical_url": "https://www.canada.ca/fr/services/prestations/ae.html"
           }
         ]
       }
@@ -20349,14 +20655,21 @@
     }
   ],
   "methodology": {
-    "status": "phase-9",
-    "note": "Phase 9: Adds day-over-day trend comparison and regression alerts across core benchmark signals. Trend flags are automated diagnostics, not legal or compliance determinations."
+    "status": "phase-10",
+    "note": "Phase 10: Adds daily barrier history, context-aware reporting, and drill-down detail exports alongside trend comparison and regression alerts. These remain automated benchmark diagnostics, not legal or compliance determinations."
   },
   "output_paths": {
     "daily_dir": "docs/reports/daily/2026-03-26/",
     "report_json": "docs/reports/daily/2026-03-26/report.json",
     "report_html": "docs/reports/daily/2026-03-26/index.html",
-    "dashboard_html": "docs/reports/index.html"
+    "dashboard_html": "docs/reports/index.html",
+    "details": {
+      "missing_counterparts_json": "docs/reports/daily/2026-03-26/details/missing-counterparts.json",
+      "missing_statements_json": "docs/reports/daily/2026-03-26/details/missing-statements.json",
+      "detected_statements_json": "docs/reports/daily/2026-03-26/details/detected-statements.json",
+      "cms_buckets_json": "docs/reports/daily/2026-03-26/details/cms-buckets.json",
+      "barrier_history_json": "docs/reports/daily/2026-03-26/details/barrier-history.json"
+    }
   },
   "trend_analysis": {
     "available": true,
@@ -20369,8 +20682,8 @@
         "direction": "higher_is_better",
         "unit": "points",
         "current": 78.47,
-        "previous": 78.47,
-        "delta": 0,
+        "previous": 78,
+        "delta": 0.47,
         "is_regression": false,
         "severity": null
       },
@@ -20380,8 +20693,8 @@
         "direction": "higher_is_better",
         "unit": "percent",
         "current": 82,
-        "previous": 82,
-        "delta": 0,
+        "previous": 0,
+        "delta": 82,
         "is_regression": false,
         "severity": null
       },
@@ -20391,10 +20704,10 @@
         "direction": "lower_is_better",
         "unit": "points",
         "current": 16.5,
-        "previous": 16.5,
-        "delta": 0,
-        "is_regression": false,
-        "severity": null
+        "previous": 0,
+        "delta": 16.5,
+        "is_regression": true,
+        "severity": "high"
       },
       {
         "metric": "impact_affected_share_percent",
@@ -20402,8 +20715,8 @@
         "direction": "lower_is_better",
         "unit": "percent",
         "current": 36.21,
-        "previous": 36.21,
-        "delta": 0,
+        "previous": 110.36,
+        "delta": -74.15,
         "is_regression": false,
         "severity": null
       },
@@ -20413,13 +20726,52 @@
         "direction": "lower_is_better",
         "unit": "percent",
         "current": 0,
-        "previous": 0,
-        "delta": 0,
+        "previous": 94.55,
+        "delta": -94.55,
         "is_regression": false,
         "severity": null
       }
     ],
-    "regressions": [],
+    "regressions": [
+      {
+        "metric": "parity_gap_abs_accessibility",
+        "label": "Average Absolute EN/FR Accessibility Gap",
+        "direction": "lower_is_better",
+        "unit": "points",
+        "current": 16.5,
+        "previous": 0,
+        "delta": 16.5,
+        "is_regression": true,
+        "severity": "high"
+      }
+    ],
     "note": "Automated trend signals only. Deltas indicate benchmark movement and are not direct evidence of compliance or user impact measurement."
+  },
+  "barrier_history": {
+    "summary": {
+      "points": 2,
+      "start_date": "2026-03-25",
+      "end_date": "2026-03-26"
+    },
+    "points": [
+      {
+        "run_date": "2026-03-25",
+        "missing_french": 70,
+        "missing_english": 0,
+        "missing_statements": 110,
+        "high_accessibility_gap_pairs": 0,
+        "average_absolute_accessibility_gap": 0,
+        "directional_affected_share_percent": 110.36
+      },
+      {
+        "run_date": "2026-03-26",
+        "missing_french": 110,
+        "missing_english": 0,
+        "missing_statements": 27,
+        "high_accessibility_gap_pairs": 14,
+        "average_absolute_accessibility_gap": 16.5,
+        "directional_affected_share_percent": 36.21
+      }
+    ]
   }
 }

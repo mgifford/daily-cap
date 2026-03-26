@@ -31,7 +31,7 @@
       <p><em>Automated trend signals only. Deltas indicate benchmark movement and are not direct evidence of compliance or user impact measurement.</em></p>
       <div class="cards">
         <div class="card"><strong>Previous Run</strong><br/>2026-03-25</div>
-        <div class="card"><strong>Regressions</strong><br/>0</div>
+        <div class="card"><strong>Regressions</strong><br/>1</div>
       </div>
 
       <h3>Metric Deltas</h3>
@@ -48,41 +48,41 @@
         <tbody>
       <tr>
         <td>Mean Accessibility Score</td>
+        <td>78</td>
         <td>78.47</td>
-        <td>78.47</td>
-        <td>0</td>
+        <td>0.47</td>
         <td>no</td>
       </tr>
 
       <tr>
         <td>Accessibility Statement Coverage</td>
-        <td>82</td>
-        <td>82</td>
         <td>0</td>
+        <td>82</td>
+        <td>82</td>
         <td>no</td>
       </tr>
 
       <tr>
         <td>Average Absolute EN/FR Accessibility Gap</td>
-        <td>16.5</td>
-        <td>16.5</td>
         <td>0</td>
-        <td>no</td>
+        <td>16.5</td>
+        <td>16.5</td>
+        <td>yes</td>
       </tr>
 
       <tr>
         <td>Directional Affected Share</td>
+        <td>110.36</td>
         <td>36.21</td>
-        <td>36.21</td>
-        <td>0</td>
+        <td>-74.15</td>
         <td>no</td>
       </tr>
 
       <tr>
         <td>Scan Failure Rate</td>
+        <td>94.55</td>
         <td>0</td>
-        <td>0</td>
-        <td>0</td>
+        <td>-94.55</td>
         <td>no</td>
       </tr></tbody>
       </table>
@@ -96,7 +96,67 @@
             <th scope="col">Severity</th>
           </tr>
         </thead>
-        <tbody><tr><td colspan="3">No regressions detected in configured thresholds.</td></tr></tbody>
+        <tbody>
+      <tr>
+        <td>Average Absolute EN/FR Accessibility Gap</td>
+        <td>16.5</td>
+        <td>high</td>
+      </tr></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Barrier History</h2>
+      <p><em>These daily signals track barrier-related counts over time so regressions are visible beyond a single-day snapshot.</em></p>
+      <div class="cards">
+        <div class="card"><strong>History Window</strong><br/>2026-03-25 to 2026-03-26</div>
+        <div class="card"><strong>Days</strong><br/>2</div>
+      </div>
+      <figure>
+    <svg viewBox="0 0 860 260" role="img" aria-labelledby="barrier-history-title barrier-history-desc" class="history-chart">
+      <title id="barrier-history-title">Barrier trend history</title>
+      <desc id="barrier-history-desc">Line chart showing missing French counterparts, missing accessibility statements, and high accessibility gap pairs over time.</desc>
+      
+        <line x1="36" y1="224" x2="824" y2="224" stroke="#d7e2d8" stroke-width="1" />
+        <text x="28" y="228" text-anchor="end" font-size="11">0</text>
+        <line x1="36" y1="130" x2="824" y2="130" stroke="#d7e2d8" stroke-width="1" />
+        <text x="28" y="134" text-anchor="end" font-size="11">55</text>
+        <line x1="36" y1="36" x2="824" y2="36" stroke="#d7e2d8" stroke-width="1" />
+        <text x="28" y="40" text-anchor="end" font-size="11">110</text>
+      <line x1="36" y1="224" x2="824" y2="224" stroke="#7f9685" stroke-width="1.5" />
+      <line x1="36" y1="36" x2="36" y2="224" stroke="#7f9685" stroke-width="1.5" />
+      <path d="M36,104.36363636363636 L824,36" fill="none" stroke="#b5402d" stroke-width="3" />
+      <path d="M36,36 L824,177.85454545454544" fill="none" stroke="#1d6b42" stroke-width="3" />
+      <path d="M36,224 L824,200.07272727272726" fill="none" stroke="#235d8b" stroke-width="3" />
+      <text x="36" y="250" text-anchor="middle" font-size="11">03-25</text><text x="824" y="250" text-anchor="middle" font-size="11">03-26</text>
+    </svg>
+    <figcaption>Red = missing French counterparts, green = URLs missing accessibility statements, blue = paired pages with accessibility gap of 10 or more.</figcaption>
+  </figure>
+      <p><a href="./details/barrier-history.json">Download barrier history JSON</a></p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Missing FR</th>
+            <th scope="col">Missing Statements</th>
+            <th scope="col">High Gap Pairs</th>
+            <th scope="col">Avg Abs Gap</th>
+          </tr>
+        </thead>
+        <tbody><tr>
+            <td>2026-03-25</td>
+            <td>70</td>
+            <td>110</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+<tr>
+            <td>2026-03-26</td>
+            <td>110</td>
+            <td>27</td>
+            <td>14</td>
+            <td>16.5</td>
+          </tr></tbody>
       </table>
     </section>
 
@@ -317,6 +377,7 @@
       </table>
 
       <h3>Missing Counterparts</h3>
+      <p><a href="./details/missing-counterparts.json">Download missing counterpart JSON</a></p>
       <table>
         <thead>
           <tr>
@@ -425,6 +486,7 @@
       </div>
 
       <h3>Missing Statement Examples</h3>
+      <p><a href="./details/missing-statements.json">Download missing statement JSON</a> | <a href="./details/detected-statements.json">Download detected statement JSON</a></p>
       <table>
         <thead>
           <tr>
@@ -505,7 +567,7 @@
         <td><a href="https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html">https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html</a></td>
       </tr></tbody>
       </table>
-      <p>10 additional rows available in <a href="./report.json">report.json</a>.</p>
+      <p>17 additional rows available in <a href="./details/missing-statements.json">missing-statements.json</a>.</p>
 
       <h3>Detected Statement Examples</h3>
       <table>
@@ -600,6 +662,7 @@
       </div>
 
       <h3>Top CMS Distribution</h3>
+      <p><a href="./details/cms-buckets.json">Download CMS bucket JSON</a></p>
       <table>
         <thead>
           <tr>
@@ -612,56 +675,41 @@
       <tr>
         <td>wordpress</td>
         <td>38</td>
-        <td>
-          <button type="button" class="tooltip-trigger" aria-describedby="cms-tooltip-wordpress" data-tooltip-target="cms-tooltip-wordpress">Preview URLs</button>
-          <div id="cms-tooltip-wordpress" role="tooltip" class="tooltip" hidden>EN: https://www.canada.ca/en/employment-social-development/services/sin.html | FR: https://www.canada.ca/fr/medias-sociaux.html | EN: https://www.canada.ca/en/services/national-security.html | EN: https://www.canada.ca/en/services/youth.html | EN: https://www.canada.ca/en/services/benefits/disability.html | EN: https://www.canada.ca/en/services/taxes/international-non-residents.html</div>
-        </td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/en/employment-social-development/services/sin.html">EN Apply for a Social Insurance Number</a></li><li><a href="https://www.canada.ca/fr/medias-sociaux.html">FR Government of Canada Social Media</a></li><li><a href="https://www.canada.ca/en/services/national-security.html">EN Discovery: national-security</a></li><li><a href="https://www.canada.ca/en/services/youth.html">EN Discovery: youth</a></li><li><a href="https://www.canada.ca/en/services/benefits/disability.html">EN Discovery: benefits - disability</a></li><li><a href="https://www.canada.ca/en/services/taxes/international-non-residents.html">EN Discovery: taxes - international-non-residents</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/services/application.html">EN Discovery: immigration-citizenship - services - application</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/new-immigrants.html">EN Discovery: immigration-citizenship - new-immigrants</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/canadian-citizenship.html">EN Discovery: immigration-citizenship - canadian-citizenship</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/enforcement-violations.html">EN Discovery: immigration-citizenship - enforcement-violations</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/services/canadian-passports.html">EN Discovery: immigration-citizenship - services - canadian-passports</a></li><li><a href="https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login">EN Canada Revenue Agency - CRA Sign-in</a></li></ul></details></td>
       </tr>
 
       <tr>
         <td>unknown</td>
         <td>33</td>
-        <td>
-          <button type="button" class="tooltip-trigger" aria-describedby="cms-tooltip-unknown" data-tooltip-target="cms-tooltip-unknown">Preview URLs</button>
-          <div id="cms-tooltip-unknown" role="tooltip" class="tooltip" hidden>FR: https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html | EN: https://www.canada.ca/en/employment-social-development/services/office.html | FR: https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html | FR: https://www.canada.ca/fr/environnement-changement-climatique.html | FR: https://laws-lois.justice.gc.ca/ | FR: https://www.canada.ca/fr/sante-publique/services/maladies.html</div>
-        </td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR Check my Service Canada Account</a></li><li><a href="https://www.canada.ca/en/employment-social-development/services/office.html">EN Find your local Service Canada office</a></li><li><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR Canada Border Wait Times</a></li><li><a href="https://www.canada.ca/fr/environnement-changement-climatique.html">FR Environment and Climate Change Canada</a></li><li><a href="https://laws-lois.justice.gc.ca/">FR Justice Laws Website</a></li><li><a href="https://www.canada.ca/fr/sante-publique/services/maladies.html">FR Health Infobase Canada</a></li><li><a href="https://www.canada.ca/en/services/finance.html">EN Discovery: finance</a></li><li><a href="https://www.canada.ca/en/services/veterans-military/canadian-armed-forces.html">EN Discovery: veterans-military - canadian-armed-forces</a></li><li><a href="https://www.canada.ca/en/services/veterans-military/pensions-benefits.html">EN Discovery: veterans-military - pensions-benefits</a></li><li><a href="https://www.canada.ca/en/services/benefits/education.html">EN Discovery: benefits - education</a></li><li><a href="https://www.canada.ca/en/services/taxes/business-number.html">EN Discovery: taxes - business-number</a></li><li><a href="https://www.canada.ca/en/services/taxes/gsthst.html">EN Discovery: taxes - gsthst</a></li></ul></details></td>
       </tr>
 
       <tr>
         <td>aem</td>
         <td>29</td>
-        <td>
-          <button type="button" class="tooltip-trigger" aria-describedby="cms-tooltip-aem" data-tooltip-target="cms-tooltip-aem">Preview URLs</button>
-          <div id="cms-tooltip-aem" role="tooltip" class="tooltip" hidden>EN: https://www.canada.ca/en/environment-climate-change.html | EN: https://www.canada.ca/en/social-media.html | EN: https://www.canada.ca/en/services/defence.html | EN: https://www.canada.ca/en/services/canada-world.html | EN: https://www.canada.ca/en/services/indigenous-peoples.html | EN: https://www.canada.ca/en/services/veterans-military/health-support.html</div>
-        </td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/en/environment-climate-change.html">EN Environment and Climate Change Canada</a></li><li><a href="https://www.canada.ca/en/social-media.html">EN Government of Canada Social Media</a></li><li><a href="https://www.canada.ca/en/services/defence.html">EN Discovery: defence</a></li><li><a href="https://www.canada.ca/en/services/canada-world.html">EN Discovery: canada-world</a></li><li><a href="https://www.canada.ca/en/services/indigenous-peoples.html">EN Discovery: indigenous-peoples</a></li><li><a href="https://www.canada.ca/en/services/veterans-military/health-support.html">EN Discovery: veterans-military - health-support</a></li><li><a href="https://www.canada.ca/en/services/taxes/charities.html">EN Discovery: taxes - charities</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/check-processing-times.html">EN Discovery: immigration-citizenship - check-processing-times</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/visit-canada.html">EN Discovery: immigration-citizenship - visit-canada</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/work-canada.html">EN Discovery: immigration-citizenship - work-canada</a></li><li><a href="https://www.canada.ca/en/services/travel/advisories.html">EN Discovery: travel - advisories</a></li><li><a href="https://www.canada.ca/en/natural-resources-canada/news/2026/03/canada-secures-30-new-critical-minerals-partnerships-and-unlocks-121-billion-in-mining-project-capital.html">EN Canada secures 30 new critical minerals partnerships and unlocks $12.1 billion in mining project capital</a></li></ul></details></td>
       </tr>
 
       <tr>
         <td>drupal</td>
         <td>25</td>
-        <td>
-          <button type="button" class="tooltip-trigger" aria-describedby="cms-tooltip-drupal" data-tooltip-target="cms-tooltip-drupal">Preview URLs</button>
-          <div id="cms-tooltip-drupal" role="tooltip" class="tooltip" hidden>FR: https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html | EN: https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html | EN: https://laws-lois.justice.gc.ca/ | FR: https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html | EN: https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html | EN: https://www.canada.ca/en/public-health/services/diseases.html</div>
-        </td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">FR Find your local Service Canada office</a></li><li><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN Canada Border Wait Times</a></li><li><a href="https://laws-lois.justice.gc.ca/">EN Justice Laws Website</a></li><li><a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html">FR IRCC: Apply for permanent residency</a></li><li><a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html">EN Consumer Price Index</a></li><li><a href="https://www.canada.ca/en/public-health/services/diseases.html">EN Health Infobase Canada</a></li><li><a href="https://www.canada.ca/en/services/policing.html">EN Discovery: policing</a></li><li><a href="https://www.canada.ca/en/services/veterans-military.html">EN Discovery: veterans-military</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/check-application-status.html">EN Discovery: immigration-citizenship - check-application-status</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/passport.html">EN Discovery: immigration-citizenship - passport</a></li><li><a href="https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/pay.html">EN Discovery: jobs - workplace - federal-labour-standards - pay</a></li><li><a href="https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane">EN Open Mail Page</a></li></ul></details></td>
       </tr>
 
       <tr>
         <td>php-custom</td>
         <td>25</td>
-        <td>
-          <button type="button" class="tooltip-trigger" aria-describedby="cms-tooltip-php-custom" data-tooltip-target="cms-tooltip-php-custom">Preview URLs</button>
-          <div id="cms-tooltip-php-custom" role="tooltip" class="tooltip" hidden>FR: https://www.canada.ca/fr/emploi-developpement-social/services/nas.html | EN: https://www.canada.ca/en/employment-social-development/services/my-account.html | EN: https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html | FR: https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html | EN: https://www.canada.ca/en/services/benefits/finder.html | EN: https://www.canada.ca/en/services/benefits/audience.html</div>
-        </td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">FR Apply for a Social Insurance Number</a></li><li><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN Check my Service Canada Account</a></li><li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html">EN IRCC: Apply for permanent residency</a></li><li><a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html">FR Consumer Price Index</a></li><li><a href="https://www.canada.ca/en/services/benefits/finder.html">EN Discovery: benefits - finder</a></li><li><a href="https://www.canada.ca/en/services/benefits/audience.html">EN Discovery: benefits - audience</a></li><li><a href="https://www.canada.ca/en/services/taxes/payments.html">EN Discovery: taxes - payments</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship/study-canada.html">EN Discovery: immigration-citizenship - study-canada</a></li><li><a href="https://www.canada.ca/en/services/business/grants.html">EN Discovery: business - grants</a></li><li><a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html">EN Sign in to your CRA account</a></li><li><a href="https://www.canada.ca/fr/agence-revenu.html">EN Agence du revenu du Canada (ARC)</a></li><li><a href="https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview">EN Aperçu</a></li></ul></details></td>
       </tr></tbody>
       </table>
 
       <details>
         <summary>Show CMS URL References</summary>
-        <p><strong>wordpress</strong>: <a href="https://www.canada.ca/en/employment-social-development/services/sin.html">EN</a> | <a href="https://www.canada.ca/fr/medias-sociaux.html">FR</a> | <a href="https://www.canada.ca/en/services/national-security.html">EN</a> | <a href="https://www.canada.ca/en/services/youth.html">EN</a> | <a href="https://www.canada.ca/en/services/benefits/disability.html">EN</a> | <a href="https://www.canada.ca/en/services/taxes/international-non-residents.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/services/application.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/new-immigrants.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/canadian-citizenship.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/enforcement-violations.html">EN</a></p>
-<p><strong>unknown</strong>: <a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR</a> | <a href="https://www.canada.ca/en/employment-social-development/services/office.html">EN</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR</a> | <a href="https://www.canada.ca/fr/environnement-changement-climatique.html">FR</a> | <a href="https://laws-lois.justice.gc.ca/">FR</a> | <a href="https://www.canada.ca/fr/sante-publique/services/maladies.html">FR</a> | <a href="https://www.canada.ca/en/services/finance.html">EN</a> | <a href="https://www.canada.ca/en/services/veterans-military/canadian-armed-forces.html">EN</a> | <a href="https://www.canada.ca/en/services/veterans-military/pensions-benefits.html">EN</a> | <a href="https://www.canada.ca/en/services/benefits/education.html">EN</a></p>
-<p><strong>aem</strong>: <a href="https://www.canada.ca/en/environment-climate-change.html">EN</a> | <a href="https://www.canada.ca/en/social-media.html">EN</a> | <a href="https://www.canada.ca/en/services/defence.html">EN</a> | <a href="https://www.canada.ca/en/services/canada-world.html">EN</a> | <a href="https://www.canada.ca/en/services/indigenous-peoples.html">EN</a> | <a href="https://www.canada.ca/en/services/veterans-military/health-support.html">EN</a> | <a href="https://www.canada.ca/en/services/taxes/charities.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/check-processing-times.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/visit-canada.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/work-canada.html">EN</a></p>
-<p><strong>drupal</strong>: <a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">FR</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN</a> | <a href="https://laws-lois.justice.gc.ca/">EN</a> | <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html">FR</a> | <a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html">EN</a> | <a href="https://www.canada.ca/en/public-health/services/diseases.html">EN</a> | <a href="https://www.canada.ca/en/services/policing.html">EN</a> | <a href="https://www.canada.ca/en/services/veterans-military.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/check-application-status.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/passport.html">EN</a></p>
-<p><strong>php-custom</strong>: <a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">FR</a> | <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN</a> | <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html">EN</a> | <a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html">FR</a> | <a href="https://www.canada.ca/en/services/benefits/finder.html">EN</a> | <a href="https://www.canada.ca/en/services/benefits/audience.html">EN</a> | <a href="https://www.canada.ca/en/services/taxes/payments.html">EN</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/study-canada.html">EN</a> | <a href="https://www.canada.ca/en/services/business/grants.html">EN</a> | <a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html">EN</a></p>
+        <p><strong>wordpress</strong>: <a href="https://www.canada.ca/en/employment-social-development/services/sin.html">EN Apply for a Social Insurance Number</a> | <a href="https://www.canada.ca/fr/medias-sociaux.html">FR Government of Canada Social Media</a> | <a href="https://www.canada.ca/en/services/national-security.html">EN Discovery: national-security</a> | <a href="https://www.canada.ca/en/services/youth.html">EN Discovery: youth</a> | <a href="https://www.canada.ca/en/services/benefits/disability.html">EN Discovery: benefits - disability</a> | <a href="https://www.canada.ca/en/services/taxes/international-non-residents.html">EN Discovery: taxes - international-non-residents</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/services/application.html">EN Discovery: immigration-citizenship - services - application</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/new-immigrants.html">EN Discovery: immigration-citizenship - new-immigrants</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/canadian-citizenship.html">EN Discovery: immigration-citizenship - canadian-citizenship</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/enforcement-violations.html">EN Discovery: immigration-citizenship - enforcement-violations</a></p>
+<p><strong>unknown</strong>: <a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR Check my Service Canada Account</a> | <a href="https://www.canada.ca/en/employment-social-development/services/office.html">EN Find your local Service Canada office</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR Canada Border Wait Times</a> | <a href="https://www.canada.ca/fr/environnement-changement-climatique.html">FR Environment and Climate Change Canada</a> | <a href="https://laws-lois.justice.gc.ca/">FR Justice Laws Website</a> | <a href="https://www.canada.ca/fr/sante-publique/services/maladies.html">FR Health Infobase Canada</a> | <a href="https://www.canada.ca/en/services/finance.html">EN Discovery: finance</a> | <a href="https://www.canada.ca/en/services/veterans-military/canadian-armed-forces.html">EN Discovery: veterans-military - canadian-armed-forces</a> | <a href="https://www.canada.ca/en/services/veterans-military/pensions-benefits.html">EN Discovery: veterans-military - pensions-benefits</a> | <a href="https://www.canada.ca/en/services/benefits/education.html">EN Discovery: benefits - education</a></p>
+<p><strong>aem</strong>: <a href="https://www.canada.ca/en/environment-climate-change.html">EN Environment and Climate Change Canada</a> | <a href="https://www.canada.ca/en/social-media.html">EN Government of Canada Social Media</a> | <a href="https://www.canada.ca/en/services/defence.html">EN Discovery: defence</a> | <a href="https://www.canada.ca/en/services/canada-world.html">EN Discovery: canada-world</a> | <a href="https://www.canada.ca/en/services/indigenous-peoples.html">EN Discovery: indigenous-peoples</a> | <a href="https://www.canada.ca/en/services/veterans-military/health-support.html">EN Discovery: veterans-military - health-support</a> | <a href="https://www.canada.ca/en/services/taxes/charities.html">EN Discovery: taxes - charities</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/check-processing-times.html">EN Discovery: immigration-citizenship - check-processing-times</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/visit-canada.html">EN Discovery: immigration-citizenship - visit-canada</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/work-canada.html">EN Discovery: immigration-citizenship - work-canada</a></p>
+<p><strong>drupal</strong>: <a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">FR Find your local Service Canada office</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN Canada Border Wait Times</a> | <a href="https://laws-lois.justice.gc.ca/">EN Justice Laws Website</a> | <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html">FR IRCC: Apply for permanent residency</a> | <a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html">EN Consumer Price Index</a> | <a href="https://www.canada.ca/en/public-health/services/diseases.html">EN Health Infobase Canada</a> | <a href="https://www.canada.ca/en/services/policing.html">EN Discovery: policing</a> | <a href="https://www.canada.ca/en/services/veterans-military.html">EN Discovery: veterans-military</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/check-application-status.html">EN Discovery: immigration-citizenship - check-application-status</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/passport.html">EN Discovery: immigration-citizenship - passport</a></p>
+<p><strong>php-custom</strong>: <a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">FR Apply for a Social Insurance Number</a> | <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN Check my Service Canada Account</a> | <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html">EN IRCC: Apply for permanent residency</a> | <a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html">FR Consumer Price Index</a> | <a href="https://www.canada.ca/en/services/benefits/finder.html">EN Discovery: benefits - finder</a> | <a href="https://www.canada.ca/en/services/benefits/audience.html">EN Discovery: benefits - audience</a> | <a href="https://www.canada.ca/en/services/taxes/payments.html">EN Discovery: taxes - payments</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship/study-canada.html">EN Discovery: immigration-citizenship - study-canada</a> | <a href="https://www.canada.ca/en/services/business/grants.html">EN Discovery: business - grants</a> | <a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html">EN Sign in to your CRA account</a></p>
       </details>
     </section>
 
@@ -1178,25 +1226,6 @@
         });
       }
 
-      const tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
-      for (const trigger of tooltipTriggers) {
-        const tooltipId = trigger.getAttribute('data-tooltip-target');
-        const tooltip = tooltipId ? document.getElementById(tooltipId) : null;
-        if (!tooltip) continue;
-
-        const show = () => tooltip.removeAttribute('hidden');
-        const hide = () => tooltip.setAttribute('hidden', '');
-
-        trigger.addEventListener('mouseenter', show);
-        trigger.addEventListener('mouseleave', hide);
-        trigger.addEventListener('focusin', show);
-        trigger.addEventListener('focusout', hide);
-        trigger.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape') {
-            hide();
-          }
-        });
-      }
     })();
   </script>
 </body>

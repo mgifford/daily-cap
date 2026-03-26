@@ -34,7 +34,7 @@ function groupCmsUrls(rows) {
     .map(([cms, pages]) => ({
       cms,
       count: pages.length,
-      pages: pages.slice(0, 20)
+      pages
     }))
     .sort((a, b) => b.count - a.count || a.cms.localeCompare(b.cms));
 }

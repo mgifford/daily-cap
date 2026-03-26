@@ -106,6 +106,15 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
     mode: "mock",
     inventory,
     scanned,
+    historicalReports: [
+      {
+        run_date: "2026-03-23",
+        scan_summary: { total: 2 },
+        accessibility_statements: { summary: { statements_detected: 1 } },
+        bilingual_parity: { summary: { missing_french: 1, missing_english: 0, high_accessibility_gap_pairs: 0, average_absolute_accessibility_gap: 1 } },
+        impact_model: { summary: { directional_affected_share_percent: 20 } }
+      }
+    ],
     previousReport: {
       run_date: "2026-03-24",
       scan_summary: { total: 2, failed: 0 },
@@ -120,13 +129,15 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
     }
   });
 
-  assert.equal(report.methodology.status, "phase-9");
+  assert.equal(report.methodology.status, "phase-10");
   assert.ok(report.bilingual_parity);
   assert.ok(report.accessibility_statements);
   assert.ok(report.platform_signals);
   assert.ok(report.impact_model);
   assert.ok(report.cohort_quality);
   assert.ok(report.lighthouse_contexts);
+  assert.ok(report.barrier_history);
+  assert.equal(report.barrier_history.summary.points, 2);
   assert.equal(report.lighthouse_contexts.summary.scanned_urls_with_context_data, 2);
   assert.equal(report.lighthouse_contexts.highlights.mobile_dark_vs_desktop_light.performance_score, -9);
   assert.equal(report.cohort_quality.summary.scanned_urls, 2);

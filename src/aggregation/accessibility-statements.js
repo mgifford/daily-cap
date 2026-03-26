@@ -111,7 +111,6 @@ export function summarizeAccessibilityStatements(scanned) {
 
   const gaps = checks
     .filter((row) => !row.statement_detected)
-    .slice(0, 20)
     .map((row) => ({
       inventory_id: row.inventory_id,
       service_name: row.service_name,

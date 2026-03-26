@@ -22,6 +22,83 @@ function safeId(value) {
     .slice(0, 48);
 }
 
+function renderCmsDisclosure(entry) {
+  if (!entry || !entry.pages?.length) {
+    return "No sample URLs";
+  }
+
+  return `<details class="inline-details"><summary>Show URLs</summary><ul class="link-list">${entry.pages
+    .slice(0, 12)
+    .map(
+      (page) =>
+        `<li><a href="${escapeHtml(page.canonical_url)}">${escapeHtml(
+          `${page.language?.toUpperCase() || "NA"} ${page.service_name || page.canonical_url}`
+        )}</a></li>`
+    )
+    .join("")}</ul></details>`;
+}
+
+function renderBarrierHistoryChart(points) {
+  if (!points.length) {
+    return "<p>No history data available yet.</p>";
+  }
+
+  const width = 860;
+  const height = 260;
+  const padding = 36;
+  const values = points.flatMap((point) => [
+    point.missing_french || 0,
+    point.missing_statements || 0,
+    point.high_accessibility_gap_pairs || 0
+  ]);
+  const maxValue = Math.max(1, ...values);
+  const stepX = points.length > 1 ? (width - padding * 2) / (points.length - 1) : 0;
+
+  function linePath(field) {
+    return points
+      .map((point, index) => {
+        const value = point[field] || 0;
+        const x = padding + stepX * index;
+        const y = height - padding - ((height - padding * 2) * value) / maxValue;
+        return `${index === 0 ? "M" : "L"}${x},${y}`;
+      })
+      .join(" ");
+  }
+
+  const dateLabels = points
+    .map((point, index) => {
+      const x = padding + stepX * index;
+      return `<text x="${x}" y="${height - 10}" text-anchor="middle" font-size="11">${escapeHtml(
+        point.run_date.slice(5)
+      )}</text>`;
+    })
+    .join("");
+
+  const yTicks = [0, Math.round(maxValue / 2), maxValue]
+    .map((value) => {
+      const y = height - padding - ((height - padding * 2) * value) / maxValue;
+      return `
+        <line x1="${padding}" y1="${y}" x2="${width - padding}" y2="${y}" stroke="#d7e2d8" stroke-width="1" />
+        <text x="${padding - 8}" y="${y + 4}" text-anchor="end" font-size="11">${value}</text>`;
+    })
+    .join("");
+
+  return `<figure>
+    <svg viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="barrier-history-title barrier-history-desc" class="history-chart">
+      <title id="barrier-history-title">Barrier trend history</title>
+      <desc id="barrier-history-desc">Line chart showing missing French counterparts, missing accessibility statements, and high accessibility gap pairs over time.</desc>
+      ${yTicks}
+      <line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" stroke="#7f9685" stroke-width="1.5" />
+      <line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" stroke="#7f9685" stroke-width="1.5" />
+      <path d="${linePath("missing_french")}" fill="none" stroke="#b5402d" stroke-width="3" />
+      <path d="${linePath("missing_statements")}" fill="none" stroke="#1d6b42" stroke-width="3" />
+      <path d="${linePath("high_accessibility_gap_pairs")}" fill="none" stroke="#235d8b" stroke-width="3" />
+      ${dateLabels}
+    </svg>
+    <figcaption>Red = missing French counterparts, green = URLs missing accessibility statements, blue = paired pages with accessibility gap of 10 or more.</figcaption>
+  </figure>`;
+}
+
 function renderTopUrlRows(rows) {
   return rows
     .map((row) => {
@@ -66,6 +143,8 @@ export function renderDailyReportPage(report) {
   const contextByContext = report.lighthouse_contexts?.by_context || {};
   const contextDeltas = report.lighthouse_contexts?.deltas || [];
   const contextHighlight = report.lighthouse_contexts?.highlights?.mobile_dark_vs_desktop_light || {};
+  const barrierHistory = report.barrier_history?.points || [];
+  const detailPaths = report.output_paths?.details || {};
 
   const topUrlsPreview = report.top_urls.slice(0, 12);
   const topUrlsOverflowCount = Math.max(0, report.top_urls.length - 12);
@@ -131,19 +210,11 @@ export function renderDailyReportPage(report) {
     .slice(0, 8)
     .map((row) => {
       const cmsExamples = cmsUrlExamples.find((item) => item.cms === row.key);
-      const tooltipId = `cms-tooltip-${safeId(row.key)}`;
-      const tooltipText = (cmsExamples?.pages || [])
-        .slice(0, 6)
-        .map((item) => `${item.language?.toUpperCase() || "NA"}: ${item.canonical_url}`)
-        .join(" | ");
       return `
       <tr>
         <td>${escapeHtml(row.key)}</td>
         <td>${escapeHtml(row.count)}</td>
-        <td>
-          <button type="button" class="tooltip-trigger" aria-describedby="${escapeHtml(tooltipId)}" data-tooltip-target="${escapeHtml(tooltipId)}">Preview URLs</button>
-          <div id="${escapeHtml(tooltipId)}" role="tooltip" class="tooltip" hidden>${escapeHtml(tooltipText || "No sample URLs")}</div>
-        </td>
+        <td>${renderCmsDisclosure(cmsExamples)}</td>
       </tr>`;
     })
     .join("\n");
@@ -303,6 +374,39 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
+      <h2>Barrier History</h2>
+      <p><em>These daily signals track barrier-related counts over time so regressions are visible beyond a single-day snapshot.</em></p>
+      <div class="cards">
+        <div class="card"><strong>History Window</strong><br/>${escapeHtml(report.barrier_history?.summary?.start_date ?? "-")} to ${escapeHtml(report.barrier_history?.summary?.end_date ?? "-")}</div>
+        <div class="card"><strong>Days</strong><br/>${escapeHtml(report.barrier_history?.summary?.points ?? "-")}</div>
+      </div>
+      ${renderBarrierHistoryChart(barrierHistory)}
+      <p><a href="./details/barrier-history.json">Download barrier history JSON</a></p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Missing FR</th>
+            <th scope="col">Missing Statements</th>
+            <th scope="col">High Gap Pairs</th>
+            <th scope="col">Avg Abs Gap</th>
+          </tr>
+        </thead>
+        <tbody>${barrierHistory
+          .map(
+            (point) => `<tr>
+            <td>${escapeHtml(point.run_date)}</td>
+            <td>${escapeHtml(point.missing_french)}</td>
+            <td>${escapeHtml(point.missing_statements)}</td>
+            <td>${escapeHtml(point.high_accessibility_gap_pairs)}</td>
+            <td>${escapeHtml(point.average_absolute_accessibility_gap ?? "-")}</td>
+          </tr>`
+          )
+          .join("\n")}</tbody>
+      </table>
+    </section>
+
+    <section>
       <h2>Theme and Device Contexts</h2>
       <p><em>Context baseline is desktop light. Deltas are current context minus baseline.</em></p>
       <div class="cards">
@@ -368,6 +472,7 @@ export function renderDailyReportPage(report) {
       </table>
 
       <h3>Missing Counterparts</h3>
+      <p><a href="./details/missing-counterparts.json">Download missing counterpart JSON</a></p>
       <table>
         <thead>
           <tr>
@@ -393,6 +498,7 @@ export function renderDailyReportPage(report) {
       </div>
 
       <h3>Missing Statement Examples</h3>
+      <p><a href="./details/missing-statements.json">Download missing statement JSON</a> | <a href="./details/detected-statements.json">Download detected statement JSON</a></p>
       <table>
         <thead>
           <tr>
@@ -404,7 +510,7 @@ export function renderDailyReportPage(report) {
         </thead>
         <tbody>${missingStatementRows || '<tr><td colspan="4">No missing accessibility statements detected in this run.</td></tr>'}</tbody>
       </table>
-      ${missingStatementOverflowCount > 0 ? `<p>${escapeHtml(missingStatementOverflowCount)} additional rows available in <a href="./report.json">report.json</a>.</p>` : ""}
+      ${missingStatementOverflowCount > 0 ? `<p>${escapeHtml(missingStatementOverflowCount)} additional rows available in <a href="./details/missing-statements.json">missing-statements.json</a>.</p>` : ""}
 
       <h3>Detected Statement Examples</h3>
       <table>
@@ -430,6 +536,7 @@ export function renderDailyReportPage(report) {
       </div>
 
       <h3>Top CMS Distribution</h3>
+      <p><a href="./details/cms-buckets.json">Download CMS bucket JSON</a></p>
       <table>
         <thead>
           <tr>
@@ -449,7 +556,7 @@ export function renderDailyReportPage(report) {
             (entry) =>
               `<p><strong>${escapeHtml(entry.cms)}</strong>: ${entry.pages
                 .slice(0, 10)
-                .map((page) => `<a href="${escapeHtml(page.canonical_url)}">${escapeHtml(page.language.toUpperCase())}</a>`)
+                .map((page) => `<a href="${escapeHtml(page.canonical_url)}">${escapeHtml(page.language.toUpperCase())} ${escapeHtml(page.service_name || "URL")}</a>`)
                 .join(" | ")}</p>`
           )
           .join("\n")}
@@ -616,25 +723,6 @@ export function renderDailyReportPage(report) {
         });
       }
 
-      const tooltipTriggers = document.querySelectorAll('.tooltip-trigger');
-      for (const trigger of tooltipTriggers) {
-        const tooltipId = trigger.getAttribute('data-tooltip-target');
-        const tooltip = tooltipId ? document.getElementById(tooltipId) : null;
-        if (!tooltip) continue;
-
-        const show = () => tooltip.removeAttribute('hidden');
-        const hide = () => tooltip.setAttribute('hidden', '');
-
-        trigger.addEventListener('mouseenter', show);
-        trigger.addEventListener('mouseleave', hide);
-        trigger.addEventListener('focusin', show);
-        trigger.addEventListener('focusout', hide);
-        trigger.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape') {
-            hide();
-          }
-        });
-      }
     })();
   </script>
 </body>

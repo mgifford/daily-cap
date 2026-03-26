@@ -40,6 +40,36 @@ async function loadPreviousReport(outputRoot, runDate) {
   return null;
 }
 
+async function loadHistoricalReports(outputRoot, runDate, limit = 30) {
+  const dailyRoot = path.join(outputRoot, "docs", "reports", "daily");
+
+  try {
+    const entries = await fs.readdir(dailyRoot, { withFileTypes: true });
+    const dates = entries
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => entry.name)
+      .filter((name) => /^\d{4}-\d{2}-\d{2}$/.test(name))
+      .filter((name) => name < runDate)
+      .sort((a, b) => a.localeCompare(b))
+      .slice(-limit);
+
+    const reports = [];
+    for (const date of dates) {
+      const reportPath = path.join(dailyRoot, date, "report.json");
+      try {
+        const json = await fs.readFile(reportPath, "utf8");
+        reports.push(JSON.parse(json));
+      } catch {
+        // Ignore missing or malformed history entries.
+      }
+    }
+
+    return reports;
+  } catch {
+    return [];
+  }
+}
+
 const { values } = parseArgs({
   options: {
     date: { type: "string" },
@@ -83,6 +113,7 @@ const scanned = await runScans(scanTargets, {
 
 const outputRoot = values.outputRoot || process.cwd();
 const previousReport = await loadPreviousReport(outputRoot, runDate);
+const historicalReports = await loadHistoricalReports(outputRoot, runDate);
 
 const report = buildDailyReport({
   runDate,
@@ -90,7 +121,8 @@ const report = buildDailyReport({
   mode,
   inventory: inventoryResult,
   scanned,
-  previousReport
+  previousReport,
+  historicalReports
 });
 
 await publishReport({ report, outputRoot });

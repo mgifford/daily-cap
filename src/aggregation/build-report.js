@@ -6,6 +6,7 @@ import { computeDirectionalImpact } from "./impact-model.js";
 import { computeTrendAnalysis } from "./trend-analysis.js";
 import { summarizeCohortQuality } from "./cohort-quality.js";
 import { summarizeLighthouseContexts } from "./lighthouse-context-analysis.js";
+import { summarizeBarrierHistory } from "./barrier-history.js";
 
 function summarizeScan(scanned) {
   const succeeded = scanned.filter((row) => row.scan_status === "success").length;
@@ -19,7 +20,15 @@ function summarizeScan(scanned) {
   };
 }
 
-export function buildDailyReport({ runDate, runId, mode, inventory, scanned, previousReport = null }) {
+export function buildDailyReport({
+  runDate,
+  runId,
+  mode,
+  inventory,
+  scanned,
+  previousReport = null,
+  historicalReports = []
+}) {
   const scoreAggregates = aggregateScores(scanned);
   const bilingualParity = computeBilingualParity(scanned);
   const accessibilityStatements = summarizeAccessibilityStatements(scanned);
@@ -79,18 +88,27 @@ export function buildDailyReport({ runDate, runId, mode, inventory, scanned, pre
       daily_dir: `docs/reports/daily/${runDate}/`,
       report_json: `docs/reports/daily/${runDate}/report.json`,
       report_html: `docs/reports/daily/${runDate}/index.html`,
-      dashboard_html: "docs/reports/index.html"
+      dashboard_html: "docs/reports/index.html",
+      details: {
+        missing_counterparts_json: `docs/reports/daily/${runDate}/details/missing-counterparts.json`,
+        missing_statements_json: `docs/reports/daily/${runDate}/details/missing-statements.json`,
+        detected_statements_json: `docs/reports/daily/${runDate}/details/detected-statements.json`,
+        cms_buckets_json: `docs/reports/daily/${runDate}/details/cms-buckets.json`,
+        barrier_history_json: `docs/reports/daily/${runDate}/details/barrier-history.json`
+      }
     }
   };
 
   const trendAnalysis = computeTrendAnalysis(baseReport, previousReport);
+  const barrierHistory = summarizeBarrierHistory(baseReport, historicalReports);
 
   return {
     ...baseReport,
     trend_analysis: trendAnalysis,
+    barrier_history: barrierHistory,
     methodology: {
-      status: "phase-9",
-      note: "Phase 9: Adds day-over-day trend comparison and regression alerts across core benchmark signals. Trend flags are automated diagnostics, not legal or compliance determinations."
+      status: "phase-10",
+      note: "Phase 10: Adds daily barrier history, context-aware reporting, and drill-down detail exports alongside trend comparison and regression alerts. These remain automated benchmark diagnostics, not legal or compliance determinations."
     }
   };
 }
