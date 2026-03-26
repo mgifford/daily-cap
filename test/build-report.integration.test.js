@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 
 import { buildDailyReport } from "../src/aggregation/build-report.js";
 
-test("buildDailyReport includes phase 9 sections in payload", () => {
+test("buildDailyReport includes phase 12 sections in payload", () => {
   const inventory = {
     scan_target_count: 2,
     scan_targets: [],
@@ -129,7 +129,7 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
     }
   });
 
-  assert.equal(report.methodology.status, "phase-11");
+  assert.equal(report.methodology.status, "phase-12");
   assert.ok(report.bilingual_parity);
   assert.ok(report.accessibility_statements);
   assert.ok(report.platform_signals);
@@ -139,9 +139,11 @@ test("buildDailyReport includes phase 9 sections in payload", () => {
   assert.ok(report.barrier_history);
   assert.ok(report.priority_issues);
   assert.ok(report.institution_scorecards);
+  assert.ok(report.institution_trends);
   assert.equal(report.barrier_history.summary.points, 2);
   assert.ok(report.priority_issues.top_priority_issues.length >= 1);
   assert.ok(report.institution_scorecards.scorecards.length >= 1);
+  assert.ok(report.institution_trends.institutions.length >= 1);
   assert.equal(report.lighthouse_contexts.summary.scanned_urls_with_context_data, 2);
   assert.equal(report.lighthouse_contexts.highlights.mobile_dark_vs_desktop_light.performance_score, -9);
   assert.equal(report.cohort_quality.summary.scanned_urls, 2);

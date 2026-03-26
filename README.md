@@ -11,7 +11,7 @@ pipeline patterns while using Canadian inputs and CAP-specific reporting.
 
 ## Current status
 
-Phase 9 baseline is implemented:
+Phase 12 reporting is implemented:
 
 - ingest -> scan -> aggregate -> publish pipeline
 - static Canadian seed inventory with bilingual pairs where available
@@ -24,6 +24,8 @@ Phase 9 baseline is implemented:
 - day-over-day trend comparison with regression alerts
 - multi-context quality snapshots (desktop/mobile x light/dark)
 - barrier-history trend tracking across daily runs
+- prioritized issue tracking and institution scorecards
+- institution trend pages and JSON exports for department-level history
 - output parity path: `docs/reports/daily/YYYY-MM-DD/`
 
 ## Run
@@ -47,6 +49,8 @@ Key options:
 - `docs/reports/daily/YYYY-MM-DD/report.json`
 - `docs/reports/daily/YYYY-MM-DD/index.html`
 - `docs/reports/daily/YYYY-MM-DD/details/*.json`
+- `docs/reports/daily/YYYY-MM-DD/details/institution-trends.html`
+- `docs/reports/daily/YYYY-MM-DD/details/institutions/*.html`
 - `docs/reports/index.html`
 
 ## Structure

@@ -5,7 +5,9 @@ import {
   renderDashboardPage,
   renderPriorityIssuesPage,
   renderRecurringIssuesPage,
-  renderInstitutionScorecardsPage
+  renderInstitutionScorecardsPage,
+  renderInstitutionTrendsIndexPage,
+  renderInstitutionTrendPage
 } from "./render-pages.js";
 
 export async function publishReport({ report, outputRoot }) {
@@ -46,12 +48,26 @@ export async function publishReport({ report, outputRoot }) {
     path.join(detailsDir, "institution-scorecards.json"),
     report.institution_scorecards?.all_scorecards || []
   );
+  await writeJsonFile(
+    path.join(detailsDir, "institution-trends.json"),
+    report.institution_trends || { summary: { institutions: 0 }, institutions: [] }
+  );
   await writeTextFile(path.join(detailsDir, "priority-issues.html"), renderPriorityIssuesPage(report));
   await writeTextFile(path.join(detailsDir, "recurring-issues.html"), renderRecurringIssuesPage(report));
   await writeTextFile(
     path.join(detailsDir, "institution-scorecards.html"),
     renderInstitutionScorecardsPage(report)
   );
+  await writeTextFile(
+    path.join(detailsDir, "institution-trends.html"),
+    renderInstitutionTrendsIndexPage(report)
+  );
+  for (const institution of report.institution_trends?.institutions || []) {
+    await writeTextFile(
+      path.join(detailsDir, "institutions", `${institution.slug}.html`),
+      renderInstitutionTrendPage(report, institution)
+    );
+  }
   await writeTextFile(path.join(dailyDir, "index.html"), renderDailyReportPage(report));
   await writeTextFile(path.join(reportsDir, "index.html"), renderDashboardPage(report));
 }

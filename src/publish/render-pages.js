@@ -99,6 +99,72 @@ function renderBarrierHistoryChart(points) {
   </figure>`;
 }
 
+function renderMetricTrendChart(points, field, title, description, color, maxOverride = null) {
+  if (!points.length) {
+    return "<p>No history data available yet.</p>";
+  }
+
+  const width = 860;
+  const height = 220;
+  const padding = 36;
+  const values = points.map((point) => point[field]).filter((value) => typeof value === "number");
+  if (!values.length) {
+    return `<p>${escapeHtml(title)}: no scored history data available yet.</p>`;
+  }
+  const maxValue = Math.max(1, maxOverride || 0, ...values);
+  const stepX = points.length > 1 ? (width - padding * 2) / (points.length - 1) : 0;
+
+  const pathData = points
+    .map((point, index) => {
+      const value = point[field];
+      const x = padding + stepX * index;
+      if (typeof value !== "number") {
+        return "";
+      }
+      const y = height - padding - ((height - padding * 2) * value) / maxValue;
+      const previousValue = index > 0 ? points[index - 1]?.[field] : null;
+      return `${typeof previousValue === "number" ? "L" : "M"}${x},${y}`;
+    })
+    .filter(Boolean)
+    .join(" ");
+
+  const pointMarkers = points
+    .map((point, index) => {
+      const value = point[field];
+      if (typeof value !== "number") {
+        return "";
+      }
+      const x = padding + stepX * index;
+      const y = height - padding - ((height - padding * 2) * value) / maxValue;
+      return `<circle cx="${x}" cy="${y}" r="4" fill="${escapeHtml(color)}" />`;
+    })
+    .join("");
+
+  const dateLabels = points
+    .map((point, index) => {
+      const x = padding + stepX * index;
+      return `<text x="${x}" y="${height - 10}" text-anchor="middle" font-size="11">${escapeHtml(
+        point.run_date.slice(5)
+      )}</text>`;
+    })
+    .join("");
+
+  return `<figure>
+    <svg viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="${escapeHtml(
+      safeId(title)
+    )}-title ${escapeHtml(safeId(title))}-desc" class="history-chart">
+      <title id="${escapeHtml(safeId(title))}-title">${escapeHtml(title)}</title>
+      <desc id="${escapeHtml(safeId(title))}-desc">${escapeHtml(description)}</desc>
+      <line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" stroke="#7f9685" stroke-width="1.5" />
+      <line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" stroke="#7f9685" stroke-width="1.5" />
+      <path d="${pathData}" fill="none" stroke="${escapeHtml(color)}" stroke-width="3" />
+      ${pointMarkers}
+      ${dateLabels}
+    </svg>
+    <figcaption>${escapeHtml(title)}</figcaption>
+  </figure>`;
+}
+
 function renderTopUrlRows(rows) {
   return rows
     .map((row) => {
@@ -120,7 +186,7 @@ function renderTopUrlRows(rows) {
     .join("\n");
 }
 
-function renderDetailLayout({ title, heading, intro, backHref, stylesheetHref, body }) {
+function renderDetailLayout({ title, heading, intro, backHref, backLabel = "Back to Daily Report", stylesheetHref, body }) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -131,7 +197,7 @@ function renderDetailLayout({ title, heading, intro, backHref, stylesheetHref, b
 </head>
 <body>
   <header>
-    <div class="nav"><a href="${escapeHtml(backHref)}">← Back to Daily Report</a></div>
+    <div class="nav"><a href="${escapeHtml(backHref)}">← ${escapeHtml(backLabel)}</a></div>
   </header>
   <main>
     <h1>${escapeHtml(heading)}</h1>
@@ -233,11 +299,14 @@ export function renderRecurringIssuesPage(report) {
 }
 
 export function renderInstitutionScorecardsPage(report) {
+  const trendMap = new Map(
+    (report.institution_trends?.institutions || []).map((item) => [item.institution, item])
+  );
   const rows = (report.institution_scorecards?.all_scorecards || [])
     .map(
       (row) => `
       <tr>
-        <td>${escapeHtml(row.institution)}</td>
+        <td>${trendMap.get(row.institution) ? `<a href="./institutions/${escapeHtml(trendMap.get(row.institution).slug)}.html">${escapeHtml(row.institution)}</a>` : escapeHtml(row.institution)}</td>
         <td>${escapeHtml(row.scanned_urls)}</td>
         <td>${escapeHtml(row.total_page_load_count)}</td>
         <td>${escapeHtml(row.mean_accessibility_score ?? "-")}</td>
@@ -276,6 +345,96 @@ export function renderInstitutionScorecardsPage(report) {
         </tr>
       </thead>
       <tbody>${rows || '<tr><td colspan="11">No institution scorecards available.</td></tr>'}</tbody>
+    </table>
+    <p><a href="./institution-trends.html">Open institution trends index</a></p>`
+  });
+}
+
+export function renderInstitutionTrendsIndexPage(report) {
+  const rows = (report.institution_trends?.institutions || [])
+    .map(
+      (item) => `
+      <tr>
+        <td><a href="./institutions/${escapeHtml(item.slug)}.html">${escapeHtml(item.institution)}</a></td>
+        <td>${escapeHtml(item.days_tracked)}</td>
+        <td>${escapeHtml(item.latest?.mean_accessibility_score ?? "-")}</td>
+        <td>${escapeHtml(item.latest?.missing_french_count ?? "-")}</td>
+        <td>${escapeHtml(item.latest?.missing_statement_count ?? "-")}</td>
+        <td>${escapeHtml(item.latest?.high_gap_pair_count ?? "-")}</td>
+      </tr>`
+    )
+    .join("\n");
+
+  return renderDetailLayout({
+    title: `Institution Trends - ${report.run_date}`,
+    heading: `Institution Trends - ${report.run_date}`,
+    intro: "Institution-level history pages showing accessibility and barrier signals over time.",
+    backHref: "../index.html",
+    backLabel: "Back to Daily Report",
+    stylesheetHref: "../../../assets/report.css",
+    body: `<p><a href="./institution-trends.json">Download JSON</a></p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Institution</th>
+          <th scope="col">Days Tracked</th>
+          <th scope="col">Latest Mean A11y</th>
+          <th scope="col">Latest Missing FR</th>
+          <th scope="col">Latest Missing Statements</th>
+          <th scope="col">Latest High Gap Pairs</th>
+        </tr>
+      </thead>
+      <tbody>${rows || '<tr><td colspan="6">No institution trend data available.</td></tr>'}</tbody>
+    </table>`
+  });
+}
+
+export function renderInstitutionTrendPage(report, institutionTrend) {
+  const points = institutionTrend.points || [];
+  const latest = institutionTrend.latest || {};
+  return renderDetailLayout({
+    title: `${institutionTrend.institution} Trends - ${report.run_date}`,
+    heading: `${institutionTrend.institution} Trends`,
+    intro: "Daily institution-level trend view for accessibility and key barrier signals.",
+    backHref: "../institution-trends.html",
+    backLabel: "Back to Institution Trends",
+    stylesheetHref: "../../../../assets/report.css",
+    body: `<div class="cards">
+      <div class="card"><strong>Days Tracked</strong><br/>${escapeHtml(institutionTrend.days_tracked)}</div>
+      <div class="card"><strong>Latest Mean A11y</strong><br/>${escapeHtml(latest.mean_accessibility_score ?? "-")}</div>
+      <div class="card"><strong>Latest Missing FR</strong><br/>${escapeHtml(latest.missing_french_count ?? "-")}</div>
+      <div class="card"><strong>Latest Missing Statements</strong><br/>${escapeHtml(latest.missing_statement_count ?? "-")}</div>
+    </div>
+    ${renderMetricTrendChart(points, "mean_accessibility_score", `${institutionTrend.institution} accessibility over time`, "Line chart of daily mean accessibility score for this institution.", "#1d6b42", 100)}
+    ${renderMetricTrendChart(points, "missing_french_count", `${institutionTrend.institution} missing French counterparts over time`, "Line chart of daily missing French counterpart counts for this institution.", "#b5402d")}
+    ${renderMetricTrendChart(points, "missing_statement_count", `${institutionTrend.institution} missing accessibility statements over time`, "Line chart of daily missing accessibility statement counts for this institution.", "#235d8b")}
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">URLs</th>
+          <th scope="col">Load</th>
+          <th scope="col">Mean A11y</th>
+          <th scope="col">Mean Perf</th>
+          <th scope="col">Missing FR</th>
+          <th scope="col">Missing Statements</th>
+          <th scope="col">High Gap Pairs</th>
+        </tr>
+      </thead>
+      <tbody>${points
+        .map(
+          (point) => `<tr>
+          <td>${escapeHtml(point.run_date)}</td>
+          <td>${escapeHtml(point.scanned_urls)}</td>
+          <td>${escapeHtml(point.total_page_load_count)}</td>
+          <td>${escapeHtml(point.mean_accessibility_score ?? "-")}</td>
+          <td>${escapeHtml(point.mean_performance_score ?? "-")}</td>
+          <td>${escapeHtml(point.missing_french_count)}</td>
+          <td>${escapeHtml(point.missing_statement_count)}</td>
+          <td>${escapeHtml(point.high_gap_pair_count)}</td>
+        </tr>`
+        )
+        .join("\n")}</tbody>
     </table>`
   });
 }
@@ -310,6 +469,9 @@ export function renderDailyReportPage(report) {
   const prioritySummary = report.priority_issues?.summary || {};
   const institutionSummary = report.institution_scorecards?.summary || {};
   const institutionScorecards = report.institution_scorecards?.scorecards || [];
+  const institutionTrendMap = new Map(
+    (report.institution_trends?.institutions || []).map((item) => [item.institution, item])
+  );
 
   const topUrlsPreview = report.top_urls.slice(0, 12);
   const topUrlsOverflowCount = Math.max(0, report.top_urls.length - 12);
@@ -510,7 +672,7 @@ export function renderDailyReportPage(report) {
     .map((row) => {
       return `
       <tr>
-        <td>${escapeHtml(row.institution)}</td>
+        <td>${institutionTrendMap.get(row.institution) ? `<a href="./details/institutions/${escapeHtml(institutionTrendMap.get(row.institution).slug)}.html">${escapeHtml(row.institution)}</a>` : escapeHtml(row.institution)}</td>
         <td>${escapeHtml(row.scanned_urls)}</td>
         <td>${escapeHtml(row.mean_accessibility_score ?? "-")}</td>
         <td>${escapeHtml(row.missing_french_count)}</td>
@@ -671,7 +833,7 @@ export function renderDailyReportPage(report) {
         <div class="card"><strong>Institutions</strong><br/>${escapeHtml(institutionSummary.institutions ?? "-")}</div>
         <div class="card"><strong>With Priority Issues</strong><br/>${escapeHtml(institutionSummary.institutions_with_priority_issues ?? "-")}</div>
       </div>
-      <p><a href="./details/institution-scorecards.html">Open full institution scorecards page</a> | <a href="./details/institution-scorecards.json">Download institution scorecards JSON</a></p>
+      <p><a href="./details/institution-scorecards.html">Open full institution scorecards page</a> | <a href="./details/institution-trends.html">Open institution trends page</a> | <a href="./details/institution-scorecards.json">Download institution scorecards JSON</a></p>
       <table>
         <thead>
           <tr>
