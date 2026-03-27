@@ -93,21 +93,21 @@
   },
   "scan_summary": {
     "total": 110,
-    "succeeded": 5,
-    "failed": 105,
+    "succeeded": 6,
+    "failed": 104,
     "excluded": 0
   },
   "benchmark_summary": {
     "means": {
-      "performance_score": 87.2,
+      "performance_score": 85.33,
       "accessibility_score": 78,
-      "best_practices_score": 71.2,
+      "best_practices_score": 73,
       "seo_score": 85
     },
     "url_counts": {
       "total": 110,
-      "succeeded": 5,
-      "failed": 105
+      "succeeded": 6,
+      "failed": 104
     }
   },
   "bilingual_parity": {
@@ -206,15 +206,15 @@
         "page_load_count": 94000,
         "accessibility_score_en": 78,
         "accessibility_score_fr": 78,
-        "performance_score_en": 94,
-        "performance_score_fr": 92,
+        "performance_score_en": 90,
+        "performance_score_fr": 89,
         "findings_total_en": 7,
         "findings_total_fr": 7,
         "accessibility_gap": 0,
-        "performance_gap": 2,
+        "performance_gap": 1,
         "findings_gap": 0,
         "abs_accessibility_gap": 0,
-        "abs_performance_gap": 2
+        "abs_performance_gap": 1
       },
       {
         "pair_id": "curated-005-en|curated-005-fr",
@@ -250,23 +250,23 @@
         "inventory_id_fr": "curated-006-fr",
         "url_en": "https://laws-lois.justice.gc.ca/",
         "url_fr": "https://laws-lois.justice.gc.ca/",
-        "scan_status_en": "failed",
+        "scan_status_en": "success",
         "scan_status_fr": "success",
         "institution": "Justice",
         "tier": "tier-1",
         "service_pattern": "dashboard",
         "page_load_count": 88000,
-        "accessibility_score_en": null,
+        "accessibility_score_en": 78,
         "accessibility_score_fr": 78,
-        "performance_score_en": null,
+        "performance_score_en": 92,
         "performance_score_fr": 91,
-        "findings_total_en": null,
+        "findings_total_en": 13,
         "findings_total_fr": 13,
-        "accessibility_gap": null,
-        "performance_gap": null,
-        "findings_gap": null,
-        "abs_accessibility_gap": null,
-        "abs_performance_gap": null
+        "accessibility_gap": 0,
+        "performance_gap": 1,
+        "findings_gap": 0,
+        "abs_accessibility_gap": 0,
+        "abs_performance_gap": 1
       },
       {
         "pair_id": "curated-007-en|curated-007-fr",
@@ -337,14 +337,14 @@
         "accessibility_score_en": 78,
         "accessibility_score_fr": 78,
         "performance_score_en": 76,
-        "performance_score_fr": 83,
+        "performance_score_fr": 74,
         "findings_total_en": 11,
         "findings_total_fr": 11,
         "accessibility_gap": 0,
-        "performance_gap": -7,
+        "performance_gap": 2,
         "findings_gap": 0,
         "abs_accessibility_gap": 0,
-        "abs_performance_gap": 7
+        "abs_performance_gap": 2
       },
       {
         "pair_id": "curated-010-en|curated-010-fr",
@@ -1478,13 +1478,13 @@
     "summary": {
       "candidate_pairs": 90,
       "paired_services": 20,
-      "complete_success_pairs": 2,
+      "complete_success_pairs": 3,
       "missing_counterpart": 70,
       "missing_english": 0,
       "missing_french": 70,
       "paired_from_switcher": 0,
       "average_absolute_accessibility_gap": 0,
-      "average_absolute_performance_gap": 4.5,
+      "average_absolute_performance_gap": 1.33,
       "high_accessibility_gap_pairs": 0
     },
     "highlights": {
@@ -4721,8 +4721,8 @@
       "scanned_urls": 110,
       "known_cms_count": 2,
       "known_cms_percent": 1.82,
-      "known_design_system_count": 5,
-      "known_design_system_percent": 4.55,
+      "known_design_system_count": 6,
+      "known_design_system_percent": 5.45,
       "distinct_cms": 2,
       "distinct_design_systems": 2,
       "distinct_hosting_hints": 1
@@ -4741,11 +4741,11 @@
       "design_systems": [
         {
           "key": "unknown",
-          "count": 105
+          "count": 104
         },
         {
           "key": "gcweb-wet",
-          "count": 5
+          "count": 6
         }
       ],
       "hosting_hints": [
@@ -5335,11 +5335,11 @@
         "design_systems": [
           {
             "key": "unknown",
-            "count": 88
+            "count": 87
           },
           {
             "key": "gcweb-wet",
-            "count": 2
+            "count": 3
           }
         ]
       },
@@ -5474,9 +5474,9 @@
         "language": "en",
         "canonical_url": "https://laws-lois.justice.gc.ca/",
         "cms": "unknown",
-        "design_system": "unknown",
+        "design_system": "gcweb-wet",
         "hosting_hint": "unknown",
-        "confidence": null
+        "confidence": 0.8
       },
       {
         "inventory_id": "curated-006-fr",
@@ -5624,30 +5624,30 @@
     "summary": {
       "scanned_urls": 110,
       "total_page_load_count": 7368000,
-      "directional_affected_load_estimate": 8193014,
-      "directional_affected_share_percent": 111.2
+      "directional_affected_load_estimate": 8131282,
+      "directional_affected_share_percent": 110.36
     },
     "by_tier": [
       {
         "tier": "tier-1",
         "scanned_urls": 14,
         "page_load_count": 1920000,
-        "directional_affected_load_estimate": 1990604,
-        "affected_share_percent": 24.3
+        "directional_affected_load_estimate": 1928872,
+        "affected_share_percent": 23.72
       },
       {
         "tier": "tier-2",
         "scanned_urls": 45,
         "page_load_count": 4603000,
         "directional_affected_load_estimate": 5230660,
-        "affected_share_percent": 63.84
+        "affected_share_percent": 64.33
       },
       {
         "tier": "tier-3",
         "scanned_urls": 51,
         "page_load_count": 845000,
         "directional_affected_load_estimate": 971750,
-        "affected_share_percent": 11.86
+        "affected_share_percent": 11.95
       }
     ],
     "by_language": [
@@ -5655,15 +5655,15 @@
         "language": "en",
         "scanned_urls": 90,
         "page_load_count": 3874000,
-        "directional_affected_load_estimate": 4345873,
-        "affected_share_percent": 53.04
+        "directional_affected_load_estimate": 4284141,
+        "affected_share_percent": 52.69
       },
       {
         "language": "fr",
         "scanned_urls": 20,
         "page_load_count": 3494000,
         "directional_affected_load_estimate": 3847141,
-        "affected_share_percent": 46.96
+        "affected_share_percent": 47.31
       }
     ],
     "top_directional_impact_urls": [
@@ -6454,32 +6454,32 @@
   },
   "lighthouse_contexts": {
     "summary": {
-      "scanned_urls_with_context_data": 5,
+      "scanned_urls_with_context_data": 6,
       "baseline_context": "desktop_light"
     },
     "by_context": {
       "desktop_light": {
-        "performance_score": 87.2,
+        "performance_score": 85.33,
         "accessibility_score": 78,
-        "best_practices_score": 71.2,
+        "best_practices_score": 73,
         "seo_score": 85
       },
       "desktop_dark": {
-        "performance_score": 83.8,
+        "performance_score": 83.17,
         "accessibility_score": 75,
-        "best_practices_score": 71.2,
+        "best_practices_score": 73,
         "seo_score": 85
       },
       "mobile_light": {
-        "performance_score": 78.6,
+        "performance_score": 78.33,
         "accessibility_score": 78,
-        "best_practices_score": 69.2,
+        "best_practices_score": 71,
         "seo_score": 84
       },
       "mobile_dark": {
-        "performance_score": 78.2,
+        "performance_score": 74.5,
         "accessibility_score": 75,
-        "best_practices_score": 69.2,
+        "best_practices_score": 71,
         "seo_score": 84
       }
     },
@@ -6496,7 +6496,7 @@
       {
         "context": "desktop_dark",
         "delta_vs_desktop_light": {
-          "performance_score": -3.4,
+          "performance_score": -2.16,
           "accessibility_score": -3,
           "best_practices_score": 0,
           "seo_score": 0
@@ -6505,7 +6505,7 @@
       {
         "context": "mobile_light",
         "delta_vs_desktop_light": {
-          "performance_score": -8.6,
+          "performance_score": -7,
           "accessibility_score": 0,
           "best_practices_score": -2,
           "seo_score": -1
@@ -6514,7 +6514,7 @@
       {
         "context": "mobile_dark",
         "delta_vs_desktop_light": {
-          "performance_score": -9,
+          "performance_score": -10.83,
           "accessibility_score": -3,
           "best_practices_score": -2,
           "seo_score": -1
@@ -6524,7 +6524,7 @@
     "highlights": {
       "mobile_dark_vs_desktop_light": {
         "context": "mobile_dark_vs_desktop_light",
-        "performance_score": -9,
+        "performance_score": -10.83,
         "accessibility_score": -3,
         "best_practices_score": -2,
         "seo_score": -1
@@ -6661,12 +6661,12 @@
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 94,
+        "performance_score": 90,
         "accessibility_score": 78,
         "best_practices_score": 82,
         "seo_score": 85,
         "lcp_value_ms": 1000,
-        "total_byte_weight": 22053,
+        "total_byte_weight": 21856,
         "context": {
           "form_factor": "desktop",
           "color_scheme": "light"
@@ -6674,48 +6674,48 @@
         "default_context": "desktop_light",
         "by_context": {
           "desktop_light": {
-            "performance_score": 94,
+            "performance_score": 90,
             "accessibility_score": 78,
             "best_practices_score": 82,
             "seo_score": 85,
             "lcp_value_ms": 1000,
-            "total_byte_weight": 22053,
+            "total_byte_weight": 21856,
             "context": {
               "form_factor": "desktop",
               "color_scheme": "light"
             }
           },
           "desktop_dark": {
-            "performance_score": 92,
+            "performance_score": 88,
             "accessibility_score": 75,
             "best_practices_score": 82,
             "seo_score": 85,
             "lcp_value_ms": 1120,
-            "total_byte_weight": 22053,
+            "total_byte_weight": 21856,
             "context": {
               "form_factor": "desktop",
               "color_scheme": "dark"
             }
           },
           "mobile_light": {
-            "performance_score": 87,
+            "performance_score": 84,
             "accessibility_score": 78,
             "best_practices_score": 80,
             "seo_score": 84,
             "lcp_value_ms": 1250,
-            "total_byte_weight": 22053,
+            "total_byte_weight": 21856,
             "context": {
               "form_factor": "mobile",
               "color_scheme": "light"
             }
           },
           "mobile_dark": {
-            "performance_score": 85,
+            "performance_score": 82,
             "accessibility_score": 75,
             "best_practices_score": 80,
             "seo_score": 84,
             "lcp_value_ms": 1370,
-            "total_byte_weight": 22053,
+            "total_byte_weight": 21856,
             "context": {
               "form_factor": "mobile",
               "color_scheme": "dark"
@@ -6763,12 +6763,12 @@
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 92,
+        "performance_score": 89,
         "accessibility_score": 78,
         "best_practices_score": 82,
         "seo_score": 85,
         "lcp_value_ms": 1000,
-        "total_byte_weight": 23708,
+        "total_byte_weight": 23519,
         "context": {
           "form_factor": "desktop",
           "color_scheme": "light"
@@ -6776,48 +6776,48 @@
         "default_context": "desktop_light",
         "by_context": {
           "desktop_light": {
-            "performance_score": 92,
+            "performance_score": 89,
             "accessibility_score": 78,
             "best_practices_score": 82,
             "seo_score": 85,
             "lcp_value_ms": 1000,
-            "total_byte_weight": 23708,
+            "total_byte_weight": 23519,
             "context": {
               "form_factor": "desktop",
               "color_scheme": "light"
             }
           },
           "desktop_dark": {
-            "performance_score": 89,
+            "performance_score": 87,
             "accessibility_score": 75,
             "best_practices_score": 82,
             "seo_score": 85,
             "lcp_value_ms": 1120,
-            "total_byte_weight": 23708,
+            "total_byte_weight": 23519,
             "context": {
               "form_factor": "desktop",
               "color_scheme": "dark"
             }
           },
           "mobile_light": {
-            "performance_score": 85,
+            "performance_score": 83,
             "accessibility_score": 78,
             "best_practices_score": 80,
             "seo_score": 84,
             "lcp_value_ms": 1250,
-            "total_byte_weight": 23708,
+            "total_byte_weight": 23519,
             "context": {
               "form_factor": "mobile",
               "color_scheme": "light"
             }
           },
           "mobile_dark": {
-            "performance_score": 79,
+            "performance_score": 80,
             "accessibility_score": 75,
             "best_practices_score": 80,
             "seo_score": 84,
             "lcp_value_ms": 1370,
-            "total_byte_weight": 23708,
+            "total_byte_weight": 23519,
             "context": {
               "form_factor": "mobile",
               "color_scheme": "dark"
@@ -6900,12 +6900,95 @@
       "service_category": "information",
       "page_load_count": 88000,
       "rank_score": 89.11,
-      "scan_status": "failed",
-      "failure_reason": "fetch failed",
-      "lighthouse": null,
-      "scangov": null,
-      "accessibility_statement": null,
-      "platform_fingerprint": null
+      "scan_status": "success",
+      "failure_reason": null,
+      "lighthouse": {
+        "performance_score": 92,
+        "accessibility_score": 78,
+        "best_practices_score": 82,
+        "seo_score": 85,
+        "lcp_value_ms": 1000,
+        "total_byte_weight": 4528,
+        "context": {
+          "form_factor": "desktop",
+          "color_scheme": "light"
+        },
+        "default_context": "desktop_light",
+        "by_context": {
+          "desktop_light": {
+            "performance_score": 92,
+            "accessibility_score": 78,
+            "best_practices_score": 82,
+            "seo_score": 85,
+            "lcp_value_ms": 1000,
+            "total_byte_weight": 4528,
+            "context": {
+              "form_factor": "desktop",
+              "color_scheme": "light"
+            }
+          },
+          "desktop_dark": {
+            "performance_score": 90,
+            "accessibility_score": 75,
+            "best_practices_score": 82,
+            "seo_score": 85,
+            "lcp_value_ms": 1120,
+            "total_byte_weight": 4528,
+            "context": {
+              "form_factor": "desktop",
+              "color_scheme": "dark"
+            }
+          },
+          "mobile_light": {
+            "performance_score": 84,
+            "accessibility_score": 78,
+            "best_practices_score": 80,
+            "seo_score": 84,
+            "lcp_value_ms": 1250,
+            "total_byte_weight": 4528,
+            "context": {
+              "form_factor": "mobile",
+              "color_scheme": "light"
+            }
+          },
+          "mobile_dark": {
+            "performance_score": 83,
+            "accessibility_score": 75,
+            "best_practices_score": 80,
+            "seo_score": 84,
+            "lcp_value_ms": 1370,
+            "total_byte_weight": 4528,
+            "context": {
+              "form_factor": "mobile",
+              "color_scheme": "dark"
+            }
+          }
+        }
+      },
+      "scangov": {
+        "critical": 1,
+        "serious": 3,
+        "moderate": 5,
+        "minor": 4
+      },
+      "accessibility_statement": {
+        "statement_detected": false,
+        "statement_link_text": null,
+        "statement_link_url": null,
+        "has_contact_info": false,
+        "mentions_compliance_status": false,
+        "mentions_alternative_support": false,
+        "has_freshness_marker": false,
+        "detected_language": "en",
+        "confidence": 0.35,
+        "language_switcher_url": "/fra/index.html"
+      },
+      "platform_fingerprint": {
+        "cms": "unknown",
+        "design_system": "gcweb-wet",
+        "hosting_hint": "unknown",
+        "confidence": 0.8
+      }
     },
     {
       "inventory_id": "curated-006-fr",
@@ -6947,7 +7030,7 @@
             }
           },
           "desktop_dark": {
-            "performance_score": 90,
+            "performance_score": 88,
             "accessibility_score": 75,
             "best_practices_score": 82,
             "seo_score": 85,
@@ -6959,7 +7042,7 @@
             }
           },
           "mobile_light": {
-            "performance_score": 86,
+            "performance_score": 84,
             "accessibility_score": 78,
             "best_practices_score": 80,
             "seo_score": 84,
@@ -6971,7 +7054,7 @@
             }
           },
           "mobile_dark": {
-            "performance_score": 83,
+            "performance_score": 80,
             "accessibility_score": 75,
             "best_practices_score": 80,
             "seo_score": 84,
@@ -7104,7 +7187,7 @@
         "accessibility_score": 78,
         "best_practices_score": 55,
         "seo_score": 85,
-        "lcp_value_ms": 1088,
+        "lcp_value_ms": 1069,
         "total_byte_weight": 874956,
         "context": {
           "form_factor": "desktop",
@@ -7117,7 +7200,7 @@
             "accessibility_score": 78,
             "best_practices_score": 55,
             "seo_score": 85,
-            "lcp_value_ms": 1088,
+            "lcp_value_ms": 1069,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "desktop",
@@ -7125,11 +7208,11 @@
             }
           },
           "desktop_dark": {
-            "performance_score": 72,
+            "performance_score": 75,
             "accessibility_score": 75,
             "best_practices_score": 55,
             "seo_score": 85,
-            "lcp_value_ms": 1309,
+            "lcp_value_ms": 1158,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "desktop",
@@ -7137,11 +7220,11 @@
             }
           },
           "mobile_light": {
-            "performance_score": 70,
+            "performance_score": 69,
             "accessibility_score": 78,
             "best_practices_score": 53,
             "seo_score": 84,
-            "lcp_value_ms": 1310,
+            "lcp_value_ms": 1354,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "mobile",
@@ -7149,11 +7232,11 @@
             }
           },
           "mobile_dark": {
-            "performance_score": 75,
+            "performance_score": 61,
             "accessibility_score": 75,
             "best_practices_score": 53,
             "seo_score": 84,
-            "lcp_value_ms": 1370,
+            "lcp_value_ms": 1747,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "mobile",
@@ -7202,11 +7285,11 @@
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 83,
+        "performance_score": 74,
         "accessibility_score": 78,
         "best_practices_score": 55,
         "seo_score": 85,
-        "lcp_value_ms": 1000,
+        "lcp_value_ms": 1190,
         "total_byte_weight": 874956,
         "context": {
           "form_factor": "desktop",
@@ -7215,11 +7298,11 @@
         "default_context": "desktop_light",
         "by_context": {
           "desktop_light": {
-            "performance_score": 83,
+            "performance_score": 74,
             "accessibility_score": 78,
             "best_practices_score": 55,
             "seo_score": 85,
-            "lcp_value_ms": 1000,
+            "lcp_value_ms": 1190,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "desktop",
@@ -7227,11 +7310,11 @@
             }
           },
           "desktop_dark": {
-            "performance_score": 76,
+            "performance_score": 71,
             "accessibility_score": 75,
             "best_practices_score": 55,
             "seo_score": 85,
-            "lcp_value_ms": 1120,
+            "lcp_value_ms": 1335,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "desktop",
@@ -7239,11 +7322,11 @@
             }
           },
           "mobile_light": {
-            "performance_score": 65,
+            "performance_score": 66,
             "accessibility_score": 78,
             "best_practices_score": 53,
             "seo_score": 84,
-            "lcp_value_ms": 1577,
+            "lcp_value_ms": 1520,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "mobile",
@@ -7251,11 +7334,11 @@
             }
           },
           "mobile_dark": {
-            "performance_score": 69,
+            "performance_score": 61,
             "accessibility_score": 75,
             "best_practices_score": 53,
             "seo_score": 84,
-            "lcp_value_ms": 1423,
+            "lcp_value_ms": 1780,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "mobile",
@@ -9103,9 +9186,9 @@
         "label": "Directional Affected Share",
         "direction": "lower_is_better",
         "unit": "percent",
-        "current": 111.2,
+        "current": 110.36,
         "previous": 110.36,
-        "delta": 0.84,
+        "delta": 0,
         "is_regression": false,
         "severity": null
       },
@@ -9114,9 +9197,9 @@
         "label": "Scan Failure Rate",
         "direction": "lower_is_better",
         "unit": "percent",
-        "current": 95.45,
+        "current": 94.55,
         "previous": 94.55,
-        "delta": 0.9,
+        "delta": 0,
         "is_regression": false,
         "severity": null
       }
@@ -9156,7 +9239,7 @@
         "missing_statements": 110,
         "high_accessibility_gap_pairs": 0,
         "average_absolute_accessibility_gap": 0,
-        "directional_affected_share_percent": 111.2
+        "directional_affected_share_percent": 110.36
       }
     ]
   },
@@ -13663,7 +13746,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 188000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 93,
+        "mean_performance_score": 89.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13678,7 +13761,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 176000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 91,
+        "mean_performance_score": 91.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13693,7 +13776,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 84000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 79.5,
+        "mean_performance_score": 75,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13830,7 +13913,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 188000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 93,
+        "mean_performance_score": 89.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13845,7 +13928,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 176000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 91,
+        "mean_performance_score": 91.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13860,7 +13943,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 84000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 79.5,
+        "mean_performance_score": 75,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -14138,7 +14221,7 @@
           "scanned_urls": 2,
           "total_page_load_count": 188000,
           "mean_accessibility_score": 78,
-          "mean_performance_score": 93,
+          "mean_performance_score": 89.5,
           "missing_french_count": 0,
           "missing_statement_count": 2,
           "high_gap_pair_count": 0
@@ -14172,7 +14255,7 @@
             "scanned_urls": 2,
             "total_page_load_count": 188000,
             "mean_accessibility_score": 78,
-            "mean_performance_score": 93,
+            "mean_performance_score": 89.5,
             "missing_french_count": 0,
             "missing_statement_count": 2,
             "high_gap_pair_count": 0
@@ -14189,7 +14272,7 @@
           "scanned_urls": 2,
           "total_page_load_count": 176000,
           "mean_accessibility_score": 78,
-          "mean_performance_score": 91,
+          "mean_performance_score": 91.5,
           "missing_french_count": 0,
           "missing_statement_count": 2,
           "high_gap_pair_count": 0
@@ -14223,7 +14306,7 @@
             "scanned_urls": 2,
             "total_page_load_count": 176000,
             "mean_accessibility_score": 78,
-            "mean_performance_score": 91,
+            "mean_performance_score": 91.5,
             "missing_french_count": 0,
             "missing_statement_count": 2,
             "high_gap_pair_count": 0
@@ -14342,7 +14425,7 @@
           "scanned_urls": 2,
           "total_page_load_count": 84000,
           "mean_accessibility_score": 78,
-          "mean_performance_score": 79.5,
+          "mean_performance_score": 75,
           "missing_french_count": 0,
           "missing_statement_count": 2,
           "high_gap_pair_count": 0
@@ -14376,7 +14459,7 @@
             "scanned_urls": 2,
             "total_page_load_count": 84000,
             "mean_accessibility_score": 78,
-            "mean_performance_score": 79.5,
+            "mean_performance_score": 75,
             "missing_french_count": 0,
             "missing_statement_count": 2,
             "high_gap_pair_count": 0
