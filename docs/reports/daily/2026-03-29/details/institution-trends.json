@@ -307,7 +307,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 188000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 95.5,
+        "mean_performance_score": 95,
         "missing_french_count": 0,
         "missing_statement_count": 2,
         "high_gap_pair_count": 0
@@ -363,7 +363,7 @@
           "scanned_urls": 2,
           "total_page_load_count": 188000,
           "mean_accessibility_score": 78,
-          "mean_performance_score": 95.5,
+          "mean_performance_score": 95,
           "missing_french_count": 0,
           "missing_statement_count": 2,
           "high_gap_pair_count": 0
@@ -599,7 +599,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 84000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 85,
+        "mean_performance_score": 87.5,
         "missing_french_count": 0,
         "missing_statement_count": 2,
         "high_gap_pair_count": 0
@@ -655,7 +655,7 @@
           "scanned_urls": 2,
           "total_page_load_count": 84000,
           "mean_accessibility_score": 78,
-          "mean_performance_score": 85,
+          "mean_performance_score": 87.5,
           "missing_french_count": 0,
           "missing_statement_count": 2,
           "high_gap_pair_count": 0
