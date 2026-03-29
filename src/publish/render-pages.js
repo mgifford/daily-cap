@@ -1432,7 +1432,6 @@ export function renderHomePage(report, recentReports = [], archivedDates = []) {
         <li>Service-pattern and directional impact analysis</li>
         <li>Canadian-focused data sources (recent activity, top tasks, curated endpoints)</li>
       </ul>
-      <p><a href="./about.md">About Daily CAP and Daily DAP &#8594;</a></p>
     </section>
   </main>
   <script>
