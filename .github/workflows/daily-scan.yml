@@ -80,7 +80,9 @@ jobs:
           git config --local user.name "GitHub Copilot (Bot)"
           git add docs/reports/ docs/index.html
           git commit -m "chore: publish daily CAP report $(date -u +%Y-%m-%d)"
-          git push origin main || (git pull --rebase --autostash origin main && git push origin main)
+          # On non-fast-forward failure, rebase onto origin/main using -X theirs so that
+          # this scan's generated report files take precedence over any concurrent doc changes.
+          git push origin main || (git fetch origin main && git rebase origin/main -X theirs && git push origin main)
 
       - name: Generate step summary
         if: always()
