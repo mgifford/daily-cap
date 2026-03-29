@@ -1,14 +1,47 @@
+import fs from "node:fs/promises";
 import path from "node:path";
 import { writeJsonFile, writeTextFile } from "../utils/fs.js";
 import {
   renderDailyReportPage,
   renderDashboardPage,
+  renderHomePage,
   renderPriorityIssuesPage,
   renderRecurringIssuesPage,
   renderInstitutionScorecardsPage,
   renderInstitutionTrendsIndexPage,
   renderInstitutionTrendPage
 } from "./render-pages.js";
+import { archiveOldReports, listArchivedDates } from "./archive-reports.js";
+
+async function loadRecentReports(dailyDir, currentDate, limit = 10) {
+  let entries;
+  try {
+    entries = await fs.readdir(dailyDir, { withFileTypes: true });
+  } catch {
+    return [];
+  }
+
+  const dates = entries
+    .filter((e) => e.isDirectory() && /^\d{4}-\d{2}-\d{2}$/.test(e.name))
+    .map((e) => e.name)
+    .filter((date) => date <= currentDate)
+    .sort((a, b) => b.localeCompare(a))
+    .slice(0, limit);
+
+  const results = [];
+  for (const date of dates) {
+    const reportPath = path.join(dailyDir, date, "report.json");
+    try {
+      const raw = await fs.readFile(reportPath, "utf8");
+      const r = JSON.parse(raw);
+      results.push({ run_date: r.run_date || date, run_id: r.run_id || date });
+    } catch {
+      results.push({ run_date: date, run_id: date });
+    }
+  }
+
+  return results;
+}
 
 export async function publishReport({ report, outputRoot }) {
   const dailyDir = path.join(outputRoot, "docs", "reports", "daily", report.run_date);
@@ -70,4 +103,17 @@ export async function publishReport({ report, outputRoot }) {
   }
   await writeTextFile(path.join(dailyDir, "index.html"), renderDailyReportPage(report));
   await writeTextFile(path.join(reportsDir, "index.html"), renderDashboardPage(report));
+
+  // Archive reports older than 14 days, then build the home page with the
+  // full list of active and archived reports.
+  await archiveOldReports({ reportsRoot: reportsDir });
+  const recentReports = await loadRecentReports(
+    path.join(reportsDir, "daily"),
+    report.run_date
+  );
+  const archivedDates = await listArchivedDates(reportsDir);
+  await writeTextFile(
+    path.join(outputRoot, "docs", "index.html"),
+    renderHomePage(report, recentReports, archivedDates)
+  );
 }

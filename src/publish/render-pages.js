@@ -1338,98 +1338,102 @@ export function renderDailyReportPage(report) {
 }
 
 export function renderDashboardPage(report) {
-  const means = report.benchmark_summary?.means || {};
+  const safeDate = escapeHtml(report.run_date);
   return `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="0; url=../" />
   <title>Daily CAP Reports</title>
   <link rel="stylesheet" href="./assets/report.css" />
+</head>
+<body>
+  <main>
+    <p>This page has moved. <a href="../">View the Daily CAP home page</a>.</p>
+    <p>Or go directly to the <a href="./daily/${safeDate}/index.html">latest report (${safeDate})</a>.</p>
+  </main>
+</body>
+</html>`;
+}
+
+export function renderHomePage(report, recentReports = [], archivedDates = []) {
+  const means = report.benchmark_summary?.means || {};
+  const safeDate = escapeHtml(report.run_date);
+  const safeRunId = escapeHtml(report.run_id || report.run_date);
+
+  const recentItems = recentReports
+    .slice(0, 10)
+    .map((r) => {
+      const d = escapeHtml(r.run_date);
+      const id = escapeHtml(r.run_id || r.run_date);
+      return `<li><a href="./reports/daily/${d}/index.html">${d}</a> <span class="run-id">(${id})</span></li>`;
+    })
+    .join("\n        ");
+
+  const archiveItems = archivedDates
+    .map((d) => {
+      const safe = escapeHtml(d);
+      return `<li><a href="./reports/archive/${safe}.zip">${safe} (archived)</a></li>`;
+    })
+    .join("\n        ");
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily CAP</title>
+  <link rel="stylesheet" href="./reports/assets/report.css" />
   <script>(function(){var s=localStorage.getItem('cap-preferred-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
 </head>
 <body>
   <header>
-    <div class="nav"><a href="../">&#8592; Back to Home</a></div>
+    <div class="nav"><a href="https://github.com/mgifford/daily-cap">GitHub</a></div>
     <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
   </header>
   <main>
-    <h1>Daily CAP Reports</h1>
-    <p>Canadian service entry-point quality dashboard with daily automated signals for accessibility, performance, best practices, and SEO.</p>
-    <p>Latest run: ${escapeHtml(report.run_date)}</p>
-    <p><em>Daily CAP is an independent analytics project and is not a Government of Canada program.</em></p>
+    <h1>Daily CAP</h1>
+    <p><strong>Canadian Analytics Project</strong> &mdash; An independent daily quality benchmarking pipeline for Canadian federal digital service entry points.</p>
+    <p><em>This is not a Government of Canada program.</em></p>
 
     <section>
-      ${sectionH2("latest-scores", "Latest Scores")}
+      ${sectionH2("latest-scores", `Latest Scores (${safeDate})`)}
       <div class="cards">
         <div class="card"><strong>Performance</strong><br/>${escapeHtml(means.performance_score ?? "-")}</div>
         <div class="card"><strong>Accessibility</strong><br/>${escapeHtml(means.accessibility_score ?? "-")}</div>
         <div class="card"><strong>Best Practices</strong><br/>${escapeHtml(means.best_practices_score ?? "-")}</div>
         <div class="card"><strong>SEO</strong><br/>${escapeHtml(means.seo_score ?? "-")}</div>
       </div>
+      <p><a href="./reports/daily/${safeDate}/index.html">Open latest report &#8594;</a></p>
     </section>
 
     <section>
-      ${sectionH2("about-reports", "About These Reports")}
-      <p>Daily CAP benchmarks Canadian federal digital service entry points with automated diagnostics. Results are directional benchmark signals and trend indicators, not legal compliance determinations or manual accessibility audits.</p>
-      <p>The report includes bilingual parity tracking, accessibility statement coverage, platform signals, and directional impact estimates to help prioritize remediation and governance work.</p>
+      ${sectionH2("recent-reports", "Recent Reports")}
+      ${recentItems.length > 0 ? `<ul class="report-list">
+        ${recentItems}
+      </ul>` : "<p>No reports available yet.</p>"}
+      ${archiveItems.length > 0 ? `
+      ${sectionH2("archived-reports", "Archived Reports")}
+      <p>Reports older than 14 days are zipped for download.</p>
+      <ul class="report-list">
+        ${archiveItems}
+      </ul>` : ""}
     </section>
 
     <section>
-      ${sectionH2("cap-dap", "Daily CAP and Daily DAP")}
-      <p>Daily CAP and <a href="https://mgifford.github.io/daily-dap/">Daily DAP</a> are sibling projects with different geographic scope. Daily CAP focuses on Canadian federal digital services; Daily DAP focuses on U.S. federal digital services. They share a similar reporting approach but are independent codebases.</p>
-      <p>A key distinction is Canadian bilingual requirements: the <cite>Official Languages Act</cite> requires that federal digital services be provided in both English and French. Daily CAP therefore measures EN/FR parity, accessibility statement coverage in both languages, and language switcher availability as first-class signals. Daily DAP does not have an equivalent bilingual requirement.</p>
-      <table>
-        <caption>Comparison of Daily CAP and Daily DAP</caption>
-        <thead>
-          <tr>
-            <th scope="col">Feature</th>
-            <th scope="col">Daily CAP (Canada)</th>
-            <th scope="col">Daily DAP (U.S.)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Geographic scope</th>
-            <td>Canadian federal digital services</td>
-            <td>U.S. federal digital services</td>
-          </tr>
-          <tr>
-            <th scope="row">Bilingual requirement</th>
-            <td>English and French (Official Languages Act)</td>
-            <td>English only</td>
-          </tr>
-          <tr>
-            <th scope="row">Language parity analysis</th>
-            <td>Yes &#8212; EN/FR gap scoring and missing counterpart detection</td>
-            <td>Not applicable</td>
-          </tr>
-          <tr>
-            <th scope="row">Accessibility statement detection</th>
-            <td>Yes &#8212; both EN and FR variants checked</td>
-            <td>Varies by implementation</td>
-          </tr>
-          <tr>
-            <th scope="row">Data sources</th>
-            <td>Canada.ca recent activity, Top Tasks, curated endpoints</td>
-            <td>DAP analytics, curated endpoints</td>
-          </tr>
-          <tr>
-            <th scope="row">Scan contexts</th>
-            <td>Desktop and mobile &#215; light and dark themes</td>
-            <td>Similar</td>
-          </tr>
-          <tr>
-            <th scope="row">Output format</th>
-            <td>Static HTML with daily JSON exports</td>
-            <td>Static HTML with daily JSON exports</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><em>Both projects produce automated benchmark signals, not legal compliance determinations or manual accessibility audits.</em></p>
+      ${sectionH2("about", "About Daily CAP")}
+      <p>Daily CAP benchmarks the quality and accessibility of Canadian federal digital service entry points using automated scanning. Results are directional benchmark signals, not legal compliance determinations or manual accessibility audits.</p>
+      <ul>
+        <li>Daily automated scans with Lighthouse</li>
+        <li>Bilingual (English/French) analysis and parity detection</li>
+        <li>Performance, accessibility, and SEO metrics</li>
+        <li>Accessibility statement detection</li>
+        <li>Service-pattern and directional impact analysis</li>
+        <li>Canadian-focused data sources (recent activity, top tasks, curated endpoints)</li>
+      </ul>
+      <p><a href="./about.md">About Daily CAP and Daily DAP &#8594;</a></p>
     </section>
-
-    <p><a href="./daily/${escapeHtml(report.run_date)}/index.html">Open latest report &#8594;</a></p>
   </main>
   <script>
     (function () {

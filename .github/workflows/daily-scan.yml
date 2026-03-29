@@ -67,7 +67,7 @@ jobs:
       - name: Check for report changes
         id: check_changes
         run: |
-          if git diff --quiet docs/reports/; then
+          if git diff --quiet docs/reports/ docs/index.html; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
@@ -78,7 +78,7 @@ jobs:
         run: |
           git config --local user.email "copilot@github.com"
           git config --local user.name "GitHub Copilot (Bot)"
-          git add docs/reports/
+          git add docs/reports/ docs/index.html
           git commit -m "chore: publish daily CAP report $(date -u +%Y-%m-%d)"
           git push origin main || (git pull --rebase --autostash origin main && git push origin main)
 

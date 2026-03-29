@@ -3,123 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="0; url=../" />
   <title>Daily CAP Reports</title>
   <link rel="stylesheet" href="./assets/report.css" />
-  <script>(function(){var s=localStorage.getItem('cap-preferred-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
 </head>
 <body>
-  <header>
-    <div class="nav"><a href="../">&#8592; Back to Home</a></div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
-  </header>
   <main>
-    <h1>Daily CAP Reports</h1>
-    <p>Canadian service entry-point quality dashboard with daily automated signals for accessibility, performance, best practices, and SEO.</p>
-    <p>Latest run: 2026-03-29</p>
-    <p><em>Daily CAP is an independent analytics project and is not a Government of Canada program.</em></p>
-
-    <section>
-      <h2 id="latest-scores">Latest Scores <a href="#latest-scores" class="anchor-link" aria-label="Link to section: Latest Scores">#</a></h2>
-      <div class="cards">
-        <div class="card"><strong>Performance</strong><br/>86.83</div>
-        <div class="card"><strong>Accessibility</strong><br/>78</div>
-        <div class="card"><strong>Best Practices</strong><br/>73</div>
-        <div class="card"><strong>SEO</strong><br/>85</div>
-      </div>
-    </section>
-
-    <section>
-      <h2 id="about-reports">About These Reports <a href="#about-reports" class="anchor-link" aria-label="Link to section: About These Reports">#</a></h2>
-      <p>Daily CAP benchmarks Canadian federal digital service entry points with automated diagnostics. Results are directional benchmark signals and trend indicators, not legal compliance determinations or manual accessibility audits.</p>
-      <p>The report includes bilingual parity tracking, accessibility statement coverage, platform signals, and directional impact estimates to help prioritize remediation and governance work.</p>
-    </section>
-
-    <section>
-      <h2 id="cap-dap">Daily CAP and Daily DAP <a href="#cap-dap" class="anchor-link" aria-label="Link to section: Daily CAP and Daily DAP">#</a></h2>
-      <p>Daily CAP and <a href="https://mgifford.github.io/daily-dap/">Daily DAP</a> are sibling projects with different geographic scope. Daily CAP focuses on Canadian federal digital services; Daily DAP focuses on U.S. federal digital services. They share a similar reporting approach but are independent codebases.</p>
-      <p>A key distinction is Canadian bilingual requirements: the <cite>Official Languages Act</cite> requires that federal digital services be provided in both English and French. Daily CAP therefore measures EN/FR parity, accessibility statement coverage in both languages, and language switcher availability as first-class signals. Daily DAP does not have an equivalent bilingual requirement.</p>
-      <table>
-        <caption>Comparison of Daily CAP and Daily DAP</caption>
-        <thead>
-          <tr>
-            <th scope="col">Feature</th>
-            <th scope="col">Daily CAP (Canada)</th>
-            <th scope="col">Daily DAP (U.S.)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Geographic scope</th>
-            <td>Canadian federal digital services</td>
-            <td>U.S. federal digital services</td>
-          </tr>
-          <tr>
-            <th scope="row">Bilingual requirement</th>
-            <td>English and French (Official Languages Act)</td>
-            <td>English only</td>
-          </tr>
-          <tr>
-            <th scope="row">Language parity analysis</th>
-            <td>Yes &#8212; EN/FR gap scoring and missing counterpart detection</td>
-            <td>Not applicable</td>
-          </tr>
-          <tr>
-            <th scope="row">Accessibility statement detection</th>
-            <td>Yes &#8212; both EN and FR variants checked</td>
-            <td>Varies by implementation</td>
-          </tr>
-          <tr>
-            <th scope="row">Data sources</th>
-            <td>Canada.ca recent activity, Top Tasks, curated endpoints</td>
-            <td>DAP analytics, curated endpoints</td>
-          </tr>
-          <tr>
-            <th scope="row">Scan contexts</th>
-            <td>Desktop and mobile &#215; light and dark themes</td>
-            <td>Similar</td>
-          </tr>
-          <tr>
-            <th scope="row">Output format</th>
-            <td>Static HTML with daily JSON exports</td>
-            <td>Static HTML with daily JSON exports</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><em>Both projects produce automated benchmark signals, not legal compliance determinations or manual accessibility audits.</em></p>
-    </section>
-
-    <p><a href="./daily/2026-03-29/index.html">Open latest report &#8594;</a></p>
+    <p>This page has moved. <a href="../">View the Daily CAP home page</a>.</p>
+    <p>Or go directly to the <a href="./daily/2026-03-29/index.html">latest report (2026-03-29)</a>.</p>
   </main>
-  <script>
-    (function () {
-      var THEME_KEY = 'cap-preferred-theme';
-      var html = document.documentElement;
-      var toggle = document.getElementById('theme-toggle');
-      function applyTheme(t) {
-        html.setAttribute('data-theme', t);
-        if (toggle) {
-          toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
-        }
-      }
-      var stored = localStorage.getItem(THEME_KEY);
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      applyTheme(stored || (prefersDark ? 'dark' : 'light'));
-      if (toggle) {
-        toggle.addEventListener('click', function () {
-          var c = html.getAttribute('data-theme');
-          var n = c === 'dark' ? 'light' : 'dark';
-          localStorage.setItem(THEME_KEY, n);
-          applyTheme(n);
-        });
-      }
-      var mq = window.matchMedia('(prefers-color-scheme: dark)');
-      if (mq.addEventListener) {
-        mq.addEventListener('change', function (e) {
-          if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? 'dark' : 'light');
-        });
-      }
-    })();
-  </script>
 </body>
 </html>
