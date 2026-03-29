@@ -1371,13 +1371,6 @@ export function renderHomePage(report, recentReports = [], archivedDates = []) {
     })
     .join("\n        ");
 
-  const archiveItems = archivedDates
-    .map((d) => {
-      const safe = escapeHtml(d);
-      return `<li><a href="./reports/archive/${safe}.zip">${safe} (archived)</a></li>`;
-    })
-    .join("\n        ");
-
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -1421,12 +1414,6 @@ export function renderHomePage(report, recentReports = [], archivedDates = []) {
       ${recentItems.length > 0 ? `<ul class="report-list">
         ${recentItems}
       </ul>` : "<p>No reports available yet.</p>"}
-      ${archiveItems.length > 0 ? `
-      ${sectionH2("archived-reports", "Archived Reports")}
-      <p>Reports older than 14 days are zipped for download.</p>
-      <ul class="report-list">
-        ${archiveItems}
-      </ul>` : ""}
     </section>
 
     <section>
@@ -1441,6 +1428,85 @@ export function renderHomePage(report, recentReports = [], archivedDates = []) {
         <li>Canadian-focused data sources (recent activity, top tasks, curated endpoints)</li>
       </ul>
     </section>
+
+    <section>
+      ${sectionH2("report-archive", "Report Archive")}
+      <p>Reports older than 14 days are available as downloadable zip archives containing the full HTML report, JSON data, and CSV findings.</p>
+      <p><a href="./reports/archive/index.html">Browse report archives <span aria-hidden="true">&#8594;</span></a></p>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var THEME_KEY = 'cap-preferred-theme';
+      var html = document.documentElement;
+      var toggle = document.getElementById('theme-toggle');
+      function applyTheme(t) {
+        html.setAttribute('data-theme', t);
+        if (toggle) {
+          toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+        }
+      }
+      var stored = localStorage.getItem(THEME_KEY);
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var c = html.getAttribute('data-theme');
+          var n = c === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(THEME_KEY, n);
+          applyTheme(n);
+        });
+      }
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) {
+        mq.addEventListener('change', function (e) {
+          if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? 'dark' : 'light');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>`;
+}
+
+/**
+ * Renders a static archive index page listing all available zip archives.
+ *
+ * @param {string[]} archivedDates  Sorted list of archived dates (YYYY-MM-DD)
+ * @returns {string}  HTML string
+ */
+export function renderArchiveIndexPage(archivedDates = []) {
+  const archiveItems = archivedDates
+    .slice()
+    .reverse()
+    .map((d) => {
+      const safe = escapeHtml(d);
+      return `<li><a href="./${safe}.zip">${safe}</a></li>`;
+    })
+    .join("\n        ");
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Report Archive &mdash; Daily CAP</title>
+  <link rel="stylesheet" href="../assets/report.css" />
+  <script>(function(){var s=localStorage.getItem('cap-preferred-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+</head>
+<body>
+  <header>
+    <div class="nav"><a href="../../index.html">Daily CAP</a> &rsaquo; Report Archive</div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+  </header>
+  <main>
+    <h1>Report Archive</h1>
+    <p>Reports older than 14 days are available as downloadable zip archives. Each archive contains the full HTML report, JSON data, and CSV findings for that date.</p>
+    ${archiveItems.length > 0 ? `<ul class="report-list">
+      ${archiveItems}
+    </ul>` : "<p>No archives are available yet. Archives will appear here once reports are older than 14 days.</p>"}
+    <p><a href="../../index.html"><span aria-hidden="true">&#8592;</span> Back to Daily CAP</a></p>
   </main>
   <footer>
     <p><a href="https://github.com/mgifford/daily-cap">GitHub</a></p>
