@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { fetchWithTimeout } from "../utils/fetch-with-timeout.js";
 
 function hashNumber(text) {
   const digest = createHash("sha256").update(text).digest("hex");
@@ -17,7 +18,7 @@ export async function runScanGov(target, mode) {
     };
   }
 
-  const response = await fetch(target.canonical_url, {
+  const response = await fetchWithTimeout(target.canonical_url, {
     method: "GET",
     redirect: "follow"
   });
