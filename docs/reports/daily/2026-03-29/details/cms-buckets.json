@@ -1,12 +1,507 @@
 [
   {
     "cms": "unknown",
-    "count": 7,
+    "count": 108,
     "pages": [
       {
-        "service_name": "My Service Canada Account",
+        "service_name": "Apply for a Social Insurance Number",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html"
+      },
+      {
+        "service_name": "Apply for a Social Insurance Number",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html"
+      },
+      {
+        "service_name": "Check my Service Canada Account",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html"
+      },
+      {
+        "service_name": "Check my Service Canada Account",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html"
+      },
+      {
+        "service_name": "Find your local Service Canada office",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html"
+      },
+      {
+        "service_name": "Find your local Service Canada office",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html"
+      },
+      {
+        "service_name": "Canada Border Wait Times",
+        "language": "en",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html"
+      },
+      {
+        "service_name": "Canada Border Wait Times",
+        "language": "fr",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html"
+      },
+      {
+        "service_name": "Environment and Climate Change Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/environment-climate-change.html"
+      },
+      {
+        "service_name": "Environment and Climate Change Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/environnement-changement-climatique.html"
+      },
+      {
+        "service_name": "Justice Laws Website",
+        "language": "en",
+        "canonical_url": "https://laws-lois.justice.gc.ca/"
+      },
+      {
+        "service_name": "Justice Laws Website",
+        "language": "fr",
+        "canonical_url": "https://laws-lois.justice.gc.ca/"
+      },
+      {
+        "service_name": "Government of Canada Social Media",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/social-media.html"
+      },
+      {
+        "service_name": "Government of Canada Social Media",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/medias-sociaux.html"
+      },
+      {
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html"
+      },
+      {
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html"
+      },
+      {
+        "service_name": "Health Infobase Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html"
+      },
+      {
+        "service_name": "Health Infobase Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html"
+      },
+      {
+        "service_name": "Discovery: defence",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/defence.html"
+      },
+      {
+        "service_name": "Discovery: policing",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/policing.html"
+      },
+      {
+        "service_name": "Discovery: canada-world",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/canada-world.html"
+      },
+      {
+        "service_name": "Discovery: finance",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/finance.html"
+      },
+      {
+        "service_name": "Discovery: national-security",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/national-security.html"
+      },
+      {
+        "service_name": "Discovery: indigenous-peoples",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/indigenous-peoples.html"
+      },
+      {
+        "service_name": "Discovery: veterans-military",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/veterans-military.html"
+      },
+      {
+        "service_name": "Discovery: youth",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/youth.html"
+      },
+      {
+        "service_name": "Discovery: veterans-military - canadian-armed-forces",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/veterans-military/canadian-armed-forces.html"
+      },
+      {
+        "service_name": "Discovery: veterans-military - health-support",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/veterans-military/health-support.html"
+      },
+      {
+        "service_name": "Discovery: veterans-military - pensions-benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/veterans-military/pensions-benefits.html"
+      },
+      {
+        "service_name": "Discovery: benefits - education",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/education.html"
+      },
+      {
+        "service_name": "Discovery: benefits - disability",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/disability.html"
+      },
+      {
+        "service_name": "Discovery: benefits - finder",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/finder.html"
+      },
+      {
+        "service_name": "Discovery: benefits - audience",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/audience.html"
+      },
+      {
+        "service_name": "Discovery: taxes - business-number",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/business-number.html"
+      },
+      {
+        "service_name": "Discovery: taxes - gsthst",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/gsthst.html"
+      },
+      {
+        "service_name": "Discovery: taxes - payments",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/payments.html"
+      },
+      {
+        "service_name": "Discovery: taxes - child-and-family-benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/child-and-family-benefits.html"
+      },
+      {
+        "service_name": "Discovery: taxes - savings-and-pension-plans",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/savings-and-pension-plans.html"
+      },
+      {
+        "service_name": "Discovery: taxes - excise-taxes-duties-and-levies",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/excise-taxes-duties-and-levies.html"
+      },
+      {
+        "service_name": "Discovery: taxes - charities",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/charities.html"
+      },
+      {
+        "service_name": "Discovery: taxes - international-non-residents",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/international-non-residents.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - services - application",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/services/application.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - check-processing-times",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/check-processing-times.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - check-application-status",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/check-application-status.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - visit-canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/visit-canada.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - work-canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/work-canada.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - study-canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/study-canada.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - new-immigrants",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/new-immigrants.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - canadian-citizenship",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/canadian-citizenship.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - enforcement-violations",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/enforcement-violations.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - passport",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/passport.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - services - canadian-passports",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/services/canadian-passports.html"
+      },
+      {
+        "service_name": "Discovery: travel - advisories",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/advisories.html"
+      },
+      {
+        "service_name": "Discovery: travel - canadian-passports",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/canadian-passports.html"
+      },
+      {
+        "service_name": "Discovery: travel - travel-insurance",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/travel-insurance.html"
+      },
+      {
+        "service_name": "Discovery: travel - children",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/children.html"
+      },
+      {
+        "service_name": "Discovery: travel - cruise",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/cruise.html"
+      },
+      {
+        "service_name": "Discovery: travel - air",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/air.html"
+      },
+      {
+        "service_name": "Discovery: travel - health-safety",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/health-safety.html"
+      },
+      {
+        "service_name": "Discovery: travel - travelling",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/travelling.html"
+      },
+      {
+        "service_name": "Discovery: travel - returning",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/returning.html"
+      },
+      {
+        "service_name": "Discovery: travel - visa",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/visa.html"
+      },
+      {
+        "service_name": "Discovery: jobs - opportunities",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/opportunities.html"
+      },
+      {
+        "service_name": "Discovery: jobs - training",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/training.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace - federal-labour-standards",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace - federal-labour-standards - work-hours",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/work-hours.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace - federal-labour-standards - leaves",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/leaves.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace - federal-labour-standards - termination",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/termination.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace - federal-labour-standards - equal-treatment",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/equal-treatment.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace - federal-labour-standards - pay",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/pay.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace - federal-labour-standards - vacations-holidays",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/vacations-holidays.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace - federal-labour-standards - filing-complaint",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/filing-complaint.html"
+      },
+      {
+        "service_name": "Discovery: health - drug-health-products",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/drug-health-products.html"
+      },
+      {
+        "service_name": "Discovery: health - food-nutrition",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/food-nutrition.html"
+      },
+      {
+        "service_name": "Discovery: health - publications",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/publications.html"
+      },
+      {
+        "service_name": "Discovery: health - vaccines-immunization",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/vaccines-immunization.html"
+      },
+      {
+        "service_name": "Discovery: health - diseases-conditions",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/diseases-conditions.html"
+      },
+      {
+        "service_name": "Discovery: health - healthy-living",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/healthy-living.html"
+      },
+      {
+        "service_name": "Discovery: health - aboriginal-health",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/aboriginal-health.html"
+      },
+      {
+        "service_name": "Discovery: health - health-risks-safety",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/health-risks-safety.html"
+      },
+      {
+        "service_name": "Discovery: health - mental-health-wellness",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/mental-health-wellness.html"
+      },
+      {
+        "service_name": "Discovery: health - system-services",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/system-services.html"
+      },
+      {
+        "service_name": "Discovery: business - start",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/business/start.html"
+      },
+      {
+        "service_name": "Discovery: business - grants",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/business/grants.html"
+      },
+      {
+        "service_name": "Discovery: business - taxes",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/business/taxes.html"
+      },
+      {
+        "service_name": "Discovery: business - hire",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/business/hire.html"
+      },
+      {
+        "service_name": "Discovery: business - trade",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/business/trade.html"
+      },
+      {
+        "service_name": "Personal income tax",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/income.html"
+      },
+      {
+        "service_name": "Personal income tax",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/impots/revenu.html"
+      },
+      {
+        "service_name": "Old Age Security and Supplement",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/oas.html"
+      },
+      {
+        "service_name": "Old Age Security and Supplement",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/srg.html"
+      },
+      {
+        "service_name": "Job search and benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/work.html"
+      },
+      {
+        "service_name": "Job search and benefits",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/travail.html"
+      },
+      {
+        "service_name": "Passport and travel",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel.html"
+      },
+      {
+        "service_name": "Passport and travel",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/voyages.html"
+      },
+      {
+        "service_name": "Student loans and grants",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/education-training/loans-grants.html"
+      },
+      {
+        "service_name": "Student loans and grants",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/education-formation/prets-bourses.html"
+      },
+      {
+        "service_name": "COVID-19 information",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/coronavirus-2019.html"
+      },
+      {
+        "service_name": "COVID-19 information",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/sante/coronavirus-2019.html"
       },
       {
         "service_name": "Immigration and citizenship",
@@ -14,40 +509,24 @@
         "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html"
       },
       {
-        "service_name": "Passport services",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html"
-      },
-      {
-        "service_name": "Weather office",
+        "service_name": "Immigration and citizenship",
         "language": "fr",
-        "canonical_url": "https://meteo.gc.ca/"
+        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html"
       },
       {
-        "service_name": "Health services",
+        "service_name": "Benefits and credits",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/public-health/services/health-services-benefits.html"
+        "canonical_url": "https://www.canada.ca/en/services/benefits.html"
       },
       {
-        "service_name": "Student aid",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/benefits/education/student-aid.html"
-      },
-      {
-        "service_name": "Border wait times",
+        "service_name": "Benefits and credits",
         "language": "fr",
-        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html"
-      }
-    ]
-  },
-  {
-    "cms": "php-custom",
-    "count": 5,
-    "pages": [
+        "canonical_url": "https://www.canada.ca/fr/services/prestations.html"
+      },
       {
-        "service_name": "Taxes",
+        "service_name": "Employment Insurance",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/revenue-agency.html"
+        "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html"
       },
       {
         "service_name": "Employment Insurance",
@@ -55,61 +534,14 @@
         "canonical_url": "https://www.canada.ca/fr/services/prestations/ae.html"
       },
       {
-        "service_name": "My Service Canada Account",
+        "service_name": "CPP and retirement",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html"
+        "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html"
       },
       {
-        "service_name": "Health services",
+        "service_name": "CPP and retirement",
         "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html"
-      },
-      {
-        "service_name": "Business and industry",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/entreprises.html"
-      }
-    ]
-  },
-  {
-    "cms": "drupal",
-    "count": 3,
-    "pages": [
-      {
-        "service_name": "Taxes",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/agence-revenu.html"
-      },
-      {
-        "service_name": "Passport services",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html"
-      },
-      {
-        "service_name": "Border wait times",
-        "language": "en",
-        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html"
-      }
-    ]
-  },
-  {
-    "cms": "wordpress",
-    "count": 3,
-    "pages": [
-      {
-        "service_name": "Employment Insurance",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html"
-      },
-      {
-        "service_name": "Immigration and citizenship",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html"
-      },
-      {
-        "service_name": "Business and industry",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/business.html"
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc.html"
       }
     ]
   },
@@ -118,14 +550,14 @@
     "count": 2,
     "pages": [
       {
-        "service_name": "Weather office",
+        "service_name": "Consumer Price Index",
         "language": "en",
-        "canonical_url": "https://weather.gc.ca/"
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html"
       },
       {
-        "service_name": "Student aid",
+        "service_name": "Consumer Price Index",
         "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html"
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html"
       }
     ]
   }
