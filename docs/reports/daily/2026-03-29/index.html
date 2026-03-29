@@ -14,17 +14,17 @@
   </header>
   <main>
     <h1>Daily CAP Report</h1>
-    <p>Date: 2026-03-29 | Mode: live</p>
+    <p>Date: 2026-03-29 | Mode: mock</p>
     <p><em>Daily CAP is an independent analytics project and is not a Government of Canada program.</em></p>
     <p><a href="./report.json">Download full report JSON</a></p>
 
     <section>
       <h2 id="overview">Overview <a href="#overview" class="anchor-link" aria-label="Link to section: Overview">#</a></h2>
       <div class="cards">
-        <div class="card"><strong>Total</strong><br/>110</div>
-        <div class="card"><strong>Succeeded</strong><br/>6</div>
-        <div class="card"><strong>Failed</strong><br/>104</div>
-        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>0</div>
+        <div class="card"><strong>Total</strong><br/>20</div>
+        <div class="card"><strong>Succeeded</strong><br/>20</div>
+        <div class="card"><strong>Failed</strong><br/>0</div>
+        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>17</div>
       </div>
     </section>
 
@@ -33,7 +33,7 @@
       <p><em>Automated trend signals only. Deltas indicate benchmark movement and are not direct evidence of compliance or user impact measurement.</em></p>
       <div class="cards">
         <div class="card"><strong>Previous Run</strong><br/>2026-03-28</div>
-        <div class="card"><strong>Regressions</strong><br/>0</div>
+        <div class="card"><strong>Regressions</strong><br/>1</div>
       </div>
 
       <h3>Metric Deltas</h3>
@@ -51,40 +51,40 @@
       <tr>
         <td>Mean Accessibility Score</td>
         <td>78</td>
-        <td>78</td>
-        <td>0</td>
+        <td>80.1</td>
+        <td>2.1</td>
         <td>no</td>
       </tr>
 
       <tr>
         <td>Accessibility Statement Coverage</td>
         <td>0</td>
-        <td>0</td>
-        <td>0</td>
+        <td>80</td>
+        <td>80</td>
         <td>no</td>
       </tr>
 
       <tr>
         <td>Average Absolute EN/FR Accessibility Gap</td>
         <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>no</td>
+        <td>17</td>
+        <td>17</td>
+        <td>yes</td>
       </tr>
 
       <tr>
         <td>Directional Affected Share</td>
         <td>110.36</td>
-        <td>110.36</td>
-        <td>0</td>
+        <td>32.2</td>
+        <td>-78.16</td>
         <td>no</td>
       </tr>
 
       <tr>
         <td>Scan Failure Rate</td>
         <td>94.55</td>
-        <td>94.55</td>
         <td>0</td>
+        <td>-94.55</td>
         <td>no</td>
       </tr></tbody>
       </table>
@@ -98,7 +98,12 @@
             <th scope="col">Severity</th>
           </tr>
         </thead>
-        <tbody><tr><td colspan="3">No regressions detected in configured thresholds.</td></tr></tbody>
+        <tbody>
+      <tr>
+        <td>Average Absolute EN/FR Accessibility Gap</td>
+        <td>17</td>
+        <td>high</td>
+      </tr></tbody>
       </table>
     </section>
 
@@ -122,9 +127,9 @@
         <text x="28" y="40" text-anchor="end" font-size="11">110</text>
       <line x1="36" y1="224" x2="824" y2="224" stroke="#7f9685" stroke-width="1.5" />
       <line x1="36" y1="36" x2="36" y2="224" stroke="#7f9685" stroke-width="1.5" />
-      <path d="M36,104.36363636363636 L233,104.36363636363636 L430,104.36363636363636 L627,104.36363636363636 L824,104.36363636363636" fill="none" stroke="#b5402d" stroke-width="3" />
-      <path d="M36,36 L233,36 L430,36 L627,36 L824,36" fill="none" stroke="#1d6b42" stroke-width="3" />
-      <path d="M36,224 L233,224 L430,224 L627,224 L824,224" fill="none" stroke="#235d8b" stroke-width="3" />
+      <path d="M36,104.36363636363636 L233,104.36363636363636 L430,104.36363636363636 L627,104.36363636363636 L824,224" fill="none" stroke="#b5402d" stroke-width="3" />
+      <path d="M36,36 L233,36 L430,36 L627,36 L824,217.16363636363636" fill="none" stroke="#1d6b42" stroke-width="3" />
+      <path d="M36,224 L233,224 L430,224 L627,224 L824,212.03636363636363" fill="none" stroke="#235d8b" stroke-width="3" />
       <text x="36" y="250" text-anchor="middle" font-size="11">03-25</text><text x="233" y="250" text-anchor="middle" font-size="11">03-26</text><text x="430" y="250" text-anchor="middle" font-size="11">03-27</text><text x="627" y="250" text-anchor="middle" font-size="11">03-28</text><text x="824" y="250" text-anchor="middle" font-size="11">03-29</text>
     </svg>
     <figcaption>Red = missing French counterparts, green = URLs missing accessibility statements, blue = paired pages with accessibility gap of 10 or more.</figcaption>
@@ -170,10 +175,10 @@
           </tr>
 <tr>
             <td>2026-03-29</td>
-            <td>70</td>
-            <td>110</td>
             <td>0</td>
-            <td>0</td>
+            <td>4</td>
+            <td>7</td>
+            <td>17</td>
           </tr></tbody>
       </table>
     </section>
@@ -182,9 +187,9 @@
       <h2 id="top-priority-issues">Top Priority Issues <a href="#top-priority-issues" class="anchor-link" aria-label="Link to section: Top Priority Issues">#</a></h2>
       <p><em>These issues are ranked using severity, traffic, service criticality, and persistence across days to highlight the most actionable government improvement priorities.</em></p>
       <div class="cards">
-        <div class="card"><strong>Total Issues</strong><br/>180</div>
-        <div class="card"><strong>Recurring Issues</strong><br/>180</div>
-        <div class="card"><strong>Highest Priority Score</strong><br/>124</div>
+        <div class="card"><strong>Total Issues</strong><br/>19</div>
+        <div class="card"><strong>Recurring Issues</strong><br/>0</div>
+        <div class="card"><strong>Highest Priority Score</strong><br/>126</div>
       </div>
       <p><a href="./details/priority-issues.html">Open full priority issues page</a> | <a href="./details/priority-issues.json">Download priority issues JSON</a></p>
       <table>
@@ -202,223 +207,212 @@
         </thead>
         <tbody>
       <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Check my Service Canada Account</td>
+        <td>high-bilingual-accessibility-gap</td>
+        <td>Immigration and citizenship</td>
+        <td>IRCC</td>
+        <td>240000</td>
+        <td>1</td>
+        <td>126</td>
+        <td>EN 61 vs FR 99 (38 point gap)</td>
+        <td><a href="https://www.canada.ca/en/services/immigration-citizenship.html">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>high-bilingual-accessibility-gap</td>
+        <td>My Service Canada Account</td>
         <td>ESDC</td>
         <td>170000</td>
-        <td>5</td>
-        <td>124</td>
-        <td>No accessibility statement detected for EN variant</td>
+        <td>1</td>
+        <td>126</td>
+        <td>EN 98 vs FR 61 (37 point gap)</td>
         <td><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Check my Service Canada Account</td>
+        <td>high-bilingual-accessibility-gap</td>
+        <td>Weather office</td>
+        <td>ECCC</td>
+        <td>260000</td>
+        <td>1</td>
+        <td>110</td>
+        <td>EN 69 vs FR 88 (19 point gap)</td>
+        <td><a href="https://weather.gc.ca/">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>high-bilingual-accessibility-gap</td>
+        <td>Student aid</td>
+        <td>ESDC</td>
+        <td>105000</td>
+        <td>1</td>
+        <td>106</td>
+        <td>EN 78 vs FR 95 (17 point gap)</td>
+        <td><a href="https://www.canada.ca/en/services/benefits/education/student-aid.html">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>high-bilingual-accessibility-gap</td>
+        <td>Taxes</td>
+        <td>CRA</td>
+        <td>220000</td>
+        <td>1</td>
+        <td>104</td>
+        <td>EN 91 vs FR 75 (16 point gap)</td>
+        <td><a href="https://www.canada.ca/en/revenue-agency.html">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>high-bilingual-accessibility-gap</td>
+        <td>Passport services</td>
+        <td>IRCC</td>
+        <td>160000</td>
+        <td>1</td>
+        <td>104</td>
+        <td>EN 82 vs FR 98 (16 point gap)</td>
+        <td><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>high-impact-low-accessibility</td>
+        <td>Immigration and citizenship</td>
+        <td>IRCC</td>
+        <td>240000</td>
+        <td>1</td>
+        <td>101</td>
+        <td>Accessibility score 61 on a high-demand page</td>
+        <td><a href="https://www.canada.ca/en/services/immigration-citizenship.html">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>high-impact-low-accessibility</td>
+        <td>My Service Canada Account</td>
         <td>ESDC</td>
         <td>170000</td>
-        <td>5</td>
-        <td>124</td>
-        <td>No accessibility statement detected for FR variant</td>
+        <td>1</td>
+        <td>101</td>
+        <td>Accessibility score 61 on a high-demand page</td>
         <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">Open</a></td>
       </tr>
 
       <tr>
         <td>missing-accessibility-statement</td>
-        <td>Job search and benefits</td>
-        <td>ESDC</td>
-        <td>420000</td>
-        <td>4</td>
-        <td>118</td>
+        <td>Immigration and citizenship</td>
+        <td>IRCC</td>
+        <td>240000</td>
+        <td>1</td>
+        <td>100</td>
         <td>No accessibility statement detected for EN variant</td>
-        <td><a href="https://www.canada.ca/en/services/work.html">Open</a></td>
+        <td><a href="https://www.canada.ca/en/services/immigration-citizenship.html">Open</a></td>
       </tr>
 
       <tr>
         <td>missing-accessibility-statement</td>
-        <td>Job search and benefits</td>
-        <td>ESDC</td>
-        <td>420000</td>
-        <td>4</td>
-        <td>118</td>
+        <td>Immigration and citizenship</td>
+        <td>IRCC</td>
+        <td>240000</td>
+        <td>1</td>
+        <td>100</td>
         <td>No accessibility statement detected for FR variant</td>
-        <td><a href="https://www.canada.ca/fr/services/travail.html">Open</a></td>
+        <td><a href="https://www.canada.ca/fr/services/immigration-citoyennete.html">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: taxes - payments</td>
-        <td>CRA</td>
-        <td>9000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/taxes/payments.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: immigration-citizenship - services - application</td>
-        <td>IRCC</td>
-        <td>9000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/immigration-citizenship/services/application.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: immigration-citizenship - check-processing-times</td>
-        <td>IRCC</td>
-        <td>9000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/immigration-citizenship/check-processing-times.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: immigration-citizenship - check-application-status</td>
-        <td>IRCC</td>
-        <td>9000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/immigration-citizenship/check-application-status.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: immigration-citizenship - new-immigrants</td>
-        <td>IRCC</td>
-        <td>9000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/immigration-citizenship/new-immigrants.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: jobs - workplace - federal-labour-standards - pay</td>
+        <td>missing-accessibility-statement</td>
+        <td>Employment Insurance</td>
         <td>ESDC</td>
-        <td>9000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/pay.html">Open</a></td>
+        <td>180000</td>
+        <td>1</td>
+        <td>100</td>
+        <td>No accessibility statement detected for EN variant</td>
+        <td><a href="https://www.canada.ca/en/services/benefits/ei.html">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: business - grants</td>
-        <td>Unknown institution</td>
-        <td>9000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/business/grants.html">Open</a></td>
+        <td>missing-accessibility-statement</td>
+        <td>My Service Canada Account</td>
+        <td>ESDC</td>
+        <td>170000</td>
+        <td>1</td>
+        <td>100</td>
+        <td>No accessibility statement detected for FR variant</td>
+        <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: defence</td>
-        <td>Unknown institution</td>
-        <td>5000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/defence.html">Open</a></td>
+        <td>high-bilingual-accessibility-gap</td>
+        <td>Employment Insurance</td>
+        <td>ESDC</td>
+        <td>180000</td>
+        <td>1</td>
+        <td>98</td>
+        <td>EN 90 vs FR 77 (13 point gap)</td>
+        <td><a href="https://www.canada.ca/en/services/benefits/ei.html">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: policing</td>
-        <td>Unknown institution</td>
-        <td>5000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/policing.html">Open</a></td>
+        <td>high-impact-low-accessibility</td>
+        <td>Border wait times</td>
+        <td>CBSA</td>
+        <td>94000</td>
+        <td>1</td>
+        <td>94</td>
+        <td>Accessibility score 60 on a high-demand page</td>
+        <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: canada-world</td>
-        <td>Unknown institution</td>
-        <td>5000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/canada-world.html">Open</a></td>
+        <td>high-impact-low-accessibility</td>
+        <td>Weather office</td>
+        <td>ECCC</td>
+        <td>260000</td>
+        <td>1</td>
+        <td>93</td>
+        <td>Accessibility score 69 on a high-demand page</td>
+        <td><a href="https://weather.gc.ca/">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: finance</td>
-        <td>Unknown institution</td>
-        <td>5000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/finance.html">Open</a></td>
+        <td>high-impact-low-accessibility</td>
+        <td>Taxes</td>
+        <td>CRA</td>
+        <td>220000</td>
+        <td>1</td>
+        <td>87</td>
+        <td>Accessibility score 75 on a high-demand page</td>
+        <td><a href="https://www.canada.ca/fr/agence-revenu.html">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: national-security</td>
-        <td>Unknown institution</td>
-        <td>5000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/national-security.html">Open</a></td>
+        <td>high-impact-low-accessibility</td>
+        <td>Border wait times</td>
+        <td>CBSA</td>
+        <td>94000</td>
+        <td>1</td>
+        <td>87</td>
+        <td>Accessibility score 67 on a high-demand page</td>
+        <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: indigenous-peoples</td>
-        <td>Unknown institution</td>
-        <td>5000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/indigenous-peoples.html">Open</a></td>
+        <td>high-impact-low-accessibility</td>
+        <td>Health services</td>
+        <td>PHAC</td>
+        <td>120000</td>
+        <td>1</td>
+        <td>86</td>
+        <td>Accessibility score 68 on a high-demand page</td>
+        <td><a href="https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html">Open</a></td>
       </tr>
 
       <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: veterans-military</td>
-        <td>Unknown institution</td>
-        <td>5000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/veterans-military.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: youth</td>
-        <td>Unknown institution</td>
-        <td>5000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/youth.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: veterans-military - canadian-armed-forces</td>
-        <td>Unknown institution</td>
-        <td>5000</td>
-        <td>5</td>
-        <td>117</td>
-        <td>French counterpart missing</td>
-        <td><a href="https://www.canada.ca/en/services/veterans-military/canadian-armed-forces.html">Open</a></td>
+        <td>high-impact-low-accessibility</td>
+        <td>Health services</td>
+        <td>PHAC</td>
+        <td>120000</td>
+        <td>1</td>
+        <td>85</td>
+        <td>Accessibility score 69 on a high-demand page</td>
+        <td><a href="https://www.canada.ca/en/public-health/services/health-services-benefits.html">Open</a></td>
       </tr></tbody>
       </table>
     </section>
@@ -439,206 +433,7 @@
             <th scope="col">Recommended Action</th>
           </tr>
         </thead>
-        <tbody>
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Check my Service Canada Account</td>
-        <td>ESDC</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Publish an accessibility statement with contact, support path, and freshness details.</td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Check my Service Canada Account</td>
-        <td>ESDC</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Publish an accessibility statement with contact, support path, and freshness details.</td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Job search and benefits</td>
-        <td>ESDC</td>
-        <td>2026-03-26</td>
-        <td>2026-03-29</td>
-        <td>4</td>
-        <td>Publish an accessibility statement with contact, support path, and freshness details.</td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Job search and benefits</td>
-        <td>ESDC</td>
-        <td>2026-03-26</td>
-        <td>2026-03-29</td>
-        <td>4</td>
-        <td>Publish an accessibility statement with contact, support path, and freshness details.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: taxes - payments</td>
-        <td>CRA</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: immigration-citizenship - services - application</td>
-        <td>IRCC</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: immigration-citizenship - check-processing-times</td>
-        <td>IRCC</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: immigration-citizenship - check-application-status</td>
-        <td>IRCC</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: immigration-citizenship - new-immigrants</td>
-        <td>IRCC</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: jobs - workplace - federal-labour-standards - pay</td>
-        <td>ESDC</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: business - grants</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: defence</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: policing</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: canada-world</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: finance</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: national-security</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: indigenous-peoples</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: veterans-military</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: youth</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-french-counterpart</td>
-        <td>Discovery: veterans-military - canadian-armed-forces</td>
-        <td>Unknown institution</td>
-        <td>2026-03-25</td>
-        <td>2026-03-29</td>
-        <td>5</td>
-        <td>Add or link the French counterpart for this service entry point.</td>
-      </tr></tbody>
+        <tbody><tr><td colspan="7">No recurring issues detected yet.</td></tr></tbody>
       </table>
     </section>
 
@@ -646,8 +441,8 @@
       <h2 id="institution-scorecards">Institution Scorecards <a href="#institution-scorecards" class="anchor-link" aria-label="Link to section: Institution Scorecards">#</a></h2>
       <p><em>Institution scorecards roll up current scan outcomes and priority issues so ownership and recurring problem clusters are easier to see.</em></p>
       <div class="cards">
-        <div class="card"><strong>Institutions</strong><br/>11</div>
-        <div class="card"><strong>With Priority Issues</strong><br/>11</div>
+        <div class="card"><strong>Institutions</strong><br/>7</div>
+        <div class="card"><strong>With Priority Issues</strong><br/>6</div>
       </div>
       <p><a href="./details/institution-scorecards.html">Open full institution scorecards page</a> | <a href="./details/institution-trends.html">Open institution trends page</a> | <a href="./details/institution-scorecards.json">Download institution scorecards JSON</a></p>
       <table>
@@ -666,123 +461,79 @@
         <tbody>
       <tr>
         <td><a href="./details/institutions/esdc.html">ESDC</a></td>
-        <td>34</td>
-        <td>-</td>
-        <td>16</td>
-        <td>34</td>
-        <td>50</td>
-        <td>124</td>
-        <td>missing-accessibility-statement</td>
-      </tr>
-
-      <tr>
-        <td><a href="./details/institutions/unknown-institution.html">Unknown institution</a></td>
-        <td>21</td>
-        <td>-</td>
-        <td>21</td>
-        <td>21</td>
-        <td>42</td>
-        <td>117</td>
-        <td>missing-french-counterpart</td>
+        <td>6</td>
+        <td>83.17</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+        <td>126</td>
+        <td>high-bilingual-accessibility-gap</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/ircc.html">IRCC</a></td>
-        <td>18</td>
-        <td>-</td>
-        <td>12</td>
-        <td>18</td>
-        <td>30</td>
-        <td>117</td>
-        <td>missing-french-counterpart</td>
-      </tr>
-
-      <tr>
-        <td><a href="./details/institutions/health-canada-phac.html">Health Canada/PHAC</a></td>
-        <td>12</td>
-        <td>-</td>
-        <td>12</td>
-        <td>12</td>
-        <td>24</td>
-        <td>117</td>
-        <td>missing-french-counterpart</td>
-      </tr>
-
-      <tr>
-        <td><a href="./details/institutions/cra.html">CRA</a></td>
-        <td>11</td>
-        <td>-</td>
-        <td>9</td>
-        <td>11</td>
-        <td>20</td>
-        <td>117</td>
-        <td>missing-french-counterpart</td>
-      </tr>
-
-      <tr>
-        <td><a href="./details/institutions/cbsa.html">CBSA</a></td>
-        <td>2</td>
-        <td>78</td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>116</td>
-        <td>missing-accessibility-statement</td>
-      </tr>
-
-      <tr>
-        <td><a href="./details/institutions/justice.html">Justice</a></td>
-        <td>2</td>
-        <td>78</td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>116</td>
-        <td>missing-accessibility-statement</td>
-      </tr>
-
-      <tr>
-        <td><a href="./details/institutions/statscan.html">StatsCan</a></td>
-        <td>2</td>
-        <td>78</td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>111</td>
-        <td>missing-accessibility-statement</td>
-      </tr>
-
-      <tr>
-        <td><a href="./details/institutions/phac.html">PHAC</a></td>
         <td>4</td>
-        <td>-</td>
+        <td>85</td>
         <td>0</td>
-        <td>4</td>
-        <td>4</td>
-        <td>108</td>
-        <td>missing-accessibility-statement</td>
+        <td>2</td>
+        <td>0</td>
+        <td>126</td>
+        <td>high-bilingual-accessibility-gap</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/eccc.html">ECCC</a></td>
         <td>2</td>
-        <td>-</td>
+        <td>78.5</td>
         <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>103</td>
-        <td>missing-accessibility-statement</td>
+        <td>0</td>
+        <td>0</td>
+        <td>110</td>
+        <td>high-bilingual-accessibility-gap</td>
       </tr>
 
       <tr>
-        <td><a href="./details/institutions/csps.html">CSPS</a></td>
+        <td><a href="./details/institutions/cra.html">CRA</a></td>
         <td>2</td>
-        <td>-</td>
+        <td>83</td>
         <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>104</td>
+        <td>high-bilingual-accessibility-gap</td>
+      </tr>
+
+      <tr>
+        <td><a href="./details/institutions/cbsa.html">CBSA</a></td>
         <td>2</td>
+        <td>63.5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>94</td>
+        <td>high-impact-low-accessibility</td>
+      </tr>
+
+      <tr>
+        <td><a href="./details/institutions/phac.html">PHAC</a></td>
         <td>2</td>
-        <td>103</td>
-        <td>missing-accessibility-statement</td>
+        <td>68.5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>86</td>
+        <td>high-impact-low-accessibility</td>
+      </tr>
+
+      <tr>
+        <td><a href="./details/institutions/ised.html">ISED</a></td>
+        <td>2</td>
+        <td>88</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>-</td>
+        <td>-</td>
       </tr></tbody>
       </table>
     </section>
@@ -791,10 +542,10 @@
       <h2 id="theme-contexts">Theme and Device Contexts <a href="#theme-contexts" class="anchor-link" aria-label="Link to section: Theme and Device Contexts">#</a></h2>
       <p><em>Context baseline is desktop light. Deltas are current context minus baseline.</em></p>
       <div class="cards">
-        <div class="card"><strong>Rows With Context Data</strong><br/>6</div>
+        <div class="card"><strong>Rows With Context Data</strong><br/>20</div>
         <div class="card"><strong>Baseline</strong><br/>desktop_light</div>
-        <div class="card"><strong>Mobile Dark Perf Delta</strong><br/>-9</div>
-        <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>-3</div>
+        <div class="card"><strong>Mobile Dark Perf Delta</strong><br/>-6.5</div>
+        <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>-4.75</div>
       </div>
 
       <figure>
@@ -808,22 +559,22 @@
 <line x1="48" y1="136" x2="712" y2="136" stroke="#d7e2d8" stroke-width="1" /><text x="42" y="140" text-anchor="end" font-size="11">50</text>
 <line x1="48" y1="83" x2="712" y2="83" stroke="#d7e2d8" stroke-width="1" /><text x="42" y="87" text-anchor="end" font-size="11">75</text>
 <line x1="48" y1="30" x2="712" y2="30" stroke="#d7e2d8" stroke-width="1" /><text x="42" y="34" text-anchor="end" font-size="11">100</text>
-      <rect x="56.0" y="57.9" width="36.0" height="184.1" fill="#235d8b" /><text x="74.0" y="54.9" text-anchor="middle" font-size="9">86.83</text>
-<rect x="94.0" y="76.6" width="36.0" height="165.4" fill="#1d6b42" /><text x="112.0" y="73.6" text-anchor="middle" font-size="9">78</text>
-<rect x="132.0" y="87.2" width="36.0" height="154.8" fill="#7b4f9e" /><text x="150.0" y="84.2" text-anchor="middle" font-size="9">73</text>
-<rect x="170.0" y="61.8" width="36.0" height="180.2" fill="#b5402d" /><text x="188.0" y="58.8" text-anchor="middle" font-size="9">85</text>
-<rect x="222.0" y="64.3" width="36.0" height="177.7" fill="#235d8b" /><text x="240.0" y="61.3" text-anchor="middle" font-size="9">83.83</text>
-<rect x="260.0" y="83.0" width="36.0" height="159.0" fill="#1d6b42" /><text x="278.0" y="80.0" text-anchor="middle" font-size="9">75</text>
-<rect x="298.0" y="87.2" width="36.0" height="154.8" fill="#7b4f9e" /><text x="316.0" y="84.2" text-anchor="middle" font-size="9">73</text>
-<rect x="336.0" y="61.8" width="36.0" height="180.2" fill="#b5402d" /><text x="354.0" y="58.8" text-anchor="middle" font-size="9">85</text>
-<rect x="388.0" y="69.9" width="36.0" height="172.1" fill="#235d8b" /><text x="406.0" y="66.9" text-anchor="middle" font-size="9">81.17</text>
-<rect x="426.0" y="76.6" width="36.0" height="165.4" fill="#1d6b42" /><text x="444.0" y="73.6" text-anchor="middle" font-size="9">78</text>
-<rect x="464.0" y="91.5" width="36.0" height="150.5" fill="#7b4f9e" /><text x="482.0" y="88.5" text-anchor="middle" font-size="9">71</text>
-<rect x="502.0" y="63.9" width="36.0" height="178.1" fill="#b5402d" /><text x="520.0" y="60.9" text-anchor="middle" font-size="9">84</text>
-<rect x="554.0" y="77.0" width="36.0" height="165.0" fill="#235d8b" /><text x="572.0" y="74.0" text-anchor="middle" font-size="9">77.83</text>
-<rect x="592.0" y="83.0" width="36.0" height="159.0" fill="#1d6b42" /><text x="610.0" y="80.0" text-anchor="middle" font-size="9">75</text>
-<rect x="630.0" y="91.5" width="36.0" height="150.5" fill="#7b4f9e" /><text x="648.0" y="88.5" text-anchor="middle" font-size="9">71</text>
-<rect x="668.0" y="63.9" width="36.0" height="178.1" fill="#b5402d" /><text x="686.0" y="60.9" text-anchor="middle" font-size="9">84</text>
+      <rect x="56.0" y="87.9" width="36.0" height="154.1" fill="#235d8b" /><text x="74.0" y="84.9" text-anchor="middle" font-size="9">72.7</text>
+<rect x="94.0" y="72.2" width="36.0" height="169.8" fill="#1d6b42" /><text x="112.0" y="69.2" text-anchor="middle" font-size="9">80.1</text>
+<rect x="132.0" y="86.3" width="36.0" height="155.7" fill="#7b4f9e" /><text x="150.0" y="83.3" text-anchor="middle" font-size="9">73.45</text>
+<rect x="170.0" y="80.3" width="36.0" height="161.7" fill="#b5402d" /><text x="188.0" y="77.3" text-anchor="middle" font-size="9">76.25</text>
+<rect x="222.0" y="93.8" width="36.0" height="148.2" fill="#235d8b" /><text x="240.0" y="90.8" text-anchor="middle" font-size="9">69.9</text>
+<rect x="260.0" y="93.1" width="36.0" height="148.9" fill="#1d6b42" /><text x="278.0" y="90.1" text-anchor="middle" font-size="9">70.25</text>
+<rect x="298.0" y="79.5" width="36.0" height="162.5" fill="#7b4f9e" /><text x="316.0" y="76.5" text-anchor="middle" font-size="9">76.65</text>
+<rect x="336.0" y="80.9" width="36.0" height="161.1" fill="#b5402d" /><text x="354.0" y="77.9" text-anchor="middle" font-size="9">76</text>
+<rect x="388.0" y="98.2" width="36.0" height="143.8" fill="#235d8b" /><text x="406.0" y="95.2" text-anchor="middle" font-size="9">67.85</text>
+<rect x="426.0" y="78.2" width="36.0" height="163.8" fill="#1d6b42" /><text x="444.0" y="75.2" text-anchor="middle" font-size="9">77.25</text>
+<rect x="464.0" y="86.7" width="36.0" height="155.3" fill="#7b4f9e" /><text x="482.0" y="83.7" text-anchor="middle" font-size="9">73.25</text>
+<rect x="502.0" y="69.3" width="36.0" height="172.7" fill="#b5402d" /><text x="520.0" y="66.3" text-anchor="middle" font-size="9">81.45</text>
+<rect x="554.0" y="101.7" width="36.0" height="140.3" fill="#235d8b" /><text x="572.0" y="98.7" text-anchor="middle" font-size="9">66.2</text>
+<rect x="592.0" y="82.3" width="36.0" height="159.7" fill="#1d6b42" /><text x="610.0" y="79.3" text-anchor="middle" font-size="9">75.35</text>
+<rect x="630.0" y="82.3" width="36.0" height="159.7" fill="#7b4f9e" /><text x="648.0" y="79.3" text-anchor="middle" font-size="9">75.35</text>
+<rect x="668.0" y="79.5" width="36.0" height="162.5" fill="#b5402d" /><text x="686.0" y="76.5" text-anchor="middle" font-size="9">76.65</text>
       <text x="131.0" y="260" text-anchor="middle" font-size="11">Desktop Light</text>
 <text x="297.0" y="260" text-anchor="middle" font-size="11">Desktop Dark</text>
 <text x="463.0" y="260" text-anchor="middle" font-size="11">Mobile Light</text>
@@ -850,34 +601,34 @@
         <tbody>
       <tr>
         <td>desktop_light</td>
-        <td>86.83</td>
-        <td>78</td>
-        <td>73</td>
-        <td>85</td>
+        <td>72.7</td>
+        <td>80.1</td>
+        <td>73.45</td>
+        <td>76.25</td>
       </tr>
 
       <tr>
         <td>desktop_dark</td>
-        <td>83.83</td>
-        <td>75</td>
-        <td>73</td>
-        <td>85</td>
+        <td>69.9</td>
+        <td>70.25</td>
+        <td>76.65</td>
+        <td>76</td>
       </tr>
 
       <tr>
         <td>mobile_light</td>
-        <td>81.17</td>
-        <td>78</td>
-        <td>71</td>
-        <td>84</td>
+        <td>67.85</td>
+        <td>77.25</td>
+        <td>73.25</td>
+        <td>81.45</td>
       </tr>
 
       <tr>
         <td>mobile_dark</td>
-        <td>77.83</td>
-        <td>75</td>
-        <td>71</td>
-        <td>84</td>
+        <td>66.2</td>
+        <td>75.35</td>
+        <td>75.35</td>
+        <td>76.65</td>
       </tr></tbody>
       </table>
 
@@ -903,40 +654,40 @@
 
       <tr>
         <td>desktop_dark</td>
-        <td>-3</td>
-        <td>-3</td>
-        <td>0</td>
-        <td>0</td>
+        <td>-2.8</td>
+        <td>-9.85</td>
+        <td>3.2</td>
+        <td>-0.25</td>
       </tr>
 
       <tr>
         <td>mobile_light</td>
-        <td>-5.66</td>
-        <td>0</td>
-        <td>-2</td>
-        <td>-1</td>
+        <td>-4.85</td>
+        <td>-2.85</td>
+        <td>-0.2</td>
+        <td>5.2</td>
       </tr>
 
       <tr>
         <td>mobile_dark</td>
-        <td>-9</td>
-        <td>-3</td>
-        <td>-2</td>
-        <td>-1</td>
+        <td>-6.5</td>
+        <td>-4.75</td>
+        <td>1.9</td>
+        <td>0.4</td>
       </tr></tbody>
       </table>
     </section>
 
     <section>
       <h2 id="bilingual-parity">Bilingual Parity <a href="#bilingual-parity" class="anchor-link" aria-label="Link to section: Bilingual Parity">#</a></h2>
-      <p><em>Average EN/FR accessibility gap is the mean absolute difference between paired EN and FR scores. A value of 0 means paired pages differ by that many points on average; it does not imply one language is always better.</em></p>
+      <p><em>Average EN/FR accessibility gap is the mean absolute difference between paired EN and FR scores. A value of 17 means paired pages differ by that many points on average; it does not imply one language is always better.</em></p>
       <div class="cards">
-        <div class="card"><strong>Candidate Pairs</strong><br/>90</div>
-        <div class="card"><strong>Complete Pairs</strong><br/>3</div>
-        <div class="card"><strong>Missing FR</strong><br/>70</div>
+        <div class="card"><strong>Candidate Pairs</strong><br/>10</div>
+        <div class="card"><strong>Complete Pairs</strong><br/>10</div>
+        <div class="card"><strong>Missing FR</strong><br/>0</div>
         <div class="card"><strong>Missing EN</strong><br/>0</div>
         <div class="card"><strong>Paired via Switcher</strong><br/>0</div>
-        <div class="card"><strong>Avg Perf Gap (EN/FR)</strong><br/>0.33</div>
+        <div class="card"><strong>Avg Perf Gap (EN/FR)</strong><br/>16</div>
       </div>
 
       <h3>Largest Accessibility Gaps</h3>
@@ -951,7 +702,69 @@
             <th scope="col">Pair Links</th>
           </tr>
         </thead>
-        <tbody><tr><td colspan="6">No complete EN/FR pairs with parity data in this run.</td></tr></tbody>
+        <tbody>
+      <tr>
+        <td>Immigration and citizenship</td>
+        <td>61 / 99</td>
+        <td>-38 (FR ↑)</td>
+        <td>57 / 71</td>
+        <td>-14</td>
+        <td><a href="https://www.canada.ca/en/services/immigration-citizenship.html">EN</a> | <a href="https://www.canada.ca/fr/services/immigration-citoyennete.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>My Service Canada Account</td>
+        <td>98 / 61</td>
+        <td>37 (EN ↑)</td>
+        <td>95 / 79</td>
+        <td>16</td>
+        <td><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Weather office</td>
+        <td>69 / 88</td>
+        <td>-19 (FR ↑)</td>
+        <td>67 / 55</td>
+        <td>12</td>
+        <td><a href="https://weather.gc.ca/">EN</a> | <a href="https://meteo.gc.ca/">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Student aid</td>
+        <td>78 / 95</td>
+        <td>-17 (FR ↑)</td>
+        <td>82 / 75</td>
+        <td>7</td>
+        <td><a href="https://www.canada.ca/en/services/benefits/education/student-aid.html">EN</a> | <a href="https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Taxes</td>
+        <td>91 / 75</td>
+        <td>16 (EN ↑)</td>
+        <td>72 / 95</td>
+        <td>-23</td>
+        <td><a href="https://www.canada.ca/en/revenue-agency.html">EN</a> | <a href="https://www.canada.ca/fr/agence-revenu.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Passport services</td>
+        <td>82 / 98</td>
+        <td>-16 (FR ↑)</td>
+        <td>94 / 63</td>
+        <td>31</td>
+        <td><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html">EN</a> | <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html">FR</a></td>
+      </tr>
+
+      <tr>
+        <td>Employment Insurance</td>
+        <td>90 / 77</td>
+        <td>13 (EN ↑)</td>
+        <td>55 / 48</td>
+        <td>7</td>
+        <td><a href="https://www.canada.ca/en/services/benefits/ei.html">EN</a> | <a href="https://www.canada.ca/fr/services/prestations/ae.html">FR</a></td>
+      </tr></tbody>
       </table>
 
       <h3>Missing Counterparts</h3>
@@ -965,102 +778,19 @@
             <th scope="col">Links</th>
           </tr>
         </thead>
-        <tbody>
-      <tr>
-        <td>Discovery: defence</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/defence.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: policing</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/policing.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: canada-world</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/canada-world.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: finance</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/finance.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: national-security</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/national-security.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: indigenous-peoples</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/indigenous-peoples.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: veterans-military</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/veterans-military.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: youth</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/youth.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: veterans-military - canadian-armed-forces</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/veterans-military/canadian-armed-forces.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: veterans-military - health-support</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/veterans-military/health-support.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: veterans-military - pensions-benefits</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/veterans-military/pensions-benefits.html">EN</a> | -</td>
-      </tr>
-
-      <tr>
-        <td>Discovery: benefits - education</td>
-        <td>yes</td>
-        <td>no</td>
-        <td><a href="https://www.canada.ca/en/services/benefits/education.html">EN</a> | -</td>
-      </tr></tbody>
+        <tbody><tr><td colspan="4">No missing language counterparts in this run.</td></tr></tbody>
       </table>
     </section>
 
     <section>
       <h2 id="accessibility-statements">Accessibility Statements <a href="#accessibility-statements" class="anchor-link" aria-label="Link to section: Accessibility Statements">#</a></h2>
       <div class="cards">
-        <div class="card"><strong>Detected</strong><br/>0/110</div>
-        <div class="card"><strong>Coverage</strong><br/>0%</div>
-        <div class="card"><strong>With Contact</strong><br/>-%</div>
-        <div class="card"><strong>With Compliance Status</strong><br/>-%</div>
-        <div class="card"><strong>With Support Path</strong><br/>-%</div>
-        <div class="card"><strong>With Freshness Marker</strong><br/>-%</div>
+        <div class="card"><strong>Detected</strong><br/>16/20</div>
+        <div class="card"><strong>Coverage</strong><br/>80%</div>
+        <div class="card"><strong>With Contact</strong><br/>87.5%</div>
+        <div class="card"><strong>With Compliance Status</strong><br/>56.25%</div>
+        <div class="card"><strong>With Support Path</strong><br/>87.5%</div>
+        <div class="card"><strong>With Freshness Marker</strong><br/>87.5%</div>
       </div>
 
       <h3>Missing Statement Examples</h3>
@@ -1076,76 +806,34 @@
         </thead>
         <tbody>
       <tr>
-        <td>Apply for a Social Insurance Number</td>
+        <td>Employment Insurance</td>
         <td>EN</td>
         <td>tier-1</td>
-        <td><a href="https://www.canada.ca/en/employment-social-development/services/sin.html">https://www.canada.ca/en/employment-social-development/services/sin.html</a></td>
+        <td><a href="https://www.canada.ca/en/services/benefits/ei.html">https://www.canada.ca/en/services/benefits/ei.html</a></td>
       </tr>
 
       <tr>
-        <td>Apply for a Social Insurance Number</td>
-        <td>FR</td>
-        <td>tier-1</td>
-        <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">https://www.canada.ca/fr/emploi-developpement-social/services/nas.html</a></td>
-      </tr>
-
-      <tr>
-        <td>Check my Service Canada Account</td>
-        <td>EN</td>
-        <td>tier-1</td>
-        <td><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">https://www.canada.ca/en/employment-social-development/services/my-account.html</a></td>
-      </tr>
-
-      <tr>
-        <td>Check my Service Canada Account</td>
+        <td>My Service Canada Account</td>
         <td>FR</td>
         <td>tier-1</td>
         <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html</a></td>
       </tr>
 
       <tr>
-        <td>Find your local Service Canada office</td>
-        <td>EN</td>
-        <td>tier-2</td>
-        <td><a href="https://www.canada.ca/en/employment-social-development/services/office.html">https://www.canada.ca/en/employment-social-development/services/office.html</a></td>
-      </tr>
-
-      <tr>
-        <td>Find your local Service Canada office</td>
-        <td>FR</td>
-        <td>tier-2</td>
-        <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html</a></td>
-      </tr>
-
-      <tr>
-        <td>Canada Border Wait Times</td>
+        <td>Immigration and citizenship</td>
         <td>EN</td>
         <td>tier-1</td>
-        <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html</a></td>
+        <td><a href="https://www.canada.ca/en/services/immigration-citizenship.html">https://www.canada.ca/en/services/immigration-citizenship.html</a></td>
       </tr>
 
       <tr>
-        <td>Canada Border Wait Times</td>
+        <td>Immigration and citizenship</td>
         <td>FR</td>
         <td>tier-1</td>
-        <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html</a></td>
-      </tr>
-
-      <tr>
-        <td>Environment and Climate Change Canada</td>
-        <td>EN</td>
-        <td>tier-2</td>
-        <td><a href="https://www.canada.ca/en/environment-climate-change.html">https://www.canada.ca/en/environment-climate-change.html</a></td>
-      </tr>
-
-      <tr>
-        <td>Environment and Climate Change Canada</td>
-        <td>FR</td>
-        <td>tier-2</td>
-        <td><a href="https://www.canada.ca/fr/environnement-changement-climatique.html">https://www.canada.ca/fr/environnement-changement-climatique.html</a></td>
+        <td><a href="https://www.canada.ca/fr/services/immigration-citoyennete.html">https://www.canada.ca/fr/services/immigration-citoyennete.html</a></td>
       </tr></tbody>
       </table>
-      <p>100 additional rows available in <a href="./details/missing-statements.json">missing-statements.json</a>.</p>
+      
 
       <h3>Detected Statement Examples</h3>
       <table>
@@ -1157,17 +845,86 @@
             <th scope="col">Detected Link</th>
           </tr>
         </thead>
-        <tbody><tr><td colspan="4">No detected accessibility statements in this run.</td></tr></tbody>
+        <tbody>
+      <tr>
+        <td>Taxes</td>
+        <td>EN</td>
+        <td><a href="https://www.canada.ca/en/revenue-agency.html">https://www.canada.ca/en/revenue-agency.html</a></td>
+        <td>Accessibility statement</td>
+      </tr>
+
+      <tr>
+        <td>Taxes</td>
+        <td>FR</td>
+        <td><a href="https://www.canada.ca/fr/agence-revenu.html">https://www.canada.ca/fr/agence-revenu.html</a></td>
+        <td>Declaration d&#39;accessibilite</td>
+      </tr>
+
+      <tr>
+        <td>Employment Insurance</td>
+        <td>FR</td>
+        <td><a href="https://www.canada.ca/fr/services/prestations/ae.html">https://www.canada.ca/fr/services/prestations/ae.html</a></td>
+        <td>Declaration d&#39;accessibilite</td>
+      </tr>
+
+      <tr>
+        <td>My Service Canada Account</td>
+        <td>EN</td>
+        <td><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">https://www.canada.ca/en/employment-social-development/services/my-account.html</a></td>
+        <td>Accessibility statement</td>
+      </tr>
+
+      <tr>
+        <td>Passport services</td>
+        <td>EN</td>
+        <td><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html">https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html</a></td>
+        <td>Accessibility statement</td>
+      </tr>
+
+      <tr>
+        <td>Passport services</td>
+        <td>FR</td>
+        <td><a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html">https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html</a></td>
+        <td>Declaration d&#39;accessibilite</td>
+      </tr>
+
+      <tr>
+        <td>Weather office</td>
+        <td>EN</td>
+        <td><a href="https://weather.gc.ca/">https://weather.gc.ca/</a></td>
+        <td>Accessibility statement</td>
+      </tr>
+
+      <tr>
+        <td>Weather office</td>
+        <td>FR</td>
+        <td><a href="https://meteo.gc.ca/">https://meteo.gc.ca/</a></td>
+        <td>Declaration d&#39;accessibilite</td>
+      </tr>
+
+      <tr>
+        <td>Health services</td>
+        <td>EN</td>
+        <td><a href="https://www.canada.ca/en/public-health/services/health-services-benefits.html">https://www.canada.ca/en/public-health/services/health-services-benefits.html</a></td>
+        <td>Accessibility statement</td>
+      </tr>
+
+      <tr>
+        <td>Health services</td>
+        <td>FR</td>
+        <td><a href="https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html">https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html</a></td>
+        <td>Declaration d&#39;accessibilite</td>
+      </tr></tbody>
       </table>
     </section>
 
     <section>
       <h2 id="platform-signals">Platform Signals <a href="#platform-signals" class="anchor-link" aria-label="Link to section: Platform Signals">#</a></h2>
       <div class="cards">
-        <div class="card"><strong>Known CMS</strong><br/>2/110</div>
-        <div class="card"><strong>Known CMS %</strong><br/>1.82%</div>
-        <div class="card"><strong>Known Design System</strong><br/>6</div>
-        <div class="card"><strong>Known Design System %</strong><br/>5.45%</div>
+        <div class="card"><strong>Known CMS</strong><br/>13/20</div>
+        <div class="card"><strong>Known CMS %</strong><br/>65%</div>
+        <div class="card"><strong>Known Design System</strong><br/>16</div>
+        <div class="card"><strong>Known Design System %</strong><br/>80%</div>
       </div>
 
       <h3>Top CMS Distribution</h3>
@@ -1183,35 +940,56 @@
         <tbody>
       <tr>
         <td>unknown</td>
-        <td>108</td>
-        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/en/employment-social-development/services/sin.html">EN Apply for a Social Insurance Number</a></li><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">FR Apply for a Social Insurance Number</a></li><li><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN Check my Service Canada Account</a></li><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR Check my Service Canada Account</a></li><li><a href="https://www.canada.ca/en/employment-social-development/services/office.html">EN Find your local Service Canada office</a></li><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">FR Find your local Service Canada office</a></li><li><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN Canada Border Wait Times</a></li><li><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR Canada Border Wait Times</a></li><li><a href="https://www.canada.ca/en/environment-climate-change.html">EN Environment and Climate Change Canada</a></li><li><a href="https://www.canada.ca/fr/environnement-changement-climatique.html">FR Environment and Climate Change Canada</a></li><li><a href="https://laws-lois.justice.gc.ca/">EN Justice Laws Website</a></li><li><a href="https://laws-lois.justice.gc.ca/">FR Justice Laws Website</a></li></ul></details></td>
+        <td>7</td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR My Service Canada Account</a></li><li><a href="https://www.canada.ca/en/services/immigration-citizenship.html">EN Immigration and citizenship</a></li><li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html">EN Passport services</a></li><li><a href="https://meteo.gc.ca/">FR Weather office</a></li><li><a href="https://www.canada.ca/en/public-health/services/health-services-benefits.html">EN Health services</a></li><li><a href="https://www.canada.ca/en/services/benefits/education/student-aid.html">EN Student aid</a></li><li><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR Border wait times</a></li></ul></details></td>
+      </tr>
+
+      <tr>
+        <td>php-custom</td>
+        <td>5</td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/en/revenue-agency.html">EN Taxes</a></li><li><a href="https://www.canada.ca/fr/services/prestations/ae.html">FR Employment Insurance</a></li><li><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN My Service Canada Account</a></li><li><a href="https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html">FR Health services</a></li><li><a href="https://www.canada.ca/fr/services/entreprises.html">FR Business and industry</a></li></ul></details></td>
+      </tr>
+
+      <tr>
+        <td>drupal</td>
+        <td>3</td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/fr/agence-revenu.html">FR Taxes</a></li><li><a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html">FR Passport services</a></li><li><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN Border wait times</a></li></ul></details></td>
+      </tr>
+
+      <tr>
+        <td>wordpress</td>
+        <td>3</td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/en/services/benefits/ei.html">EN Employment Insurance</a></li><li><a href="https://www.canada.ca/fr/services/immigration-citoyennete.html">FR Immigration and citizenship</a></li><li><a href="https://www.canada.ca/en/services/business.html">EN Business and industry</a></li></ul></details></td>
       </tr>
 
       <tr>
         <td>aem</td>
         <td>2</td>
-        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html">EN Consumer Price Index</a></li><li><a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html">FR Consumer Price Index</a></li></ul></details></td>
+        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://weather.gc.ca/">EN Weather office</a></li><li><a href="https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html">FR Student aid</a></li></ul></details></td>
       </tr></tbody>
       </table>
 
       <details>
         <summary>Show CMS URL References</summary>
-        <p><strong>unknown</strong>: <a href="https://www.canada.ca/en/employment-social-development/services/sin.html">EN Apply for a Social Insurance Number</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">FR Apply for a Social Insurance Number</a> | <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN Check my Service Canada Account</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR Check my Service Canada Account</a> | <a href="https://www.canada.ca/en/employment-social-development/services/office.html">EN Find your local Service Canada office</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">FR Find your local Service Canada office</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN Canada Border Wait Times</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR Canada Border Wait Times</a> | <a href="https://www.canada.ca/en/environment-climate-change.html">EN Environment and Climate Change Canada</a> | <a href="https://www.canada.ca/fr/environnement-changement-climatique.html">FR Environment and Climate Change Canada</a></p>
-<p><strong>aem</strong>: <a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html">EN Consumer Price Index</a> | <a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html">FR Consumer Price Index</a></p>
+        <p><strong>unknown</strong>: <a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR My Service Canada Account</a> | <a href="https://www.canada.ca/en/services/immigration-citizenship.html">EN Immigration and citizenship</a> | <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html">EN Passport services</a> | <a href="https://meteo.gc.ca/">FR Weather office</a> | <a href="https://www.canada.ca/en/public-health/services/health-services-benefits.html">EN Health services</a> | <a href="https://www.canada.ca/en/services/benefits/education/student-aid.html">EN Student aid</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR Border wait times</a></p>
+<p><strong>php-custom</strong>: <a href="https://www.canada.ca/en/revenue-agency.html">EN Taxes</a> | <a href="https://www.canada.ca/fr/services/prestations/ae.html">FR Employment Insurance</a> | <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN My Service Canada Account</a> | <a href="https://www.canada.ca/fr/sante-publique/services/services-prestations-sante.html">FR Health services</a> | <a href="https://www.canada.ca/fr/services/entreprises.html">FR Business and industry</a></p>
+<p><strong>drupal</strong>: <a href="https://www.canada.ca/fr/agence-revenu.html">FR Taxes</a> | <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html">FR Passport services</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN Border wait times</a></p>
+<p><strong>wordpress</strong>: <a href="https://www.canada.ca/en/services/benefits/ei.html">EN Employment Insurance</a> | <a href="https://www.canada.ca/fr/services/immigration-citoyennete.html">FR Immigration and citizenship</a> | <a href="https://www.canada.ca/en/services/business.html">EN Business and industry</a></p>
+<p><strong>aem</strong>: <a href="https://weather.gc.ca/">EN Weather office</a> | <a href="https://www.canada.ca/fr/services/prestations/education/aide-etudiants.html">FR Student aid</a></p>
       </details>
     </section>
 
     <section>
       <h2 id="cohort-quality">Cohort Quality and Provenance <a href="#cohort-quality" class="anchor-link" aria-label="Link to section: Cohort Quality and Provenance">#</a></h2>
       <div class="cards">
-        <div class="card"><strong>Avg Source Confidence</strong><br/>0.67</div>
-        <div class="card"><strong>Multi-Source URLs</strong><br/>14</div>
-        <div class="card"><strong>Multi-Source Share</strong><br/>12.73%</div>
-        <div class="card"><strong>Discovered-Only Share</strong><br/>63.64%</div>
-        <div class="card"><strong>With Recent Signal</strong><br/>0%</div>
+        <div class="card"><strong>Avg Source Confidence</strong><br/>0.89</div>
+        <div class="card"><strong>Multi-Source URLs</strong><br/>0</div>
+        <div class="card"><strong>Multi-Source Share</strong><br/>0%</div>
+        <div class="card"><strong>Discovered-Only Share</strong><br/>0%</div>
+        <div class="card"><strong>With Recent Signal</strong><br/>40%</div>
         <div class="card"><strong>With Traffic Data</strong><br/>100%</div>
       </div>
-      <p><strong>Warnings:</strong> discovered-only share is above 55%; consider broadening high-confidence sources</p>
+      <p><em>No cohort quality warnings triggered by current thresholds.</em></p>
 
       <h3>Source Lineage Distribution</h3>
       <table>
@@ -1223,18 +1001,13 @@
         </thead>
         <tbody>
       <tr>
-        <td>discovered</td>
-        <td>70</td>
+        <td>recent</td>
+        <td>8</td>
       </tr>
 
       <tr>
         <td>curated</td>
-        <td>20</td>
-      </tr>
-
-      <tr>
-        <td>discovered,top-task</td>
-        <td>14</td>
+        <td>6</td>
       </tr>
 
       <tr>
@@ -1257,7 +1030,7 @@
         </thead>
         <tbody>
       <tr>
-        <td>Apply for a Social Insurance Number</td>
+        <td>Taxes</td>
         <td>EN</td>
         <td>curated</td>
         <td>1</td>
@@ -1266,7 +1039,7 @@
       </tr>
 
       <tr>
-        <td>Apply for a Social Insurance Number</td>
+        <td>Taxes</td>
         <td>FR</td>
         <td>curated</td>
         <td>1</td>
@@ -1275,7 +1048,25 @@
       </tr>
 
       <tr>
-        <td>Check my Service Canada Account</td>
+        <td>Employment Insurance</td>
+        <td>EN</td>
+        <td>top-task</td>
+        <td>0.9</td>
+        <td>high</td>
+        <td>not-recent</td>
+      </tr>
+
+      <tr>
+        <td>Employment Insurance</td>
+        <td>FR</td>
+        <td>top-task</td>
+        <td>0.9</td>
+        <td>high</td>
+        <td>not-recent</td>
+      </tr>
+
+      <tr>
+        <td>My Service Canada Account</td>
         <td>EN</td>
         <td>curated</td>
         <td>1</td>
@@ -1284,7 +1075,7 @@
       </tr>
 
       <tr>
-        <td>Check my Service Canada Account</td>
+        <td>My Service Canada Account</td>
         <td>FR</td>
         <td>curated</td>
         <td>1</td>
@@ -1293,55 +1084,37 @@
       </tr>
 
       <tr>
-        <td>Find your local Service Canada office</td>
+        <td>Immigration and citizenship</td>
         <td>EN</td>
-        <td>curated</td>
-        <td>1</td>
-        <td>high</td>
-        <td>not-recent</td>
+        <td>recent</td>
+        <td>0.8</td>
+        <td>medium</td>
+        <td>recent-activity</td>
       </tr>
 
       <tr>
-        <td>Find your local Service Canada office</td>
+        <td>Immigration and citizenship</td>
         <td>FR</td>
-        <td>curated</td>
-        <td>1</td>
-        <td>high</td>
-        <td>not-recent</td>
+        <td>recent</td>
+        <td>0.8</td>
+        <td>medium</td>
+        <td>recent-activity</td>
       </tr>
 
       <tr>
-        <td>Canada Border Wait Times</td>
+        <td>Passport services</td>
         <td>EN</td>
-        <td>curated</td>
-        <td>1</td>
+        <td>top-task</td>
+        <td>0.9</td>
         <td>high</td>
         <td>not-recent</td>
       </tr>
 
       <tr>
-        <td>Canada Border Wait Times</td>
+        <td>Passport services</td>
         <td>FR</td>
-        <td>curated</td>
-        <td>1</td>
-        <td>high</td>
-        <td>not-recent</td>
-      </tr>
-
-      <tr>
-        <td>Environment and Climate Change Canada</td>
-        <td>EN</td>
-        <td>curated</td>
-        <td>1</td>
-        <td>high</td>
-        <td>not-recent</td>
-      </tr>
-
-      <tr>
-        <td>Environment and Climate Change Canada</td>
-        <td>FR</td>
-        <td>curated</td>
-        <td>1</td>
+        <td>top-task</td>
+        <td>0.9</td>
         <td>high</td>
         <td>not-recent</td>
       </tr></tbody>
@@ -1353,9 +1126,9 @@
       <p><em>Directional estimate only. This combines automated quality signals with traffic volume and does not represent measured user harm or legal compliance status.</em></p>
       <p>Formula: directional affected load = page load count x blended severity weight / 100 x statement multiplier. Statement multiplier is higher when no accessibility statement is detected.</p>
       <div class="cards">
-        <div class="card"><strong>Total Load</strong><br/>7368000</div>
-        <div class="card"><strong>Directional Affected Load</strong><br/>8131282</div>
-        <div class="card"><strong>Affected Share</strong><br/>110.36%</div>
+        <div class="card"><strong>Total Load</strong><br/>3294000</div>
+        <div class="card"><strong>Directional Affected Load</strong><br/>1060510</div>
+        <div class="card"><strong>Affected Share</strong><br/>32.2%</div>
       </div>
 
       <h3>Top Directional Impact URLs</h3>
@@ -1371,83 +1144,83 @@
         </thead>
         <tbody>
       <tr>
-        <td>Personal income tax</td>
+        <td>Immigration and citizenship</td>
         <td>EN</td>
-        <td>460000</td>
-        <td>100</td>
-        <td>529000</td>
+        <td>240000</td>
+        <td>50.5</td>
+        <td>139380</td>
       </tr>
 
       <tr>
-        <td>Personal income tax</td>
-        <td>FR</td>
-        <td>460000</td>
-        <td>100</td>
-        <td>529000</td>
-      </tr>
-
-      <tr>
-        <td>Job search and benefits</td>
+        <td>Weather office</td>
         <td>EN</td>
-        <td>420000</td>
-        <td>100</td>
-        <td>483000</td>
+        <td>260000</td>
+        <td>39.5</td>
+        <td>102700</td>
       </tr>
 
       <tr>
-        <td>Job search and benefits</td>
+        <td>My Service Canada Account</td>
         <td>FR</td>
-        <td>420000</td>
-        <td>100</td>
-        <td>483000</td>
+        <td>170000</td>
+        <td>51</td>
+        <td>99705</td>
       </tr>
 
       <tr>
-        <td>Passport and travel</td>
+        <td>Taxes</td>
+        <td>FR</td>
+        <td>220000</td>
+        <td>45</td>
+        <td>99000</td>
+      </tr>
+
+      <tr>
+        <td>Weather office</td>
+        <td>FR</td>
+        <td>260000</td>
+        <td>26</td>
+        <td>67600</td>
+      </tr>
+
+      <tr>
+        <td>Taxes</td>
         <td>EN</td>
-        <td>380000</td>
-        <td>100</td>
-        <td>437000</td>
+        <td>220000</td>
+        <td>27</td>
+        <td>59400</td>
       </tr>
 
       <tr>
-        <td>Passport and travel</td>
+        <td>Health services</td>
         <td>FR</td>
-        <td>380000</td>
-        <td>100</td>
-        <td>437000</td>
+        <td>120000</td>
+        <td>46</td>
+        <td>55200</td>
       </tr>
 
       <tr>
-        <td>Student loans and grants</td>
+        <td>Border wait times</td>
+        <td>FR</td>
+        <td>94000</td>
+        <td>58</td>
+        <td>54520</td>
+      </tr>
+
+      <tr>
+        <td>Employment Insurance</td>
+        <td>FR</td>
+        <td>180000</td>
+        <td>29.5</td>
+        <td>53100</td>
+      </tr>
+
+      <tr>
+        <td>Health services</td>
         <td>EN</td>
-        <td>340000</td>
-        <td>100</td>
-        <td>391000</td>
-      </tr>
-
-      <tr>
-        <td>Student loans and grants</td>
-        <td>FR</td>
-        <td>340000</td>
-        <td>100</td>
-        <td>391000</td>
-      </tr>
-
-      <tr>
-        <td>COVID-19 information</td>
-        <td>EN</td>
-        <td>300000</td>
-        <td>100</td>
-        <td>345000</td>
-      </tr>
-
-      <tr>
-        <td>COVID-19 information</td>
-        <td>FR</td>
-        <td>300000</td>
-        <td>100</td>
-        <td>345000</td>
+        <td>120000</td>
+        <td>42</td>
+        <td>50400</td>
       </tr></tbody>
       </table>
 
@@ -1465,24 +1238,24 @@
         <tbody>
           <tr>
             <td>tier-1</td>
-            <td>14</td>
-            <td>1920000</td>
-            <td>1928872</td>
-            <td>23.72</td>
+            <td>20</td>
+            <td>3294000</td>
+            <td>1060510</td>
+            <td>100</td>
           </tr>
 <tr>
             <td>tier-2</td>
-            <td>45</td>
-            <td>4603000</td>
-            <td>5230660</td>
-            <td>64.33</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
           </tr>
 <tr>
             <td>tier-3</td>
-            <td>51</td>
-            <td>845000</td>
-            <td>971750</td>
-            <td>11.95</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
           </tr>
         </tbody>
       </table>
@@ -1491,10 +1264,10 @@
     <section>
       <h2 id="benchmark-summary">Benchmark Summary <a href="#benchmark-summary" class="anchor-link" aria-label="Link to section: Benchmark Summary">#</a></h2>
       <div class="cards">
-        <div class="card"><strong>Performance</strong><br/>86.83</div>
-        <div class="card"><strong>Accessibility</strong><br/>78</div>
-        <div class="card"><strong>Best Practices</strong><br/>73</div>
-        <div class="card"><strong>SEO</strong><br/>85</div>
+        <div class="card"><strong>Performance</strong><br/>72.7</div>
+        <div class="card"><strong>Accessibility</strong><br/>80.1</div>
+        <div class="card"><strong>Best Practices</strong><br/>73.45</div>
+        <div class="card"><strong>SEO</strong><br/>76.25</div>
       </div>
     </section>
 
@@ -1518,162 +1291,162 @@
         </thead>
         <tbody>
       <tr>
-        <td>Apply for a Social Insurance Number</td>
-        <td><a href="https://www.canada.ca/en/employment-social-development/services/sin.html">https://www.canada.ca/en/employment-social-development/services/sin.html</a></td>
+        <td>Taxes</td>
+        <td><a href="https://www.canada.ca/en/revenue-agency.html">https://www.canada.ca/en/revenue-agency.html</a></td>
         <td>EN</td>
-        <td>failed</td>
-        <td>no</td>
-        <td>unknown</td>
-        <td>unknown</td>
-        <td>45000</td>
-        <td>-</td>
-        <td>-</td>
+        <td>success</td>
+        <td>yes</td>
+        <td>php-custom</td>
+        <td>bootstrap-like</td>
+        <td>220000</td>
+        <td>72</td>
+        <td>91</td>
       </tr>
 
       <tr>
-        <td>Apply for a Social Insurance Number</td>
-        <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">https://www.canada.ca/fr/emploi-developpement-social/services/nas.html</a></td>
+        <td>Taxes</td>
+        <td><a href="https://www.canada.ca/fr/agence-revenu.html">https://www.canada.ca/fr/agence-revenu.html</a></td>
         <td>FR</td>
-        <td>failed</td>
-        <td>no</td>
-        <td>unknown</td>
-        <td>unknown</td>
-        <td>45000</td>
-        <td>-</td>
-        <td>-</td>
+        <td>success</td>
+        <td>yes</td>
+        <td>drupal</td>
+        <td>gcds</td>
+        <td>220000</td>
+        <td>95</td>
+        <td>75</td>
       </tr>
 
       <tr>
-        <td>Check my Service Canada Account</td>
+        <td>Employment Insurance</td>
+        <td><a href="https://www.canada.ca/en/services/benefits/ei.html">https://www.canada.ca/en/services/benefits/ei.html</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>no</td>
+        <td>wordpress</td>
+        <td>bootstrap-like</td>
+        <td>180000</td>
+        <td>55</td>
+        <td>90</td>
+      </tr>
+
+      <tr>
+        <td>Employment Insurance</td>
+        <td><a href="https://www.canada.ca/fr/services/prestations/ae.html">https://www.canada.ca/fr/services/prestations/ae.html</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>yes</td>
+        <td>php-custom</td>
+        <td>bootstrap-like</td>
+        <td>180000</td>
+        <td>48</td>
+        <td>77</td>
+      </tr>
+
+      <tr>
+        <td>My Service Canada Account</td>
         <td><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">https://www.canada.ca/en/employment-social-development/services/my-account.html</a></td>
         <td>EN</td>
-        <td>failed</td>
-        <td>no</td>
-        <td>unknown</td>
-        <td>unknown</td>
+        <td>success</td>
+        <td>yes</td>
+        <td>php-custom</td>
+        <td>bootstrap-like</td>
         <td>170000</td>
-        <td>-</td>
-        <td>-</td>
+        <td>95</td>
+        <td>98</td>
       </tr>
 
       <tr>
-        <td>Check my Service Canada Account</td>
+        <td>My Service Canada Account</td>
         <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html</a></td>
         <td>FR</td>
-        <td>failed</td>
+        <td>success</td>
         <td>no</td>
         <td>unknown</td>
-        <td>unknown</td>
+        <td>gcds</td>
         <td>170000</td>
-        <td>-</td>
-        <td>-</td>
+        <td>79</td>
+        <td>61</td>
       </tr>
 
       <tr>
-        <td>Find your local Service Canada office</td>
-        <td><a href="https://www.canada.ca/en/employment-social-development/services/office.html">https://www.canada.ca/en/employment-social-development/services/office.html</a></td>
-        <td>EN</td>
-        <td>failed</td>
-        <td>no</td>
-        <td>unknown</td>
-        <td>unknown</td>
-        <td>35000</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-
-      <tr>
-        <td>Find your local Service Canada office</td>
-        <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html</a></td>
-        <td>FR</td>
-        <td>failed</td>
-        <td>no</td>
-        <td>unknown</td>
-        <td>unknown</td>
-        <td>35000</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-
-      <tr>
-        <td>Canada Border Wait Times</td>
-        <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html</a></td>
+        <td>Immigration and citizenship</td>
+        <td><a href="https://www.canada.ca/en/services/immigration-citizenship.html">https://www.canada.ca/en/services/immigration-citizenship.html</a></td>
         <td>EN</td>
         <td>success</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
-        <td>94000</td>
-        <td>92</td>
-        <td>78</td>
+        <td>unknown</td>
+        <td>240000</td>
+        <td>57</td>
+        <td>61</td>
       </tr>
 
       <tr>
-        <td>Canada Border Wait Times</td>
-        <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html</a></td>
+        <td>Immigration and citizenship</td>
+        <td><a href="https://www.canada.ca/fr/services/immigration-citoyennete.html">https://www.canada.ca/fr/services/immigration-citoyennete.html</a></td>
         <td>FR</td>
         <td>success</td>
         <td>no</td>
-        <td>unknown</td>
+        <td>wordpress</td>
         <td>gcweb-wet</td>
-        <td>94000</td>
-        <td>92</td>
-        <td>78</td>
+        <td>240000</td>
+        <td>71</td>
+        <td>99</td>
       </tr>
 
       <tr>
-        <td>Environment and Climate Change Canada</td>
-        <td><a href="https://www.canada.ca/en/environment-climate-change.html">https://www.canada.ca/en/environment-climate-change.html</a></td>
-        <td>EN</td>
-        <td>failed</td>
-        <td>no</td>
-        <td>unknown</td>
-        <td>unknown</td>
-        <td>52000</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-
-      <tr>
-        <td>Environment and Climate Change Canada</td>
-        <td><a href="https://www.canada.ca/fr/environnement-changement-climatique.html">https://www.canada.ca/fr/environnement-changement-climatique.html</a></td>
-        <td>FR</td>
-        <td>failed</td>
-        <td>no</td>
-        <td>unknown</td>
-        <td>unknown</td>
-        <td>52000</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-
-      <tr>
-        <td>Justice Laws Website</td>
-        <td><a href="https://laws-lois.justice.gc.ca/">https://laws-lois.justice.gc.ca/</a></td>
+        <td>Passport services</td>
+        <td><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html">https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html</a></td>
         <td>EN</td>
         <td>success</td>
-        <td>no</td>
+        <td>yes</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
-        <td>88000</td>
-        <td>93</td>
-        <td>78</td>
+        <td>gcds</td>
+        <td>160000</td>
+        <td>94</td>
+        <td>82</td>
       </tr>
 
       <tr>
-        <td>Justice Laws Website</td>
-        <td><a href="https://laws-lois.justice.gc.ca/">https://laws-lois.justice.gc.ca/</a></td>
+        <td>Passport services</td>
+        <td><a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html">https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html</a></td>
         <td>FR</td>
         <td>success</td>
-        <td>no</td>
+        <td>yes</td>
+        <td>drupal</td>
+        <td>gcds</td>
+        <td>160000</td>
+        <td>63</td>
+        <td>98</td>
+      </tr>
+
+      <tr>
+        <td>Weather office</td>
+        <td><a href="https://weather.gc.ca/">https://weather.gc.ca/</a></td>
+        <td>EN</td>
+        <td>success</td>
+        <td>yes</td>
+        <td>aem</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
-        <td>88000</td>
-        <td>92</td>
-        <td>78</td>
+        <td>260000</td>
+        <td>67</td>
+        <td>69</td>
+      </tr>
+
+      <tr>
+        <td>Weather office</td>
+        <td><a href="https://meteo.gc.ca/">https://meteo.gc.ca/</a></td>
+        <td>FR</td>
+        <td>success</td>
+        <td>yes</td>
+        <td>unknown</td>
+        <td>unknown</td>
+        <td>260000</td>
+        <td>55</td>
+        <td>88</td>
       </tr></tbody>
       </table>
-      <p>98 additional rows available in <a href="./report.json">report.json</a>.</p>
+      <p>8 additional rows available in <a href="./report.json">report.json</a>.</p>
     </section>
   </main>
   <script>

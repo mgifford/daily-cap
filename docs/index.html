@@ -4,73 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daily CAP</title>
-  <style>
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      margin: 2rem auto;
-      max-width: 900px;
-      padding: 0 1rem;
-      background: #f8faf8;
-      color: #0d1b12;
-    }
-    h1 { letter-spacing: 0.01em; }
-    .card {
-      background: white;
-      border: 1px solid #d7e2d8;
-      border-radius: 0.6rem;
-      padding: 1.5rem;
-      margin: 1rem 0;
-    }
-    a { color: #1d6b42; }
-    code { background: #edf4ee; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-family: monospace; }
-  </style>
+  <link rel="stylesheet" href="./reports/assets/report.css" />
+  <script>(function(){var s=localStorage.getItem('cap-preferred-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
 </head>
 <body>
   <header>
-    <h1>Daily CAP</h1>
-    <p><strong>Canadian Analytics Project</strong></p>
-    <p><em>An independent daily quality benchmarking pipeline for Canadian federal digital service entry points. This is not a Government of Canada program.</em></p>
+    <div class="nav"><a href="https://github.com/mgifford/daily-cap">GitHub</a></div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
   </header>
-
   <main>
-    <section class="card">
-      <h2>Latest Report</h2>
-      <p>Daily reports are published at <code>reports/daily/YYYY-MM-DD/</code></p>
-      <p><a href="./reports/index.html">View Reports Dashboard →</a></p>
+    <h1>Daily CAP</h1>
+    <p><strong>Canadian Analytics Project</strong> &mdash; An independent daily quality benchmarking pipeline for Canadian federal digital service entry points.</p>
+    <p><em>This is not a Government of Canada program.</em></p>
+
+    <section>
+      <h2 id="latest-scores">Latest Scores (2026-03-29) <a href="#latest-scores" class="anchor-link" aria-label="Link to section: Latest Scores (2026-03-29)">#</a></h2>
+      <div class="cards">
+        <div class="card"><strong>Performance</strong><br/>72.7</div>
+        <div class="card"><strong>Accessibility</strong><br/>80.1</div>
+        <div class="card"><strong>Best Practices</strong><br/>73.45</div>
+        <div class="card"><strong>SEO</strong><br/>76.25</div>
+      </div>
+      <p><a href="./reports/daily/2026-03-29/index.html">Open latest report &#8594;</a></p>
     </section>
 
-    <section class="card">
-      <h2>About</h2>
-      <p>Daily CAP benchmarks the quality and accessibility of Canadian government websites using automated scanning:</p>
+    <section>
+      <h2 id="recent-reports">Recent Reports <a href="#recent-reports" class="anchor-link" aria-label="Link to section: Recent Reports">#</a></h2>
+      <ul class="report-list">
+        <li><a href="./reports/daily/2026-03-29/index.html">2026-03-29</a> <span class="run-id">(cap-2026-03-29)</span></li>
+        <li><a href="./reports/daily/2026-03-28/index.html">2026-03-28</a> <span class="run-id">(cap-2026-03-28)</span></li>
+        <li><a href="./reports/daily/2026-03-27/index.html">2026-03-27</a> <span class="run-id">(cap-2026-03-27)</span></li>
+        <li><a href="./reports/daily/2026-03-26/index.html">2026-03-26</a> <span class="run-id">(cap-2026-03-26)</span></li>
+        <li><a href="./reports/daily/2026-03-25/index.html">2026-03-25</a> <span class="run-id">(cap-2026-03-25)</span></li>
+      </ul>
+      
+    </section>
+
+    <section>
+      <h2 id="about">About Daily CAP <a href="#about" class="anchor-link" aria-label="Link to section: About Daily CAP">#</a></h2>
+      <p>Daily CAP benchmarks the quality and accessibility of Canadian federal digital service entry points using automated scanning. Results are directional benchmark signals, not legal compliance determinations or manual accessibility audits.</p>
       <ul>
-        <li>Daily automated scans with Lighthouse and ScanGov</li>
+        <li>Daily automated scans with Lighthouse</li>
         <li>Bilingual (English/French) analysis and parity detection</li>
         <li>Performance, accessibility, and SEO metrics</li>
-        <li>Service-pattern and impact analysis</li>
+        <li>Accessibility statement detection</li>
+        <li>Service-pattern and directional impact analysis</li>
         <li>Canadian-focused data sources (recent activity, top tasks, curated endpoints)</li>
       </ul>
-    </section>
-
-    <section class="card">
-      <h2>Development</h2>
-      <p><a href="https://github.com/mgifford/daily-cap">View on GitHub</a></p>
-      <p>Built with Node.js (24+), Lighthouse, and axe-core.</p>
-      <p><a href="./PLAN.md">Implementation Plan</a></p>
-    </section>
-
-    <section class="card">
-      <h2>Daily CAP and Daily DAP</h2>
-      <p>Daily CAP and <a href="https://mgifford.github.io/daily-dap/">Daily DAP</a> are sibling projects with different geographic scope.</p>
-      <ul>
-        <li><strong>Daily CAP</strong> benchmarks Canadian federal digital services and measures EN/FR bilingual parity as a first-class signal, reflecting the <cite>Official Languages Act</cite>.</li>
-        <li><strong>Daily DAP</strong> benchmarks U.S. federal digital services. It does not have an equivalent bilingual requirement.</li>
-      </ul>
-      <p>Both projects publish static daily HTML reports with automated Lighthouse diagnostics. They are independent codebases that share a similar reporting approach.</p>
+      <p><a href="./about.md">About Daily CAP and Daily DAP &#8594;</a></p>
     </section>
   </main>
-
-  <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #d7e2d8; font-size: 0.9rem; color: #666;">
-    <p>Daily CAP is not an official Government of Canada program. Reports are generated from automated scans and should not be used as compliance proof.</p>
-  </footer>
+  <script>
+    (function () {
+      var THEME_KEY = 'cap-preferred-theme';
+      var html = document.documentElement;
+      var toggle = document.getElementById('theme-toggle');
+      function applyTheme(t) {
+        html.setAttribute('data-theme', t);
+        if (toggle) {
+          toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+        }
+      }
+      var stored = localStorage.getItem(THEME_KEY);
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var c = html.getAttribute('data-theme');
+          var n = c === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(THEME_KEY, n);
+          applyTheme(n);
+        });
+      }
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) {
+        mq.addEventListener('change', function (e) {
+          if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? 'dark' : 'light');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
