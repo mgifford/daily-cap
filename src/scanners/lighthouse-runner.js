@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { fetchWithTimeout } from "../utils/fetch-with-timeout.js";
 
 function boundedScore(seed, min = 40, max = 98) {
   const value = seed % (max - min + 1);
@@ -60,7 +61,7 @@ export async function runLighthouseScan(target, mode, contextInput = {}) {
   }
 
   const started = Date.now();
-  const response = await fetch(target.canonical_url, {
+  const response = await fetchWithTimeout(target.canonical_url, {
     method: "GET",
     redirect: "follow"
   });

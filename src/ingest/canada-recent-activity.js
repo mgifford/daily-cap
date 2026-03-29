@@ -11,11 +11,13 @@
  * - page view counts
  */
 
+import { fetchWithTimeout } from "../utils/fetch-with-timeout.js";
+
 export async function fetchRecentActivity(options = {}) {
   const source = options.source || "https://www.canada.ca/en/analytics/recent-activity.html";
 
   try {
-    const response = await fetch(source);
+    const response = await fetchWithTimeout(source);
     if (!response.ok) {
       throw new Error(
         `Failed to fetch recent activity: ${response.status} ${response.statusText}`
@@ -26,7 +28,11 @@ export async function fetchRecentActivity(options = {}) {
     const entries = parseRecentActivityHtml(html);
     return entries;
   } catch (error) {
-    console.error("Error fetching recent activity:", error instanceof Error ? error.message : String(error));
+    const cause = error?.cause ? ` (cause: ${error.cause?.code ?? String(error.cause)})` : "";
+    console.error(
+      "Error fetching recent activity:",
+      error instanceof Error ? `${error.message}${cause}` : String(error)
+    );
     return [];
   }
 }
