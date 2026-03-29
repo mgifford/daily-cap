@@ -5,6 +5,7 @@ import os from "node:os";
 import path from "node:path";
 
 import { publishReport } from "../src/publish/publish-report.js";
+import { renderArchiveIndexPage } from "../src/publish/render-pages.js";
 
 const BASE_REPORT = {
   run_date: "2026-03-26",
@@ -106,6 +107,23 @@ test("publishReport writes docs/index.html with latest scores and recent report"
   assert.ok(html.includes("Open latest report"), "home page has open latest report link");
   assert.ok(html.includes("Recent Reports"), "home page has recent reports section");
   assert.ok(html.includes("cap-2026-03-26"), "home page shows run id");
+  assert.ok(html.includes("Report Archive"), "home page has report archive section");
+  assert.ok(html.includes("Browse report archives"), "home page has browse archives link");
+  assert.ok(html.includes("reports/archive/index.html"), "home page links to archive index page");
+});
+
+test("publishReport writes docs/reports/archive/index.html", async () => {
+  const outputRoot = await fs.mkdtemp(path.join(os.tmpdir(), "daily-cap-"));
+  const report = { ...BASE_REPORT };
+
+  await publishReport({ report, outputRoot });
+
+  const archivePath = path.join(outputRoot, "docs", "reports", "archive", "index.html");
+  const html = await fs.readFile(archivePath, "utf8");
+
+  assert.ok(html.includes("Report Archive"), "archive index has page title");
+  assert.ok(html.includes("14 days"), "archive index describes 14-day threshold");
+  assert.ok(html.includes("Back to Daily CAP"), "archive index has back link");
 });
 
 test("publishReport writes docs/reports/index.html as redirect", async () => {
@@ -119,4 +137,21 @@ test("publishReport writes docs/reports/index.html as redirect", async () => {
 
   assert.ok(html.includes("http-equiv"), "dashboard has meta refresh redirect");
   assert.ok(html.includes("moved"), "dashboard mentions page has moved");
+});
+
+test("renderArchiveIndexPage with no archives shows placeholder message", () => {
+  const html = renderArchiveIndexPage([]);
+
+  assert.ok(html.includes("Report Archive"), "page has title");
+  assert.ok(html.includes("No archives are available yet"), "shows no-archives message");
+  assert.ok(html.includes("Back to Daily CAP"), "has back link");
+  assert.ok(!html.includes(".zip"), "no zip links when empty");
+});
+
+test("renderArchiveIndexPage with archived dates lists zip links", () => {
+  const html = renderArchiveIndexPage(["2026-01-01", "2026-01-02"]);
+
+  assert.ok(html.includes("2026-01-01.zip"), "links to first archive zip");
+  assert.ok(html.includes("2026-01-02.zip"), "links to second archive zip");
+  assert.ok(!html.includes("No archives are available yet"), "no placeholder when archives exist");
 });
