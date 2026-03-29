@@ -99,7 +99,7 @@
   },
   "benchmark_summary": {
     "means": {
-      "performance_score": 92.33,
+      "performance_score": 85.17,
       "accessibility_score": 78,
       "best_practices_score": 73,
       "seo_score": 85
@@ -206,8 +206,8 @@
         "page_load_count": 94000,
         "accessibility_score_en": 78,
         "accessibility_score_fr": 78,
-        "performance_score_en": 96,
-        "performance_score_fr": 94,
+        "performance_score_en": 90,
+        "performance_score_fr": 89,
         "findings_total_en": 7,
         "findings_total_fr": 7,
         "accessibility_gap": 0,
@@ -258,8 +258,8 @@
         "page_load_count": 88000,
         "accessibility_score_en": 78,
         "accessibility_score_fr": 78,
-        "performance_score_en": 95,
-        "performance_score_fr": 94,
+        "performance_score_en": 91,
+        "performance_score_fr": 90,
         "findings_total_en": 13,
         "findings_total_fr": 13,
         "accessibility_gap": 0,
@@ -336,15 +336,15 @@
         "page_load_count": 42000,
         "accessibility_score_en": 78,
         "accessibility_score_fr": 78,
-        "performance_score_en": 89,
-        "performance_score_fr": 86,
+        "performance_score_en": 78,
+        "performance_score_fr": 73,
         "findings_total_en": 11,
         "findings_total_fr": 11,
         "accessibility_gap": 0,
-        "performance_gap": 3,
+        "performance_gap": 5,
         "findings_gap": 0,
         "abs_accessibility_gap": 0,
-        "abs_performance_gap": 3
+        "abs_performance_gap": 5
       },
       {
         "pair_id": "curated-010-en|curated-010-fr",
@@ -1484,7 +1484,7 @@
       "missing_french": 70,
       "paired_from_switcher": 0,
       "average_absolute_accessibility_gap": 0,
-      "average_absolute_performance_gap": 2,
+      "average_absolute_performance_gap": 2.33,
       "high_accessibility_gap_pairs": 0
     },
     "highlights": {
@@ -6459,25 +6459,25 @@
     },
     "by_context": {
       "desktop_light": {
-        "performance_score": 92.33,
+        "performance_score": 85.17,
         "accessibility_score": 78,
         "best_practices_score": 73,
         "seo_score": 85
       },
       "desktop_dark": {
-        "performance_score": 89,
+        "performance_score": 81.83,
         "accessibility_score": 75,
         "best_practices_score": 73,
         "seo_score": 85
       },
       "mobile_light": {
-        "performance_score": 84.83,
+        "performance_score": 76.67,
         "accessibility_score": 78,
         "best_practices_score": 71,
         "seo_score": 84
       },
       "mobile_dark": {
-        "performance_score": 81.5,
+        "performance_score": 75.67,
         "accessibility_score": 75,
         "best_practices_score": 71,
         "seo_score": 84
@@ -6496,7 +6496,7 @@
       {
         "context": "desktop_dark",
         "delta_vs_desktop_light": {
-          "performance_score": -3.33,
+          "performance_score": -3.34,
           "accessibility_score": -3,
           "best_practices_score": 0,
           "seo_score": 0
@@ -6505,7 +6505,7 @@
       {
         "context": "mobile_light",
         "delta_vs_desktop_light": {
-          "performance_score": -7.5,
+          "performance_score": -8.5,
           "accessibility_score": 0,
           "best_practices_score": -2,
           "seo_score": -1
@@ -6514,7 +6514,7 @@
       {
         "context": "mobile_dark",
         "delta_vs_desktop_light": {
-          "performance_score": -10.83,
+          "performance_score": -9.5,
           "accessibility_score": -3,
           "best_practices_score": -2,
           "seo_score": -1
@@ -6524,7 +6524,7 @@
     "highlights": {
       "mobile_dark_vs_desktop_light": {
         "context": "mobile_dark_vs_desktop_light",
-        "performance_score": -10.83,
+        "performance_score": -9.5,
         "accessibility_score": -3,
         "best_practices_score": -2,
         "seo_score": -1
@@ -6661,12 +6661,12 @@
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 96,
+        "performance_score": 90,
         "accessibility_score": 78,
         "best_practices_score": 82,
         "seo_score": 85,
         "lcp_value_ms": 1000,
-        "total_byte_weight": 22060,
+        "total_byte_weight": 22058,
         "context": {
           "form_factor": "desktop",
           "color_scheme": "light"
@@ -6674,48 +6674,48 @@
         "default_context": "desktop_light",
         "by_context": {
           "desktop_light": {
-            "performance_score": 96,
+            "performance_score": 90,
             "accessibility_score": 78,
             "best_practices_score": 82,
             "seo_score": 85,
             "lcp_value_ms": 1000,
-            "total_byte_weight": 22060,
+            "total_byte_weight": 22058,
             "context": {
               "form_factor": "desktop",
               "color_scheme": "light"
             }
           },
           "desktop_dark": {
-            "performance_score": 94,
+            "performance_score": 88,
             "accessibility_score": 75,
             "best_practices_score": 82,
             "seo_score": 85,
             "lcp_value_ms": 1120,
-            "total_byte_weight": 22060,
+            "total_byte_weight": 22058,
             "context": {
               "form_factor": "desktop",
               "color_scheme": "dark"
             }
           },
           "mobile_light": {
-            "performance_score": 89,
+            "performance_score": 84,
             "accessibility_score": 78,
             "best_practices_score": 80,
             "seo_score": 84,
             "lcp_value_ms": 1250,
-            "total_byte_weight": 22060,
+            "total_byte_weight": 22058,
             "context": {
               "form_factor": "mobile",
               "color_scheme": "light"
             }
           },
           "mobile_dark": {
-            "performance_score": 87,
+            "performance_score": 82,
             "accessibility_score": 75,
             "best_practices_score": 80,
             "seo_score": 84,
             "lcp_value_ms": 1370,
-            "total_byte_weight": 22060,
+            "total_byte_weight": 22058,
             "context": {
               "form_factor": "mobile",
               "color_scheme": "dark"
@@ -6763,12 +6763,12 @@
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 94,
+        "performance_score": 89,
         "accessibility_score": 78,
         "best_practices_score": 82,
         "seo_score": 85,
         "lcp_value_ms": 1000,
-        "total_byte_weight": 23707,
+        "total_byte_weight": 23705,
         "context": {
           "form_factor": "desktop",
           "color_scheme": "light"
@@ -6776,48 +6776,48 @@
         "default_context": "desktop_light",
         "by_context": {
           "desktop_light": {
-            "performance_score": 94,
+            "performance_score": 89,
             "accessibility_score": 78,
             "best_practices_score": 82,
             "seo_score": 85,
             "lcp_value_ms": 1000,
-            "total_byte_weight": 23707,
+            "total_byte_weight": 23705,
             "context": {
               "form_factor": "desktop",
               "color_scheme": "light"
             }
           },
           "desktop_dark": {
-            "performance_score": 93,
+            "performance_score": 87,
             "accessibility_score": 75,
             "best_practices_score": 82,
             "seo_score": 85,
             "lcp_value_ms": 1120,
-            "total_byte_weight": 23707,
+            "total_byte_weight": 23705,
             "context": {
               "form_factor": "desktop",
               "color_scheme": "dark"
             }
           },
           "mobile_light": {
-            "performance_score": 89,
+            "performance_score": 83,
             "accessibility_score": 78,
             "best_practices_score": 80,
             "seo_score": 84,
             "lcp_value_ms": 1250,
-            "total_byte_weight": 23707,
+            "total_byte_weight": 23705,
             "context": {
               "form_factor": "mobile",
               "color_scheme": "light"
             }
           },
           "mobile_dark": {
-            "performance_score": 86,
+            "performance_score": 80,
             "accessibility_score": 75,
             "best_practices_score": 80,
             "seo_score": 84,
             "lcp_value_ms": 1370,
-            "total_byte_weight": 23707,
+            "total_byte_weight": 23705,
             "context": {
               "form_factor": "mobile",
               "color_scheme": "dark"
@@ -6903,7 +6903,7 @@
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 95,
+        "performance_score": 91,
         "accessibility_score": 78,
         "best_practices_score": 82,
         "seo_score": 85,
@@ -6916,7 +6916,7 @@
         "default_context": "desktop_light",
         "by_context": {
           "desktop_light": {
-            "performance_score": 95,
+            "performance_score": 91,
             "accessibility_score": 78,
             "best_practices_score": 82,
             "seo_score": 85,
@@ -6928,7 +6928,7 @@
             }
           },
           "desktop_dark": {
-            "performance_score": 94,
+            "performance_score": 89,
             "accessibility_score": 75,
             "best_practices_score": 82,
             "seo_score": 85,
@@ -6940,7 +6940,7 @@
             }
           },
           "mobile_light": {
-            "performance_score": 89,
+            "performance_score": 85,
             "accessibility_score": 78,
             "best_practices_score": 80,
             "seo_score": 84,
@@ -6952,7 +6952,7 @@
             }
           },
           "mobile_dark": {
-            "performance_score": 87,
+            "performance_score": 83,
             "accessibility_score": 75,
             "best_practices_score": 80,
             "seo_score": 84,
@@ -7005,7 +7005,7 @@
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 94,
+        "performance_score": 90,
         "accessibility_score": 78,
         "best_practices_score": 82,
         "seo_score": 85,
@@ -7018,7 +7018,7 @@
         "default_context": "desktop_light",
         "by_context": {
           "desktop_light": {
-            "performance_score": 94,
+            "performance_score": 90,
             "accessibility_score": 78,
             "best_practices_score": 82,
             "seo_score": 85,
@@ -7030,7 +7030,7 @@
             }
           },
           "desktop_dark": {
-            "performance_score": 92,
+            "performance_score": 87,
             "accessibility_score": 75,
             "best_practices_score": 82,
             "seo_score": 85,
@@ -7042,7 +7042,7 @@
             }
           },
           "mobile_light": {
-            "performance_score": 88,
+            "performance_score": 83,
             "accessibility_score": 78,
             "best_practices_score": 80,
             "seo_score": 84,
@@ -7054,7 +7054,7 @@
             }
           },
           "mobile_dark": {
-            "performance_score": 84,
+            "performance_score": 82,
             "accessibility_score": 75,
             "best_practices_score": 80,
             "seo_score": 84,
@@ -7183,11 +7183,11 @@
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 89,
+        "performance_score": 78,
         "accessibility_score": 78,
         "best_practices_score": 55,
         "seo_score": 85,
-        "lcp_value_ms": 1000,
+        "lcp_value_ms": 1009,
         "total_byte_weight": 874956,
         "context": {
           "form_factor": "desktop",
@@ -7196,11 +7196,11 @@
         "default_context": "desktop_light",
         "by_context": {
           "desktop_light": {
-            "performance_score": 89,
+            "performance_score": 78,
             "accessibility_score": 78,
             "best_practices_score": 55,
             "seo_score": 85,
-            "lcp_value_ms": 1000,
+            "lcp_value_ms": 1009,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "desktop",
@@ -7208,11 +7208,11 @@
             }
           },
           "desktop_dark": {
-            "performance_score": 85,
+            "performance_score": 74,
             "accessibility_score": 75,
             "best_practices_score": 55,
             "seo_score": 85,
-            "lcp_value_ms": 1120,
+            "lcp_value_ms": 1189,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "desktop",
@@ -7220,11 +7220,11 @@
             }
           },
           "mobile_light": {
-            "performance_score": 82,
+            "performance_score": 65,
             "accessibility_score": 78,
             "best_practices_score": 53,
             "seo_score": 84,
-            "lcp_value_ms": 1250,
+            "lcp_value_ms": 1556,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "mobile",
@@ -7232,11 +7232,11 @@
             }
           },
           "mobile_dark": {
-            "performance_score": 73,
+            "performance_score": 62,
             "accessibility_score": 75,
             "best_practices_score": 53,
             "seo_score": 84,
-            "lcp_value_ms": 1370,
+            "lcp_value_ms": 1726,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "mobile",
@@ -7285,11 +7285,11 @@
       "scan_status": "success",
       "failure_reason": null,
       "lighthouse": {
-        "performance_score": 86,
+        "performance_score": 73,
         "accessibility_score": 78,
         "best_practices_score": 55,
         "seo_score": 85,
-        "lcp_value_ms": 1000,
+        "lcp_value_ms": 1207,
         "total_byte_weight": 874956,
         "context": {
           "form_factor": "desktop",
@@ -7298,11 +7298,11 @@
         "default_context": "desktop_light",
         "by_context": {
           "desktop_light": {
-            "performance_score": 86,
+            "performance_score": 73,
             "accessibility_score": 78,
             "best_practices_score": 55,
             "seo_score": 85,
-            "lcp_value_ms": 1000,
+            "lcp_value_ms": 1207,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "desktop",
@@ -7310,11 +7310,11 @@
             }
           },
           "desktop_dark": {
-            "performance_score": 76,
+            "performance_score": 66,
             "accessibility_score": 75,
             "best_practices_score": 55,
             "seo_score": 85,
-            "lcp_value_ms": 1120,
+            "lcp_value_ms": 1551,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "desktop",
@@ -7322,11 +7322,11 @@
             }
           },
           "mobile_light": {
-            "performance_score": 72,
+            "performance_score": 60,
             "accessibility_score": 78,
             "best_practices_score": 53,
             "seo_score": 84,
-            "lcp_value_ms": 1250,
+            "lcp_value_ms": 1787,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "mobile",
@@ -7334,11 +7334,11 @@
             }
           },
           "mobile_dark": {
-            "performance_score": 72,
+            "performance_score": 65,
             "accessibility_score": 75,
             "best_practices_score": 53,
             "seo_score": 84,
-            "lcp_value_ms": 1370,
+            "lcp_value_ms": 1581,
             "total_byte_weight": 874956,
             "context": {
               "form_factor": "mobile",
@@ -13764,7 +13764,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 188000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 95,
+        "mean_performance_score": 89.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13779,7 +13779,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 176000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 94.5,
+        "mean_performance_score": 90.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13794,7 +13794,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 84000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 87.5,
+        "mean_performance_score": 75.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13931,7 +13931,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 188000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 95,
+        "mean_performance_score": 89.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13946,7 +13946,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 176000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 94.5,
+        "mean_performance_score": 90.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -13961,7 +13961,7 @@
         "scanned_urls": 2,
         "total_page_load_count": 84000,
         "mean_accessibility_score": 78,
-        "mean_performance_score": 87.5,
+        "mean_performance_score": 75.5,
         "priority_issue_count": 2,
         "recurring_issue_count": 2,
         "missing_french_count": 0,
@@ -14327,7 +14327,7 @@
           "scanned_urls": 2,
           "total_page_load_count": 188000,
           "mean_accessibility_score": 78,
-          "mean_performance_score": 95,
+          "mean_performance_score": 89.5,
           "missing_french_count": 0,
           "missing_statement_count": 2,
           "high_gap_pair_count": 0
@@ -14383,7 +14383,7 @@
             "scanned_urls": 2,
             "total_page_load_count": 188000,
             "mean_accessibility_score": 78,
-            "mean_performance_score": 95,
+            "mean_performance_score": 89.5,
             "missing_french_count": 0,
             "missing_statement_count": 2,
             "high_gap_pair_count": 0
@@ -14400,7 +14400,7 @@
           "scanned_urls": 2,
           "total_page_load_count": 176000,
           "mean_accessibility_score": 78,
-          "mean_performance_score": 94.5,
+          "mean_performance_score": 90.5,
           "missing_french_count": 0,
           "missing_statement_count": 2,
           "high_gap_pair_count": 0
@@ -14456,7 +14456,7 @@
             "scanned_urls": 2,
             "total_page_load_count": 176000,
             "mean_accessibility_score": 78,
-            "mean_performance_score": 94.5,
+            "mean_performance_score": 90.5,
             "missing_french_count": 0,
             "missing_statement_count": 2,
             "high_gap_pair_count": 0
@@ -14619,7 +14619,7 @@
           "scanned_urls": 2,
           "total_page_load_count": 84000,
           "mean_accessibility_score": 78,
-          "mean_performance_score": 87.5,
+          "mean_performance_score": 75.5,
           "missing_french_count": 0,
           "missing_statement_count": 2,
           "high_gap_pair_count": 0
@@ -14675,7 +14675,7 @@
             "scanned_urls": 2,
             "total_page_load_count": 84000,
             "mean_accessibility_score": 78,
-            "mean_performance_score": 87.5,
+            "mean_performance_score": 75.5,
             "missing_french_count": 0,
             "missing_statement_count": 2,
             "high_gap_pair_count": 0
