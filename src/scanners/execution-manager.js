@@ -2,15 +2,18 @@ import { runLighthouseScanVariants } from "./lighthouse-runner.js";
 import { runScanGov } from "./scangov-runner.js";
 import { runAccessibilityStatementCheck } from "./accessibility-statement-runner.js";
 import { runPlatformFingerprint } from "./platform-fingerprint-runner.js";
+import { runAxeScanVariants } from "./axe-runner.js";
 
-async function scanOne(target, mode, lighthouseContexts) {
+async function scanOne(target, mode, lighthouseContexts, axeContexts) {
   try {
-    const [lighthouse, scangov, accessibilityStatement, platformFingerprint] = await Promise.all([
-      runLighthouseScanVariants(target, mode, lighthouseContexts),
-      runScanGov(target, mode),
-      runAccessibilityStatementCheck(target, mode),
-      runPlatformFingerprint(target, mode)
-    ]);
+    const [lighthouse, scangov, accessibilityStatement, platformFingerprint, axe] =
+      await Promise.all([
+        runLighthouseScanVariants(target, mode, lighthouseContexts),
+        runScanGov(target, mode),
+        runAccessibilityStatementCheck(target, mode),
+        runPlatformFingerprint(target, mode),
+        runAxeScanVariants(target, mode, axeContexts)
+      ]);
 
     return {
       ...target,
@@ -19,7 +22,8 @@ async function scanOne(target, mode, lighthouseContexts) {
       lighthouse,
       scangov,
       accessibility_statement: accessibilityStatement,
-      platform_fingerprint: platformFingerprint
+      platform_fingerprint: platformFingerprint,
+      axe
     };
   } catch (error) {
     return {
@@ -29,7 +33,8 @@ async function scanOne(target, mode, lighthouseContexts) {
       lighthouse: null,
       scangov: null,
       accessibility_statement: null,
-      platform_fingerprint: null
+      platform_fingerprint: null,
+      axe: null
     };
   }
 }
@@ -38,6 +43,12 @@ export async function runScans(targets, options) {
   const mode = options.mode || "mock";
   const concurrency = Math.max(1, options.concurrency || 2);
   const lighthouseContexts = options.lighthouseContexts || [];
+  const axeContexts = options.axeContexts || [
+    { form_factor: "desktop", color_scheme: "light" },
+    { form_factor: "desktop", color_scheme: "dark" },
+    { form_factor: "mobile", color_scheme: "light" },
+    { form_factor: "mobile", color_scheme: "dark" }
+  ];
   const queue = [...targets];
   const results = [];
 
@@ -47,7 +58,7 @@ export async function runScans(targets, options) {
       if (!target) {
         continue;
       }
-      const scanned = await scanOne(target, mode, lighthouseContexts);
+      const scanned = await scanOne(target, mode, lighthouseContexts, axeContexts);
       results.push(scanned);
     }
   });
