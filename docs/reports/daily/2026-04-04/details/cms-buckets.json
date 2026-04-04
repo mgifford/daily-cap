@@ -1,7 +1,7 @@
 [
   {
     "cms": "unknown",
-    "count": 122,
+    "count": 127,
     "pages": [
       {
         "service_name": "Apply for a Social Insurance Number",
@@ -309,9 +309,24 @@
         "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/postlogin/welcome"
       },
       {
+        "service_name": "Government of Canada raises the federal minimum wage",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html"
+      },
+      {
+        "service_name": "Canada prioritizes top talent in 2026 immigration Express Entry categories",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/02/canada-prioritizes-top-talent-in-2026-immigration-express-entry-categories.html"
+      },
+      {
         "service_name": "Canada Revenue Agency (CRA)",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/revenue-agency.html"
+      },
+      {
+        "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
       },
       {
         "service_name": "T2200 Declaration of Conditions of Employment",
@@ -449,6 +464,11 @@
         "canonical_url": "https://www.asc-csa.gc.ca/eng/astronauts/canadian/active/bio-jeremy-hansen.asp"
       },
       {
+        "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html"
+      },
+      {
         "service_name": "blank video/audio title",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/employment-social-development/programs/foreign-credential-recognition.html"
@@ -492,6 +512,11 @@
         "service_name": "Ne gaspillez pas de temps. Envoyez une demande complète.",
         "language": "en",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/video/ne-gaspillez-temps-envoyez-demande-complete.html"
+      },
+      {
+        "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html"
       },
       {
         "service_name": "blank video/audio title",
@@ -617,7 +642,7 @@
   },
   {
     "cms": "aem",
-    "count": 26,
+    "count": 21,
     "pages": [
       {
         "service_name": "Consumer Price Index",
@@ -665,19 +690,9 @@
         "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-to-make-life-more-affordable-receives-royal-assent.html"
       },
       {
-        "service_name": "Government of Canada raises the federal minimum wage",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html"
-      },
-      {
         "service_name": "Bill C-3: An Act to amend the Citizenship Act (2025) comes into effect",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2025/12/bill-c-3-an-act-to-amend-the-citizenship-act-2025-comes-into-effect.html"
-      },
-      {
-        "service_name": "Canada prioritizes top talent in 2026 immigration Express Entry categories",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/02/canada-prioritizes-top-talent-in-2026-immigration-express-entry-categories.html"
       },
       {
         "service_name": "Government of Canada extends financial supports for post-secondary students",
@@ -688,11 +703,6 @@
         "service_name": "Le gouvernement du Canada prolonge les mesures temporaires d’assouplissement du programme de Travail partagé pour aider les employeurs et les travailleurs à éviter les licenciements collectifs",
         "language": "en",
         "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-temporaires-dassouplissement-du-programme-de-travail-partage-pour-aider-les-employeurs-et-les-travai.html"
-      },
-      {
-        "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
       },
       {
         "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
@@ -730,19 +740,9 @@
         "canonical_url": "https://www.canada.ca/fr/conseil-national-recherches/nouvelles/2026/03/le-gouvernement-du-canada-annoncera-de-nouveaux-investissements-qui-renforceront-les-capacites-industrielles-de-defense-dans-le-cadre-de-la-strateg.html"
       },
       {
-        "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html"
-      },
-      {
         "service_name": "Oath of Citizenship",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada/read-online/oath-citizenship.html"
-      },
-      {
-        "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html"
       },
       {
         "service_name": "Le serment de citoyenneté",
