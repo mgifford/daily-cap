@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Institution Trends - 2026-04-04</title>
+  <link rel="stylesheet" href="../../../assets/report.css" />
+  <script>(function(){var s=localStorage.getItem('cap-preferred-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
+</head>
+<body>
+  <header>
+    <div class="nav"><a href="../index.html">&#8592; Back to Daily Report</a></div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+  </header>
+  <main>
+    <h1>Institution Trends - 2026-04-04</h1>
+    <p><em>Institution-level history pages showing accessibility and barrier signals over time.</em></p>
+    <p><a href="./institution-trends.json">Download JSON</a></p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Institution</th>
+          <th scope="col">Days Tracked</th>
+          <th scope="col">Latest Mean A11y</th>
+          <th scope="col">Latest Missing FR</th>
+          <th scope="col">Latest Missing Statements</th>
+          <th scope="col">Latest High Gap Pairs</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="./institutions/unknown-institution.html">Unknown institution</a></td>
+        <td>11</td>
+        <td>76.27</td>
+        <td>84</td>
+        <td>82</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/esdc.html">ESDC</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>6</td>
+        <td>24</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/ircc.html">IRCC</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>11</td>
+        <td>17</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/cra.html">CRA</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>8</td>
+        <td>10</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/phac.html">PHAC</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>0</td>
+        <td>3</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/cbsa.html">CBSA</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/justice.html">Justice</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/eccc.html">ECCC</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/statscan.html">StatsCan</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/csps.html">CSPS</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td><a href="./institutions/health-canada-phac.html">Health Canada/PHAC</a></td>
+        <td>11</td>
+        <td>78</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+      </tr></tbody>
+    </table>
+  </main>
+  <script>
+    (function () {
+      var THEME_KEY = 'cap-preferred-theme';
+      var html = document.documentElement;
+      var toggle = document.getElementById('theme-toggle');
+      function applyTheme(t) {
+        html.setAttribute('data-theme', t);
+        if (toggle) {
+          toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+        }
+      }
+      var stored = localStorage.getItem(THEME_KEY);
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var c = html.getAttribute('data-theme');
+          var n = c === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(THEME_KEY, n);
+          applyTheme(n);
+        });
+      }
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) {
+        mq.addEventListener('change', function (e) {
+          if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? 'dark' : 'light');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
