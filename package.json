@@ -9,7 +9,8 @@
   },
   "scripts": {
     "run": "node run.js",
-    "test": "node --test"
+    "test": "node --test",
+    "summary": "node src/cli/generate-summary.js"
   },
   "dependencies": {
     "@axe-core/playwright": "^4.11.1",
