@@ -13,6 +13,7 @@ const execFileAsync = promisify(execFile);
  * @param {object} options
  * @param {string} options.reportsRoot  Absolute path to `docs/reports/`
  * @param {number} [options.archiveAfterDays=14]  Age threshold in days
+ * @param {string|null} [options.excludeDate=null]  YYYY-MM-DD date to skip (e.g. the current run date)
  * @returns {Promise<{archived: string[]}>}  Dates that were archived
  */
 export async function archiveOldReports({ reportsRoot, archiveAfterDays = 14, excludeDate = null }) {
