@@ -15,7 +15,7 @@ const execFileAsync = promisify(execFile);
  * @param {number} [options.archiveAfterDays=14]  Age threshold in days
  * @returns {Promise<{archived: string[]}>}  Dates that were archived
  */
-export async function archiveOldReports({ reportsRoot, archiveAfterDays = 14 }) {
+export async function archiveOldReports({ reportsRoot, archiveAfterDays = 14, excludeDate = null }) {
   const dailyDir = path.join(reportsRoot, "daily");
   const archiveDir = path.join(reportsRoot, "archive");
 
@@ -33,7 +33,7 @@ export async function archiveOldReports({ reportsRoot, archiveAfterDays = 14 }) 
   const oldDates = entries
     .filter((e) => e.isDirectory() && /^\d{4}-\d{2}-\d{2}$/.test(e.name))
     .map((e) => e.name)
-    .filter((date) => date < cutoffStr)
+    .filter((date) => date < cutoffStr && date !== excludeDate)
     .sort();
 
   if (!oldDates.length) {

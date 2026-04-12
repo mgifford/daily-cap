@@ -107,7 +107,7 @@ export async function publishReport({ report, outputRoot }) {
 
   // Archive reports older than 14 days, then build the home page with the
   // full list of active and archived reports.
-  await archiveOldReports({ reportsRoot: reportsDir });
+  await archiveOldReports({ reportsRoot: reportsDir, excludeDate: report.run_date });
   const recentReports = await loadRecentReports(
     path.join(reportsDir, "daily"),
     report.run_date
