@@ -1,0 +1,66 @@
+scan:
+  # Maximum number of URLs to include in a single daily run.
+  url_limit: 130
+
+  # Number of days of prior report history to load for trend analysis.
+  history_lookback_days: 30
+
+  # Number of days of reports to display in the dashboard report list.
+  dashboard_display_days: 14
+
+  # Number of concurrent scans to run in parallel.
+  concurrency: 2
+
+  # Lighthouse scan contexts: each combination of form_factor and color_scheme is
+  # run as a separate scan target. Valid form_factor values: desktop, mobile.
+  # Valid color_scheme values: light, dark.
+  lighthouse_contexts:
+    - form_factor: desktop
+      color_scheme: light
+    - form_factor: desktop
+      color_scheme: dark
+    - form_factor: mobile
+      color_scheme: light
+    - form_factor: mobile
+      color_scheme: dark
+
+impact:
+  # Disability prevalence estimates derived from Statistics Canada Canadian Survey on
+  # Disability (CSD) 2022 and Census data. Used for directional impact modeling only.
+  # All figures are proportions of the Canadian population (0.0 to 1.0).
+  # Review annually; next review: 2027-01-01
+  #
+  # Categories:
+  #   vision     - seeing disability
+  #   hearing    - hearing disability
+  #   mobility   - physical or mobility disability
+  #   cognitive  - learning, memory, or developmental disability
+  #   mental     - mental health-related disability
+  #   pain       - pain-related disability
+  #   speech     - speech or communication disability
+  prevalence_rates:
+    vision: 0.030
+    hearing: 0.040
+    mobility: 0.100
+    cognitive: 0.060
+    mental: 0.070
+    pain: 0.110
+    speech: 0.010
+
+  # Severity weights applied to axe-core and ScanGov findings when computing blended
+  # barrier weight. Values must be between 0.0 and 1.0.
+  severity_weights:
+    critical: 1.0
+    serious: 0.6
+    moderate: 0.3
+    minor: 0.1
+
+  # Weight applied when a finding's severity is unknown or unclassified.
+  fallback_severity_weight: 0.2
+
+sources:
+  # Canada.ca recent activity page (last 30 days of top visited URLs).
+  canada_recent_activity_url: "https://www.canada.ca/en/analytics/recent-activity.html"
+
+  # Canada.ca top tasks page.
+  canada_top_tasks_url: "https://www.canada.ca/en/government/about/top-tasks-for-canada.html"
