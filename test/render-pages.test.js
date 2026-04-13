@@ -670,6 +670,12 @@ describe("renderDashboardPage", () => {
     assert.ok(html.includes('aria-label="View the Daily CAP home page"'), "home link has aria-label");
     assert.ok(html.includes('aria-label="latest report (2026-04-10)"'), "latest report link has aria-label");
   });
+
+  it("includes exactly one main landmark", () => {
+    const html = renderDashboardPage(MINIMAL_REPORT);
+    const mainCount = (html.match(/<main\b/g) || []).length;
+    assert.equal(mainCount, 1, "dashboard has exactly one main landmark");
+  });
 });
 
 // ---------------------------------------------------------------------------
