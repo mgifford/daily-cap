@@ -57,9 +57,13 @@ export function computeTopAxeIssues(scanned, options = {}) {
     }
   }
 
-  // Sort by occurrence count and prepare output
+  // Sort by severity order (critical > serious > moderate > minor), then by occurrence count
+  const severityOrder = { critical: 0, serious: 1, moderate: 2, minor: 3 };
   const issues = Array.from(issueMap.values())
-    .sort((a, b) => b.occurrence_count - a.occurrence_count)
+    .sort((a, b) => {
+      const severityDiff = severityOrder[a.severity] - severityOrder[b.severity];
+      return severityDiff !== 0 ? severityDiff : b.occurrence_count - a.occurrence_count;
+    })
     .slice(0, limit)
     .map((issue) => ({
       severity: issue.severity,
@@ -79,13 +83,18 @@ export function computeTopAxeIssues(scanned, options = {}) {
 
   const scannedCount = scanned.filter((r) => r.scan_status === "success").length;
 
+  // Count unique pages with any violations
+  const pagesWithViolations = new Set();
+  for (const entry of issueMap.values()) {
+    for (const page of entry.pages) {
+      pagesWithViolations.add(page.canonical_url);
+    }
+  }
+
   return {
     summary: {
       scanned_urls: scannedCount,
-      urls_with_violations: issueMap.get("critical")?.page_count || 0 +
-        issueMap.get("serious")?.page_count || 0 +
-        issueMap.get("moderate")?.page_count || 0 +
-        issueMap.get("minor")?.page_count || 0,
+      urls_with_violations: pagesWithViolations.size,
       total_violations: Array.from(issueMap.values()).reduce((sum, issue) => sum + issue.occurrence_count, 0)
     },
     top_issues: issues
