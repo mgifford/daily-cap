@@ -99,6 +99,17 @@
     "service_pattern": "help"
   },
   {
+    "inventory_id": "curated-005-fr",
+    "service_name": "Environment and Climate Change Canada",
+    "institution": "ECCC",
+    "language": "fr",
+    "canonical_url": "https://www.canada.ca/fr/environnement-changement-climatique.html",
+    "tier": "tier-2",
+    "source": "curated",
+    "page_load_count": 52000,
+    "service_pattern": "help"
+  },
+  {
     "inventory_id": "curated-006-en",
     "service_name": "Justice Laws Website",
     "institution": "Justice",
@@ -192,6 +203,17 @@
     "institution": "PHAC",
     "language": "en",
     "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html",
+    "tier": "tier-1",
+    "source": "curated",
+    "page_load_count": 65000,
+    "service_pattern": "information"
+  },
+  {
+    "inventory_id": "curated-010-fr",
+    "service_name": "Health Infobase Canada",
+    "institution": "PHAC",
+    "language": "fr",
+    "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html",
     "tier": "tier-1",
     "source": "curated",
     "page_load_count": 65000,
@@ -649,6 +671,17 @@
     "service_pattern": "sign-in"
   },
   {
+    "inventory_id": "recent-10-en",
+    "service_name": "Sujets",
+    "institution": null,
+    "language": "en",
+    "canonical_url": "https://www150.statcan.gc.ca/n1/fr/sujets",
+    "tier": "tier-1",
+    "source": "recent",
+    "page_load_count": 5549102,
+    "service_pattern": "dashboard"
+  },
+  {
     "inventory_id": "recent-11-en",
     "service_name": "Se connecter à son compte de l&#39;ARC",
     "institution": null,
@@ -657,6 +690,17 @@
     "tier": "tier-1",
     "source": "recent",
     "page_load_count": 5540274,
+    "service_pattern": "dashboard"
+  },
+  {
+    "inventory_id": "recent-12-en",
+    "service_name": "Agence du revenu du Canada (ARC)",
+    "institution": null,
+    "language": "en",
+    "canonical_url": "https://www.canada.ca/fr/agence-revenu.html",
+    "tier": "tier-1",
+    "source": "recent",
+    "page_load_count": 2698651,
     "service_pattern": "dashboard"
   },
   {

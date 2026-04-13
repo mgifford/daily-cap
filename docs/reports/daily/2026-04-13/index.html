@@ -10,7 +10,7 @@
 <body>
   <header>
     <div class="nav"><a href="../../index.html">&#8592; Back to Reports</a> | <a href="../../../">Home</a></div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
   </header>
   <main>
     <h1>Daily CAP Report</h1>
@@ -22,9 +22,9 @@
       <h2 id="overview">Overview <a href="#overview" class="anchor-link" aria-label="Link to section: Overview">#</a></h2>
       <div class="cards">
         <div class="card"><strong>Total</strong><br/>150</div>
-        <div class="card"><strong>Succeeded</strong><br/>142</div>
-        <div class="card"><strong>Failed</strong><br/>8</div>
-        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>0</div>
+        <div class="card"><strong>Succeeded</strong><br/>0</div>
+        <div class="card"><strong>Failed</strong><br/>150</div>
+        <div class="card"><strong>Avg A11y Gap (EN/FR)</strong><br/>-</div>
       </div>
     </section>
 
@@ -33,7 +33,7 @@
       <p><em>Automated trend signals only. Deltas indicate benchmark movement and are not direct evidence of compliance or user impact measurement.</em></p>
       <div class="cards">
         <div class="card"><strong>Previous Run</strong><br/>2026-04-09</div>
-        <div class="card"><strong>Regressions</strong><br/>0</div>
+        <div class="card"><strong>Regressions</strong><br/>2</div>
       </div>
 
       <h3>Metric Deltas</h3>
@@ -51,41 +51,41 @@
       <tr>
         <td>Mean Accessibility Score</td>
         <td>76.97</td>
-        <td>76.99</td>
-        <td>0.02</td>
+        <td>-</td>
+        <td>-</td>
         <td>no</td>
       </tr>
 
       <tr>
         <td>Accessibility Statement Coverage</td>
         <td>2.67</td>
-        <td>2.67</td>
         <td>0</td>
+        <td>-2.67</td>
         <td>no</td>
       </tr>
 
       <tr>
         <td>Average Absolute EN/FR Accessibility Gap</td>
         <td>0</td>
-        <td>0</td>
-        <td>0</td>
+        <td>-</td>
+        <td>-</td>
         <td>no</td>
       </tr>
 
       <tr>
         <td>Directional Affected Share</td>
         <td>38.22</td>
-        <td>38.32</td>
-        <td>0.1</td>
-        <td>no</td>
+        <td>115</td>
+        <td>76.78</td>
+        <td>yes</td>
       </tr>
 
       <tr>
         <td>Scan Failure Rate</td>
         <td>6.67</td>
-        <td>5.33</td>
-        <td>-1.34</td>
-        <td>no</td>
+        <td>100</td>
+        <td>93.33</td>
+        <td>yes</td>
       </tr></tbody>
       </table>
 
@@ -98,7 +98,18 @@
             <th scope="col">Severity</th>
           </tr>
         </thead>
-        <tbody><tr><td colspan="3">No regressions detected in configured thresholds.</td></tr></tbody>
+        <tbody>
+      <tr>
+        <td>Scan Failure Rate</td>
+        <td>93.33</td>
+        <td>high</td>
+      </tr>
+
+      <tr>
+        <td>Directional Affected Share</td>
+        <td>76.78</td>
+        <td>high</td>
+      </tr></tbody>
       </table>
     </section>
 
@@ -106,8 +117,8 @@
       <h2 id="barrier-history">Barrier History <a href="#barrier-history" class="anchor-link" aria-label="Link to section: Barrier History">#</a></h2>
       <p><em>These daily signals track barrier-related counts over time so regressions are visible beyond a single-day snapshot.</em></p>
       <div class="cards">
-        <div class="card"><strong>History Window</strong><br/>2026-03-26 to 2026-04-13</div>
-        <div class="card"><strong>Days</strong><br/>16</div>
+        <div class="card"><strong>History Window</strong><br/>2026-03-30 to 2026-04-13</div>
+        <div class="card"><strong>Days</strong><br/>12</div>
       </div>
       <figure>
     <svg viewBox="0 0 860 260" role="img" aria-labelledby="barrier-history-title barrier-history-desc" class="history-chart">
@@ -116,16 +127,16 @@
       
         <line x1="36" y1="224" x2="824" y2="224" stroke="#d7e2d8" stroke-width="1" />
         <text x="28" y="228" text-anchor="end" font-size="11">0</text>
-        <line x1="36" y1="129.36054421768708" x2="824" y2="129.36054421768708" stroke="#d7e2d8" stroke-width="1" />
-        <text x="28" y="133.36054421768708" text-anchor="end" font-size="11">74</text>
+        <line x1="36" y1="130" x2="824" y2="130" stroke="#d7e2d8" stroke-width="1" />
+        <text x="28" y="134" text-anchor="end" font-size="11">75</text>
         <line x1="36" y1="36" x2="824" y2="36" stroke="#d7e2d8" stroke-width="1" />
-        <text x="28" y="40" text-anchor="end" font-size="11">147</text>
+        <text x="28" y="40" text-anchor="end" font-size="11">150</text>
       <line x1="36" y1="224" x2="824" y2="224" stroke="#7f9685" stroke-width="1.5" />
       <line x1="36" y1="36" x2="36" y2="224" stroke="#7f9685" stroke-width="1.5" />
-      <path d="M36,134.47619047619048 L88.53333333333333,134.47619047619048 L141.06666666666666,134.47619047619048 L193.6,83.31972789115648 L246.13333333333333,83.31972789115648 L298.66666666666663,83.31972789115648 L351.2,83.31972789115648 L403.73333333333335,83.31972789115648 L456.26666666666665,83.31972789115648 L508.79999999999995,83.31972789115648 L561.3333333333333,83.31972789115648 L613.8666666666667,83.31972789115648 L666.4,83.31972789115648 L718.9333333333333,83.31972789115648 L771.4666666666667,83.31972789115648 L824,83.31972789115648" fill="none" stroke="#b5402d" stroke-width="3" />
-      <path d="M36,83.31972789115648 L88.53333333333333,83.31972789115648 L141.06666666666666,83.31972789115648 L193.6,37.278911564625844 L246.13333333333333,36 L298.66666666666663,37.278911564625844 L351.2,37.278911564625844 L403.73333333333335,37.278911564625844 L456.26666666666665,37.278911564625844 L508.79999999999995,37.278911564625844 L561.3333333333333,37.278911564625844 L613.8666666666667,37.278911564625844 L666.4,37.278911564625844 L718.9333333333333,36 L771.4666666666667,37.278911564625844 L824,37.278911564625844" fill="none" stroke="#1d6b42" stroke-width="3" />
-      <path d="M36,224 L88.53333333333333,224 L141.06666666666666,224 L193.6,224 L246.13333333333333,224 L298.66666666666663,224 L351.2,224 L403.73333333333335,224 L456.26666666666665,224 L508.79999999999995,224 L561.3333333333333,224 L613.8666666666667,224 L666.4,224 L718.9333333333333,224 L771.4666666666667,224 L824,224" fill="none" stroke="#235d8b" stroke-width="3" />
-      <text x="36" y="250" text-anchor="middle" font-size="11">03-26</text><text x="88.53333333333333" y="250" text-anchor="middle" font-size="11">03-27</text><text x="141.06666666666666" y="250" text-anchor="middle" font-size="11">03-28</text><text x="193.6" y="250" text-anchor="middle" font-size="11">03-29</text><text x="246.13333333333333" y="250" text-anchor="middle" font-size="11">03-30</text><text x="298.66666666666663" y="250" text-anchor="middle" font-size="11">03-31</text><text x="351.2" y="250" text-anchor="middle" font-size="11">04-01</text><text x="403.73333333333335" y="250" text-anchor="middle" font-size="11">04-02</text><text x="456.26666666666665" y="250" text-anchor="middle" font-size="11">04-03</text><text x="508.79999999999995" y="250" text-anchor="middle" font-size="11">04-04</text><text x="561.3333333333333" y="250" text-anchor="middle" font-size="11">04-05</text><text x="613.8666666666667" y="250" text-anchor="middle" font-size="11">04-06</text><text x="666.4" y="250" text-anchor="middle" font-size="11">04-07</text><text x="718.9333333333333" y="250" text-anchor="middle" font-size="11">04-08</text><text x="771.4666666666667" y="250" text-anchor="middle" font-size="11">04-09</text><text x="824" y="250" text-anchor="middle" font-size="11">04-13</text>
+      <path d="M36,86.13333333333333 L107.63636363636364,86.13333333333333 L179.27272727272728,86.13333333333333 L250.90909090909093,86.13333333333333 L322.54545454545456,86.13333333333333 L394.1818181818182,86.13333333333333 L465.81818181818187,86.13333333333333 L537.4545454545455,86.13333333333333 L609.0909090909091,86.13333333333333 L680.7272727272727,86.13333333333333 L752.3636363636364,86.13333333333333 L824,86.13333333333333" fill="none" stroke="#b5402d" stroke-width="3" />
+      <path d="M36,39.75999999999999 L107.63636363636364,41.01333333333332 L179.27272727272728,41.01333333333332 L250.90909090909093,41.01333333333332 L322.54545454545456,41.01333333333332 L394.1818181818182,41.01333333333332 L465.81818181818187,41.01333333333332 L537.4545454545455,41.01333333333332 L609.0909090909091,41.01333333333332 L680.7272727272727,39.75999999999999 L752.3636363636364,41.01333333333332 L824,36" fill="none" stroke="#1d6b42" stroke-width="3" />
+      <path d="M36,224 L107.63636363636364,224 L179.27272727272728,224 L250.90909090909093,224 L322.54545454545456,224 L394.1818181818182,224 L465.81818181818187,224 L537.4545454545455,224 L609.0909090909091,224 L680.7272727272727,224 L752.3636363636364,224 L824,224" fill="none" stroke="#235d8b" stroke-width="3" />
+      <text x="36" y="250" text-anchor="middle" font-size="11">03-30</text><text x="107.63636363636364" y="250" text-anchor="middle" font-size="11">03-31</text><text x="179.27272727272728" y="250" text-anchor="middle" font-size="11">04-01</text><text x="250.90909090909093" y="250" text-anchor="middle" font-size="11">04-02</text><text x="322.54545454545456" y="250" text-anchor="middle" font-size="11">04-03</text><text x="394.1818181818182" y="250" text-anchor="middle" font-size="11">04-04</text><text x="465.81818181818187" y="250" text-anchor="middle" font-size="11">04-05</text><text x="537.4545454545455" y="250" text-anchor="middle" font-size="11">04-06</text><text x="609.0909090909091" y="250" text-anchor="middle" font-size="11">04-07</text><text x="680.7272727272727" y="250" text-anchor="middle" font-size="11">04-08</text><text x="752.3636363636364" y="250" text-anchor="middle" font-size="11">04-09</text><text x="824" y="250" text-anchor="middle" font-size="11">04-13</text>
     </svg>
     <figcaption>Red = missing French counterparts, green = URLs missing accessibility statements, blue = paired pages with accessibility gap of 10 or more.</figcaption>
   </figure>
@@ -141,34 +152,6 @@
           </tr>
         </thead>
         <tbody><tr>
-            <td>2026-03-26</td>
-            <td>70</td>
-            <td>110</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-<tr>
-            <td>2026-03-27</td>
-            <td>70</td>
-            <td>110</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-<tr>
-            <td>2026-03-28</td>
-            <td>70</td>
-            <td>110</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-<tr>
-            <td>2026-03-29</td>
-            <td>110</td>
-            <td>146</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-<tr>
             <td>2026-03-30</td>
             <td>110</td>
             <td>147</td>
@@ -248,9 +231,9 @@
 <tr>
             <td>2026-04-13</td>
             <td>110</td>
-            <td>146</td>
+            <td>150</td>
             <td>0</td>
-            <td>0</td>
+            <td>-</td>
           </tr></tbody>
       </table>
     </section>
@@ -259,9 +242,9 @@
       <h2 id="top-priority-issues">Top Priority Issues <a href="#top-priority-issues" class="anchor-link" aria-label="Link to section: Top Priority Issues">#</a></h2>
       <p><em>These issues are ranked using severity, traffic, service criticality, and persistence across days to highlight the most actionable government improvement priorities.</em></p>
       <div class="cards">
-        <div class="card"><strong>Total Issues</strong><br/>265</div>
-        <div class="card"><strong>Recurring Issues</strong><br/>265</div>
-        <div class="card"><strong>Highest Priority Score</strong><br/>192</div>
+        <div class="card"><strong>Total Issues</strong><br/>260</div>
+        <div class="card"><strong>Recurring Issues</strong><br/>256</div>
+        <div class="card"><strong>Highest Priority Score</strong><br/>186</div>
       </div>
       <p><a href="./details/priority-issues.html">Open full priority issues page</a> | <a href="./details/priority-issues.json">Download priority issues JSON</a></p>
       <table>
@@ -283,8 +266,8 @@
         <td>Sign in to your CRA account</td>
         <td>Unknown institution</td>
         <td>37136213</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html">Open</a></td>
       </tr>
@@ -294,8 +277,8 @@
         <td>Canada Revenue Agency - CRA Sign-in</td>
         <td>Unknown institution</td>
         <td>22208784</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login">Open</a></td>
       </tr>
@@ -305,8 +288,8 @@
         <td>Canada Revenue Agency - CRA sign-in information</td>
         <td>Unknown institution</td>
         <td>17463050</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/postlogin/welcome">Open</a></td>
       </tr>
@@ -316,8 +299,8 @@
         <td>Canada Revenue Agency (CRA)</td>
         <td>Unknown institution</td>
         <td>16036594</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://www.canada.ca/en/revenue-agency.html">Open</a></td>
       </tr>
@@ -327,8 +310,8 @@
         <td>Sujets</td>
         <td>Unknown institution</td>
         <td>5549102</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://www150.statcan.gc.ca/n1/fr/sujets">Open</a></td>
       </tr>
@@ -338,8 +321,8 @@
         <td>Se connecter à son compte de l&amp;#39;ARC</td>
         <td>Unknown institution</td>
         <td>5540274</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-ouverture-session-arc.html">Open</a></td>
       </tr>
@@ -349,8 +332,8 @@
         <td>Overview</td>
         <td>Unknown institution</td>
         <td>4066682</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/overview">Open</a></td>
       </tr>
@@ -360,8 +343,8 @@
         <td>Welcome</td>
         <td>Unknown institution</td>
         <td>3568622</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/spoe">Open</a></td>
       </tr>
@@ -371,8 +354,8 @@
         <td>Agence du revenu du Canada (ARC)</td>
         <td>Unknown institution</td>
         <td>2698651</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://www.canada.ca/fr/agence-revenu.html">Open</a></td>
       </tr>
@@ -382,8 +365,8 @@
         <td>Open Mail Page</td>
         <td>Unknown institution</td>
         <td>2599195</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane">Open</a></td>
       </tr>
@@ -393,8 +376,8 @@
         <td>My Account: Mail - Language:en</td>
         <td>Unknown institution</td>
         <td>1920649</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01">Open</a></td>
       </tr>
@@ -404,54 +387,10 @@
         <td>Tax information slips (T4 and more)</td>
         <td>Unknown institution</td>
         <td>1621602</td>
-        <td>13</td>
-        <td>192</td>
+        <td>12</td>
+        <td>186</td>
         <td>French counterpart missing</td>
         <td><a href="https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Job search and benefits</td>
-        <td>ESDC</td>
-        <td>420000</td>
-        <td>16</td>
-        <td>190</td>
-        <td>No accessibility statement detected for EN variant</td>
-        <td><a href="https://www.canada.ca/en/services/work.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Job search and benefits</td>
-        <td>ESDC</td>
-        <td>420000</td>
-        <td>16</td>
-        <td>190</td>
-        <td>No accessibility statement detected for FR variant</td>
-        <td><a href="https://www.canada.ca/fr/services/travail.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Check my Service Canada Account</td>
-        <td>ESDC</td>
-        <td>170000</td>
-        <td>16</td>
-        <td>190</td>
-        <td>No accessibility statement detected for EN variant</td>
-        <td><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">Open</a></td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Check my Service Canada Account</td>
-        <td>ESDC</td>
-        <td>170000</td>
-        <td>16</td>
-        <td>190</td>
-        <td>No accessibility statement detected for FR variant</td>
-        <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">Open</a></td>
       </tr>
 
       <tr>
@@ -459,8 +398,8 @@
         <td>Page d&amp;#39;accueil</td>
         <td>Unknown institution</td>
         <td>464656</td>
-        <td>13</td>
-        <td>186</td>
+        <td>12</td>
+        <td>180</td>
         <td>French counterpart missing</td>
         <td><a href="https://apps6.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/spoe">Open</a></td>
       </tr>
@@ -470,8 +409,8 @@
         <td>Aperçu</td>
         <td>Unknown institution</td>
         <td>390670</td>
-        <td>13</td>
-        <td>186</td>
+        <td>12</td>
+        <td>180</td>
         <td>French counterpart missing</td>
         <td><a href="https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview">Open</a></td>
       </tr>
@@ -481,8 +420,8 @@
         <td>Open Mail Page</td>
         <td>Unknown institution</td>
         <td>372754</td>
-        <td>13</td>
-        <td>186</td>
+        <td>12</td>
+        <td>180</td>
         <td>French counterpart missing</td>
         <td><a href="https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane">Open</a></td>
       </tr>
@@ -492,10 +431,54 @@
         <td>My Account: Mail - Language:fr</td>
         <td>Unknown institution</td>
         <td>275797</td>
-        <td>13</td>
-        <td>186</td>
+        <td>12</td>
+        <td>180</td>
         <td>French counterpart missing</td>
         <td><a href="https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>missing-french-counterpart</td>
+        <td>T2201 Disability Tax Credit Certificate</td>
+        <td>Unknown institution</td>
+        <td>155208</td>
+        <td>12</td>
+        <td>180</td>
+        <td>French counterpart missing</td>
+        <td><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2201.html">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>missing-french-counterpart</td>
+        <td>New immigration and asylum measures from Bill C-12 (the Strengthening Canada’s Immigration System and Borders Act) have become law</td>
+        <td>Unknown institution</td>
+        <td>151427</td>
+        <td>12</td>
+        <td>180</td>
+        <td>French counterpart missing</td>
+        <td><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/new-immigration-and-asylum-measures-from-bill-c-12-the-strengthening-canadas-immigration-system-and-borders-act-have-become-law.html">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>missing-french-counterpart</td>
+        <td>T2200 Declaration of Conditions of Employment</td>
+        <td>Unknown institution</td>
+        <td>146906</td>
+        <td>12</td>
+        <td>180</td>
+        <td>French counterpart missing</td>
+        <td><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2200.html">Open</a></td>
+      </tr>
+
+      <tr>
+        <td>missing-french-counterpart</td>
+        <td>Application for visitor visa (temporary resident visa) (IMM 5257)</td>
+        <td>Unknown institution</td>
+        <td>131091</td>
+        <td>12</td>
+        <td>180</td>
+        <td>French counterpart missing</td>
+        <td><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257.html">Open</a></td>
       </tr></tbody>
       </table>
     </section>
@@ -521,9 +504,9 @@
         <td>missing-french-counterpart</td>
         <td>Sign in to your CRA account</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -531,9 +514,9 @@
         <td>missing-french-counterpart</td>
         <td>Canada Revenue Agency - CRA Sign-in</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -541,9 +524,9 @@
         <td>missing-french-counterpart</td>
         <td>Canada Revenue Agency - CRA sign-in information</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -551,9 +534,9 @@
         <td>missing-french-counterpart</td>
         <td>Canada Revenue Agency (CRA)</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -561,9 +544,9 @@
         <td>missing-french-counterpart</td>
         <td>Sujets</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -571,9 +554,9 @@
         <td>missing-french-counterpart</td>
         <td>Se connecter à son compte de l&amp;#39;ARC</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -581,9 +564,9 @@
         <td>missing-french-counterpart</td>
         <td>Overview</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -591,9 +574,9 @@
         <td>missing-french-counterpart</td>
         <td>Welcome</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -601,9 +584,9 @@
         <td>missing-french-counterpart</td>
         <td>Agence du revenu du Canada (ARC)</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -611,9 +594,9 @@
         <td>missing-french-counterpart</td>
         <td>Open Mail Page</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -621,9 +604,9 @@
         <td>missing-french-counterpart</td>
         <td>My Account: Mail - Language:en</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -631,59 +614,19 @@
         <td>missing-french-counterpart</td>
         <td>Tax information slips (T4 and more)</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Job search and benefits</td>
-        <td>ESDC</td>
-        <td>2026-03-26</td>
-        <td>2026-04-13</td>
-        <td>16</td>
-        <td>Publish an accessibility statement with contact, support path, and freshness details.</td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Job search and benefits</td>
-        <td>ESDC</td>
-        <td>2026-03-26</td>
-        <td>2026-04-13</td>
-        <td>16</td>
-        <td>Publish an accessibility statement with contact, support path, and freshness details.</td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Check my Service Canada Account</td>
-        <td>ESDC</td>
-        <td>2026-03-26</td>
-        <td>2026-04-13</td>
-        <td>16</td>
-        <td>Publish an accessibility statement with contact, support path, and freshness details.</td>
-      </tr>
-
-      <tr>
-        <td>missing-accessibility-statement</td>
-        <td>Check my Service Canada Account</td>
-        <td>ESDC</td>
-        <td>2026-03-26</td>
-        <td>2026-04-13</td>
-        <td>16</td>
-        <td>Publish an accessibility statement with contact, support path, and freshness details.</td>
       </tr>
 
       <tr>
         <td>missing-french-counterpart</td>
         <td>Page d&amp;#39;accueil</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -691,9 +634,9 @@
         <td>missing-french-counterpart</td>
         <td>Aperçu</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -701,9 +644,9 @@
         <td>missing-french-counterpart</td>
         <td>Open Mail Page</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr>
 
@@ -711,9 +654,49 @@
         <td>missing-french-counterpart</td>
         <td>My Account: Mail - Language:fr</td>
         <td>Unknown institution</td>
-        <td>2026-03-29</td>
+        <td>2026-03-30</td>
         <td>2026-04-13</td>
-        <td>13</td>
+        <td>12</td>
+        <td>Add or link the French counterpart for this service entry point.</td>
+      </tr>
+
+      <tr>
+        <td>missing-french-counterpart</td>
+        <td>T2201 Disability Tax Credit Certificate</td>
+        <td>Unknown institution</td>
+        <td>2026-03-30</td>
+        <td>2026-04-13</td>
+        <td>12</td>
+        <td>Add or link the French counterpart for this service entry point.</td>
+      </tr>
+
+      <tr>
+        <td>missing-french-counterpart</td>
+        <td>New immigration and asylum measures from Bill C-12 (the Strengthening Canada’s Immigration System and Borders Act) have become law</td>
+        <td>Unknown institution</td>
+        <td>2026-03-30</td>
+        <td>2026-04-13</td>
+        <td>12</td>
+        <td>Add or link the French counterpart for this service entry point.</td>
+      </tr>
+
+      <tr>
+        <td>missing-french-counterpart</td>
+        <td>T2200 Declaration of Conditions of Employment</td>
+        <td>Unknown institution</td>
+        <td>2026-03-30</td>
+        <td>2026-04-13</td>
+        <td>12</td>
+        <td>Add or link the French counterpart for this service entry point.</td>
+      </tr>
+
+      <tr>
+        <td>missing-french-counterpart</td>
+        <td>Application for visitor visa (temporary resident visa) (IMM 5257)</td>
+        <td>Unknown institution</td>
+        <td>2026-03-30</td>
+        <td>2026-04-13</td>
+        <td>12</td>
         <td>Add or link the French counterpart for this service entry point.</td>
       </tr></tbody>
       </table>
@@ -744,121 +727,121 @@
       <tr>
         <td><a href="./details/institutions/unknown-institution.html">Unknown institution</a></td>
         <td>83</td>
-        <td>76.13</td>
+        <td>-</td>
         <td>83</td>
-        <td>81</td>
-        <td>173</td>
-        <td>192</td>
+        <td>83</td>
+        <td>164</td>
+        <td>186</td>
         <td>missing-french-counterpart</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/esdc.html">ESDC</a></td>
         <td>24</td>
-        <td>78</td>
+        <td>-</td>
         <td>6</td>
         <td>24</td>
         <td>30</td>
-        <td>190</td>
+        <td>166</td>
         <td>missing-accessibility-statement</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/ircc.html">IRCC</a></td>
         <td>18</td>
-        <td>78</td>
+        <td>-</td>
         <td>12</td>
         <td>18</td>
         <td>30</td>
-        <td>185</td>
+        <td>161</td>
         <td>missing-accessibility-statement</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/cra.html">CRA</a></td>
         <td>10</td>
-        <td>78</td>
+        <td>-</td>
         <td>8</td>
         <td>10</td>
         <td>18</td>
-        <td>185</td>
+        <td>161</td>
         <td>missing-accessibility-statement</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/cbsa.html">CBSA</a></td>
         <td>2</td>
-        <td>78</td>
+        <td>-</td>
         <td>0</td>
         <td>2</td>
         <td>2</td>
-        <td>182</td>
+        <td>158</td>
         <td>missing-accessibility-statement</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/justice.html">Justice</a></td>
         <td>2</td>
-        <td>78</td>
+        <td>-</td>
         <td>0</td>
         <td>2</td>
         <td>2</td>
-        <td>182</td>
+        <td>158</td>
         <td>missing-accessibility-statement</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/health-canada-phac.html">Health Canada/PHAC</a></td>
         <td>1</td>
-        <td>78</td>
+        <td>-</td>
         <td>1</td>
         <td>1</td>
         <td>2</td>
-        <td>178</td>
+        <td>154</td>
         <td>missing-french-counterpart</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/statscan.html">StatsCan</a></td>
         <td>2</td>
-        <td>78</td>
+        <td>-</td>
         <td>0</td>
         <td>2</td>
         <td>2</td>
-        <td>177</td>
+        <td>153</td>
         <td>missing-accessibility-statement</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/phac.html">PHAC</a></td>
         <td>4</td>
-        <td>78</td>
+        <td>-</td>
         <td>0</td>
+        <td>4</td>
         <td>3</td>
-        <td>3</td>
-        <td>174</td>
-        <td>missing-accessibility-statement</td>
-      </tr>
-
-      <tr>
-        <td><a href="./details/institutions/csps.html">CSPS</a></td>
-        <td>2</td>
-        <td>78</td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>169</td>
+        <td>150</td>
         <td>missing-accessibility-statement</td>
       </tr>
 
       <tr>
         <td><a href="./details/institutions/eccc.html">ECCC</a></td>
         <td>2</td>
-        <td>78</td>
+        <td>-</td>
         <td>0</td>
+        <td>2</td>
         <td>1</td>
-        <td>1</td>
-        <td>169</td>
+        <td>145</td>
+        <td>missing-accessibility-statement</td>
+      </tr>
+
+      <tr>
+        <td><a href="./details/institutions/csps.html">CSPS</a></td>
+        <td>2</td>
+        <td>-</td>
+        <td>0</td>
+        <td>2</td>
+        <td>2</td>
+        <td>145</td>
         <td>missing-accessibility-statement</td>
       </tr></tbody>
       </table>
@@ -868,10 +851,10 @@
       <h2 id="theme-contexts">Theme and Device Contexts <a href="#theme-contexts" class="anchor-link" aria-label="Link to section: Theme and Device Contexts">#</a></h2>
       <p><em>Context baseline is desktop light. Deltas are current context minus baseline.</em></p>
       <div class="cards">
-        <div class="card"><strong>Rows With Context Data</strong><br/>142</div>
+        <div class="card"><strong>Rows With Context Data</strong><br/>0</div>
         <div class="card"><strong>Baseline</strong><br/>desktop_light</div>
-        <div class="card"><strong>Mobile Dark Perf Delta</strong><br/>-9.64</div>
-        <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>-3</div>
+        <div class="card"><strong>Mobile Dark Perf Delta</strong><br/>-</div>
+        <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>-</div>
       </div>
 
       <figure>
@@ -885,22 +868,22 @@
 <line x1="48" y1="136" x2="712" y2="136" stroke="#d7e2d8" stroke-width="1" /><text x="42" y="140" text-anchor="end" font-size="11">50</text>
 <line x1="48" y1="83" x2="712" y2="83" stroke="#d7e2d8" stroke-width="1" /><text x="42" y="87" text-anchor="end" font-size="11">75</text>
 <line x1="48" y1="30" x2="712" y2="30" stroke="#d7e2d8" stroke-width="1" /><text x="42" y="34" text-anchor="end" font-size="11">100</text>
-      <rect x="56.0" y="118.3" width="36.0" height="123.7" fill="#235d8b" /><text x="74.0" y="115.3" text-anchor="middle" font-size="9">58.36</text>
-<rect x="94.0" y="78.8" width="36.0" height="163.2" fill="#1d6b42" /><text x="112.0" y="75.8" text-anchor="middle" font-size="9">76.99</text>
-<rect x="132.0" y="87.5" width="36.0" height="154.5" fill="#7b4f9e" /><text x="150.0" y="84.5" text-anchor="middle" font-size="9">72.87</text>
-<rect x="170.0" y="66.5" width="36.0" height="175.5" fill="#b5402d" /><text x="188.0" y="63.5" text-anchor="middle" font-size="9">82.78</text>
-<rect x="222.0" y="128.2" width="36.0" height="113.8" fill="#235d8b" /><text x="240.0" y="125.2" text-anchor="middle" font-size="9">53.7</text>
-<rect x="260.0" y="85.1" width="36.0" height="156.9" fill="#1d6b42" /><text x="278.0" y="82.1" text-anchor="middle" font-size="9">73.99</text>
-<rect x="298.0" y="87.5" width="36.0" height="154.5" fill="#7b4f9e" /><text x="316.0" y="84.5" text-anchor="middle" font-size="9">72.87</text>
-<rect x="336.0" y="66.5" width="36.0" height="175.5" fill="#b5402d" /><text x="354.0" y="63.5" text-anchor="middle" font-size="9">82.78</text>
-<rect x="388.0" y="126.6" width="36.0" height="115.4" fill="#235d8b" /><text x="406.0" y="123.6" text-anchor="middle" font-size="9">54.43</text>
-<rect x="426.0" y="78.8" width="36.0" height="163.2" fill="#1d6b42" /><text x="444.0" y="75.8" text-anchor="middle" font-size="9">76.99</text>
-<rect x="464.0" y="91.8" width="36.0" height="150.2" fill="#7b4f9e" /><text x="482.0" y="88.8" text-anchor="middle" font-size="9">70.87</text>
-<rect x="502.0" y="68.6" width="36.0" height="173.4" fill="#b5402d" /><text x="520.0" y="65.6" text-anchor="middle" font-size="9">81.78</text>
-<rect x="554.0" y="138.7" width="36.0" height="103.3" fill="#235d8b" /><text x="572.0" y="135.7" text-anchor="middle" font-size="9">48.72</text>
-<rect x="592.0" y="85.1" width="36.0" height="156.9" fill="#1d6b42" /><text x="610.0" y="82.1" text-anchor="middle" font-size="9">73.99</text>
-<rect x="630.0" y="91.8" width="36.0" height="150.2" fill="#7b4f9e" /><text x="648.0" y="88.8" text-anchor="middle" font-size="9">70.87</text>
-<rect x="668.0" y="68.6" width="36.0" height="173.4" fill="#b5402d" /><text x="686.0" y="65.6" text-anchor="middle" font-size="9">81.78</text>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <text x="131.0" y="260" text-anchor="middle" font-size="11">Desktop Light</text>
 <text x="297.0" y="260" text-anchor="middle" font-size="11">Desktop Dark</text>
 <text x="463.0" y="260" text-anchor="middle" font-size="11">Mobile Light</text>
@@ -927,34 +910,34 @@
         <tbody>
       <tr>
         <td>desktop_light</td>
-        <td>58.36</td>
-        <td>76.99</td>
-        <td>72.87</td>
-        <td>82.78</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>desktop_dark</td>
-        <td>53.7</td>
-        <td>73.99</td>
-        <td>72.87</td>
-        <td>82.78</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>mobile_light</td>
-        <td>54.43</td>
-        <td>76.99</td>
-        <td>70.87</td>
-        <td>81.78</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>mobile_dark</td>
-        <td>48.72</td>
-        <td>73.99</td>
-        <td>70.87</td>
-        <td>81.78</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr></tbody>
       </table>
 
@@ -972,48 +955,48 @@
         <tbody>
       <tr>
         <td>desktop_light</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>desktop_dark</td>
-        <td>-4.66</td>
-        <td>-3</td>
-        <td>0</td>
-        <td>0</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>mobile_light</td>
-        <td>-3.93</td>
-        <td>0</td>
-        <td>-2</td>
-        <td>-1</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>mobile_dark</td>
-        <td>-9.64</td>
-        <td>-3</td>
-        <td>-2</td>
-        <td>-1</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr></tbody>
       </table>
     </section>
 
     <section>
       <h2 id="bilingual-parity">Bilingual Parity <a href="#bilingual-parity" class="anchor-link" aria-label="Link to section: Bilingual Parity">#</a></h2>
-      <p><em>Average EN/FR accessibility gap is the mean absolute difference between paired EN and FR scores. A value of 0 means paired pages differ by that many points on average; it does not imply one language is always better.</em></p>
+      <p><em>Average EN/FR accessibility gap is the mean absolute difference between paired EN and FR scores. A value of - means paired pages differ by that many points on average; it does not imply one language is always better.</em></p>
       <div class="cards">
         <div class="card"><strong>Candidate Pairs</strong><br/>130</div>
-        <div class="card"><strong>Complete Pairs</strong><br/>19</div>
+        <div class="card"><strong>Complete Pairs</strong><br/>0</div>
         <div class="card"><strong>Missing FR</strong><br/>110</div>
         <div class="card"><strong>Missing EN</strong><br/>0</div>
         <div class="card"><strong>Paired via Switcher</strong><br/>0</div>
-        <div class="card"><strong>Avg Perf Gap (EN/FR)</strong><br/>20.42</div>
+        <div class="card"><strong>Avg Perf Gap (EN/FR)</strong><br/>-</div>
       </div>
 
       <h3>Largest Accessibility Gaps</h3>
@@ -1029,6 +1012,23 @@
           </tr>
         </thead>
         <tbody><tr><td colspan="6">No complete EN/FR pairs with parity data in this run.</td></tr></tbody>
+      </table>
+
+      <h3>Institution Bilingual Gap Leaderboard</h3>
+      <p><a href="./details/bilingual-gap-leaderboard.json">Download leaderboard JSON</a></p>
+      <p><em>Institutions ranked by mean absolute EN/FR accessibility score gap across their paired services. Higher values indicate greater inconsistency between language versions. Trend direction links to the institution's historical trend page when data is available.</em></p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Institution</th>
+            <th scope="col">Paired Services</th>
+            <th scope="col">Mean A11y Gap</th>
+            <th scope="col">High Gap Pairs (≥10)</th>
+            <th scope="col">Mean Perf Gap</th>
+            <th scope="col">Trend</th>
+          </tr>
+        </thead>
+        <tbody><tr><td colspan="6">No institution gap data available in this run.</td></tr></tbody>
       </table>
 
       <h3>Missing Counterparts</h3>
@@ -1132,12 +1132,12 @@
     <section>
       <h2 id="accessibility-statements">Accessibility Statements <a href="#accessibility-statements" class="anchor-link" aria-label="Link to section: Accessibility Statements">#</a></h2>
       <div class="cards">
-        <div class="card"><strong>Detected</strong><br/>4/150</div>
-        <div class="card"><strong>Coverage</strong><br/>2.67%</div>
-        <div class="card"><strong>With Contact</strong><br/>100%</div>
-        <div class="card"><strong>With Compliance Status</strong><br/>25%</div>
-        <div class="card"><strong>With Support Path</strong><br/>0%</div>
-        <div class="card"><strong>With Freshness Marker</strong><br/>50%</div>
+        <div class="card"><strong>Detected</strong><br/>0/150</div>
+        <div class="card"><strong>Coverage</strong><br/>0%</div>
+        <div class="card"><strong>With Contact</strong><br/>-%</div>
+        <div class="card"><strong>With Compliance Status</strong><br/>-%</div>
+        <div class="card"><strong>With Support Path</strong><br/>-%</div>
+        <div class="card"><strong>With Freshness Marker</strong><br/>-%</div>
       </div>
 
       <h3>Missing Statement Examples</h3>
@@ -1216,13 +1216,13 @@
       </tr>
 
       <tr>
-        <td>Justice Laws Website</td>
-        <td>EN</td>
-        <td>tier-1</td>
-        <td><a href="https://laws-lois.justice.gc.ca/">https://laws-lois.justice.gc.ca/</a></td>
+        <td>Environment and Climate Change Canada</td>
+        <td>FR</td>
+        <td>tier-2</td>
+        <td><a href="https://www.canada.ca/fr/environnement-changement-climatique.html">https://www.canada.ca/fr/environnement-changement-climatique.html</a></td>
       </tr></tbody>
       </table>
-      <p>136 additional rows available in <a href="./details/missing-statements.json">missing-statements.json</a>.</p>
+      <p>140 additional rows available in <a href="./details/missing-statements.json">missing-statements.json</a>.</p>
 
       <h3>Detected Statement Examples</h3>
       <table>
@@ -1234,44 +1234,17 @@
             <th scope="col">Detected Link</th>
           </tr>
         </thead>
-        <tbody>
-      <tr>
-        <td>Environment and Climate Change Canada</td>
-        <td>FR</td>
-        <td><a href="https://www.canada.ca/fr/environnement-changement-climatique.html">https://www.canada.ca/fr/environnement-changement-climatique.html</a></td>
-        <td>Accessibilité</td>
-      </tr>
-
-      <tr>
-        <td>Health Infobase Canada</td>
-        <td>FR</td>
-        <td><a href="https://www.canada.ca/fr/sante-publique/services/maladies.html">https://www.canada.ca/fr/sante-publique/services/maladies.html</a></td>
-        <td>Incapacités liées à l&#39;apprentissage (dyslexie, dysgraphie)</td>
-      </tr>
-
-      <tr>
-        <td>Sujets</td>
-        <td>EN</td>
-        <td><a href="https://www150.statcan.gc.ca/n1/fr/sujets">https://www150.statcan.gc.ca/n1/fr/sujets</a></td>
-        <td>Statistiques sur l&#39;accessibilité</td>
-      </tr>
-
-      <tr>
-        <td>Agence du revenu du Canada (ARC)</td>
-        <td>EN</td>
-        <td><a href="https://www.canada.ca/fr/agence-revenu.html">https://www.canada.ca/fr/agence-revenu.html</a></td>
-        <td>Accessibilité</td>
-      </tr></tbody>
+        <tbody><tr><td colspan="4">No detected accessibility statements in this run.</td></tr></tbody>
       </table>
     </section>
 
     <section>
       <h2 id="platform-signals">Platform Signals <a href="#platform-signals" class="anchor-link" aria-label="Link to section: Platform Signals">#</a></h2>
       <div class="cards">
-        <div class="card"><strong>Known CMS</strong><br/>26/150</div>
-        <div class="card"><strong>Known CMS %</strong><br/>17.33%</div>
-        <div class="card"><strong>Known Design System</strong><br/>133</div>
-        <div class="card"><strong>Known Design System %</strong><br/>88.67%</div>
+        <div class="card"><strong>Known CMS</strong><br/>0/150</div>
+        <div class="card"><strong>Known CMS %</strong><br/>0%</div>
+        <div class="card"><strong>Known Design System</strong><br/>0</div>
+        <div class="card"><strong>Known Design System %</strong><br/>0%</div>
       </div>
 
       <h3>Top CMS Distribution</h3>
@@ -1287,28 +1260,14 @@
         <tbody>
       <tr>
         <td>unknown</td>
-        <td>124</td>
+        <td>150</td>
         <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/en/employment-social-development/services/sin.html">EN Apply for a Social Insurance Number</a></li><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">FR Apply for a Social Insurance Number</a></li><li><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN Check my Service Canada Account</a></li><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR Check my Service Canada Account</a></li><li><a href="https://www.canada.ca/en/employment-social-development/services/office.html">EN Find your local Service Canada office</a></li><li><a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">FR Find your local Service Canada office</a></li><li><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN Canada Border Wait Times</a></li><li><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR Canada Border Wait Times</a></li><li><a href="https://www.canada.ca/en/environment-climate-change.html">EN Environment and Climate Change Canada</a></li><li><a href="https://www.canada.ca/fr/environnement-changement-climatique.html">FR Environment and Climate Change Canada</a></li><li><a href="https://laws-lois.justice.gc.ca/">EN Justice Laws Website</a></li><li><a href="https://laws-lois.justice.gc.ca/">FR Justice Laws Website</a></li></ul></details></td>
-      </tr>
-
-      <tr>
-        <td>aem</td>
-        <td>24</td>
-        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html">EN Consumer Price Index</a></li><li><a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html">FR Consumer Price Index</a></li><li><a href="https://www.canada.ca/en/public-health/services/diseases.html">EN Health Infobase Canada</a></li><li><a href="https://www.canada.ca/fr/sante-publique/services/maladies.html">FR Health Infobase Canada</a></li><li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/new-immigration-and-asylum-measures-from-bill-c-12-the-strengthening-canadas-immigration-system-and-borders-act-have-become-law.html">EN New immigration and asylum measures from Bill C-12 (the Strengthening Canada’s Immigration System and Borders Act) have become law</a></li><li><a href="https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html">EN Legislation Passes to Deliver New Canada Groceries and Essentials Benefit</a></li><li><a href="https://www.canada.ca/en/department-finance/news/2026/01/the-new-canada-groceries-and-essentials-benefit.html">EN Backgrounder: The new Canada Groceries and Essentials Benefit</a></li><li><a href="https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html">EN Government of Canada raises the federal minimum wage</a></li><li><a href="https://www.canada.ca/en/department-finance/news/2026/03/legislation-to-make-life-more-affordable-receives-royal-assent.html">EN Legislation to make life more affordable receives Royal Assent</a></li><li><a href="https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-extends-financial-supports-for-post-secondary-students.html">EN Government of Canada extends financial supports for post-secondary students</a></li><li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2025/12/bill-c-3-an-act-to-amend-the-citizenship-act-2025-comes-into-effect.html">EN Bill C-3: An Act to amend the Citizenship Act (2025) comes into effect</a></li><li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/canada-begins-new-30-days-or-free-guarantee-for-passport-processing.html">EN Canada begins new “30 days or free” guarantee for passport processing</a></li></ul></details></td>
-      </tr>
-
-      <tr>
-        <td>drupal</td>
-        <td>2</td>
-        <td><details class="inline-details"><summary>Show URLs</summary><ul class="link-list"><li><a href="https://www.canada.ca/en/services/finance.html">EN Discovery: finance</a></li><li><a href="https://www150.statcan.gc.ca/n1/fr/sujets">EN Sujets</a></li></ul></details></td>
       </tr></tbody>
       </table>
 
       <details>
         <summary>Show CMS URL References</summary>
         <p><strong>unknown</strong>: <a href="https://www.canada.ca/en/employment-social-development/services/sin.html">EN Apply for a Social Insurance Number</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">FR Apply for a Social Insurance Number</a> | <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">EN Check my Service Canada Account</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">FR Check my Service Canada Account</a> | <a href="https://www.canada.ca/en/employment-social-development/services/office.html">EN Find your local Service Canada office</a> | <a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">FR Find your local Service Canada office</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">EN Canada Border Wait Times</a> | <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">FR Canada Border Wait Times</a> | <a href="https://www.canada.ca/en/environment-climate-change.html">EN Environment and Climate Change Canada</a> | <a href="https://www.canada.ca/fr/environnement-changement-climatique.html">FR Environment and Climate Change Canada</a></p>
-<p><strong>aem</strong>: <a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html">EN Consumer Price Index</a> | <a href="https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html">FR Consumer Price Index</a> | <a href="https://www.canada.ca/en/public-health/services/diseases.html">EN Health Infobase Canada</a> | <a href="https://www.canada.ca/fr/sante-publique/services/maladies.html">FR Health Infobase Canada</a> | <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/new-immigration-and-asylum-measures-from-bill-c-12-the-strengthening-canadas-immigration-system-and-borders-act-have-become-law.html">EN New immigration and asylum measures from Bill C-12 (the Strengthening Canada’s Immigration System and Borders Act) have become law</a> | <a href="https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html">EN Legislation Passes to Deliver New Canada Groceries and Essentials Benefit</a> | <a href="https://www.canada.ca/en/department-finance/news/2026/01/the-new-canada-groceries-and-essentials-benefit.html">EN Backgrounder: The new Canada Groceries and Essentials Benefit</a> | <a href="https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html">EN Government of Canada raises the federal minimum wage</a> | <a href="https://www.canada.ca/en/department-finance/news/2026/03/legislation-to-make-life-more-affordable-receives-royal-assent.html">EN Legislation to make life more affordable receives Royal Assent</a> | <a href="https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-extends-financial-supports-for-post-secondary-students.html">EN Government of Canada extends financial supports for post-secondary students</a></p>
-<p><strong>drupal</strong>: <a href="https://www.canada.ca/en/services/finance.html">EN Discovery: finance</a> | <a href="https://www150.statcan.gc.ca/n1/fr/sujets">EN Sujets</a></p>
       </details>
     </section>
 
@@ -1466,12 +1425,12 @@
 
     <section>
       <h2 id="directional-impact">Directional Impact Model <a href="#directional-impact" class="anchor-link" aria-label="Link to section: Directional Impact Model">#</a></h2>
-      <p><em>Directional estimate only. This combines automated quality signals with traffic volume and does not represent measured user harm or legal compliance status.</em></p>
+      <p><em>Directional estimate only. Combines automated quality signals with Statistics Canada disability prevalence data (CSD 2022). Does not represent measured user harm or legal compliance status. FPS codes reference CAN/ASC EN 301 549:2024 clauses 4.2.1-4.2.10.</em></p>
       <p>Formula: directional affected load = page load count x blended severity weight / 100 x statement multiplier. Statement multiplier is higher when no accessibility statement is detected.</p>
       <div class="cards">
         <div class="card"><strong>Total Load</strong><br/>131304535</div>
-        <div class="card"><strong>Directional Affected Load</strong><br/>50310210.50000001</div>
-        <div class="card"><strong>Affected Share</strong><br/>38.32%</div>
+        <div class="card"><strong>Directional Affected Load</strong><br/>151000215.24999997</div>
+        <div class="card"><strong>Affected Share</strong><br/>115%</div>
       </div>
 
       <h3>Top Directional Impact URLs</h3>
@@ -1490,80 +1449,80 @@
         <td>Sign in to your CRA account</td>
         <td>EN</td>
         <td>37136213</td>
-        <td>28</td>
-        <td>11957860.59</td>
+        <td>100</td>
+        <td>42706644.95</td>
       </tr>
 
       <tr>
         <td>Canada Revenue Agency - CRA Sign-in</td>
         <td>EN</td>
         <td>22208784</td>
-        <td>35</td>
-        <td>8939035.56</td>
+        <td>100</td>
+        <td>25540101.6</td>
       </tr>
 
       <tr>
         <td>Canada Revenue Agency - CRA sign-in information</td>
         <td>EN</td>
         <td>17463050</td>
-        <td>35</td>
-        <td>7028877.62</td>
+        <td>100</td>
+        <td>20082507.5</td>
       </tr>
 
       <tr>
         <td>Canada Revenue Agency (CRA)</td>
         <td>EN</td>
         <td>16036594</td>
-        <td>28</td>
-        <td>5163783.27</td>
-      </tr>
-
-      <tr>
-        <td>Overview</td>
-        <td>EN</td>
-        <td>4066682</td>
-        <td>55</td>
-        <td>2572176.36</td>
-      </tr>
-
-      <tr>
-        <td>Welcome</td>
-        <td>EN</td>
-        <td>3568622</td>
-        <td>55</td>
-        <td>2257153.42</td>
-      </tr>
-
-      <tr>
-        <td>Se connecter à son compte de l&amp;#39;ARC</td>
-        <td>EN</td>
-        <td>5540274</td>
-        <td>28</td>
-        <td>1783968.23</td>
+        <td>100</td>
+        <td>18442083.1</td>
       </tr>
 
       <tr>
         <td>Sujets</td>
         <td>EN</td>
         <td>5549102</td>
-        <td>32</td>
-        <td>1775712.64</td>
+        <td>100</td>
+        <td>6381467.3</td>
+      </tr>
+
+      <tr>
+        <td>Se connecter à son compte de l&amp;#39;ARC</td>
+        <td>EN</td>
+        <td>5540274</td>
+        <td>100</td>
+        <td>6371315.1</td>
+      </tr>
+
+      <tr>
+        <td>Overview</td>
+        <td>EN</td>
+        <td>4066682</td>
+        <td>100</td>
+        <td>4676684.3</td>
+      </tr>
+
+      <tr>
+        <td>Welcome</td>
+        <td>EN</td>
+        <td>3568622</td>
+        <td>100</td>
+        <td>4103915.3</td>
+      </tr>
+
+      <tr>
+        <td>Agence du revenu du Canada (ARC)</td>
+        <td>EN</td>
+        <td>2698651</td>
+        <td>100</td>
+        <td>3103448.65</td>
       </tr>
 
       <tr>
         <td>Open Mail Page</td>
         <td>EN</td>
         <td>2599195</td>
-        <td>55</td>
-        <td>1643990.84</td>
-      </tr>
-
-      <tr>
-        <td>My Account: Mail - Language:en</td>
-        <td>EN</td>
-        <td>1920649</td>
-        <td>55</td>
-        <td>1214810.49</td>
+        <td>100</td>
+        <td>2989074.25</td>
       </tr></tbody>
       </table>
 
@@ -1583,22 +1542,22 @@
             <td>tier-1</td>
             <td>68</td>
             <td>125956016</td>
-            <td>48563680.629999995</td>
-            <td>96.53</td>
+            <td>144849418.39999998</td>
+            <td>95.93</td>
           </tr>
 <tr>
             <td>tier-2</td>
             <td>46</td>
             <td>4591858</td>
-            <td>1502885.03</td>
-            <td>2.99</td>
+            <td>5280636.7</td>
+            <td>3.5</td>
           </tr>
 <tr>
             <td>tier-3</td>
             <td>36</td>
             <td>756661</td>
-            <td>243644.84</td>
-            <td>0.48</td>
+            <td>870160.15</td>
+            <td>0.58</td>
           </tr>
         </tbody>
       </table>
@@ -1607,10 +1566,10 @@
     <section>
       <h2 id="benchmark-summary">Benchmark Summary <a href="#benchmark-summary" class="anchor-link" aria-label="Link to section: Benchmark Summary">#</a></h2>
       <div class="cards">
-        <div class="card"><strong>Performance</strong><br/>58.36</div>
-        <div class="card"><strong>Accessibility</strong><br/>76.99</div>
-        <div class="card"><strong>Best Practices</strong><br/>72.87</div>
-        <div class="card"><strong>SEO</strong><br/>82.78</div>
+        <div class="card"><strong>Performance</strong><br/>-</div>
+        <div class="card"><strong>Accessibility</strong><br/>-</div>
+        <div class="card"><strong>Best Practices</strong><br/>-</div>
+        <div class="card"><strong>SEO</strong><br/>-</div>
       </div>
     </section>
 
@@ -1637,156 +1596,156 @@
         <td>Apply for a Social Insurance Number</td>
         <td><a href="https://www.canada.ca/en/employment-social-development/services/sin.html">https://www.canada.ca/en/employment-social-development/services/sin.html</a></td>
         <td>EN</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>45000</td>
-        <td>73</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Apply for a Social Insurance Number</td>
         <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/nas.html">https://www.canada.ca/fr/emploi-developpement-social/services/nas.html</a></td>
         <td>FR</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>45000</td>
-        <td>50</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Check my Service Canada Account</td>
         <td><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">https://www.canada.ca/en/employment-social-development/services/my-account.html</a></td>
         <td>EN</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>170000</td>
-        <td>32</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Check my Service Canada Account</td>
         <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html">https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html</a></td>
         <td>FR</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>170000</td>
-        <td>42</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Find your local Service Canada office</td>
         <td><a href="https://www.canada.ca/en/employment-social-development/services/office.html">https://www.canada.ca/en/employment-social-development/services/office.html</a></td>
         <td>EN</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>35000</td>
-        <td>48</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Find your local Service Canada office</td>
         <td><a href="https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html">https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html</a></td>
         <td>FR</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>35000</td>
-        <td>52</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Canada Border Wait Times</td>
         <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html</a></td>
         <td>EN</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>94000</td>
-        <td>97</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Canada Border Wait Times</td>
         <td><a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html">https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html</a></td>
         <td>FR</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>94000</td>
-        <td>99</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Environment and Climate Change Canada</td>
         <td><a href="https://www.canada.ca/en/environment-climate-change.html">https://www.canada.ca/en/environment-climate-change.html</a></td>
         <td>EN</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>52000</td>
-        <td>32</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Environment and Climate Change Canada</td>
         <td><a href="https://www.canada.ca/fr/environnement-changement-climatique.html">https://www.canada.ca/fr/environnement-changement-climatique.html</a></td>
         <td>FR</td>
-        <td>success</td>
-        <td>yes</td>
+        <td>failed</td>
+        <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>52000</td>
-        <td>74</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Justice Laws Website</td>
         <td><a href="https://laws-lois.justice.gc.ca/">https://laws-lois.justice.gc.ca/</a></td>
         <td>EN</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>88000</td>
-        <td>96</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
 
       <tr>
         <td>Justice Laws Website</td>
         <td><a href="https://laws-lois.justice.gc.ca/">https://laws-lois.justice.gc.ca/</a></td>
         <td>FR</td>
-        <td>success</td>
+        <td>failed</td>
         <td>no</td>
         <td>unknown</td>
-        <td>gcweb-wet</td>
+        <td>unknown</td>
         <td>88000</td>
-        <td>100</td>
-        <td>78</td>
+        <td>-</td>
+        <td>-</td>
       </tr></tbody>
       </table>
       <p>138 additional rows available in <a href="./report.json">report.json</a>.</p>
@@ -1834,8 +1793,10 @@
       function applyTheme(t) {
         html.setAttribute('data-theme', t);
         if (toggle) {
+          var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Sun</title><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+          var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
           toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+          toggle.innerHTML = t === 'dark' ? sunSvg : moonSvg;
         }
       }
       var stored = localStorage.getItem(THEME_KEY);

@@ -10,14 +10,16 @@
 <body>
   <header>
     <div class="nav"><a href="../institution-trends.html">&#8592; Back to Institution Trends</a></div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
   </header>
   <main>
     <h1>IRCC Trends</h1>
     <p><em>Daily institution-level trend view for accessibility and key barrier signals.</em></p>
     <div class="cards">
-      <div class="card"><strong>Days Tracked</strong><br/>16</div>
-      <div class="card"><strong>Latest Mean A11y</strong><br/>78</div>
+      <div class="card"><strong>Days Tracked</strong><br/>12</div>
+      <div class="card"><strong>Latest Mean A11y</strong><br/>-</div>
+      <div class="card"><strong>Latest A11y Gap</strong><br/>-</div>
+      <div class="card"><strong>Parity Trend</strong><br/>→ stable</div>
       <div class="card"><strong>Latest Missing FR</strong><br/>12</div>
       <div class="card"><strong>Latest Missing Statements</strong><br/>18</div>
     </div>
@@ -27,11 +29,23 @@
       <desc id="ircc-accessibility-over-time-desc">Line chart of daily mean accessibility score for this institution.</desc>
       <line x1="36" y1="184" x2="824" y2="184" stroke="#7f9685" stroke-width="1.5" />
       <line x1="36" y1="36" x2="36" y2="184" stroke="#7f9685" stroke-width="1.5" />
-      <path d="M193.6,68.56 L246.13333333333333,68.56 L298.66666666666663,68.56 L351.2,68.56 L403.73333333333335,68.56 L456.26666666666665,68.56 L508.79999999999995,68.56 L561.3333333333333,68.56 L613.8666666666667,68.56 L666.4,68.56 L718.9333333333333,68.56 L771.4666666666667,68.56 L824,68.56" fill="none" stroke="#1d6b42" stroke-width="3" />
-      <circle cx="193.6" cy="68.56" r="4" fill="#1d6b42" /><circle cx="246.13333333333333" cy="68.56" r="4" fill="#1d6b42" /><circle cx="298.66666666666663" cy="68.56" r="4" fill="#1d6b42" /><circle cx="351.2" cy="68.56" r="4" fill="#1d6b42" /><circle cx="403.73333333333335" cy="68.56" r="4" fill="#1d6b42" /><circle cx="456.26666666666665" cy="68.56" r="4" fill="#1d6b42" /><circle cx="508.79999999999995" cy="68.56" r="4" fill="#1d6b42" /><circle cx="561.3333333333333" cy="68.56" r="4" fill="#1d6b42" /><circle cx="613.8666666666667" cy="68.56" r="4" fill="#1d6b42" /><circle cx="666.4" cy="68.56" r="4" fill="#1d6b42" /><circle cx="718.9333333333333" cy="68.56" r="4" fill="#1d6b42" /><circle cx="771.4666666666667" cy="68.56" r="4" fill="#1d6b42" /><circle cx="824" cy="68.56" r="4" fill="#1d6b42" />
-      <text x="36" y="210" text-anchor="middle" font-size="11">03-26</text><text x="88.53333333333333" y="210" text-anchor="middle" font-size="11">03-27</text><text x="141.06666666666666" y="210" text-anchor="middle" font-size="11">03-28</text><text x="193.6" y="210" text-anchor="middle" font-size="11">03-29</text><text x="246.13333333333333" y="210" text-anchor="middle" font-size="11">03-30</text><text x="298.66666666666663" y="210" text-anchor="middle" font-size="11">03-31</text><text x="351.2" y="210" text-anchor="middle" font-size="11">04-01</text><text x="403.73333333333335" y="210" text-anchor="middle" font-size="11">04-02</text><text x="456.26666666666665" y="210" text-anchor="middle" font-size="11">04-03</text><text x="508.79999999999995" y="210" text-anchor="middle" font-size="11">04-04</text><text x="561.3333333333333" y="210" text-anchor="middle" font-size="11">04-05</text><text x="613.8666666666667" y="210" text-anchor="middle" font-size="11">04-06</text><text x="666.4" y="210" text-anchor="middle" font-size="11">04-07</text><text x="718.9333333333333" y="210" text-anchor="middle" font-size="11">04-08</text><text x="771.4666666666667" y="210" text-anchor="middle" font-size="11">04-09</text><text x="824" y="210" text-anchor="middle" font-size="11">04-13</text>
+      <path d="M36,68.56 L107.63636363636364,68.56 L179.27272727272728,68.56 L250.90909090909093,68.56 L322.54545454545456,68.56 L394.1818181818182,68.56 L465.81818181818187,68.56 L537.4545454545455,68.56 L609.0909090909091,68.56 L680.7272727272727,68.56 L752.3636363636364,68.56" fill="none" stroke="#1d6b42" stroke-width="3" />
+      <circle cx="36" cy="68.56" r="4" fill="#1d6b42" /><circle cx="107.63636363636364" cy="68.56" r="4" fill="#1d6b42" /><circle cx="179.27272727272728" cy="68.56" r="4" fill="#1d6b42" /><circle cx="250.90909090909093" cy="68.56" r="4" fill="#1d6b42" /><circle cx="322.54545454545456" cy="68.56" r="4" fill="#1d6b42" /><circle cx="394.1818181818182" cy="68.56" r="4" fill="#1d6b42" /><circle cx="465.81818181818187" cy="68.56" r="4" fill="#1d6b42" /><circle cx="537.4545454545455" cy="68.56" r="4" fill="#1d6b42" /><circle cx="609.0909090909091" cy="68.56" r="4" fill="#1d6b42" /><circle cx="680.7272727272727" cy="68.56" r="4" fill="#1d6b42" /><circle cx="752.3636363636364" cy="68.56" r="4" fill="#1d6b42" />
+      <text x="36" y="210" text-anchor="middle" font-size="11">03-30</text><text x="107.63636363636364" y="210" text-anchor="middle" font-size="11">03-31</text><text x="179.27272727272728" y="210" text-anchor="middle" font-size="11">04-01</text><text x="250.90909090909093" y="210" text-anchor="middle" font-size="11">04-02</text><text x="322.54545454545456" y="210" text-anchor="middle" font-size="11">04-03</text><text x="394.1818181818182" y="210" text-anchor="middle" font-size="11">04-04</text><text x="465.81818181818187" y="210" text-anchor="middle" font-size="11">04-05</text><text x="537.4545454545455" y="210" text-anchor="middle" font-size="11">04-06</text><text x="609.0909090909091" y="210" text-anchor="middle" font-size="11">04-07</text><text x="680.7272727272727" y="210" text-anchor="middle" font-size="11">04-08</text><text x="752.3636363636364" y="210" text-anchor="middle" font-size="11">04-09</text><text x="824" y="210" text-anchor="middle" font-size="11">04-13</text>
     </svg>
     <figcaption>IRCC accessibility over time</figcaption>
+  </figure>
+    <figure>
+    <svg viewBox="0 0 860 220" role="img" aria-labelledby="ircc-en-fr-accessibility-gap-over-time-title ircc-en-fr-accessibility-gap-over-time-desc" class="history-chart">
+      <title id="ircc-en-fr-accessibility-gap-over-time-title">IRCC EN/FR accessibility gap over time</title>
+      <desc id="ircc-en-fr-accessibility-gap-over-time-desc">Line chart of daily mean absolute EN/FR accessibility score gap for this institution. Lower is better.</desc>
+      <line x1="36" y1="184" x2="824" y2="184" stroke="#7f9685" stroke-width="1.5" />
+      <line x1="36" y1="36" x2="36" y2="184" stroke="#7f9685" stroke-width="1.5" />
+      <path d="M36,184 L107.63636363636364,184 L179.27272727272728,184 L250.90909090909093,184 L322.54545454545456,184 L394.1818181818182,184 L465.81818181818187,184 L537.4545454545455,184 L609.0909090909091,184 L680.7272727272727,184 L752.3636363636364,184" fill="none" stroke="#e07b00" stroke-width="3" />
+      <circle cx="36" cy="184" r="4" fill="#e07b00" /><circle cx="107.63636363636364" cy="184" r="4" fill="#e07b00" /><circle cx="179.27272727272728" cy="184" r="4" fill="#e07b00" /><circle cx="250.90909090909093" cy="184" r="4" fill="#e07b00" /><circle cx="322.54545454545456" cy="184" r="4" fill="#e07b00" /><circle cx="394.1818181818182" cy="184" r="4" fill="#e07b00" /><circle cx="465.81818181818187" cy="184" r="4" fill="#e07b00" /><circle cx="537.4545454545455" cy="184" r="4" fill="#e07b00" /><circle cx="609.0909090909091" cy="184" r="4" fill="#e07b00" /><circle cx="680.7272727272727" cy="184" r="4" fill="#e07b00" /><circle cx="752.3636363636364" cy="184" r="4" fill="#e07b00" />
+      <text x="36" y="210" text-anchor="middle" font-size="11">03-30</text><text x="107.63636363636364" y="210" text-anchor="middle" font-size="11">03-31</text><text x="179.27272727272728" y="210" text-anchor="middle" font-size="11">04-01</text><text x="250.90909090909093" y="210" text-anchor="middle" font-size="11">04-02</text><text x="322.54545454545456" y="210" text-anchor="middle" font-size="11">04-03</text><text x="394.1818181818182" y="210" text-anchor="middle" font-size="11">04-04</text><text x="465.81818181818187" y="210" text-anchor="middle" font-size="11">04-05</text><text x="537.4545454545455" y="210" text-anchor="middle" font-size="11">04-06</text><text x="609.0909090909091" y="210" text-anchor="middle" font-size="11">04-07</text><text x="680.7272727272727" y="210" text-anchor="middle" font-size="11">04-08</text><text x="752.3636363636364" y="210" text-anchor="middle" font-size="11">04-09</text><text x="824" y="210" text-anchor="middle" font-size="11">04-13</text>
+    </svg>
+    <figcaption>IRCC EN/FR accessibility gap over time</figcaption>
   </figure>
     <figure>
     <svg viewBox="0 0 860 220" role="img" aria-labelledby="ircc-missing-french-counterparts-over-time-title ircc-missing-french-counterparts-over-time-desc" class="history-chart">
@@ -39,9 +53,9 @@
       <desc id="ircc-missing-french-counterparts-over-time-desc">Line chart of daily missing French counterpart counts for this institution.</desc>
       <line x1="36" y1="184" x2="824" y2="184" stroke="#7f9685" stroke-width="1.5" />
       <line x1="36" y1="36" x2="36" y2="184" stroke="#7f9685" stroke-width="1.5" />
-      <path d="M36,36 L88.53333333333333,36 L141.06666666666666,36 L193.6,48.33333333333334 L246.13333333333333,48.33333333333334 L298.66666666666663,48.33333333333334 L351.2,48.33333333333334 L403.73333333333335,48.33333333333334 L456.26666666666665,48.33333333333334 L508.79999999999995,48.33333333333334 L561.3333333333333,48.33333333333334 L613.8666666666667,48.33333333333334 L666.4,48.33333333333334 L718.9333333333333,48.33333333333334 L771.4666666666667,36 L824,36" fill="none" stroke="#b5402d" stroke-width="3" />
-      <circle cx="36" cy="36" r="4" fill="#b5402d" /><circle cx="88.53333333333333" cy="36" r="4" fill="#b5402d" /><circle cx="141.06666666666666" cy="36" r="4" fill="#b5402d" /><circle cx="193.6" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="246.13333333333333" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="298.66666666666663" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="351.2" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="403.73333333333335" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="456.26666666666665" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="508.79999999999995" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="561.3333333333333" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="613.8666666666667" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="666.4" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="718.9333333333333" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="771.4666666666667" cy="36" r="4" fill="#b5402d" /><circle cx="824" cy="36" r="4" fill="#b5402d" />
-      <text x="36" y="210" text-anchor="middle" font-size="11">03-26</text><text x="88.53333333333333" y="210" text-anchor="middle" font-size="11">03-27</text><text x="141.06666666666666" y="210" text-anchor="middle" font-size="11">03-28</text><text x="193.6" y="210" text-anchor="middle" font-size="11">03-29</text><text x="246.13333333333333" y="210" text-anchor="middle" font-size="11">03-30</text><text x="298.66666666666663" y="210" text-anchor="middle" font-size="11">03-31</text><text x="351.2" y="210" text-anchor="middle" font-size="11">04-01</text><text x="403.73333333333335" y="210" text-anchor="middle" font-size="11">04-02</text><text x="456.26666666666665" y="210" text-anchor="middle" font-size="11">04-03</text><text x="508.79999999999995" y="210" text-anchor="middle" font-size="11">04-04</text><text x="561.3333333333333" y="210" text-anchor="middle" font-size="11">04-05</text><text x="613.8666666666667" y="210" text-anchor="middle" font-size="11">04-06</text><text x="666.4" y="210" text-anchor="middle" font-size="11">04-07</text><text x="718.9333333333333" y="210" text-anchor="middle" font-size="11">04-08</text><text x="771.4666666666667" y="210" text-anchor="middle" font-size="11">04-09</text><text x="824" y="210" text-anchor="middle" font-size="11">04-13</text>
+      <path d="M36,48.33333333333334 L107.63636363636364,48.33333333333334 L179.27272727272728,48.33333333333334 L250.90909090909093,48.33333333333334 L322.54545454545456,48.33333333333334 L394.1818181818182,48.33333333333334 L465.81818181818187,48.33333333333334 L537.4545454545455,48.33333333333334 L609.0909090909091,48.33333333333334 L680.7272727272727,48.33333333333334 L752.3636363636364,36 L824,36" fill="none" stroke="#b5402d" stroke-width="3" />
+      <circle cx="36" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="107.63636363636364" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="179.27272727272728" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="250.90909090909093" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="322.54545454545456" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="394.1818181818182" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="465.81818181818187" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="537.4545454545455" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="609.0909090909091" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="680.7272727272727" cy="48.33333333333334" r="4" fill="#b5402d" /><circle cx="752.3636363636364" cy="36" r="4" fill="#b5402d" /><circle cx="824" cy="36" r="4" fill="#b5402d" />
+      <text x="36" y="210" text-anchor="middle" font-size="11">03-30</text><text x="107.63636363636364" y="210" text-anchor="middle" font-size="11">03-31</text><text x="179.27272727272728" y="210" text-anchor="middle" font-size="11">04-01</text><text x="250.90909090909093" y="210" text-anchor="middle" font-size="11">04-02</text><text x="322.54545454545456" y="210" text-anchor="middle" font-size="11">04-03</text><text x="394.1818181818182" y="210" text-anchor="middle" font-size="11">04-04</text><text x="465.81818181818187" y="210" text-anchor="middle" font-size="11">04-05</text><text x="537.4545454545455" y="210" text-anchor="middle" font-size="11">04-06</text><text x="609.0909090909091" y="210" text-anchor="middle" font-size="11">04-07</text><text x="680.7272727272727" y="210" text-anchor="middle" font-size="11">04-08</text><text x="752.3636363636364" y="210" text-anchor="middle" font-size="11">04-09</text><text x="824" y="210" text-anchor="middle" font-size="11">04-13</text>
     </svg>
     <figcaption>IRCC missing French counterparts over time</figcaption>
   </figure>
@@ -51,9 +65,9 @@
       <desc id="ircc-missing-accessibility-statements-over-time-desc">Line chart of daily missing accessibility statement counts for this institution.</desc>
       <line x1="36" y1="184" x2="824" y2="184" stroke="#7f9685" stroke-width="1.5" />
       <line x1="36" y1="36" x2="36" y2="184" stroke="#7f9685" stroke-width="1.5" />
-      <path d="M36,36 L88.53333333333333,36 L141.06666666666666,36 L193.6,44.22222222222223 L246.13333333333333,44.22222222222223 L298.66666666666663,44.22222222222223 L351.2,44.22222222222223 L403.73333333333335,44.22222222222223 L456.26666666666665,44.22222222222223 L508.79999999999995,44.22222222222223 L561.3333333333333,44.22222222222223 L613.8666666666667,44.22222222222223 L666.4,44.22222222222223 L718.9333333333333,44.22222222222223 L771.4666666666667,36 L824,36" fill="none" stroke="#235d8b" stroke-width="3" />
-      <circle cx="36" cy="36" r="4" fill="#235d8b" /><circle cx="88.53333333333333" cy="36" r="4" fill="#235d8b" /><circle cx="141.06666666666666" cy="36" r="4" fill="#235d8b" /><circle cx="193.6" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="246.13333333333333" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="298.66666666666663" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="351.2" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="403.73333333333335" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="456.26666666666665" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="508.79999999999995" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="561.3333333333333" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="613.8666666666667" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="666.4" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="718.9333333333333" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="771.4666666666667" cy="36" r="4" fill="#235d8b" /><circle cx="824" cy="36" r="4" fill="#235d8b" />
-      <text x="36" y="210" text-anchor="middle" font-size="11">03-26</text><text x="88.53333333333333" y="210" text-anchor="middle" font-size="11">03-27</text><text x="141.06666666666666" y="210" text-anchor="middle" font-size="11">03-28</text><text x="193.6" y="210" text-anchor="middle" font-size="11">03-29</text><text x="246.13333333333333" y="210" text-anchor="middle" font-size="11">03-30</text><text x="298.66666666666663" y="210" text-anchor="middle" font-size="11">03-31</text><text x="351.2" y="210" text-anchor="middle" font-size="11">04-01</text><text x="403.73333333333335" y="210" text-anchor="middle" font-size="11">04-02</text><text x="456.26666666666665" y="210" text-anchor="middle" font-size="11">04-03</text><text x="508.79999999999995" y="210" text-anchor="middle" font-size="11">04-04</text><text x="561.3333333333333" y="210" text-anchor="middle" font-size="11">04-05</text><text x="613.8666666666667" y="210" text-anchor="middle" font-size="11">04-06</text><text x="666.4" y="210" text-anchor="middle" font-size="11">04-07</text><text x="718.9333333333333" y="210" text-anchor="middle" font-size="11">04-08</text><text x="771.4666666666667" y="210" text-anchor="middle" font-size="11">04-09</text><text x="824" y="210" text-anchor="middle" font-size="11">04-13</text>
+      <path d="M36,44.22222222222223 L107.63636363636364,44.22222222222223 L179.27272727272728,44.22222222222223 L250.90909090909093,44.22222222222223 L322.54545454545456,44.22222222222223 L394.1818181818182,44.22222222222223 L465.81818181818187,44.22222222222223 L537.4545454545455,44.22222222222223 L609.0909090909091,44.22222222222223 L680.7272727272727,44.22222222222223 L752.3636363636364,36 L824,36" fill="none" stroke="#235d8b" stroke-width="3" />
+      <circle cx="36" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="107.63636363636364" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="179.27272727272728" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="250.90909090909093" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="322.54545454545456" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="394.1818181818182" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="465.81818181818187" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="537.4545454545455" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="609.0909090909091" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="680.7272727272727" cy="44.22222222222223" r="4" fill="#235d8b" /><circle cx="752.3636363636364" cy="36" r="4" fill="#235d8b" /><circle cx="824" cy="36" r="4" fill="#235d8b" />
+      <text x="36" y="210" text-anchor="middle" font-size="11">03-30</text><text x="107.63636363636364" y="210" text-anchor="middle" font-size="11">03-31</text><text x="179.27272727272728" y="210" text-anchor="middle" font-size="11">04-01</text><text x="250.90909090909093" y="210" text-anchor="middle" font-size="11">04-02</text><text x="322.54545454545456" y="210" text-anchor="middle" font-size="11">04-03</text><text x="394.1818181818182" y="210" text-anchor="middle" font-size="11">04-04</text><text x="465.81818181818187" y="210" text-anchor="middle" font-size="11">04-05</text><text x="537.4545454545455" y="210" text-anchor="middle" font-size="11">04-06</text><text x="609.0909090909091" y="210" text-anchor="middle" font-size="11">04-07</text><text x="680.7272727272727" y="210" text-anchor="middle" font-size="11">04-08</text><text x="752.3636363636364" y="210" text-anchor="middle" font-size="11">04-09</text><text x="824" y="210" text-anchor="middle" font-size="11">04-13</text>
     </svg>
     <figcaption>IRCC missing accessibility statements over time</figcaption>
   </figure>
@@ -64,6 +78,7 @@
           <th scope="col">URLs</th>
           <th scope="col">Load</th>
           <th scope="col">Mean A11y</th>
+          <th scope="col">Mean A11y Gap</th>
           <th scope="col">Mean Perf</th>
           <th scope="col">Missing FR</th>
           <th scope="col">Missing Statements</th>
@@ -71,50 +86,11 @@
         </tr>
       </thead>
       <tbody><tr>
-          <td>2026-03-26</td>
-          <td>18</td>
-          <td>1512000</td>
-          <td>-</td>
-          <td>-</td>
-          <td>12</td>
-          <td>18</td>
-          <td>0</td>
-        </tr>
-<tr>
-          <td>2026-03-27</td>
-          <td>18</td>
-          <td>1512000</td>
-          <td>-</td>
-          <td>-</td>
-          <td>12</td>
-          <td>18</td>
-          <td>0</td>
-        </tr>
-<tr>
-          <td>2026-03-28</td>
-          <td>18</td>
-          <td>1512000</td>
-          <td>-</td>
-          <td>-</td>
-          <td>12</td>
-          <td>18</td>
-          <td>0</td>
-        </tr>
-<tr>
-          <td>2026-03-29</td>
-          <td>17</td>
-          <td>1507000</td>
-          <td>78</td>
-          <td>49.71</td>
-          <td>11</td>
-          <td>17</td>
-          <td>0</td>
-        </tr>
-<tr>
           <td>2026-03-30</td>
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>54.47</td>
           <td>11</td>
           <td>17</td>
@@ -125,6 +101,7 @@
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>44.18</td>
           <td>11</td>
           <td>17</td>
@@ -135,6 +112,7 @@
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>57.29</td>
           <td>11</td>
           <td>17</td>
@@ -145,6 +123,7 @@
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>50</td>
           <td>11</td>
           <td>17</td>
@@ -155,6 +134,7 @@
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>62.18</td>
           <td>11</td>
           <td>17</td>
@@ -165,6 +145,7 @@
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>52.29</td>
           <td>11</td>
           <td>17</td>
@@ -175,6 +156,7 @@
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>42.88</td>
           <td>11</td>
           <td>17</td>
@@ -185,6 +167,7 @@
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>57.29</td>
           <td>11</td>
           <td>17</td>
@@ -195,6 +178,7 @@
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>50.71</td>
           <td>11</td>
           <td>17</td>
@@ -205,6 +189,7 @@
           <td>17</td>
           <td>1507000</td>
           <td>78</td>
+          <td>0</td>
           <td>51.12</td>
           <td>11</td>
           <td>17</td>
@@ -215,6 +200,7 @@
           <td>18</td>
           <td>1512000</td>
           <td>78</td>
+          <td>0</td>
           <td>47.17</td>
           <td>12</td>
           <td>18</td>
@@ -224,8 +210,9 @@
           <td>2026-04-13</td>
           <td>18</td>
           <td>1512000</td>
-          <td>78</td>
-          <td>58.81</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
           <td>12</td>
           <td>18</td>
           <td>0</td>
@@ -240,8 +227,10 @@
       function applyTheme(t) {
         html.setAttribute('data-theme', t);
         if (toggle) {
+          var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Sun</title><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+          var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
           toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+          toggle.innerHTML = t === 'dark' ? sunSvg : moonSvg;
         }
       }
       var stored = localStorage.getItem(THEME_KEY);

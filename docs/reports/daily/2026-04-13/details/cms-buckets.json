@@ -1,7 +1,7 @@
 [
   {
     "cms": "unknown",
-    "count": 124,
+    "count": 150,
     "pages": [
       {
         "service_name": "Apply for a Social Insurance Number",
@@ -84,6 +84,26 @@
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html"
       },
       {
+        "service_name": "Consumer Price Index",
+        "language": "en",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html"
+      },
+      {
+        "service_name": "Consumer Price Index",
+        "language": "fr",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html"
+      },
+      {
+        "service_name": "Health Infobase Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html"
+      },
+      {
+        "service_name": "Health Infobase Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html"
+      },
+      {
         "service_name": "Discovery: defence",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/services/defence.html"
@@ -97,6 +117,11 @@
         "service_name": "Discovery: canada-world",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/services/canada-world.html"
+      },
+      {
+        "service_name": "Discovery: finance",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/finance.html"
       },
       {
         "service_name": "Discovery: national-security",
@@ -284,6 +309,11 @@
         "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login"
       },
       {
+        "service_name": "Sujets",
+        "language": "en",
+        "canonical_url": "https://www150.statcan.gc.ca/n1/fr/sujets"
+      },
+      {
         "service_name": "Se connecter à son compte de l&#39;ARC",
         "language": "en",
         "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-ouverture-session-arc.html"
@@ -314,14 +344,104 @@
         "canonical_url": "https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01"
       },
       {
+        "service_name": "New immigration and asylum measures from Bill C-12 (the Strengthening Canada’s Immigration System and Borders Act) have become law",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/new-immigration-and-asylum-measures-from-bill-c-12-the-strengthening-canadas-immigration-system-and-borders-act-have-become-law.html"
+      },
+      {
         "service_name": "Canada Revenue Agency - CRA sign-in information",
         "language": "en",
         "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/postlogin/welcome"
       },
       {
+        "service_name": "Legislation Passes to Deliver New Canada Groceries and Essentials Benefit",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html"
+      },
+      {
+        "service_name": "Backgrounder: The new Canada Groceries and Essentials Benefit",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/01/the-new-canada-groceries-and-essentials-benefit.html"
+      },
+      {
+        "service_name": "Government of Canada raises the federal minimum wage",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html"
+      },
+      {
+        "service_name": "Legislation to make life more affordable receives Royal Assent",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-to-make-life-more-affordable-receives-royal-assent.html"
+      },
+      {
+        "service_name": "Government of Canada extends financial supports for post-secondary students",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-extends-financial-supports-for-post-secondary-students.html"
+      },
+      {
+        "service_name": "Bill C-3: An Act to amend the Citizenship Act (2025) comes into effect",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2025/12/bill-c-3-an-act-to-amend-the-citizenship-act-2025-comes-into-effect.html"
+      },
+      {
+        "service_name": "Canada begins new “30 days or free” guarantee for passport processing",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/canada-begins-new-30-days-or-free-guarantee-for-passport-processing.html"
+      },
+      {
+        "service_name": "Government of Canada taking action to support rural employers under the Temporary Foreign Worker Program",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-taking-action-to-support-rural-employers-under-the-temporary-foreign-worker-program.html"
+      },
+      {
+        "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
+      },
+      {
         "service_name": "Canada Revenue Agency (CRA)",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/revenue-agency.html"
+      },
+      {
+        "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
+      },
+      {
+        "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html"
+      },
+      {
+        "service_name": "Nouvelle mesure d’immigration pour appuyer les travailleurs et les employeurs du Québec",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/nouvelle-mesure-dimmigration-pour-appuyer-les-travailleurs-et-les-employeurs-du-quebec.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada augmente le salaire minimum fédéral",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-augmente-le-salaire-minimum-federal.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada prolonge les mesures d’aide financière pour les étudiants de niveau postsecondaire",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-daide-financiere-pour-les-etudiants-de-niveau-postsecondaire.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada prolonge les mesures temporaires d’assouplissement du programme de Travail partagé pour aider les employeurs et les travailleurs à éviter les licenciements collectifs",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-temporaires-dassouplissement-du-programme-de-travail-partage-pour-aider-les-employeurs-et-les-travai.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada annonce la prolongation de la période de report de l’impôt sur le revenu pour les éleveurs de bétail touchés par les cas de tuberculose bovine survenus en 2024 et 2025",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agriculture-agroalimentaire/nouvelles/2026/03/le-gouvernement-du-canada-annonce-la-prolongation-de-la-periode-de-report-de-limpot-sur-le-revenu-pour-les-eleveurs-de-betail-touches-par-les-cas-d.html"
+      },
+      {
+        "service_name": "Le Canada et le Québec signent une entente bilatérale pour la réalisation de projets dans le cadre du Fonds pour les solutions de transport en commun en milieu rural",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html"
       },
       {
         "service_name": "T2201 Disability Tax Credit Certificate",
@@ -357,6 +477,11 @@
         "service_name": "Get the form and renew a passport in person in Canada",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/apply-in-person.html"
+      },
+      {
+        "service_name": "Get the form for a new adult passport application in Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/new-adult-passport/get-application-form.html"
       },
       {
         "service_name": "Schedule 1: Application for Temporary Residence (IMM 5257 SCH1)",
@@ -494,6 +619,11 @@
         "canonical_url": "https://www.canada.ca/fr/services/police/urgences/protection/preparez-vous/kits-urgence.html"
       },
       {
+        "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html"
+      },
+      {
         "service_name": "Ne gaspillez pas de temps. Envoyez une demande complète.",
         "language": "en",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/video/ne-gaspillez-temps-envoyez-demande-complete.html"
@@ -622,148 +752,6 @@
         "service_name": "CPP and retirement",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc.html"
-      }
-    ]
-  },
-  {
-    "cms": "aem",
-    "count": 24,
-    "pages": [
-      {
-        "service_name": "Consumer Price Index",
-        "language": "en",
-        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html"
-      },
-      {
-        "service_name": "Consumer Price Index",
-        "language": "fr",
-        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html"
-      },
-      {
-        "service_name": "Health Infobase Canada",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html"
-      },
-      {
-        "service_name": "Health Infobase Canada",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html"
-      },
-      {
-        "service_name": "New immigration and asylum measures from Bill C-12 (the Strengthening Canada’s Immigration System and Borders Act) have become law",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/new-immigration-and-asylum-measures-from-bill-c-12-the-strengthening-canadas-immigration-system-and-borders-act-have-become-law.html"
-      },
-      {
-        "service_name": "Legislation Passes to Deliver New Canada Groceries and Essentials Benefit",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html"
-      },
-      {
-        "service_name": "Backgrounder: The new Canada Groceries and Essentials Benefit",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/01/the-new-canada-groceries-and-essentials-benefit.html"
-      },
-      {
-        "service_name": "Government of Canada raises the federal minimum wage",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html"
-      },
-      {
-        "service_name": "Legislation to make life more affordable receives Royal Assent",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-to-make-life-more-affordable-receives-royal-assent.html"
-      },
-      {
-        "service_name": "Government of Canada extends financial supports for post-secondary students",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-extends-financial-supports-for-post-secondary-students.html"
-      },
-      {
-        "service_name": "Bill C-3: An Act to amend the Citizenship Act (2025) comes into effect",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2025/12/bill-c-3-an-act-to-amend-the-citizenship-act-2025-comes-into-effect.html"
-      },
-      {
-        "service_name": "Canada begins new “30 days or free” guarantee for passport processing",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/canada-begins-new-30-days-or-free-guarantee-for-passport-processing.html"
-      },
-      {
-        "service_name": "Government of Canada taking action to support rural employers under the Temporary Foreign Worker Program",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-taking-action-to-support-rural-employers-under-the-temporary-foreign-worker-program.html"
-      },
-      {
-        "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
-      },
-      {
-        "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
-      },
-      {
-        "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html"
-      },
-      {
-        "service_name": "Nouvelle mesure d’immigration pour appuyer les travailleurs et les employeurs du Québec",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/nouvelle-mesure-dimmigration-pour-appuyer-les-travailleurs-et-les-employeurs-du-quebec.html"
-      },
-      {
-        "service_name": "Le gouvernement du Canada augmente le salaire minimum fédéral",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-augmente-le-salaire-minimum-federal.html"
-      },
-      {
-        "service_name": "Le gouvernement du Canada prolonge les mesures d’aide financière pour les étudiants de niveau postsecondaire",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-daide-financiere-pour-les-etudiants-de-niveau-postsecondaire.html"
-      },
-      {
-        "service_name": "Le gouvernement du Canada prolonge les mesures temporaires d’assouplissement du programme de Travail partagé pour aider les employeurs et les travailleurs à éviter les licenciements collectifs",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-temporaires-dassouplissement-du-programme-de-travail-partage-pour-aider-les-employeurs-et-les-travai.html"
-      },
-      {
-        "service_name": "Le gouvernement du Canada annonce la prolongation de la période de report de l’impôt sur le revenu pour les éleveurs de bétail touchés par les cas de tuberculose bovine survenus en 2024 et 2025",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/agriculture-agroalimentaire/nouvelles/2026/03/le-gouvernement-du-canada-annonce-la-prolongation-de-la-periode-de-report-de-limpot-sur-le-revenu-pour-les-eleveurs-de-betail-touches-par-les-cas-d.html"
-      },
-      {
-        "service_name": "Le Canada et le Québec signent une entente bilatérale pour la réalisation de projets dans le cadre du Fonds pour les solutions de transport en commun en milieu rural",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html"
-      },
-      {
-        "service_name": "Get the form for a new adult passport application in Canada",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/new-adult-passport/get-application-form.html"
-      },
-      {
-        "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html"
-      }
-    ]
-  },
-  {
-    "cms": "drupal",
-    "count": 2,
-    "pages": [
-      {
-        "service_name": "Discovery: finance",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/finance.html"
-      },
-      {
-        "service_name": "Sujets",
-        "language": "en",
-        "canonical_url": "https://www150.statcan.gc.ca/n1/fr/sujets"
       }
     ]
   }
