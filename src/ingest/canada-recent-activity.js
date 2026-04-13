@@ -37,6 +37,18 @@ export async function fetchRecentActivity(options = {}) {
   }
 }
 
+function detectLanguage(url) {
+  const lower = url.toLowerCase();
+
+  // French language indicators
+  if (lower.includes("/fr/")) return "fr";
+  if (lower.includes("-fra.")) return "fr";
+  if (lower.includes("lang=fr")) return "fr";
+  if (/statcan\.gc\.ca\/n1\/fr\//.test(lower)) return "fr";
+
+  return "en";
+}
+
 export function parseRecentActivityHtml(html) {
   const entries = [];
 
@@ -63,6 +75,7 @@ export function parseRecentActivityHtml(html) {
       : 0;
 
     if (pageLoadCount > 0 && url.startsWith("http")) {
+      const language = detectLanguage(url);
       entries.push({
         id: `recent-${entries.length}`,
         canonical_url: url,
@@ -70,7 +83,8 @@ export function parseRecentActivityHtml(html) {
         page_load_count: pageLoadCount,
         source: "recent",
         service_category: inferCategory(url, title),
-        service_pattern: inferPattern(url, title)
+        service_pattern: inferPattern(url, title),
+        language
       });
     }
   }

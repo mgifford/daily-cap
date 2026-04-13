@@ -38,23 +38,45 @@ async function tryFetch(promise, sourceName) {
   }
 }
 
+function inferFrenchUrl(url) {
+  // Canada.ca: swap /en/ with /fr/
+  if (url.includes("/en/")) {
+    return url.replace("/en/", "/fr/");
+  }
+  return null;
+}
+
 function normalizeEntries(entries) {
-  return entries.map((entry) => ({
-    id: entry.id || `entry-${Math.random().toString(36).slice(2)}`,
-    service_name: entry.service_name || entry.title || "Unnamed",
-    url_en:
-      entry.url_en || (entry.canonical_url && entry.language === "en" ? entry.canonical_url : null),
-    url_fr:
-      entry.url_fr || (entry.canonical_url && entry.language === "fr" ? entry.canonical_url : null),
-    canonical_url: entry.canonical_url,
-    source: normalizeSource(entry),
-    service_category: entry.service_category || "service",
-    service_pattern: entry.service_pattern || "unknown",
-    institution: entry.institution || null,
-    page_load_count: entry.page_load_count || 0,
-    priority_weight: entry.priority_weight || 0.5,
-    protected_flag: entry.protected_flag || false
-  }));
+  return entries.map((entry) => {
+    let url_en = entry.url_en;
+    let url_fr = entry.url_fr;
+
+    if (entry.canonical_url && entry.language === "en") {
+      url_en = entry.canonical_url;
+      // Infer url_fr for Canada.ca entries
+      if (entry.source === "recent" && entry.canonical_url.includes("canada.ca")) {
+        url_fr = inferFrenchUrl(entry.canonical_url);
+      }
+    } else if (entry.canonical_url && entry.language === "fr") {
+      url_fr = entry.canonical_url;
+    }
+
+    return {
+      id: entry.id || `entry-${Math.random().toString(36).slice(2)}`,
+      service_name: entry.service_name || entry.title || "Unnamed",
+      url_en,
+      url_fr,
+      canonical_url: entry.canonical_url,
+      source: normalizeSource(entry),
+      service_category: entry.service_category || "service",
+      service_pattern: entry.service_pattern || "unknown",
+      institution: entry.institution || null,
+      page_load_count: entry.page_load_count || 0,
+      priority_weight: entry.priority_weight || 0.5,
+      protected_flag: entry.protected_flag || false,
+      language: entry.language
+    };
+  });
 }
 
 function normalizeSource(entry) {
@@ -72,12 +94,19 @@ function normalizeSource(entry) {
 
 function deduplicateByUrl(entries) {
   const seen = new Map();
+  const recentPairMap = new Map(); // Map url_fr → url_en for recent entries
 
+  // First pass: collect all entries and build recent EN/FR pairing map
   for (const entry of entries) {
     const key = normalizeUrl(entry.url_en || entry.url_fr || entry.canonical_url);
 
     if (!seen.has(key)) {
       seen.set(key, entry);
+      // Track recent entries with inferred FR URLs for pairing
+      if (entry.source === "recent" && entry.url_fr && entry.url_en) {
+        const frKey = normalizeUrl(entry.url_fr);
+        recentPairMap.set(frKey, key); // Map FR key to EN key
+      }
     } else {
       // Merge metadata if same URL appears in multiple sources
       const existing = seen.get(key);
@@ -100,6 +129,28 @@ function deduplicateByUrl(entries) {
       sourceSet.add(entry.source);
       existing.source = Array.from(sourceSet).sort().join(",");
     }
+  }
+
+  // Second pass: merge recent EN and FR entries for same service
+  const toRemove = new Set();
+  for (const entry of Array.from(seen.values())) {
+    if (entry.source === "recent" && entry.language === "fr" && entry.url_fr) {
+      const frKey = normalizeUrl(entry.url_fr);
+      const enKey = recentPairMap.get(frKey);
+      if (enKey) {
+        const enEntry = seen.get(enKey);
+        if (enEntry && enEntry.language === "en") {
+          // Merge FR into EN entry
+          enEntry.url_fr = entry.url_fr;
+          toRemove.add(normalizeUrl(entry.url_en || entry.url_fr || entry.canonical_url));
+        }
+      }
+    }
+  }
+
+  // Remove merged FR entries
+  for (const key of toRemove) {
+    seen.delete(key);
   }
 
   return Array.from(seen.values());
