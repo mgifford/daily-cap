@@ -83,3 +83,32 @@ test("summarizePriorityIssues ranks issues and tracks recurrence across reports"
   assert.ok(result.top_priority_issues[0].priority_score >= result.top_priority_issues[1].priority_score);
   assert.ok(result.recurring_issues.every((issue) => issue.recurrence_days >= 2));
 });
+
+test("summarizePriorityIssues uses 'Unknown' when institution is missing", () => {
+  const current = {
+    run_date: "2026-03-26",
+    bilingual_parity: {
+      missing_counterparts: [
+        {
+          pair_id: "svc-b",
+          service_name: "Service B",
+          institution: "",
+          has_en: true,
+          has_fr: false,
+          url_en: "https://example.com/b",
+          page_load_count: 12000,
+          tier: "tier-2",
+          service_pattern: "application"
+        }
+      ],
+      pairs: []
+    },
+    accessibility_statements: {
+      missing_statement_examples: []
+    },
+    top_urls: []
+  };
+
+  const result = summarizePriorityIssues(current, []);
+  assert.equal(result.top_priority_issues[0].institution, "Unknown");
+});

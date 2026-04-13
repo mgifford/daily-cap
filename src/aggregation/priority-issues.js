@@ -3,7 +3,7 @@ function round(value) {
 }
 
 function normalizeInstitution(value) {
-  return value || "Unknown institution";
+  return value || "Unknown";
 }
 
 function reachScore(pageLoadCount) {
