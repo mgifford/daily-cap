@@ -614,6 +614,8 @@ export function renderDailyReportPage(report) {
   const contextByContext = report.lighthouse_contexts?.by_context || {};
   const contextDeltas = report.lighthouse_contexts?.deltas || [];
   const contextHighlight = report.lighthouse_contexts?.highlights?.mobile_dark_vs_desktop_light || {};
+  const topAxeIssues = report.top_axe_issues?.top_issues || [];
+  const topAxeSummary = report.top_axe_issues?.summary || {};
   const barrierHistory = report.barrier_history?.points || [];
   const detailPaths = report.output_paths?.details || {};
   const priorityIssues = report.priority_issues?.top_priority_issues || [];
@@ -827,6 +829,22 @@ export function renderDailyReportPage(report) {
     })
     .join("\n");
 
+  const axeIssueRows = topAxeIssues
+    .map((issue) => {
+      const samplePageRows = (issue.sample_pages || [])
+        .map((page) => `<li><a href="${escapeHtml(page.canonical_url)}">${escapeHtml(page.service_name)}</a> (${escapeHtml(page.language?.toUpperCase() || "NA")}, ${escapeHtml(page.count)} occurrences)</li>`)
+        .join("");
+      return `
+      <tr>
+        <td><strong>${escapeHtml(issue.severity)}</strong></td>
+        <td>${escapeHtml(issue.total_occurrences)}</td>
+        <td>${escapeHtml(issue.affected_pages)}</td>
+        <td>${escapeHtml(issue.average_per_page)}</td>
+        <td><details><summary>View samples</summary><ul style="margin: 0.5em 0; padding-left: 1.5em;">${samplePageRows}</ul></details></td>
+      </tr>`;
+    })
+    .join("\n");
+
   const institutionRows = institutionScorecards
     .map((row) => {
       return `
@@ -938,6 +956,76 @@ export function renderDailyReportPage(report) {
           </tr>`
           )
           .join("\n")}</tbody>
+      </table>
+    </section>
+
+    <section>
+      ${sectionH2("lighthouse-performance", "Google Lighthouse Performance")}
+      <p><em>Lighthouse scores measure page quality across performance, accessibility, best practices, and SEO. Scores below show means by rendering context (desktop/mobile, light/dark).</em></p>
+      <div class="cards">
+        <div class="card"><strong>URLs Scanned</strong><br/>${escapeHtml(contextSummary.scanned_urls_with_context_data ?? "-")}</div>
+        <div class="card"><strong>Baseline</strong><br/>Desktop Light</div>
+      </div>
+
+      <h3>Average Scores by Context</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Performance</th>
+            <th scope="col">Accessibility</th>
+            <th scope="col">Best Practices</th>
+            <th scope="col">SEO</th>
+          </tr>
+        </thead>
+        <tbody>${contextAverageRows || '<tr><td colspan="5">No Lighthouse data available.</td></tr>'}</tbody>
+      </table>
+
+      <h3>Context Deltas vs Desktop Light</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Perf Delta</th>
+            <th scope="col">A11y Delta</th>
+            <th scope="col">Practices Delta</th>
+            <th scope="col">SEO Delta</th>
+          </tr>
+        </thead>
+        <tbody>${contextDeltaRows || '<tr><td colspan="5">No context comparison data available.</td></tr>'}</tbody>
+      </table>
+
+      <details style="margin-top: 1em;">
+        <summary><strong>Mobile Dark vs Desktop Light Headline</strong></summary>
+        <ul style="margin: 0.5em 0; padding-left: 1.5em;">
+          <li>Performance: ${escapeHtml(contextHighlight.performance_score ?? "-")}</li>
+          <li>Accessibility: ${escapeHtml(contextHighlight.accessibility_score ?? "-")}</li>
+          <li>Best Practices: ${escapeHtml(contextHighlight.best_practices_score ?? "-")}</li>
+          <li>SEO: ${escapeHtml(contextHighlight.seo_score ?? "-")}</li>
+        </ul>
+      </details>
+    </section>
+
+    <section>
+      ${sectionH2("top-axe-violations", "Top Axe Accessibility Violations")}
+      <p><em>Axe Core automated testing identifies the most common accessibility violations by severity. These are weighted by occurrences across all scanned pages.</em></p>
+      <div class="cards">
+        <div class="card"><strong>Scanned URLs</strong><br/>${escapeHtml(topAxeSummary.scanned_urls ?? "-")}</div>
+        <div class="card"><strong>Total Violations</strong><br/>${escapeHtml(topAxeSummary.total_violations ?? "-")}</div>
+        <div class="card"><strong>URLs with Violations</strong><br/>${escapeHtml(topAxeSummary.urls_with_violations ?? "-")}</div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Severity</th>
+            <th scope="col">Total Occurrences</th>
+            <th scope="col">Affected Pages</th>
+            <th scope="col">Avg per Page</th>
+            <th scope="col">Sample Pages</th>
+          </tr>
+        </thead>
+        <tbody>${axeIssueRows || '<tr><td colspan="5">No axe violation data available.</td></tr>'}</tbody>
       </table>
     </section>
 
