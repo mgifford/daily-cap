@@ -263,6 +263,48 @@ export function computeBilingualParity(scanned) {
     .filter((row) => Math.abs(row.accessibility_gap) >= 10)
     .sort((a, b) => Math.abs(b.accessibility_gap) - Math.abs(a.accessibility_gap));
 
+  // Per-institution bilingual gap leaderboard.
+  // Group complete pairs by institution and compute mean gap scores.
+  const institutionGapMap = new Map();
+  for (const row of a11yGapRows) {
+    const inst = row.institution || "Unknown institution";
+    const entry = institutionGapMap.get(inst) || {
+      institution: inst,
+      pair_count: 0,
+      high_gap_count: 0,
+      a11y_gap_sum: 0,
+      perf_gap_sum: 0,
+      perf_gap_count: 0
+    };
+    entry.pair_count += 1;
+    entry.a11y_gap_sum += Math.abs(row.accessibility_gap);
+    if (Math.abs(row.accessibility_gap) >= 10) {
+      entry.high_gap_count += 1;
+    }
+    if (typeof row.performance_gap === "number") {
+      entry.perf_gap_sum += Math.abs(row.performance_gap);
+      entry.perf_gap_count += 1;
+    }
+    institutionGapMap.set(inst, entry);
+  }
+
+  const byInstitution = [...institutionGapMap.values()]
+    .map((entry) => ({
+      institution: entry.institution,
+      pair_count: entry.pair_count,
+      high_gap_pair_count: entry.high_gap_count,
+      mean_abs_accessibility_gap: roundOrNull(entry.a11y_gap_sum / entry.pair_count),
+      mean_abs_performance_gap:
+        entry.perf_gap_count > 0
+          ? roundOrNull(entry.perf_gap_sum / entry.perf_gap_count)
+          : null
+    }))
+    .sort(
+      (a, b) =>
+        (b.mean_abs_accessibility_gap ?? 0) - (a.mean_abs_accessibility_gap ?? 0) ||
+        a.institution.localeCompare(b.institution)
+    );
+
   return {
     pairs,
     missing_counterparts: resolvedMissing,
@@ -280,6 +322,7 @@ export function computeBilingualParity(scanned) {
     },
     highlights: {
       largest_accessibility_gaps: highGapPairs.slice(0, 10)
-    }
+    },
+    by_institution: byInstitution
   };
 }

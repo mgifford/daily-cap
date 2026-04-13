@@ -480,17 +480,25 @@ export function renderInstitutionScorecardsPage(report) {
 
 export function renderInstitutionTrendsIndexPage(report) {
   const rows = (report.institution_trends?.institutions || [])
-    .map(
-      (item) => `
+    .map((item) => {
+      const trendLabel = item.parity_trend || "—";
+      const trendArrow =
+        trendLabel === "worsening" ? "↑ worsening" :
+        trendLabel === "improving" ? "↓ improving" :
+        trendLabel === "stable" ? "→ stable" :
+        "—";
+      return `
       <tr>
         <td><a href="./institutions/${escapeHtml(item.slug)}.html">${escapeHtml(item.institution)}</a></td>
         <td>${escapeHtml(item.days_tracked)}</td>
         <td>${escapeHtml(item.latest?.mean_accessibility_score ?? "-")}</td>
+        <td>${escapeHtml(item.latest?.mean_abs_accessibility_gap ?? "-")}</td>
         <td>${escapeHtml(item.latest?.missing_french_count ?? "-")}</td>
         <td>${escapeHtml(item.latest?.missing_statement_count ?? "-")}</td>
         <td>${escapeHtml(item.latest?.high_gap_pair_count ?? "-")}</td>
-      </tr>`
-    )
+        <td>${escapeHtml(trendArrow)}</td>
+      </tr>`;
+    })
     .join("\n");
 
   return renderDetailLayout({
@@ -507,12 +515,14 @@ export function renderInstitutionTrendsIndexPage(report) {
           <th scope="col">Institution</th>
           <th scope="col">Days Tracked</th>
           <th scope="col">Latest Mean A11y</th>
+          <th scope="col">Latest Mean A11y Gap</th>
           <th scope="col">Latest Missing FR</th>
           <th scope="col">Latest Missing Statements</th>
           <th scope="col">Latest High Gap Pairs</th>
+          <th scope="col">Parity Trend</th>
         </tr>
       </thead>
-      <tbody>${rows || '<tr><td colspan="6">No institution trend data available.</td></tr>'}</tbody>
+      <tbody>${rows || '<tr><td colspan="8">No institution trend data available.</td></tr>'}</tbody>
     </table>`
   });
 }
@@ -520,6 +530,13 @@ export function renderInstitutionTrendsIndexPage(report) {
 export function renderInstitutionTrendPage(report, institutionTrend) {
   const points = institutionTrend.points || [];
   const latest = institutionTrend.latest || {};
+  const trendLabel = institutionTrend.parity_trend || "insufficient_data";
+  const trendArrow =
+    trendLabel === "worsening" ? "↑ worsening" :
+    trendLabel === "improving" ? "↓ improving" :
+    trendLabel === "stable" ? "→ stable" :
+    "Insufficient data";
+
   return renderDetailLayout({
     title: `${institutionTrend.institution} Trends - ${report.run_date}`,
     heading: `${institutionTrend.institution} Trends`,
@@ -530,10 +547,13 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
     body: `<div class="cards">
       <div class="card"><strong>Days Tracked</strong><br/>${escapeHtml(institutionTrend.days_tracked)}</div>
       <div class="card"><strong>Latest Mean A11y</strong><br/>${escapeHtml(latest.mean_accessibility_score ?? "-")}</div>
+      <div class="card"><strong>Latest A11y Gap</strong><br/>${escapeHtml(latest.mean_abs_accessibility_gap ?? "-")}</div>
+      <div class="card"><strong>Parity Trend</strong><br/>${escapeHtml(trendArrow)}</div>
       <div class="card"><strong>Latest Missing FR</strong><br/>${escapeHtml(latest.missing_french_count ?? "-")}</div>
       <div class="card"><strong>Latest Missing Statements</strong><br/>${escapeHtml(latest.missing_statement_count ?? "-")}</div>
     </div>
     ${renderMetricTrendChart(points, "mean_accessibility_score", `${institutionTrend.institution} accessibility over time`, "Line chart of daily mean accessibility score for this institution.", "#1d6b42", 100)}
+    ${renderMetricTrendChart(points, "mean_abs_accessibility_gap", `${institutionTrend.institution} EN/FR accessibility gap over time`, "Line chart of daily mean absolute EN/FR accessibility score gap for this institution. Lower is better.", "#e07b00")}
     ${renderMetricTrendChart(points, "missing_french_count", `${institutionTrend.institution} missing French counterparts over time`, "Line chart of daily missing French counterpart counts for this institution.", "#b5402d")}
     ${renderMetricTrendChart(points, "missing_statement_count", `${institutionTrend.institution} missing accessibility statements over time`, "Line chart of daily missing accessibility statement counts for this institution.", "#235d8b")}
     <table>
@@ -543,6 +563,7 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
           <th scope="col">URLs</th>
           <th scope="col">Load</th>
           <th scope="col">Mean A11y</th>
+          <th scope="col">Mean A11y Gap</th>
           <th scope="col">Mean Perf</th>
           <th scope="col">Missing FR</th>
           <th scope="col">Missing Statements</th>
@@ -556,6 +577,7 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
           <td>${escapeHtml(point.scanned_urls)}</td>
           <td>${escapeHtml(point.total_page_load_count)}</td>
           <td>${escapeHtml(point.mean_accessibility_score ?? "-")}</td>
+          <td>${escapeHtml(point.mean_abs_accessibility_gap ?? "-")}</td>
           <td>${escapeHtml(point.mean_performance_score ?? "-")}</td>
           <td>${escapeHtml(point.missing_french_count)}</td>
           <td>${escapeHtml(point.missing_statement_count)}</td>
@@ -600,6 +622,7 @@ export function renderDailyReportPage(report) {
   const institutionTrendMap = new Map(
     (report.institution_trends?.institutions || []).map((item) => [item.institution, item])
   );
+  const institutionGapLeaderboard = report.bilingual_parity?.by_institution || [];
 
   const topUrlsPreview = report.top_urls.slice(0, 12);
   const topUrlsOverflowCount = Math.max(0, report.top_urls.length - 12);
@@ -1047,6 +1070,38 @@ export function renderDailyReportPage(report) {
           </tr>
         </thead>
         <tbody>${parityRows || '<tr><td colspan="6">No complete EN/FR pairs with parity data in this run.</td></tr>'}</tbody>
+      </table>
+
+      <h3>Institution Bilingual Gap Leaderboard</h3>
+      <p><em>Institutions ranked by mean absolute EN/FR accessibility score gap across their paired services. Higher values indicate greater inconsistency between language versions. Trend direction links to the institution's historical trend page when data is available.</em></p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Institution</th>
+            <th scope="col">Paired Services</th>
+            <th scope="col">Mean A11y Gap</th>
+            <th scope="col">High Gap Pairs (≥10)</th>
+            <th scope="col">Mean Perf Gap</th>
+            <th scope="col">Trend</th>
+          </tr>
+        </thead>
+        <tbody>${institutionGapLeaderboard.length > 0 ? institutionGapLeaderboard.map((row) => {
+          const trendItem = institutionTrendMap.get(row.institution);
+          const trendLabel = trendItem ? trendItem.parity_trend || "—" : "—";
+          const trendArrow = trendLabel === "worsening" ? "↑ worsening" : trendLabel === "improving" ? "↓ improving" : trendLabel === "stable" ? "→ stable" : "—";
+          const instCell = trendItem
+            ? `<a href="./details/institutions/${escapeHtml(trendItem.slug)}.html">${escapeHtml(row.institution)}</a>`
+            : escapeHtml(row.institution);
+          return `
+          <tr>
+            <td>${instCell}</td>
+            <td>${escapeHtml(row.pair_count)}</td>
+            <td>${escapeHtml(row.mean_abs_accessibility_gap ?? "-")}</td>
+            <td>${escapeHtml(row.high_gap_pair_count)}</td>
+            <td>${escapeHtml(row.mean_abs_performance_gap ?? "-")}</td>
+            <td>${escapeHtml(trendArrow)}</td>
+          </tr>`;
+        }).join("\n") : '<tr><td colspan="6">No institution gap data available in this run.</td></tr>'}</tbody>
       </table>
 
       <h3>Missing Counterparts</h3>
