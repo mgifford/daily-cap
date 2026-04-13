@@ -477,7 +477,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "sign-in",
-    "page_load_count": 37136213
+    "page_load_count": 36789207
   },
   {
     "pair_id": "recent-1",
@@ -489,22 +489,10 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "sign-in",
-    "page_load_count": 22208784
+    "page_load_count": 22029906
   },
   {
     "pair_id": "recent-10",
-    "service_name": "Sujets",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www150.statcan.gc.ca/n1/fr/sujets",
-    "url_fr": null,
-    "tier": "tier-1",
-    "service_pattern": "dashboard",
-    "page_load_count": 5549102
-  },
-  {
-    "pair_id": "recent-11",
     "service_name": "Se connecter à son compte de l&#39;ARC",
     "institution": null,
     "has_en": true,
@@ -513,7 +501,19 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 5540274
+    "page_load_count": 5506447
+  },
+  {
+    "pair_id": "recent-11",
+    "service_name": "Sujets",
+    "institution": null,
+    "has_en": true,
+    "has_fr": false,
+    "url_en": "https://www150.statcan.gc.ca/n1/fr/sujets",
+    "url_fr": null,
+    "tier": "tier-1",
+    "service_pattern": "dashboard",
+    "page_load_count": 5448620
   },
   {
     "pair_id": "recent-12",
@@ -525,7 +525,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 2698651
+    "page_load_count": 2684940
   },
   {
     "pair_id": "recent-15",
@@ -537,7 +537,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 464656
+    "page_load_count": 461553
   },
   {
     "pair_id": "recent-16",
@@ -545,11 +545,11 @@
     "institution": null,
     "has_en": true,
     "has_fr": false,
-    "url_en": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
+    "url_en": "https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 390670
+    "page_load_count": 388744
   },
   {
     "pair_id": "recent-17",
@@ -557,11 +557,11 @@
     "institution": null,
     "has_en": true,
     "has_fr": false,
-    "url_en": "https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane",
+    "url_en": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane",
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 372754
+    "page_load_count": 371502
   },
   {
     "pair_id": "recent-18",
@@ -573,7 +573,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "sign-in",
-    "page_load_count": 275797
+    "page_load_count": 274537
   },
   {
     "pair_id": "recent-19",
@@ -585,7 +585,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 151427
+    "page_load_count": 152909
   },
   {
     "pair_id": "recent-2",
@@ -597,22 +597,10 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "sign-in",
-    "page_load_count": 17463050
+    "page_load_count": 17304399
   },
   {
     "pair_id": "recent-20",
-    "service_name": "Legislation Passes to Deliver New Canada Groceries and Essentials Benefit",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "service_pattern": "dashboard",
-    "page_load_count": 112895
-  },
-  {
-    "pair_id": "recent-21",
     "service_name": "Backgrounder: The new Canada Groceries and Essentials Benefit",
     "institution": null,
     "has_en": true,
@@ -621,7 +609,19 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 109576
+    "page_load_count": 110522
+  },
+  {
+    "pair_id": "recent-21",
+    "service_name": "Legislation Passes to Deliver New Canada Groceries and Essentials Benefit",
+    "institution": null,
+    "has_en": true,
+    "has_fr": false,
+    "url_en": "https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html",
+    "url_fr": null,
+    "tier": "tier-1",
+    "service_pattern": "dashboard",
+    "page_load_count": 109475
   },
   {
     "pair_id": "recent-22",
@@ -633,7 +633,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 69878
+    "page_load_count": 70764
   },
   {
     "pair_id": "recent-23",
@@ -645,7 +645,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 66413
+    "page_load_count": 32575
   },
   {
     "pair_id": "recent-24",
@@ -657,7 +657,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "help",
-    "page_load_count": 31145
+    "page_load_count": 31232
   },
   {
     "pair_id": "recent-25",
@@ -669,10 +669,10 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 31006
+    "page_load_count": 29084
   },
   {
-    "pair_id": "recent-27",
+    "pair_id": "recent-26",
     "service_name": "Canada begins new “30 days or free” guarantee for passport processing",
     "institution": null,
     "has_en": true,
@@ -681,31 +681,31 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "status",
-    "page_load_count": 28240
+    "page_load_count": 28415
   },
   {
     "pair_id": "recent-28",
-    "service_name": "Government of Canada taking action to support rural employers under the Temporary Foreign Worker Program",
+    "service_name": "Legislation passes to implement Budget 2025: Canada Strong",
     "institution": null,
     "has_en": true,
     "has_fr": false,
-    "url_en": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-taking-action-to-support-rural-employers-under-the-temporary-foreign-worker-program.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "service_pattern": "help",
-    "page_load_count": 26469
-  },
-  {
-    "pair_id": "recent-29",
-    "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
+    "url_en": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-passes-to-implement-budget-2025-canada-strong.html",
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 35188
+    "page_load_count": 23107
+  },
+  {
+    "pair_id": "recent-29",
+    "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
+    "institution": null,
+    "has_en": true,
+    "has_fr": false,
+    "url_en": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
+    "url_fr": null,
+    "tier": "tier-1",
+    "service_pattern": "dashboard",
+    "page_load_count": 35485
   },
   {
     "pair_id": "recent-3",
@@ -717,19 +717,19 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 16036594
+    "page_load_count": 15921371
   },
   {
     "pair_id": "recent-30",
-    "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
+    "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
     "institution": null,
     "has_en": true,
     "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
+    "url_en": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 35062
+    "page_load_count": 34656
   },
   {
     "pair_id": "recent-31",
@@ -741,7 +741,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 32070
+    "page_load_count": 32583
   },
   {
     "pair_id": "recent-32",
@@ -753,7 +753,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 28324
+    "page_load_count": 16862
   },
   {
     "pair_id": "recent-33",
@@ -765,7 +765,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 14014
+    "page_load_count": 14197
   },
   {
     "pair_id": "recent-34",
@@ -777,19 +777,19 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 12999
+    "page_load_count": 13032
   },
   {
     "pair_id": "recent-35",
-    "service_name": "Le gouvernement du Canada prolonge les mesures temporaires d’assouplissement du programme de Travail partagé pour aider les employeurs et les travailleurs à éviter les licenciements collectifs",
+    "service_name": "Le Canada et le Québec signent une entente bilatérale pour la réalisation de projets dans le cadre du Fonds pour les solutions de transport en commun en milieu rural",
     "institution": null,
     "has_en": true,
     "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-temporaires-dassouplissement-du-programme-de-travail-partage-pour-aider-les-employeurs-et-les-travai.html",
+    "url_en": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html",
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 11189
+    "page_load_count": 10457
   },
   {
     "pair_id": "recent-36",
@@ -801,19 +801,19 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 6658
+    "page_load_count": 6671
   },
   {
-    "pair_id": "recent-38",
-    "service_name": "Le Canada et le Québec signent une entente bilatérale pour la réalisation de projets dans le cadre du Fonds pour les solutions de transport en commun en milieu rural",
+    "pair_id": "recent-37",
+    "service_name": "La période de renouvellement des inscriptions au Régime canadien de soins dentaires commence le 15 avril",
     "institution": null,
     "has_en": true,
     "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html",
+    "url_en": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/04/la-periode-de-renouvellement-des-inscriptions-au-regime-canadien-de-soins-dentaires-commence-le-15-avril.html",
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 5791
+    "page_load_count": 5526
   },
   {
     "pair_id": "recent-39",
@@ -825,7 +825,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 155208
+    "page_load_count": 153332
   },
   {
     "pair_id": "recent-4",
@@ -837,7 +837,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 4066682
+    "page_load_count": 4034705
   },
   {
     "pair_id": "recent-40",
@@ -849,7 +849,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 146906
+    "page_load_count": 143078
   },
   {
     "pair_id": "recent-41",
@@ -861,7 +861,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "application",
-    "page_load_count": 131091
+    "page_load_count": 130416
   },
   {
     "pair_id": "recent-42",
@@ -873,7 +873,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "application",
-    "page_load_count": 124970
+    "page_load_count": 122783
   },
   {
     "pair_id": "recent-43",
@@ -885,7 +885,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "payment",
-    "page_load_count": 121768
+    "page_load_count": 119308
   },
   {
     "pair_id": "recent-44",
@@ -897,7 +897,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "application",
-    "page_load_count": 106231
+    "page_load_count": 105356
   },
   {
     "pair_id": "recent-45",
@@ -909,7 +909,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "application",
-    "page_load_count": 83779
+    "page_load_count": 83080
   },
   {
     "pair_id": "recent-46",
@@ -921,7 +921,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "application",
-    "page_load_count": 75183
+    "page_load_count": 74643
   },
   {
     "pair_id": "recent-47",
@@ -933,7 +933,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "application",
-    "page_load_count": 71712
+    "page_load_count": 71033
   },
   {
     "pair_id": "recent-48",
@@ -945,7 +945,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "application",
-    "page_load_count": 63769
+    "page_load_count": 63507
   },
   {
     "pair_id": "recent-49",
@@ -957,7 +957,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 35511
+    "page_load_count": 35074
   },
   {
     "pair_id": "recent-5",
@@ -969,7 +969,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 3568622
+    "page_load_count": 3531271
   },
   {
     "pair_id": "recent-50",
@@ -981,7 +981,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 30522
+    "page_load_count": 30144
   },
   {
     "pair_id": "recent-51",
@@ -993,7 +993,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 24249
+    "page_load_count": 24362
   },
   {
     "pair_id": "recent-52",
@@ -1005,7 +1005,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 24158
+    "page_load_count": 23160
   },
   {
     "pair_id": "recent-53",
@@ -1017,7 +1017,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 20735
+    "page_load_count": 20681
   },
   {
     "pair_id": "recent-54",
@@ -1029,7 +1029,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 20125
+    "page_load_count": 20122
   },
   {
     "pair_id": "recent-55",
@@ -1041,7 +1041,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 17309
+    "page_load_count": 17224
   },
   {
     "pair_id": "recent-56",
@@ -1053,7 +1053,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 17018
+    "page_load_count": 16824
   },
   {
     "pair_id": "recent-57",
@@ -1065,7 +1065,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 16863
+    "page_load_count": 16667
   },
   {
     "pair_id": "recent-58",
@@ -1077,7 +1077,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 15565
+    "page_load_count": 15649
   },
   {
     "pair_id": "recent-59",
@@ -1089,7 +1089,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "sign-in",
-    "page_load_count": 12424
+    "page_load_count": 12180
   },
   {
     "pair_id": "recent-6",
@@ -1101,7 +1101,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 2599195
+    "page_load_count": 2582825
   },
   {
     "pair_id": "recent-60",
@@ -1113,10 +1113,10 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 11730
+    "page_load_count": 12076
   },
   {
-    "pair_id": "recent-61",
+    "pair_id": "recent-62",
     "service_name": "Save Time: Send a Complete Application",
     "institution": null,
     "has_en": true,
@@ -1125,22 +1125,10 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "application",
-    "page_load_count": 8788
+    "page_load_count": 8777
   },
   {
     "pair_id": "recent-63",
-    "service_name": "Video montage of CSA astronaut Jeremy Hansen watching the launch of Artemis I, the surface of the Moon and the Moon and Earth from Orion.",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.asc-csa.gc.ca/eng/missions/artemis-ii/",
-    "url_fr": null,
-    "tier": "tier-2",
-    "service_pattern": "dashboard",
-    "page_load_count": 7612
-  },
-  {
-    "pair_id": "recent-64",
     "service_name": "Hear from Survivors about warning signs",
     "institution": null,
     "has_en": true,
@@ -1149,10 +1137,22 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 7515
+    "page_load_count": 8777
   },
   {
-    "pair_id": "recent-65",
+    "pair_id": "recent-64",
+    "service_name": "Video montage of CSA astronaut Jeremy Hansen watching the launch of Artemis I, the surface of the Moon and the Moon and Earth from Orion.",
+    "institution": null,
+    "has_en": true,
+    "has_fr": false,
+    "url_en": "https://www.asc-csa.gc.ca/eng/missions/artemis-ii/",
+    "url_fr": null,
+    "tier": "tier-2",
+    "service_pattern": "dashboard",
+    "page_load_count": 7530
+  },
+  {
+    "pair_id": "recent-66",
     "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
     "institution": null,
     "has_en": true,
@@ -1161,7 +1161,7 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 5088
+    "page_load_count": 5046
   },
   {
     "pair_id": "recent-68",
@@ -1173,7 +1173,7 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 1637
+    "page_load_count": 1436
   },
   {
     "pair_id": "recent-69",
@@ -1185,7 +1185,7 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 3600
+    "page_load_count": 3555
   },
   {
     "pair_id": "recent-7",
@@ -1197,7 +1197,7 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "sign-in",
-    "page_load_count": 1920649
+    "page_load_count": 1904779
   },
   {
     "pair_id": "recent-70",
@@ -1209,7 +1209,7 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 2008
+    "page_load_count": 2051
   },
   {
     "pair_id": "recent-71",
@@ -1221,7 +1221,7 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 1289
+    "page_load_count": 1260
   },
   {
     "pair_id": "recent-72",
@@ -1245,7 +1245,7 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 970
+    "page_load_count": 989
   },
   {
     "pair_id": "recent-74",
@@ -1257,7 +1257,7 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 951
+    "page_load_count": 967
   },
   {
     "pair_id": "recent-75",
@@ -1269,7 +1269,7 @@
     "url_fr": null,
     "tier": "tier-2",
     "service_pattern": "dashboard",
-    "page_load_count": 747
+    "page_load_count": 764
   },
   {
     "pair_id": "recent-76",
@@ -1281,7 +1281,7 @@
     "url_fr": null,
     "tier": "tier-3",
     "service_pattern": "dashboard",
-    "page_load_count": 662
+    "page_load_count": 642
   },
   {
     "pair_id": "recent-77",
@@ -1293,7 +1293,7 @@
     "url_fr": null,
     "tier": "tier-3",
     "service_pattern": "dashboard",
-    "page_load_count": 543
+    "page_load_count": 563
   },
   {
     "pair_id": "recent-78",
@@ -1305,7 +1305,7 @@
     "url_fr": null,
     "tier": "tier-3",
     "service_pattern": "dashboard",
-    "page_load_count": 456
+    "page_load_count": 468
   },
   {
     "pair_id": "recent-8",
@@ -1317,6 +1317,6 @@
     "url_fr": null,
     "tier": "tier-1",
     "service_pattern": "dashboard",
-    "page_load_count": 1621602
+    "page_load_count": 1613878
   }
 ]

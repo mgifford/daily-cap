@@ -309,14 +309,14 @@
         "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login"
       },
       {
-        "service_name": "Sujets",
-        "language": "en",
-        "canonical_url": "https://www150.statcan.gc.ca/n1/fr/sujets"
-      },
-      {
         "service_name": "Se connecter à son compte de l&#39;ARC",
         "language": "en",
         "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-ouverture-session-arc.html"
+      },
+      {
+        "service_name": "Sujets",
+        "language": "en",
+        "canonical_url": "https://www150.statcan.gc.ca/n1/fr/sujets"
       },
       {
         "service_name": "Agence du revenu du Canada (ARC)",
@@ -331,12 +331,12 @@
       {
         "service_name": "Aperçu",
         "language": "en",
-        "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview"
+        "canonical_url": "https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview"
       },
       {
         "service_name": "Open Mail Page",
         "language": "en",
-        "canonical_url": "https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane"
+        "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane"
       },
       {
         "service_name": "My Account: Mail - Language:fr",
@@ -354,14 +354,14 @@
         "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/postlogin/welcome"
       },
       {
-        "service_name": "Legislation Passes to Deliver New Canada Groceries and Essentials Benefit",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html"
-      },
-      {
         "service_name": "Backgrounder: The new Canada Groceries and Essentials Benefit",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/01/the-new-canada-groceries-and-essentials-benefit.html"
+      },
+      {
+        "service_name": "Legislation Passes to Deliver New Canada Groceries and Essentials Benefit",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html"
       },
       {
         "service_name": "Government of Canada raises the federal minimum wage",
@@ -389,14 +389,14 @@
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/canada-begins-new-30-days-or-free-guarantee-for-passport-processing.html"
       },
       {
-        "service_name": "Government of Canada taking action to support rural employers under the Temporary Foreign Worker Program",
+        "service_name": "Legislation passes to implement Budget 2025: Canada Strong",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-taking-action-to-support-rural-employers-under-the-temporary-foreign-worker-program.html"
+        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-passes-to-implement-budget-2025-canada-strong.html"
       },
       {
-        "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
+        "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
+        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
       },
       {
         "service_name": "Canada Revenue Agency (CRA)",
@@ -404,9 +404,9 @@
         "canonical_url": "https://www.canada.ca/en/revenue-agency.html"
       },
       {
-        "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
+        "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
+        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
       },
       {
         "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
@@ -429,9 +429,9 @@
         "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-daide-financiere-pour-les-etudiants-de-niveau-postsecondaire.html"
       },
       {
-        "service_name": "Le gouvernement du Canada prolonge les mesures temporaires d’assouplissement du programme de Travail partagé pour aider les employeurs et les travailleurs à éviter les licenciements collectifs",
+        "service_name": "Le Canada et le Québec signent une entente bilatérale pour la réalisation de projets dans le cadre du Fonds pour les solutions de transport en commun en milieu rural",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-temporaires-dassouplissement-du-programme-de-travail-partage-pour-aider-les-employeurs-et-les-travai.html"
+        "canonical_url": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html"
       },
       {
         "service_name": "Le gouvernement du Canada annonce la prolongation de la période de report de l’impôt sur le revenu pour les éleveurs de bétail touchés par les cas de tuberculose bovine survenus en 2024 et 2025",
@@ -439,9 +439,9 @@
         "canonical_url": "https://www.canada.ca/fr/agriculture-agroalimentaire/nouvelles/2026/03/le-gouvernement-du-canada-annonce-la-prolongation-de-la-periode-de-report-de-limpot-sur-le-revenu-pour-les-eleveurs-de-betail-touches-par-les-cas-d.html"
       },
       {
-        "service_name": "Le Canada et le Québec signent une entente bilatérale pour la réalisation de projets dans le cadre du Fonds pour les solutions de transport en commun en milieu rural",
+        "service_name": "La période de renouvellement des inscriptions au Régime canadien de soins dentaires commence le 15 avril",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html"
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/04/la-periode-de-renouvellement-des-inscriptions-au-regime-canadien-de-soins-dentaires-commence-le-15-avril.html"
       },
       {
         "service_name": "T2201 Disability Tax Credit Certificate",
@@ -574,14 +574,14 @@
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/video/save-time-send-complete-application.html"
       },
       {
-        "service_name": "Video montage of CSA astronaut Jeremy Hansen watching the launch of Artemis I, the surface of the Moon and the Moon and Earth from Orion.",
-        "language": "en",
-        "canonical_url": "https://www.asc-csa.gc.ca/eng/missions/artemis-ii/"
-      },
-      {
         "service_name": "Hear from Survivors about warning signs",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/public-safety-canada/campaigns/human-trafficking/described-videos.html"
+      },
+      {
+        "service_name": "Video montage of CSA astronaut Jeremy Hansen watching the launch of Artemis I, the surface of the Moon and the Moon and Earth from Orion.",
+        "language": "en",
+        "canonical_url": "https://www.asc-csa.gc.ca/eng/missions/artemis-ii/"
       },
       {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
