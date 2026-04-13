@@ -1404,12 +1404,12 @@ export function renderDashboardPage(report) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="refresh" content="0; url=../" />
   <title>Daily CAP Reports</title>
   <link rel="stylesheet" href="./assets/report.css" />
 </head>
 <body>
   <main>
+    <h1>Daily CAP Reports</h1>
     <p>This page has moved. <a href="../">View the Daily CAP home page</a>.</p>
     <p>Or go directly to the <a href="./daily/${safeDate}/index.html">latest report (${safeDate})</a>.</p>
   </main>

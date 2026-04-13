@@ -135,7 +135,9 @@ test("publishReport writes docs/reports/index.html as redirect", async () => {
   const dashPath = path.join(outputRoot, "docs", "reports", "index.html");
   const html = await fs.readFile(dashPath, "utf8");
 
-  assert.ok(html.includes("http-equiv"), "dashboard has meta refresh redirect");
+  assert.ok(html.includes("<main>"), "dashboard content is contained by main landmark");
+  assert.ok(html.includes("<h1>Daily CAP Reports</h1>"), "dashboard has a page heading");
+  assert.ok(!html.includes("http-equiv"), "dashboard does not use meta refresh redirect");
   assert.ok(html.includes("moved"), "dashboard mentions page has moved");
 });
 
