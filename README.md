@@ -20,6 +20,7 @@ Phase 12 reporting is implemented:
 - bilingual parity analysis (EN/FR pairing and gap metrics)
 - accessibility statement detection and statement quality signals
 - CMS/design-system/platform fingerprint signals
+- Green Web Foundation and AMTPG scan links/signals per URL
 - directional impact modeling from traffic and automated quality signals
 - day-over-day trend comparison with regression alerts
 - multi-context quality snapshots (desktop/mobile x light/dark)

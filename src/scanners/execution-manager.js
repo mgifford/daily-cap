@@ -3,16 +3,20 @@ import { runScanGov } from "./scangov-runner.js";
 import { runAccessibilityStatementCheck } from "./accessibility-statement-runner.js";
 import { runPlatformFingerprint } from "./platform-fingerprint-runner.js";
 import { runAxeScanVariants } from "./axe-runner.js";
+import { runGreenWebCheck } from "./green-web-runner.js";
+import { runAmtpgScan } from "./amtpg-runner.js";
 
 async function scanOne(target, mode, lighthouseContexts, axeContexts) {
   try {
-    const [lighthouse, scangov, accessibilityStatement, platformFingerprint, axe] =
+    const [lighthouse, scangov, accessibilityStatement, platformFingerprint, axe, greenWeb, amtpg] =
       await Promise.all([
         runLighthouseScanVariants(target, mode, lighthouseContexts),
         runScanGov(target, mode),
         runAccessibilityStatementCheck(target, mode),
         runPlatformFingerprint(target, mode),
-        runAxeScanVariants(target, mode, axeContexts)
+        runAxeScanVariants(target, mode, axeContexts),
+        runGreenWebCheck(target, mode),
+        runAmtpgScan(target, mode)
       ]);
 
     return {
@@ -23,7 +27,9 @@ async function scanOne(target, mode, lighthouseContexts, axeContexts) {
       scangov,
       accessibility_statement: accessibilityStatement,
       platform_fingerprint: platformFingerprint,
-      axe
+      axe,
+      green_web: greenWeb,
+      amtpg
     };
   } catch (error) {
     return {
@@ -34,7 +40,9 @@ async function scanOne(target, mode, lighthouseContexts, axeContexts) {
       scangov: null,
       accessibility_statement: null,
       platform_fingerprint: null,
-      axe: null
+      axe: null,
+      green_web: null,
+      amtpg: null
     };
   }
 }

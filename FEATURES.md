@@ -144,6 +144,8 @@ src/scanners/
   accessibility-statement-runner.js  Statement detection scanner
   platform-fingerprint-runner.js     CMS/platform signal detector
   scangov-runner.js                  ScanGov scanner adapter
+  green-web-runner.js                Green Web Foundation scanner adapter
+  amtpg-runner.js                    AMTPG scanner adapter
 src/aggregation/
   build-report.js                    Assembles full daily report payload
   score-aggregation.js               Score rollups and weighted averages
