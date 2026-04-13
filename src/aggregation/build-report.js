@@ -10,6 +10,8 @@ import { summarizeBarrierHistory } from "./barrier-history.js";
 import { summarizePriorityIssues } from "./priority-issues.js";
 import { summarizeInstitutionScorecards } from "./institution-scorecards.js";
 import { summarizeInstitutionTrends } from "./institution-trends.js";
+import { computeTopAxeIssues } from "./axe-top-issues.js";
+import { computeInstitutionAxeInsights, computeInstitutionLighthouseInsights } from "./institution-insights.js";
 
 function summarizeScan(scanned) {
   const succeeded = scanned.filter((row) => row.scan_status === "success").length;
@@ -39,6 +41,9 @@ export function buildDailyReport({
   const impactModel = computeDirectionalImpact(scanned);
   const cohortQuality = summarizeCohortQuality(scanned);
   const lighthouseContexts = summarizeLighthouseContexts(scanned);
+  const topAxeIssues = computeTopAxeIssues(scanned);
+  const institutionAxeInsights = computeInstitutionAxeInsights(scanned);
+  const institutionLighthouseInsights = computeInstitutionLighthouseInsights(scanned);
 
   // inventory is now an object with scan_targets, ranking_summary, tier_validation, etc.
   const inventoryCount = inventory.scan_target_count || inventory.scan_targets?.length || 0;
@@ -64,6 +69,9 @@ export function buildDailyReport({
     impact_model: impactModel,
     cohort_quality: cohortQuality,
     lighthouse_contexts: lighthouseContexts,
+    top_axe_issues: topAxeIssues,
+    institution_axe_insights: institutionAxeInsights,
+    institution_lighthouse_insights: institutionLighthouseInsights,
     top_urls: scanned.map((row) => ({
       inventory_id: row.inventory_id,
       language: row.language,
@@ -100,9 +108,12 @@ export function buildDailyReport({
         barrier_history_json: `docs/reports/daily/${runDate}/details/barrier-history.json`,
         priority_issues_json: `docs/reports/daily/${runDate}/details/priority-issues.json`,
         recurring_issues_json: `docs/reports/daily/${runDate}/details/recurring-issues.json`,
+        top_axe_issues_json: `docs/reports/daily/${runDate}/details/top-axe-issues.json`,
         institution_scorecards_json: `docs/reports/daily/${runDate}/details/institution-scorecards.json`,
         institution_trends_json: `docs/reports/daily/${runDate}/details/institution-trends.json`,
         institution_trends_html: `docs/reports/daily/${runDate}/details/institution-trends.html`,
+        institution_axe_insights_json: `docs/reports/daily/${runDate}/details/institution-axe-insights.json`,
+        institution_lighthouse_insights_json: `docs/reports/daily/${runDate}/details/institution-lighthouse-insights.json`,
         bilingual_gap_leaderboard_json: `docs/reports/daily/${runDate}/details/bilingual-gap-leaderboard.json`
       }
     }

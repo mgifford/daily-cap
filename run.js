@@ -125,6 +125,33 @@ const report = buildDailyReport({
   historicalReports
 });
 
+// Exit non-zero if all scans failed to prevent silent failures
+const { succeeded, total } = report.scan_summary;
+if (total > 0 && succeeded === 0) {
+  console.error(`Fatal: All ${total} scans failed. Exiting with code 1 to alert workflow.`);
+  process.exit(1);
+}
+
+// Debug logging for bilingual pair formation
+const bilingualParity = report.bilingual_parity || {};
+const pairs = bilingualParity.pairs || [];
+const recentPairs = pairs.filter((p) => {
+  const sourceSet = String(p.pair_source || "").split(",").map((s) => s.trim());
+  return sourceSet.includes("recent");
+});
+const completePairs = pairs.filter((p) => p.scan_status_en === "success" && p.scan_status_fr === "success");
+const recentCompletePairs = recentPairs.filter((p) => p.scan_status_en === "success" && p.scan_status_fr === "success");
+
+console.log(`[DEBUG] Bilingual pair summary:`);
+console.log(`  Total pairs: ${pairs.length}`);
+console.log(`  Complete pairs (both scanned): ${completePairs.length}`);
+console.log(`  Recent source pairs: ${recentPairs.length}`);
+console.log(`  Recent complete pairs: ${recentCompletePairs.length}`);
+
+const missing = bilingualParity.missing_counterparts || [];
+const recentMissing = missing.filter((m) => m.source === "recent");
+console.log(`  Missing counterparts (recent): ${recentMissing.length}`);
+
 await publishReport({ report, outputRoot });
 
 console.log(

@@ -79,6 +79,10 @@ export async function publishReport({ report, outputRoot }) {
     report.priority_issues?.recurring_issues || []
   );
   await writeJsonFile(
+    path.join(detailsDir, "top-axe-issues.json"),
+    report.top_axe_issues || { summary: {}, top_issues: [] }
+  );
+  await writeJsonFile(
     path.join(detailsDir, "institution-scorecards.json"),
     report.institution_scorecards?.all_scorecards || []
   );
@@ -89,6 +93,14 @@ export async function publishReport({ report, outputRoot }) {
   await writeJsonFile(
     path.join(detailsDir, "bilingual-gap-leaderboard.json"),
     report.bilingual_parity?.by_institution || []
+  );
+  await writeJsonFile(
+    path.join(detailsDir, "institution-axe-insights.json"),
+    report.institution_axe_insights || { summary: {}, by_institution: [] }
+  );
+  await writeJsonFile(
+    path.join(detailsDir, "institution-lighthouse-insights.json"),
+    report.institution_lighthouse_insights || { summary: {}, by_institution: [] }
   );
   await writeTextFile(path.join(detailsDir, "priority-issues.html"), renderPriorityIssuesPage(report));
   await writeTextFile(path.join(detailsDir, "recurring-issues.html"), renderRecurringIssuesPage(report));

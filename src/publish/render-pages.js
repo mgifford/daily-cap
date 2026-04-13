@@ -25,7 +25,7 @@ function safeId(value) {
 function sectionH2(id, text) {
   const safeText = escapeHtml(text);
   const safeAnchor = escapeHtml(id);
-  return `<h2 id="${safeAnchor}">${safeText} <a href="#${safeAnchor}" class="anchor-link" aria-label="Link to section: ${safeText}">#</a></h2>`;
+  return `<h2 id="${safeAnchor}" tabindex="-1">${safeText} <a href="#${safeAnchor}" class="anchor-link" aria-label="Link to &quot;${safeText}&quot; section"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>`;
 }
 
 function renderCmsDisclosure(entry) {
@@ -539,10 +539,67 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
     trendLabel === "stable" ? "→ stable" :
     "Insufficient data";
 
+  // Get institution-specific insights
+  const instName = institutionTrend.institution;
+  const axeInsights = (report.institution_axe_insights?.by_institution || []).find(
+    (i) => i.institution === instName
+  ) || {};
+  const lighthouseInsights = (report.institution_lighthouse_insights?.by_institution || []).find(
+    (i) => i.institution === instName
+  ) || {};
+
+  // Render axe violations table
+  const axeRows = `
+    <tr>
+      <td>Critical</td>
+      <td>${escapeHtml(axeInsights.critical_total_violations ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.critical_affected_pages ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.critical_average_per_page ?? "-")}</td>
+    </tr>
+    <tr>
+      <td>Serious</td>
+      <td>${escapeHtml(axeInsights.serious_total_violations ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.serious_affected_pages ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.serious_average_per_page ?? "-")}</td>
+    </tr>
+    <tr>
+      <td>Moderate</td>
+      <td>${escapeHtml(axeInsights.moderate_total_violations ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.moderate_affected_pages ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.moderate_average_per_page ?? "-")}</td>
+    </tr>
+    <tr>
+      <td>Minor</td>
+      <td>${escapeHtml(axeInsights.minor_total_violations ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.minor_affected_pages ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.minor_average_per_page ?? "-")}</td>
+    </tr>
+  `;
+
+  // Render Lighthouse context scores table
+  const lighthouseRows = [
+    ["Desktop Light", lighthouseInsights.desktop_light],
+    ["Desktop Dark", lighthouseInsights.desktop_dark],
+    ["Mobile Light", lighthouseInsights.mobile_light],
+    ["Mobile Dark", lighthouseInsights.mobile_dark]
+  ]
+    .map(
+      ([context, scores]) => `
+    <tr>
+      <td>${escapeHtml(context)}</td>
+      <td>${escapeHtml(scores?.accessibility_score ?? "-")}</td>
+      <td>${escapeHtml(scores?.performance_score ?? "-")}</td>
+      <td>${escapeHtml(scores?.best_practices_score ?? "-")}</td>
+      <td>${escapeHtml(scores?.seo_score ?? "-")}</td>
+    </tr>
+  `
+    )
+    .join("\n");
+
   return renderDetailLayout({
     title: `${institutionTrend.institution} Trends - ${report.run_date}`,
     heading: `${institutionTrend.institution} Trends`,
-    intro: "Daily institution-level trend view for accessibility and key barrier signals.",
+    intro: "Daily institution-level trend view for accessibility, barriers, and performance metrics.",
     backHref: "../institution-trends.html",
     backLabel: "Back to Institution Trends",
     stylesheetHref: "../../../../assets/report.css",
@@ -554,6 +611,7 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
       <div class="card"><strong>Latest Missing FR</strong><br/>${escapeHtml(latest.missing_french_count ?? "-")}</div>
       <div class="card"><strong>Latest Missing Statements</strong><br/>${escapeHtml(latest.missing_statement_count ?? "-")}</div>
     </div>
+    ${sectionH2("barrier-trends", "Barrier Trends")}
     ${renderMetricTrendChart(points, "mean_accessibility_score", `${institutionTrend.institution} accessibility over time`, "Line chart of daily mean accessibility score for this institution.", "#1d6b42", 100)}
     ${renderMetricTrendChart(points, "mean_abs_accessibility_gap", `${institutionTrend.institution} EN/FR accessibility gap over time`, "Line chart of daily mean absolute EN/FR accessibility score gap for this institution. Lower is better.", "#e07b00")}
     ${renderMetricTrendChart(points, "missing_french_count", `${institutionTrend.institution} missing French counterparts over time`, "Line chart of daily missing French counterpart counts for this institution.", "#b5402d")}
@@ -587,6 +645,44 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
         </tr>`
         )
         .join("\n")}</tbody>
+    </table>
+
+    ${sectionH2("axe-violations", "Current Axe Violations (by Severity)")}
+    <p><em>Snapshot of the most recent scan for this institution across all its services.</em></p>
+    <div class="cards">
+      <div class="card"><strong>Total Violations</strong><br/>${escapeHtml(axeInsights.total_violations ?? "-")}</div>
+      <div class="card"><strong>Services Scanned</strong><br/>${escapeHtml(axeInsights.scanned_urls ?? "-")}</div>
+      <div class="card"><strong>Services with Violations</strong><br/>${escapeHtml(axeInsights.services_with_violations?.length ?? "-")}</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Severity</th>
+          <th scope="col">Total Violations</th>
+          <th scope="col">Affected Services</th>
+          <th scope="col">Average per Service</th>
+        </tr>
+      </thead>
+      <tbody>${axeRows}</tbody>
+    </table>
+
+    ${sectionH2("lighthouse-performance", "Google Lighthouse Performance (by Context)")}
+    <p><em>Snapshot of the most recent Lighthouse scan results for this institution across rendering contexts.</em></p>
+    <div class="cards">
+      <div class="card"><strong>Services Scanned</strong><br/>${escapeHtml(lighthouseInsights.scanned_urls ?? "-")}</div>
+      <div class="card"><strong>Mobile vs Desktop</strong><br/>${escapeHtml(lighthouseInsights.mobile_dark_vs_desktop_light?.accessibility_delta ?? "-")}</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Context</th>
+          <th scope="col">Accessibility</th>
+          <th scope="col">Performance</th>
+          <th scope="col">Best Practices</th>
+          <th scope="col">SEO</th>
+        </tr>
+      </thead>
+      <tbody>${lighthouseRows}</tbody>
     </table>`
   });
 }
@@ -614,6 +710,8 @@ export function renderDailyReportPage(report) {
   const contextByContext = report.lighthouse_contexts?.by_context || {};
   const contextDeltas = report.lighthouse_contexts?.deltas || [];
   const contextHighlight = report.lighthouse_contexts?.highlights?.mobile_dark_vs_desktop_light || {};
+  const topAxeIssues = report.top_axe_issues?.top_issues || [];
+  const topAxeSummary = report.top_axe_issues?.summary || {};
   const barrierHistory = report.barrier_history?.points || [];
   const detailPaths = report.output_paths?.details || {};
   const priorityIssues = report.priority_issues?.top_priority_issues || [];
@@ -631,17 +729,23 @@ export function renderDailyReportPage(report) {
   const rows = renderTopUrlRows(topUrlsPreview);
 
   const missingCounterpartRows = missingCounterparts
-    .slice(0, 12)
+    .slice(0, 20)
     .map((row) => {
       return `
       <tr>
         <td>${escapeHtml(row.service_name)}</td>
+        <td>${escapeHtml(row.source || "-")}</td>
+        <td>${escapeHtml(row.tier || "-")}</td>
         <td>${escapeHtml(row.has_en ? "yes" : "no")}</td>
         <td>${escapeHtml(row.has_fr ? "yes" : "no")}</td>
         <td>${row.url_en ? `<a href="${escapeHtml(row.url_en)}">EN</a>` : "-"} | ${row.url_fr ? `<a href="${escapeHtml(row.url_fr)}">FR</a>` : "-"}</td>
       </tr>`;
     })
     .join("\n");
+  const missingCounterpartOverflowCount = Math.max(0, missingCounterparts.length - 20);
+  const scanSucceeded = report.scan_summary?.succeeded ?? 0;
+  const scanTotal = report.scan_summary?.total ?? 0;
+  const allScansFailed = scanTotal > 0 && scanSucceeded === 0;
 
   const parityRows = largestGaps
     .map((row) => {
@@ -821,6 +925,22 @@ export function renderDailyReportPage(report) {
     })
     .join("\n");
 
+  const axeIssueRows = topAxeIssues
+    .map((issue) => {
+      const samplePageRows = (issue.sample_pages || [])
+        .map((page) => `<li><a href="${escapeHtml(page.canonical_url)}">${escapeHtml(page.service_name)}</a> (${escapeHtml(page.language?.toUpperCase() || "NA")}, ${escapeHtml(page.count)} occurrences)</li>`)
+        .join("");
+      return `
+      <tr>
+        <td><strong>${escapeHtml(issue.severity)}</strong></td>
+        <td>${escapeHtml(issue.total_occurrences)}</td>
+        <td>${escapeHtml(issue.affected_pages)}</td>
+        <td>${escapeHtml(issue.average_per_page)}</td>
+        <td><details><summary>View samples</summary><ul style="margin: 0.5em 0; padding-left: 1.5em;">${samplePageRows}</ul></details></td>
+      </tr>`;
+    })
+    .join("\n");
+
   const institutionRows = institutionScorecards
     .map((row) => {
       return `
@@ -932,6 +1052,76 @@ export function renderDailyReportPage(report) {
           </tr>`
           )
           .join("\n")}</tbody>
+      </table>
+    </section>
+
+    <section>
+      ${sectionH2("lighthouse-performance", "Google Lighthouse Performance")}
+      <p><em>Lighthouse scores measure page quality across performance, accessibility, best practices, and SEO. Scores below show means by rendering context (desktop/mobile, light/dark).</em></p>
+      <div class="cards">
+        <div class="card"><strong>URLs Scanned</strong><br/>${escapeHtml(contextSummary.scanned_urls_with_context_data ?? "-")}</div>
+        <div class="card"><strong>Baseline</strong><br/>Desktop Light</div>
+      </div>
+
+      <h3>Average Scores by Context</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Performance</th>
+            <th scope="col">Accessibility</th>
+            <th scope="col">Best Practices</th>
+            <th scope="col">SEO</th>
+          </tr>
+        </thead>
+        <tbody>${contextAverageRows || '<tr><td colspan="5">No Lighthouse data available.</td></tr>'}</tbody>
+      </table>
+
+      <h3>Context Deltas vs Desktop Light</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Perf Delta</th>
+            <th scope="col">A11y Delta</th>
+            <th scope="col">Practices Delta</th>
+            <th scope="col">SEO Delta</th>
+          </tr>
+        </thead>
+        <tbody>${contextDeltaRows || '<tr><td colspan="5">No context comparison data available.</td></tr>'}</tbody>
+      </table>
+
+      <details style="margin-top: 1em;">
+        <summary><strong>Mobile Dark vs Desktop Light Headline</strong></summary>
+        <ul style="margin: 0.5em 0; padding-left: 1.5em;">
+          <li>Performance: ${escapeHtml(contextHighlight.performance_score ?? "-")}</li>
+          <li>Accessibility: ${escapeHtml(contextHighlight.accessibility_score ?? "-")}</li>
+          <li>Best Practices: ${escapeHtml(contextHighlight.best_practices_score ?? "-")}</li>
+          <li>SEO: ${escapeHtml(contextHighlight.seo_score ?? "-")}</li>
+        </ul>
+      </details>
+    </section>
+
+    <section>
+      ${sectionH2("top-axe-violations", "Top Axe Accessibility Violations")}
+      <p><em>Axe Core automated testing identifies the most common accessibility violations by severity. These are weighted by occurrences across all scanned pages.</em></p>
+      <div class="cards">
+        <div class="card"><strong>Scanned URLs</strong><br/>${escapeHtml(topAxeSummary.scanned_urls ?? "-")}</div>
+        <div class="card"><strong>Total Violations</strong><br/>${escapeHtml(topAxeSummary.total_violations ?? "-")}</div>
+        <div class="card"><strong>URLs with Violations</strong><br/>${escapeHtml(topAxeSummary.urls_with_violations ?? "-")}</div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Severity</th>
+            <th scope="col">Total Occurrences</th>
+            <th scope="col">Affected Pages</th>
+            <th scope="col">Avg per Page</th>
+            <th scope="col">Sample Pages</th>
+          </tr>
+        </thead>
+        <tbody>${axeIssueRows || '<tr><td colspan="5">No axe violation data available.</td></tr>'}</tbody>
       </table>
     </section>
 
@@ -1109,17 +1299,22 @@ export function renderDailyReportPage(report) {
 
       <h3>Missing Counterparts</h3>
       <p><a href="./details/missing-counterparts.json">Download missing counterpart JSON</a></p>
+      ${allScansFailed ? `<p class="warning"><strong>Warning:</strong> All scans failed this run (0 of ${escapeHtml(scanTotal)} URLs succeeded). This missing counterparts list reflects inventory structure only — it does not indicate that French pages are genuinely absent. Verify scan infrastructure before acting on these results.</p>` : ""}
+      <p><em>Discovery cohort entries (source: <code>discovery</code>) are English-only navigation pages and are expected to have no French counterpart in the inventory. Other sources (recent, curated, top-tasks) should have paired EN and FR pages.</em></p>
       <table>
         <thead>
           <tr>
             <th scope="col">Service</th>
+            <th scope="col">Source</th>
+            <th scope="col">Tier</th>
             <th scope="col">Has EN</th>
             <th scope="col">Has FR</th>
             <th scope="col">Links</th>
           </tr>
         </thead>
-        <tbody>${missingCounterpartRows || '<tr><td colspan="4">No missing language counterparts in this run.</td></tr>'}</tbody>
+        <tbody>${missingCounterpartRows || '<tr><td colspan="6">No missing language counterparts in this run.</td></tr>'}</tbody>
       </table>
+      ${missingCounterpartOverflowCount > 0 ? `<p>${escapeHtml(missingCounterpartOverflowCount)} additional rows available in <a href="./details/missing-counterparts.json">missing-counterparts.json</a>.</p>` : ""}
     </section>
 
     <section>
