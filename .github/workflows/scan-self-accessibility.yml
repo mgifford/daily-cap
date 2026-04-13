@@ -1,0 +1,51 @@
+name: Scan Own Report Accessibility
+
+on:
+  # Run after every daily scan that pushes to main (reports updated).
+  push:
+    branches:
+      - main
+    paths:
+      - docs/reports/daily/**
+  # Also run monthly as a baseline check.
+  schedule:
+    - cron: '0 11 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  scan-reports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for existing open self-accessibility issues
+        id: check_issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          COUNT=$(gh issue list --repo "$GITHUB_REPOSITORY" --label "self-accessibility" --state open --json number --jq '. | length')
+          echo "open_count=$COUNT" >> "$GITHUB_OUTPUT"
+
+      - name: Scan published reports with axe-core
+        if: steps.check_issues.outputs.open_count == '0'
+        uses: github/accessibility-scanner@v3
+        with:
+          urls: |
+            https://mgifford.github.io/daily-cap/
+            https://mgifford.github.io/daily-cap/docs/reports/
+          repository: mgifford/daily-cap
+          token: ${{ github.token }}
+          cache_key: daily-cap-self-scan
+          skip_copilot_assignment: true
+          labels: self-accessibility
+
+      - name: Skip scan (open issues exist)
+        if: steps.check_issues.outputs.open_count != '0'
+        run: |
+          echo "Skipping scan: ${{ steps.check_issues.outputs.open_count }} open self-accessibility issue(s) already exist."
+          echo "Resolve open issues before a new scan is triggered."
+          echo ""
+          echo "Daily CAP exists to benchmark government website accessibility."
+          echo "Its own outputs must meet the same standards it measures."

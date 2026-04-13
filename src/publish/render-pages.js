@@ -294,7 +294,7 @@ function renderDetailLayout({ title, heading, intro, backHref, backLabel = "Back
 <body>
   <header>
     <div class="nav"><a href="${escapeHtml(backHref)}">&#8592; ${escapeHtml(backLabel)}</a></div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
   </header>
   <main>
     <h1>${escapeHtml(heading)}</h1>
@@ -309,8 +309,10 @@ function renderDetailLayout({ title, heading, intro, backHref, backLabel = "Back
       function applyTheme(t) {
         html.setAttribute('data-theme', t);
         if (toggle) {
+          var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Sun</title><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+          var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
           toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+          toggle.innerHTML = t === 'dark' ? sunSvg : moonSvg;
         }
       }
       var stored = localStorage.getItem(THEME_KEY);
@@ -480,17 +482,25 @@ export function renderInstitutionScorecardsPage(report) {
 
 export function renderInstitutionTrendsIndexPage(report) {
   const rows = (report.institution_trends?.institutions || [])
-    .map(
-      (item) => `
+    .map((item) => {
+      const trendLabel = item.parity_trend || "—";
+      const trendArrow =
+        trendLabel === "worsening" ? "↑ worsening" :
+        trendLabel === "improving" ? "↓ improving" :
+        trendLabel === "stable" ? "→ stable" :
+        "—";
+      return `
       <tr>
         <td><a href="./institutions/${escapeHtml(item.slug)}.html">${escapeHtml(item.institution)}</a></td>
         <td>${escapeHtml(item.days_tracked)}</td>
         <td>${escapeHtml(item.latest?.mean_accessibility_score ?? "-")}</td>
+        <td>${escapeHtml(item.latest?.mean_abs_accessibility_gap ?? "-")}</td>
         <td>${escapeHtml(item.latest?.missing_french_count ?? "-")}</td>
         <td>${escapeHtml(item.latest?.missing_statement_count ?? "-")}</td>
         <td>${escapeHtml(item.latest?.high_gap_pair_count ?? "-")}</td>
-      </tr>`
-    )
+        <td>${escapeHtml(trendArrow)}</td>
+      </tr>`;
+    })
     .join("\n");
 
   return renderDetailLayout({
@@ -507,12 +517,14 @@ export function renderInstitutionTrendsIndexPage(report) {
           <th scope="col">Institution</th>
           <th scope="col">Days Tracked</th>
           <th scope="col">Latest Mean A11y</th>
+          <th scope="col">Latest Mean A11y Gap</th>
           <th scope="col">Latest Missing FR</th>
           <th scope="col">Latest Missing Statements</th>
           <th scope="col">Latest High Gap Pairs</th>
+          <th scope="col">Parity Trend</th>
         </tr>
       </thead>
-      <tbody>${rows || '<tr><td colspan="6">No institution trend data available.</td></tr>'}</tbody>
+      <tbody>${rows || '<tr><td colspan="8">No institution trend data available.</td></tr>'}</tbody>
     </table>`
   });
 }
@@ -520,6 +532,13 @@ export function renderInstitutionTrendsIndexPage(report) {
 export function renderInstitutionTrendPage(report, institutionTrend) {
   const points = institutionTrend.points || [];
   const latest = institutionTrend.latest || {};
+  const trendLabel = institutionTrend.parity_trend || "insufficient_data";
+  const trendArrow =
+    trendLabel === "worsening" ? "↑ worsening" :
+    trendLabel === "improving" ? "↓ improving" :
+    trendLabel === "stable" ? "→ stable" :
+    "Insufficient data";
+
   return renderDetailLayout({
     title: `${institutionTrend.institution} Trends - ${report.run_date}`,
     heading: `${institutionTrend.institution} Trends`,
@@ -530,10 +549,13 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
     body: `<div class="cards">
       <div class="card"><strong>Days Tracked</strong><br/>${escapeHtml(institutionTrend.days_tracked)}</div>
       <div class="card"><strong>Latest Mean A11y</strong><br/>${escapeHtml(latest.mean_accessibility_score ?? "-")}</div>
+      <div class="card"><strong>Latest A11y Gap</strong><br/>${escapeHtml(latest.mean_abs_accessibility_gap ?? "-")}</div>
+      <div class="card"><strong>Parity Trend</strong><br/>${escapeHtml(trendArrow)}</div>
       <div class="card"><strong>Latest Missing FR</strong><br/>${escapeHtml(latest.missing_french_count ?? "-")}</div>
       <div class="card"><strong>Latest Missing Statements</strong><br/>${escapeHtml(latest.missing_statement_count ?? "-")}</div>
     </div>
     ${renderMetricTrendChart(points, "mean_accessibility_score", `${institutionTrend.institution} accessibility over time`, "Line chart of daily mean accessibility score for this institution.", "#1d6b42", 100)}
+    ${renderMetricTrendChart(points, "mean_abs_accessibility_gap", `${institutionTrend.institution} EN/FR accessibility gap over time`, "Line chart of daily mean absolute EN/FR accessibility score gap for this institution. Lower is better.", "#e07b00")}
     ${renderMetricTrendChart(points, "missing_french_count", `${institutionTrend.institution} missing French counterparts over time`, "Line chart of daily missing French counterpart counts for this institution.", "#b5402d")}
     ${renderMetricTrendChart(points, "missing_statement_count", `${institutionTrend.institution} missing accessibility statements over time`, "Line chart of daily missing accessibility statement counts for this institution.", "#235d8b")}
     <table>
@@ -543,6 +565,7 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
           <th scope="col">URLs</th>
           <th scope="col">Load</th>
           <th scope="col">Mean A11y</th>
+          <th scope="col">Mean A11y Gap</th>
           <th scope="col">Mean Perf</th>
           <th scope="col">Missing FR</th>
           <th scope="col">Missing Statements</th>
@@ -556,6 +579,7 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
           <td>${escapeHtml(point.scanned_urls)}</td>
           <td>${escapeHtml(point.total_page_load_count)}</td>
           <td>${escapeHtml(point.mean_accessibility_score ?? "-")}</td>
+          <td>${escapeHtml(point.mean_abs_accessibility_gap ?? "-")}</td>
           <td>${escapeHtml(point.mean_performance_score ?? "-")}</td>
           <td>${escapeHtml(point.missing_french_count)}</td>
           <td>${escapeHtml(point.missing_statement_count)}</td>
@@ -600,6 +624,7 @@ export function renderDailyReportPage(report) {
   const institutionTrendMap = new Map(
     (report.institution_trends?.institutions || []).map((item) => [item.institution, item])
   );
+  const institutionGapLeaderboard = report.bilingual_parity?.by_institution || [];
 
   const topUrlsPreview = report.top_urls.slice(0, 12);
   const topUrlsOverflowCount = Math.max(0, report.top_urls.length - 12);
@@ -824,7 +849,7 @@ export function renderDailyReportPage(report) {
 <body>
   <header>
     <div class="nav"><a href="../../index.html">&#8592; Back to Reports</a> | <a href="../../../">Home</a></div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
   </header>
   <main>
     <h1>Daily CAP Report</h1>
@@ -1047,6 +1072,39 @@ export function renderDailyReportPage(report) {
           </tr>
         </thead>
         <tbody>${parityRows || '<tr><td colspan="6">No complete EN/FR pairs with parity data in this run.</td></tr>'}</tbody>
+      </table>
+
+      <h3>Institution Bilingual Gap Leaderboard</h3>
+      <p><a href="./details/bilingual-gap-leaderboard.json">Download leaderboard JSON</a></p>
+      <p><em>Institutions ranked by mean absolute EN/FR accessibility score gap across their paired services. Higher values indicate greater inconsistency between language versions. Trend direction links to the institution's historical trend page when data is available.</em></p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Institution</th>
+            <th scope="col">Paired Services</th>
+            <th scope="col">Mean A11y Gap</th>
+            <th scope="col">High Gap Pairs (≥10)</th>
+            <th scope="col">Mean Perf Gap</th>
+            <th scope="col">Trend</th>
+          </tr>
+        </thead>
+        <tbody>${institutionGapLeaderboard.length > 0 ? institutionGapLeaderboard.map((row) => {
+          const trendItem = institutionTrendMap.get(row.institution);
+          const trendLabel = trendItem ? trendItem.parity_trend || "—" : "—";
+          const trendArrow = trendLabel === "worsening" ? "↑ worsening" : trendLabel === "improving" ? "↓ improving" : trendLabel === "stable" ? "→ stable" : "—";
+          const instCell = trendItem
+            ? `<a href="./details/institutions/${escapeHtml(trendItem.slug)}.html">${escapeHtml(row.institution)}</a>`
+            : escapeHtml(row.institution);
+          return `
+          <tr>
+            <td>${instCell}</td>
+            <td>${escapeHtml(row.pair_count)}</td>
+            <td>${escapeHtml(row.mean_abs_accessibility_gap ?? "-")}</td>
+            <td>${escapeHtml(row.high_gap_pair_count)}</td>
+            <td>${escapeHtml(row.mean_abs_performance_gap ?? "-")}</td>
+            <td>${escapeHtml(trendArrow)}</td>
+          </tr>`;
+        }).join("\n") : '<tr><td colspan="6">No institution gap data available in this run.</td></tr>'}</tbody>
       </table>
 
       <h3>Missing Counterparts</h3>
@@ -1310,8 +1368,10 @@ export function renderDailyReportPage(report) {
       function applyTheme(t) {
         html.setAttribute('data-theme', t);
         if (toggle) {
+          var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Sun</title><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+          var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
           toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+          toggle.innerHTML = t === 'dark' ? sunSvg : moonSvg;
         }
       }
       var stored = localStorage.getItem(THEME_KEY);
@@ -1383,7 +1443,7 @@ export function renderHomePage(report, recentReports = [], archivedDates = []) {
 <body>
   <header>
     <div class="nav"><strong>Daily CAP</strong></div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
   </header>
   <main>
     <h1>Canada.ca Website Quality Dashboard</h1>
@@ -1443,8 +1503,10 @@ export function renderHomePage(report, recentReports = [], archivedDates = []) {
       function applyTheme(t) {
         html.setAttribute('data-theme', t);
         if (toggle) {
+          var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Sun</title><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+          var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
           toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+          toggle.innerHTML = t === 'dark' ? sunSvg : moonSvg;
         }
       }
       var stored = localStorage.getItem(THEME_KEY);
@@ -1498,7 +1560,7 @@ export function renderArchiveIndexPage(archivedDates = []) {
 <body>
   <header>
     <div class="nav"><a href="../../index.html">Daily CAP</a> &rsaquo; Report Archive</div>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
   </header>
   <main>
     <h1>Report Archive</h1>
@@ -1519,8 +1581,10 @@ export function renderArchiveIndexPage(archivedDates = []) {
       function applyTheme(t) {
         html.setAttribute('data-theme', t);
         if (toggle) {
+          var sunSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Sun</title><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+          var moonSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false"><title>Moon</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
           toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-          toggle.textContent = t === 'dark' ? 'Light mode' : 'Dark mode';
+          toggle.innerHTML = t === 'dark' ? sunSvg : moonSvg;
         }
       }
       var stored = localStorage.getItem(THEME_KEY);

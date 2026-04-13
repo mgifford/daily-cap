@@ -102,7 +102,8 @@ export function buildDailyReport({
         recurring_issues_json: `docs/reports/daily/${runDate}/details/recurring-issues.json`,
         institution_scorecards_json: `docs/reports/daily/${runDate}/details/institution-scorecards.json`,
         institution_trends_json: `docs/reports/daily/${runDate}/details/institution-trends.json`,
-        institution_trends_html: `docs/reports/daily/${runDate}/details/institution-trends.html`
+        institution_trends_html: `docs/reports/daily/${runDate}/details/institution-trends.html`,
+        bilingual_gap_leaderboard_json: `docs/reports/daily/${runDate}/details/bilingual-gap-leaderboard.json`
       }
     }
   };

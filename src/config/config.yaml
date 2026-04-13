@@ -1,0 +1,77 @@
+scan:
+  # Maximum number of URLs to include in a single daily run.
+  url_limit: 130
+
+  # Number of days of prior report history to load for trend analysis.
+  history_lookback_days: 30
+
+  # Number of days of reports to display in the dashboard report list.
+  dashboard_display_days: 14
+
+  # Number of concurrent scans to run in parallel.
+  concurrency: 2
+
+  # Lighthouse scan contexts: each combination of form_factor and color_scheme is
+  # run as a separate scan target. Valid form_factor values: desktop, mobile.
+  # Valid color_scheme values: light, dark.
+  lighthouse_contexts:
+    - form_factor: desktop
+      color_scheme: light
+    - form_factor: desktop
+      color_scheme: dark
+    - form_factor: mobile
+      color_scheme: light
+    - form_factor: mobile
+      color_scheme: dark
+
+impact:
+  # Disability prevalence estimates aligned to CAN/ASC EN 301 549:2024 Functional
+  # Performance Statement (FPS) codes. Used for directional impact modeling only.
+  # All figures are proportions of the Canadian population (0.0 to 1.0).
+  #
+  # Canonical source of truth: src/data/statistics-canada-disability-stats.js
+  # Primary data: Statistics Canada, Canadian Survey on Disability (CSD) 2022
+  # https://www150.statcan.gc.ca/n1/pub/89-654-x/89-654-x2023002-eng.htm
+  # Review annually; next review: 2027-01-01
+  #
+  # FPS codes (CAN/ASC EN 301 549:2024 clauses 4.2.1-4.2.10):
+  #   WV    - Usage without vision (4.2.1)
+  #   LV    - Usage with limited vision (4.2.2)
+  #   WPC   - Usage without perception of colour (4.2.3)
+  #   WH    - Usage without hearing (4.2.4)
+  #   LH    - Usage with limited hearing (4.2.5)
+  #   WVC   - Usage with no or limited vocal capability (4.2.6)
+  #   LMS   - Usage with limited manipulation or strength (4.2.7)
+  #   LR    - Usage with limited reach (4.2.8)
+  #   PST   - Minimize photosensitive seizure triggers (4.2.9)
+  #   LC    - Usage with limited cognition, language or learning (4.2.10)
+  #   P (Privacy, 4.2.11) is excluded: no discrete disability population to model.
+  prevalence_rates:
+    WV:  0.030
+    LV:  0.035
+    WPC: 0.043
+    WH:  0.009
+    LH:  0.065
+    WVC: 0.011
+    LMS: 0.050
+    LR:  0.040
+    PST: 0.006
+    LC:  0.060
+
+  # Severity weights applied to axe-core and ScanGov findings when computing blended
+  # barrier weight. Values must be between 0.0 and 1.0.
+  severity_weights:
+    critical: 1.0
+    serious: 0.6
+    moderate: 0.3
+    minor: 0.1
+
+  # Weight applied when a finding's severity is unknown or unclassified.
+  fallback_severity_weight: 0.2
+
+sources:
+  # Canada.ca recent activity page (last 30 days of top visited URLs).
+  canada_recent_activity_url: "https://www.canada.ca/en/analytics/recent-activity.html"
+
+  # Canada.ca top tasks page.
+  canada_top_tasks_url: "https://www.canada.ca/en/government/about/top-tasks-for-canada.html"

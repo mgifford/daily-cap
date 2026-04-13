@@ -49,6 +49,67 @@ test("computeBilingualParity returns pair gaps and missing counterparts", () => 
   assert.equal(result.pairs[0].pair_source, "inventory");
 });
 
+test("computeBilingualParity includes by_institution leaderboard sorted by mean gap", () => {
+  const scanned = [
+    {
+      inventory_id: "svc-a-en",
+      paired_inventory_id: "svc-a-fr",
+      service_name: "Service A",
+      institution: "CRA",
+      language: "en",
+      canonical_url: "https://example.com/a-en",
+      scan_status: "success",
+      lighthouse: { accessibility_score: 90, performance_score: 80 },
+      scangov: null
+    },
+    {
+      inventory_id: "svc-a-fr",
+      paired_inventory_id: "svc-a-en",
+      service_name: "Service A",
+      institution: "CRA",
+      language: "fr",
+      canonical_url: "https://example.com/a-fr",
+      scan_status: "success",
+      lighthouse: { accessibility_score: 70, performance_score: 70 },
+      scangov: null
+    },
+    {
+      inventory_id: "svc-b-en",
+      paired_inventory_id: "svc-b-fr",
+      service_name: "Service B",
+      institution: "IRCC",
+      language: "en",
+      canonical_url: "https://example.com/b-en",
+      scan_status: "success",
+      lighthouse: { accessibility_score: 85, performance_score: 75 },
+      scangov: null
+    },
+    {
+      inventory_id: "svc-b-fr",
+      paired_inventory_id: "svc-b-en",
+      service_name: "Service B",
+      institution: "IRCC",
+      language: "fr",
+      canonical_url: "https://example.com/b-fr",
+      scan_status: "success",
+      lighthouse: { accessibility_score: 80, performance_score: 70 },
+      scangov: null
+    }
+  ];
+
+  const result = computeBilingualParity(scanned);
+
+  assert.ok(Array.isArray(result.by_institution), "by_institution should be an array");
+  assert.equal(result.by_institution.length, 2);
+  // CRA has gap of 20, IRCC has gap of 5 — CRA should rank first
+  assert.equal(result.by_institution[0].institution, "CRA");
+  assert.equal(result.by_institution[0].mean_abs_accessibility_gap, 20);
+  assert.equal(result.by_institution[0].high_gap_pair_count, 1);
+  assert.equal(result.by_institution[1].institution, "IRCC");
+  assert.equal(result.by_institution[1].mean_abs_accessibility_gap, 5);
+  assert.equal(result.by_institution[1].high_gap_pair_count, 0);
+});
+
 test("computeBilingualParity resolves missing counterparts via language_switcher_url", () => {
   const scanned = [
     {

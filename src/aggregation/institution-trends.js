@@ -21,7 +21,11 @@ function buildInstitutionSnapshot(report) {
         performance_scores: [],
         missing_french_count: 0,
         missing_statement_count: 0,
-        high_gap_pair_count: 0
+        high_gap_pair_count: 0,
+        a11y_gap_abs_sum: 0,
+        a11y_gap_count: 0,
+        perf_gap_abs_sum: 0,
+        perf_gap_count: 0
       };
 
     current.scanned_urls += 1;
@@ -55,13 +59,21 @@ function buildInstitutionSnapshot(report) {
   }
 
   for (const row of report.bilingual_parity?.pairs || []) {
-    if ((row.abs_accessibility_gap || 0) < 10) {
-      continue;
-    }
     const institution = normalizeInstitution(row.institution);
     const current = grouped.get(institution);
-    if (current) {
+    if (!current) {
+      continue;
+    }
+    if ((row.abs_accessibility_gap || 0) >= 10) {
       current.high_gap_pair_count += 1;
+    }
+    if (typeof row.abs_accessibility_gap === "number") {
+      current.a11y_gap_abs_sum += row.abs_accessibility_gap;
+      current.a11y_gap_count += 1;
+    }
+    if (typeof row.abs_performance_gap === "number") {
+      current.perf_gap_abs_sum += row.abs_performance_gap;
+      current.perf_gap_count += 1;
     }
   }
 
@@ -78,7 +90,11 @@ function buildInstitutionSnapshot(report) {
       : null,
     missing_french_count: entry.missing_french_count,
     missing_statement_count: entry.missing_statement_count,
-    high_gap_pair_count: entry.high_gap_pair_count
+    high_gap_pair_count: entry.high_gap_pair_count,
+    mean_abs_accessibility_gap:
+      entry.a11y_gap_count > 0 ? round(entry.a11y_gap_abs_sum / entry.a11y_gap_count) : null,
+    mean_abs_performance_gap:
+      entry.perf_gap_count > 0 ? round(entry.perf_gap_abs_sum / entry.perf_gap_count) : null
   }));
 }
 
@@ -110,10 +126,32 @@ export function summarizeInstitutionTrends(currentReport, historicalReports = []
       points.sort((a, b) => a.run_date.localeCompare(b.run_date));
       const latest = points[points.length - 1] || null;
 
+      // Parity trend: compare mean_abs_accessibility_gap of earliest vs latest point
+      // that has gap data. Positive delta = worsening (gap grew); negative = improving.
+      const gapPoints = points.filter(
+        (p) => typeof p.mean_abs_accessibility_gap === "number"
+      );
+      let parityTrend = "insufficient_data";
+      let parityGapDelta = null;
+      if (gapPoints.length >= 2) {
+        const earliest = gapPoints[0].mean_abs_accessibility_gap;
+        const latestGap = gapPoints[gapPoints.length - 1].mean_abs_accessibility_gap;
+        parityGapDelta = round(latestGap - earliest);
+        if (parityGapDelta > 2) {
+          parityTrend = "worsening";
+        } else if (parityGapDelta < -2) {
+          parityTrend = "improving";
+        } else {
+          parityTrend = "stable";
+        }
+      }
+
       return {
         institution,
         slug: slugifyInstitution(institution),
         days_tracked: points.length,
+        parity_trend: parityTrend,
+        parity_gap_delta: parityGapDelta,
         latest,
         points
       };

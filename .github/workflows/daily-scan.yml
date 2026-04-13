@@ -1,11 +1,6 @@
 name: Daily CAP Scan
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - docs/reports/**
   schedule:
     # Run daily at 09:30 UTC
     - cron: '30 9 * * *'
@@ -14,29 +9,44 @@ on:
       run_date:
         description: 'Run date (YYYY-MM-DD)'
         required: false
+        type: string
       url_limit:
-        description: 'URL limit'
+        description: 'URL limit override'
         required: false
-        default: '130'
+        type: string
       source_mode:
         description: 'Source mode (live or seed)'
         required: false
         default: 'live'
+        type: choice
+        options:
+          - live
+          - seed
       scan_mode:
         description: 'Scan mode (live or mock)'
         required: false
         default: 'live'
+        type: choice
+        options:
+          - live
+          - mock
 
 permissions:
   contents: write
-  pages: write
+
+concurrency:
+  group: daily-cap-scan
+  cancel-in-progress: false
 
 jobs:
   scan:
     runs-on: ubuntu-latest
-    concurrency:
-      group: daily-cap-scan
-      cancel-in-progress: false
+    env:
+      NODE_ENV: production
+      RUN_DATE: ${{ inputs.run_date }}
+      URL_LIMIT: ${{ inputs.url_limit }}
+      SOURCE_MODE: ${{ inputs.source_mode || 'live' }}
+      SCAN_MODE: ${{ inputs.scan_mode || 'live' }}
 
     steps:
       - name: Checkout repository
@@ -50,53 +60,72 @@ jobs:
           node-version: '24'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Setup Chrome
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v2
 
-      - name: Install Playwright browsers
-        run: npx playwright install chromium --with-deps
+      - name: Export Chrome path
+        run: echo "CHROME_PATH=${{ steps.setup-chrome.outputs.chrome-path }}" >> "$GITHUB_ENV"
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Run tests
         run: npm test
 
       - name: Run CAP scan pipeline
+        id: pipeline
+        shell: bash
         run: |
-          node run.js \
-            --date "${{ github.event.inputs.run_date || '' }}" \
-            --limit "${{ github.event.inputs.url_limit || '130' }}" \
-            --source-mode "${{ github.event.inputs.source_mode || 'live' }}" \
-            --mode "${{ github.event.inputs.scan_mode || 'live' }}"
+          set +e
+          ARGS=(--mode "$SCAN_MODE" --source-mode "$SOURCE_MODE")
+          if [[ -n "$RUN_DATE" ]]; then ARGS+=(--date "$RUN_DATE"); fi
+          if [[ -n "$URL_LIMIT" ]]; then ARGS+=(--limit "$URL_LIMIT"); fi
+          node run.js "${ARGS[@]}"
+          EXIT_CODE=$?
+          echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
+          exit 0
 
-      - name: Check for report changes
-        id: check_changes
-        run: |
-          if git diff --quiet docs/reports/ docs/index.html; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-          else
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-          fi
+      - name: Upload diagnostics artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-cap-run-artifacts
+          path: |
+            docs/reports/daily/
+          if-no-files-found: warn
 
       - name: Commit and push reports
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.pipeline.outputs.exit_code == '0'
+        shell: bash
         run: |
-          git config --local user.email "copilot@github.com"
-          git config --local user.name "GitHub Copilot (Bot)"
+          if git diff --quiet -- docs/reports/ docs/index.html; then
+            echo "No report changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/reports/ docs/index.html
           git commit -m "chore: publish daily CAP report $(date -u +%Y-%m-%d)"
-          # On non-fast-forward failure, rebase onto origin/main using -X theirs so that
-          # this scan's generated report files take precedence over any concurrent doc changes.
-          git push origin main || (git fetch origin main && git rebase origin/main -X theirs && git push origin main)
+          # Rebase onto latest main to avoid non-fast-forward rejection when a
+          # concurrent or sequential run has already pushed. Use -X theirs so
+          # add/add conflicts in docs/reports resolve in favour of this run's output.
+          git pull --rebase -X theirs origin main
+          git push
 
       - name: Generate step summary
-        if: always()
+        if: steps.pipeline.outputs.exit_code == '0'
+        shell: bash
         run: |
-          REPORT_DATE=$(date -u +%Y-%m-%d)
-          REPORT_FILE="docs/reports/daily/$REPORT_DATE/report.json"
-          if [ -f "$REPORT_FILE" ]; then
-            echo "## Daily CAP Report" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**Run Date:** $REPORT_DATE" >> $GITHUB_STEP_SUMMARY
-            echo "**Report:** [View Report](./daily/$REPORT_DATE/index.html)" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            jq -r '.scan_summary | "- Scanned: \(.total)\n- Succeeded: \(.succeeded)\n- Failed: \(.failed)"' "$REPORT_FILE" >> $GITHUB_STEP_SUMMARY || true
+          if [[ -n "$RUN_DATE" ]]; then
+            node src/cli/generate-summary.js --date "$RUN_DATE"
+          else
+            node src/cli/generate-summary.js
           fi
+
+      - name: Fail workflow on pipeline error
+        if: steps.pipeline.outputs.exit_code != '0'
+        run: |
+          echo "Pipeline exited with code ${{ steps.pipeline.outputs.exit_code }}"
+          exit 1

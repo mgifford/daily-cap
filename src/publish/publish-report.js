@@ -86,6 +86,10 @@ export async function publishReport({ report, outputRoot }) {
     path.join(detailsDir, "institution-trends.json"),
     report.institution_trends || { summary: { institutions: 0 }, institutions: [] }
   );
+  await writeJsonFile(
+    path.join(detailsDir, "bilingual-gap-leaderboard.json"),
+    report.bilingual_parity?.by_institution || []
+  );
   await writeTextFile(path.join(detailsDir, "priority-issues.html"), renderPriorityIssuesPage(report));
   await writeTextFile(path.join(detailsDir, "recurring-issues.html"), renderRecurringIssuesPage(report));
   await writeTextFile(
