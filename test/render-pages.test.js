@@ -221,6 +221,13 @@ describe("renderDailyReportPage", () => {
     const html = renderDailyReportPage(MINIMAL_REPORT);
     assert.ok(html.includes("bilingual-gap-leaderboard.json"), "download link present");
   });
+
+  it("explains directional load units and interpretation", () => {
+    const html = renderDailyReportPage(MINIMAL_REPORT);
+    assert.ok(html.includes("Units: Load values are estimated page loads"), "units note present");
+    assert.ok(html.includes("not cumulative time spent"), "time interpretation note present");
+    assert.ok(html.includes("Load (estimated page loads)"), "directional impact table load header clarified");
+  });
 });
 
 // ---------------------------------------------------------------------------

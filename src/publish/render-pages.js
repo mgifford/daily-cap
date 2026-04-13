@@ -1441,6 +1441,7 @@ export function renderDailyReportPage(report) {
       ${sectionH2("directional-impact", "Directional Impact Model")}
       <p><em>${escapeHtml(report.impact_model?.note || "Directional estimate only.")}</em></p>
       <p>Formula: directional affected load = page load count x blended severity weight / 100 x statement multiplier. Statement multiplier is higher when no accessibility statement is detected.</p>
+      <p>Units: Load values are estimated page loads for this reporting run. Directional Affected Load is a weighted estimate of impacted page loads, not cumulative time spent.</p>
       <div class="cards">
         <div class="card"><strong>Total Load</strong><br/>${escapeHtml(impactSummary.total_page_load_count ?? "-")}</div>
         <div class="card"><strong>Directional Affected Load</strong><br/>${escapeHtml(impactSummary.directional_affected_load_estimate ?? "-")}</div>
@@ -1453,7 +1454,7 @@ export function renderDailyReportPage(report) {
           <tr>
             <th scope="col">Service</th>
             <th scope="col">Lang</th>
-            <th scope="col">Load</th>
+            <th scope="col">Load (estimated page loads)</th>
             <th scope="col">Severity Weight</th>
             <th scope="col">Directional Affected Load</th>
           </tr>
