@@ -25,7 +25,7 @@ function safeId(value) {
 function sectionH2(id, text) {
   const safeText = escapeHtml(text);
   const safeAnchor = escapeHtml(id);
-  return `<h2 id="${safeAnchor}">${safeText} <a href="#${safeAnchor}" class="anchor-link" aria-label="Link to section: ${safeText}">#</a></h2>`;
+  return `<h2 id="${safeAnchor}" tabindex="-1">${safeText} <a href="#${safeAnchor}" class="anchor-link" aria-label="Link to &quot;${safeText}&quot; section"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a></h2>`;
 }
 
 function renderCmsDisclosure(entry) {
@@ -631,17 +631,23 @@ export function renderDailyReportPage(report) {
   const rows = renderTopUrlRows(topUrlsPreview);
 
   const missingCounterpartRows = missingCounterparts
-    .slice(0, 12)
+    .slice(0, 20)
     .map((row) => {
       return `
       <tr>
         <td>${escapeHtml(row.service_name)}</td>
+        <td>${escapeHtml(row.source || "-")}</td>
+        <td>${escapeHtml(row.tier || "-")}</td>
         <td>${escapeHtml(row.has_en ? "yes" : "no")}</td>
         <td>${escapeHtml(row.has_fr ? "yes" : "no")}</td>
         <td>${row.url_en ? `<a href="${escapeHtml(row.url_en)}">EN</a>` : "-"} | ${row.url_fr ? `<a href="${escapeHtml(row.url_fr)}">FR</a>` : "-"}</td>
       </tr>`;
     })
     .join("\n");
+  const missingCounterpartOverflowCount = Math.max(0, missingCounterparts.length - 20);
+  const scanSucceeded = report.scan_summary?.succeeded ?? 0;
+  const scanTotal = report.scan_summary?.total ?? 0;
+  const allScansFailed = scanTotal > 0 && scanSucceeded === 0;
 
   const parityRows = largestGaps
     .map((row) => {
@@ -1109,17 +1115,22 @@ export function renderDailyReportPage(report) {
 
       <h3>Missing Counterparts</h3>
       <p><a href="./details/missing-counterparts.json">Download missing counterpart JSON</a></p>
+      ${allScansFailed ? `<p class="warning"><strong>Warning:</strong> All scans failed this run (0 of ${escapeHtml(scanTotal)} URLs succeeded). This missing counterparts list reflects inventory structure only — it does not indicate that French pages are genuinely absent. Verify scan infrastructure before acting on these results.</p>` : ""}
+      <p><em>Discovery cohort entries (source: <code>discovery</code>) are English-only navigation pages and are expected to have no French counterpart in the inventory. Other sources (recent, curated, top-tasks) should have paired EN and FR pages.</em></p>
       <table>
         <thead>
           <tr>
             <th scope="col">Service</th>
+            <th scope="col">Source</th>
+            <th scope="col">Tier</th>
             <th scope="col">Has EN</th>
             <th scope="col">Has FR</th>
             <th scope="col">Links</th>
           </tr>
         </thead>
-        <tbody>${missingCounterpartRows || '<tr><td colspan="4">No missing language counterparts in this run.</td></tr>'}</tbody>
+        <tbody>${missingCounterpartRows || '<tr><td colspan="6">No missing language counterparts in this run.</td></tr>'}</tbody>
       </table>
+      ${missingCounterpartOverflowCount > 0 ? `<p>${escapeHtml(missingCounterpartOverflowCount)} additional rows available in <a href="./details/missing-counterparts.json">missing-counterparts.json</a>.</p>` : ""}
     </section>
 
     <section>

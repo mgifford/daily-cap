@@ -98,6 +98,7 @@ export function computeBilingualParity(scanned) {
         url_en: pair.en?.canonical_url || null,
         url_fr: pair.fr?.canonical_url || null,
         tier: pair.en?.tier || pair.fr?.tier || null,
+        source: pair.en?.source || pair.fr?.source || null,
         service_pattern: pair.en?.service_pattern || pair.fr?.service_pattern || null,
         page_load_count: Math.max(pair.en?.page_load_count || 0, pair.fr?.page_load_count || 0)
       });
