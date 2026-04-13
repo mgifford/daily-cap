@@ -54,6 +54,14 @@ test("buildDailyReport includes phase 12 sections in payload", () => {
         design_system: "gcweb-wet",
         hosting_hint: "azure",
         confidence: 0.8
+      },
+      green_web: {
+        check_url: "https://www.thegreenwebfoundation.org/green-web-check/?url=https%3A%2F%2Fexample.com%2Fen",
+        is_green: true
+      },
+      amtpg: {
+        scan_url: "https://amtpg.run/?url=https%3A%2F%2Fexample.com%2Fen",
+        status: "available"
       }
     },
     {
@@ -96,6 +104,14 @@ test("buildDailyReport includes phase 12 sections in payload", () => {
         design_system: "gcweb-wet",
         hosting_hint: "azure",
         confidence: 0.8
+      },
+      green_web: {
+        check_url: "https://www.thegreenwebfoundation.org/green-web-check/?url=https%3A%2F%2Fexample.com%2Ffr",
+        is_green: false
+      },
+      amtpg: {
+        scan_url: "https://amtpg.run/?url=https%3A%2F%2Fexample.com%2Ffr",
+        status: "available"
       }
     }
   ];
@@ -151,5 +167,7 @@ test("buildDailyReport includes phase 12 sections in payload", () => {
   assert.ok(report.trend_analysis);
   assert.equal(report.trend_analysis.available, true);
   assert.equal(report.top_urls.length, 2);
+  assert.ok(report.top_urls[0].green_web);
+  assert.ok(report.top_urls[0].amtpg);
   assert.equal(report.scan_summary.total, 2);
 });

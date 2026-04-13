@@ -89,7 +89,9 @@ export function buildDailyReport({
       lighthouse: row.lighthouse,
       scangov: row.scangov,
       accessibility_statement: row.accessibility_statement,
-      platform_fingerprint: row.platform_fingerprint
+      platform_fingerprint: row.platform_fingerprint,
+      green_web: row.green_web,
+      amtpg: row.amtpg
     })),
     methodology: {
       status: "phase-7",
