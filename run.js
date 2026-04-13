@@ -125,6 +125,13 @@ const report = buildDailyReport({
   historicalReports
 });
 
+// Exit non-zero if all scans failed to prevent silent failures
+const { succeeded, total } = report.scan_summary;
+if (total > 0 && succeeded === 0) {
+  console.error(`Fatal: All ${total} scans failed. Exiting with code 1 to alert workflow.`);
+  process.exit(1);
+}
+
 await publishReport({ report, outputRoot });
 
 console.log(
