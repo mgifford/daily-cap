@@ -1605,8 +1605,8 @@ export function renderDashboardPage(report) {
 <body>
   <main>
     <h1>Daily CAP Reports</h1>
-    <p>This page has moved. <a href="../">View the Daily CAP home page</a>.</p>
-    <p>Or go directly to the <a href="./daily/${safeDate}/index.html">latest report (${safeDate})</a>.</p>
+    <p>This page has moved. <a href="../" aria-label="View the Daily CAP home page">View the Daily CAP home page</a>.</p>
+    <p>Or go directly to the <a href="./daily/${safeDate}/index.html" aria-label="latest report (${safeDate})">latest report (${safeDate})</a>.</p>
   </main>
 </body>
 </html>`;

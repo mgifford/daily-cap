@@ -20,6 +20,7 @@ import {
   renderInstitutionTrendPage,
   renderPriorityIssuesPage,
   renderRecurringIssuesPage,
+  renderDashboardPage,
   renderHomePage,
   renderArchiveIndexPage,
 } from "../src/publish/render-pages.js";
@@ -654,6 +655,20 @@ describe("renderHomePage", () => {
     const report = { ...MINIMAL_REPORT, run_date: '"><script>evil()</script>' };
     const html = renderHomePage(report);
     assert.ok(!html.includes("<script>evil()"), "raw script not present");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// renderDashboardPage
+// ---------------------------------------------------------------------------
+
+describe("renderDashboardPage", () => {
+  it("renders landing links with discernible text and explicit labels", () => {
+    const html = renderDashboardPage(MINIMAL_REPORT);
+    assert.ok(html.includes(">View the Daily CAP home page</a>"), "home link has visible text");
+    assert.ok(html.includes(">latest report (2026-04-10)</a>"), "latest report link has visible text");
+    assert.ok(html.includes('aria-label="View the Daily CAP home page"'), "home link has aria-label");
+    assert.ok(html.includes('aria-label="latest report (2026-04-10)"'), "latest report link has aria-label");
   });
 });
 
