@@ -47,15 +47,20 @@ function inferFrenchUrl(url) {
 }
 
 function normalizeEntries(entries) {
-  return entries.map((entry) => {
+  const normalized = entries.map((entry) => {
     let url_en = entry.url_en;
     let url_fr = entry.url_fr;
+    let inferredFrUrl = null;
 
     if (entry.canonical_url && entry.language === "en") {
       url_en = entry.canonical_url;
       // Infer url_fr for Canada.ca entries
       if (entry.source === "recent" && entry.canonical_url.includes("canada.ca")) {
-        url_fr = inferFrenchUrl(entry.canonical_url);
+        inferredFrUrl = inferFrenchUrl(entry.canonical_url);
+        url_fr = inferredFrUrl;
+        if (inferredFrUrl) {
+          console.log(`[DEBUG] Inferred FR URL for ${entry.id}: ${inferredFrUrl}`);
+        }
       }
     } else if (entry.canonical_url && entry.language === "fr") {
       url_fr = entry.canonical_url;
@@ -77,6 +82,11 @@ function normalizeEntries(entries) {
       language: entry.language
     };
   });
+
+  const recentWithInferred = normalized.filter((e) => e.source === "recent" && e.url_fr);
+  console.log(`[DEBUG] normalizeEntries: ${recentWithInferred.length} recent entries have inferred FR URLs`);
+
+  return normalized;
 }
 
 function normalizeSource(entry) {
@@ -133,6 +143,7 @@ function deduplicateByUrl(entries) {
 
   // Second pass: merge recent EN and FR entries for same service
   const toRemove = new Set();
+  let recentPairsMerged = 0;
   for (const entry of Array.from(seen.values())) {
     if (entry.source === "recent" && entry.language === "fr" && entry.url_fr) {
       const frKey = normalizeUrl(entry.url_fr);
@@ -141,11 +152,17 @@ function deduplicateByUrl(entries) {
         const enEntry = seen.get(enKey);
         if (enEntry && enEntry.language === "en") {
           // Merge FR into EN entry
+          console.log(`[DEBUG] Merged recent FR into EN: ${enEntry.id} + ${entry.id}`);
           enEntry.url_fr = entry.url_fr;
           toRemove.add(normalizeUrl(entry.url_en || entry.url_fr || entry.canonical_url));
+          recentPairsMerged += 1;
         }
       }
     }
+  }
+
+  if (recentPairsMerged > 0) {
+    console.log(`[DEBUG] deduplicateByUrl: merged ${recentPairsMerged} recent EN/FR pairs`);
   }
 
   // Remove merged FR entries

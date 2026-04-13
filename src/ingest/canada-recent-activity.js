@@ -89,6 +89,11 @@ export function parseRecentActivityHtml(html) {
     }
   }
 
+  // Debug logging for language detection
+  const frCount = entries.filter((e) => e.language === "fr").length;
+  const enCount = entries.filter((e) => e.language === "en").length;
+  console.log(`[DEBUG] parseRecentActivityHtml: detected ${frCount} FR and ${enCount} EN entries`);
+
   return entries;
 }
 
