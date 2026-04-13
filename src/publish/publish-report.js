@@ -79,6 +79,10 @@ export async function publishReport({ report, outputRoot }) {
     report.priority_issues?.recurring_issues || []
   );
   await writeJsonFile(
+    path.join(detailsDir, "top-axe-issues.json"),
+    report.top_axe_issues || { summary: {}, top_issues: [] }
+  );
+  await writeJsonFile(
     path.join(detailsDir, "institution-scorecards.json"),
     report.institution_scorecards?.all_scorecards || []
   );

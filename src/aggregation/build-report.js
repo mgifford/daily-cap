@@ -103,6 +103,7 @@ export function buildDailyReport({
         barrier_history_json: `docs/reports/daily/${runDate}/details/barrier-history.json`,
         priority_issues_json: `docs/reports/daily/${runDate}/details/priority-issues.json`,
         recurring_issues_json: `docs/reports/daily/${runDate}/details/recurring-issues.json`,
+        top_axe_issues_json: `docs/reports/daily/${runDate}/details/top-axe-issues.json`,
         institution_scorecards_json: `docs/reports/daily/${runDate}/details/institution-scorecards.json`,
         institution_trends_json: `docs/reports/daily/${runDate}/details/institution-trends.json`,
         institution_trends_html: `docs/reports/daily/${runDate}/details/institution-trends.html`,
