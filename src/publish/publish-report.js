@@ -94,6 +94,14 @@ export async function publishReport({ report, outputRoot }) {
     path.join(detailsDir, "bilingual-gap-leaderboard.json"),
     report.bilingual_parity?.by_institution || []
   );
+  await writeJsonFile(
+    path.join(detailsDir, "institution-axe-insights.json"),
+    report.institution_axe_insights || { summary: {}, by_institution: [] }
+  );
+  await writeJsonFile(
+    path.join(detailsDir, "institution-lighthouse-insights.json"),
+    report.institution_lighthouse_insights || { summary: {}, by_institution: [] }
+  );
   await writeTextFile(path.join(detailsDir, "priority-issues.html"), renderPriorityIssuesPage(report));
   await writeTextFile(path.join(detailsDir, "recurring-issues.html"), renderRecurringIssuesPage(report));
   await writeTextFile(

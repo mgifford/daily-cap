@@ -539,10 +539,67 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
     trendLabel === "stable" ? "→ stable" :
     "Insufficient data";
 
+  // Get institution-specific insights
+  const instName = institutionTrend.institution;
+  const axeInsights = (report.institution_axe_insights?.by_institution || []).find(
+    (i) => i.institution === instName
+  ) || {};
+  const lighthouseInsights = (report.institution_lighthouse_insights?.by_institution || []).find(
+    (i) => i.institution === instName
+  ) || {};
+
+  // Render axe violations table
+  const axeRows = `
+    <tr>
+      <td>Critical</td>
+      <td>${escapeHtml(axeInsights.critical_total_violations ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.critical_affected_pages ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.critical_average_per_page ?? "-")}</td>
+    </tr>
+    <tr>
+      <td>Serious</td>
+      <td>${escapeHtml(axeInsights.serious_total_violations ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.serious_affected_pages ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.serious_average_per_page ?? "-")}</td>
+    </tr>
+    <tr>
+      <td>Moderate</td>
+      <td>${escapeHtml(axeInsights.moderate_total_violations ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.moderate_affected_pages ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.moderate_average_per_page ?? "-")}</td>
+    </tr>
+    <tr>
+      <td>Minor</td>
+      <td>${escapeHtml(axeInsights.minor_total_violations ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.minor_affected_pages ?? "-")}</td>
+      <td>${escapeHtml(axeInsights.minor_average_per_page ?? "-")}</td>
+    </tr>
+  `;
+
+  // Render Lighthouse context scores table
+  const lighthouseRows = [
+    ["Desktop Light", lighthouseInsights.desktop_light],
+    ["Desktop Dark", lighthouseInsights.desktop_dark],
+    ["Mobile Light", lighthouseInsights.mobile_light],
+    ["Mobile Dark", lighthouseInsights.mobile_dark]
+  ]
+    .map(
+      ([context, scores]) => `
+    <tr>
+      <td>${escapeHtml(context)}</td>
+      <td>${escapeHtml(scores?.accessibility_score ?? "-")}</td>
+      <td>${escapeHtml(scores?.performance_score ?? "-")}</td>
+      <td>${escapeHtml(scores?.best_practices_score ?? "-")}</td>
+      <td>${escapeHtml(scores?.seo_score ?? "-")}</td>
+    </tr>
+  `
+    )
+    .join("\n");
+
   return renderDetailLayout({
     title: `${institutionTrend.institution} Trends - ${report.run_date}`,
     heading: `${institutionTrend.institution} Trends`,
-    intro: "Daily institution-level trend view for accessibility and key barrier signals.",
+    intro: "Daily institution-level trend view for accessibility, barriers, and performance metrics.",
     backHref: "../institution-trends.html",
     backLabel: "Back to Institution Trends",
     stylesheetHref: "../../../../assets/report.css",
@@ -554,6 +611,7 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
       <div class="card"><strong>Latest Missing FR</strong><br/>${escapeHtml(latest.missing_french_count ?? "-")}</div>
       <div class="card"><strong>Latest Missing Statements</strong><br/>${escapeHtml(latest.missing_statement_count ?? "-")}</div>
     </div>
+    ${sectionH2("barrier-trends", "Barrier Trends")}
     ${renderMetricTrendChart(points, "mean_accessibility_score", `${institutionTrend.institution} accessibility over time`, "Line chart of daily mean accessibility score for this institution.", "#1d6b42", 100)}
     ${renderMetricTrendChart(points, "mean_abs_accessibility_gap", `${institutionTrend.institution} EN/FR accessibility gap over time`, "Line chart of daily mean absolute EN/FR accessibility score gap for this institution. Lower is better.", "#e07b00")}
     ${renderMetricTrendChart(points, "missing_french_count", `${institutionTrend.institution} missing French counterparts over time`, "Line chart of daily missing French counterpart counts for this institution.", "#b5402d")}
@@ -587,6 +645,44 @@ export function renderInstitutionTrendPage(report, institutionTrend) {
         </tr>`
         )
         .join("\n")}</tbody>
+    </table>
+
+    ${sectionH2("axe-violations", "Current Axe Violations (by Severity)")}
+    <p><em>Snapshot of the most recent scan for this institution across all its services.</em></p>
+    <div class="cards">
+      <div class="card"><strong>Total Violations</strong><br/>${escapeHtml(axeInsights.total_violations ?? "-")}</div>
+      <div class="card"><strong>Services Scanned</strong><br/>${escapeHtml(axeInsights.scanned_urls ?? "-")}</div>
+      <div class="card"><strong>Services with Violations</strong><br/>${escapeHtml(axeInsights.services_with_violations?.length ?? "-")}</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Severity</th>
+          <th scope="col">Total Violations</th>
+          <th scope="col">Affected Services</th>
+          <th scope="col">Average per Service</th>
+        </tr>
+      </thead>
+      <tbody>${axeRows}</tbody>
+    </table>
+
+    ${sectionH2("lighthouse-performance", "Google Lighthouse Performance (by Context)")}
+    <p><em>Snapshot of the most recent Lighthouse scan results for this institution across rendering contexts.</em></p>
+    <div class="cards">
+      <div class="card"><strong>Services Scanned</strong><br/>${escapeHtml(lighthouseInsights.scanned_urls ?? "-")}</div>
+      <div class="card"><strong>Mobile vs Desktop</strong><br/>${escapeHtml(lighthouseInsights.mobile_dark_vs_desktop_light?.accessibility_delta ?? "-")}</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Context</th>
+          <th scope="col">Accessibility</th>
+          <th scope="col">Performance</th>
+          <th scope="col">Best Practices</th>
+          <th scope="col">SEO</th>
+        </tr>
+      </thead>
+      <tbody>${lighthouseRows}</tbody>
     </table>`
   });
 }
