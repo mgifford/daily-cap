@@ -101,7 +101,7 @@ function buildTrendSection(trendAnalysis) {
 }
 
 /**
- * Summarize bilingual parity signals.
+ * Summarize bilingual parity signals, including institution gap leaderboard.
  */
 function buildBilingualSection(bilingualParity) {
   const s = bilingualParity?.summary;
@@ -117,6 +117,62 @@ function buildBilingualSection(bilingualParity) {
     `- **Average absolute EN/FR accessibility gap**: ${s.average_absolute_accessibility_gap ?? 0} points`
   );
   lines.push(`- **Pairs with accessibility gap >= 10 points**: ${s.high_accessibility_gap_pairs ?? 0}`);
+
+  const leaderboard = bilingualParity?.by_institution ?? [];
+  const topGap = leaderboard.filter((row) => (row.mean_abs_accessibility_gap ?? 0) > 0).slice(0, 5);
+  if (topGap.length > 0) {
+    lines.push("");
+    lines.push("**Top institutions by EN/FR accessibility gap:**");
+    lines.push("");
+    lines.push("| Institution | Mean A11y Gap | High Gap Pairs |");
+    lines.push("|-------------|--------------|----------------|");
+    for (const row of topGap) {
+      const inst = (row.institution ?? "-").replaceAll("|", "\\|");
+      lines.push(`| ${inst} | ${row.mean_abs_accessibility_gap ?? "-"} | ${row.high_gap_pair_count ?? 0} |`);
+    }
+  }
+
+  lines.push("");
+  return lines;
+}
+
+/**
+ * Summarize top FPS impact categories.
+ */
+function buildFpsSection(impactModel, topN = 5) {
+  const byFps = impactModel?.by_fps;
+  if (!byFps?.length) return [];
+
+  const ranked = [...byFps]
+    .filter((row) => (row.directional_canadian_estimate ?? 0) > 0)
+    .sort((a, b) => (b.directional_canadian_estimate ?? 0) - (a.directional_canadian_estimate ?? 0))
+    .slice(0, topN);
+
+  if (ranked.length === 0) return [];
+
+  const provenance = impactModel?.data_provenance;
+  const vintageNote = provenance?.vintage_year ? ` (Statistics Canada CSD ${provenance.vintage_year})` : "";
+
+  const lines = [];
+  lines.push("### Functional Performance Statement (FPS) impact");
+  lines.push("");
+  lines.push(
+    `Directional estimates of page loads that may affect Canadians by disability category${vintageNote}.`
+  );
+  lines.push("");
+  lines.push("| FPS | Category | Prevalence | Est. affected loads |");
+  lines.push("|-----|----------|------------|---------------------|");
+  for (const row of ranked) {
+    const pct = row.prevalence_rate != null ? `${(row.prevalence_rate * 100).toFixed(1)}%` : "-";
+    lines.push(
+      `| ${row.fps_code} | ${row.fps_label ?? row.fps_code} | ${pct} | ${fmt(row.directional_canadian_estimate ?? 0)} |`
+    );
+  }
+  lines.push("");
+  lines.push(
+    "_Directional estimates only. Prevalence rates from Statistics Canada CSD. " +
+      "Does not represent measured harm or legal compliance._"
+  );
   lines.push("");
   return lines;
 }
@@ -241,8 +297,11 @@ export function buildSummary(report, options = {}) {
   // Trend
   lines.push(...buildTrendSection(report.trend_analysis));
 
-  // Bilingual parity
+  // Bilingual parity (includes institution gap leaderboard)
   lines.push(...buildBilingualSection(report.bilingual_parity));
+
+  // FPS impact breakdown
+  lines.push(...buildFpsSection(report.impact_model, topN));
 
   // Accessibility statements
   lines.push(...buildStatementsSection(report.accessibility_statements));

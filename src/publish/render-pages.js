@@ -1073,6 +1073,7 @@ export function renderDailyReportPage(report) {
       </table>
 
       <h3>Institution Bilingual Gap Leaderboard</h3>
+      <p><a href="./details/bilingual-gap-leaderboard.json">Download leaderboard JSON</a></p>
       <p><em>Institutions ranked by mean absolute EN/FR accessibility score gap across their paired services. Higher values indicate greater inconsistency between language versions. Trend direction links to the institution's historical trend page when data is available.</em></p>
       <table>
         <thead>

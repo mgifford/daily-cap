@@ -176,12 +176,16 @@ Tests live in `test/` and run with `node --test`.
 | `archive-reports.test.js` | Archival and retention |
 | `axe-runner.test.js` | axe-core extraction |
 | `barrier-history.test.js` | Rolling barrier trend |
-| `bilingual-parity.test.js` | EN/FR parity analysis |
+| `bilingual-parity.test.js` | EN/FR parity analysis and institution gap leaderboard |
 | `build-report.integration.test.js` | Full pipeline integration |
 | `cohort-quality.test.js` | Cohort aggregation |
+| `config.test.js` | YAML config loading and validation |
 | `fetch-with-timeout.test.js` | HTTP utility |
+| `fps-mapping.test.js` | FPS label/clause/SVG correctness, axe-to-FPS mapping, Statistics Canada data |
+| `generate-summary.test.js` | GitHub Actions step summary generation |
 | `impact-model.test.js` | Directional impact estimation |
 | `institution-scorecards.test.js` | Institution aggregation |
+| `institution-trends.test.js` | Institution trend history and parity trend direction |
 | `lighthouse-context-analysis.test.js` | Multi-context analysis |
 | `lighthouse-runner.test.js` | Lighthouse runner |
 | `priority-issues.test.js` | Issue prioritization |
@@ -196,7 +200,7 @@ Run tests: `npm test`
 ### Daily report page sections
 
 - **Header**: Run date, scan summary, bilingual coverage count
-- **Bilingual parity**: EN/FR pair coverage, parity gap distribution, missing counterparts
+- **Bilingual parity**: EN/FR pair coverage, parity gap distribution, missing counterparts, institution gap leaderboard with trend direction
 - **Accessibility impact**: Traffic-weighted barrier estimates by disability category using Statistics Canada prevalence rates
 - **Accessibility statements**: Coverage rate, quality signal breakdown, EN/FR statement parity
 - **Performance summary**: Core Web Vitals signals, mobile vs. desktop comparison

@@ -21,7 +21,28 @@ const BASE_REPORT = {
       total_page_load_count: 133380179,
       directional_affected_load_estimate: 50976714,
       directional_affected_share_percent: 38.22
-    }
+    },
+    by_fps: [
+      {
+        fps_code: "LC",
+        fps_label: "Usage with limited cognition, language or learning",
+        prevalence_rate: 0.060,
+        directional_canadian_estimate: 3_058_603
+      },
+      {
+        fps_code: "LH",
+        fps_label: "Usage with limited hearing",
+        prevalence_rate: 0.065,
+        directional_canadian_estimate: 3_313_487
+      },
+      {
+        fps_code: "LV",
+        fps_label: "Usage with limited vision",
+        prevalence_rate: 0.035,
+        directional_canadian_estimate: 1_784_185
+      }
+    ],
+    data_provenance: { vintage_year: 2022 }
   },
   trend_analysis: {
     available: true,
@@ -52,7 +73,11 @@ const BASE_REPORT = {
       missing_french: 110,
       average_absolute_accessibility_gap: 3.2,
       high_accessibility_gap_pairs: 2
-    }
+    },
+    by_institution: [
+      { institution: "CRA", pair_count: 4, mean_abs_accessibility_gap: 18, high_gap_pair_count: 2 },
+      { institution: "IRCC", pair_count: 3, mean_abs_accessibility_gap: 7, high_gap_pair_count: 0 }
+    ]
   },
   accessibility_statements: {
     summary: {
@@ -205,6 +230,35 @@ describe("buildSummary", () => {
       md.includes("https://mgifford.github.io/daily-cap/docs/reports/daily/2026-04-09/index.html"),
       "report URL present"
     );
+  });
+
+  it("includes institution gap leaderboard in bilingual section", () => {
+    const md = buildSummary(BASE_REPORT);
+    assert.ok(md.includes("Top institutions by EN/FR accessibility gap"), "leaderboard heading");
+    assert.ok(md.includes("CRA"), "CRA in leaderboard");
+    assert.ok(md.includes("18"), "CRA gap value");
+    assert.ok(md.includes("IRCC"), "IRCC in leaderboard");
+  });
+
+  it("omits institution leaderboard when all gaps are zero", () => {
+    const report = {
+      ...BASE_REPORT,
+      bilingual_parity: {
+        ...BASE_REPORT.bilingual_parity,
+        by_institution: [
+          { institution: "TBS", pair_count: 2, mean_abs_accessibility_gap: 0, high_gap_pair_count: 0 }
+        ]
+      }
+    };
+    const md = buildSummary(report);
+    assert.ok(!md.includes("Top institutions by EN/FR accessibility gap"), "leaderboard absent when no gaps");
+  });
+
+  it("includes FPS impact section", () => {
+    const md = buildSummary(BASE_REPORT);
+    assert.ok(md.includes("Functional Performance Statement"), "FPS section heading");
+    assert.ok(md.includes("LC"), "LC FPS code");
+    assert.ok(md.includes("CSD 2022"), "vintage year cited");
   });
 
   it("handles missing optional sections gracefully", () => {
