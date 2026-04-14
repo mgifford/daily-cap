@@ -63,6 +63,23 @@ function mockResult(target, context) {
   return { context, violations, violation_counts: summariseCounts(violations) };
 }
 
+function getExecutablePathFromEnv() {
+  const chromePath = process.env.CHROME_PATH;
+  if (typeof chromePath !== "string") {
+    return null;
+  }
+  const trimmed = chromePath.trim();
+  return trimmed.length > 0 ? trimmed : null;
+}
+
+export function resolveChromiumLaunchOptions() {
+  const executablePath = getExecutablePathFromEnv();
+  if (!executablePath) {
+    return { headless: true };
+  }
+  return { headless: true, executablePath };
+}
+
 // Runs axe-core against a single page using an already-open browser instance.
 async function scanWithBrowser(browser, url, context) {
   const { default: AxeBuilder } = await import("@axe-core/playwright");
@@ -106,7 +123,7 @@ export async function runAxeScan(target, mode, contextInput = {}) {
   }
 
   const { chromium } = await import("@playwright/test");
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch(resolveChromiumLaunchOptions());
   try {
     return await scanWithBrowser(browser, target.canonical_url, context);
   } finally {
@@ -137,7 +154,7 @@ export async function runAxeScanVariants(target, mode, contexts = []) {
 
   // Live mode: share a single browser instance across all contexts.
   const { chromium } = await import("@playwright/test");
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch(resolveChromiumLaunchOptions());
   try {
     const scans = await Promise.all(
       resolvedContexts.map((context) =>
