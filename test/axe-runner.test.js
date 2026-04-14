@@ -1,13 +1,41 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { runAxeScan, runAxeScanVariants } from "../src/scanners/axe-runner.js";
+import {
+  runAxeScan,
+  runAxeScanVariants,
+  resolveChromiumLaunchOptions
+} from "../src/scanners/axe-runner.js";
 
 const TARGET = {
   inventory_id: "svc-1-en",
   canonical_url: "https://example.com/service",
   language: "en"
 };
+
+// ── launch options ───────────────────────────────────────────────────────────
+
+test("resolveChromiumLaunchOptions defaults to Playwright-managed browser", () => {
+  const original = process.env.CHROME_PATH;
+  delete process.env.CHROME_PATH;
+  const options = resolveChromiumLaunchOptions();
+  if (original !== undefined) {
+    process.env.CHROME_PATH = original;
+  }
+  assert.deepEqual(options, { headless: true });
+});
+
+test("resolveChromiumLaunchOptions uses CHROME_PATH when provided", () => {
+  const original = process.env.CHROME_PATH;
+  process.env.CHROME_PATH = "/opt/chrome/chrome";
+  const options = resolveChromiumLaunchOptions();
+  if (original === undefined) {
+    delete process.env.CHROME_PATH;
+  } else {
+    process.env.CHROME_PATH = original;
+  }
+  assert.deepEqual(options, { headless: true, executablePath: "/opt/chrome/chrome" });
+});
 
 // ── runAxeScan ──────────────────────────────────────────────────────────────
 
