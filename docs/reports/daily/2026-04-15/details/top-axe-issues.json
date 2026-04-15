@@ -1,8 +1,8 @@
 {
   "summary": {
-    "scanned_urls": 30,
-    "urls_with_violations": 24,
-    "total_violations": 322
+    "scanned_urls": 209,
+    "urls_with_violations": 175,
+    "total_violations": 1575
   },
   "top_issues": [
     {
@@ -45,9 +45,9 @@
     },
     {
       "severity": "serious",
-      "total_occurrences": 68,
-      "affected_pages": 30,
-      "average_per_page": 2.3,
+      "total_occurrences": 247,
+      "affected_pages": 209,
+      "average_per_page": 1.2,
       "sample_pages": [
         {
           "canonical_url": "https://laws-lois.justice.gc.ca/",
@@ -83,9 +83,9 @@
     },
     {
       "severity": "moderate",
-      "total_occurrences": 117,
-      "affected_pages": 30,
-      "average_per_page": 3.9,
+      "total_occurrences": 475,
+      "affected_pages": 209,
+      "average_per_page": 2.3,
       "sample_pages": [
         {
           "canonical_url": "https://laws-lois.justice.gc.ca/",
@@ -121,38 +121,38 @@
     },
     {
       "severity": "minor",
-      "total_occurrences": 120,
-      "affected_pages": 30,
+      "total_occurrences": 836,
+      "affected_pages": 209,
       "average_per_page": 4,
       "sample_pages": [
         {
-          "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
           "language": "en",
-          "service_name": "Canada Border Wait Times",
+          "service_name": "Apply for a Social Insurance Number",
           "count": 4
         },
         {
-          "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
           "language": "fr",
-          "service_name": "Canada Border Wait Times",
+          "service_name": "Apply for a Social Insurance Number",
           "count": 4
         },
         {
-          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
           "language": "en",
-          "service_name": "Justice Laws Website",
+          "service_name": "Check my Service Canada Account",
           "count": 4
         },
         {
-          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
           "language": "fr",
-          "service_name": "Justice Laws Website",
+          "service_name": "Check my Service Canada Account",
           "count": 4
         },
         {
-          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html",
           "language": "en",
-          "service_name": "Consumer Price Index",
+          "service_name": "Find your local Service Canada office",
           "count": 4
         }
       ]

@@ -491,33 +491,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 22401305
-  },
-  {
-    "pair_id": "recent-10-en|recent-10-fr",
-    "service_name": "Se connecter à son compte de l&#39;ARC",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-ouverture-session-arc.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 5612191
-  },
-  {
-    "pair_id": "recent-10",
-    "service_name": "Se connecter à son compte de l&#39;ARC",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-ouverture-session-arc.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 5612191
+    "page_load_count": 22789436
   },
   {
     "pair_id": "recent-11-en|recent-11-fr",
@@ -530,7 +504,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5332514
+    "page_load_count": 5263528
   },
   {
     "pair_id": "recent-11",
@@ -543,33 +517,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5332514
-  },
-  {
-    "pair_id": "recent-12-en|recent-12-fr",
-    "service_name": "Agence du revenu du Canada (ARC)",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/agence-revenu.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 2734172
-  },
-  {
-    "pair_id": "recent-12",
-    "service_name": "Agence du revenu du Canada (ARC)",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/agence-revenu.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 2734172
+    "page_load_count": 5263528
   },
   {
     "pair_id": "recent-15-en|recent-15-fr",
@@ -582,7 +530,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 470485
+    "page_load_count": 478126
   },
   {
     "pair_id": "recent-15",
@@ -595,7 +543,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 470485
+    "page_load_count": 478126
   },
   {
     "pair_id": "recent-16-en|recent-16-fr",
@@ -603,12 +551,12 @@
     "institution": null,
     "has_en": true,
     "has_fr": false,
-    "url_en": "https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
+    "url_en": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
     "url_fr": null,
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 396194
+    "page_load_count": 402639
   },
   {
     "pair_id": "recent-16",
@@ -617,11 +565,11 @@
     "has_en": false,
     "has_fr": true,
     "url_en": null,
-    "url_fr": "https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
+    "url_fr": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 396194
+    "page_load_count": 402639
   },
   {
     "pair_id": "recent-17-en|recent-17-fr",
@@ -634,7 +582,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 378226
+    "page_load_count": 384029
   },
   {
     "pair_id": "recent-17",
@@ -647,7 +595,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 378226
+    "page_load_count": 384029
   },
   {
     "pair_id": "recent-18-en|recent-18-fr",
@@ -660,7 +608,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 279558
+    "page_load_count": 283520
   },
   {
     "pair_id": "recent-18",
@@ -673,7 +621,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 279558
+    "page_load_count": 283520
   },
   {
     "pair_id": "recent-2",
@@ -686,111 +634,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 17601530
-  },
-  {
-    "pair_id": "recent-29-en|recent-29-fr",
-    "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 35924
-  },
-  {
-    "pair_id": "recent-29",
-    "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 35924
-  },
-  {
-    "pair_id": "recent-30-en|recent-30-fr",
-    "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 34057
-  },
-  {
-    "pair_id": "recent-30",
-    "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 34057
-  },
-  {
-    "pair_id": "recent-31-en|recent-31-fr",
-    "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 33253
-  },
-  {
-    "pair_id": "recent-31",
-    "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 33253
-  },
-  {
-    "pair_id": "recent-32-en|recent-32-fr",
-    "service_name": "Le gouvernement du Canada augmente le salaire minimum fédéral",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-augmente-le-salaire-minimum-federal.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 14477
-  },
-  {
-    "pair_id": "recent-32",
-    "service_name": "Le gouvernement du Canada augmente le salaire minimum fédéral",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-augmente-le-salaire-minimum-federal.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 14477
+    "page_load_count": 17930173
   },
   {
     "pair_id": "recent-33-en|recent-33-fr",
@@ -803,7 +647,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 14348
+    "page_load_count": 13198
   },
   {
     "pair_id": "recent-33",
@@ -816,33 +660,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 14348
-  },
-  {
-    "pair_id": "recent-34-en|recent-34-fr",
-    "service_name": "Le gouvernement du Canada prolonge les mesures d’aide financière pour les étudiants de niveau postsecondaire",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-daide-financiere-pour-les-etudiants-de-niveau-postsecondaire.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 13063
-  },
-  {
-    "pair_id": "recent-34",
-    "service_name": "Le gouvernement du Canada prolonge les mesures d’aide financière pour les étudiants de niveau postsecondaire",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-daide-financiere-pour-les-etudiants-de-niveau-postsecondaire.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 13063
+    "page_load_count": 13198
   },
   {
     "pair_id": "recent-35-en|recent-35-fr",
@@ -855,7 +673,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 10943
+    "page_load_count": 11157
   },
   {
     "pair_id": "recent-35",
@@ -868,7 +686,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 10943
+    "page_load_count": 11157
   },
   {
     "pair_id": "recent-36-en|recent-36-fr",
@@ -881,7 +699,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 6680
+    "page_load_count": 6689
   },
   {
     "pair_id": "recent-36",
@@ -894,7 +712,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 6680
+    "page_load_count": 6689
   },
   {
     "pair_id": "recent-37-en|recent-37-fr",
@@ -907,7 +725,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5573
+    "page_load_count": 5775
   },
   {
     "pair_id": "recent-37",
@@ -920,7 +738,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5573
+    "page_load_count": 5775
   },
   {
     "pair_id": "recent-38-en|recent-38-fr",
@@ -933,7 +751,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5557
+    "page_load_count": 5585
   },
   {
     "pair_id": "recent-38",
@@ -946,7 +764,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5557
+    "page_load_count": 5585
   },
   {
     "pair_id": "recent-4",
@@ -959,7 +777,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 4104642
+    "page_load_count": 4178896
   },
   {
     "pair_id": "recent-49-en|recent-49-fr",
@@ -972,7 +790,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 35250
+    "page_load_count": 35213
   },
   {
     "pair_id": "recent-49",
@@ -985,7 +803,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 35250
+    "page_load_count": 35213
   },
   {
     "pair_id": "recent-5",
@@ -998,137 +816,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 3589855
-  },
-  {
-    "pair_id": "recent-50-en|recent-50-fr",
-    "service_name": "T2201 Certificat pour le crédit d&#39;impôt pour personnes handicapées",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2201.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 30766
-  },
-  {
-    "pair_id": "recent-50",
-    "service_name": "T2201 Certificat pour le crédit d&#39;impôt pour personnes handicapées",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2201.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 30766
-  },
-  {
-    "pair_id": "recent-51-en|recent-51-fr",
-    "service_name": "Demande de visa de visiteur (visa de résident temporaire) (IMM 5257)",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 24667
-  },
-  {
-    "pair_id": "recent-51",
-    "service_name": "Demande de visa de visiteur (visa de résident temporaire) (IMM 5257)",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 24667
-  },
-  {
-    "pair_id": "recent-52-en|recent-52-fr",
-    "service_name": "T2200 Déclaration des conditions de travail",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2200.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 23822
-  },
-  {
-    "pair_id": "recent-52",
-    "service_name": "T2200 Déclaration des conditions de travail",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2200.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 23822
-  },
-  {
-    "pair_id": "recent-53-en|recent-53-fr",
-    "service_name": "Obtenez le formulaire et renouveler un passeport en personne au Canada",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/renouvellement-passeport-adulte/soumettre-formulaire-frais/presenter-en-personne.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 21185
-  },
-  {
-    "pair_id": "recent-53",
-    "service_name": "Obtenez le formulaire et renouveler un passeport en personne au Canada",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/renouvellement-passeport-adulte/soumettre-formulaire-frais/presenter-en-personne.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 21185
-  },
-  {
-    "pair_id": "recent-54-en|recent-54-fr",
-    "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 20243
-  },
-  {
-    "pair_id": "recent-54",
-    "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 20243
+    "page_load_count": 3651615
   },
   {
     "pair_id": "recent-55",
@@ -1141,33 +829,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 17370
-  },
-  {
-    "pair_id": "recent-56-en|recent-56-fr",
-    "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 16827
-  },
-  {
-    "pair_id": "recent-56",
-    "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 16827
+    "page_load_count": 17380
   },
   {
     "pair_id": "recent-57-en|recent-57-fr",
@@ -1180,7 +842,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 16807
+    "page_load_count": 16707
   },
   {
     "pair_id": "recent-57",
@@ -1193,46 +855,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 16807
-  },
-  {
-    "pair_id": "recent-58-en|recent-58-fr",
-    "service_name": "Informations sur la famille – Visiteurs, étudiants et travailleurs (IMM 5645)",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5645.html",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 15840
-  },
-  {
-    "pair_id": "recent-58",
-    "service_name": "Informations sur la famille – Visiteurs, étudiants et travailleurs (IMM 5645)",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5645.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 15840
-  },
-  {
-    "pair_id": "recent-59",
-    "service_name": "CSA astronaut Jeremy Hansen&#39;s journey to the Moon",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.asc-csa.gc.ca/eng/astronauts/canadian/active/bio-jeremy-hansen.asp",
-    "url_fr": null,
-    "tier": "tier-1",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 12327
+    "page_load_count": 16707
   },
   {
     "pair_id": "recent-6",
@@ -1245,10 +868,23 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 2624192
+    "page_load_count": 2665539
   },
   {
-    "pair_id": "recent-64",
+    "pair_id": "recent-60",
+    "service_name": "CSA astronaut Jeremy Hansen&#39;s journey to the Moon",
+    "institution": null,
+    "has_en": true,
+    "has_fr": false,
+    "url_en": "https://www.asc-csa.gc.ca/eng/astronauts/canadian/active/bio-jeremy-hansen.asp",
+    "url_fr": null,
+    "tier": "tier-1",
+    "source": "recent",
+    "service_pattern": "dashboard",
+    "page_load_count": 12495
+  },
+  {
+    "pair_id": "recent-65",
     "service_name": "Video montage of CSA astronaut Jeremy Hansen watching the launch of Artemis I, the surface of the Moon and the Moon and Earth from Orion.",
     "institution": null,
     "has_en": true,
@@ -1258,7 +894,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 7506
+    "page_load_count": 7474
   },
   {
     "pair_id": "recent-69",
@@ -1271,7 +907,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 3548
+    "page_load_count": 3539
   },
   {
     "pair_id": "recent-7",
@@ -1284,7 +920,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 1936171
+    "page_load_count": 1969450
   },
   {
     "pair_id": "recent-70-en|recent-70-fr",
@@ -1297,7 +933,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 2123
+    "page_load_count": 2150
   },
   {
     "pair_id": "recent-70",
@@ -1310,33 +946,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 2123
-  },
-  {
-    "pair_id": "recent-71-en|recent-71-fr",
-    "service_name": "Créez votre compte et soumettez votre déclaration",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/securite-publique-canada/campagnes/rachat-armes-a-feu/soumettre-declaration-particulier-armes-feu/commencer-declaration.html",
-    "url_fr": null,
-    "tier": "tier-2",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 1246
-  },
-  {
-    "pair_id": "recent-71",
-    "service_name": "Créez votre compte et soumettez votre déclaration",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/securite-publique-canada/campagnes/rachat-armes-a-feu/soumettre-declaration-particulier-armes-feu/commencer-declaration.html",
-    "tier": "tier-2",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 1246
+    "page_load_count": 2150
   },
   {
     "pair_id": "recent-72-en|recent-72-fr",
@@ -1349,7 +959,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 1203
+    "page_load_count": 1212
   },
   {
     "pair_id": "recent-72",
@@ -1362,59 +972,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 1203
-  },
-  {
-    "pair_id": "recent-73-en|recent-73-fr",
-    "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html",
-    "url_fr": null,
-    "tier": "tier-2",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 1012
-  },
-  {
-    "pair_id": "recent-73",
-    "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html",
-    "tier": "tier-2",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 1012
-  },
-  {
-    "pair_id": "recent-74-en|recent-74-fr",
-    "service_name": "Ne gaspillez pas de temps. Envoyez une demande complète.",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/video/ne-gaspillez-temps-envoyez-demande-complete.html",
-    "url_fr": null,
-    "tier": "tier-2",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 985
-  },
-  {
-    "pair_id": "recent-74",
-    "service_name": "Ne gaspillez pas de temps. Envoyez une demande complète.",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/video/ne-gaspillez-temps-envoyez-demande-complete.html",
-    "tier": "tier-2",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 985
+    "page_load_count": 1212
   },
   {
     "pair_id": "recent-75",
@@ -1427,33 +985,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 787
-  },
-  {
-    "pair_id": "recent-76-en|recent-76-fr",
-    "service_name": "blank video/audio title",
-    "institution": null,
-    "has_en": true,
-    "has_fr": false,
-    "url_en": "https://www.canada.ca/fr/emploi-developpement-social/programmes/reconnaissance-titres.html",
-    "url_fr": null,
-    "tier": "tier-3",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 610
-  },
-  {
-    "pair_id": "recent-76",
-    "service_name": "blank video/audio title",
-    "institution": null,
-    "has_en": false,
-    "has_fr": true,
-    "url_en": null,
-    "url_fr": "https://www.canada.ca/fr/emploi-developpement-social/programmes/reconnaissance-titres.html",
-    "tier": "tier-3",
-    "source": "recent",
-    "service_pattern": "dashboard",
-    "page_load_count": 610
+    "page_load_count": 800
   },
   {
     "pair_id": "recent-77",
@@ -1466,7 +998,7 @@
     "tier": "tier-3",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 573
+    "page_load_count": 587
   },
   {
     "pair_id": "recent-78-en|recent-78-fr",
@@ -1479,7 +1011,7 @@
     "tier": "tier-3",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 481
+    "page_load_count": 510
   },
   {
     "pair_id": "recent-78",
@@ -1492,7 +1024,7 @@
     "tier": "tier-3",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 481
+    "page_load_count": 510
   },
   {
     "pair_id": "recent-8",
@@ -1505,6 +1037,6 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 1629803
+    "page_load_count": 1642919
   }
 ]

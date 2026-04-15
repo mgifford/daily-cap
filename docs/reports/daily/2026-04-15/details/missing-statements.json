@@ -99,17 +99,6 @@
     "service_pattern": "help"
   },
   {
-    "inventory_id": "curated-005-fr",
-    "service_name": "Environment and Climate Change Canada",
-    "institution": "ECCC",
-    "language": "fr",
-    "canonical_url": "https://www.canada.ca/fr/environnement-changement-climatique.html",
-    "tier": "tier-2",
-    "source": "curated",
-    "page_load_count": 52000,
-    "service_pattern": "help"
-  },
-  {
     "inventory_id": "curated-006-en",
     "service_name": "Justice Laws Website",
     "institution": "Justice",
@@ -203,17 +192,6 @@
     "institution": "PHAC",
     "language": "en",
     "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html",
-    "tier": "tier-1",
-    "source": "curated",
-    "page_load_count": 65000,
-    "service_pattern": "information"
-  },
-  {
-    "inventory_id": "curated-010-fr",
-    "service_name": "Health Infobase Canada",
-    "institution": "PHAC",
-    "language": "fr",
-    "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html",
     "tier": "tier-1",
     "source": "curated",
     "page_load_count": 65000,
@@ -634,7 +612,7 @@
     "canonical_url": "https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 37429475,
+    "page_load_count": 38024241,
     "service_pattern": "sign-in"
   },
   {
@@ -645,7 +623,7 @@
     "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/e-services/cra-login-services.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 37429475,
+    "page_load_count": 38024241,
     "service_pattern": "sign-in"
   },
   {
@@ -656,7 +634,7 @@
     "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 22401305,
+    "page_load_count": 22789436,
     "service_pattern": "sign-in"
   },
   {
@@ -667,7 +645,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-ouverture-session-arc.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 5612191,
+    "page_load_count": 5691834,
     "service_pattern": "dashboard"
   },
   {
@@ -678,29 +656,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-ouverture-session-arc.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 5612191,
-    "service_pattern": "dashboard"
-  },
-  {
-    "inventory_id": "recent-12-en",
-    "service_name": "Agence du revenu du Canada (ARC)",
-    "institution": null,
-    "language": "en",
-    "canonical_url": "https://www.canada.ca/fr/agence-revenu.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "page_load_count": 2734172,
-    "service_pattern": "dashboard"
-  },
-  {
-    "inventory_id": "recent-12-fr",
-    "service_name": "Agence du revenu du Canada (ARC)",
-    "institution": null,
-    "language": "fr",
-    "canonical_url": "https://www.canada.ca/fr/agence-revenu.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "page_load_count": 2734172,
+    "page_load_count": 5691834,
     "service_pattern": "dashboard"
   },
   {
@@ -711,7 +667,7 @@
     "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/spoe",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 470485,
+    "page_load_count": 478126,
     "service_pattern": "dashboard"
   },
   {
@@ -722,7 +678,7 @@
     "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/spoe",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 470485,
+    "page_load_count": 478126,
     "service_pattern": "dashboard"
   },
   {
@@ -730,10 +686,10 @@
     "service_name": "Aperçu",
     "institution": null,
     "language": "en",
-    "canonical_url": "https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
+    "canonical_url": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 396194,
+    "page_load_count": 402639,
     "service_pattern": "dashboard"
   },
   {
@@ -741,10 +697,10 @@
     "service_name": "Aperçu",
     "institution": null,
     "language": "fr",
-    "canonical_url": "https://apps4.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
+    "canonical_url": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 396194,
+    "page_load_count": 402639,
     "service_pattern": "dashboard"
   },
   {
@@ -755,7 +711,7 @@
     "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 378226,
+    "page_load_count": 384029,
     "service_pattern": "dashboard"
   },
   {
@@ -766,7 +722,7 @@
     "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 378226,
+    "page_load_count": 384029,
     "service_pattern": "dashboard"
   },
   {
@@ -777,7 +733,7 @@
     "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 279558,
+    "page_load_count": 283520,
     "service_pattern": "sign-in"
   },
   {
@@ -788,7 +744,7 @@
     "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 279558,
+    "page_load_count": 283520,
     "service_pattern": "sign-in"
   },
   {
@@ -799,7 +755,7 @@
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/new-immigration-and-asylum-measures-from-bill-c-12-the-strengthening-canadas-immigration-system-and-borders-act-have-become-law.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 155080,
+    "page_load_count": 157020,
     "service_pattern": "dashboard"
   },
   {
@@ -810,7 +766,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/news/2026/03/new-immigration-and-asylum-measures-from-bill-c-12-the-strengthening-canadas-immigration-system-and-borders-act-have-become-law.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 155080,
+    "page_load_count": 157020,
     "service_pattern": "dashboard"
   },
   {
@@ -821,7 +777,7 @@
     "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/postlogin/welcome",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 17601530,
+    "page_load_count": 17930173,
     "service_pattern": "sign-in"
   },
   {
@@ -832,7 +788,7 @@
     "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/01/the-new-canada-groceries-and-essentials-benefit.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 111798,
+    "page_load_count": 113086,
     "service_pattern": "dashboard"
   },
   {
@@ -843,7 +799,7 @@
     "canonical_url": "https://www.canada.ca/fr/department-finance/news/2026/01/the-new-canada-groceries-and-essentials-benefit.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 111798,
+    "page_load_count": 113086,
     "service_pattern": "dashboard"
   },
   {
@@ -854,7 +810,7 @@
     "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 107790,
+    "page_load_count": 106209,
     "service_pattern": "dashboard"
   },
   {
@@ -865,7 +821,7 @@
     "canonical_url": "https://www.canada.ca/fr/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 107790,
+    "page_load_count": 106209,
     "service_pattern": "dashboard"
   },
   {
@@ -876,7 +832,7 @@
     "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 71953,
+    "page_load_count": 72675,
     "service_pattern": "dashboard"
   },
   {
@@ -887,7 +843,7 @@
     "canonical_url": "https://www.canada.ca/fr/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 71953,
+    "page_load_count": 72675,
     "service_pattern": "dashboard"
   },
   {
@@ -898,7 +854,7 @@
     "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-extends-financial-supports-for-post-secondary-students.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 31380,
+    "page_load_count": 31543,
     "service_pattern": "help"
   },
   {
@@ -909,73 +865,73 @@
     "canonical_url": "https://www.canada.ca/fr/employment-social-development/news/2026/03/government-of-canada-extends-financial-supports-for-post-secondary-students.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 31380,
+    "page_load_count": 31543,
     "service_pattern": "help"
   },
   {
     "inventory_id": "recent-24-en",
+    "service_name": "RCMP lays charges after CBSA seizes seven fraudulent passports hidden in a commercial shipment",
+    "institution": null,
+    "language": "en",
+    "canonical_url": "https://www.canada.ca/en/border-services-agency/news/2026/04/rcmp-lays-charges-after-cbsa-makes-an-arrest-and-seizes-seven-fraudulent-passports-hidden-in-a-commercial-shipment.html",
+    "tier": "tier-1",
+    "source": "recent",
+    "page_load_count": 31365,
+    "service_pattern": "dashboard"
+  },
+  {
+    "inventory_id": "recent-24-fr",
+    "service_name": "RCMP lays charges after CBSA seizes seven fraudulent passports hidden in a commercial shipment",
+    "institution": null,
+    "language": "fr",
+    "canonical_url": "https://www.canada.ca/fr/border-services-agency/news/2026/04/rcmp-lays-charges-after-cbsa-makes-an-arrest-and-seizes-seven-fraudulent-passports-hidden-in-a-commercial-shipment.html",
+    "tier": "tier-1",
+    "source": "recent",
+    "page_load_count": 31365,
+    "service_pattern": "dashboard"
+  },
+  {
+    "inventory_id": "recent-25-en",
     "service_name": "Canada begins new “30 days or free” guarantee for passport processing",
     "institution": null,
     "language": "en",
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/canada-begins-new-30-days-or-free-guarantee-for-passport-processing.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 28597,
+    "page_load_count": 28816,
     "service_pattern": "status"
   },
   {
-    "inventory_id": "recent-24-fr",
+    "inventory_id": "recent-25-fr",
     "service_name": "Canada begins new “30 days or free” guarantee for passport processing",
     "institution": null,
     "language": "fr",
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/news/2026/03/canada-begins-new-30-days-or-free-guarantee-for-passport-processing.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 28597,
+    "page_load_count": 28816,
     "service_pattern": "status"
   },
   {
-    "inventory_id": "recent-25-en",
+    "inventory_id": "recent-26-en",
     "service_name": "Bill C-3: An Act to amend the Citizenship Act (2025) comes into effect",
     "institution": null,
     "language": "en",
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2025/12/bill-c-3-an-act-to-amend-the-citizenship-act-2025-comes-into-effect.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 27479,
+    "page_load_count": 26750,
     "service_pattern": "dashboard"
   },
   {
-    "inventory_id": "recent-25-fr",
+    "inventory_id": "recent-26-fr",
     "service_name": "Bill C-3: An Act to amend the Citizenship Act (2025) comes into effect",
     "institution": null,
     "language": "fr",
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/news/2025/12/bill-c-3-an-act-to-amend-the-citizenship-act-2025-comes-into-effect.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 27479,
-    "service_pattern": "dashboard"
-  },
-  {
-    "inventory_id": "recent-26-en",
-    "service_name": "Legislation to make life more affordable receives Royal Assent",
-    "institution": null,
-    "language": "en",
-    "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-to-make-life-more-affordable-receives-royal-assent.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "page_load_count": 25433,
-    "service_pattern": "dashboard"
-  },
-  {
-    "inventory_id": "recent-26-fr",
-    "service_name": "Legislation to make life more affordable receives Royal Assent",
-    "institution": null,
-    "language": "fr",
-    "canonical_url": "https://www.canada.ca/fr/department-finance/news/2026/03/legislation-to-make-life-more-affordable-receives-royal-assent.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "page_load_count": 25433,
+    "page_load_count": 26750,
     "service_pattern": "dashboard"
   },
   {
@@ -986,7 +942,7 @@
     "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-passes-to-implement-budget-2025-canada-strong.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 23424,
+    "page_load_count": 23752,
     "service_pattern": "dashboard"
   },
   {
@@ -997,7 +953,7 @@
     "canonical_url": "https://www.canada.ca/fr/department-finance/news/2026/03/legislation-passes-to-implement-budget-2025-canada-strong.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 23424,
+    "page_load_count": 23752,
     "service_pattern": "dashboard"
   },
   {
@@ -1008,7 +964,7 @@
     "canonical_url": "https://www.canada.ca/en/department-national-defence/news/2026/03/statement-from-the-canadian-forces-provost-marshal.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 18941,
+    "page_load_count": 18972,
     "service_pattern": "dashboard"
   },
   {
@@ -1019,7 +975,7 @@
     "canonical_url": "https://www.canada.ca/fr/department-national-defence/news/2026/03/statement-from-the-canadian-forces-provost-marshal.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 18941,
+    "page_load_count": 18972,
     "service_pattern": "dashboard"
   },
   {
@@ -1030,7 +986,7 @@
     "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 35924,
+    "page_load_count": 36392,
     "service_pattern": "dashboard"
   },
   {
@@ -1041,7 +997,7 @@
     "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 35924,
+    "page_load_count": 36392,
     "service_pattern": "dashboard"
   },
   {
@@ -1052,7 +1008,7 @@
     "canonical_url": "https://www.canada.ca/en/revenue-agency.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 16187655,
+    "page_load_count": 16443478,
     "service_pattern": "dashboard"
   },
   {
@@ -1063,51 +1019,51 @@
     "canonical_url": "https://www.canada.ca/fr/revenue-agency.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 16187655,
+    "page_load_count": 16443478,
     "service_pattern": "dashboard"
   },
   {
     "inventory_id": "recent-30-en",
-    "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
+    "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
     "institution": null,
     "language": "en",
-    "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
+    "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 34057,
+    "page_load_count": 33876,
     "service_pattern": "dashboard"
   },
   {
     "inventory_id": "recent-30-fr",
+    "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
+    "institution": null,
+    "language": "fr",
+    "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html",
+    "tier": "tier-1",
+    "source": "recent",
+    "page_load_count": 33876,
+    "service_pattern": "dashboard"
+  },
+  {
+    "inventory_id": "recent-31-en",
+    "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
+    "institution": null,
+    "language": "en",
+    "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
+    "tier": "tier-1",
+    "source": "recent",
+    "page_load_count": 33335,
+    "service_pattern": "dashboard"
+  },
+  {
+    "inventory_id": "recent-31-fr",
     "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
     "institution": null,
     "language": "fr",
     "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 34057,
-    "service_pattern": "dashboard"
-  },
-  {
-    "inventory_id": "recent-31-en",
-    "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
-    "institution": null,
-    "language": "en",
-    "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "page_load_count": 33253,
-    "service_pattern": "dashboard"
-  },
-  {
-    "inventory_id": "recent-31-fr",
-    "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
-    "institution": null,
-    "language": "fr",
-    "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "page_load_count": 33253,
+    "page_load_count": 33335,
     "service_pattern": "dashboard"
   },
   {
@@ -1118,7 +1074,7 @@
     "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-augmente-le-salaire-minimum-federal.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 14477,
+    "page_load_count": 14710,
     "service_pattern": "dashboard"
   },
   {
@@ -1129,7 +1085,7 @@
     "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-augmente-le-salaire-minimum-federal.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 14477,
+    "page_load_count": 14710,
     "service_pattern": "dashboard"
   },
   {
@@ -1140,7 +1096,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/nouvelle-mesure-dimmigration-pour-appuyer-les-travailleurs-et-les-employeurs-du-quebec.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 14348,
+    "page_load_count": 13198,
     "service_pattern": "dashboard"
   },
   {
@@ -1151,7 +1107,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/nouvelle-mesure-dimmigration-pour-appuyer-les-travailleurs-et-les-employeurs-du-quebec.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 14348,
+    "page_load_count": 13198,
     "service_pattern": "dashboard"
   },
   {
@@ -1162,7 +1118,7 @@
     "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-daide-financiere-pour-les-etudiants-de-niveau-postsecondaire.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 13063,
+    "page_load_count": 13098,
     "service_pattern": "dashboard"
   },
   {
@@ -1173,7 +1129,7 @@
     "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-daide-financiere-pour-les-etudiants-de-niveau-postsecondaire.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 13063,
+    "page_load_count": 13098,
     "service_pattern": "dashboard"
   },
   {
@@ -1184,7 +1140,7 @@
     "canonical_url": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 10943,
+    "page_load_count": 11157,
     "service_pattern": "dashboard"
   },
   {
@@ -1195,7 +1151,7 @@
     "canonical_url": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 10943,
+    "page_load_count": 11157,
     "service_pattern": "dashboard"
   },
   {
@@ -1206,7 +1162,7 @@
     "canonical_url": "https://www.canada.ca/fr/agriculture-agroalimentaire/nouvelles/2026/03/le-gouvernement-du-canada-annonce-la-prolongation-de-la-periode-de-report-de-limpot-sur-le-revenu-pour-les-eleveurs-de-betail-touches-par-les-cas-d.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 6680,
+    "page_load_count": 6689,
     "service_pattern": "dashboard"
   },
   {
@@ -1217,7 +1173,7 @@
     "canonical_url": "https://www.canada.ca/fr/agriculture-agroalimentaire/nouvelles/2026/03/le-gouvernement-du-canada-annonce-la-prolongation-de-la-periode-de-report-de-limpot-sur-le-revenu-pour-les-eleveurs-de-betail-touches-par-les-cas-d.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 6680,
+    "page_load_count": 6689,
     "service_pattern": "dashboard"
   },
   {
@@ -1228,7 +1184,7 @@
     "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/04/la-periode-de-renouvellement-des-inscriptions-au-regime-canadien-de-soins-dentaires-commence-le-15-avril.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 5573,
+    "page_load_count": 5775,
     "service_pattern": "dashboard"
   },
   {
@@ -1239,7 +1195,7 @@
     "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/04/la-periode-de-renouvellement-des-inscriptions-au-regime-canadien-de-soins-dentaires-commence-le-15-avril.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 5573,
+    "page_load_count": 5775,
     "service_pattern": "dashboard"
   },
   {
@@ -1250,7 +1206,7 @@
     "canonical_url": "https://www.canada.ca/fr/ressources-naturelles-canada/nouvelles/2026/04/le-gouvernement-du-canada-investit-dans-une-nouvelle-usine-de-pointe-specialisee-en-fabrication-de-produits-du-bois-pour-renforcer-la-chaine-dappro.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 5557,
+    "page_load_count": 5585,
     "service_pattern": "dashboard"
   },
   {
@@ -1261,7 +1217,7 @@
     "canonical_url": "https://www.canada.ca/fr/ressources-naturelles-canada/nouvelles/2026/04/le-gouvernement-du-canada-investit-dans-une-nouvelle-usine-de-pointe-specialisee-en-fabrication-de-produits-du-bois-pour-renforcer-la-chaine-dappro.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 5557,
+    "page_load_count": 5585,
     "service_pattern": "dashboard"
   },
   {
@@ -1272,7 +1228,7 @@
     "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2201.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 157939,
+    "page_load_count": 162270,
     "service_pattern": "dashboard"
   },
   {
@@ -1283,7 +1239,7 @@
     "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/forms-publications/forms/t2201.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 157939,
+    "page_load_count": 162270,
     "service_pattern": "dashboard"
   },
   {
@@ -1294,7 +1250,7 @@
     "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/overview",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 4104642,
+    "page_load_count": 4178896,
     "service_pattern": "dashboard"
   },
   {
@@ -1305,7 +1261,7 @@
     "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2200.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 147942,
+    "page_load_count": 151238,
     "service_pattern": "dashboard"
   },
   {
@@ -1316,7 +1272,7 @@
     "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/forms-publications/forms/t2200.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 147942,
+    "page_load_count": 151238,
     "service_pattern": "dashboard"
   },
   {
@@ -1327,7 +1283,7 @@
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 130975,
+    "page_load_count": 131487,
     "service_pattern": "application"
   },
   {
@@ -1338,7 +1294,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 130975,
+    "page_load_count": 131487,
     "service_pattern": "application"
   },
   {
@@ -1349,7 +1305,7 @@
     "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 123938,
+    "page_load_count": 127983,
     "service_pattern": "payment"
   },
   {
@@ -1360,7 +1316,7 @@
     "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 123938,
+    "page_load_count": 127983,
     "service_pattern": "payment"
   },
   {
@@ -1371,7 +1327,7 @@
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5710.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 121813,
+    "page_load_count": 120656,
     "service_pattern": "application"
   },
   {
@@ -1382,7 +1338,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5710.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 121813,
+    "page_load_count": 120656,
     "service_pattern": "application"
   },
   {
@@ -1393,7 +1349,7 @@
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/apply-in-person.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 107433,
+    "page_load_count": 107872,
     "service_pattern": "application"
   },
   {
@@ -1404,7 +1360,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/apply-in-person.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 107433,
+    "page_load_count": 107872,
     "service_pattern": "application"
   },
   {
@@ -1415,7 +1371,7 @@
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/new-adult-passport/get-application-form.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 84262,
+    "page_load_count": 84684,
     "service_pattern": "application"
   },
   {
@@ -1426,7 +1382,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/canadian-passports/new-adult-passport/get-application-form.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 84262,
+    "page_load_count": 84684,
     "service_pattern": "application"
   },
   {
@@ -1437,7 +1393,7 @@
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257-sch1.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 74803,
+    "page_load_count": 74882,
     "service_pattern": "application"
   },
   {
@@ -1448,7 +1404,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257-sch1.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 74803,
+    "page_load_count": 74882,
     "service_pattern": "application"
   },
   {
@@ -1459,7 +1415,7 @@
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5476.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 72131,
+    "page_load_count": 72996,
     "service_pattern": "application"
   },
   {
@@ -1470,7 +1426,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5476.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 72131,
+    "page_load_count": 72996,
     "service_pattern": "application"
   },
   {
@@ -1481,7 +1437,7 @@
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5645.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 64135,
+    "page_load_count": 64553,
     "service_pattern": "application"
   },
   {
@@ -1492,7 +1448,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5645.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 64135,
+    "page_load_count": 64553,
     "service_pattern": "application"
   },
   {
@@ -1503,7 +1459,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/quebec/5005-r.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 35250,
+    "page_load_count": 35213,
     "service_pattern": "dashboard"
   },
   {
@@ -1514,7 +1470,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/quebec/5005-r.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 35250,
+    "page_load_count": 35213,
     "service_pattern": "dashboard"
   },
   {
@@ -1525,7 +1481,7 @@
     "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/spoe",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 3589855,
+    "page_load_count": 3651615,
     "service_pattern": "dashboard"
   },
   {
@@ -1536,7 +1492,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2201.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 30766,
+    "page_load_count": 31373,
     "service_pattern": "dashboard"
   },
   {
@@ -1547,7 +1503,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2201.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 30766,
+    "page_load_count": 31373,
     "service_pattern": "dashboard"
   },
   {
@@ -1558,7 +1514,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 24667,
+    "page_load_count": 24885,
     "service_pattern": "dashboard"
   },
   {
@@ -1569,7 +1525,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 24667,
+    "page_load_count": 24885,
     "service_pattern": "dashboard"
   },
   {
@@ -1580,7 +1536,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2200.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 23822,
+    "page_load_count": 24131,
     "service_pattern": "dashboard"
   },
   {
@@ -1591,7 +1547,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2200.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 23822,
+    "page_load_count": 24131,
     "service_pattern": "dashboard"
   },
   {
@@ -1602,7 +1558,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/renouvellement-passeport-adulte/soumettre-formulaire-frais/presenter-en-personne.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 21185,
+    "page_load_count": 21351,
     "service_pattern": "dashboard"
   },
   {
@@ -1613,7 +1569,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/renouvellement-passeport-adulte/soumettre-formulaire-frais/presenter-en-personne.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 21185,
+    "page_load_count": 21351,
     "service_pattern": "dashboard"
   },
   {
@@ -1624,7 +1580,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 20243,
+    "page_load_count": 20266,
     "service_pattern": "dashboard"
   },
   {
@@ -1635,7 +1591,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 20243,
+    "page_load_count": 20266,
     "service_pattern": "dashboard"
   },
   {
@@ -1646,7 +1602,7 @@
     "canonical_url": "https://voyage.gc.ca/voyager/enfant/lettre-de-consentement",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 17370,
+    "page_load_count": 17380,
     "service_pattern": "dashboard"
   },
   {
@@ -1657,7 +1613,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 16827,
+    "page_load_count": 17196,
     "service_pattern": "dashboard"
   },
   {
@@ -1668,7 +1624,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 16827,
+    "page_load_count": 17196,
     "service_pattern": "dashboard"
   },
   {
@@ -1679,7 +1635,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-d1.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 16807,
+    "page_load_count": 16707,
     "service_pattern": "dashboard"
   },
   {
@@ -1690,7 +1646,7 @@
     "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-d1.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 16807,
+    "page_load_count": 16707,
     "service_pattern": "dashboard"
   },
   {
@@ -1701,7 +1657,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5645.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 15840,
+    "page_load_count": 15912,
     "service_pattern": "dashboard"
   },
   {
@@ -1712,18 +1668,29 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5645.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 15840,
+    "page_load_count": 15912,
     "service_pattern": "dashboard"
   },
   {
     "inventory_id": "recent-59-en",
-    "service_name": "CSA astronaut Jeremy Hansen&#39;s journey to the Moon",
+    "service_name": "Hear from Survivors about warning signs",
     "institution": null,
     "language": "en",
-    "canonical_url": "https://www.asc-csa.gc.ca/eng/astronauts/canadian/active/bio-jeremy-hansen.asp",
+    "canonical_url": "https://www.canada.ca/en/public-safety-canada/campaigns/human-trafficking/described-videos.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 12327,
+    "page_load_count": 15805,
+    "service_pattern": "dashboard"
+  },
+  {
+    "inventory_id": "recent-59-fr",
+    "service_name": "Hear from Survivors about warning signs",
+    "institution": null,
+    "language": "fr",
+    "canonical_url": "https://www.canada.ca/fr/public-safety-canada/campaigns/human-trafficking/described-videos.html",
+    "tier": "tier-1",
+    "source": "recent",
+    "page_load_count": 15805,
     "service_pattern": "dashboard"
   },
   {
@@ -1734,106 +1701,95 @@
     "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 2624192,
+    "page_load_count": 2665539,
     "service_pattern": "dashboard"
   },
   {
     "inventory_id": "recent-60-en",
+    "service_name": "CSA astronaut Jeremy Hansen&#39;s journey to the Moon",
+    "institution": null,
+    "language": "en",
+    "canonical_url": "https://www.asc-csa.gc.ca/eng/astronauts/canadian/active/bio-jeremy-hansen.asp",
+    "tier": "tier-1",
+    "source": "recent",
+    "page_load_count": 12495,
+    "service_pattern": "dashboard"
+  },
+  {
+    "inventory_id": "recent-61-en",
     "service_name": "Create your account and submit your declaration",
     "institution": null,
     "language": "en",
     "canonical_url": "https://www.canada.ca/en/public-safety-canada/campaigns/firearms-buyback/submit-firearm-declaration-individual/start-declaration.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 11987,
+    "page_load_count": 11695,
     "service_pattern": "sign-in"
   },
   {
-    "inventory_id": "recent-60-fr",
+    "inventory_id": "recent-61-fr",
     "service_name": "Create your account and submit your declaration",
     "institution": null,
     "language": "fr",
     "canonical_url": "https://www.canada.ca/fr/public-safety-canada/campaigns/firearms-buyback/submit-firearm-declaration-individual/start-declaration.html",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 11987,
+    "page_load_count": 11695,
     "service_pattern": "sign-in"
   },
   {
-    "inventory_id": "recent-61-en",
-    "service_name": "Hear from Survivors about warning signs",
-    "institution": null,
-    "language": "en",
-    "canonical_url": "https://www.canada.ca/en/public-safety-canada/campaigns/human-trafficking/described-videos.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "page_load_count": 10013,
-    "service_pattern": "dashboard"
-  },
-  {
-    "inventory_id": "recent-61-fr",
-    "service_name": "Hear from Survivors about warning signs",
-    "institution": null,
-    "language": "fr",
-    "canonical_url": "https://www.canada.ca/fr/public-safety-canada/campaigns/human-trafficking/described-videos.html",
-    "tier": "tier-1",
-    "source": "recent",
-    "page_load_count": 10013,
-    "service_pattern": "dashboard"
-  },
-  {
-    "inventory_id": "recent-63-en",
+    "inventory_id": "recent-64-en",
     "service_name": "Save Time: Send a Complete Application",
     "institution": null,
     "language": "en",
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/video/save-time-send-complete-application.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 8865,
+    "page_load_count": 8896,
     "service_pattern": "application"
   },
   {
-    "inventory_id": "recent-63-fr",
+    "inventory_id": "recent-64-fr",
     "service_name": "Save Time: Send a Complete Application",
     "institution": null,
     "language": "fr",
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/news/video/save-time-send-complete-application.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 8865,
+    "page_load_count": 8896,
     "service_pattern": "application"
   },
   {
-    "inventory_id": "recent-64-en",
+    "inventory_id": "recent-65-en",
     "service_name": "Video montage of CSA astronaut Jeremy Hansen watching the launch of Artemis I, the surface of the Moon and the Moon and Earth from Orion.",
     "institution": null,
     "language": "en",
     "canonical_url": "https://www.asc-csa.gc.ca/eng/missions/artemis-ii/",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 7506,
+    "page_load_count": 7474,
     "service_pattern": "dashboard"
   },
   {
-    "inventory_id": "recent-66-en",
+    "inventory_id": "recent-67-en",
     "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
     "institution": null,
     "language": "en",
     "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 5225,
+    "page_load_count": 5272,
     "service_pattern": "dashboard"
   },
   {
-    "inventory_id": "recent-66-fr",
+    "inventory_id": "recent-67-fr",
     "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
     "institution": null,
     "language": "fr",
     "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 5225,
+    "page_load_count": 5272,
     "service_pattern": "dashboard"
   },
   {
@@ -1844,7 +1800,7 @@
     "canonical_url": "https://www.canada.ca/en/employment-social-development/programs/foreign-credential-recognition.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 1307,
+    "page_load_count": 1260,
     "service_pattern": "dashboard"
   },
   {
@@ -1855,7 +1811,7 @@
     "canonical_url": "https://www.canada.ca/fr/employment-social-development/programs/foreign-credential-recognition.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 1307,
+    "page_load_count": 1260,
     "service_pattern": "dashboard"
   },
   {
@@ -1866,7 +1822,7 @@
     "canonical_url": "https://www.asc-csa.gc.ca/fra/missions/artemis-ii/",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 3548,
+    "page_load_count": 3539,
     "service_pattern": "dashboard"
   },
   {
@@ -1877,7 +1833,7 @@
     "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 1936171,
+    "page_load_count": 1969450,
     "service_pattern": "sign-in"
   },
   {
@@ -1888,7 +1844,7 @@
     "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 2123,
+    "page_load_count": 2150,
     "service_pattern": "dashboard"
   },
   {
@@ -1899,7 +1855,7 @@
     "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 2123,
+    "page_load_count": 2150,
     "service_pattern": "dashboard"
   },
   {
@@ -1910,7 +1866,7 @@
     "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/rachat-armes-a-feu/soumettre-declaration-particulier-armes-feu/commencer-declaration.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 1246,
+    "page_load_count": 1222,
     "service_pattern": "dashboard"
   },
   {
@@ -1921,7 +1877,7 @@
     "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/rachat-armes-a-feu/soumettre-declaration-particulier-armes-feu/commencer-declaration.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 1246,
+    "page_load_count": 1222,
     "service_pattern": "dashboard"
   },
   {
@@ -1932,7 +1888,7 @@
     "canonical_url": "https://www.canada.ca/fr/services/police/urgences/protection/preparez-vous/kits-urgence.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 1203,
+    "page_load_count": 1212,
     "service_pattern": "dashboard"
   },
   {
@@ -1943,7 +1899,7 @@
     "canonical_url": "https://www.canada.ca/fr/services/police/urgences/protection/preparez-vous/kits-urgence.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 1203,
+    "page_load_count": 1212,
     "service_pattern": "dashboard"
   },
   {
@@ -1954,7 +1910,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 1012,
+    "page_load_count": 1026,
     "service_pattern": "dashboard"
   },
   {
@@ -1965,7 +1921,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 1012,
+    "page_load_count": 1026,
     "service_pattern": "dashboard"
   },
   {
@@ -1976,7 +1932,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/video/ne-gaspillez-temps-envoyez-demande-complete.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 985,
+    "page_load_count": 994,
     "service_pattern": "dashboard"
   },
   {
@@ -1987,7 +1943,7 @@
     "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/video/ne-gaspillez-temps-envoyez-demande-complete.html",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 985,
+    "page_load_count": 994,
     "service_pattern": "dashboard"
   },
   {
@@ -1998,7 +1954,7 @@
     "canonical_url": "https://www.asc-csa.gc.ca/fra/missions/artemis-ii/etapes-de-la-mission.asp",
     "tier": "tier-2",
     "source": "recent",
-    "page_load_count": 787,
+    "page_load_count": 800,
     "service_pattern": "dashboard"
   },
   {
@@ -2009,7 +1965,7 @@
     "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/programmes/reconnaissance-titres.html",
     "tier": "tier-3",
     "source": "recent",
-    "page_load_count": 610,
+    "page_load_count": 595,
     "service_pattern": "dashboard"
   },
   {
@@ -2020,7 +1976,7 @@
     "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/programmes/reconnaissance-titres.html",
     "tier": "tier-3",
     "source": "recent",
-    "page_load_count": 610,
+    "page_load_count": 595,
     "service_pattern": "dashboard"
   },
   {
@@ -2031,7 +1987,7 @@
     "canonical_url": "https://www.asc-csa.gc.ca/fra/missions/artemis-ii/vie-a-bord-orion.asp",
     "tier": "tier-3",
     "source": "recent",
-    "page_load_count": 573,
+    "page_load_count": 587,
     "service_pattern": "dashboard"
   },
   {
@@ -2042,7 +1998,7 @@
     "canonical_url": "https://www.canada.ca/fr/sante-publique/services/video/maladie-lyme-bonne-facon-retirer-tique.html",
     "tier": "tier-3",
     "source": "recent",
-    "page_load_count": 481,
+    "page_load_count": 510,
     "service_pattern": "dashboard"
   },
   {
@@ -2053,7 +2009,7 @@
     "canonical_url": "https://www.canada.ca/fr/sante-publique/services/video/maladie-lyme-bonne-facon-retirer-tique.html",
     "tier": "tier-3",
     "source": "recent",
-    "page_load_count": 481,
+    "page_load_count": 510,
     "service_pattern": "dashboard"
   },
   {
@@ -2064,7 +2020,7 @@
     "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind",
     "tier": "tier-1",
     "source": "recent",
-    "page_load_count": 1629803,
+    "page_load_count": 1642919,
     "service_pattern": "dashboard"
   },
   {

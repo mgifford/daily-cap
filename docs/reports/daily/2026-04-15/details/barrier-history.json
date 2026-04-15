@@ -1,28 +1,10 @@
 {
   "summary": {
-    "points": 13,
-    "start_date": "2026-03-30",
+    "points": 11,
+    "start_date": "2026-04-01",
     "end_date": "2026-04-15"
   },
   "points": [
-    {
-      "run_date": "2026-03-30",
-      "missing_french": 110,
-      "missing_english": 0,
-      "missing_statements": 147,
-      "high_accessibility_gap_pairs": 0,
-      "average_absolute_accessibility_gap": 0,
-      "directional_affected_share_percent": 42.13
-    },
-    {
-      "run_date": "2026-03-31",
-      "missing_french": 110,
-      "missing_english": 0,
-      "missing_statements": 146,
-      "high_accessibility_gap_pairs": 0,
-      "average_absolute_accessibility_gap": 0,
-      "directional_affected_share_percent": 38.41
-    },
     {
       "run_date": "2026-04-01",
       "missing_french": 110,
@@ -115,12 +97,12 @@
     },
     {
       "run_date": "2026-04-15",
-      "missing_french": 83,
-      "missing_english": 33,
-      "missing_statements": 208,
+      "missing_french": 65,
+      "missing_english": 15,
+      "missing_statements": 204,
       "high_accessibility_gap_pairs": 0,
       "average_absolute_accessibility_gap": 0,
-      "directional_affected_share_percent": 91.4
+      "directional_affected_share_percent": 36.28
     }
   ]
 }
