@@ -6,45 +6,60 @@ import { runAxeScanVariants } from "./axe-runner.js";
 import { runGreenWebCheck } from "./green-web-runner.js";
 import { runAmtpgScan } from "./amtpg-runner.js";
 
-async function scanOne(target, mode, lighthouseContexts, axeContexts) {
+async function runScanner(fn) {
   try {
-    const [lighthouse, scangov, accessibilityStatement, platformFingerprint, axe, greenWeb, amtpg] =
-      await Promise.all([
-        runLighthouseScanVariants(target, mode, lighthouseContexts),
-        runScanGov(target, mode),
-        runAccessibilityStatementCheck(target, mode),
-        runPlatformFingerprint(target, mode),
-        runAxeScanVariants(target, mode, axeContexts),
-        runGreenWebCheck(target, mode),
-        runAmtpgScan(target, mode)
-      ]);
+    return { ok: true, value: await fn() };
+  } catch (error) {
+    return {
+      ok: false,
+      error: error instanceof Error ? error.message : String(error)
+    };
+  }
+}
 
+async function scanOne(target, mode, lighthouseContexts, axeContexts) {
+  const [lighthouse, scangov, accessibilityStatement, platformFingerprint, axe, greenWeb, amtpg] =
+    await Promise.all([
+      runScanner(() => runLighthouseScanVariants(target, mode, lighthouseContexts)),
+      runScanner(() => runScanGov(target, mode)),
+      runScanner(() => runAccessibilityStatementCheck(target, mode)),
+      runScanner(() => runPlatformFingerprint(target, mode)),
+      runScanner(() => runAxeScanVariants(target, mode, axeContexts)),
+      runScanner(() => runGreenWebCheck(target, mode)),
+      runScanner(() => runAmtpgScan(target, mode))
+    ]);
+
+  if (lighthouse.ok) {
     return {
       ...target,
       scan_status: "success",
       failure_reason: null,
-      lighthouse,
-      scangov,
-      accessibility_statement: accessibilityStatement,
-      platform_fingerprint: platformFingerprint,
-      axe,
-      green_web: greenWeb,
-      amtpg
-    };
-  } catch (error) {
-    return {
-      ...target,
-      scan_status: "failed",
-      failure_reason: error instanceof Error ? error.message : String(error),
-      lighthouse: null,
-      scangov: null,
-      accessibility_statement: null,
-      platform_fingerprint: null,
-      axe: null,
-      green_web: null,
-      amtpg: null
+      lighthouse: lighthouse.value,
+      scangov: scangov.ok ? scangov.value : null,
+      accessibility_statement: accessibilityStatement.ok
+        ? accessibilityStatement.value
+        : null,
+      platform_fingerprint: platformFingerprint.ok ? platformFingerprint.value : null,
+      axe: axe.ok ? axe.value : null,
+      green_web: greenWeb.ok ? greenWeb.value : null,
+      amtpg: amtpg.ok ? amtpg.value : null
     };
   }
+
+  return {
+    ...target,
+    scan_status: "failed",
+    failure_reason: lighthouse.error || "lighthouse scan failed",
+    lighthouse: null,
+    scangov: scangov.ok ? scangov.value : null,
+    accessibility_statement: accessibilityStatement.ok
+      ? accessibilityStatement.value
+      : null,
+    platform_fingerprint: platformFingerprint.ok ? platformFingerprint.value : null,
+    axe: axe.ok ? axe.value : null,
+    green_web: greenWeb.ok ? greenWeb.value : null,
+    amtpg: amtpg.ok ? amtpg.value : null
+  };
 }
 
 export async function runScans(targets, options) {
