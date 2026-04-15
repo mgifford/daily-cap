@@ -1,0 +1,126 @@
+{
+  "summary": {
+    "institutions_scanned": 3,
+    "total_violations_across_institutions": 22,
+    "institutions_with_critical": 2
+  },
+  "by_institution": [
+    {
+      "institution": "Justice",
+      "scanned_urls": 2,
+      "critical_total_violations": 2,
+      "critical_affected_pages": 2,
+      "critical_average_per_page": 1,
+      "serious_total_violations": 6,
+      "serious_affected_pages": 2,
+      "serious_average_per_page": 3,
+      "moderate_total_violations": 10,
+      "moderate_affected_pages": 2,
+      "moderate_average_per_page": 5,
+      "minor_total_violations": 8,
+      "minor_affected_pages": 2,
+      "minor_average_per_page": 4,
+      "total_violations": 11,
+      "services_with_violations": [
+        {
+          "service_name": "Justice Laws Website",
+          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "language": "en",
+          "critical": 1,
+          "serious": 3,
+          "moderate": 5,
+          "minor": 4,
+          "total": 13
+        },
+        {
+          "service_name": "Justice Laws Website",
+          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "language": "fr",
+          "critical": 1,
+          "serious": 3,
+          "moderate": 5,
+          "minor": 4,
+          "total": 13
+        }
+      ]
+    },
+    {
+      "institution": "StatsCan",
+      "scanned_urls": 2,
+      "critical_total_violations": 2,
+      "critical_affected_pages": 2,
+      "critical_average_per_page": 1,
+      "serious_total_violations": 2,
+      "serious_affected_pages": 2,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 10,
+      "moderate_affected_pages": 2,
+      "moderate_average_per_page": 5,
+      "minor_total_violations": 8,
+      "minor_affected_pages": 2,
+      "minor_average_per_page": 4,
+      "total_violations": 7,
+      "services_with_violations": [
+        {
+          "service_name": "Consumer Price Index",
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+          "language": "en",
+          "critical": 1,
+          "serious": 1,
+          "moderate": 5,
+          "minor": 4,
+          "total": 11
+        },
+        {
+          "service_name": "Consumer Price Index",
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+          "language": "fr",
+          "critical": 1,
+          "serious": 1,
+          "moderate": 5,
+          "minor": 4,
+          "total": 11
+        }
+      ]
+    },
+    {
+      "institution": "CBSA",
+      "scanned_urls": 2,
+      "critical_total_violations": 0,
+      "critical_affected_pages": 0,
+      "critical_average_per_page": null,
+      "serious_total_violations": 2,
+      "serious_affected_pages": 2,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 4,
+      "moderate_affected_pages": 2,
+      "moderate_average_per_page": 2,
+      "minor_total_violations": 8,
+      "minor_affected_pages": 2,
+      "minor_average_per_page": 4,
+      "total_violations": 4,
+      "services_with_violations": [
+        {
+          "service_name": "Canada Border Wait Times",
+          "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Canada Border Wait Times",
+          "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        }
+      ]
+    }
+  ]
+}
