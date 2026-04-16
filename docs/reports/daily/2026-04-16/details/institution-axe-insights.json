@@ -1,0 +1,771 @@
+{
+  "summary": {
+    "institutions_scanned": 8,
+    "total_violations_across_institutions": 125,
+    "institutions_with_critical": 1
+  },
+  "by_institution": [
+    {
+      "institution": "ESDC",
+      "scanned_urls": 24,
+      "critical_total_violations": 0,
+      "critical_affected_pages": 0,
+      "critical_average_per_page": null,
+      "serious_total_violations": 24,
+      "serious_affected_pages": 24,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 48,
+      "moderate_affected_pages": 24,
+      "moderate_average_per_page": 2,
+      "minor_total_violations": 96,
+      "minor_affected_pages": 24,
+      "minor_average_per_page": 4,
+      "total_violations": 48,
+      "services_with_violations": [
+        {
+          "service_name": "Apply for a Social Insurance Number",
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Apply for a Social Insurance Number",
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Check my Service Canada Account",
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Check my Service Canada Account",
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Find your local Service Canada office",
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Find your local Service Canada office",
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery:  - en - department-national-defence - services - benefits-military - pay-pension-benefits",
+          "canonical_url": "https://www.canada.ca/en/department-national-defence/services/benefits-military/pay-pension-benefits.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: benefits - education",
+          "canonical_url": "https://www.canada.ca/en/services/benefits/education.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: benefits - disability",
+          "canonical_url": "https://www.canada.ca/en/services/benefits/disability.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: benefits - finder",
+          "canonical_url": "https://www.canada.ca/en/services/benefits/finder.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: benefits - audience",
+          "canonical_url": "https://www.canada.ca/en/services/benefits/audience.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: jobs - workplace - federal-labour-standards - pay",
+          "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/pay.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Old Age Security and Supplement",
+          "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/oas.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Old Age Security and Supplement",
+          "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/srg.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Job search and benefits",
+          "canonical_url": "https://www.canada.ca/en/services/work.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Job search and benefits",
+          "canonical_url": "https://www.canada.ca/fr/services/travail.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Student loans and grants",
+          "canonical_url": "https://www.canada.ca/en/services/education-training/loans-grants.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Student loans and grants",
+          "canonical_url": "https://www.canada.ca/fr/services/education-formation/prets-bourses.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Benefits and credits",
+          "canonical_url": "https://www.canada.ca/en/services/benefits.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Benefits and credits",
+          "canonical_url": "https://www.canada.ca/fr/services/prestations.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Employment Insurance",
+          "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Employment Insurance",
+          "canonical_url": "https://www.canada.ca/fr/services/prestations/ae.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "CPP and retirement",
+          "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "CPP and retirement",
+          "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        }
+      ]
+    },
+    {
+      "institution": "IRCC",
+      "scanned_urls": 16,
+      "critical_total_violations": 0,
+      "critical_affected_pages": 0,
+      "critical_average_per_page": null,
+      "serious_total_violations": 16,
+      "serious_affected_pages": 16,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 32,
+      "moderate_affected_pages": 16,
+      "moderate_average_per_page": 2,
+      "minor_total_violations": 64,
+      "minor_affected_pages": 16,
+      "minor_average_per_page": 4,
+      "total_violations": 32,
+      "services_with_violations": [
+        {
+          "service_name": "IRCC: Apply for permanent residency",
+          "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "IRCC: Apply for permanent residency",
+          "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - services - application",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/services/application.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - check-processing-times",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/check-processing-times.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - check-application-status",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/check-application-status.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - visit-canada",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/visit-canada.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - work-canada",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/work-canada.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - study-canada",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/study-canada.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - new-immigrants",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/new-immigrants.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - canadian-citizenship",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/canadian-citizenship.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - enforcement-violations",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/enforcement-violations.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - passport",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/passport.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: immigration-citizenship - services - canadian-passports",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/services/canadian-passports.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Passport and travel",
+          "canonical_url": "https://www.canada.ca/fr/services/voyages.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Immigration and citizenship",
+          "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Immigration and citizenship",
+          "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        }
+      ]
+    },
+    {
+      "institution": "CRA",
+      "scanned_urls": 10,
+      "critical_total_violations": 0,
+      "critical_affected_pages": 0,
+      "critical_average_per_page": null,
+      "serious_total_violations": 10,
+      "serious_affected_pages": 10,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 20,
+      "moderate_affected_pages": 10,
+      "moderate_average_per_page": 2,
+      "minor_total_violations": 40,
+      "minor_affected_pages": 10,
+      "minor_average_per_page": 4,
+      "total_violations": 20,
+      "services_with_violations": [
+        {
+          "service_name": "Discovery: taxes - business-number",
+          "canonical_url": "https://www.canada.ca/en/services/taxes/business-number.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: taxes - gsthst",
+          "canonical_url": "https://www.canada.ca/en/services/taxes/gsthst.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: taxes - payments",
+          "canonical_url": "https://www.canada.ca/en/services/taxes/payments.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: taxes - child-and-family-benefits",
+          "canonical_url": "https://www.canada.ca/en/services/taxes/child-and-family-benefits.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: taxes - savings-and-pension-plans",
+          "canonical_url": "https://www.canada.ca/en/services/taxes/savings-and-pension-plans.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: taxes - excise-taxes-duties-and-levies",
+          "canonical_url": "https://www.canada.ca/en/services/taxes/excise-taxes-duties-and-levies.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: taxes - charities",
+          "canonical_url": "https://www.canada.ca/en/services/taxes/charities.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Discovery: taxes - international-non-residents",
+          "canonical_url": "https://www.canada.ca/en/services/taxes/international-non-residents.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Personal income tax",
+          "canonical_url": "https://www.canada.ca/en/services/taxes/income.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Personal income tax",
+          "canonical_url": "https://www.canada.ca/fr/services/impots/revenu.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        }
+      ]
+    },
+    {
+      "institution": "PHAC",
+      "scanned_urls": 4,
+      "critical_total_violations": 0,
+      "critical_affected_pages": 0,
+      "critical_average_per_page": null,
+      "serious_total_violations": 4,
+      "serious_affected_pages": 4,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 8,
+      "moderate_affected_pages": 4,
+      "moderate_average_per_page": 2,
+      "minor_total_violations": 16,
+      "minor_affected_pages": 4,
+      "minor_average_per_page": 4,
+      "total_violations": 8,
+      "services_with_violations": [
+        {
+          "service_name": "Health Infobase Canada",
+          "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Health Infobase Canada",
+          "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "COVID-19 information",
+          "canonical_url": "https://www.canada.ca/en/services/health/coronavirus-2019.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "COVID-19 information",
+          "canonical_url": "https://www.canada.ca/fr/services/sante/coronavirus-2019.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        }
+      ]
+    },
+    {
+      "institution": "StatsCan",
+      "scanned_urls": 2,
+      "critical_total_violations": 2,
+      "critical_affected_pages": 2,
+      "critical_average_per_page": 1,
+      "serious_total_violations": 2,
+      "serious_affected_pages": 2,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 10,
+      "moderate_affected_pages": 2,
+      "moderate_average_per_page": 5,
+      "minor_total_violations": 8,
+      "minor_affected_pages": 2,
+      "minor_average_per_page": 4,
+      "total_violations": 7,
+      "services_with_violations": [
+        {
+          "service_name": "Consumer Price Index",
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+          "language": "en",
+          "critical": 1,
+          "serious": 1,
+          "moderate": 5,
+          "minor": 4,
+          "total": 11
+        },
+        {
+          "service_name": "Consumer Price Index",
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+          "language": "fr",
+          "critical": 1,
+          "serious": 1,
+          "moderate": 5,
+          "minor": 4,
+          "total": 11
+        }
+      ]
+    },
+    {
+      "institution": "ECCC",
+      "scanned_urls": 2,
+      "critical_total_violations": 0,
+      "critical_affected_pages": 0,
+      "critical_average_per_page": null,
+      "serious_total_violations": 2,
+      "serious_affected_pages": 2,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 4,
+      "moderate_affected_pages": 2,
+      "moderate_average_per_page": 2,
+      "minor_total_violations": 8,
+      "minor_affected_pages": 2,
+      "minor_average_per_page": 4,
+      "total_violations": 4,
+      "services_with_violations": [
+        {
+          "service_name": "Environment and Climate Change Canada",
+          "canonical_url": "https://www.canada.ca/en/environment-climate-change.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Environment and Climate Change Canada",
+          "canonical_url": "https://www.canada.ca/fr/environnement-changement-climatique.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        }
+      ]
+    },
+    {
+      "institution": "CSPS",
+      "scanned_urls": 2,
+      "critical_total_violations": 0,
+      "critical_affected_pages": 0,
+      "critical_average_per_page": null,
+      "serious_total_violations": 2,
+      "serious_affected_pages": 2,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 4,
+      "moderate_affected_pages": 2,
+      "moderate_average_per_page": 2,
+      "minor_total_violations": 8,
+      "minor_affected_pages": 2,
+      "minor_average_per_page": 4,
+      "total_violations": 4,
+      "services_with_violations": [
+        {
+          "service_name": "Government of Canada Social Media",
+          "canonical_url": "https://www.canada.ca/en/social-media.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        },
+        {
+          "service_name": "Government of Canada Social Media",
+          "canonical_url": "https://www.canada.ca/fr/medias-sociaux.html",
+          "language": "fr",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        }
+      ]
+    },
+    {
+      "institution": "Health Canada/PHAC",
+      "scanned_urls": 1,
+      "critical_total_violations": 0,
+      "critical_affected_pages": 0,
+      "critical_average_per_page": null,
+      "serious_total_violations": 1,
+      "serious_affected_pages": 1,
+      "serious_average_per_page": 1,
+      "moderate_total_violations": 2,
+      "moderate_affected_pages": 1,
+      "moderate_average_per_page": 2,
+      "minor_total_violations": 4,
+      "minor_affected_pages": 1,
+      "minor_average_per_page": 4,
+      "total_violations": 2,
+      "services_with_violations": [
+        {
+          "service_name": "Discovery: veterans-military - health-and-wellness-for-veterans-and-military-members",
+          "canonical_url": "https://www.canada.ca/en/services/veterans-military/health-and-wellness-for-veterans-and-military-members.html",
+          "language": "en",
+          "critical": 0,
+          "serious": 1,
+          "moderate": 2,
+          "minor": 4,
+          "total": 7
+        }
+      ]
+    }
+  ]
+}
