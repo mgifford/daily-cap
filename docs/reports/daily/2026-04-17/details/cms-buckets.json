@@ -1,7 +1,7 @@
 [
   {
     "cms": "unknown",
-    "count": 169,
+    "count": 168,
     "pages": [
       {
         "service_name": "Apply for a Social Insurance Number",
@@ -17,11 +17,6 @@
         "service_name": "Check my Service Canada Account",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html"
-      },
-      {
-        "service_name": "Check my Service Canada Account",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html"
       },
       {
         "service_name": "Find your local Service Canada office",
@@ -167,11 +162,6 @@
         "service_name": "Discovery: taxes - payments",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/services/taxes/payments.html"
-      },
-      {
-        "service_name": "Discovery: taxes - child-and-family-benefits",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/taxes/child-and-family-benefits.html"
       },
       {
         "service_name": "Discovery: taxes - savings-and-pension-plans",
@@ -452,6 +442,11 @@
         "service_name": "TD1 2026 Personal Tax Credits Return",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1.html"
+      },
+      {
+        "service_name": "Application to Change Conditions, Extend my Stay or Remain in Canada as a Worker (IMM 5710)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5710.html"
       },
       {
         "service_name": "Application to Change Conditions, Extend my Stay or Remain in Canada as a Worker (IMM 5710)",
@@ -852,8 +847,13 @@
   },
   {
     "cms": "aem",
-    "count": 37,
+    "count": 38,
     "pages": [
+      {
+        "service_name": "Check my Service Canada Account",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html"
+      },
       {
         "service_name": "Consumer Price Index",
         "language": "en",
@@ -873,6 +873,11 @@
         "service_name": "Health Infobase Canada",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html"
+      },
+      {
+        "service_name": "Discovery: taxes - child-and-family-benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/child-and-family-benefits.html"
       },
       {
         "service_name": "New immigration and asylum measures from Bill C-12 (the Strengthening Canada’s Immigration System and Borders Act) have become law",
@@ -1023,11 +1028,6 @@
         "service_name": "Le gouvernement du Canada investit dans une nouvelle usine de pointe spécialisée en fabrication de produits du bois pour renforcer la chaîne d’approvisionnement canadienne en matériaux de construction",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/ressources-naturelles-canada/nouvelles/2026/04/le-gouvernement-du-canada-investit-dans-une-nouvelle-usine-de-pointe-specialisee-en-fabrication-de-produits-du-bois-pour-renforcer-la-chaine-dappro.html"
-      },
-      {
-        "service_name": "Application to Change Conditions, Extend my Stay or Remain in Canada as a Worker (IMM 5710)",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5710.html"
       },
       {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
