@@ -22,6 +22,12 @@ function safeId(value) {
     .slice(0, 48);
 }
 
+function renderPageFooter() {
+  return `  <footer>
+    <p>Daily CAP &mdash; <a href="https://github.com/mgifford/daily-cap">View source on GitHub</a> &mdash; <a href="https://github.com/mgifford/daily-cap/issues">Report an issue</a> &mdash; Contributions welcome</p>
+  </footer>`;
+}
+
 function sectionH2(id, text) {
   const safeText = escapeHtml(text);
   const safeAnchor = escapeHtml(id);
@@ -301,6 +307,7 @@ function renderDetailLayout({ title, heading, intro, backHref, backLabel = "Back
     <p><em>${escapeHtml(intro)}</em></p>
     ${body}
   </main>
+  ${renderPageFooter()}
   <script>
     (function () {
       var THEME_KEY = 'cap-preferred-theme';
@@ -1556,6 +1563,7 @@ export function renderDailyReportPage(report) {
       }
     })();
   </script>
+  ${renderPageFooter()}
   <script>
     (function () {
       var THEME_KEY = 'cap-preferred-theme';
@@ -1691,6 +1699,7 @@ export function renderHomePage(report, recentReports = [], archivedDates = []) {
       <p><a href="./reports/archive/index.html">Browse report archives <span aria-hidden="true">&#8594;</span></a></p>
     </section>
   </main>
+  ${renderPageFooter()}
   <script>
     (function () {
       var THEME_KEY = 'cap-preferred-theme';
@@ -1766,9 +1775,7 @@ export function renderArchiveIndexPage(archivedDates = []) {
     </ul>` : "<p>No archives are available yet. Archives will appear here once reports are older than 14 days.</p>"}
     <p><a href="../../index.html"><span aria-hidden="true">&#8592;</span> Back to Daily CAP</a></p>
   </main>
-  <footer>
-    <p><a href="https://github.com/mgifford/daily-cap">GitHub</a></p>
-  </footer>
+  ${renderPageFooter()}
   <script>
     (function () {
       var THEME_KEY = 'cap-preferred-theme';
