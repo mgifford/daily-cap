@@ -712,7 +712,7 @@ describe("footer presence", () => {
   function assertFooter(html, label) {
     assert.ok(html.includes("<footer"), `${label}: footer element present`);
     assert.ok(
-      html.includes("https://github.com/mgifford/daily-cap"),
+      html.includes('href="https://github.com/mgifford/daily-cap"'),
       `${label}: GitHub repo link present`
     );
     assert.ok(

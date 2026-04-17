@@ -1563,7 +1563,6 @@ export function renderDailyReportPage(report) {
       }
     })();
   </script>
-  ${renderPageFooter()}
   <script>
     (function () {
       var THEME_KEY = 'cap-preferred-theme';
@@ -1597,6 +1596,7 @@ export function renderDailyReportPage(report) {
       }
     })();
   </script>
+  ${renderPageFooter()}
 </body>
 </html>`;
 }
