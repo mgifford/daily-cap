@@ -703,3 +703,56 @@ describe("renderArchiveIndexPage", () => {
     assert.ok(!html.includes("<script>x()"), "raw script not present");
   });
 });
+
+// ---------------------------------------------------------------------------
+// Footer presence across all page types
+// ---------------------------------------------------------------------------
+
+describe("footer presence", () => {
+  function assertFooter(html, label) {
+    assert.ok(html.includes("<footer"), `${label}: footer element present`);
+    assert.ok(
+      html.includes('href="https://github.com/mgifford/daily-cap"'),
+      `${label}: GitHub repo link present`
+    );
+    assert.ok(
+      html.includes("Contributions welcome"),
+      `${label}: contribution invitation present`
+    );
+  }
+
+  it("renderDailyReportPage includes footer with GitHub link", () => {
+    assertFooter(renderDailyReportPage(MINIMAL_REPORT), "renderDailyReportPage");
+  });
+
+  it("renderHomePage includes footer with GitHub link", () => {
+    assertFooter(renderHomePage(MINIMAL_REPORT), "renderHomePage");
+  });
+
+  it("renderArchiveIndexPage includes footer with GitHub link", () => {
+    assertFooter(renderArchiveIndexPage([]), "renderArchiveIndexPage");
+  });
+
+  it("renderPriorityIssuesPage includes footer with GitHub link", () => {
+    assertFooter(renderPriorityIssuesPage(MINIMAL_REPORT), "renderPriorityIssuesPage");
+  });
+
+  it("renderRecurringIssuesPage includes footer with GitHub link", () => {
+    assertFooter(renderRecurringIssuesPage(MINIMAL_REPORT), "renderRecurringIssuesPage");
+  });
+
+  it("renderInstitutionScorecardsPage includes footer with GitHub link", () => {
+    assertFooter(renderInstitutionScorecardsPage(MINIMAL_REPORT), "renderInstitutionScorecardsPage");
+  });
+
+  it("renderInstitutionTrendsIndexPage includes footer with GitHub link", () => {
+    assertFooter(renderInstitutionTrendsIndexPage(MINIMAL_REPORT), "renderInstitutionTrendsIndexPage");
+  });
+
+  it("renderInstitutionTrendPage includes footer with GitHub link", () => {
+    assertFooter(
+      renderInstitutionTrendPage(MINIMAL_REPORT, MINIMAL_INSTITUTION_TREND),
+      "renderInstitutionTrendPage"
+    );
+  });
+});
