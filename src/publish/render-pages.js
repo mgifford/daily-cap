@@ -24,7 +24,7 @@ function safeId(value) {
 
 function renderPageFooter() {
   return `  <footer>
-    <p>Daily CAP &mdash; <a href="https://github.com/mgifford/daily-cap">View source on GitHub</a> &mdash; <a href="https://github.com/mgifford/daily-cap/issues">Report an issue</a> &mdash; Contributions welcome</p>
+    <p>Daily CAP <span aria-hidden="true">&mdash;</span> <a href="https://github.com/mgifford/daily-cap">View source on GitHub</a> <span aria-hidden="true">&mdash;</span> <a href="https://github.com/mgifford/daily-cap/issues">Report an issue</a> <span aria-hidden="true">&mdash;</span> Contributions welcome</p>
   </footer>`;
 }
 
@@ -1529,6 +1529,7 @@ export function renderDailyReportPage(report) {
       ${topUrlsOverflowCount > 0 ? `<p>${escapeHtml(topUrlsOverflowCount)} additional rows available in <a href="./report.json">report.json</a>.</p>` : ""}
     </section>
   </main>
+  ${renderPageFooter()}
   <script>
     (() => {
       const buttons = document.querySelectorAll('.sort-button');
@@ -1596,7 +1597,6 @@ export function renderDailyReportPage(report) {
       }
     })();
   </script>
-  ${renderPageFooter()}
 </body>
 </html>`;
 }
