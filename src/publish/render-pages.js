@@ -266,6 +266,121 @@ function renderLighthouseContextBarChart(byContext) {
   </figure>`;
 }
 
+function renderLighthouseContextHistoryChart(historyPoints) {
+  if (!historyPoints || !historyPoints.length) {
+    return "<p>No Lighthouse history data available yet.</p>";
+  }
+
+  const contexts = [
+    { key: "desktop_light", label: "Desktop Light", color: "#235d8b", dash: "" },
+    { key: "desktop_dark", label: "Desktop Dark", color: "#235d8b", dash: "6,3" },
+    { key: "mobile_light", label: "Mobile Light", color: "#b5402d", dash: "" },
+    { key: "mobile_dark", label: "Mobile Dark", color: "#b5402d", dash: "6,3" }
+  ];
+
+  const metrics = [
+    { key: "performance_score", label: "Performance" },
+    { key: "accessibility_score", label: "Accessibility" },
+    { key: "best_practices_score", label: "Best Practices" },
+    { key: "seo_score", label: "SEO" }
+  ];
+
+  const W = 860;
+  const H = 200;
+  const padL = 40;
+  const padR = 148;
+  const padT = 24;
+  const padB = 40;
+  const plotW = W - padL - padR;
+  const plotH = H - padT - padB;
+  const maxVal = 100;
+  const n = historyPoints.length;
+  const stepX = n > 1 ? plotW / (n - 1) : 0;
+
+  function pointsForContextMetric(ctxKey, metricKey) {
+    return historyPoints.map((point, i) => {
+      const val = point[ctxKey]?.[metricKey];
+      if (typeof val !== "number") return null;
+      const x = padL + stepX * i;
+      const y = padT + plotH - (plotH * val) / maxVal;
+      return { x, y, val };
+    });
+  }
+
+  function linePath(pts) {
+    const segments = [];
+    let inLine = false;
+    for (const pt of pts) {
+      if (!pt) { inLine = false; continue; }
+      segments.push(`${inLine ? "L" : "M"}${pt.x.toFixed(1)},${pt.y.toFixed(1)}`);
+      inLine = true;
+    }
+    return segments.join(" ");
+  }
+
+  function dotMarkers(pts, color) {
+    return pts
+      .filter(Boolean)
+      .map((pt) => `<circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="3" fill="${escapeHtml(color)}" />`)
+      .join("");
+  }
+
+  const dateLabels = historyPoints
+    .map((point, i) => {
+      const x = padL + stepX * i;
+      return `<text x="${x.toFixed(1)}" y="${H - 8}" text-anchor="middle" font-size="10">${escapeHtml(point.run_date.slice(5))}</text>`;
+    })
+    .join("");
+
+  const yTicks = [0, 25, 50, 75, 100]
+    .map((val) => {
+      const y = padT + plotH - (plotH * val) / maxVal;
+      return `<line x1="${padL}" y1="${y}" x2="${padL + plotW}" y2="${y}" stroke="#d7e2d8" stroke-width="1" /><text x="${padL - 5}" y="${y + 4}" text-anchor="end" font-size="10">${val}</text>`;
+    })
+    .join("\n");
+
+  const legend = contexts
+    .map((ctx, i) => {
+      const lx = padL + plotW + 12;
+      const ly = padT + 6 + i * 22;
+      const dash = ctx.dash ? ` stroke-dasharray="${escapeHtml(ctx.dash)}"` : "";
+      return `<line x1="${lx}" y1="${ly + 6}" x2="${lx + 20}" y2="${ly + 6}" stroke="${escapeHtml(ctx.color)}" stroke-width="2"${dash} /><text x="${lx + 24}" y="${ly + 10}" font-size="11">${escapeHtml(ctx.label)}</text>`;
+    })
+    .join("\n");
+
+  const charts = metrics
+    .map((metric) => {
+      const lines = contexts
+        .map((ctx) => {
+          const pts = pointsForContextMetric(ctx.key, metric.key);
+          const path = linePath(pts);
+          const dots = dotMarkers(pts, ctx.color);
+          const dash = ctx.dash ? ` stroke-dasharray="${escapeHtml(ctx.dash)}"` : "";
+          return path ? `<path d="${path}" fill="none" stroke="${escapeHtml(ctx.color)}" stroke-width="2"${dash} />${dots}` : "";
+        })
+        .join("\n");
+
+      const chartId = `lh-hist-${escapeHtml(metric.key)}`;
+      return `<figure>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${chartId}-title ${chartId}-desc" class="history-chart">
+      <title id="${chartId}-title">Lighthouse ${escapeHtml(metric.label)} over time by context</title>
+      <desc id="${chartId}-desc">Line chart showing daily mean Lighthouse ${escapeHtml(metric.label)} score (0–100) across four scan contexts: desktop light, desktop dark, mobile light, mobile dark.</desc>
+      <line x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" stroke="#7f9685" stroke-width="1.5" />
+      <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + plotH}" stroke="#7f9685" stroke-width="1.5" />
+      ${yTicks}
+      ${lines}
+      ${dateLabels}
+      ${legend}
+    </svg>
+    <figcaption>Lighthouse ${escapeHtml(metric.label)} (0&#8211;100) over time. Blue&#160;=&#160;Desktop, Red&#160;=&#160;Mobile; solid&#160;=&#160;light mode, dashed&#160;=&#160;dark mode.</figcaption>
+  </figure>`;
+    })
+    .join("\n");
+
+  return charts;
+}
+
+
 function renderTopUrlRows(rows) {
   return rows
     .map((row) => {
@@ -720,6 +835,7 @@ export function renderDailyReportPage(report) {
   const topAxeIssues = report.top_axe_issues?.top_issues || [];
   const topAxeSummary = report.top_axe_issues?.summary || {};
   const barrierHistory = report.barrier_history?.points || [];
+  const lighthouseHistory = report.lighthouse_history?.points || [];
   const detailPaths = report.output_paths?.details || {};
   const priorityIssues = report.priority_issues?.top_priority_issues || [];
   const recurringIssues = report.priority_issues?.recurring_issues || [];
@@ -995,6 +1111,62 @@ export function renderDailyReportPage(report) {
     </section>
 
     <section>
+      ${sectionH2("theme-contexts", "Google Lighthouse Performance")}
+      <p><em>Lighthouse scores measure page quality across performance, accessibility, best practices, and SEO across four rendering contexts (desktop/mobile, light/dark). Charts show daily mean scores over time.</em></p>
+      <div class="cards">
+        <div class="card"><strong>URLs Scanned</strong><br/>${escapeHtml(contextSummary.scanned_urls_with_context_data ?? "-")}</div>
+        <div class="card"><strong>Baseline</strong><br/>${escapeHtml(contextSummary.baseline_context ?? "desktop_light")}</div>
+        <div class="card"><strong>Mobile Dark Perf Delta</strong><br/>${escapeHtml(contextHighlight.performance_score ?? "-")}</div>
+        <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>${escapeHtml(contextHighlight.accessibility_score ?? "-")}</div>
+      </div>
+
+      <h3>Scores Over Time by Context</h3>
+      <p><em>Blue&#160;=&#160;Desktop, Red&#160;=&#160;Mobile; solid&#160;=&#160;light mode, dashed&#160;=&#160;dark mode.</em></p>
+      ${renderLighthouseContextHistoryChart(lighthouseHistory)}
+
+      <h3>Today&#8217;s Scores by Context</h3>
+      ${renderLighthouseContextBarChart(contextByContext)}
+
+      <h3>Context Averages</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Performance</th>
+            <th scope="col">Accessibility</th>
+            <th scope="col">Best Practices</th>
+            <th scope="col">SEO</th>
+          </tr>
+        </thead>
+        <tbody>${contextAverageRows || '<tr><td colspan="5">No context averages available in this run.</td></tr>'}</tbody>
+      </table>
+
+      <h3>Deltas vs Desktop Light</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Context</th>
+            <th scope="col">Performance Delta</th>
+            <th scope="col">Accessibility Delta</th>
+            <th scope="col">Best Practices Delta</th>
+            <th scope="col">SEO Delta</th>
+          </tr>
+        </thead>
+        <tbody>${contextDeltaRows || '<tr><td colspan="5">No context deltas available in this run.</td></tr>'}</tbody>
+      </table>
+
+      <details style="margin-top: 1em;">
+        <summary><strong>Mobile Dark vs Desktop Light Headline</strong></summary>
+        <ul style="margin: 0.5em 0; padding-left: 1.5em;">
+          <li>Performance: ${escapeHtml(contextHighlight.performance_score ?? "-")}</li>
+          <li>Accessibility: ${escapeHtml(contextHighlight.accessibility_score ?? "-")}</li>
+          <li>Best Practices: ${escapeHtml(contextHighlight.best_practices_score ?? "-")}</li>
+          <li>SEO: ${escapeHtml(contextHighlight.seo_score ?? "-")}</li>
+        </ul>
+      </details>
+    </section>
+
+    <section>
       ${sectionH2("trend-comparison", "Trend Comparison")}
       <p><em>${escapeHtml(trend.note || "No trend comparison available.")}</em></p>
       <div class="cards">
@@ -1060,53 +1232,6 @@ export function renderDailyReportPage(report) {
           )
           .join("\n")}</tbody>
       </table>
-    </section>
-
-    <section>
-      ${sectionH2("lighthouse-performance", "Google Lighthouse Performance")}
-      <p><em>Lighthouse scores measure page quality across performance, accessibility, best practices, and SEO. Scores below show means by rendering context (desktop/mobile, light/dark).</em></p>
-      <div class="cards">
-        <div class="card"><strong>URLs Scanned</strong><br/>${escapeHtml(contextSummary.scanned_urls_with_context_data ?? "-")}</div>
-        <div class="card"><strong>Baseline</strong><br/>Desktop Light</div>
-      </div>
-
-      <h3>Average Scores by Context</h3>
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Context</th>
-            <th scope="col">Performance</th>
-            <th scope="col">Accessibility</th>
-            <th scope="col">Best Practices</th>
-            <th scope="col">SEO</th>
-          </tr>
-        </thead>
-        <tbody>${contextAverageRows || '<tr><td colspan="5">No Lighthouse data available.</td></tr>'}</tbody>
-      </table>
-
-      <h3>Context Deltas vs Desktop Light</h3>
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Context</th>
-            <th scope="col">Perf Delta</th>
-            <th scope="col">A11y Delta</th>
-            <th scope="col">Practices Delta</th>
-            <th scope="col">SEO Delta</th>
-          </tr>
-        </thead>
-        <tbody>${contextDeltaRows || '<tr><td colspan="5">No context comparison data available.</td></tr>'}</tbody>
-      </table>
-
-      <details style="margin-top: 1em;">
-        <summary><strong>Mobile Dark vs Desktop Light Headline</strong></summary>
-        <ul style="margin: 0.5em 0; padding-left: 1.5em;">
-          <li>Performance: ${escapeHtml(contextHighlight.performance_score ?? "-")}</li>
-          <li>Accessibility: ${escapeHtml(contextHighlight.accessibility_score ?? "-")}</li>
-          <li>Best Practices: ${escapeHtml(contextHighlight.best_practices_score ?? "-")}</li>
-          <li>SEO: ${escapeHtml(contextHighlight.seo_score ?? "-")}</li>
-        </ul>
-      </details>
     </section>
 
     <section>
@@ -1200,47 +1325,6 @@ export function renderDailyReportPage(report) {
           </tr>
         </thead>
         <tbody>${institutionRows || '<tr><td colspan="8">No institution scorecards available in this run.</td></tr>'}</tbody>
-      </table>
-    </section>
-
-    <section>
-      ${sectionH2("theme-contexts", "Theme and Device Contexts")}
-      <p><em>Context baseline is desktop light. Deltas are current context minus baseline.</em></p>
-      <div class="cards">
-        <div class="card"><strong>Rows With Context Data</strong><br/>${escapeHtml(contextSummary.scanned_urls_with_context_data ?? "-")}</div>
-        <div class="card"><strong>Baseline</strong><br/>${escapeHtml(contextSummary.baseline_context ?? "desktop_light")}</div>
-        <div class="card"><strong>Mobile Dark Perf Delta</strong><br/>${escapeHtml(contextHighlight.performance_score ?? "-")}</div>
-        <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>${escapeHtml(contextHighlight.accessibility_score ?? "-")}</div>
-      </div>
-
-      ${renderLighthouseContextBarChart(contextByContext)}
-
-      <h3>Context Averages</h3>
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Context</th>
-            <th scope="col">Performance</th>
-            <th scope="col">Accessibility</th>
-            <th scope="col">Best Practices</th>
-            <th scope="col">SEO</th>
-          </tr>
-        </thead>
-        <tbody>${contextAverageRows || '<tr><td colspan="5">No context averages available in this run.</td></tr>'}</tbody>
-      </table>
-
-      <h3>Deltas vs Desktop Light</h3>
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Context</th>
-            <th scope="col">Performance Delta</th>
-            <th scope="col">Accessibility Delta</th>
-            <th scope="col">Best Practices Delta</th>
-            <th scope="col">SEO Delta</th>
-          </tr>
-        </thead>
-        <tbody>${contextDeltaRows || '<tr><td colspan="5">No context deltas available in this run.</td></tr>'}</tbody>
       </table>
     </section>
 
