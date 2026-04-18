@@ -1,5 +1,12 @@
 [
   {
+    "institution": "IRCC",
+    "pair_count": 3,
+    "high_gap_pair_count": 0,
+    "mean_abs_accessibility_gap": 2.67,
+    "mean_abs_performance_gap": 15
+  },
+  {
     "institution": "CBSA",
     "pair_count": 1,
     "high_gap_pair_count": 0,
@@ -11,62 +18,55 @@
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 19
+    "mean_abs_performance_gap": 1
   },
   {
     "institution": "CSPS",
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 44
+    "mean_abs_performance_gap": 0
   },
   {
     "institution": "ECCC",
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 44
+    "mean_abs_performance_gap": 25
   },
   {
     "institution": "ESDC",
     "pair_count": 10,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 21
-  },
-  {
-    "institution": "IRCC",
-    "pair_count": 3,
-    "high_gap_pair_count": 0,
-    "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 13.33
+    "mean_abs_performance_gap": 15.9
   },
   {
     "institution": "Justice",
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 3
+    "mean_abs_performance_gap": 5
   },
   {
     "institution": "PHAC",
     "pair_count": 2,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 22
+    "mean_abs_performance_gap": 33
   },
   {
     "institution": "StatsCan",
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 1
+    "mean_abs_performance_gap": 5
   },
   {
     "institution": "Unknown institution",
     "pair_count": 43,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 17.86
+    "mean_abs_performance_gap": 21.79
   }
 ]

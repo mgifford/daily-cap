@@ -1,7 +1,7 @@
 [
   {
     "cms": "unknown",
-    "count": 171,
+    "count": 169,
     "pages": [
       {
         "service_name": "Apply for a Social Insurance Number",
@@ -321,12 +321,12 @@
       {
         "service_name": "Aperçu",
         "language": "en",
-        "canonical_url": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview"
+        "canonical_url": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview"
       },
       {
         "service_name": "Aperçu",
         "language": "fr",
-        "canonical_url": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview"
+        "canonical_url": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview"
       },
       {
         "service_name": "Open Mail Page",
@@ -341,12 +341,12 @@
       {
         "service_name": "My Account: Mail - Language:fr",
         "language": "en",
-        "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01"
+        "canonical_url": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01"
       },
       {
         "service_name": "My Account: Mail - Language:fr",
         "language": "fr",
-        "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01"
+        "canonical_url": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01"
       },
       {
         "service_name": "Canada Revenue Agency - CRA sign-in information",
@@ -399,9 +399,9 @@
         "canonical_url": "https://www.canada.ca/fr/department-finance/news/2026/03/legislation-passes-to-implement-budget-2025-canada-strong.html"
       },
       {
-        "service_name": "Statement from the Canadian Forces Provost Marshal",
+        "service_name": "Canada Groceries and Essentials Benefit one-time top-up payment to make groceries and other essentials more affordable is coming June 5",
         "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/department-national-defence/news/2026/03/statement-from-the-canadian-forces-provost-marshal.html"
+        "canonical_url": "https://www.canada.ca/fr/revenue-agency/news/2026/04/canada-groceries-and-essentials-benefit-one-time-top-up-payment-to-make-groceries-and-other-essentials-more-affordable-is-coming-june-5.html"
       },
       {
         "service_name": "Canada Revenue Agency (CRA)",
@@ -585,11 +585,6 @@
       },
       {
         "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html"
-      },
-      {
-        "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html"
       },
@@ -599,16 +594,6 @@
         "canonical_url": "https://voyage.gc.ca/voyager/enfant/lettre-de-consentement"
       },
       {
-        "service_name": "5000-D1 Feuille de travail fédérale (pour tous sauf non-résidents)",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-d1.html"
-      },
-      {
-        "service_name": "5000-D1 Feuille de travail fédérale (pour tous sauf non-résidents)",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-d1.html"
-      },
-      {
         "service_name": "Informations sur la famille – Visiteurs, étudiants et travailleurs (IMM 5645)",
         "language": "en",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5645.html"
@@ -617,6 +602,16 @@
         "service_name": "Informations sur la famille – Visiteurs, étudiants et travailleurs (IMM 5645)",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5645.html"
+      },
+      {
+        "service_name": "5000-D1 Feuille de travail fédérale (pour tous sauf non-résidents)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-d1.html"
+      },
+      {
+        "service_name": "5000-D1 Feuille de travail fédérale (pour tous sauf non-résidents)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-d1.html"
       },
       {
         "service_name": "Open Mail Page",
@@ -749,11 +744,6 @@
         "canonical_url": "https://www.canada.ca/fr/sante-publique/services/video/maladie-lyme-bonne-facon-retirer-tique.html"
       },
       {
-        "service_name": "La bonne façon de retirer une tique",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/video/maladie-lyme-bonne-facon-retirer-tique.html"
-      },
-      {
         "service_name": "Tax information slips (T4 and more)",
         "language": "en",
         "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind"
@@ -862,7 +852,7 @@
   },
   {
     "cms": "aem",
-    "count": 36,
+    "count": 38,
     "pages": [
       {
         "service_name": "Consumer Price Index",
@@ -930,9 +920,9 @@
         "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-passes-to-implement-budget-2025-canada-strong.html"
       },
       {
-        "service_name": "Statement from the Canadian Forces Provost Marshal",
+        "service_name": "Canada Groceries and Essentials Benefit one-time top-up payment to make groceries and other essentials more affordable is coming June 5",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/department-national-defence/news/2026/03/statement-from-the-canadian-forces-provost-marshal.html"
+        "canonical_url": "https://www.canada.ca/en/revenue-agency/news/2026/04/canada-groceries-and-essentials-benefit-one-time-top-up-payment-to-make-groceries-and-other-essentials-more-affordable-is-coming-june-5.html"
       },
       {
         "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
@@ -1035,6 +1025,11 @@
         "canonical_url": "https://www.canada.ca/fr/ressources-naturelles-canada/nouvelles/2026/04/le-gouvernement-du-canada-investit-dans-une-nouvelle-usine-de-pointe-specialisee-en-fabrication-de-produits-du-bois-pour-renforcer-la-chaine-dappro.html"
       },
       {
+        "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html"
+      },
+      {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
         "language": "en",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html"
@@ -1043,6 +1038,11 @@
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html"
+      },
+      {
+        "service_name": "La bonne façon de retirer une tique",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/video/maladie-lyme-bonne-facon-retirer-tique.html"
       }
     ]
   },

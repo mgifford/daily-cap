@@ -491,7 +491,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 22901043
+    "page_load_count": 22895196
   },
   {
     "pair_id": "recent-11-en|recent-11-fr",
@@ -504,7 +504,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5026196
+    "page_load_count": 4862206
   },
   {
     "pair_id": "recent-11",
@@ -517,7 +517,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5026196
+    "page_load_count": 4862206
   },
   {
     "pair_id": "recent-16-en|recent-16-fr",
@@ -530,7 +530,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 480898
+    "page_load_count": 480411
   },
   {
     "pair_id": "recent-16",
@@ -543,7 +543,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 480898
+    "page_load_count": 480411
   },
   {
     "pair_id": "recent-17-en|recent-17-fr",
@@ -551,12 +551,12 @@
     "institution": null,
     "has_en": true,
     "has_fr": false,
-    "url_en": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
+    "url_en": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
     "url_fr": null,
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 405762
+    "page_load_count": 405423
   },
   {
     "pair_id": "recent-17",
@@ -565,11 +565,11 @@
     "has_en": false,
     "has_fr": true,
     "url_en": null,
-    "url_fr": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
+    "url_fr": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview",
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 405762
+    "page_load_count": 405423
   },
   {
     "pair_id": "recent-18-en|recent-18-fr",
@@ -582,7 +582,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 386600
+    "page_load_count": 385131
   },
   {
     "pair_id": "recent-18",
@@ -595,7 +595,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 386600
+    "page_load_count": 385131
   },
   {
     "pair_id": "recent-19-en|recent-19-fr",
@@ -603,12 +603,12 @@
     "institution": null,
     "has_en": true,
     "has_fr": false,
-    "url_en": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01",
+    "url_en": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01",
     "url_fr": null,
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 285088
+    "page_load_count": 284346
   },
   {
     "pair_id": "recent-19",
@@ -617,11 +617,11 @@
     "has_en": false,
     "has_fr": true,
     "url_en": null,
-    "url_fr": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01",
+    "url_fr": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01",
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 285088
+    "page_load_count": 284346
   },
   {
     "pair_id": "recent-2",
@@ -634,7 +634,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 18035927
+    "page_load_count": 18042247
   },
   {
     "pair_id": "recent-35-en|recent-35-fr",
@@ -647,7 +647,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 11247
+    "page_load_count": 11264
   },
   {
     "pair_id": "recent-35",
@@ -660,7 +660,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 11247
+    "page_load_count": 11264
   },
   {
     "pair_id": "recent-36-en|recent-36-fr",
@@ -673,7 +673,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 10603
+    "page_load_count": 10105
   },
   {
     "pair_id": "recent-36",
@@ -686,7 +686,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 10603
+    "page_load_count": 10105
   },
   {
     "pair_id": "recent-37-en|recent-37-fr",
@@ -699,7 +699,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 7899
+    "page_load_count": 9222
   },
   {
     "pair_id": "recent-37",
@@ -712,7 +712,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 7899
+    "page_load_count": 9222
   },
   {
     "pair_id": "recent-38-en|recent-38-fr",
@@ -725,7 +725,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 6708
+    "page_load_count": 6716
   },
   {
     "pair_id": "recent-38",
@@ -738,7 +738,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 6708
+    "page_load_count": 6716
   },
   {
     "pair_id": "recent-39-en|recent-39-fr",
@@ -751,7 +751,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5619
+    "page_load_count": 5631
   },
   {
     "pair_id": "recent-39",
@@ -764,7 +764,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 5619
+    "page_load_count": 5631
   },
   {
     "pair_id": "recent-4",
@@ -777,7 +777,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 4211172
+    "page_load_count": 4217901
   },
   {
     "pair_id": "recent-5",
@@ -790,7 +790,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 3669113
+    "page_load_count": 3670098
   },
   {
     "pair_id": "recent-50-en|recent-50-fr",
@@ -803,7 +803,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 34361
+    "page_load_count": 33948
   },
   {
     "pair_id": "recent-50",
@@ -816,7 +816,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 34361
+    "page_load_count": 33948
   },
   {
     "pair_id": "recent-57",
@@ -829,10 +829,10 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 17164
+    "page_load_count": 17075
   },
   {
-    "pair_id": "recent-58-en|recent-58-fr",
+    "pair_id": "recent-59-en|recent-59-fr",
     "service_name": "5000-D1 Feuille de travail fédérale (pour tous sauf non-résidents)",
     "institution": null,
     "has_en": true,
@@ -842,10 +842,10 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 16286
+    "page_load_count": 15896
   },
   {
-    "pair_id": "recent-58",
+    "pair_id": "recent-59",
     "service_name": "5000-D1 Feuille de travail fédérale (pour tous sauf non-résidents)",
     "institution": null,
     "has_en": false,
@@ -855,7 +855,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 16286
+    "page_load_count": 15896
   },
   {
     "pair_id": "recent-6",
@@ -868,10 +868,10 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 2689576
+    "page_load_count": 2689281
   },
   {
-    "pair_id": "recent-62",
+    "pair_id": "recent-63",
     "service_name": "CSA astronaut Jeremy Hansen&#39;s journey to the Moon",
     "institution": null,
     "has_en": true,
@@ -881,7 +881,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 12660
+    "page_load_count": 12740
   },
   {
     "pair_id": "recent-68",
@@ -894,7 +894,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 7329
+    "page_load_count": 7186
   },
   {
     "pair_id": "recent-7",
@@ -907,7 +907,7 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "sign-in",
-    "page_load_count": 1990385
+    "page_load_count": 1990097
   },
   {
     "pair_id": "recent-70",
@@ -920,7 +920,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 3471
+    "page_load_count": 3450
   },
   {
     "pair_id": "recent-71-en|recent-71-fr",
@@ -933,7 +933,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 2187
+    "page_load_count": 2186
   },
   {
     "pair_id": "recent-71",
@@ -946,7 +946,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 2187
+    "page_load_count": 2186
   },
   {
     "pair_id": "recent-72-en|recent-72-fr",
@@ -959,7 +959,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 1212
+    "page_load_count": 1210
   },
   {
     "pair_id": "recent-72",
@@ -972,7 +972,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 1212
+    "page_load_count": 1210
   },
   {
     "pair_id": "recent-75-en|recent-75-fr",
@@ -985,7 +985,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 999
+    "page_load_count": 988
   },
   {
     "pair_id": "recent-75",
@@ -998,7 +998,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 999
+    "page_load_count": 988
   },
   {
     "pair_id": "recent-76",
@@ -1011,7 +1011,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 819
+    "page_load_count": 830
   },
   {
     "pair_id": "recent-77",
@@ -1024,7 +1024,7 @@
     "tier": "tier-2",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 598
+    "page_load_count": 602
   },
   {
     "pair_id": "recent-79-en|recent-79-fr",
@@ -1037,7 +1037,7 @@
     "tier": "tier-3",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 514
+    "page_load_count": 517
   },
   {
     "pair_id": "recent-79",
@@ -1050,7 +1050,7 @@
     "tier": "tier-3",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 514
+    "page_load_count": 517
   },
   {
     "pair_id": "recent-8",
@@ -1063,6 +1063,6 @@
     "tier": "tier-1",
     "source": "recent",
     "service_pattern": "dashboard",
-    "page_load_count": 1631181
+    "page_load_count": 1620882
   }
 ]

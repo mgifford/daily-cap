@@ -1,19 +1,10 @@
 {
   "summary": {
-    "points": 12,
-    "start_date": "2026-04-03",
+    "points": 11,
+    "start_date": "2026-04-04",
     "end_date": "2026-04-18"
   },
   "points": [
-    {
-      "run_date": "2026-04-03",
-      "missing_french": 110,
-      "missing_english": 0,
-      "missing_statements": 146,
-      "high_accessibility_gap_pairs": 0,
-      "average_absolute_accessibility_gap": 0,
-      "directional_affected_share_percent": 38.14
-    },
     {
       "run_date": "2026-04-04",
       "missing_french": 110,
@@ -110,8 +101,8 @@
       "missing_english": 16,
       "missing_statements": 204,
       "high_accessibility_gap_pairs": 0,
-      "average_absolute_accessibility_gap": 0,
-      "directional_affected_share_percent": 36.24
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.63
     }
   ]
 }
