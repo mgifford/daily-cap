@@ -1110,6 +1110,7 @@ export function renderDailyReportPage(report) {
       </div>
     </section>
 
+    <!-- Anchor ID 'theme-contexts' retained for backward compatibility: the issue tracker links to #theme-contexts -->
     <section>
       ${sectionH2("theme-contexts", "Google Lighthouse Performance")}
       <p><em>Lighthouse scores measure page quality across performance, accessibility, best practices, and SEO across four rendering contexts (desktop/mobile, light/dark). Charts show daily mean scores over time.</em></p>
