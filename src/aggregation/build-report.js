@@ -7,6 +7,7 @@ import { computeTrendAnalysis } from "./trend-analysis.js";
 import { summarizeCohortQuality } from "./cohort-quality.js";
 import { summarizeLighthouseContexts } from "./lighthouse-context-analysis.js";
 import { summarizeBarrierHistory } from "./barrier-history.js";
+import { summarizeLighthouseHistory } from "./lighthouse-history.js";
 import { summarizePriorityIssues } from "./priority-issues.js";
 import { summarizeInstitutionScorecards } from "./institution-scorecards.js";
 import { summarizeInstitutionTrends } from "./institution-trends.js";
@@ -123,6 +124,7 @@ export function buildDailyReport({
 
   const trendAnalysis = computeTrendAnalysis(baseReport, previousReport);
   const barrierHistory = summarizeBarrierHistory(baseReport, historicalReports);
+  const lighthouseHistory = summarizeLighthouseHistory(baseReport, historicalReports);
   const priorityIssues = summarizePriorityIssues(baseReport, historicalReports);
   const institutionScorecards = summarizeInstitutionScorecards(baseReport.top_urls, priorityIssues);
   const institutionTrends = summarizeInstitutionTrends(baseReport, historicalReports);
@@ -131,6 +133,7 @@ export function buildDailyReport({
     ...baseReport,
     trend_analysis: trendAnalysis,
     barrier_history: barrierHistory,
+    lighthouse_history: lighthouseHistory,
     priority_issues: priorityIssues,
     institution_scorecards: institutionScorecards,
     institution_trends: institutionTrends,

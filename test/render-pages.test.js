@@ -72,6 +72,7 @@ const MINIMAL_REPORT = {
   cohort_quality: { summary: {}, distributions: { source_lineage: [] }, warnings: [], provenance_examples: [] },
   lighthouse_contexts: { summary: {}, by_context: {}, deltas: [], highlights: {} },
   barrier_history: { points: [] },
+  lighthouse_history: { points: [] },
   trend_analysis: { available: false, metrics: [], regressions: [] },
   priority_issues: { summary: {}, top_priority_issues: [], all_issues: [], recurring_issues: [] },
   institution_scorecards: { summary: {}, scorecards: [], all_scorecards: [] },
