@@ -41,6 +41,86 @@ function applyContextAdjustments(base, context) {
   };
 }
 
+/**
+ * Compute an accessibility score from raw HTML by checking for common
+ * signal deficiencies.  This is a static heuristic — not a real Lighthouse
+ * audit — but it produces per-page variation so that EN/FR parity gaps are
+ * meaningful even when a full browser-based scan is unavailable.
+ *
+ * Scoring starts at 100 and deducts for each detected problem:
+ *   - <img> tags missing an alt attribute        up to -20
+ *   - interactive <input>s without a label       up to -12
+ *   - missing lang attribute on <html>                  -7
+ *   - missing skip-navigation link                      -5
+ *   - <table> elements without any <th> cells           -7
+ *   - empty or generic link text (EN+FR)          up to -6
+ *
+ * Result is clamped to [20, 100].
+ *
+ * Limitations: uses regex-based HTML parsing and assumes reasonably
+ * well-formed markup.  HTML comments or CDATA sections containing tag-like
+ * strings may cause false positives or false negatives.  This is an
+ * automated directional signal, not a certified accessibility audit.
+ */
+export function computeAccessibilityScore(html) {
+  let score = 100;
+
+  // Penalize for <img> tags missing an alt attribute.
+  const imgTags = html.match(/<img\b[^>]*>/gi) || [];
+  const imgsWithoutAlt = imgTags.filter((tag) => !/\balt\s*=/i.test(tag)).length;
+  if (imgsWithoutAlt > 0) {
+    score -= Math.min(20, imgsWithoutAlt * 4);
+  }
+
+  // Penalize for interactive <input> elements without an associated label.
+  const inputTags = html.match(/<input\b[^>]*>/gi) || [];
+  const interactiveInputs = inputTags.filter(
+    (tag) =>
+      !/type\s*=\s*["']?\s*(hidden|submit|button|reset|image)\s*["']?/i.test(tag)
+  ).length;
+  const labelCount = (html.match(/<label\b/gi) || []).length;
+  const ariaLabelCount = (html.match(/\baria-label\s*=/gi) || []).length;
+  const ariaLabelledCount = (html.match(/\baria-labelledby\s*=/gi) || []).length;
+  const coveredByLabel = labelCount + ariaLabelCount + ariaLabelledCount;
+  if (interactiveInputs > 0 && coveredByLabel < interactiveInputs) {
+    score -= Math.min(12, (interactiveInputs - coveredByLabel) * 3);
+  }
+
+  // Penalize if the <html> element lacks a lang attribute.
+  if (!/<html\b[^>]*\blang\s*=/i.test(html)) {
+    score -= 7;
+  }
+
+  // Penalize for missing skip-navigation link.
+  // Checks common EN and FR patterns as well as generic id/href anchors.
+  if (
+    !/(id=["']skip|href=["']#(skip|main|content|contenu)|passer au contenu|aller au contenu|skip to (main|content))/i.test(
+      html
+    )
+  ) {
+    score -= 5;
+  }
+
+  // Penalize for <table> elements without any <th> header cells.
+  const tableCount = (html.match(/<table\b/gi) || []).length;
+  const thCount = (html.match(/<th\b/gi) || []).length;
+  if (tableCount > 0 && thCount === 0) {
+    score -= 7;
+  }
+
+  // Penalize for empty or generic link text (English and French).
+  const genericLinks = (
+    html.match(
+      /<a\b[^>]*>\s*(click here|more|read more|here|learn more|cliquez ici|plus|en savoir plus|lire la suite)\s*<\/a>/gi
+    ) || []
+  ).length;
+  if (genericLinks > 0) {
+    score -= Math.min(6, genericLinks * 2);
+  }
+
+  return Math.max(20, Math.min(100, score));
+}
+
 export async function runLighthouseScan(target, mode, contextInput = {}) {
   const context = normalizeContext(contextInput);
 
@@ -70,7 +150,7 @@ export async function runLighthouseScan(target, mode, contextInput = {}) {
   const size = Buffer.byteLength(html, "utf8");
 
   const performance = Math.max(20, 100 - Math.round(duration / 45));
-  const accessibility = html.includes("lang=") ? 78 : 62;
+  const accessibility = computeAccessibilityScore(html);
 
   const base = {
     performance_score: performance,
