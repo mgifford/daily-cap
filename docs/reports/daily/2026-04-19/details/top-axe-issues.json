@@ -1,0 +1,143 @@
+{
+  "summary": {
+    "scanned_urls": 180,
+    "urls_with_violations": 150,
+    "total_violations": 1268
+  },
+  "top_issues": [
+    {
+      "severity": "critical",
+      "total_occurrences": 2,
+      "affected_pages": 2,
+      "average_per_page": 1,
+      "sample_pages": [
+        {
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+          "language": "en",
+          "service_name": "Consumer Price Index",
+          "count": 1
+        },
+        {
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+          "language": "fr",
+          "service_name": "Consumer Price Index",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "severity": "serious",
+      "total_occurrences": 180,
+      "affected_pages": 180,
+      "average_per_page": 1,
+      "sample_pages": [
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+          "language": "en",
+          "service_name": "Apply for a Social Insurance Number",
+          "count": 1
+        },
+        {
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+          "language": "fr",
+          "service_name": "Apply for a Social Insurance Number",
+          "count": 1
+        },
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
+          "language": "en",
+          "service_name": "Check my Service Canada Account",
+          "count": 1
+        },
+        {
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
+          "language": "fr",
+          "service_name": "Check my Service Canada Account",
+          "count": 1
+        },
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html",
+          "language": "en",
+          "service_name": "Find your local Service Canada office",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "severity": "moderate",
+      "total_occurrences": 366,
+      "affected_pages": 180,
+      "average_per_page": 2,
+      "sample_pages": [
+        {
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+          "language": "en",
+          "service_name": "Consumer Price Index",
+          "count": 5
+        },
+        {
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+          "language": "fr",
+          "service_name": "Consumer Price Index",
+          "count": 5
+        },
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+          "language": "en",
+          "service_name": "Apply for a Social Insurance Number",
+          "count": 2
+        },
+        {
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+          "language": "fr",
+          "service_name": "Apply for a Social Insurance Number",
+          "count": 2
+        },
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
+          "language": "en",
+          "service_name": "Check my Service Canada Account",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "severity": "minor",
+      "total_occurrences": 720,
+      "affected_pages": 180,
+      "average_per_page": 4,
+      "sample_pages": [
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+          "language": "en",
+          "service_name": "Apply for a Social Insurance Number",
+          "count": 4
+        },
+        {
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+          "language": "fr",
+          "service_name": "Apply for a Social Insurance Number",
+          "count": 4
+        },
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html",
+          "language": "en",
+          "service_name": "Check my Service Canada Account",
+          "count": 4
+        },
+        {
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html",
+          "language": "fr",
+          "service_name": "Check my Service Canada Account",
+          "count": 4
+        },
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html",
+          "language": "en",
+          "service_name": "Find your local Service Canada office",
+          "count": 4
+        }
+      ]
+    }
+  ]
+}
