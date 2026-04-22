@@ -1,0 +1,1070 @@
+[
+  {
+    "cms": "unknown",
+    "count": 171,
+    "pages": [
+      {
+        "service_name": "Apply for a Social Insurance Number",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html"
+      },
+      {
+        "service_name": "Apply for a Social Insurance Number",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html"
+      },
+      {
+        "service_name": "Check my Service Canada Account",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/my-account.html"
+      },
+      {
+        "service_name": "Check my Service Canada Account",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html"
+      },
+      {
+        "service_name": "Find your local Service Canada office",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html"
+      },
+      {
+        "service_name": "Find your local Service Canada office",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html"
+      },
+      {
+        "service_name": "Canada Border Wait Times",
+        "language": "en",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html"
+      },
+      {
+        "service_name": "Canada Border Wait Times",
+        "language": "fr",
+        "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-fra.html"
+      },
+      {
+        "service_name": "Environment and Climate Change Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/environment-climate-change.html"
+      },
+      {
+        "service_name": "Environment and Climate Change Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/environnement-changement-climatique.html"
+      },
+      {
+        "service_name": "Justice Laws Website",
+        "language": "en",
+        "canonical_url": "https://laws-lois.justice.gc.ca/"
+      },
+      {
+        "service_name": "Justice Laws Website",
+        "language": "fr",
+        "canonical_url": "https://laws-lois.justice.gc.ca/"
+      },
+      {
+        "service_name": "Government of Canada Social Media",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/social-media.html"
+      },
+      {
+        "service_name": "Government of Canada Social Media",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/medias-sociaux.html"
+      },
+      {
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html"
+      },
+      {
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande.html"
+      },
+      {
+        "service_name": "Discovery: defence",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/defence.html"
+      },
+      {
+        "service_name": "Discovery: policing",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/policing.html"
+      },
+      {
+        "service_name": "Discovery:  - world-monde - index.aspx",
+        "language": "en",
+        "canonical_url": "https://www.international.gc.ca/world-monde/index.aspx?lang=eng"
+      },
+      {
+        "service_name": "Discovery: defence - nationalsecurity",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/defence/nationalsecurity.html"
+      },
+      {
+        "service_name": "Discovery: indigenous-peoples",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/indigenous-peoples.html"
+      },
+      {
+        "service_name": "Discovery: veterans-military",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/veterans-military.html"
+      },
+      {
+        "service_name": "Discovery: youth",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/youth.html"
+      },
+      {
+        "service_name": "Discovery: defence - caf",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/defence/caf.html"
+      },
+      {
+        "service_name": "Discovery: veterans-military - health-and-wellness-for-veterans-and-military-members",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/veterans-military/health-and-wellness-for-veterans-and-military-members.html"
+      },
+      {
+        "service_name": "Discovery:  - en - department-national-defence - services - benefits-military - pay-pension-benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/department-national-defence/services/benefits-military/pay-pension-benefits.html"
+      },
+      {
+        "service_name": "Discovery: benefits - education",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/education.html"
+      },
+      {
+        "service_name": "Discovery: benefits - disability",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/disability.html"
+      },
+      {
+        "service_name": "Discovery: benefits - finder",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/finder.html"
+      },
+      {
+        "service_name": "Discovery: benefits - audience",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/audience.html"
+      },
+      {
+        "service_name": "Discovery: taxes - business-number",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/business-number.html"
+      },
+      {
+        "service_name": "Discovery: taxes - gsthst",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/gsthst.html"
+      },
+      {
+        "service_name": "Discovery: taxes - payments",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/payments.html"
+      },
+      {
+        "service_name": "Discovery: taxes - child-and-family-benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/child-and-family-benefits.html"
+      },
+      {
+        "service_name": "Discovery: taxes - savings-and-pension-plans",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/savings-and-pension-plans.html"
+      },
+      {
+        "service_name": "Discovery: taxes - excise-taxes-duties-and-levies",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/excise-taxes-duties-and-levies.html"
+      },
+      {
+        "service_name": "Discovery: taxes - charities",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/charities.html"
+      },
+      {
+        "service_name": "Discovery: taxes - international-non-residents",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/international-non-residents.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - services - application",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/services/application.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - check-processing-times",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/check-processing-times.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - check-application-status",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/check-application-status.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - visit-canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/visit-canada.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - work-canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/work-canada.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - study-canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/study-canada.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - new-immigrants",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/new-immigrants.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - canadian-citizenship",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/canadian-citizenship.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - enforcement-violations",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/enforcement-violations.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - passport",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/passport.html"
+      },
+      {
+        "service_name": "Discovery: immigration-citizenship - services - canadian-passports",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship/services/canadian-passports.html"
+      },
+      {
+        "service_name": "Discovery: travel - advisories",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel/advisories.html"
+      },
+      {
+        "service_name": "Discovery: jobs - workplace - federal-labour-standards - pay",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/pay.html"
+      },
+      {
+        "service_name": "Discovery: business - grants",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/business/grants.html"
+      },
+      {
+        "service_name": "Sign in to your CRA account",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html"
+      },
+      {
+        "service_name": "Sign in to your CRA account",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/e-services/cra-login-services.html"
+      },
+      {
+        "service_name": "Canada Revenue Agency - CRA Sign-in",
+        "language": "en",
+        "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login"
+      },
+      {
+        "service_name": "Se connecter à son compte de l&#39;ARC",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-ouverture-session-arc.html"
+      },
+      {
+        "service_name": "Se connecter à son compte de l&#39;ARC",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/services-electroniques/services-ouverture-session-arc.html"
+      },
+      {
+        "service_name": "Agence du revenu du Canada (ARC)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu.html"
+      },
+      {
+        "service_name": "Agence du revenu du Canada (ARC)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu.html"
+      },
+      {
+        "service_name": "Mon dossier Service Canada (MDSC)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html"
+      },
+      {
+        "service_name": "Mon dossier Service Canada (MDSC)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/mon-dossier.html"
+      },
+      {
+        "service_name": "Page d&#39;accueil",
+        "language": "en",
+        "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/spoe"
+      },
+      {
+        "service_name": "Page d&#39;accueil",
+        "language": "fr",
+        "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/spoe"
+      },
+      {
+        "service_name": "Aperçu",
+        "language": "en",
+        "canonical_url": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview"
+      },
+      {
+        "service_name": "Aperçu",
+        "language": "fr",
+        "canonical_url": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/overview"
+      },
+      {
+        "service_name": "Open Mail Page",
+        "language": "en",
+        "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane"
+      },
+      {
+        "service_name": "Open Mail Page",
+        "language": "fr",
+        "canonical_url": "https://apps5.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane"
+      },
+      {
+        "service_name": "My Account: Mail - Language:fr",
+        "language": "en",
+        "canonical_url": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01"
+      },
+      {
+        "service_name": "My Account: Mail - Language:fr",
+        "language": "fr",
+        "canonical_url": "https://apps2.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01"
+      },
+      {
+        "service_name": "Canada Revenue Agency - CRA sign-in information",
+        "language": "en",
+        "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/postlogin/welcome"
+      },
+      {
+        "service_name": "New immigration and asylum measures from Bill C-12 (the Strengthening Canada’s Immigration System and Borders Act) have become law",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/news/2026/03/new-immigration-and-asylum-measures-from-bill-c-12-the-strengthening-canadas-immigration-system-and-borders-act-have-become-law.html"
+      },
+      {
+        "service_name": "Backgrounder: The new Canada Groceries and Essentials Benefit",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/department-finance/news/2026/01/the-new-canada-groceries-and-essentials-benefit.html"
+      },
+      {
+        "service_name": "Legislation Passes to Deliver New Canada Groceries and Essentials Benefit",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html"
+      },
+      {
+        "service_name": "Government of Canada raises the federal minimum wage",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html"
+      },
+      {
+        "service_name": "RCMP lays charges after CBSA seizes seven fraudulent passports hidden in a commercial shipment",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/border-services-agency/news/2026/04/rcmp-lays-charges-after-cbsa-makes-an-arrest-and-seizes-seven-fraudulent-passports-hidden-in-a-commercial-shipment.html"
+      },
+      {
+        "service_name": "Canada Groceries and Essentials Benefit one-time top-up payment to make groceries and other essentials more affordable is coming June 5",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/revenue-agency/news/2026/04/canada-groceries-and-essentials-benefit-one-time-top-up-payment-to-make-groceries-and-other-essentials-more-affordable-is-coming-june-5.html"
+      },
+      {
+        "service_name": "Government of Canada extends financial supports for post-secondary students",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/employment-social-development/news/2026/03/government-of-canada-extends-financial-supports-for-post-secondary-students.html"
+      },
+      {
+        "service_name": "Canada begins new “30 days or free” guarantee for passport processing",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/news/2026/03/canada-begins-new-30-days-or-free-guarantee-for-passport-processing.html"
+      },
+      {
+        "service_name": "Legislation passes to implement Budget 2025: Canada Strong",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/department-finance/news/2026/03/legislation-passes-to-implement-budget-2025-canada-strong.html"
+      },
+      {
+        "service_name": "Bill C-3: An Act to amend the Citizenship Act (2025) comes into effect",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/news/2025/12/bill-c-3-an-act-to-amend-the-citizenship-act-2025-comes-into-effect.html"
+      },
+      {
+        "service_name": "Canada Revenue Agency (CRA)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency.html"
+      },
+      {
+        "service_name": "Canada Revenue Agency (CRA)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/revenue-agency.html"
+      },
+      {
+        "service_name": "Overview",
+        "language": "en",
+        "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/overview"
+      },
+      {
+        "service_name": "T2201 Disability Tax Credit Certificate",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2201.html"
+      },
+      {
+        "service_name": "T2201 Disability Tax Credit Certificate",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/forms-publications/forms/t2201.html"
+      },
+      {
+        "service_name": "T2200 Declaration of Conditions of Employment",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2200.html"
+      },
+      {
+        "service_name": "T2200 Declaration of Conditions of Employment",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/forms-publications/forms/t2200.html"
+      },
+      {
+        "service_name": "Application for visitor visa (temporary resident visa) (IMM 5257)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257.html"
+      },
+      {
+        "service_name": "Application for visitor visa (temporary resident visa) (IMM 5257)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257.html"
+      },
+      {
+        "service_name": "TD1 2026 Personal Tax Credits Return",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1.html"
+      },
+      {
+        "service_name": "TD1 2026 Personal Tax Credits Return",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/forms-publications/td1-personal-tax-credits-returns/td1-forms-pay-received-on-january-1-later/td1.html"
+      },
+      {
+        "service_name": "Application to Change Conditions, Extend my Stay or Remain in Canada as a Worker (IMM 5710)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5710.html"
+      },
+      {
+        "service_name": "Application to Change Conditions, Extend my Stay or Remain in Canada as a Worker (IMM 5710)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5710.html"
+      },
+      {
+        "service_name": "Get the form and renew a passport in person in Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/apply-in-person.html"
+      },
+      {
+        "service_name": "Get the form and renew a passport in person in Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/canadian-passports/renew-adult-passport/submit-form-fees/apply-in-person.html"
+      },
+      {
+        "service_name": "Get the form for a new adult passport application in Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/new-adult-passport/get-application-form.html"
+      },
+      {
+        "service_name": "Get the form for a new adult passport application in Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/canadian-passports/new-adult-passport/get-application-form.html"
+      },
+      {
+        "service_name": "Schedule 1: Application for Temporary Residence (IMM 5257 SCH1)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257-sch1.html"
+      },
+      {
+        "service_name": "Schedule 1: Application for Temporary Residence (IMM 5257 SCH1)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5257-sch1.html"
+      },
+      {
+        "service_name": "Use of a Representative Form (IMM 5476)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5476.html"
+      },
+      {
+        "service_name": "Use of a Representative Form (IMM 5476)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5476.html"
+      },
+      {
+        "service_name": "Family Information Form – Visitors, Students and Workers (IMM 5645)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/imm5645.html"
+      },
+      {
+        "service_name": "Family Information Form – Visitors, Students and Workers (IMM 5645)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/application/application-forms-guides/imm5645.html"
+      },
+      {
+        "service_name": "Welcome",
+        "language": "en",
+        "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/spoe"
+      },
+      {
+        "service_name": "5005-R Déclaration de revenus et de prestations (pour QC seulement)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/quebec/5005-r.html"
+      },
+      {
+        "service_name": "5005-R Déclaration de revenus et de prestations (pour QC seulement)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/quebec/5005-r.html"
+      },
+      {
+        "service_name": "T2201 Certificat pour le crédit d&#39;impôt pour personnes handicapées",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2201.html"
+      },
+      {
+        "service_name": "T2201 Certificat pour le crédit d&#39;impôt pour personnes handicapées",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2201.html"
+      },
+      {
+        "service_name": "Demande de visa de visiteur (visa de résident temporaire) (IMM 5257)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257.html"
+      },
+      {
+        "service_name": "Demande de visa de visiteur (visa de résident temporaire) (IMM 5257)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257.html"
+      },
+      {
+        "service_name": "Obtenez le formulaire et renouveler un passeport en personne au Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/renouvellement-passeport-adulte/soumettre-formulaire-frais/presenter-en-personne.html"
+      },
+      {
+        "service_name": "Obtenez le formulaire et renouveler un passeport en personne au Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/renouvellement-passeport-adulte/soumettre-formulaire-frais/presenter-en-personne.html"
+      },
+      {
+        "service_name": "T2200 Déclaration des conditions de travail",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2200.html"
+      },
+      {
+        "service_name": "T2200 Déclaration des conditions de travail",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2200.html"
+      },
+      {
+        "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html"
+      },
+      {
+        "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html"
+      },
+      {
+        "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html"
+      },
+      {
+        "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html"
+      },
+      {
+        "service_name": "Lettre de consentement recommandée pour les enfants voyageant à l’étranger",
+        "language": "en",
+        "canonical_url": "https://voyage.gc.ca/voyager/enfant/lettre-de-consentement"
+      },
+      {
+        "service_name": "Informations sur la famille – Visiteurs, étudiants et travailleurs (IMM 5645)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5645.html"
+      },
+      {
+        "service_name": "Informations sur la famille – Visiteurs, étudiants et travailleurs (IMM 5645)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5645.html"
+      },
+      {
+        "service_name": "5000-D1 Feuille de travail fédérale (pour tous sauf non-résidents)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-d1.html"
+      },
+      {
+        "service_name": "5000-D1 Feuille de travail fédérale (pour tous sauf non-résidents)",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/trousses-impot-toutes-annees-imposition/trousse-generale-impot-prestations/5000-d1.html"
+      },
+      {
+        "service_name": "Open Mail Page",
+        "language": "en",
+        "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/communications/openLetter/previewPane"
+      },
+      {
+        "service_name": "Hear from Survivors about warning signs",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-safety-canada/campaigns/human-trafficking/described-videos.html"
+      },
+      {
+        "service_name": "Hear from Survivors about warning signs",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/public-safety-canada/campaigns/human-trafficking/described-videos.html"
+      },
+      {
+        "service_name": "CSA astronaut Jeremy Hansen&#39;s journey to the Moon",
+        "language": "en",
+        "canonical_url": "https://www.asc-csa.gc.ca/eng/astronauts/canadian/active/bio-jeremy-hansen.asp"
+      },
+      {
+        "service_name": "Save Time: Send a Complete Application",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/video/save-time-send-complete-application.html"
+      },
+      {
+        "service_name": "Save Time: Send a Complete Application",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/news/video/save-time-send-complete-application.html"
+      },
+      {
+        "service_name": "Create your account and submit your declaration",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-safety-canada/campaigns/firearms-buyback/submit-firearm-declaration-individual/start-declaration.html"
+      },
+      {
+        "service_name": "Create your account and submit your declaration",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/public-safety-canada/campaigns/firearms-buyback/submit-firearm-declaration-individual/start-declaration.html"
+      },
+      {
+        "service_name": "Video montage of CSA astronaut Jeremy Hansen watching the launch of Artemis I, the surface of the Moon and the Moon and Earth from Orion.",
+        "language": "en",
+        "canonical_url": "https://www.asc-csa.gc.ca/eng/missions/artemis-ii/"
+      },
+      {
+        "service_name": "blank video/audio title",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/department-national-defence/maple-leaf/defence/2026/03/life-change-happen-whatmatters-report.html"
+      },
+      {
+        "service_name": "blank video/audio title",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/department-national-defence/maple-leaf/defence/2026/03/life-change-happen-whatmatters-report.html"
+      },
+      {
+        "service_name": "My Account: Mail - Language:en",
+        "language": "en",
+        "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind/communications/home/screenid/MA-CC-01"
+      },
+      {
+        "service_name": "Montage vidéo où l&#39;astronaute de l&#39;ASC Jeremy Hansen regarde le lancement d&#39;Artemis I. On voit ensuite la surface de la Lune et une vue de la Lune et la Terre depuis le vaisseau spatial Orion.",
+        "language": "en",
+        "canonical_url": "https://www.asc-csa.gc.ca/fra/missions/artemis-ii/"
+      },
+      {
+        "service_name": "Images et vidéos à caractère sexuel",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
+      },
+      {
+        "service_name": "Images et vidéos à caractère sexuel",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
+      },
+      {
+        "service_name": "Assembler une trousse d&#39;urgence",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/services/police/urgences/protection/preparez-vous/kits-urgence.html"
+      },
+      {
+        "service_name": "Assembler une trousse d&#39;urgence",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/police/urgences/protection/preparez-vous/kits-urgence.html"
+      },
+      {
+        "service_name": "Ne gaspillez pas de temps. Envoyez une demande complète.",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/video/ne-gaspillez-temps-envoyez-demande-complete.html"
+      },
+      {
+        "service_name": "Ne gaspillez pas de temps. Envoyez une demande complète.",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/video/ne-gaspillez-temps-envoyez-demande-complete.html"
+      },
+      {
+        "service_name": "Créez votre compte et soumettez votre déclaration",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/rachat-armes-a-feu/soumettre-declaration-particulier-armes-feu/commencer-declaration.html"
+      },
+      {
+        "service_name": "Créez votre compte et soumettez votre déclaration",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/rachat-armes-a-feu/soumettre-declaration-particulier-armes-feu/commencer-declaration.html"
+      },
+      {
+        "service_name": "Vlogue 7 : Se préparer à amerrir dans le Pacifique",
+        "language": "en",
+        "canonical_url": "https://www.asc-csa.gc.ca/fra/missions/artemis-ii/etapes-de-la-mission.asp"
+      },
+      {
+        "service_name": "La bonne façon de retirer une tique",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/video/maladie-lyme-bonne-facon-retirer-tique.html"
+      },
+      {
+        "service_name": "La bonne façon de retirer une tique",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/video/maladie-lyme-bonne-facon-retirer-tique.html"
+      },
+      {
+        "service_name": "Vlogue 18 :  Même en mission lunaire, il faut aller au petit coin",
+        "language": "en",
+        "canonical_url": "https://www.asc-csa.gc.ca/fra/missions/artemis-ii/vie-a-bord-orion.asp"
+      },
+      {
+        "service_name": "blank video/audio title",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/programmes/reconnaissance-titres.html"
+      },
+      {
+        "service_name": "blank video/audio title",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/programmes/reconnaissance-titres.html"
+      },
+      {
+        "service_name": "Tax information slips (T4 and more)",
+        "language": "en",
+        "canonical_url": "https://apps6.ams-sga.cra-arc.gc.ca/en/gol-ged/mima/ngbeta/ind"
+      },
+      {
+        "service_name": "Personal income tax",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/income.html"
+      },
+      {
+        "service_name": "Personal income tax",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/impots/revenu.html"
+      },
+      {
+        "service_name": "Old Age Security and Supplement",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/oas.html"
+      },
+      {
+        "service_name": "Old Age Security and Supplement",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/srg.html"
+      },
+      {
+        "service_name": "Job search and benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/work.html"
+      },
+      {
+        "service_name": "Job search and benefits",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/travail.html"
+      },
+      {
+        "service_name": "Passport and travel",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/travel.html"
+      },
+      {
+        "service_name": "Passport and travel",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/voyages.html"
+      },
+      {
+        "service_name": "Student loans and grants",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/education-training/loans-grants.html"
+      },
+      {
+        "service_name": "Student loans and grants",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/education-formation/prets-bourses.html"
+      },
+      {
+        "service_name": "COVID-19 information",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/health/coronavirus-2019.html"
+      },
+      {
+        "service_name": "COVID-19 information",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/sante/coronavirus-2019.html"
+      },
+      {
+        "service_name": "Immigration and citizenship",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/immigration-citizenship.html"
+      },
+      {
+        "service_name": "Immigration and citizenship",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html"
+      },
+      {
+        "service_name": "Benefits and credits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits.html"
+      },
+      {
+        "service_name": "Benefits and credits",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations.html"
+      },
+      {
+        "service_name": "Employment Insurance",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html"
+      },
+      {
+        "service_name": "Employment Insurance",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/ae.html"
+      },
+      {
+        "service_name": "CPP and retirement",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits/publicpensions/cpp.html"
+      },
+      {
+        "service_name": "CPP and retirement",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc.html"
+      }
+    ]
+  },
+  {
+    "cms": "aem",
+    "count": 36,
+    "pages": [
+      {
+        "service_name": "Consumer Price Index",
+        "language": "en",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html"
+      },
+      {
+        "service_name": "Consumer Price Index",
+        "language": "fr",
+        "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html"
+      },
+      {
+        "service_name": "Health Infobase Canada",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/public-health/services/diseases.html"
+      },
+      {
+        "service_name": "Health Infobase Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/sante-publique/services/maladies.html"
+      },
+      {
+        "service_name": "New immigration and asylum measures from Bill C-12 (the Strengthening Canada’s Immigration System and Borders Act) have become law",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/new-immigration-and-asylum-measures-from-bill-c-12-the-strengthening-canadas-immigration-system-and-borders-act-have-become-law.html"
+      },
+      {
+        "service_name": "Backgrounder: The new Canada Groceries and Essentials Benefit",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/01/the-new-canada-groceries-and-essentials-benefit.html"
+      },
+      {
+        "service_name": "Legislation Passes to Deliver New Canada Groceries and Essentials Benefit",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/02/legislation-passes-to-deliver-new-canada-groceries-and-essentials-benefit.html"
+      },
+      {
+        "service_name": "Government of Canada raises the federal minimum wage",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-raises-the-federal-minimum-wage.html"
+      },
+      {
+        "service_name": "RCMP lays charges after CBSA seizes seven fraudulent passports hidden in a commercial shipment",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/border-services-agency/news/2026/04/rcmp-lays-charges-after-cbsa-makes-an-arrest-and-seizes-seven-fraudulent-passports-hidden-in-a-commercial-shipment.html"
+      },
+      {
+        "service_name": "Canada Groceries and Essentials Benefit one-time top-up payment to make groceries and other essentials more affordable is coming June 5",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency/news/2026/04/canada-groceries-and-essentials-benefit-one-time-top-up-payment-to-make-groceries-and-other-essentials-more-affordable-is-coming-june-5.html"
+      },
+      {
+        "service_name": "Government of Canada extends financial supports for post-secondary students",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/employment-social-development/news/2026/03/government-of-canada-extends-financial-supports-for-post-secondary-students.html"
+      },
+      {
+        "service_name": "Canada begins new “30 days or free” guarantee for passport processing",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/03/canada-begins-new-30-days-or-free-guarantee-for-passport-processing.html"
+      },
+      {
+        "service_name": "Legislation passes to implement Budget 2025: Canada Strong",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/department-finance/news/2026/03/legislation-passes-to-implement-budget-2025-canada-strong.html"
+      },
+      {
+        "service_name": "Bill C-3: An Act to amend the Citizenship Act (2025) comes into effect",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/2025/12/bill-c-3-an-act-to-amend-the-citizenship-act-2025-comes-into-effect.html"
+      },
+      {
+        "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html"
+      },
+      {
+        "service_name": "De nouvelles mesures en matière d’immigration et d’asile du projet de loi C-12 ( Loi visant à renforcer le système d’immigration et la frontière du Canada) sont entrées en vigueur",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/de-nouvelles-mesures-en-matiere-dimmigration-et-dasile-du-projet-de-loi-c-12--loi-visant-a-renforcer-le-systeme-dimmigration-et-la-frontiere-du-can.html"
+      },
+      {
+        "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
+      },
+      {
+        "service_name": "Document d&#39;information : La nouvelle Allocation canadienne pour l’épicerie et les besoins essentiels",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/01/la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
+      },
+      {
+        "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
+      },
+      {
+        "service_name": "Adoption du projet de loi permettant de verser la nouvelle allocation canadienne pour l’épicerie et les besoins essentiels",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/ministere-finances/nouvelles/2026/02/adoption-du-projet-de-loi-permettant-de-verser-la-nouvelle-allocation-canadienne-pour-lepicerie-et-les-besoins-essentiels.html"
+      },
+      {
+        "service_name": "Le versement supplémentaire de l’allocation canadienne pour l’épicerie et les besoins essentiels, qui vise à rendre l’épicerie et les autres produits essentiels plus abordables, sera effectué le 5 juin",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/nouvelles/2026/04/le-versement-unique-de-lallocation-canadienne-pour-lepicerie-et-les-besoins-essentiels-qui-vise-a-rendre-lepicerie-et-les-autres-produits-essentiel.html"
+      },
+      {
+        "service_name": "Le versement supplémentaire de l’allocation canadienne pour l’épicerie et les besoins essentiels, qui vise à rendre l’épicerie et les autres produits essentiels plus abordables, sera effectué le 5 juin",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agence-revenu/nouvelles/2026/04/le-versement-unique-de-lallocation-canadienne-pour-lepicerie-et-les-besoins-essentiels-qui-vise-a-rendre-lepicerie-et-les-autres-produits-essentiel.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada augmente le salaire minimum fédéral",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-augmente-le-salaire-minimum-federal.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada augmente le salaire minimum fédéral",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-augmente-le-salaire-minimum-federal.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada prolonge les mesures d’aide financière pour les étudiants de niveau postsecondaire",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-daide-financiere-pour-les-etudiants-de-niveau-postsecondaire.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada prolonge les mesures d’aide financière pour les étudiants de niveau postsecondaire",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/03/le-gouvernement-du-canada-prolonge-les-mesures-daide-financiere-pour-les-etudiants-de-niveau-postsecondaire.html"
+      },
+      {
+        "service_name": "Le Canada et le Québec signent une entente bilatérale pour la réalisation de projets dans le cadre du Fonds pour les solutions de transport en commun en milieu rural",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html"
+      },
+      {
+        "service_name": "Le Canada et le Québec signent une entente bilatérale pour la réalisation de projets dans le cadre du Fonds pour les solutions de transport en commun en milieu rural",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/logement-infrastructures-collectivites/nouvelles/2026/04/le-canada-et-le-quebec-signent-une-entente-bilaterale-pour-la-realisation-de-projets-dans-le-cadre-du-fonds-pour-les-solutions-de-transport-en-comm.html"
+      },
+      {
+        "service_name": "La période de renouvellement des inscriptions au Régime canadien de soins dentaires commence le 15 avril",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/04/la-periode-de-renouvellement-des-inscriptions-au-regime-canadien-de-soins-dentaires-commence-le-15-avril.html"
+      },
+      {
+        "service_name": "La période de renouvellement des inscriptions au Régime canadien de soins dentaires commence le 15 avril",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/nouvelles/2026/04/la-periode-de-renouvellement-des-inscriptions-au-regime-canadien-de-soins-dentaires-commence-le-15-avril.html"
+      },
+      {
+        "service_name": "Nouvelle mesure d’immigration pour appuyer les travailleurs et les employeurs du Québec",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/nouvelle-mesure-dimmigration-pour-appuyer-les-travailleurs-et-les-employeurs-du-quebec.html"
+      },
+      {
+        "service_name": "Nouvelle mesure d’immigration pour appuyer les travailleurs et les employeurs du Québec",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/nouvelles/2026/03/nouvelle-mesure-dimmigration-pour-appuyer-les-travailleurs-et-les-employeurs-du-quebec.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada annonce la prolongation de la période de report de l’impôt sur le revenu pour les éleveurs de bétail touchés par les cas de tuberculose bovine survenus en 2024 et 2025",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/agriculture-agroalimentaire/nouvelles/2026/03/le-gouvernement-du-canada-annonce-la-prolongation-de-la-periode-de-report-de-limpot-sur-le-revenu-pour-les-eleveurs-de-betail-touches-par-les-cas-d.html"
+      },
+      {
+        "service_name": "Le gouvernement du Canada annonce la prolongation de la période de report de l’impôt sur le revenu pour les éleveurs de bétail touchés par les cas de tuberculose bovine survenus en 2024 et 2025",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/agriculture-agroalimentaire/nouvelles/2026/03/le-gouvernement-du-canada-annonce-la-prolongation-de-la-periode-de-report-de-limpot-sur-le-revenu-pour-les-eleveurs-de-betail-touches-par-les-cas-d.html"
+      },
+      {
+        "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html"
+      },
+      {
+        "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/organisation/publications-guides/decouvrir-canada.html"
+      }
+    ]
+  },
+  {
+    "cms": "drupal",
+    "count": 3,
+    "pages": [
+      {
+        "service_name": "Discovery: finance",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/finance.html"
+      },
+      {
+        "service_name": "Sujets",
+        "language": "en",
+        "canonical_url": "https://www150.statcan.gc.ca/n1/fr/sujets"
+      },
+      {
+        "service_name": "Sujets",
+        "language": "fr",
+        "canonical_url": "https://www150.statcan.gc.ca/n1/fr/sujets"
+      }
+    ]
+  }
+]
