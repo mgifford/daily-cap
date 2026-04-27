@@ -2,8 +2,8 @@ name: Daily CAP Scan
 
 on:
   schedule:
-    # Run daily at 09:30 UTC
-    - cron: '30 9 * * *'
+    # Run Tuesday evenings at 23:00 UTC (7 PM EDT / 6 PM EST)
+    - cron: '0 23 * * 2'
   workflow_dispatch:
     inputs:
       run_date:
