@@ -1,0 +1,328 @@
+{
+  "summary": {
+    "institutions_scanned": 10,
+    "baseline_context": "desktop_light"
+  },
+  "by_institution": [
+    {
+      "institution": "ESDC",
+      "scanned_urls": 24,
+      "desktop_light": {
+        "accessibility_score": 100,
+        "performance_score": 52.42,
+        "best_practices_score": 70.75,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 97,
+        "performance_score": 54.13,
+        "best_practices_score": 70.75,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 100,
+        "performance_score": 40.38,
+        "best_practices_score": 68.75,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 97,
+        "performance_score": 51.67,
+        "best_practices_score": 68.75,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -0.75
+      }
+    },
+    {
+      "institution": "CBSA",
+      "scanned_urls": 2,
+      "desktop_light": {
+        "accessibility_score": 100,
+        "performance_score": 94,
+        "best_practices_score": 82,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 97,
+        "performance_score": 92,
+        "best_practices_score": 82,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 100,
+        "performance_score": 87.5,
+        "best_practices_score": 80,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 97,
+        "performance_score": 86,
+        "best_practices_score": 80,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -8
+      }
+    },
+    {
+      "institution": "ECCC",
+      "scanned_urls": 2,
+      "desktop_light": {
+        "accessibility_score": 100,
+        "performance_score": 54,
+        "best_practices_score": 82,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 97,
+        "performance_score": 39,
+        "best_practices_score": 82,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 100,
+        "performance_score": 36,
+        "best_practices_score": 80,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 97,
+        "performance_score": 44,
+        "best_practices_score": 80,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -10
+      }
+    },
+    {
+      "institution": "CSPS",
+      "scanned_urls": 2,
+      "desktop_light": {
+        "accessibility_score": 100,
+        "performance_score": 74.5,
+        "best_practices_score": 55,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 97,
+        "performance_score": 52.5,
+        "best_practices_score": 55,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 100,
+        "performance_score": 47,
+        "best_practices_score": 53,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 97,
+        "performance_score": 57,
+        "best_practices_score": 53,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -17.5
+      }
+    },
+    {
+      "institution": "StatsCan",
+      "scanned_urls": 2,
+      "desktop_light": {
+        "accessibility_score": 100,
+        "performance_score": 83,
+        "best_practices_score": 55,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 97,
+        "performance_score": 80.5,
+        "best_practices_score": 55,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 100,
+        "performance_score": 75,
+        "best_practices_score": 53,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 97,
+        "performance_score": 72.5,
+        "best_practices_score": 53,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -10.5
+      }
+    },
+    {
+      "institution": "PHAC",
+      "scanned_urls": 4,
+      "desktop_light": {
+        "accessibility_score": 100,
+        "performance_score": 48.75,
+        "best_practices_score": 68.5,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 97,
+        "performance_score": 66,
+        "best_practices_score": 68.5,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 100,
+        "performance_score": 41.75,
+        "best_practices_score": 66.5,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 97,
+        "performance_score": 33.75,
+        "best_practices_score": 66.5,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -15
+      }
+    },
+    {
+      "institution": "Health Canada/PHAC",
+      "scanned_urls": 1,
+      "desktop_light": {
+        "accessibility_score": 100,
+        "performance_score": 74,
+        "best_practices_score": 82,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 97,
+        "performance_score": 72,
+        "best_practices_score": 82,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 100,
+        "performance_score": 26,
+        "best_practices_score": 80,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 97,
+        "performance_score": 66,
+        "best_practices_score": 80,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -8
+      }
+    },
+    {
+      "institution": "CRA",
+      "scanned_urls": 10,
+      "desktop_light": {
+        "accessibility_score": 100,
+        "performance_score": 60.1,
+        "best_practices_score": 71.2,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 97,
+        "performance_score": 52.3,
+        "best_practices_score": 71.2,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 100,
+        "performance_score": 47.9,
+        "best_practices_score": 69.2,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 97,
+        "performance_score": 33.7,
+        "best_practices_score": 69.2,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -26.4
+      }
+    },
+    {
+      "institution": "IRCC",
+      "scanned_urls": 18,
+      "desktop_light": {
+        "accessibility_score": 99.56,
+        "performance_score": 56.94,
+        "best_practices_score": 64,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 96.56,
+        "performance_score": 57.67,
+        "best_practices_score": 64,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 99.56,
+        "performance_score": 47.39,
+        "best_practices_score": 62,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 96.56,
+        "performance_score": 38.22,
+        "best_practices_score": 62,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -18.72
+      }
+    },
+    {
+      "institution": "Justice",
+      "scanned_urls": 2,
+      "desktop_light": {
+        "accessibility_score": 95,
+        "performance_score": 97,
+        "best_practices_score": 82,
+        "seo_score": 85
+      },
+      "desktop_dark": {
+        "accessibility_score": 92,
+        "performance_score": 94.5,
+        "best_practices_score": 82,
+        "seo_score": 85
+      },
+      "mobile_light": {
+        "accessibility_score": 95,
+        "performance_score": 90.5,
+        "best_practices_score": 80,
+        "seo_score": 84
+      },
+      "mobile_dark": {
+        "accessibility_score": 92,
+        "performance_score": 88,
+        "best_practices_score": 80,
+        "seo_score": 84
+      },
+      "mobile_dark_vs_desktop_light": {
+        "accessibility_delta": -3,
+        "performance_delta": -9
+      }
+    }
+  ]
+}

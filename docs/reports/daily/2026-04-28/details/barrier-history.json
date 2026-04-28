@@ -1,0 +1,144 @@
+{
+  "summary": {
+    "points": 15,
+    "start_date": "2026-04-13",
+    "end_date": "2026-04-28"
+  },
+  "points": [
+    {
+      "run_date": "2026-04-13",
+      "missing_french": 110,
+      "missing_english": 0,
+      "missing_statements": 150,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": null,
+      "directional_affected_share_percent": 115
+    },
+    {
+      "run_date": "2026-04-15",
+      "missing_french": 65,
+      "missing_english": 15,
+      "missing_statements": 204,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0,
+      "directional_affected_share_percent": 36.28
+    },
+    {
+      "run_date": "2026-04-16",
+      "missing_french": 65,
+      "missing_english": 15,
+      "missing_statements": 206,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0,
+      "directional_affected_share_percent": 59.94
+    },
+    {
+      "run_date": "2026-04-17",
+      "missing_french": 67,
+      "missing_english": 16,
+      "missing_statements": 203,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0,
+      "directional_affected_share_percent": 36.29
+    },
+    {
+      "run_date": "2026-04-18",
+      "missing_french": 66,
+      "missing_english": 16,
+      "missing_statements": 204,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.63
+    },
+    {
+      "run_date": "2026-04-19",
+      "missing_french": 66,
+      "missing_english": 16,
+      "missing_statements": 206,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0,
+      "directional_affected_share_percent": 42.51
+    },
+    {
+      "run_date": "2026-04-20",
+      "missing_french": 67,
+      "missing_english": 17,
+      "missing_statements": 204,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.64
+    },
+    {
+      "run_date": "2026-04-21",
+      "missing_french": 66,
+      "missing_english": 16,
+      "missing_statements": 204,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.64
+    },
+    {
+      "run_date": "2026-04-22",
+      "missing_french": 66,
+      "missing_english": 16,
+      "missing_statements": 204,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.64
+    },
+    {
+      "run_date": "2026-04-23",
+      "missing_french": 67,
+      "missing_english": 16,
+      "missing_statements": 203,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.65
+    },
+    {
+      "run_date": "2026-04-24",
+      "missing_french": 67,
+      "missing_english": 16,
+      "missing_statements": 203,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.65
+    },
+    {
+      "run_date": "2026-04-25",
+      "missing_french": 68,
+      "missing_english": 17,
+      "missing_statements": 203,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.66
+    },
+    {
+      "run_date": "2026-04-26",
+      "missing_french": 68,
+      "missing_english": 16,
+      "missing_statements": 202,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.66
+    },
+    {
+      "run_date": "2026-04-27",
+      "missing_french": 68,
+      "missing_english": 16,
+      "missing_statements": 202,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.66
+    },
+    {
+      "run_date": "2026-04-28",
+      "missing_french": 69,
+      "missing_english": 17,
+      "missing_statements": 202,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.13,
+      "directional_affected_share_percent": 12.67
+    }
+  ]
+}
