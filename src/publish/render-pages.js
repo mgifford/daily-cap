@@ -1874,7 +1874,7 @@ export function render404Page() {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Page Not Found &mdash; Daily CAP</title>
+  <title>Page Not Found — Daily CAP</title>
   <link rel="stylesheet" href="./reports/assets/report.css" />
   <script>(function(){var s=localStorage.getItem('cap-preferred-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();</script>
 </head>
