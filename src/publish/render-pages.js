@@ -368,7 +368,7 @@ function renderLighthouseContextHistoryChart(historyPoints) {
       ${dateLabels}
       ${summaryLegend}
     </svg>
-    <figcaption>Daily mean Lighthouse scores (0&#8211;100) over time, desktop light context. Blue&#160;=&#160;Performance, Green&#160;=&#160;Accessibility, Purple&#160;=&#160;Best Practices, Red&#160;=&#160;SEO.</figcaption>
+    <figcaption>Daily mean Lighthouse scores (0&#8211;100) over time, desktop light context. Metrics: Performance, Accessibility, Best Practices, SEO (distinguished by color in the chart legend).</figcaption>
   </figure>`;
 
   // --- Detail charts: one per metric, all four contexts ---
@@ -405,7 +405,7 @@ function renderLighthouseContextHistoryChart(historyPoints) {
       ${dateLabels}
       ${contextLegend}
     </svg>
-    <figcaption>Lighthouse ${escapeHtml(metric.label)} (0&#8211;100) over time. Blue&#160;=&#160;Desktop, Red&#160;=&#160;Mobile; solid&#160;=&#160;light mode, dashed&#160;=&#160;dark mode.</figcaption>
+    <figcaption>Lighthouse ${escapeHtml(metric.label)} (0&#8211;100) over time across four scan contexts: desktop light (solid blue), desktop dark (dashed blue), mobile light (solid red), mobile dark (dashed red).</figcaption>
   </figure>`;
     })
     .join("\n");
@@ -413,7 +413,7 @@ function renderLighthouseContextHistoryChart(historyPoints) {
   return `${summaryChart}
   <details style="margin-top: 1em;">
     <summary><strong>View scores by scan context</strong> (desktop light, desktop dark, mobile light, mobile dark)</summary>
-    <p><em>Blue&#160;=&#160;Desktop, Red&#160;=&#160;Mobile; solid&#160;=&#160;light mode, dashed&#160;=&#160;dark mode. Performance typically shows the most variation across contexts.</em></p>
+    <p><em>Each chart shows four scan contexts: desktop light (solid blue), desktop dark (dashed blue), mobile light (solid red), mobile dark (dashed red). Performance typically shows the most variation across contexts.</em></p>
     ${detailCharts}
   </details>`;
 }
