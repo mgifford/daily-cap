@@ -271,7 +271,7 @@ function renderLighthouseContextHistoryChart(historyPoints) {
     return "<p>No Lighthouse history data available yet.</p>";
   }
 
-  const contexts = [
+  const allContexts = [
     { key: "desktop_light", label: "Desktop Light", color: "#235d8b", dash: "" },
     { key: "desktop_dark", label: "Desktop Dark", color: "#235d8b", dash: "6,3" },
     { key: "mobile_light", label: "Mobile Light", color: "#b5402d", dash: "" },
@@ -279,10 +279,10 @@ function renderLighthouseContextHistoryChart(historyPoints) {
   ];
 
   const metrics = [
-    { key: "performance_score", label: "Performance" },
-    { key: "accessibility_score", label: "Accessibility" },
-    { key: "best_practices_score", label: "Best Practices" },
-    { key: "seo_score", label: "SEO" }
+    { key: "performance_score", label: "Performance", color: "#235d8b" },
+    { key: "accessibility_score", label: "Accessibility", color: "#1d6b42" },
+    { key: "best_practices_score", label: "Best Practices", color: "#7b4f9e" },
+    { key: "seo_score", label: "SEO", color: "#b5402d" }
   ];
 
   const W = 860;
@@ -339,7 +339,40 @@ function renderLighthouseContextHistoryChart(historyPoints) {
     })
     .join("\n");
 
-  const legend = contexts
+  // --- Summary chart: all 4 metrics, desktop light only ---
+  const summaryLegend = metrics
+    .map((metric, i) => {
+      const lx = padL + plotW + 12;
+      const ly = padT + 6 + i * 22;
+      return `<line x1="${lx}" y1="${ly + 6}" x2="${lx + 20}" y2="${ly + 6}" stroke="${escapeHtml(metric.color)}" stroke-width="2" /><text x="${lx + 24}" y="${ly + 10}" font-size="11">${escapeHtml(metric.label)}</text>`;
+    })
+    .join("\n");
+
+  const summaryLines = metrics
+    .map((metric) => {
+      const pts = pointsForContextMetric("desktop_light", metric.key);
+      const path = linePath(pts);
+      const dots = dotMarkers(pts, metric.color);
+      return path ? `<path d="${path}" fill="none" stroke="${escapeHtml(metric.color)}" stroke-width="2" />${dots}` : "";
+    })
+    .join("\n");
+
+  const summaryChart = `<figure>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="lh-hist-summary-title lh-hist-summary-desc" class="history-chart">
+      <title id="lh-hist-summary-title">Lighthouse scores over time (desktop)</title>
+      <desc id="lh-hist-summary-desc">Line chart showing daily mean Lighthouse performance, accessibility, best practices, and SEO scores (0–100) over time for the desktop light scan context.</desc>
+      <line x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" stroke="#7f9685" stroke-width="1.5" />
+      <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + plotH}" stroke="#7f9685" stroke-width="1.5" />
+      ${yTicks}
+      ${summaryLines}
+      ${dateLabels}
+      ${summaryLegend}
+    </svg>
+    <figcaption>Daily mean Lighthouse scores (0&#8211;100) over time, desktop light context. Metrics: Performance, Accessibility, Best Practices, SEO (distinguished by color in the chart legend).</figcaption>
+  </figure>`;
+
+  // --- Detail charts: one per metric, all four contexts ---
+  const contextLegend = allContexts
     .map((ctx, i) => {
       const lx = padL + plotW + 12;
       const ly = padT + 6 + i * 22;
@@ -348,9 +381,9 @@ function renderLighthouseContextHistoryChart(historyPoints) {
     })
     .join("\n");
 
-  const charts = metrics
+  const detailCharts = metrics
     .map((metric) => {
-      const lines = contexts
+      const lines = allContexts
         .map((ctx) => {
           const pts = pointsForContextMetric(ctx.key, metric.key);
           const path = linePath(pts);
@@ -370,14 +403,19 @@ function renderLighthouseContextHistoryChart(historyPoints) {
       ${yTicks}
       ${lines}
       ${dateLabels}
-      ${legend}
+      ${contextLegend}
     </svg>
-    <figcaption>Lighthouse ${escapeHtml(metric.label)} (0&#8211;100) over time. Blue&#160;=&#160;Desktop, Red&#160;=&#160;Mobile; solid&#160;=&#160;light mode, dashed&#160;=&#160;dark mode.</figcaption>
+    <figcaption>Lighthouse ${escapeHtml(metric.label)} (0&#8211;100) over time across four scan contexts: desktop light (solid blue), desktop dark (dashed blue), mobile light (solid red), mobile dark (dashed red).</figcaption>
   </figure>`;
     })
     .join("\n");
 
-  return charts;
+  return `${summaryChart}
+  <details style="margin-top: 1em;">
+    <summary><strong>View scores by scan context</strong> (desktop light, desktop dark, mobile light, mobile dark)</summary>
+    <p><em>Each chart shows four scan contexts: desktop light (solid blue), desktop dark (dashed blue), mobile light (solid red), mobile dark (dashed red). Performance typically shows the most variation across contexts.</em></p>
+    ${detailCharts}
+  </details>`;
 }
 
 
@@ -1121,8 +1159,8 @@ export function renderDailyReportPage(report) {
         <div class="card"><strong>Mobile Dark A11y Delta</strong><br/>${escapeHtml(contextHighlight.accessibility_score ?? "-")}</div>
       </div>
 
-      <h3>Scores Over Time by Context</h3>
-      <p><em>Blue&#160;=&#160;Desktop, Red&#160;=&#160;Mobile; solid&#160;=&#160;light mode, dashed&#160;=&#160;dark mode.</em></p>
+      <h3>Scores Over Time</h3>
+      <p><em>Daily mean scores for the desktop light context. Expand the accordion below the chart to compare all four scan contexts (desktop/mobile, light/dark).</em></p>
       ${renderLighthouseContextHistoryChart(lighthouseHistory)}
 
       <h3>Today&#8217;s Scores by Context</h3>
