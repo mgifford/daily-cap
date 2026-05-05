@@ -6,6 +6,7 @@ import {
   renderDashboardPage,
   renderHomePage,
   renderArchiveIndexPage,
+  render404Page,
   renderPriorityIssuesPage,
   renderRecurringIssuesPage,
   renderInstitutionScorecardsPage,
@@ -136,5 +137,9 @@ export async function publishReport({ report, outputRoot }) {
   await writeTextFile(
     path.join(reportsDir, "archive", "index.html"),
     renderArchiveIndexPage(archivedDates)
+  );
+  await writeTextFile(
+    path.join(outputRoot, "docs", "404.html"),
+    render404Page()
   );
 }

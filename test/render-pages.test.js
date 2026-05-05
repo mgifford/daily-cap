@@ -23,6 +23,7 @@ import {
   renderDashboardPage,
   renderHomePage,
   renderArchiveIndexPage,
+  render404Page,
 } from "../src/publish/render-pages.js";
 
 // ---------------------------------------------------------------------------
@@ -755,5 +756,52 @@ describe("footer presence", () => {
       renderInstitutionTrendPage(MINIMAL_REPORT, MINIMAL_INSTITUTION_TREND),
       "renderInstitutionTrendPage"
     );
+  });
+
+  it("render404Page includes footer with GitHub link", () => {
+    assertFooter(render404Page(), "render404Page");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// render404Page
+// ---------------------------------------------------------------------------
+
+describe("render404Page", () => {
+  it("renders without throwing", () => {
+    assert.doesNotThrow(() => render404Page());
+  });
+
+  it("includes structural landmarks", () => {
+    const html = render404Page();
+    assertStructural(html, "render404Page");
+    assert.ok(html.includes("<footer"), "render404Page: footer landmark present");
+  });
+
+  it("includes theme toggle button with SVG icon and aria-label", () => {
+    const html = render404Page();
+    assertThemeToggle(html, "render404Page");
+  });
+
+  it("all page content is contained within landmarks", () => {
+    const html = render404Page();
+    assert.ok(html.includes("<main"), "main landmark present");
+    assert.ok(html.includes("<header"), "header landmark present");
+    assert.ok(html.includes("<footer"), "footer landmark present");
+    // The h1 must appear inside main
+    const mainStart = html.indexOf("<main");
+    const mainEnd = html.indexOf("</main>");
+    const h1Pos = html.indexOf("<h1");
+    assert.ok(h1Pos > mainStart && h1Pos < mainEnd, "h1 is inside main landmark");
+  });
+
+  it("includes a link back to the home page", () => {
+    const html = render404Page();
+    assert.ok(html.includes('href="./index.html"'), "home page link present");
+  });
+
+  it("uses lang=en", () => {
+    const html = render404Page();
+    assert.ok(html.includes('lang="en"'), "lang attribute is en");
   });
 });
