@@ -1888,7 +1888,7 @@ export function render404Page() {
     <p>The page you requested could not be found.</p>
     <p><a href="./index.html"><span aria-hidden="true">&#8592;</span> Go to the Daily CAP home page</a></p>
   </main>
-  ${renderPageFooter()}
+${renderPageFooter()}
   <script>
     (function () {
       var THEME_KEY = 'cap-preferred-theme';
