@@ -24,7 +24,7 @@ function safeId(value) {
 
 function renderPageFooter() {
   return `  <footer>
-    <p>Daily CAP <span aria-hidden="true">&mdash;</span> <a href="https://github.com/mgifford/daily-cap">View source on GitHub</a> <span aria-hidden="true">&mdash;</span> <a href="https://github.com/mgifford/daily-cap/issues">Report an issue</a> <span aria-hidden="true">&mdash;</span> Contributions welcome</p>
+    <p>Daily CAP <span aria-hidden="true">—</span> <a href="https://github.com/mgifford/daily-cap">View source on GitHub</a> <span aria-hidden="true">—</span> <a href="https://github.com/mgifford/daily-cap/issues">Report an issue</a> <span aria-hidden="true">—</span> Contributions welcome</p>
   </footer>`;
 }
 
