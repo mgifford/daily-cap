@@ -1886,7 +1886,7 @@ export function render404Page() {
   <main>
     <h1>Page Not Found</h1>
     <p>The page you requested could not be found.</p>
-    <p><a href="./index.html"><span aria-hidden="true">&#8592;</span> Go to the Daily CAP home page</a></p>
+    <p><a href="./index.html"><span aria-hidden="true">←</span> Go to the Daily CAP home page</a></p>
   </main>
 ${renderPageFooter()}
   <script>
