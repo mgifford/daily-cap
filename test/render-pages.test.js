@@ -109,6 +109,18 @@ function assertStructural(html, label) {
   assert.ok(html.includes("<header"), `${label}: header landmark present`);
 }
 
+function assertFooter(html, label) {
+  assert.ok(html.includes("<footer"), `${label}: footer element present`);
+  assert.ok(
+    html.includes('href="https://github.com/mgifford/daily-cap"'),
+    `${label}: GitHub repo link present`
+  );
+  assert.ok(
+    html.includes("Contributions welcome"),
+    `${label}: contribution invitation present`
+  );
+}
+
 function assertThemeToggle(html, label) {
   assert.ok(
     html.includes('id="theme-toggle"'),
@@ -711,18 +723,6 @@ describe("renderArchiveIndexPage", () => {
 // ---------------------------------------------------------------------------
 
 describe("footer presence", () => {
-  function assertFooter(html, label) {
-    assert.ok(html.includes("<footer"), `${label}: footer element present`);
-    assert.ok(
-      html.includes('href="https://github.com/mgifford/daily-cap"'),
-      `${label}: GitHub repo link present`
-    );
-    assert.ok(
-      html.includes("Contributions welcome"),
-      `${label}: contribution invitation present`
-    );
-  }
-
   it("renderDailyReportPage includes footer with GitHub link", () => {
     assertFooter(renderDailyReportPage(MINIMAL_REPORT), "renderDailyReportPage");
   });
@@ -757,10 +757,6 @@ describe("footer presence", () => {
       "renderInstitutionTrendPage"
     );
   });
-
-  it("render404Page includes footer with GitHub link", () => {
-    assertFooter(render404Page(), "render404Page");
-  });
 });
 
 // ---------------------------------------------------------------------------
@@ -775,7 +771,7 @@ describe("render404Page", () => {
   it("includes structural landmarks", () => {
     const html = render404Page();
     assertStructural(html, "render404Page");
-    assert.ok(html.includes("<footer"), "render404Page: footer landmark present");
+    assertFooter(html, "render404Page");
   });
 
   it("includes theme toggle button with SVG icon and aria-label", () => {
