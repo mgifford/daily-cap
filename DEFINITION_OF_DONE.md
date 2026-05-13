@@ -85,20 +85,20 @@ Before sign-off:
 - any report-facing documentation changes needed to explain methodology or output changes are included
 - known gaps, confidence limits, and incomplete coverage are disclosed rather than silently ignored
 
-## Practical release checklist
+## Practical release gates
 
-A Daily CAP report is done when all of the following are true:
+A Daily CAP report is done only when each release gate below evaluates to true.
 
-- [ ] The run used supported Canadian federal service-entry inputs and preserved provenance.
-- [ ] English and French URLs were handled as separate targets where both exist.
-- [ ] The pipeline completed ingest, scan, aggregate, and publish steps successfully.
-- [ ] The dated HTML and JSON report artifacts were generated in the expected locations.
-- [ ] The public report includes the current core summary, parity, statement, trend, and issue sections.
-- [ ] Methodology caveats are visible and use precise automated-signal language.
-- [ ] Accessibility and HTML safety requirements were preserved.
-- [ ] `npm install` and `npm test` succeeded for the repository state being released.
-- [ ] Any partial data, fallback behaviour, or coverage gaps are explicitly disclosed.
-- [ ] The result is stable enough to compare with past and future Daily CAP reports without ambiguity.
+1. The run used supported Canadian federal service-entry inputs and preserved provenance.
+2. English and French URLs were handled as separate targets where both exist.
+3. The pipeline completed ingest, scan, aggregate, and publish steps successfully.
+4. The dated HTML and JSON report artifacts were generated in the expected locations.
+5. The public report includes the current core summary, parity, statement, trend, and issue sections.
+6. Methodology caveats are visible and use precise automated-signal language.
+7. Accessibility and HTML safety requirements were preserved.
+8. `npm install` and `npm test` succeeded for the repository state being released.
+9. Any partial data, fallback behaviour, or coverage gaps are explicitly disclosed.
+10. The result is stable enough to compare with past and future Daily CAP reports without ambiguity.
 
 ## Not done
 
