@@ -1,0 +1,45 @@
+{
+  "summary": {
+    "points": 4,
+    "start_date": "2026-08-11",
+    "end_date": "2026-09-02"
+  },
+  "points": [
+    {
+      "run_date": "2026-08-11",
+      "missing_french": 61,
+      "missing_english": 17,
+      "missing_statements": 211,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.1,
+      "directional_affected_share_percent": 11.43
+    },
+    {
+      "run_date": "2026-08-18",
+      "missing_french": 63,
+      "missing_english": 17,
+      "missing_statements": 209,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.08,
+      "directional_affected_share_percent": 11.45
+    },
+    {
+      "run_date": "2026-08-25",
+      "missing_french": 63,
+      "missing_english": 17,
+      "missing_statements": 209,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0.08,
+      "directional_affected_share_percent": 11.42
+    },
+    {
+      "run_date": "2026-09-02",
+      "missing_french": 61,
+      "missing_english": 13,
+      "missing_statements": 207,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0,
+      "directional_affected_share_percent": 11.85
+    }
+  ]
+}
