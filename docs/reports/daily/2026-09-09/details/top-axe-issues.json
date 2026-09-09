@@ -1,0 +1,161 @@
+{
+  "summary": {
+    "scanned_urls": 210,
+    "urls_with_violations": 176,
+    "total_violations": 1596
+  },
+  "top_issues": [
+    {
+      "severity": "critical",
+      "total_occurrences": 15,
+      "affected_pages": 15,
+      "average_per_page": 1,
+      "sample_pages": [
+        {
+          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "language": "en",
+          "service_name": "Justice Laws Website",
+          "count": 1
+        },
+        {
+          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "language": "fr",
+          "service_name": "Justice Laws Website",
+          "count": 1
+        },
+        {
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+          "language": "en",
+          "service_name": "Consumer Price Index",
+          "count": 1
+        },
+        {
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+          "language": "fr",
+          "service_name": "Consumer Price Index",
+          "count": 1
+        },
+        {
+          "canonical_url": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/spoe",
+          "language": "en",
+          "service_name": "Page d&#39;accueil",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "severity": "serious",
+      "total_occurrences": 240,
+      "affected_pages": 210,
+      "average_per_page": 1.1,
+      "sample_pages": [
+        {
+          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "language": "en",
+          "service_name": "Justice Laws Website",
+          "count": 3
+        },
+        {
+          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "language": "fr",
+          "service_name": "Justice Laws Website",
+          "count": 3
+        },
+        {
+          "canonical_url": "https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login",
+          "language": "en",
+          "service_name": "Canada Revenue Agency - CRA Sign-in",
+          "count": 3
+        },
+        {
+          "canonical_url": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/spoe",
+          "language": "en",
+          "service_name": "Page d&#39;accueil",
+          "count": 3
+        },
+        {
+          "canonical_url": "https://apps7.ams-sga.cra-arc.gc.ca/fr/gol-ged/mima/ngbeta/spoe",
+          "language": "fr",
+          "service_name": "Page d&#39;accueil",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "severity": "moderate",
+      "total_occurrences": 501,
+      "affected_pages": 210,
+      "average_per_page": 2.4,
+      "sample_pages": [
+        {
+          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "language": "en",
+          "service_name": "Justice Laws Website",
+          "count": 5
+        },
+        {
+          "canonical_url": "https://laws-lois.justice.gc.ca/",
+          "language": "fr",
+          "service_name": "Justice Laws Website",
+          "count": 5
+        },
+        {
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-eng.html",
+          "language": "en",
+          "service_name": "Consumer Price Index",
+          "count": 5
+        },
+        {
+          "canonical_url": "https://www.statcan.gc.ca/subjects-sujets/cpi-ipc/index-fra.html",
+          "language": "fr",
+          "service_name": "Consumer Price Index",
+          "count": 5
+        },
+        {
+          "canonical_url": "https://www.canada.ca/en/services/defence.html",
+          "language": "en",
+          "service_name": "Discovery: defence",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "severity": "minor",
+      "total_occurrences": 840,
+      "affected_pages": 210,
+      "average_per_page": 4,
+      "sample_pages": [
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/sin.html",
+          "language": "en",
+          "service_name": "Apply for a Social Insurance Number",
+          "count": 4
+        },
+        {
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/nas.html",
+          "language": "fr",
+          "service_name": "Apply for a Social Insurance Number",
+          "count": 4
+        },
+        {
+          "canonical_url": "https://www.canada.ca/en/employment-social-development/services/office.html",
+          "language": "en",
+          "service_name": "Find your local Service Canada office",
+          "count": 4
+        },
+        {
+          "canonical_url": "https://www.canada.ca/fr/emploi-developpement-social/services/bureau.html",
+          "language": "fr",
+          "service_name": "Find your local Service Canada office",
+          "count": 4
+        },
+        {
+          "canonical_url": "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html",
+          "language": "en",
+          "service_name": "Canada Border Wait Times",
+          "count": 4
+        }
+      ]
+    }
+  ]
+}
