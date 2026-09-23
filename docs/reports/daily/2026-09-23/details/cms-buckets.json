@@ -475,11 +475,6 @@
       },
       {
         "service_name": "T2201 Disability Tax Credit Certificate",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2201.html"
-      },
-      {
-        "service_name": "T2201 Disability Tax Credit Certificate",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/forms-publications/forms/t2201.html"
       },
@@ -637,6 +632,11 @@
         "service_name": "Video 1: Create a GCKey",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugees-citizenship/services/visit-canada/eta/submit-documents.html"
+      },
+      {
+        "service_name": "Build a Kit",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/policing/emergencies/preparedness/get-prepared/emergency-kits.html"
       },
       {
         "service_name": "Build a Kit",
@@ -1035,14 +1035,14 @@
         "canonical_url": "https://www.canada.ca/fr/affaires-mondiales/nouvelles/2026/08/annonce-de-nouvelles-nominations-diplomatiques1.html"
       },
       {
+        "service_name": "T2201 Disability Tax Credit Certificate",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2201.html"
+      },
+      {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html"
-      },
-      {
-        "service_name": "Build a Kit",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/policing/emergencies/preparedness/get-prepared/emergency-kits.html"
       },
       {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
