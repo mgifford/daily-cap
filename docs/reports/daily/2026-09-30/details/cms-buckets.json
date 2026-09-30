@@ -1,7 +1,7 @@
 [
   {
     "cms": "unknown",
-    "count": 165,
+    "count": 166,
     "pages": [
       {
         "service_name": "Apply for a Social Insurance Number",
@@ -99,6 +99,11 @@
         "canonical_url": "https://www.canada.ca/en/services/defence/caf.html"
       },
       {
+        "service_name": "Discovery: veterans-military - health-and-wellness-for-veterans-and-military-members",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/veterans-military/health-and-wellness-for-veterans-and-military-members.html"
+      },
+      {
         "service_name": "Discovery:  - en - department-national-defence - services - benefits-military - pay-pension-benefits",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/department-national-defence/services/benefits-military/pay-pension-benefits.html"
@@ -137,6 +142,11 @@
         "service_name": "Discovery: taxes - payments",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/services/taxes/payments.html"
+      },
+      {
+        "service_name": "Discovery: taxes - child-and-family-benefits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/taxes/child-and-family-benefits.html"
       },
       {
         "service_name": "Discovery: taxes - savings-and-pension-plans",
@@ -540,6 +550,11 @@
       },
       {
         "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html"
+      },
+      {
+        "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html"
       },
@@ -799,16 +814,6 @@
         "canonical_url": "https://www.canada.ca/fr/services/sante/coronavirus-2019.html"
       },
       {
-        "service_name": "Benefits and credits",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/benefits.html"
-      },
-      {
-        "service_name": "Benefits and credits",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/prestations.html"
-      },
-      {
         "service_name": "Employment Insurance",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html"
@@ -832,7 +837,7 @@
   },
   {
     "cms": "aem",
-    "count": 46,
+    "count": 45,
     "pages": [
       {
         "service_name": "Consumer Price Index",
@@ -873,16 +878,6 @@
         "service_name": "Discovery: youth",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/services/youth.html"
-      },
-      {
-        "service_name": "Discovery: veterans-military - health-and-wellness-for-veterans-and-military-members",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/veterans-military/health-and-wellness-for-veterans-and-military-members.html"
-      },
-      {
-        "service_name": "Discovery: taxes - child-and-family-benefits",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/taxes/child-and-family-benefits.html"
       },
       {
         "service_name": "List of products from the United States subject to counter-tariffs effective September 8, 2026",
@@ -1035,11 +1030,6 @@
         "canonical_url": "https://www.canada.ca/fr/affaires-mondiales/nouvelles/2026/08/annonce-de-nouvelles-nominations-diplomatiques1.html"
       },
       {
-        "service_name": "Demande pour modifier les conditions de séjour, proroger le séjour ou demeurer au Canada comme travailleur (IMM 5710)",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5710.html"
-      },
-      {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html"
@@ -1063,6 +1053,16 @@
         "service_name": "Immigration and citizenship",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html"
+      },
+      {
+        "service_name": "Benefits and credits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits.html"
+      },
+      {
+        "service_name": "Benefits and credits",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations.html"
       }
     ]
   }
