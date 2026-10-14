@@ -1,7 +1,7 @@
 [
   {
     "cms": "unknown",
-    "count": 167,
+    "count": 165,
     "pages": [
       {
         "service_name": "Apply for a Social Insurance Number",
@@ -475,6 +475,11 @@
       },
       {
         "service_name": "T2201 Disability Tax Credit Certificate",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2201.html"
+      },
+      {
+        "service_name": "T2201 Disability Tax Credit Certificate",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/revenue-agency/services/forms-publications/forms/t2201.html"
       },
@@ -532,11 +537,6 @@
         "service_name": "Demande de visa de visiteur (visa de résident temporaire) (IMM 5257)",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257.html"
-      },
-      {
-        "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html"
       },
       {
         "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
@@ -809,16 +809,6 @@
         "canonical_url": "https://www.canada.ca/fr/services/sante/coronavirus-2019.html"
       },
       {
-        "service_name": "Benefits and credits",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/services/benefits.html"
-      },
-      {
-        "service_name": "Benefits and credits",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/services/prestations.html"
-      },
-      {
         "service_name": "Employment Insurance",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/services/benefits/ei.html"
@@ -842,7 +832,7 @@
   },
   {
     "cms": "aem",
-    "count": 44,
+    "count": 46,
     "pages": [
       {
         "service_name": "Consumer Price Index",
@@ -1035,9 +1025,9 @@
         "canonical_url": "https://www.canada.ca/fr/affaires-mondiales/nouvelles/2026/08/annonce-de-nouvelles-nominations-diplomatiques1.html"
       },
       {
-        "service_name": "T2201 Disability Tax Credit Certificate",
+        "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2201.html"
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html"
       },
       {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
@@ -1063,6 +1053,16 @@
         "service_name": "Immigration and citizenship",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/services/immigration-citoyennete.html"
+      },
+      {
+        "service_name": "Benefits and credits",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/services/benefits.html"
+      },
+      {
+        "service_name": "Benefits and credits",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/services/prestations.html"
       }
     ]
   }
