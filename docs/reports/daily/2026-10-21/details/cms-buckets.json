@@ -1,7 +1,7 @@
 [
   {
     "cms": "unknown",
-    "count": 166,
+    "count": 164,
     "pages": [
       {
         "service_name": "Apply for a Social Insurance Number",
@@ -604,11 +604,6 @@
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/renouvellement-passeport-adulte/soumettre-formulaire-frais/presenter-par-poste.html"
       },
       {
-        "service_name": "Obtenez le formulaire et renouveler un passeport par courrier au Canada",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/renouvellement-passeport-adulte/soumettre-formulaire-frais/presenter-par-poste.html"
-      },
-      {
         "service_name": "Save Time: Send a Complete Application",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/news/video/save-time-send-complete-application.html"
@@ -677,11 +672,6 @@
         "service_name": "Naked images and videos",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/public-safety-canada/campaigns/online-child-sexual-exploitation/sexual-images-videos.html"
-      },
-      {
-        "service_name": "Images et vidéos à caractère sexuel",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
       },
       {
         "service_name": "Images et vidéos à caractère sexuel",
@@ -837,7 +827,7 @@
   },
   {
     "cms": "aem",
-    "count": 45,
+    "count": 47,
     "pages": [
       {
         "service_name": "Consumer Price Index",
@@ -1030,9 +1020,19 @@
         "canonical_url": "https://www.canada.ca/fr/affaires-mondiales/nouvelles/2026/08/annonce-de-nouvelles-nominations-diplomatiques1.html"
       },
       {
+        "service_name": "Obtenez le formulaire et renouveler un passeport par courrier au Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/renouvellement-passeport-adulte/soumettre-formulaire-frais/presenter-par-poste.html"
+      },
+      {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html"
+      },
+      {
+        "service_name": "Images et vidéos à caractère sexuel",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
       },
       {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
