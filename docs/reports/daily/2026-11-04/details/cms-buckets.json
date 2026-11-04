@@ -540,6 +540,11 @@
       },
       {
         "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html"
+      },
+      {
+        "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html"
       },
@@ -676,11 +681,6 @@
       {
         "service_name": "Images et vidéos à caractère sexuel",
         "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
-      },
-      {
-        "service_name": "Images et vidéos à caractère sexuel",
-        "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
       },
       {
@@ -1025,14 +1025,14 @@
         "canonical_url": "https://www.canada.ca/fr/affaires-mondiales/nouvelles/2026/08/annonce-de-nouvelles-nominations-diplomatiques1.html"
       },
       {
-        "service_name": "Annexe 1 : Demande de statut de résident temporaire (IMM 5257 SCH1)",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/demande/formulaires-demande-guides/imm5257-sch1.html"
-      },
-      {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html"
+      },
+      {
+        "service_name": "Images et vidéos à caractère sexuel",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
       },
       {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
