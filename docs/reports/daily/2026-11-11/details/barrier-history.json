@@ -1,39 +1,39 @@
 {
   "summary": {
     "points": 4,
-    "start_date": "2026-09-30",
-    "end_date": "2026-10-21"
+    "start_date": "2026-10-21",
+    "end_date": "2026-11-11"
   },
   "points": [
     {
-      "run_date": "2026-09-30",
-      "missing_french": 61,
-      "missing_english": 13,
-      "missing_statements": 207,
-      "high_accessibility_gap_pairs": 0,
-      "average_absolute_accessibility_gap": 0,
-      "directional_affected_share_percent": 11.88
-    },
-    {
-      "run_date": "2026-10-07",
-      "missing_french": 61,
-      "missing_english": 13,
-      "missing_statements": 207,
-      "high_accessibility_gap_pairs": 0,
-      "average_absolute_accessibility_gap": 0,
-      "directional_affected_share_percent": 11.88
-    },
-    {
-      "run_date": "2026-10-14",
-      "missing_french": 61,
-      "missing_english": 13,
-      "missing_statements": 207,
-      "high_accessibility_gap_pairs": 0,
-      "average_absolute_accessibility_gap": 0,
-      "directional_affected_share_percent": 11.88
-    },
-    {
       "run_date": "2026-10-21",
+      "missing_french": 61,
+      "missing_english": 13,
+      "missing_statements": 207,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0,
+      "directional_affected_share_percent": 11.88
+    },
+    {
+      "run_date": "2026-10-28",
+      "missing_french": 61,
+      "missing_english": 13,
+      "missing_statements": 207,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0,
+      "directional_affected_share_percent": 11.88
+    },
+    {
+      "run_date": "2026-11-04",
+      "missing_french": 61,
+      "missing_english": 13,
+      "missing_statements": 207,
+      "high_accessibility_gap_pairs": 0,
+      "average_absolute_accessibility_gap": 0,
+      "directional_affected_share_percent": 11.89
+    },
+    {
+      "run_date": "2026-11-11",
       "missing_french": 61,
       "missing_english": 13,
       "missing_statements": 207,

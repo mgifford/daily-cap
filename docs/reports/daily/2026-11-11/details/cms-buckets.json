@@ -1,7 +1,7 @@
 [
   {
     "cms": "unknown",
-    "count": 164,
+    "count": 165,
     "pages": [
       {
         "service_name": "Apply for a Social Insurance Number",
@@ -675,6 +675,11 @@
       },
       {
         "service_name": "Images et vidéos à caractère sexuel",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
+      },
+      {
+        "service_name": "Images et vidéos à caractère sexuel",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
       },
@@ -827,7 +832,7 @@
   },
   {
     "cms": "aem",
-    "count": 47,
+    "count": 46,
     "pages": [
       {
         "service_name": "Consumer Price Index",
@@ -1028,11 +1033,6 @@
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html"
-      },
-      {
-        "service_name": "Images et vidéos à caractère sexuel",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
       },
       {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
