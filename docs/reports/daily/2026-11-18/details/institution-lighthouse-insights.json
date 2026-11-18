@@ -9,25 +9,25 @@
       "scanned_urls": 2,
       "desktop_light": {
         "accessibility_score": 100,
-        "performance_score": 96.5,
+        "performance_score": 95.5,
         "best_practices_score": 82,
         "seo_score": 85
       },
       "desktop_dark": {
         "accessibility_score": 97,
-        "performance_score": 94.5,
+        "performance_score": 93.5,
         "best_practices_score": 82,
         "seo_score": 85
       },
       "mobile_light": {
         "accessibility_score": 100,
-        "performance_score": 90,
+        "performance_score": 89,
         "best_practices_score": 80,
         "seo_score": 84
       },
       "mobile_dark": {
         "accessibility_score": 97,
-        "performance_score": 88,
+        "performance_score": 87,
         "best_practices_score": 80,
         "seo_score": 84
       },
@@ -41,31 +41,31 @@
       "scanned_urls": 2,
       "desktop_light": {
         "accessibility_score": 100,
-        "performance_score": 65.5,
+        "performance_score": 28.5,
         "best_practices_score": 82,
         "seo_score": 85
       },
       "desktop_dark": {
         "accessibility_score": 97,
-        "performance_score": 30.5,
+        "performance_score": 61.5,
         "best_practices_score": 82,
         "seo_score": 85
       },
       "mobile_light": {
         "accessibility_score": 100,
-        "performance_score": 26.5,
+        "performance_score": 22.5,
         "best_practices_score": 80,
         "seo_score": 84
       },
       "mobile_dark": {
         "accessibility_score": 97,
-        "performance_score": 57,
+        "performance_score": 66.5,
         "best_practices_score": 80,
         "seo_score": 84
       },
       "mobile_dark_vs_desktop_light": {
         "accessibility_delta": -3,
-        "performance_delta": -8.5
+        "performance_delta": 38
       }
     },
     {
@@ -73,31 +73,31 @@
       "scanned_urls": 2,
       "desktop_light": {
         "accessibility_score": 100,
-        "performance_score": 32,
+        "performance_score": 42,
         "best_practices_score": 55,
         "seo_score": 85
       },
       "desktop_dark": {
         "accessibility_score": 97,
-        "performance_score": 52,
+        "performance_score": 40.5,
         "best_practices_score": 55,
         "seo_score": 85
       },
       "mobile_light": {
         "accessibility_score": 100,
-        "performance_score": 48,
+        "performance_score": 45.5,
         "best_practices_score": 53,
         "seo_score": 84
       },
       "mobile_dark": {
         "accessibility_score": 97,
-        "performance_score": 22.5,
+        "performance_score": 56,
         "best_practices_score": 53,
         "seo_score": 84
       },
       "mobile_dark_vs_desktop_light": {
         "accessibility_delta": -3,
-        "performance_delta": -9.5
+        "performance_delta": 14
       }
     },
     {
@@ -105,31 +105,31 @@
       "scanned_urls": 2,
       "desktop_light": {
         "accessibility_score": 100,
-        "performance_score": 73,
+        "performance_score": 67.5,
         "best_practices_score": 55,
         "seo_score": 85
       },
       "desktop_dark": {
         "accessibility_score": 97,
-        "performance_score": 73.5,
+        "performance_score": 70,
         "best_practices_score": 55,
         "seo_score": 85
       },
       "mobile_light": {
         "accessibility_score": 100,
-        "performance_score": 67.5,
+        "performance_score": 60,
         "best_practices_score": 53,
         "seo_score": 84
       },
       "mobile_dark": {
         "accessibility_score": 97,
-        "performance_score": 62.5,
+        "performance_score": 59.5,
         "best_practices_score": 53,
         "seo_score": 84
       },
       "mobile_dark_vs_desktop_light": {
         "accessibility_delta": -3,
-        "performance_delta": -10.5
+        "performance_delta": -8
       }
     },
     {
@@ -137,31 +137,31 @@
       "scanned_urls": 4,
       "desktop_light": {
         "accessibility_score": 100,
-        "performance_score": 42.25,
+        "performance_score": 41,
         "best_practices_score": 68.5,
         "seo_score": 85
       },
       "desktop_dark": {
         "accessibility_score": 97,
-        "performance_score": 34.25,
+        "performance_score": 55.25,
         "best_practices_score": 68.5,
         "seo_score": 85
       },
       "mobile_light": {
         "accessibility_score": 100,
-        "performance_score": 42.5,
+        "performance_score": 45.25,
         "best_practices_score": 66.5,
         "seo_score": 84
       },
       "mobile_dark": {
         "accessibility_score": 97,
-        "performance_score": 45.75,
+        "performance_score": 36.75,
         "best_practices_score": 66.5,
         "seo_score": 84
       },
       "mobile_dark_vs_desktop_light": {
         "accessibility_delta": -3,
-        "performance_delta": 3.5
+        "performance_delta": -4.25
       }
     },
     {
@@ -169,31 +169,31 @@
       "scanned_urls": 1,
       "desktop_light": {
         "accessibility_score": 100,
-        "performance_score": 53,
+        "performance_score": 65,
         "best_practices_score": 82,
         "seo_score": 85
       },
       "desktop_dark": {
         "accessibility_score": 97,
-        "performance_score": 30,
+        "performance_score": 19,
         "best_practices_score": 82,
         "seo_score": 85
       },
       "mobile_light": {
         "accessibility_score": 100,
-        "performance_score": 26,
+        "performance_score": 37,
         "best_practices_score": 80,
         "seo_score": 84
       },
       "mobile_dark": {
         "accessibility_score": 97,
-        "performance_score": 47,
+        "performance_score": 58,
         "best_practices_score": 80,
         "seo_score": 84
       },
       "mobile_dark_vs_desktop_light": {
         "accessibility_delta": -3,
-        "performance_delta": -6
+        "performance_delta": -7
       }
     },
     {
@@ -201,31 +201,31 @@
       "scanned_urls": 10,
       "desktop_light": {
         "accessibility_score": 100,
-        "performance_score": 50.9,
+        "performance_score": 45.2,
         "best_practices_score": 71.2,
         "seo_score": 85
       },
       "desktop_dark": {
         "accessibility_score": 97,
-        "performance_score": 39.4,
+        "performance_score": 50.2,
         "best_practices_score": 71.2,
         "seo_score": 85
       },
       "mobile_light": {
         "accessibility_score": 100,
-        "performance_score": 53.1,
+        "performance_score": 36,
         "best_practices_score": 69.2,
         "seo_score": 84
       },
       "mobile_dark": {
         "accessibility_score": 97,
-        "performance_score": 39.9,
+        "performance_score": 44.6,
         "best_practices_score": 69.2,
         "seo_score": 84
       },
       "mobile_dark_vs_desktop_light": {
         "accessibility_delta": -3,
-        "performance_delta": -11
+        "performance_delta": -0.6
       }
     },
     {
@@ -233,31 +233,31 @@
       "scanned_urls": 22,
       "desktop_light": {
         "accessibility_score": 99.64,
-        "performance_score": 51.14,
+        "performance_score": 49,
         "best_practices_score": 69.73,
         "seo_score": 85
       },
       "desktop_dark": {
         "accessibility_score": 96.64,
-        "performance_score": 48.95,
+        "performance_score": 50.27,
         "best_practices_score": 69.73,
         "seo_score": 85
       },
       "mobile_light": {
         "accessibility_score": 99.64,
-        "performance_score": 48.14,
+        "performance_score": 44.18,
         "best_practices_score": 67.73,
         "seo_score": 84
       },
       "mobile_dark": {
         "accessibility_score": 96.64,
-        "performance_score": 44,
+        "performance_score": 41.14,
         "best_practices_score": 67.73,
         "seo_score": 84
       },
       "mobile_dark_vs_desktop_light": {
         "accessibility_delta": -3,
-        "performance_delta": -7.14
+        "performance_delta": -7.86
       }
     },
     {
@@ -265,31 +265,31 @@
       "scanned_urls": 17,
       "desktop_light": {
         "accessibility_score": 98.59,
-        "performance_score": 58.76,
+        "performance_score": 53.76,
         "best_practices_score": 64.53,
         "seo_score": 85
       },
       "desktop_dark": {
         "accessibility_score": 95.59,
-        "performance_score": 50.94,
+        "performance_score": 51.53,
         "best_practices_score": 64.53,
         "seo_score": 85
       },
       "mobile_light": {
         "accessibility_score": 98.59,
-        "performance_score": 46.59,
+        "performance_score": 44.53,
         "best_practices_score": 62.53,
         "seo_score": 84
       },
       "mobile_dark": {
         "accessibility_score": 95.59,
-        "performance_score": 47,
+        "performance_score": 32,
         "best_practices_score": 62.53,
         "seo_score": 84
       },
       "mobile_dark_vs_desktop_light": {
         "accessibility_delta": -3,
-        "performance_delta": -11.76
+        "performance_delta": -21.76
       }
     },
     {
@@ -297,7 +297,7 @@
       "scanned_urls": 2,
       "desktop_light": {
         "accessibility_score": 95,
-        "performance_score": 95.5,
+        "performance_score": 96,
         "best_practices_score": 82,
         "seo_score": 85
       },
@@ -315,7 +315,7 @@
       },
       "mobile_dark": {
         "accessibility_score": 92,
-        "performance_score": 88,
+        "performance_score": 88.5,
         "best_practices_score": 80,
         "seo_score": 84
       },

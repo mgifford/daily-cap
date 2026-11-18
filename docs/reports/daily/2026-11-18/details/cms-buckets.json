@@ -1,7 +1,7 @@
 [
   {
     "cms": "unknown",
-    "count": 166,
+    "count": 165,
     "pages": [
       {
         "service_name": "Apply for a Social Insurance Number",
@@ -62,11 +62,6 @@
         "service_name": "Government of Canada Social Media",
         "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/medias-sociaux.html"
-      },
-      {
-        "service_name": "IRCC: Apply for permanent residency",
-        "language": "en",
-        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html"
       },
       {
         "service_name": "IRCC: Apply for permanent residency",
@@ -837,8 +832,13 @@
   },
   {
     "cms": "aem",
-    "count": 45,
+    "count": 46,
     "pages": [
+      {
+        "service_name": "IRCC: Apply for permanent residency",
+        "language": "en",
+        "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html"
+      },
       {
         "service_name": "Consumer Price Index",
         "language": "en",
