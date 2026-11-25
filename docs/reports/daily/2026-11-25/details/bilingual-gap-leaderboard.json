@@ -4,56 +4,56 @@
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 6
+    "mean_abs_performance_gap": 0
   },
   {
     "institution": "CRA",
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 22
+    "mean_abs_performance_gap": 41
   },
   {
     "institution": "CSPS",
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 1
+    "mean_abs_performance_gap": 23
   },
   {
     "institution": "ECCC",
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 45
+    "mean_abs_performance_gap": 3
   },
   {
     "institution": "ESDC",
     "pair_count": 8,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 10.13
+    "mean_abs_performance_gap": 13.5
   },
   {
     "institution": "IRCC",
     "pair_count": 3,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 12
+    "mean_abs_performance_gap": 40.67
   },
   {
     "institution": "Justice",
     "pair_count": 1,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 8
+    "mean_abs_performance_gap": 1
   },
   {
     "institution": "PHAC",
     "pair_count": 2,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 29.5
+    "mean_abs_performance_gap": 35
   },
   {
     "institution": "StatsCan",
@@ -67,6 +67,6 @@
     "pair_count": 49,
     "high_gap_pair_count": 0,
     "mean_abs_accessibility_gap": 0,
-    "mean_abs_performance_gap": 20.73
+    "mean_abs_performance_gap": 20.63
   }
 ]

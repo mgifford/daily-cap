@@ -564,11 +564,6 @@
         "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/nouveau-passeport-adulte/obtenir-formulaire-demande.html"
       },
       {
-        "service_name": "Obtenir le formulaire pour un nouveaux passeport pour adulte au Canada",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/nouveau-passeport-adulte/obtenir-formulaire-demande.html"
-      },
-      {
         "service_name": "T2201 Certificat pour le crédit d&#39;impôt pour personnes handicapées",
         "language": "en",
         "canonical_url": "https://www.canada.ca/fr/agence-revenu/services/formulaires-publications/formulaires/t2201.html"
@@ -681,6 +676,11 @@
       {
         "service_name": "Images et vidéos à caractère sexuel",
         "language": "en",
+        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
+      },
+      {
+        "service_name": "Images et vidéos à caractère sexuel",
+        "language": "fr",
         "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
       },
       {
@@ -1025,14 +1025,14 @@
         "canonical_url": "https://www.canada.ca/fr/affaires-mondiales/nouvelles/2026/08/annonce-de-nouvelles-nominations-diplomatiques1.html"
       },
       {
+        "service_name": "Obtenir le formulaire pour un nouveaux passeport pour adulte au Canada",
+        "language": "fr",
+        "canonical_url": "https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/nouveau-passeport-adulte/obtenir-formulaire-demande.html"
+      },
+      {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
         "language": "en",
         "canonical_url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada.html"
-      },
-      {
-        "service_name": "Images et vidéos à caractère sexuel",
-        "language": "fr",
-        "canonical_url": "https://www.canada.ca/fr/securite-publique-canada/campagnes/exploitation-sexuelle-enfants-en-ligne/images-videos-caractere-sexuel.html"
       },
       {
         "service_name": "Vidéo : Ce que vous devez savoir avant l’exam de citoyenneté",
